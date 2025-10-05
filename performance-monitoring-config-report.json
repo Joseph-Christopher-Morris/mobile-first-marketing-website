@@ -1,0 +1,64 @@
+{
+  "timestamp": "2025-10-04T17:59:32.273Z",
+  "configuration": {
+    "analytics": {
+      "gaId": "not configured",
+      "gtmId": "not configured",
+      "enableAnalytics": false
+    },
+    "monitoring": {
+      "enablePerformanceMonitoring": false,
+      "siteUrl": "http://localhost:3000"
+    }
+  },
+  "components": {
+    "coreWebVitals": "configured",
+    "performanceMonitor": "configured",
+    "budgetValidator": "configured",
+    "analyticsUtility": "created"
+  },
+  "files": {
+    "analyticsConfig": "src/config/analytics.json",
+    "analyticsUtility": "src/lib/analytics.ts",
+    "vitalsConfig": "src/config/core-web-vitals.json",
+    "performanceConfig": "src/config/performance-monitoring.json"
+  },
+  "recommendations": [
+    {
+      "type": "analytics",
+      "priority": "medium",
+      "title": "Configure Google Analytics",
+      "description": "Set up Google Analytics or GTM for comprehensive tracking",
+      "actions": [
+        "Create Google Analytics 4 property",
+        "Add GA_ID to environment variables",
+        "Configure enhanced ecommerce tracking if applicable",
+        "Set up custom dimensions for better insights"
+      ]
+    },
+    {
+      "type": "monitoring",
+      "priority": "high",
+      "title": "Enable Performance Monitoring",
+      "description": "Performance monitoring is disabled",
+      "actions": [
+        "Set NEXT_PUBLIC_ENABLE_PERFORMANCE_MONITORING=true",
+        "Configure monitoring intervals",
+        "Set up performance alerts",
+        "Review monitoring thresholds"
+      ]
+    },
+    {
+      "type": "optimization",
+      "priority": "low",
+      "title": "Optimize Monitoring Configuration",
+      "description": "Fine-tune monitoring settings for better insights",
+      "actions": [
+        "Adjust monitoring intervals based on traffic",
+        "Configure custom metrics for business KPIs",
+        "Set up automated reporting",
+        "Implement real user monitoring (RUM)"
+      ]
+    }
+  ]
+}
