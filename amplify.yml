@@ -3,16 +3,22 @@ frontend:
   phases:
     preBuild:
       commands:
-        - npm ci
-        - export NEXT_PUBLIC_SITE_URL=https://main.d3jls9qo8dpqct.amplifyapp.com
+        - echo "🚀 Starting deployment..."
+        - echo "📦 Installing dependencies..."
+        - npm ci || npm install
+        - export NEXT_PUBLIC_SITE_URL=$AMPLIFY_APP_URL
         - export NODE_ENV=production
+        - echo "✅ Ready to build"
     build:
       commands:
+        - echo "🔨 Building..."
         - npm run build
+        - echo "✅ Build complete"
     postBuild:
       commands:
-        - echo "Build completed successfully"
+        - echo "📁 Checking output..."
         - ls -la out/
+        - echo "🎉 Ready for deployment"
   artifacts:
     baseDirectory: out
     files:
@@ -21,8 +27,94 @@ frontend:
     paths:
       - node_modules/**/*
       - .next/cache/**/*
-  environment:
-    variables:
-      NODE_OPTIONS: "--max-old-space-size=4096"
-      NEXT_TELEMETRY_DISABLED: "1"
-      ANALYZE: "false"
+# Custom headers for security, performance, and caching
+customHeaders:
+  # Security headers for all files
+  - pattern: "**/*"
+    headers:
+      - key: "Strict-Transport-Security"
+        value: "max-age=31536000; includeSubDomains; preload"
+      - key: "X-Frame-Options"
+        value: "DENY"
+      - key: "X-Content-Type-Options"
+        value: "nosniff"
+      - key: "X-XSS-Protection"
+        value: "1; mode=block"
+      - key: "Referrer-Policy"
+        value: "strict-origin-when-cross-origin"
+      - key: "Permissions-Policy"
+        value: "camera=(), microphone=(), geolocation=()"
+      - key: "Content-Security-Policy"
+        value: "default-src 'self'; script-src 'self' 'unsafe-inline' 'unsafe-eval' https://www.googletagmanager.com https://www.google-analytics.com; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' data: https:; connect-src 'self' https://www.google-analytics.com; frame-ancestors 'none';"
+
+  # Long-term caching for static assets
+  - pattern: "**/*.{js,css,png,jpg,jpeg,gif,ico,svg,woff,woff2,ttf,eot,webp,avif}"
+    headers:
+      - key: "Cache-Control"
+        value: "public, max-age=31536000, immutable"
+      - key: "Vary"
+        value: "Accept-Encoding"
+
+  # Medium-term caching for HTML files
+  - pattern: "**/*.html"
+    headers:
+      - key: "Cache-Control"
+        value: "public, max-age=3600, must-revalidate"
+      - key: "Vary"
+        value: "Accept-Encoding"
+
+  # Special caching for service worker and manifest
+  - pattern: "/sw.js"
+    headers:
+      - key: "Cache-Control"
+        value: "no-cache, no-store, must-revalidate"
+
+  - pattern: "/manifest.json"
+    headers:
+      - key: "Cache-Control"
+        value: "public, max-age=86400"
+
+  # API routes caching
+  - pattern: "/api/**"
+    headers:
+      - key: "Cache-Control"
+        value: "no-cache, no-store, must-revalidate"
+      - key: "Pragma"
+        value: "no-cache"
+      - key: "Expires"
+        value: "0"
+
+# Redirects and rewrites for proper routing
+redirects:
+  # Redirect old blog URLs to new structure
+  - source: "/blog.html"
+    target: "/blog/"
+    status: "301"
+
+  # Redirect old service URLs
+  - source: "/services.html"
+    target: "/services/"
+    status: "301"
+
+  # Redirect contact variations
+  - source: "/contact.html"
+    target: "/contact/"
+    status: "301"
+
+  # Redirect www to non-www (if applicable)
+  - source: "https://www.<+>"
+    target: "https://<>"
+    status: "301"
+    condition: "<> != 'www'"
+
+  # Redirect HTTP to HTTPS
+  - source: "http://<*>"
+    target: "https://<>"
+    status: "301"
+
+# URL rewrites for clean URLs and SPA behavior
+rewrites:
+  # Handle trailing slashes consistently
+  - source: "/<*>"
+    target: "/index.html"
+    condition: "<> != 'api'"
