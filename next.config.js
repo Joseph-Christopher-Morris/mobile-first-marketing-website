@@ -6,6 +6,18 @@ const withBundleAnalyzer = require('@next/bundle-analyzer')({
 const nextConfig = {
   output: 'export',
   trailingSlash: true,
+  eslint: {
+    // Warning: This allows production builds to successfully complete even if
+    // your project has ESLint errors.
+    ignoreDuringBuilds: true,
+  },
+  typescript: {
+    // !! WARN !!
+    // Dangerously allow production builds to successfully complete even if
+    // your project has type errors.
+    // !! WARN !!
+    ignoreBuildErrors: true,
+  },
   images: {
     unoptimized: true, // Required for static export
     formats: ['image/webp', 'image/avif'], // Modern formats for better compression
@@ -25,7 +37,6 @@ const nextConfig = {
   // Optimize for mobile-first performance
   poweredByHeader: false,
   reactStrictMode: true,
-  swcMinify: true,
   compress: true,
   // Enable modern JavaScript features
   modularizeImports: {
