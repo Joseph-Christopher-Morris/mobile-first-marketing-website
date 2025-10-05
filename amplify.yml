@@ -1,5 +1,6 @@
 version: 1
-frontend:
+appRoot: .
+build:
   phases:
     preBuild:
       commands:
@@ -9,7 +10,6 @@ frontend:
     build:
       commands:
         - npm run build
-        - echo '{"version":3,"routes":[],"images":{},"overrides":{},"wildcard":[{"domain":"*","value":"/index.html"}]}' > out/required-server-files.json
   artifacts:
     baseDirectory: out
     files:
