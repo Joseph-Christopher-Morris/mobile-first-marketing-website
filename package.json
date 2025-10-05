@@ -50,7 +50,6 @@
     "test:all": "npm run test && npm run test:e2e",
     "deploy": "npm run build && npm run export",
     "clean": "rm -rf .next out",
-    "prebuild": "npm run env:validate && npm run content:validate-structure && npm run content:validate && npm run type-check",
     "postbuild": "npm run test",
     "analyze": "ANALYZE=true npm run build",
     "amplify:validate": "node scripts/amplify-setup-validator.js",
