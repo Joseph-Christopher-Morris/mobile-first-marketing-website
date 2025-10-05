@@ -7,6 +7,7 @@ const nextConfig = {
   output: 'export',
   trailingSlash: true,
   distDir: 'out',
+  generateBuildId: () => 'static-build',
   eslint: {
     // Warning: This allows production builds to successfully complete even if
     // your project has ESLint errors.
