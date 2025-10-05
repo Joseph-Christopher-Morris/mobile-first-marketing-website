@@ -9,12 +9,11 @@ frontend:
     build:
       commands:
         - npm run build
-        - mkdir -p out/.next/server/pages
-        - mkdir -p out/.next/server/app
+        - cp -r .next/static out/_next/static 2>/dev/null || true
+        - cp -r .next/server out/.next/server 2>/dev/null || true
         - echo '{"version":3,"routes":[],"images":{},"overrides":{},"wildcard":[{"domain":"*","value":"/index.html"}]}' > out/required-server-files.json
         - echo '{}' > out/routes-manifest.json
         - echo '{}' > out/prerender-manifest.json
-        - echo '{}' > out/.next/server/middleware-manifest.json
         - echo "static-build" > out/trace
   artifacts:
     baseDirectory: out
