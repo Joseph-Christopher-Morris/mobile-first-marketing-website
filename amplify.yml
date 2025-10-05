@@ -1,6 +1,4 @@
 version: 1
-# Force static hosting mode
-appRoot: .
 frontend:
   phases:
     preBuild:
@@ -11,12 +9,6 @@ frontend:
     build:
       commands:
         - npm run build
-        - echo "Creating server trace files..."
-        - mkdir -p out/.next/server
-        - cp .next/required-server-files.json out/ 2>/dev/null || echo '{"version":3,"routes":[],"images":{},"overrides":{},"wildcard":[{"domain":"*","value":"/index.html"}]}' > out/required-server-files.json
-        - cp .next/routes-manifest.json out/ 2>/dev/null || echo '{}' > out/routes-manifest.json
-        - cp .next/prerender-manifest.json out/ 2>/dev/null || echo '{}' > out/prerender-manifest.json
-        - cp .next/trace out/ 2>/dev/null || echo "static-build" > out/trace
   artifacts:
     baseDirectory: out
     files:
