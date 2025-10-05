@@ -1,4 +1,6 @@
 version: 1
+# Explicitly configure as static site
+platform: WEB
 frontend:
   phases:
     preBuild:
@@ -11,13 +13,18 @@ frontend:
         - echo "✅ Ready to build"
     build:
       commands:
-        - echo "🔨 Building..."
+        - echo "🔨 Building static site..."
         - npm run build
-        - echo "✅ Build complete"
+        - echo "📁 Verifying static export..."
+        - ls -la out/
+        - echo "✅ Static build complete"
     postBuild:
       commands:
         - echo "📁 Checking output..."
         - ls -la out/
+        - echo "🔧 Creating required files for static deployment..."
+        - echo '{"version":3,"routes":[],"images":{},"overrides":{},"wildcard":[{"domain":"*","value":"/index.html"}]}' > out/required-server-files.json
+        - echo "✅ Static deployment files ready"
         - echo "🎉 Ready for deployment"
   artifacts:
     baseDirectory: out
