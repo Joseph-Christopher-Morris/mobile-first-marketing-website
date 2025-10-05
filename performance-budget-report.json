@@ -1,0 +1,305 @@
+{
+  "timestamp": "2025-10-04T17:59:32.269Z",
+  "summary": {
+    "totalTests": 20,
+    "passed": 12,
+    "failed": 8,
+    "warnings": 2,
+    "passRate": 60
+  },
+  "budgets": {
+    "lcp": 2500,
+    "fid": 100,
+    "cls": 0.1,
+    "fcp": 1800,
+    "tti": 3800,
+    "tbt": 200,
+    "si": 3400,
+    "jsBundle": 512000,
+    "cssBundle": 102400,
+    "totalAssets": 2097152,
+    "imageOptimization": 0.8,
+    "pageLoadTime": 3000,
+    "timeToFirstByte": 600,
+    "cacheHitRate": 0.9,
+    "compressionRate": 0.7,
+    "performanceScore": 85,
+    "accessibilityScore": 95,
+    "bestPracticesScore": 90,
+    "seoScore": 95
+  },
+  "results": {
+    "passed": [
+      {
+        "metric": "Lighthouse Performance Score",
+        "value": "94.0",
+        "budget": 85,
+        "status": "passed"
+      },
+      {
+        "metric": "FCP",
+        "value": "1652ms",
+        "budget": "1800ms",
+        "status": "passed",
+        "rawValue": 1651.7791329357938,
+        "rawBudget": 1800
+      },
+      {
+        "metric": "TBT",
+        "value": "191ms",
+        "budget": "200ms",
+        "status": "passed",
+        "rawValue": 191.44381346638838,
+        "rawBudget": 200
+      },
+      {
+        "metric": "CSS Bundle",
+        "value": "92.4 KB",
+        "budget": "100 KB",
+        "status": "passed",
+        "rawValue": 94628.38030791556,
+        "rawBudget": 102400
+      },
+      {
+        "metric": "Total Assets",
+        "value": "1.6 MB",
+        "budget": "2 MB",
+        "status": "passed",
+        "rawValue": 1625736.374763972,
+        "rawBudget": 2097152
+      },
+      {
+        "metric": "Lighthouse Performance Score",
+        "value": "90.2",
+        "budget": 85,
+        "status": "passed"
+      },
+      {
+        "metric": "LCP",
+        "value": "2492ms",
+        "budget": "2500ms",
+        "status": "passed",
+        "rawValue": 2492.2105263562457,
+        "rawBudget": 2500
+      },
+      {
+        "metric": "TBT",
+        "value": "163ms",
+        "budget": "200ms",
+        "status": "passed",
+        "rawValue": 162.51782127138196,
+        "rawBudget": 200
+      },
+      {
+        "metric": "SI",
+        "value": "3352ms",
+        "budget": "3400ms",
+        "status": "passed",
+        "rawValue": 3351.922890851,
+        "rawBudget": 3400
+      },
+      {
+        "metric": "TTI",
+        "value": "3463ms",
+        "budget": "3800ms",
+        "status": "passed",
+        "rawValue": 3462.8196570406544,
+        "rawBudget": 3800
+      },
+      {
+        "metric": "CSS Bundle",
+        "value": "82.2 KB",
+        "budget": "100 KB",
+        "status": "passed",
+        "rawValue": 84213.30934061544,
+        "rawBudget": 102400
+      },
+      {
+        "metric": "Total Assets",
+        "value": "1.8 MB",
+        "budget": "2 MB",
+        "status": "passed",
+        "rawValue": 1856208.3773992923,
+        "rawBudget": 2097152
+      }
+    ],
+    "failed": [
+      {
+        "metric": "LCP",
+        "value": "2555ms",
+        "budget": "2500ms",
+        "status": "failed",
+        "rawValue": 2555.136819481667,
+        "rawBudget": 2500
+      },
+      {
+        "metric": "CLS",
+        "value": "0.125",
+        "budget": "0.1",
+        "status": "failed",
+        "rawValue": 0.1252570846106158,
+        "rawBudget": 0.1
+      },
+      {
+        "metric": "SI",
+        "value": "3674ms",
+        "budget": "3400ms",
+        "status": "failed",
+        "rawValue": 3674.2603588982174,
+        "rawBudget": 3400
+      },
+      {
+        "metric": "TTI",
+        "value": "3886ms",
+        "budget": "3800ms",
+        "status": "failed",
+        "rawValue": 3886.11408141172,
+        "rawBudget": 3800
+      },
+      {
+        "metric": "JavaScript Bundle",
+        "value": "516.3 KB",
+        "budget": "500 KB",
+        "status": "failed",
+        "rawValue": 528682.1389114317,
+        "rawBudget": 512000
+      },
+      {
+        "metric": "CLS",
+        "value": "0.103",
+        "budget": "0.1",
+        "status": "failed",
+        "rawValue": 0.1025847568828536,
+        "rawBudget": 0.1
+      },
+      {
+        "metric": "FCP",
+        "value": "1881ms",
+        "budget": "1800ms",
+        "status": "failed",
+        "rawValue": 1881.0048445710681,
+        "rawBudget": 1800
+      },
+      {
+        "metric": "JavaScript Bundle",
+        "value": "505.4 KB",
+        "budget": "500 KB",
+        "status": "failed",
+        "rawValue": 517545.02859291044,
+        "rawBudget": 512000
+      }
+    ],
+    "warnings": [
+      {
+        "category": "playwright",
+        "message": "Playwright performance tests failed",
+        "details": "Command failed: npx playwright test e2e/performance.spec.ts --reporter=json"
+      },
+      {
+        "category": "playwright",
+        "message": "Playwright performance tests failed",
+        "details": "Command failed: npx playwright test e2e/performance.spec.ts --reporter=json"
+      }
+    ],
+    "metrics": {
+      "lighthouse": {
+        "performance": 90.22880394189072,
+        "accessibility": 97.73050839169692,
+        "bestPractices": 95.20237409051164,
+        "seo": 98.0988074761564,
+        "metrics": {
+          "first-contentful-paint": 1881.0048445710681,
+          "largest-contentful-paint": 2492.2105263562457,
+          "cumulative-layout-shift": 0.1025847568828536,
+          "total-blocking-time": 162.51782127138196,
+          "speed-index": 3351.922890851,
+          "interactive": 3462.8196570406544
+        }
+      },
+      "bundles": {
+        "jsSize": 517545.02859291044,
+        "cssSize": 84213.30934061544,
+        "totalSize": 1856208.3773992923,
+        "chunks": [
+          {
+            "name": "main",
+            "size": 204800,
+            "type": "js"
+          },
+          {
+            "name": "framework",
+            "size": 153600,
+            "type": "js"
+          },
+          {
+            "name": "commons",
+            "size": 102400,
+            "type": "js"
+          },
+          {
+            "name": "styles",
+            "size": 81920,
+            "type": "css"
+          }
+        ]
+      }
+    }
+  },
+  "recommendations": [
+    {
+      "metric": "LCP",
+      "priority": "high",
+      "title": "Optimize Largest Contentful Paint",
+      "actions": [
+        "Optimize and compress hero images",
+        "Implement critical CSS inlining",
+        "Preload key resources",
+        "Optimize server response times"
+      ]
+    },
+    {
+      "metric": "CLS",
+      "priority": "medium",
+      "title": "Reduce Cumulative Layout Shift",
+      "actions": [
+        "Add size attributes to images and videos",
+        "Reserve space for dynamic content",
+        "Use CSS aspect-ratio for responsive media",
+        "Avoid inserting content above existing content"
+      ]
+    },
+    {
+      "metric": "JavaScript Bundle",
+      "priority": "high",
+      "title": "Reduce JavaScript Bundle Size",
+      "actions": [
+        "Implement code splitting",
+        "Remove unused dependencies",
+        "Use dynamic imports for non-critical code",
+        "Enable tree shaking optimization"
+      ]
+    },
+    {
+      "metric": "CLS",
+      "priority": "medium",
+      "title": "Reduce Cumulative Layout Shift",
+      "actions": [
+        "Add size attributes to images and videos",
+        "Reserve space for dynamic content",
+        "Use CSS aspect-ratio for responsive media",
+        "Avoid inserting content above existing content"
+      ]
+    },
+    {
+      "metric": "JavaScript Bundle",
+      "priority": "high",
+      "title": "Reduce JavaScript Bundle Size",
+      "actions": [
+        "Implement code splitting",
+        "Remove unused dependencies",
+        "Use dynamic imports for non-critical code",
+        "Enable tree shaking optimization"
+      ]
+    }
+  ]
+}

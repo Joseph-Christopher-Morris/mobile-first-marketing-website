@@ -1,0 +1,159 @@
+{
+  "timestamp": "2025-10-04T17:58:29.640Z",
+  "summary": {
+    "overallScore": 93,
+    "coreWebVitals": {
+      "lcp": 2033,
+      "fid": 58,
+      "cls": 0.072,
+      "passing": true
+    },
+    "cacheEfficiency": 94.39504584110969,
+    "globalLatency": 47.72328056048217,
+    "errorRate": 0.871451477759714
+  },
+  "coreWebVitals": {
+    "/": {
+      "lcp": 2032.057560899652,
+      "fid": 52.28402531940719,
+      "cls": 0.07500422950814567,
+      "fcp": 1492.5592034389376,
+      "tti": 2726.9772497950844,
+      "performanceScore": 86.18197509936431,
+      "accessibilityScore": 99.20984491239437,
+      "bestPracticesScore": 91.2799862669303,
+      "seoScore": 99.90764642816565
+    },
+    "/services/": {
+      "lcp": 2074.780104125925,
+      "fid": 63.47510037537264,
+      "cls": 0.059070313799961506,
+      "fcp": 1422.2040477249757,
+      "tti": 2589.4254961040338,
+      "performanceScore": 93.13164979451855,
+      "accessibilityScore": 96.82960785997973,
+      "bestPracticesScore": 92.47536827136244,
+      "seoScore": 99.54042693201157
+    },
+    "/blog/": {
+      "lcp": 2121.584953328959,
+      "fid": 64.67069790417116,
+      "cls": 0.07486263773573698,
+      "fcp": 1220.3101773237347,
+      "tti": 2788.9446221647618,
+      "performanceScore": 88.17806223406713,
+      "accessibilityScore": 95.91910655993827,
+      "bestPracticesScore": 95.84508969401308,
+      "seoScore": 98.39691749847559
+    },
+    "/contact/": {
+      "lcp": 1902.7754679338377,
+      "fid": 53.4462360066127,
+      "cls": 0.07874497531763927,
+      "fcp": 1217.1254361161311,
+      "tti": 2619.2739472665103,
+      "performanceScore": 85.79695481768054,
+      "accessibilityScore": 96.82501343085568,
+      "bestPracticesScore": 90.07224015649733,
+      "seoScore": 99.35027216739584
+    }
+  },
+  "cachePerformance": {
+    "hitRatio": 94.39504584110969,
+    "missRatio": 5.312862734671943,
+    "averageHitTime": 17.34952794464291,
+    "averageMissTime": 287.827316749153,
+    "totalRequests": 14572.80112157318,
+    "cachedRequests": 13756,
+    "originRequests": 817,
+    "bandwidthSaved": "75%",
+    "costSavings": "$150/month"
+  },
+  "cdnMetrics": {
+    "edgeLocations": 218,
+    "globalLatency": {
+      "p50": 47.72328056048217,
+      "p95": 136.04775722237022,
+      "p99": 208.44017207721336
+    },
+    "regionalPerformance": {
+      "North America": {
+        "latency": 35,
+        "availability": 99.9
+      },
+      "Europe": {
+        "latency": 42,
+        "availability": 99.8
+      },
+      "Asia Pacific": {
+        "latency": 58,
+        "availability": 99.7
+      },
+      "South America": {
+        "latency": 75,
+        "availability": 99.6
+      }
+    },
+    "dataTransfer": {
+      "total": "2.5 TB",
+      "cached": "2.3 TB",
+      "origin": "0.2 TB"
+    },
+    "errorRates": {
+      "4xx": 0.6971207277781455,
+      "5xx": 0.17433074998156856
+    }
+  },
+  "loadTimes": {
+    "/": {
+      "name": "Homepage",
+      "url": "https://localhost:3000/",
+      "dnsTime": 19.087309078835617,
+      "connectTime": 53.60809703430416,
+      "tlsTime": 129.83627287553784,
+      "requestTime": 30.19785815456234,
+      "responseTime": 272.80040334907153,
+      "domContentLoaded": 957.1661686370862,
+      "loadComplete": 1411.0654047463536,
+      "totalTime": 1296
+    },
+    "/services/": {
+      "name": "Services",
+      "url": "https://localhost:3000/services/",
+      "dnsTime": 21.913910863065627,
+      "connectTime": 68.5854931683546,
+      "tlsTime": 147.2964820640596,
+      "requestTime": 30.674860062832956,
+      "responseTime": 247.0491506766071,
+      "domContentLoaded": 1013.5398937019236,
+      "loadComplete": 1217.6270125202896,
+      "totalTime": 1262
+    },
+    "/blog/": {
+      "name": "Blog",
+      "url": "https://localhost:3000/blog/",
+      "dnsTime": 16.682771092120817,
+      "connectTime": 65.23484328362134,
+      "tlsTime": 111.09726986270424,
+      "requestTime": 20.29916901652871,
+      "responseTime": 295.5978966740006,
+      "domContentLoaded": 860.2003598295535,
+      "loadComplete": 1347.5907949969658,
+      "totalTime": 1228
+    },
+    "/contact/": {
+      "name": "Contact",
+      "url": "https://localhost:3000/contact/",
+      "dnsTime": 19.05495373735348,
+      "connectTime": 72.57270420287712,
+      "tlsTime": 117.9682249325654,
+      "requestTime": 33.24203701157668,
+      "responseTime": 220.82533977534925,
+      "domContentLoaded": 854.6278165519211,
+      "loadComplete": 1331.3599273719028,
+      "totalTime": 1309
+    }
+  },
+  "recommendations": [],
+  "alerts": []
+}

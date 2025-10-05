@@ -1,0 +1,247 @@
+{
+  "timestamp": "2025-10-04T17:58:29.633Z",
+  "summary": {
+    "averages": {
+      "lcp": 1969,
+      "fid": 53,
+      "cls": 0.052
+    },
+    "grades": {
+      "good": 4,
+      "needsImprovement": 0,
+      "poor": 0
+    },
+    "totalPages": 4,
+    "passingPages": 4,
+    "failingPages": 0,
+    "overallStatus": "excellent",
+    "activeAlerts": 0
+  },
+  "current": {
+    "timestamp": "2025-10-04T17:58:29.630Z",
+    "measurements": {
+      "/": {
+        "lcp": 1862.109086106454,
+        "fid": 47.09074681519369,
+        "cls": 0.04290121827292158,
+        "fcp": 1342.2314930083724,
+        "ttfb": 249.16153354961335,
+        "timestamp": 1759600709630,
+        "tti": 3043.888292277826,
+        "tbt": 122.66429161412957,
+        "si": 2428.4070296148357,
+        "lcpGrade": "good",
+        "fidGrade": "good",
+        "clsGrade": "good"
+      },
+      "/services": {
+        "lcp": 1968.5220060508254,
+        "fid": 50.1602118290654,
+        "cls": 0.07054613598949211,
+        "fcp": 1311.600376092927,
+        "ttfb": 229.2728929370179,
+        "timestamp": 1759600709630,
+        "tti": 2716.06687139241,
+        "tbt": 122.36199426966246,
+        "si": 2559.0092892954367,
+        "lcpGrade": "good",
+        "fidGrade": "good",
+        "clsGrade": "good"
+      },
+      "/blog": {
+        "lcp": 2329.1461399248506,
+        "fid": 79.83427805380498,
+        "cls": 0.05559536163720253,
+        "fcp": 1543.6908275012981,
+        "ttfb": 313.619868660056,
+        "timestamp": 1759600709632,
+        "tti": 3261.1631312601876,
+        "tbt": 77.6098729870049,
+        "si": 2528.7201440049234,
+        "lcpGrade": "good",
+        "fidGrade": "good",
+        "clsGrade": "good"
+      },
+      "/contact": {
+        "lcp": 1716.7573356242187,
+        "fid": 36.801803809158805,
+        "cls": 0.03727928043538726,
+        "fcp": 1141.540467550789,
+        "ttfb": 225.12629799453865,
+        "timestamp": 1759600709632,
+        "tti": 2185.1120079143034,
+        "tbt": 59.50621299850619,
+        "si": 2009.9130894474174,
+        "lcpGrade": "good",
+        "fidGrade": "good",
+        "clsGrade": "good"
+      }
+    }
+  },
+  "trends": {
+    "/": {
+      "lcp": {
+        "change": -26.6,
+        "percentChange": -1.4,
+        "direction": "better",
+        "significance": "minor"
+      },
+      "fid": {
+        "change": -2.07,
+        "percentChange": -4.2,
+        "direction": "better",
+        "significance": "minor"
+      },
+      "cls": {
+        "change": -0.01,
+        "percentChange": -12,
+        "direction": "better",
+        "significance": "significant"
+      }
+    },
+    "/services": {
+      "lcp": {
+        "change": -10.8,
+        "percentChange": -0.5,
+        "direction": "better",
+        "significance": "minor"
+      },
+      "fid": {
+        "change": -24.53,
+        "percentChange": -32.8,
+        "direction": "better",
+        "significance": "significant"
+      },
+      "cls": {
+        "change": -0.01,
+        "percentChange": -10.6,
+        "direction": "better",
+        "significance": "significant"
+      }
+    },
+    "/blog": {
+      "lcp": {
+        "change": 163.04,
+        "percentChange": 7.5,
+        "direction": "worse",
+        "significance": "minor"
+      },
+      "fid": {
+        "change": 12.57,
+        "percentChange": 18.7,
+        "direction": "worse",
+        "significance": "significant"
+      },
+      "cls": {
+        "change": 0.02,
+        "percentChange": 38.3,
+        "direction": "worse",
+        "significance": "significant"
+      }
+    },
+    "/contact": {
+      "lcp": {
+        "change": 234.21,
+        "percentChange": 15.8,
+        "direction": "worse",
+        "significance": "significant"
+      },
+      "fid": {
+        "change": -17.3,
+        "percentChange": -32,
+        "direction": "better",
+        "significance": "significant"
+      },
+      "cls": {
+        "change": -0.01,
+        "percentChange": -23.1,
+        "direction": "better",
+        "significance": "significant"
+      }
+    }
+  },
+  "alerts": [],
+  "recommendations": [],
+  "pageAnalysis": {
+    "/": {
+      "name": "Homepage",
+      "overallGrade": "good",
+      "vitals": {
+        "lcp": {
+          "value": 1862.109086106454,
+          "grade": "good"
+        },
+        "fid": {
+          "value": 47.09074681519369,
+          "grade": "good"
+        },
+        "cls": {
+          "value": 0.04290121827292158,
+          "grade": "good"
+        }
+      },
+      "issues": [],
+      "recommendations": []
+    },
+    "/services": {
+      "name": "Services",
+      "overallGrade": "good",
+      "vitals": {
+        "lcp": {
+          "value": 1968.5220060508254,
+          "grade": "good"
+        },
+        "fid": {
+          "value": 50.1602118290654,
+          "grade": "good"
+        },
+        "cls": {
+          "value": 0.07054613598949211,
+          "grade": "good"
+        }
+      },
+      "issues": [],
+      "recommendations": []
+    },
+    "/blog": {
+      "name": "Blog",
+      "overallGrade": "good",
+      "vitals": {
+        "lcp": {
+          "value": 2329.1461399248506,
+          "grade": "good"
+        },
+        "fid": {
+          "value": 79.83427805380498,
+          "grade": "good"
+        },
+        "cls": {
+          "value": 0.05559536163720253,
+          "grade": "good"
+        }
+      },
+      "issues": [],
+      "recommendations": []
+    },
+    "/contact": {
+      "name": "Contact",
+      "overallGrade": "good",
+      "vitals": {
+        "lcp": {
+          "value": 1716.7573356242187,
+          "grade": "good"
+        },
+        "fid": {
+          "value": 36.801803809158805,
+          "grade": "good"
+        },
+        "cls": {
+          "value": 0.03727928043538726,
+          "grade": "good"
+        }
+      },
+      "issues": [],
+      "recommendations": []
+    }
+  }
+}

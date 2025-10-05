@@ -1,0 +1,147 @@
+version: 1
+frontend:
+  phases:
+    preBuild:
+      commands:
+        # Install dependencies with npm ci for faster, reliable builds
+        - npm ci
+        # Optimize build configuration
+        - npm run build:optimize
+        # Validate environment variables
+        - npm run env:validate
+        # Validate content structure and integrity
+        - npm run content:validate-structure
+        - npm run content:validate
+        # Type check the project
+        - npm run type-check
+        # Configure and run deployment pipeline integration
+        - node scripts/deployment-pipeline-integration.js configure
+        - node scripts/deployment-pipeline-integration.js run
+        # Set build environment variables
+        - export NEXT_PUBLIC_SITE_URL=$AMPLIFY_APP_URL
+        - export NODE_ENV=production
+    build:
+      commands:
+        # Build the Next.js application with static export
+        - npm run build
+        # Run tests to ensure build quality
+        - npm run test
+    postBuild:
+      commands:
+        # Optimize caching and CDN configuration
+        - npm run cache:optimize
+        # Invalidate CDN cache for new deployment
+        - npm run cache:invalidate deployment
+        # Monitor deployment and generate reports
+        - npm run deploy:monitor
+        # Generate sitemap and optimize assets
+        - echo "Build completed successfully"
+        # List output files for verification
+        - ls -la out/
+  artifacts:
+    baseDirectory: out
+    files:
+      - "**/*"
+  cache:
+    paths:
+      - node_modules/**/*
+      - .next/cache/**/*
+      - ~/.npm/**/*
+  environment:
+    variables:
+      # Build optimization
+      NODE_OPTIONS: "--max-old-space-size=4096"
+      NEXT_TELEMETRY_DISABLED: "1"
+      # Performance settings
+      ANALYZE: "false"
+# Custom headers for security, performance, and caching
+customHeaders:
+  # Security headers for all files
+  - pattern: "**/*"
+    headers:
+      - key: "Strict-Transport-Security"
+        value: "max-age=31536000; includeSubDomains; preload"
+      - key: "X-Frame-Options"
+        value: "DENY"
+      - key: "X-Content-Type-Options"
+        value: "nosniff"
+      - key: "X-XSS-Protection"
+        value: "1; mode=block"
+      - key: "Referrer-Policy"
+        value: "strict-origin-when-cross-origin"
+      - key: "Permissions-Policy"
+        value: "camera=(), microphone=(), geolocation=()"
+      - key: "Content-Security-Policy"
+        value: "default-src 'self'; script-src 'self' 'unsafe-inline' 'unsafe-eval' https://www.googletagmanager.com https://www.google-analytics.com; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' data: https:; connect-src 'self' https://www.google-analytics.com; frame-ancestors 'none';"
+
+  # Long-term caching for static assets
+  - pattern: "**/*.{js,css,png,jpg,jpeg,gif,ico,svg,woff,woff2,ttf,eot,webp,avif}"
+    headers:
+      - key: "Cache-Control"
+        value: "public, max-age=31536000, immutable"
+      - key: "Vary"
+        value: "Accept-Encoding"
+
+  # Medium-term caching for HTML files
+  - pattern: "**/*.html"
+    headers:
+      - key: "Cache-Control"
+        value: "public, max-age=3600, must-revalidate"
+      - key: "Vary"
+        value: "Accept-Encoding"
+
+  # Special caching for service worker and manifest
+  - pattern: "/sw.js"
+    headers:
+      - key: "Cache-Control"
+        value: "no-cache, no-store, must-revalidate"
+
+  - pattern: "/manifest.json"
+    headers:
+      - key: "Cache-Control"
+        value: "public, max-age=86400"
+
+  # API routes caching
+  - pattern: "/api/**"
+    headers:
+      - key: "Cache-Control"
+        value: "no-cache, no-store, must-revalidate"
+      - key: "Pragma"
+        value: "no-cache"
+      - key: "Expires"
+        value: "0"
+
+# Redirects and rewrites for proper routing
+redirects:
+  # Redirect old blog URLs to new structure
+  - source: "/blog.html"
+    target: "/blog/"
+    status: "301"
+
+  # Redirect old service URLs
+  - source: "/services.html"
+    target: "/services/"
+    status: "301"
+
+  # Redirect contact variations
+  - source: "/contact.html"
+    target: "/contact/"
+    status: "301"
+
+  # Redirect www to non-www (if applicable)
+  - source: "https://www.<+>"
+    target: "https://<>"
+    status: "301"
+    condition: "<> != 'www'"
+
+  # Redirect HTTP to HTTPS
+  - source: "http://<*>"
+    target: "https://<>"
+    status: "301"
+
+# URL rewrites for clean URLs and SPA behavior
+rewrites:
+  # Handle trailing slashes consistently
+  - source: "/<*>"
+    target: "/index.html"
+    condition: "<> != 'api'"
