@@ -1,0 +1,43 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Import mobile-first design tokens and utilities */
+@import '../styles/mobile-first.css';
+
+/* Mobile-first base styles */
+@layer base {
+  html {
+    font-size: 16px;
+    scroll-behavior: smooth;
+  }
+
+  body {
+    @apply text-gray-900 bg-white;
+    font-feature-settings:
+      'rlig' 1,
+      'calt' 1;
+  }
+
+  /* Touch-friendly button styles */
+  button,
+  [role='button'] {
+    min-height: 44px;
+    min-width: 44px;
+  }
+}
+
+@layer components {
+  /* Mobile-first component styles will be added here */
+}
+
+@layer utilities {
+  /* Custom utility classes for mobile optimization */
+  .touch-target {
+    @apply min-h-[44px] min-w-[44px];
+  }
+
+  .mobile-container {
+    @apply px-4 mx-auto max-w-sm sm:max-w-md md:max-w-lg lg:max-w-4xl xl:max-w-6xl;
+  }
+}

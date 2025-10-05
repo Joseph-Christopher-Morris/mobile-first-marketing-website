@@ -1,0 +1,30 @@
+{
+  "enabled": true,
+  "thresholds": {
+    "lcp": 2500,
+    "fid": 100,
+    "cls": 0.1,
+    "fcp": 1800,
+    "ttfb": 600
+  },
+  "reportingEndpoint": "/api/vitals",
+  "reportingInterval": 60000,
+  "pages": [
+    {
+      "path": "/",
+      "name": "Homepage"
+    },
+    {
+      "path": "/services",
+      "name": "Services"
+    },
+    {
+      "path": "/blog",
+      "name": "Blog"
+    },
+    {
+      "path": "/contact",
+      "name": "Contact"
+    }
+  ]
+}
