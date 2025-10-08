@@ -10,7 +10,7 @@ I’m a digital marketer and photographer helping small businesses grow through 
 
 ## My Journey
 
-I started with photography — capturing classic cars, auctions, and events — and built a thriving business from scratch. Along the way, I discovered the power of **analytics and marketing technology**. Now I combine creative storytelling with tools like **Adobe Analytics**, **Meta Ads**, and **Google Ads** to help brands stand out and reach the right audience.
+I began with photography, capturing classic cars, auctions, and events, and built a thriving business from scratch. Along the way, I discovered the power of **analytics and marketing technology**. Now, I combine creative storytelling with tools like **Adobe Analytics**, **Meta Ads**, and **Google Ads** to help brands stand out and reach their target audience.
 
 ## What I Do
 
@@ -22,7 +22,7 @@ I started with photography — capturing classic cars, auctions, and events — 
 
 - **Creative & Data-Driven** — Eye-catching content backed by analytics  
 - **Results-Focused** — Measurable improvements and ROI  
-- **Client-Centered** — Collaborative and tailored to your goals  
+- **Client-Centred** — Collaborative and tailored to your goals  
 
 ---
 
