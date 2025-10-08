@@ -1,37 +1,29 @@
 ---
-title: 'About Us'
-seoTitle: 'About Our Marketing Agency | Professional Services'
-metaDescription:
-  'Learn about our marketing agency specializing in photography, analytics, and
-  advertising campaigns. Dedicated to helping businesses grow through strategic
-  marketing.'
+title: 'About Me'
+seoTitle: 'About Me | Digital Marketing & Photography Expert'
+metaDescription: 'Learn about my journey from professional photography to data-driven digital marketing, with expertise in Adobe Experience Cloud and Google Marketing Platform.'
 ---
 
-# About Our Company
+# About Me
 
-We are a full-service marketing agency dedicated to helping businesses grow
-through strategic photography, data analytics, and targeted advertising
-campaigns. With years of experience and a passion for results, we've helped
-hundreds of clients achieve their marketing goals.
+I’m a digital marketer and photographer helping small businesses grow through smart strategy, creative visuals, and data-led decisions. My work has been featured in **Business Insider** and the **Daily Mail**, and I’m certified in **Adobe Experience Cloud** and **Google Marketing Platform**.
 
-## Our Mission
+## My Journey
 
-To empower businesses with the tools, insights, and creative services they need
-to succeed in today's competitive marketplace.
+I started with photography — capturing classic cars, auctions, and events — and built a thriving business from scratch. Along the way, I discovered the power of **analytics and marketing technology**. Now I combine creative storytelling with tools like **Adobe Analytics**, **Meta Ads**, and **Google Ads** to help brands stand out and reach the right audience.
 
-## Our Team
+## What I Do
 
-Our diverse team of photographers, data analysts, and marketing strategists
-brings together decades of combined experience across various industries.
+- **Photography** — Professional visuals that connect with your audience  
+- **Data Analytics** — Turn insights into clear actions and growth  
+- **Ad Campaigns** — Strategy and optimisation across Meta & Google Ads  
 
-## Why Choose Us
+## Why Work With Me
 
-- **Results-Driven**: Every strategy is designed to deliver measurable results
-- **Full-Service**: Complete marketing solutions under one roof
-- **Client-Focused**: Your success is our success
-- **Innovation**: We stay ahead of industry trends and technologies
+- **Creative & Data-Driven** — Eye-catching content backed by analytics  
+- **Results-Focused** — Measurable improvements and ROI  
+- **Client-Centered** — Collaborative and tailored to your goals  
 
-## Get in Touch
+---
 
-Ready to take your marketing to the next level? [Contact us today](/contact) to
-discuss your needs.
+💬 Ready to take your marketing further? [Contact me](/contact) to discuss your project.
