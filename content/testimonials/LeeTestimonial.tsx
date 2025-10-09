@@ -17,7 +17,7 @@ const LeeTestimonial: React.FC = () => {
       {/* Testimonial Content */}
       <div className="testimonial-content">
         <blockquote className="testimonial-text">
-          "A huge thank you! Joe Morris is an aspiring young photographer from Cheshire who has been providing us with amazing images of our cars for over 18 months!"
+          "A huge thank you! Joe Morris is a fantastic photographer from Cheshire who has been providing us with amazing images of our cars for over 18 months at LSH Auto UK!"
         </blockquote>
 
         {/* Author Info */}
