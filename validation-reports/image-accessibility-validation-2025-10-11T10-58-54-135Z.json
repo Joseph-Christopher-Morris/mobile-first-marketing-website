@@ -1,0 +1,819 @@
+{
+  "metadata": {
+    "timestamp": "2025-10-11T10-58-54-135Z",
+    "cloudfrontDomain": "d15sc9fc739ev2.cloudfront.net",
+    "s3BucketName": "mobile-marketing-site-prod-1759705011281-tyzuo9",
+    "testConfiguration": {
+      "cloudfrontDomain": "d15sc9fc739ev2.cloudfront.net",
+      "s3BucketName": "mobile-marketing-site-prod-1759705011281-tyzuo9",
+      "timeout": 10000,
+      "maxRetries": 3,
+      "outputDir": "validation-reports"
+    },
+    "summary": {
+      "totalImages": 22,
+      "successful": 22,
+      "failed": 0,
+      "warnings": 22,
+      "categories": {
+        "homepage-service-cards": {
+          "total": 3,
+          "successful": 3,
+          "failed": 0
+        },
+        "blog-previews": {
+          "total": 3,
+          "successful": 3,
+          "failed": 0
+        },
+        "service-heroes": {
+          "total": 3,
+          "successful": 3,
+          "failed": 0
+        },
+        "portfolio-photography": {
+          "total": 6,
+          "successful": 6,
+          "failed": 0
+        },
+        "portfolio-analytics": {
+          "total": 3,
+          "successful": 3,
+          "failed": 0
+        },
+        "portfolio-adCampaigns": {
+          "total": 3,
+          "successful": 3,
+          "failed": 0
+        },
+        "about-hero": {
+          "total": 1,
+          "successful": 1,
+          "failed": 0
+        }
+      },
+      "startTime": "2025-10-11T10:58:54.158Z",
+      "endTime": "2025-10-11T10:59:01.831Z",
+      "duration": 7673,
+      "securityTest": {
+        "url": "https://mobile-marketing-site-prod-1759705011281-tyzuo9.s3.amazonaws.com/images/services/photography-hero.webp",
+        "statusCode": 403,
+        "accessible": false,
+        "secure": true,
+        "warning": null
+      }
+    }
+  },
+  "results": [
+    {
+      "imagePath": "/images/services/photography-hero.webp",
+      "category": "homepage-service-cards",
+      "requirement": "1.1",
+      "url": "https://d15sc9fc739ev2.cloudfront.net/images/services/photography-hero.webp",
+      "timestamp": "2025-10-11T10:58:54.159Z",
+      "attempt": 1,
+      "success": true,
+      "statusCode": 200,
+      "responseTime": 497,
+      "contentType": "image/webp",
+      "contentLength": 57180,
+      "cacheStatus": "Miss from cloudfront",
+      "errors": [],
+      "warnings": [
+        "Missing Cache-Control header"
+      ],
+      "details": {
+        "headers": {
+          "content-type": "image/webp",
+          "content-length": "57180",
+          "etag": "\"9fb60f4a63686b017ad51be81fe18432\"",
+          "last-modified": "Mon, 06 Oct 2025 08:09:05 GMT",
+          "x-cache": "Miss from cloudfront",
+          "x-amz-cf-pop": "MAN51-P6",
+          "x-amz-cf-id": "GTWKFLIFzae-5phRfXOARQMhojourmNosqRjhWok4BQ-6eiDOeCUcg=="
+        },
+        "fileSizeBytes": 57180,
+        "fileSizeKB": 55.84,
+        "cacheHit": false
+      }
+    },
+    {
+      "imagePath": "/images/services/analytics-hero.webp",
+      "category": "homepage-service-cards",
+      "requirement": "1.1",
+      "url": "https://d15sc9fc739ev2.cloudfront.net/images/services/analytics-hero.webp",
+      "timestamp": "2025-10-11T10:58:54.808Z",
+      "attempt": 1,
+      "success": true,
+      "statusCode": 200,
+      "responseTime": 312,
+      "contentType": "image/webp",
+      "contentLength": 23692,
+      "cacheStatus": "Miss from cloudfront",
+      "errors": [],
+      "warnings": [
+        "Missing Cache-Control header"
+      ],
+      "details": {
+        "headers": {
+          "content-type": "image/webp",
+          "content-length": "23692",
+          "etag": "\"22189f8ddf74516911a294da9d05347d\"",
+          "last-modified": "Tue, 07 Oct 2025 18:24:23 GMT",
+          "x-cache": "Miss from cloudfront",
+          "x-amz-cf-pop": "MAN51-P6",
+          "x-amz-cf-id": "U1HqFUvlKrOa4Qzza7Ytaycoab_Ij__O3He34fjoQEYUI1VLKS56_w=="
+        },
+        "fileSizeBytes": 23692,
+        "fileSizeKB": 23.14,
+        "cacheHit": false
+      }
+    },
+    {
+      "imagePath": "/images/services/ad-campaigns-hero.webp",
+      "category": "homepage-service-cards",
+      "requirement": "1.1",
+      "url": "https://d15sc9fc739ev2.cloudfront.net/images/services/ad-campaigns-hero.webp",
+      "timestamp": "2025-10-11T10:58:55.125Z",
+      "attempt": 1,
+      "success": true,
+      "statusCode": 200,
+      "responseTime": 303,
+      "contentType": "image/webp",
+      "contentLength": 23692,
+      "cacheStatus": "Miss from cloudfront",
+      "errors": [],
+      "warnings": [
+        "Missing Cache-Control header"
+      ],
+      "details": {
+        "headers": {
+          "content-type": "image/webp",
+          "content-length": "23692",
+          "etag": "\"22189f8ddf74516911a294da9d05347d\"",
+          "last-modified": "Mon, 06 Oct 2025 08:09:04 GMT",
+          "x-cache": "Miss from cloudfront",
+          "x-amz-cf-pop": "MAN51-P6",
+          "x-amz-cf-id": "SoZfFqq-yDD53-09QTaSrQdJ7xORwikoW2sHqVBJlDE5gHHttmMjbQ=="
+        },
+        "fileSizeBytes": 23692,
+        "fileSizeKB": 23.14,
+        "cacheHit": false
+      }
+    },
+    {
+      "imagePath": "/images/hero/google-ads-analytics-dashboard.webp",
+      "category": "blog-previews",
+      "requirement": "1.2",
+      "url": "https://d15sc9fc739ev2.cloudfront.net/images/hero/google-ads-analytics-dashboard.webp",
+      "timestamp": "2025-10-11T10:58:55.434Z",
+      "attempt": 1,
+      "success": true,
+      "statusCode": 200,
+      "responseTime": 28,
+      "contentType": "image/webp",
+      "contentLength": 23692,
+      "cacheStatus": "Hit from cloudfront",
+      "errors": [],
+      "warnings": [
+        "Missing Cache-Control header"
+      ],
+      "details": {
+        "headers": {
+          "content-type": "image/webp",
+          "content-length": "23692",
+          "etag": "\"22189f8ddf74516911a294da9d05347d\"",
+          "last-modified": "Tue, 07 Oct 2025 17:14:41 GMT",
+          "x-cache": "Hit from cloudfront",
+          "x-amz-cf-pop": "MAN51-P6",
+          "x-amz-cf-id": "bsc8QLCurDxiQW5ixccCjoOZM9IDTCZIoHjTVEbH1agsBpX2jLnzHg=="
+        },
+        "fileSizeBytes": 23692,
+        "fileSizeKB": 23.14,
+        "cacheHit": true
+      }
+    },
+    {
+      "imagePath": "/images/hero/whatsapp-image-2025-07-11-flyers-roi.webp",
+      "category": "blog-previews",
+      "requirement": "1.2",
+      "url": "https://d15sc9fc739ev2.cloudfront.net/images/hero/whatsapp-image-2025-07-11-flyers-roi.webp",
+      "timestamp": "2025-10-11T10:58:55.467Z",
+      "attempt": 1,
+      "success": true,
+      "statusCode": 200,
+      "responseTime": 23,
+      "contentType": "image/webp",
+      "contentLength": 49522,
+      "cacheStatus": "Hit from cloudfront",
+      "errors": [],
+      "warnings": [
+        "Missing Cache-Control header"
+      ],
+      "details": {
+        "headers": {
+          "content-type": "image/webp",
+          "content-length": "49522",
+          "etag": "\"40d5decfc60560f46a08efa9349dd4a2\"",
+          "last-modified": "Fri, 10 Oct 2025 21:49:00 GMT",
+          "x-cache": "Hit from cloudfront",
+          "x-amz-cf-pop": "MAN51-P6",
+          "x-amz-cf-id": "gf16wqnyaVXOsx82_NTjAy4JIUORFsVckeQM6LsfYlCh1VCjISkusQ=="
+        },
+        "fileSizeBytes": 49522,
+        "fileSizeKB": 48.36,
+        "cacheHit": true
+      }
+    },
+    {
+      "imagePath": "/images/hero/240619-london-19.webp",
+      "category": "blog-previews",
+      "requirement": "1.2",
+      "url": "https://d15sc9fc739ev2.cloudfront.net/images/hero/240619-london-19.webp",
+      "timestamp": "2025-10-11T10:58:55.496Z",
+      "attempt": 1,
+      "success": true,
+      "statusCode": 200,
+      "responseTime": 369,
+      "contentType": "image/webp",
+      "contentLength": 42274,
+      "cacheStatus": "Miss from cloudfront",
+      "errors": [],
+      "warnings": [
+        "Missing Cache-Control header"
+      ],
+      "details": {
+        "headers": {
+          "content-type": "image/webp",
+          "content-length": "42274",
+          "etag": "\"7f7a4c9fe23ce8d8c3cf564826981a82\"",
+          "last-modified": "Fri, 10 Oct 2025 21:48:59 GMT",
+          "x-cache": "Miss from cloudfront",
+          "x-amz-cf-pop": "MAN51-P6",
+          "x-amz-cf-id": "gcccJKiU98RiK_LsyNdiU7j2ZDzYt6nwo-Sw5CyxjJ6xfnQChVB_IQ=="
+        },
+        "fileSizeBytes": 42274,
+        "fileSizeKB": 41.28,
+        "cacheHit": false
+      }
+    },
+    {
+      "imagePath": "/images/services/250928-hampson-auctions-sunday-11.webp",
+      "category": "service-heroes",
+      "requirement": "2.1, 2.3, 2.5",
+      "url": "https://d15sc9fc739ev2.cloudfront.net/images/services/250928-hampson-auctions-sunday-11.webp",
+      "timestamp": "2025-10-11T10:58:55.869Z",
+      "attempt": 1,
+      "success": true,
+      "statusCode": 200,
+      "responseTime": 399,
+      "contentType": "image/webp",
+      "contentLength": 50868,
+      "cacheStatus": "Miss from cloudfront",
+      "errors": [],
+      "warnings": [
+        "Missing Cache-Control header"
+      ],
+      "details": {
+        "headers": {
+          "content-type": "image/webp",
+          "content-length": "50868",
+          "etag": "\"548de8d3c18af046737d5f29fbcca83f\"",
+          "last-modified": "Fri, 10 Oct 2025 21:49:01 GMT",
+          "x-cache": "Miss from cloudfront",
+          "x-amz-cf-pop": "MAN51-P6",
+          "x-amz-cf-id": "E--K9N_Wf7Af_XCtx9JFRk4Jge_RyvpwiaYnuWJAGgy17q8vAZIcZw=="
+        },
+        "fileSizeBytes": 50868,
+        "fileSizeKB": 49.68,
+        "cacheHit": false
+      }
+    },
+    {
+      "imagePath": "/images/services/screenshot-2025-09-23-analytics-dashboard.webp",
+      "category": "service-heroes",
+      "requirement": "2.1, 2.3, 2.5",
+      "url": "https://d15sc9fc739ev2.cloudfront.net/images/services/screenshot-2025-09-23-analytics-dashboard.webp",
+      "timestamp": "2025-10-11T10:58:56.271Z",
+      "attempt": 1,
+      "success": true,
+      "statusCode": 200,
+      "responseTime": 402,
+      "contentType": "image/webp",
+      "contentLength": 38464,
+      "cacheStatus": "Miss from cloudfront",
+      "errors": [],
+      "warnings": [
+        "Missing Cache-Control header"
+      ],
+      "details": {
+        "headers": {
+          "content-type": "image/webp",
+          "content-length": "38464",
+          "etag": "\"71372050d23b4599ad88b73aaf2a3853\"",
+          "last-modified": "Fri, 10 Oct 2025 21:49:02 GMT",
+          "x-cache": "Miss from cloudfront",
+          "x-amz-cf-pop": "MAN51-P6",
+          "x-amz-cf-id": "HAUuiopgz8-kkC_K16UEcl-wx-OrRmO_bzaJ56d1KFxU8CT-o8nAMw=="
+        },
+        "fileSizeBytes": 38464,
+        "fileSizeKB": 37.56,
+        "cacheHit": false
+      }
+    },
+    {
+      "imagePath": "/images/services/ad-campaigns-hero.webp",
+      "category": "service-heroes",
+      "requirement": "2.1, 2.3, 2.5",
+      "url": "https://d15sc9fc739ev2.cloudfront.net/images/services/ad-campaigns-hero.webp",
+      "timestamp": "2025-10-11T10:58:56.676Z",
+      "attempt": 1,
+      "success": true,
+      "statusCode": 200,
+      "responseTime": 38,
+      "contentType": "image/webp",
+      "contentLength": 23692,
+      "cacheStatus": "Hit from cloudfront",
+      "errors": [],
+      "warnings": [
+        "Missing Cache-Control header"
+      ],
+      "details": {
+        "headers": {
+          "content-type": "image/webp",
+          "content-length": "23692",
+          "etag": "\"22189f8ddf74516911a294da9d05347d\"",
+          "last-modified": "Mon, 06 Oct 2025 08:09:04 GMT",
+          "x-cache": "Hit from cloudfront",
+          "x-amz-cf-pop": "MAN51-P6",
+          "x-amz-cf-id": "wagzyLbThu-rSLBLFAg07D-TLhhRFAelOI-hIK4WtUtCHl2miEFhcQ=="
+        },
+        "fileSizeBytes": 23692,
+        "fileSizeKB": 23.14,
+        "cacheHit": true
+      }
+    },
+    {
+      "imagePath": "/images/services/240217-australia-trip-232.webp",
+      "category": "portfolio-photography",
+      "requirement": "2.2",
+      "url": "https://d15sc9fc739ev2.cloudfront.net/images/services/240217-australia-trip-232.webp",
+      "timestamp": "2025-10-11T10:58:56.719Z",
+      "attempt": 1,
+      "success": true,
+      "statusCode": 200,
+      "responseTime": 466,
+      "contentType": "image/webp",
+      "contentLength": 48688,
+      "cacheStatus": "Miss from cloudfront",
+      "errors": [],
+      "warnings": [
+        "Missing Cache-Control header"
+      ],
+      "details": {
+        "headers": {
+          "content-type": "image/webp",
+          "content-length": "48688",
+          "etag": "\"0c8a80248cf8a9db691bd7df5713782f\"",
+          "last-modified": "Fri, 10 Oct 2025 21:49:00 GMT",
+          "x-cache": "Miss from cloudfront",
+          "x-amz-cf-pop": "MAN51-P6",
+          "x-amz-cf-id": "keMVSWXp428wFl4gW8z6BhARQDmYKu9WcMqoFndOAmCAjkOTdto2GA=="
+        },
+        "fileSizeBytes": 48688,
+        "fileSizeKB": 47.55,
+        "cacheHit": false
+      }
+    },
+    {
+      "imagePath": "/images/services/240219-australia-trip-148.webp",
+      "category": "portfolio-photography",
+      "requirement": "2.2",
+      "url": "https://d15sc9fc739ev2.cloudfront.net/images/services/240219-australia-trip-148.webp",
+      "timestamp": "2025-10-11T10:58:57.189Z",
+      "attempt": 1,
+      "success": true,
+      "statusCode": 200,
+      "responseTime": 465,
+      "contentType": "image/webp",
+      "contentLength": 68510,
+      "cacheStatus": "Miss from cloudfront",
+      "errors": [],
+      "warnings": [
+        "Missing Cache-Control header"
+      ],
+      "details": {
+        "headers": {
+          "content-type": "image/webp",
+          "content-length": "68510",
+          "etag": "\"a2b608ee872f2e9bf730ef35294d09c7\"",
+          "last-modified": "Fri, 10 Oct 2025 21:49:00 GMT",
+          "x-cache": "Miss from cloudfront",
+          "x-amz-cf-pop": "MAN51-P6",
+          "x-amz-cf-id": "HLLS6YKgzXBsF7kj20nuVZuC2pbli_pqNMxpjo-OUWTi388eSLysbw=="
+        },
+        "fileSizeBytes": 68510,
+        "fileSizeKB": 66.9,
+        "cacheHit": false
+      }
+    },
+    {
+      "imagePath": "/images/services/240619-london-19.webp",
+      "category": "portfolio-photography",
+      "requirement": "2.2",
+      "url": "https://d15sc9fc739ev2.cloudfront.net/images/services/240619-london-19.webp",
+      "timestamp": "2025-10-11T10:58:57.658Z",
+      "attempt": 1,
+      "success": true,
+      "statusCode": 200,
+      "responseTime": 361,
+      "contentType": "image/webp",
+      "contentLength": 42274,
+      "cacheStatus": "Miss from cloudfront",
+      "errors": [],
+      "warnings": [
+        "Missing Cache-Control header"
+      ],
+      "details": {
+        "headers": {
+          "content-type": "image/webp",
+          "content-length": "42274",
+          "etag": "\"7f7a4c9fe23ce8d8c3cf564826981a82\"",
+          "last-modified": "Fri, 10 Oct 2025 21:49:01 GMT",
+          "x-cache": "Miss from cloudfront",
+          "x-amz-cf-pop": "MAN51-P6",
+          "x-amz-cf-id": "OcYvHjDzKzAjspVnxcKtavyBhu2jjzEpHmX8m4Nw0Yb6CeZIgXSPCQ=="
+        },
+        "fileSizeBytes": 42274,
+        "fileSizeKB": 41.28,
+        "cacheHit": false
+      }
+    },
+    {
+      "imagePath": "/images/services/240619-london-26.webp",
+      "category": "portfolio-photography",
+      "requirement": "2.2",
+      "url": "https://d15sc9fc739ev2.cloudfront.net/images/services/240619-london-26.webp",
+      "timestamp": "2025-10-11T10:58:58.023Z",
+      "attempt": 1,
+      "success": true,
+      "statusCode": 200,
+      "responseTime": 364,
+      "contentType": "image/webp",
+      "contentLength": 46984,
+      "cacheStatus": "Miss from cloudfront",
+      "errors": [],
+      "warnings": [
+        "Missing Cache-Control header"
+      ],
+      "details": {
+        "headers": {
+          "content-type": "image/webp",
+          "content-length": "46984",
+          "etag": "\"fda3ba404d2df050aee5235c3581681d\"",
+          "last-modified": "Fri, 10 Oct 2025 21:49:01 GMT",
+          "x-cache": "Miss from cloudfront",
+          "x-amz-cf-pop": "MAN51-P6",
+          "x-amz-cf-id": "vsrpwg6UdBIWtpXf5M0GwTJjKN4qKPpc-C4LRt85mx7CWJOfS4HmJQ=="
+        },
+        "fileSizeBytes": 46984,
+        "fileSizeKB": 45.88,
+        "cacheHit": false
+      }
+    },
+    {
+      "imagePath": "/images/services/240619-london-64.webp",
+      "category": "portfolio-photography",
+      "requirement": "2.2",
+      "url": "https://d15sc9fc739ev2.cloudfront.net/images/services/240619-london-64.webp",
+      "timestamp": "2025-10-11T10:58:58.391Z",
+      "attempt": 1,
+      "success": true,
+      "statusCode": 200,
+      "responseTime": 362,
+      "contentType": "image/webp",
+      "contentLength": 49972,
+      "cacheStatus": "Miss from cloudfront",
+      "errors": [],
+      "warnings": [
+        "Missing Cache-Control header"
+      ],
+      "details": {
+        "headers": {
+          "content-type": "image/webp",
+          "content-length": "49972",
+          "etag": "\"ba39627c4f32fe78e67aaafe8d2fe352\"",
+          "last-modified": "Fri, 10 Oct 2025 21:49:01 GMT",
+          "x-cache": "Miss from cloudfront",
+          "x-amz-cf-pop": "MAN51-P6",
+          "x-amz-cf-id": "TT306EcWDJxwsB2WxYEeGGBd54G3ssdv-rikY5CK1cp0d8jiHquCwA=="
+        },
+        "fileSizeBytes": 49972,
+        "fileSizeKB": 48.8,
+        "cacheHit": false
+      }
+    },
+    {
+      "imagePath": "/images/services/250125-liverpool-40.webp",
+      "category": "portfolio-photography",
+      "requirement": "2.2",
+      "url": "https://d15sc9fc739ev2.cloudfront.net/images/services/250125-liverpool-40.webp",
+      "timestamp": "2025-10-11T10:58:58.757Z",
+      "attempt": 1,
+      "success": true,
+      "statusCode": 200,
+      "responseTime": 387,
+      "contentType": "image/webp",
+      "contentLength": 50126,
+      "cacheStatus": "Miss from cloudfront",
+      "errors": [],
+      "warnings": [
+        "Missing Cache-Control header"
+      ],
+      "details": {
+        "headers": {
+          "content-type": "image/webp",
+          "content-length": "50126",
+          "etag": "\"f40a0fde9991d1e2baaeeb115700f381\"",
+          "last-modified": "Fri, 10 Oct 2025 21:49:01 GMT",
+          "x-cache": "Miss from cloudfront",
+          "x-amz-cf-pop": "MAN51-P6",
+          "x-amz-cf-id": "1ftCbFTpgLP777CRam3u6_C_8yKeBmM5S8zmCxNJUZX3H_m9taUjHg=="
+        },
+        "fileSizeBytes": 50126,
+        "fileSizeKB": 48.95,
+        "cacheHit": false
+      }
+    },
+    {
+      "imagePath": "/images/services/screenshot-2025-08-12-analytics-report.webp",
+      "category": "portfolio-analytics",
+      "requirement": "2.4",
+      "url": "https://d15sc9fc739ev2.cloudfront.net/images/services/screenshot-2025-08-12-analytics-report.webp",
+      "timestamp": "2025-10-11T10:58:59.148Z",
+      "attempt": 1,
+      "success": true,
+      "statusCode": 200,
+      "responseTime": 424,
+      "contentType": "image/webp",
+      "contentLength": 46204,
+      "cacheStatus": "Miss from cloudfront",
+      "errors": [],
+      "warnings": [
+        "Missing Cache-Control header"
+      ],
+      "details": {
+        "headers": {
+          "content-type": "image/webp",
+          "content-length": "46204",
+          "etag": "\"f81022116baa8cca56e45f9ded48cc7f\"",
+          "last-modified": "Fri, 10 Oct 2025 21:49:02 GMT",
+          "x-cache": "Miss from cloudfront",
+          "x-amz-cf-pop": "MAN51-P6",
+          "x-amz-cf-id": "KKFC3Nsb6NtEphNWOT3wb1PZo8qeWCtAw32g45c5733CcFgO3qNkhg=="
+        },
+        "fileSizeBytes": 46204,
+        "fileSizeKB": 45.12,
+        "cacheHit": false
+      }
+    },
+    {
+      "imagePath": "/images/hero/stock-photography-samira.webp",
+      "category": "portfolio-analytics",
+      "requirement": "2.4",
+      "url": "https://d15sc9fc739ev2.cloudfront.net/images/hero/stock-photography-samira.webp",
+      "timestamp": "2025-10-11T10:58:59.577Z",
+      "attempt": 1,
+      "success": true,
+      "statusCode": 200,
+      "responseTime": 361,
+      "contentType": "image/webp",
+      "contentLength": 26170,
+      "cacheStatus": "Miss from cloudfront",
+      "errors": [],
+      "warnings": [
+        "Missing Cache-Control header"
+      ],
+      "details": {
+        "headers": {
+          "content-type": "image/webp",
+          "content-length": "26170",
+          "etag": "\"4b81c3f01c725ec0b8804fbb55afa056\"",
+          "last-modified": "Fri, 10 Oct 2025 21:49:00 GMT",
+          "x-cache": "Miss from cloudfront",
+          "x-amz-cf-pop": "MAN51-P6",
+          "x-amz-cf-id": "ZIk4KEc6qf0wxbIfbWhC0R_QZYPZF_su2076-0tsblVgONO7f0-xbg=="
+        },
+        "fileSizeBytes": 26170,
+        "fileSizeKB": 25.56,
+        "cacheHit": false
+      }
+    },
+    {
+      "imagePath": "/images/services/output-5-analytics-chart.webp",
+      "category": "portfolio-analytics",
+      "requirement": "2.4",
+      "url": "https://d15sc9fc739ev2.cloudfront.net/images/services/output-5-analytics-chart.webp",
+      "timestamp": "2025-10-11T10:58:59.941Z",
+      "attempt": 1,
+      "success": true,
+      "statusCode": 200,
+      "responseTime": 317,
+      "contentType": "image/webp",
+      "contentLength": 21610,
+      "cacheStatus": "Miss from cloudfront",
+      "errors": [],
+      "warnings": [
+        "Missing Cache-Control header"
+      ],
+      "details": {
+        "headers": {
+          "content-type": "image/webp",
+          "content-length": "21610",
+          "etag": "\"5f0df0010dfec4212341f72139f4c714\"",
+          "last-modified": "Fri, 10 Oct 2025 21:49:02 GMT",
+          "x-cache": "Miss from cloudfront",
+          "x-amz-cf-pop": "MAN51-P6",
+          "x-amz-cf-id": "PCdEikKK523Xof5XT77TdhbKr7bYiUu5ACYkILOdU82sbgAC8vUdkg=="
+        },
+        "fileSizeBytes": 21610,
+        "fileSizeKB": 21.1,
+        "cacheHit": false
+      }
+    },
+    {
+      "imagePath": "/images/services/accessible-top8-campaigns-source.webp",
+      "category": "portfolio-adCampaigns",
+      "requirement": "2.6",
+      "url": "https://d15sc9fc739ev2.cloudfront.net/images/services/accessible-top8-campaigns-source.webp",
+      "timestamp": "2025-10-11T10:59:00.261Z",
+      "attempt": 1,
+      "success": true,
+      "statusCode": 200,
+      "responseTime": 346,
+      "contentType": "image/webp",
+      "contentLength": 29688,
+      "cacheStatus": "Miss from cloudfront",
+      "errors": [],
+      "warnings": [
+        "Missing Cache-Control header"
+      ],
+      "details": {
+        "headers": {
+          "content-type": "image/webp",
+          "content-length": "29688",
+          "etag": "\"ed5af1a5252451d3a61fd5b640623c95\"",
+          "last-modified": "Fri, 10 Oct 2025 21:49:02 GMT",
+          "x-cache": "Miss from cloudfront",
+          "x-amz-cf-pop": "MAN51-P6",
+          "x-amz-cf-id": "i5ooLnY6eXSNfAiZWbSDnTtsPcS9uJJ186QQFz4svKO47_5qwkDIhA=="
+        },
+        "fileSizeBytes": 29688,
+        "fileSizeKB": 28.99,
+        "cacheHit": false
+      }
+    },
+    {
+      "imagePath": "/images/services/top-3-mediums-by-conversion-rate.webp",
+      "category": "portfolio-adCampaigns",
+      "requirement": "2.6",
+      "url": "https://d15sc9fc739ev2.cloudfront.net/images/services/top-3-mediums-by-conversion-rate.webp",
+      "timestamp": "2025-10-11T10:59:00.610Z",
+      "attempt": 1,
+      "success": true,
+      "statusCode": 200,
+      "responseTime": 368,
+      "contentType": "image/webp",
+      "contentLength": 18422,
+      "cacheStatus": "Miss from cloudfront",
+      "errors": [],
+      "warnings": [
+        "Missing Cache-Control header"
+      ],
+      "details": {
+        "headers": {
+          "content-type": "image/webp",
+          "content-length": "18422",
+          "etag": "\"5e7c66a4675134e9092ff08a696be86d\"",
+          "last-modified": "Fri, 10 Oct 2025 21:49:02 GMT",
+          "x-cache": "Miss from cloudfront",
+          "x-amz-cf-pop": "MAN51-P6",
+          "x-amz-cf-id": "NTGNmiPkWOf7jcBpPHlY5hjX6WwDRfvCcD5plw7E1Mdg5ii6t6k-UA=="
+        },
+        "fileSizeBytes": 18422,
+        "fileSizeKB": 17.99,
+        "cacheHit": false
+      }
+    },
+    {
+      "imagePath": "/images/services/screenshot-2025-08-12-analytics-report.webp",
+      "category": "portfolio-adCampaigns",
+      "requirement": "2.6",
+      "url": "https://d15sc9fc739ev2.cloudfront.net/images/services/screenshot-2025-08-12-analytics-report.webp",
+      "timestamp": "2025-10-11T10:59:00.981Z",
+      "attempt": 1,
+      "success": true,
+      "statusCode": 200,
+      "responseTime": 27,
+      "contentType": "image/webp",
+      "contentLength": 46204,
+      "cacheStatus": "Hit from cloudfront",
+      "errors": [],
+      "warnings": [
+        "Missing Cache-Control header"
+      ],
+      "details": {
+        "headers": {
+          "content-type": "image/webp",
+          "content-length": "46204",
+          "etag": "\"f81022116baa8cca56e45f9ded48cc7f\"",
+          "last-modified": "Fri, 10 Oct 2025 21:49:02 GMT",
+          "x-cache": "Hit from cloudfront",
+          "x-amz-cf-pop": "MAN51-P6",
+          "x-amz-cf-id": "nq9wvO82HxhMrnwT48OIWzJRmTnKbLLJqxZQ2dQ5kQ1EItmTy7FRTQ=="
+        },
+        "fileSizeBytes": 46204,
+        "fileSizeKB": 45.12,
+        "cacheHit": true
+      }
+    },
+    {
+      "imagePath": "/images/about/A7302858.webp",
+      "category": "about-hero",
+      "requirement": "3.1",
+      "url": "https://d15sc9fc739ev2.cloudfront.net/images/about/A7302858.webp",
+      "timestamp": "2025-10-11T10:59:01.012Z",
+      "attempt": 1,
+      "success": true,
+      "statusCode": 200,
+      "responseTime": 373,
+      "contentType": "image/webp",
+      "contentLength": 32354,
+      "cacheStatus": "Miss from cloudfront",
+      "errors": [],
+      "warnings": [
+        "Missing Cache-Control header"
+      ],
+      "details": {
+        "headers": {
+          "content-type": "image/webp",
+          "content-length": "32354",
+          "etag": "\"2099943e4607c4a8b1b1e9faf2085969\"",
+          "last-modified": "Wed, 08 Oct 2025 14:53:57 GMT",
+          "x-cache": "Miss from cloudfront",
+          "x-amz-cf-pop": "MAN51-P6",
+          "x-amz-cf-id": "-yBDdYEBU9EGHFlS_8ZC7UGeeweNMJoia9rFMWIob6Dz6JzYfm5xjA=="
+        },
+        "fileSizeBytes": 32354,
+        "fileSizeKB": 31.6,
+        "cacheHit": false
+      }
+    }
+  ],
+  "imageCategories": {
+    "homepage": {
+      "serviceCards": [
+        "/images/services/photography-hero.webp",
+        "/images/services/analytics-hero.webp",
+        "/images/services/ad-campaigns-hero.webp"
+      ]
+    },
+    "blog": {
+      "previews": [
+        "/images/hero/google-ads-analytics-dashboard.webp",
+        "/images/hero/whatsapp-image-2025-07-11-flyers-roi.webp",
+        "/images/hero/240619-london-19.webp"
+      ]
+    },
+    "services": {
+      "heroes": [
+        "/images/services/250928-hampson-auctions-sunday-11.webp",
+        "/images/services/screenshot-2025-09-23-analytics-dashboard.webp",
+        "/images/services/ad-campaigns-hero.webp"
+      ],
+      "portfolios": {
+        "photography": [
+          "/images/services/240217-australia-trip-232.webp",
+          "/images/services/240219-australia-trip-148.webp",
+          "/images/services/240619-london-19.webp",
+          "/images/services/240619-london-26.webp",
+          "/images/services/240619-london-64.webp",
+          "/images/services/250125-liverpool-40.webp"
+        ],
+        "analytics": [
+          "/images/services/screenshot-2025-08-12-analytics-report.webp",
+          "/images/hero/stock-photography-samira.webp",
+          "/images/services/output-5-analytics-chart.webp"
+        ],
+        "adCampaigns": [
+          "/images/services/accessible-top8-campaigns-source.webp",
+          "/images/services/top-3-mediums-by-conversion-rate.webp",
+          "/images/services/screenshot-2025-08-12-analytics-report.webp"
+        ]
+      }
+    },
+    "about": {
+      "hero": "/images/about/A7302858.webp"
+    }
+  }
+}

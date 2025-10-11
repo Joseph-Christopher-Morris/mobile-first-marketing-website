@@ -1,0 +1,140 @@
+{
+  "timestamp": "2025-10-05T22:05:42.500Z",
+  "validationResults": {},
+  "overallStatus": "FAIL",
+  "recommendations": [
+    {
+      "priority": "HIGH",
+      "category": "PFS Compliance",
+      "issue": "1 domains failed PFS validation",
+      "recommendation": "Review and update TLS configuration to support Perfect Forward Secrecy"
+    }
+  ],
+  "domainResults": {
+    "invalid-domain-that-does-not-exist.com": {
+      "status": "FAIL",
+      "securityLevel": "POOR",
+      "details": {
+        "timestamp": "2025-10-05T22:05:42.504Z",
+        "testResults": {
+          "ecdheSupport": {
+            "supportedCiphers": [],
+            "unsupportedCiphers": [
+              {
+                "cipher": "ECDHE-RSA-AES256-GCM-SHA384",
+                "error": "getaddrinfo ENOTFOUND invalid-domain-that-does-not-exist.com"
+              },
+              {
+                "cipher": "ECDHE-RSA-AES128-GCM-SHA256",
+                "error": "getaddrinfo ENOTFOUND invalid-domain-that-does-not-exist.com"
+              },
+              {
+                "cipher": "ECDHE-RSA-AES256-SHA384",
+                "error": "getaddrinfo ENOTFOUND invalid-domain-that-does-not-exist.com"
+              },
+              {
+                "cipher": "ECDHE-RSA-AES128-SHA256",
+                "error": "getaddrinfo ENOTFOUND invalid-domain-that-does-not-exist.com"
+              },
+              {
+                "cipher": "ECDHE-RSA-AES256-SHA",
+                "error": "getaddrinfo ENOTFOUND invalid-domain-that-does-not-exist.com"
+              },
+              {
+                "cipher": "ECDHE-RSA-AES128-SHA",
+                "error": "getaddrinfo ENOTFOUND invalid-domain-that-does-not-exist.com"
+              }
+            ],
+            "testPassed": false,
+            "details": {}
+          },
+          "dheSupport": {
+            "supportedCiphers": [],
+            "unsupportedCiphers": [
+              {
+                "cipher": "DHE-RSA-AES256-GCM-SHA384",
+                "error": "getaddrinfo ENOTFOUND invalid-domain-that-does-not-exist.com"
+              },
+              {
+                "cipher": "DHE-RSA-AES128-GCM-SHA256",
+                "error": "getaddrinfo ENOTFOUND invalid-domain-that-does-not-exist.com"
+              },
+              {
+                "cipher": "DHE-RSA-AES256-SHA256",
+                "error": "getaddrinfo ENOTFOUND invalid-domain-that-does-not-exist.com"
+              },
+              {
+                "cipher": "DHE-RSA-AES128-SHA256",
+                "error": "getaddrinfo ENOTFOUND invalid-domain-that-does-not-exist.com"
+              },
+              {
+                "cipher": "DHE-RSA-AES256-SHA",
+                "error": "getaddrinfo ENOTFOUND invalid-domain-that-does-not-exist.com"
+              },
+              {
+                "cipher": "DHE-RSA-AES128-SHA",
+                "error": "getaddrinfo ENOTFOUND invalid-domain-that-does-not-exist.com"
+              }
+            ],
+            "testPassed": false,
+            "details": {}
+          },
+          "ephemeralKeyGeneration": {
+            "connections": [],
+            "uniqueKeys": {},
+            "ephemeralKeySupport": false,
+            "testPassed": false
+          },
+          "pfsCompliance": {
+            "pfsEnabledConnections": 0,
+            "totalConnections": 0,
+            "nonPfsDetected": [],
+            "compliancePercentage": 0,
+            "testPassed": false
+          }
+        },
+        "summary": {
+          "totalTests": 4,
+          "passed": 0,
+          "failed": 4,
+          "warnings": 0
+        },
+        "pfsCompliance": {
+          "ecdheCipherSupport": false,
+          "dheCipherSupport": false,
+          "ephemeralKeyGeneration": false,
+          "overallCompliance": false
+        },
+        "recommendations": [
+          {
+            "priority": "HIGH",
+            "category": "Key Exchange",
+            "issue": "ECDHE cipher suites not supported",
+            "recommendation": "Enable ECDHE cipher suites in CloudFront distribution for better PFS support"
+          },
+          {
+            "priority": "MEDIUM",
+            "category": "Key Exchange",
+            "issue": "DHE cipher suites not supported",
+            "recommendation": "Consider enabling DHE cipher suites as fallback for ECDHE"
+          },
+          {
+            "priority": "HIGH",
+            "category": "Key Generation",
+            "issue": "Ephemeral key generation not working properly",
+            "recommendation": "Verify CloudFront configuration supports ephemeral key generation"
+          }
+        ],
+        "securityLevel": "POOR"
+      },
+      "timestamp": "2025-10-05T22:05:42.620Z"
+    }
+  },
+  "cloudFrontResults": null,
+  "summary": {
+    "totalDomains": 1,
+    "passedDomains": 0,
+    "failedDomains": 1,
+    "errorDomains": 0
+  }
+}

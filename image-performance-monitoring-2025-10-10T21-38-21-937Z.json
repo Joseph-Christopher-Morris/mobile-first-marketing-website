@@ -1,0 +1,170 @@
+{
+  "timestamp": "2025-10-10T21:38:18.511Z",
+  "baseUrl": "https://d15sc9fc739ev2.cloudfront.net",
+  "imageMetrics": [
+    {
+      "path": "/images/services/photography-hero.webp",
+      "url": "https://d15sc9fc739ev2.cloudfront.net/images/services/photography-hero.webp",
+      "statusCode": 200,
+      "loadTime": 495,
+      "sizeBytes": 57180,
+      "sizeKB": 56,
+      "contentType": "image/webp",
+      "success": true,
+      "timestamp": "2025-10-10T21:38:19.091Z"
+    },
+    {
+      "path": "/images/services/screenshot-2025-09-23-201649.webp",
+      "url": "https://d15sc9fc739ev2.cloudfront.net/images/services/screenshot-2025-09-23-201649.webp",
+      "statusCode": 200,
+      "loadTime": 542,
+      "sizeBytes": 83941,
+      "sizeKB": 82,
+      "contentType": "text/html",
+      "success": true,
+      "timestamp": "2025-10-10T21:38:19.779Z"
+    },
+    {
+      "path": "/images/services/ad-campaigns-hero.webp",
+      "url": "https://d15sc9fc739ev2.cloudfront.net/images/services/ad-campaigns-hero.webp",
+      "statusCode": 200,
+      "loadTime": 308,
+      "sizeBytes": 23692,
+      "sizeKB": 23,
+      "contentType": "image/webp",
+      "success": true,
+      "timestamp": "2025-10-10T21:38:20.098Z"
+    },
+    {
+      "path": "/images/hero/google-ads-analytics-dashboard.webp",
+      "url": "https://d15sc9fc739ev2.cloudfront.net/images/hero/google-ads-analytics-dashboard.webp",
+      "statusCode": 200,
+      "loadTime": 304,
+      "sizeBytes": 23692,
+      "sizeKB": 23,
+      "contentType": "image/webp",
+      "success": true,
+      "timestamp": "2025-10-10T21:38:20.403Z"
+    },
+    {
+      "path": "/images/hero/whatsapp-image-flyers-roi.webp",
+      "url": "https://d15sc9fc739ev2.cloudfront.net/images/hero/whatsapp-image-flyers-roi.webp",
+      "statusCode": 200,
+      "loadTime": 373,
+      "sizeBytes": 83941,
+      "sizeKB": 82,
+      "contentType": "text/html",
+      "success": true,
+      "timestamp": "2025-10-10T21:38:20.786Z"
+    },
+    {
+      "path": "/images/hero/240619-London-19.webp",
+      "url": "https://d15sc9fc739ev2.cloudfront.net/images/hero/240619-London-19.webp",
+      "statusCode": 200,
+      "loadTime": 289,
+      "sizeBytes": 42274,
+      "sizeKB": 41,
+      "contentType": "image/webp",
+      "success": true,
+      "timestamp": "2025-10-10T21:38:21.151Z"
+    },
+    {
+      "path": "/images/services/250928-Hampson_Auctions_Sunday-11.webp",
+      "url": "https://d15sc9fc739ev2.cloudfront.net/images/services/250928-Hampson_Auctions_Sunday-11.webp",
+      "statusCode": 200,
+      "loadTime": 293,
+      "sizeBytes": 50868,
+      "sizeKB": 50,
+      "contentType": "image/webp",
+      "success": true,
+      "timestamp": "2025-10-10T21:38:21.512Z"
+    },
+    {
+      "path": "/images/about/A7302858.webp",
+      "url": "https://d15sc9fc739ev2.cloudfront.net/images/about/A7302858.webp",
+      "statusCode": 200,
+      "loadTime": 337,
+      "sizeBytes": 32354,
+      "sizeKB": 32,
+      "contentType": "image/webp",
+      "success": true,
+      "timestamp": "2025-10-10T21:38:21.935Z"
+    }
+  ],
+  "coreWebVitals": {
+    "lcp": {
+      "estimatedImpact": 495,
+      "threshold": 2500,
+      "status": "GOOD",
+      "recommendation": "Hero image performance is acceptable"
+    },
+    "cls": {
+      "riskLevel": "LOW",
+      "failedImages": 0,
+      "recommendation": "Image loading stability is good"
+    },
+    "fid": {
+      "impact": "MINIMAL",
+      "recommendation": "Image loading should not significantly impact First Input Delay"
+    },
+    "performance": {
+      "avgLoadTime": 368,
+      "totalSize": 389,
+      "failureRate": 0,
+      "recommendation": "Image performance is acceptable"
+    }
+  },
+  "alerts": [
+    {
+      "type": "INCORRECT_MIME_TYPE",
+      "severity": "ERROR",
+      "message": "Image /images/services/screenshot-2025-09-23-201649.webp has incorrect MIME type: text/html",
+      "metric": {
+        "path": "/images/services/screenshot-2025-09-23-201649.webp",
+        "url": "https://d15sc9fc739ev2.cloudfront.net/images/services/screenshot-2025-09-23-201649.webp",
+        "statusCode": 200,
+        "loadTime": 542,
+        "sizeBytes": 83941,
+        "sizeKB": 82,
+        "contentType": "text/html",
+        "success": true,
+        "timestamp": "2025-10-10T21:38:19.779Z"
+      }
+    },
+    {
+      "type": "INCORRECT_MIME_TYPE",
+      "severity": "ERROR",
+      "message": "Image /images/hero/whatsapp-image-flyers-roi.webp has incorrect MIME type: text/html",
+      "metric": {
+        "path": "/images/hero/whatsapp-image-flyers-roi.webp",
+        "url": "https://d15sc9fc739ev2.cloudfront.net/images/hero/whatsapp-image-flyers-roi.webp",
+        "statusCode": 200,
+        "loadTime": 373,
+        "sizeBytes": 83941,
+        "sizeKB": 82,
+        "contentType": "text/html",
+        "success": true,
+        "timestamp": "2025-10-10T21:38:20.786Z"
+      }
+    }
+  ],
+  "summary": {
+    "totalImages": 8,
+    "successfulImages": 8,
+    "failedImages": 0,
+    "successRate": 100,
+    "avgLoadTime": 368,
+    "totalSizeKB": 389,
+    "errorCount": 2,
+    "warningCount": 0,
+    "overallStatus": "CRITICAL",
+    "recommendations": [
+      {
+        "priority": "LOW",
+        "category": "CACHING",
+        "issue": "8 images lack proper cache headers",
+        "action": "Configure long-term caching for image assets"
+      }
+    ]
+  }
+}

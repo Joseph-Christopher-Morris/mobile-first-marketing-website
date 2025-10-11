@@ -1,0 +1,74 @@
+{
+  "timestamp": "2025-10-05T23:01:04.735Z",
+  "reason": "Migration to S3/CloudFront completed",
+  "originalConfiguration": {
+    "amplify.yml": "version: 1\nfrontend:\n  phases:\n    preBuild:\n      commands:\n        - npm ci\n        - export NEXT_PUBLIC_SITE_URL=$AMPLIFY_APP_URL\n        - export NODE_ENV=production\n    build:\n      commands:\n        - npm run build\n        - cp -r .next/static out/_next/static 2>/dev/null || true\n        - cp -r .next/server out/.next/server 2>/dev/null || true\n        - echo '{\"version\":3,\"routes\":[],\"images\":{},\"overrides\":{},\"wildcard\":[{\"domain\":\"*\",\"value\":\"/index.html\"}]}' > out/required-server-files.json\n        - echo '{}' > out/routes-manifest.json\n        - echo '{}' > out/prerender-manifest.json\n        - echo \"static-build\" > out/trace\n  artifacts:\n    baseDirectory: out\n    files:\n      - \"**/*\"\n  cache:\n    paths:\n      - node_modules/**/*\n",
+    "amplify-simple.yml": "version: 1\r\nfrontend:\r\n  phases:\r\n    preBuild:\r\n      commands:\r\n        - echo \"🚀 Starting deployment...\"\r\n        - echo \"📦 Installing dependencies...\"\r\n        - npm ci || npm install\r\n        - export NEXT_PUBLIC_SITE_URL=$AMPLIFY_APP_URL\r\n        - export NODE_ENV=production\r\n        - export DISABLE_AMPLIFY_NEXT_SSR=true\r\n        - echo \"✅ Ready to build\"\r\n    build:\r\n      commands:\r\n        - echo \"🔨 Building static site...\"\r\n        - npm run build\r\n        - echo \"📁 Verifying static export...\"\r\n        - ls -la out/\r\n        - echo \"✅ Static build complete\"\r\n    postBuild:\r\n      commands:\r\n        - echo \"📁 Checking output...\"\r\n        - ls -la out/\r\n        - echo \"🔧 Creating required files for static deployment...\"\r\n        - echo '{\"version\":3,\"routes\":[],\"images\":{},\"overrides\":{},\"wildcard\":[{\"domain\":\"*\",\"value\":\"/index.html\"}]}' > out/required-server-files.json\r\n        - echo \"🔧 Copying trace files to prevent SSR detection...\"\r\n        - cp -r .next/server out/.next/ 2>/dev/null || echo \"No server files to copy (expected for static export)\"\r\n        - echo \"✅ Static deployment files ready\"\r\n        - echo \"🎉 Ready for deployment\"\r\n  artifacts:\r\n    baseDirectory: out\r\n    files:\r\n      - \"**/*\"\r\n  cache:\r\n    paths:\r\n      - node_modules/**/*\r\n      - .next/cache/**/*",
+    "amplify-minimal.yml": "version: 1\r\nfrontend:\r\n  phases:\r\n    preBuild:\r\n      commands:\r\n        - npm ci\r\n        - export NEXT_PUBLIC_SITE_URL=$AMPLIFY_APP_URL\r\n        - export NODE_ENV=production\r\n    build:\r\n      commands:\r\n        - npm run build\r\n    postBuild:\r\n      commands:\r\n        - echo \"Build completed\"\r\n        - ls -la out/\r\n  artifacts:\r\n    baseDirectory: out\r\n    files:\r\n      - \"**/*\"\r\n  cache:\r\n    paths:\r\n      - node_modules/**/*\r\n      - .next/cache/**/*",
+    "amplify-static.yml": "version: 1\r\nfrontend:\r\n  phases:\r\n    preBuild:\r\n      commands:\r\n        - npm ci\r\n        - export NEXT_PUBLIC_SITE_URL=$AMPLIFY_APP_URL\r\n        - export NODE_ENV=production\r\n    build:\r\n      commands:\r\n        - npm run build\r\n  artifacts:\r\n    baseDirectory: out\r\n    files:\r\n      - \"**/*\"\r\n  cache:\r\n    paths:\r\n      - node_modules/**/*",
+    ".env.production": "# Production Environment Configuration\n# This file contains production environment variables for AWS Amplify deployment\n# Copy these variables to AWS Amplify Console > Environment Variables\n\n# Site Configuration - UPDATE THESE WITH YOUR ACTUAL VALUES\nNEXT_PUBLIC_SITE_URL=https://your-production-domain.com\nNEXT_PUBLIC_SITE_NAME=Your Marketing Website\nNEXT_PUBLIC_SITE_DESCRIPTION=Mobile-first marketing website showcasing photography, analytics, and ad campaign services\n\n# Analytics and Tracking - ADD YOUR ACTUAL IDs\nNEXT_PUBLIC_GA_ID=G-XXXXXXXXXX\nNEXT_PUBLIC_FACEBOOK_PIXEL_ID=\nNEXT_PUBLIC_HOTJAR_ID=\nNEXT_PUBLIC_GTM_ID=GTM-XXXXXXX\n\n# Contact Form Configuration - UPDATE WITH YOUR EMAIL\nCONTACT_EMAIL=contact@your-production-domain.com\nSMTP_HOST=smtp.gmail.com\nSMTP_PORT=587\nSMTP_USER=your-smtp-username\nSMTP_PASS=your-smtp-password\nSMTP_SECURE=true\n\n# Social Media Links - UPDATE WITH YOUR ACTUAL SOCIAL MEDIA URLs\nNEXT_PUBLIC_FACEBOOK_URL=https://facebook.com/yourpage\nNEXT_PUBLIC_TWITTER_URL=https://twitter.com/yourhandle\nNEXT_PUBLIC_LINKEDIN_URL=https://linkedin.com/company/yourcompany\nNEXT_PUBLIC_INSTAGRAM_URL=https://instagram.com/yourhandle\n\n# AWS Amplify Configuration (automatically set by Amplify)\nAMPLIFY_BRANCH=main\nAMPLIFY_APP_ID=\nAWS_REGION=us-east-1\n\n# Build Configuration\nNODE_ENV=production\nNEXT_TELEMETRY_DISABLED=1\nNODE_OPTIONS=--max-old-space-size=4096\n\n# Performance and Optimization\nANALYZE=false\nNEXT_PUBLIC_ENABLE_ANALYTICS=true\nNEXT_PUBLIC_ENABLE_PERFORMANCE_MONITORING=true\n\n# Content Management\nCONTENT_VALIDATION_STRICT=true\nGENERATE_SITEMAP=true\n\n# Security\nNEXT_PUBLIC_CSP_NONCE=\nRATE_LIMIT_MAX=100\nRATE_LIMIT_WINDOW=900000",
+    ".env.local": "# Site Configuration\nNEXT_PUBLIC_SITE_URL=http://localhost:3000\nNEXT_PUBLIC_SITE_NAME=Marketing Website - Local Dev\nNEXT_PUBLIC_SITE_DESCRIPTION=Mobile-first marketing website showcasing photography, analytics, and ad campaign services\n\n# Analytics and Tracking\nNEXT_PUBLIC_GA_ID=G-XXXXXXXXXX\nNEXT_PUBLIC_FACEBOOK_PIXEL_ID=\nNEXT_PUBLIC_HOTJAR_ID=\nNEXT_PUBLIC_GTM_ID=GTM-XXXXXXX\n\n# Contact Form Configuration\nCONTACT_EMAIL=dev@localhost.com\nSMTP_HOST=smtp.gmail.com\nSMTP_PORT=587\nSMTP_USER=\nSMTP_PASS=\nSMTP_SECURE=true\n\n# Social Media Links\nNEXT_PUBLIC_FACEBOOK_URL=https://facebook.com/yourpage\nNEXT_PUBLIC_TWITTER_URL=https://twitter.com/yourhandle\nNEXT_PUBLIC_LINKEDIN_URL=https://linkedin.com/company/yourcompany\nNEXT_PUBLIC_INSTAGRAM_URL=https://instagram.com/yourhandle\n\n# AWS Amplify Configuration (automatically set by Amplify)\nAMPLIFY_BRANCH=main\nAMPLIFY_APP_ID=\nAWS_REGION=us-east-1\n\n# Build Configuration\nNODE_ENV=development\nNEXT_TELEMETRY_DISABLED=1\nNODE_OPTIONS=--max-old-space-size=4096\n\n# Performance and Optimization\nANALYZE=false\nNEXT_PUBLIC_ENABLE_ANALYTICS=false\nNEXT_PUBLIC_ENABLE_PERFORMANCE_MONITORING=true\n\n# Content Management\nCONTENT_VALIDATION_STRICT=true\nGENERATE_SITEMAP=true\n\n# Security\nNEXT_PUBLIC_CSP_NONCE=\nRATE_LIMIT_MAX=100\nRATE_LIMIT_WINDOW=900000"
+  },
+  "deploymentHistory": [
+    {
+      "file": "deployments.json",
+      "size": 2,
+      "modified": "2025-10-05T22:33:15.559Z"
+    },
+    {
+      "file": "production-deployment-prod-1759704921107.json",
+      "size": 595,
+      "modified": "2025-10-05T22:55:21.505Z"
+    },
+    {
+      "file": "production-deployment-prod-1759704932832.json",
+      "size": 2097,
+      "modified": "2025-10-05T22:56:02.809Z"
+    },
+    {
+      "file": "production-deployment-prod-1759705020208.json",
+      "size": 2275,
+      "modified": "2025-10-05T22:57:40.192Z"
+    },
+    {
+      "file": "production-deployment-prod-1759705086993.json",
+      "size": 3149,
+      "modified": "2025-10-05T22:58:54.023Z"
+    }
+  ],
+  "environmentVariables": {
+    "NEXT_PUBLIC_SITE_URL": "https://your-production-domain.com",
+    "NEXT_PUBLIC_SITE_NAME": "Your Marketing Website",
+    "NEXT_PUBLIC_SITE_DESCRIPTION": "Mobile-first marketing website showcasing photography, analytics, and ad campaign services",
+    "NEXT_PUBLIC_GA_ID": "G-XXXXXXXXXX",
+    "NEXT_PUBLIC_GTM_ID": "GTM-XXXXXXX",
+    "CONTACT_EMAIL": "contact@your-production-domain.com",
+    "SMTP_HOST": "smtp.gmail.com",
+    "SMTP_PORT": "587",
+    "SMTP_USER": "your-smtp-username",
+    "SMTP_PASS": "your-smtp-password",
+    "SMTP_SECURE": "true",
+    "NEXT_PUBLIC_FACEBOOK_URL": "https://facebook.com/yourpage",
+    "NEXT_PUBLIC_TWITTER_URL": "https://twitter.com/yourhandle",
+    "NEXT_PUBLIC_LINKEDIN_URL": "https://linkedin.com/company/yourcompany",
+    "NEXT_PUBLIC_INSTAGRAM_URL": "https://instagram.com/yourhandle",
+    "AMPLIFY_BRANCH": "main",
+    "AWS_REGION": "us-east-1",
+    "NODE_ENV": "production",
+    "NEXT_TELEMETRY_DISABLED": "1",
+    "NODE_OPTIONS": "--max-old-space-size",
+    "ANALYZE": "false",
+    "NEXT_PUBLIC_ENABLE_ANALYTICS": "true",
+    "NEXT_PUBLIC_ENABLE_PERFORMANCE_MONITORING": "true",
+    "CONTENT_VALIDATION_STRICT": "true",
+    "GENERATE_SITEMAP": "true",
+    "RATE_LIMIT_MAX": "100",
+    "RATE_LIMIT_WINDOW": "900000"
+  },
+  "buildSettings": {},
+  "customDomains": [],
+  "branches": [],
+  "amplifyStatus": {
+    "error": "CLI not available"
+  }
+}

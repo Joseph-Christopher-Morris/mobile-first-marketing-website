@@ -1,0 +1,22 @@
+{
+  "deploymentId": "prod-1759704921107",
+  "timestamp": "2025-10-05T22:55:21.107Z",
+  "environment": "production",
+  "bucketName": "mobile-marketing-site-prod-1759704801413-5k2y86",
+  "distributionId": "E2VQL1W68479S6",
+  "cloudfrontDomain": "d1e6nq1oke03ll.cloudfront.net",
+  "steps": [
+    {
+      "step": "environment_validation",
+      "status": "failed",
+      "timestamp": "2025-10-05T22:55:21.501Z",
+      "details": {
+        "error": "UnknownError"
+      }
+    }
+  ],
+  "validation": {},
+  "status": "completed",
+  "error": "UnknownError",
+  "completedAt": "2025-10-05T22:55:21.503Z"
+}

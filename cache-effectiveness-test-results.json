@@ -1,0 +1,138 @@
+{
+  "timestamp": "2025-10-10T21:56:41.602Z",
+  "baseUrl": "https://d15sc9fc739ev2.cloudfront.net",
+  "fileTypes": {
+    "images": {
+      "fileType": "images",
+      "expectedCacheControl": "public, max-age=31536000, immutable",
+      "files": [
+        {
+          "file": "/images/about/A7302858.webp",
+          "url": "https://d15sc9fc739ev2.cloudfront.net/images/about/A7302858.webp",
+          "statusCode": 200,
+          "cacheControl": "not-set",
+          "expected": "public, max-age=31536000, immutable",
+          "correct": false,
+          "contentType": "image/webp"
+        },
+        {
+          "file": "/images/services/photography-hero.webp",
+          "url": "https://d15sc9fc739ev2.cloudfront.net/images/services/photography-hero.webp",
+          "statusCode": 200,
+          "cacheControl": "not-set",
+          "expected": "public, max-age=31536000, immutable",
+          "correct": false,
+          "contentType": "image/webp"
+        },
+        {
+          "file": "/images/hero/google-ads-analytics-dashboard.webp",
+          "url": "https://d15sc9fc739ev2.cloudfront.net/images/hero/google-ads-analytics-dashboard.webp",
+          "statusCode": 200,
+          "cacheControl": "not-set",
+          "expected": "public, max-age=31536000, immutable",
+          "correct": false,
+          "contentType": "image/webp"
+        }
+      ],
+      "correct": 0,
+      "total": 3
+    },
+    "html": {
+      "fileType": "html",
+      "expectedCacheControl": "public, max-age=300, must-revalidate",
+      "files": [
+        {
+          "file": "/index.html",
+          "url": "https://d15sc9fc739ev2.cloudfront.net/index.html",
+          "statusCode": 200,
+          "cacheControl": "not-set",
+          "expected": "public, max-age=300, must-revalidate",
+          "correct": false,
+          "contentType": "text/html"
+        },
+        {
+          "file": "/about/index.html",
+          "url": "https://d15sc9fc739ev2.cloudfront.net/about/index.html",
+          "statusCode": 200,
+          "cacheControl": "not-set",
+          "expected": "public, max-age=300, must-revalidate",
+          "correct": false,
+          "contentType": "text/html"
+        },
+        {
+          "file": "/blog/index.html",
+          "url": "https://d15sc9fc739ev2.cloudfront.net/blog/index.html",
+          "statusCode": 200,
+          "cacheControl": "not-set",
+          "expected": "public, max-age=300, must-revalidate",
+          "correct": false,
+          "contentType": "text/html"
+        }
+      ],
+      "correct": 0,
+      "total": 3
+    },
+    "staticAssets": {
+      "fileType": "staticAssets",
+      "expectedCacheControl": "public, max-age=31536000, immutable",
+      "files": [
+        {
+          "file": "/_next/static/chunks/255-3260b6c822d7a91e.js",
+          "url": "https://d15sc9fc739ev2.cloudfront.net/_next/static/chunks/255-3260b6c822d7a91e.js",
+          "statusCode": 200,
+          "cacheControl": "not-set",
+          "expected": "public, max-age=31536000, immutable",
+          "correct": false,
+          "contentType": "application/javascript"
+        },
+        {
+          "file": "/_next/static/css/app/layout.css",
+          "url": "https://d15sc9fc739ev2.cloudfront.net/_next/static/css/app/layout.css",
+          "statusCode": 200,
+          "cacheControl": "not-set",
+          "expected": "public, max-age=31536000, immutable",
+          "correct": false,
+          "contentType": "text/html"
+        }
+      ],
+      "correct": 0,
+      "total": 2
+    },
+    "json": {
+      "fileType": "json",
+      "expectedCacheControl": "public, max-age=86400",
+      "files": [
+        {
+          "file": "/manifest.json",
+          "url": "https://d15sc9fc739ev2.cloudfront.net/manifest.json",
+          "statusCode": 200,
+          "cacheControl": "not-set",
+          "expected": "public, max-age=86400",
+          "correct": false,
+          "contentType": "text/html"
+        }
+      ],
+      "correct": 0,
+      "total": 1
+    }
+  },
+  "invalidationTest": {
+    "testUrl": "https://d15sc9fc739ev2.cloudfront.net/index.html",
+    "consistent": true,
+    "response1": {
+      "statusCode": 200,
+      "etag": "\"79dfe82a3331ba8da3e590936b9866b3\"",
+      "lastModified": "Fri, 10 Oct 2025 21:49:03 GMT"
+    },
+    "response2": {
+      "statusCode": 200,
+      "etag": "\"79dfe82a3331ba8da3e590936b9866b3\"",
+      "lastModified": "Fri, 10 Oct 2025 21:49:03 GMT"
+    }
+  },
+  "summary": {
+    "totalFiles": 9,
+    "totalCorrect": 0,
+    "overallSuccessRate": "0.0"
+  }
+}

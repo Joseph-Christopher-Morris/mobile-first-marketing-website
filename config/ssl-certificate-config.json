@@ -1,0 +1,39 @@
+{
+  "domains": [
+    "example.com",
+    "www.example.com"
+  ],
+  "validation": {
+    "checkExpiry": true,
+    "expiryWarningDays": 30,
+    "checkChain": true,
+    "checkTrust": true,
+    "checkSubjectMatch": true,
+    "checkKeyUsage": true,
+    "maxChainLength": 4,
+    "allowedSignatureAlgorithms": [
+      "sha256WithRSAEncryption",
+      "sha384WithRSAEncryption",
+      "sha512WithRSAEncryption",
+      "ecdsa-with-SHA256",
+      "ecdsa-with-SHA384",
+      "ecdsa-with-SHA512"
+    ],
+    "blockedSignatureAlgorithms": [
+      "md5WithRSAEncryption",
+      "sha1WithRSAEncryption"
+    ]
+  },
+  "reporting": {
+    "outputFormat": "json",
+    "includeChainDetails": true,
+    "includeCipherInfo": true,
+    "saveToFile": true,
+    "outputPath": "ssl-certificate-validation-report.json"
+  },
+  "cloudfront": {
+    "distributionIds": [],
+    "validateCustomDomains": true,
+    "checkAlternateDomainNames": true
+  }
+}

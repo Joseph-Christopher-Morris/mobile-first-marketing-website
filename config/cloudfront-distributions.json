@@ -1,0 +1,28 @@
+{
+  "distributions": [
+    {
+      "id": "E1234567890123",
+      "domainName": "d1234567890123.cloudfront.net",
+      "customDomains": [
+        "example.com",
+        "www.example.com"
+      ],
+      "description": "Production distribution for mobile marketing site"
+    },
+    {
+      "id": "E9876543210987",
+      "domainName": "d9876543210987.cloudfront.net",
+      "customDomains": [
+        "staging.example.com"
+      ],
+      "description": "Staging distribution for mobile marketing site"
+    }
+  ],
+  "validation": {
+    "checkCustomDomains": true,
+    "checkCloudFrontDomains": true,
+    "expiryWarningDays": 30,
+    "validateChain": true,
+    "validateTrust": true
+  }
+}

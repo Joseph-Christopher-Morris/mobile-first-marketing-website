@@ -1,0 +1,12 @@
+{
+  "invalidationId": "IE2S57M7AEPOF0UCL2EDR3NXG7",
+  "status": "Completed",
+  "paths": [
+    "/index.html",
+    "/images/*",
+    "/*.html"
+  ],
+  "duration": 20,
+  "timestamp": "2025-10-10T21:47:55.621Z",
+  "effective": true
+}

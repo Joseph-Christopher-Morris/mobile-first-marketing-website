@@ -1,0 +1,44 @@
+{
+  "version": "1.0.0",
+  "enabled": true,
+  "title": "Deployment Test Dashboard",
+  "description": "Real-time monitoring of deployment test pipeline",
+  "layout": {
+    "sections": [
+      {
+        "id": "overview",
+        "title": "Test Overview",
+        "type": "metrics",
+        "metrics": ["total-tests", "passed-tests", "failed-tests", "success-rate"]
+      },
+      {
+        "id": "current-run",
+        "title": "Current Test Run",
+        "type": "test-results",
+        "showDetails": true,
+        "expandFailures": true
+      },
+      {
+        "id": "history",
+        "title": "Test History",
+        "type": "timeline",
+        "limit": 20
+      },
+      {
+        "id": "trends",
+        "title": "Trends",
+        "type": "charts",
+        "metrics": ["success-rate", "duration", "failure-rate"]
+      }
+    ]
+  },
+  "refresh": {
+    "enabled": true,
+    "interval": 30000,
+    "autoRefresh": true
+  },
+  "export": {
+    "enabled": true,
+    "formats": ["html", "pdf", "json"]
+  }
+}

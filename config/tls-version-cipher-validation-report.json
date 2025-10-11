@@ -1,0 +1,94 @@
+{
+  "timestamp": "2025-10-05T21:09:43.532Z",
+  "domain": "google.com",
+  "tlsVersionSupport": {
+    "TLSv1.0": {
+      "supported": false,
+      "secure": false,
+      "tested": true,
+      "connectionTime": 7
+    },
+    "TLSv1.1": {
+      "supported": false,
+      "secure": false,
+      "tested": true,
+      "connectionTime": 4
+    },
+    "TLSv1.2": {
+      "supported": false,
+      "secure": true,
+      "tested": true,
+      "connectionTime": 219
+    },
+    "TLSv1.3": {
+      "supported": false,
+      "secure": true,
+      "tested": true,
+      "connectionTime": 5
+    }
+  },
+  "weakTlsVersions": [],
+  "cipherSuites": [],
+  "weakCiphers": [],
+  "strongCiphers": [],
+  "perfectForwardSecrecy": {
+    "supported": false,
+    "algorithms": [],
+    "ephemeralKeyTypes": [],
+    "details": []
+  },
+  "securityScore": 0,
+  "complianceStatus": {
+    "PCI-DSS": false,
+    "NIST": false,
+    "OWASP": false
+  },
+  "recommendations": [
+    {
+      "type": "critical",
+      "category": "tls_version",
+      "title": "Enable TLS 1.2 Support",
+      "description": "TLS 1.2 is not supported, which is a critical security issue",
+      "action": "Configure CloudFront to support TLS 1.2 minimum",
+      "priority": 1
+    },
+    {
+      "type": "high",
+      "category": "overall_security",
+      "title": "Improve Overall Security Score",
+      "description": "Security score is 0/100, below recommended threshold",
+      "action": "Address the security issues identified in this report",
+      "priority": 1
+    },
+    {
+      "type": "recommended",
+      "category": "tls_version",
+      "title": "Enable TLS 1.3 Support",
+      "description": "TLS 1.3 provides improved security and performance",
+      "action": "Update CloudFront security policy to TLSv1.2_TLSv1.3_2021",
+      "priority": 2
+    },
+    {
+      "type": "medium",
+      "category": "perfect_forward_secrecy",
+      "title": "Enable Perfect Forward Secrecy",
+      "description": "Perfect Forward Secrecy not detected in cipher suites",
+      "action": "Ensure cipher suites support ECDHE or DHE key exchange",
+      "priority": 2
+    },
+    {
+      "type": "info",
+      "category": "cloudfront",
+      "title": "CloudFront Security Policy Recommendation",
+      "description": "Use the latest CloudFront security policy for optimal security",
+      "action": "Set CloudFront security policy to TLSv1.2_TLSv1.3_2021 or newer",
+      "priority": 3
+    }
+  ],
+  "errors": [],
+  "testDetails": {
+    "connectionAttempts": 4,
+    "successfulConnections": 0,
+    "failedConnections": 4
+  }
+}

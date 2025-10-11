@@ -1,0 +1,2137 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Test Results Dashboard</title>
+    <style>
+        body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; margin: 0; padding: 20px; background: #f5f5f5; }
+        .container { max-width: 1200px; margin: 0 auto; }
+        .header { background: white; padding: 20px; border-radius: 8px; margin-bottom: 20px; box-shadow: 0 2px 4px rgba(0,0,0,0.1); }
+        .summary { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 20px; margin-bottom: 20px; }
+        .metric { background: white; padding: 20px; border-radius: 8px; text-align: center; box-shadow: 0 2px 4px rgba(0,0,0,0.1); }
+        .metric-value { font-size: 2em; font-weight: bold; margin-bottom: 5px; }
+        .metric-label { color: #666; font-size: 0.9em; }
+        .success { color: #22c55e; }
+        .error { color: #ef4444; }
+        .warning { color: #f59e0b; }
+        .categories { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 20px; margin-bottom: 20px; }
+        .category { background: white; padding: 20px; border-radius: 8px; box-shadow: 0 2px 4px rgba(0,0,0,0.1); }
+        .category-header { display: flex; justify-content: between; align-items: center; margin-bottom: 15px; }
+        .category-title { font-size: 1.2em; font-weight: bold; }
+        .status-badge { padding: 4px 8px; border-radius: 4px; font-size: 0.8em; font-weight: bold; }
+        .status-passed { background: #dcfce7; color: #166534; }
+        .status-failed { background: #fecaca; color: #991b1b; }
+        .status-pending { background: #fef3c7; color: #92400e; }
+        .alerts { background: white; padding: 20px; border-radius: 8px; margin-bottom: 20px; box-shadow: 0 2px 4px rgba(0,0,0,0.1); }
+        .alert { padding: 10px; margin-bottom: 10px; border-radius: 4px; border-left: 4px solid; }
+        .alert-error { background: #fef2f2; border-color: #ef4444; }
+        .alert-warning { background: #fffbeb; border-color: #f59e0b; }
+        .recommendations { background: white; padding: 20px; border-radius: 8px; box-shadow: 0 2px 4px rgba(0,0,0,0.1); }
+        .timestamp { color: #666; font-size: 0.9em; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>Test Results Dashboard</h1>
+            <p class="timestamp">Last updated: 05/10/2025, 16:48:29</p>
+        </div>
+        
+        <div class="summary">
+            <div class="metric">
+                <div class="metric-value error">
+                    66%
+                </div>
+                <div class="metric-label">Success Rate</div>
+            </div>
+            <div class="metric">
+                <div class="metric-value">35</div>
+                <div class="metric-label">Total Tests</div>
+            </div>
+            <div class="metric">
+                <div class="metric-value success">23</div>
+                <div class="metric-label">Passed</div>
+            </div>
+            <div class="metric">
+                <div class="metric-value error">11</div>
+                <div class="metric-label">Failed</div>
+            </div>
+            <div class="metric">
+                <div class="metric-value warning">1</div>
+                <div class="metric-label">Skipped</div>
+            </div>
+        </div>
+        
+        <div class="categories">
+            
+                <div class="category">
+                    <div class="category-header">
+                        <div class="category-title">UNIT</div>
+                        <div class="status-badge status-failed">FAILED</div>
+                    </div>
+                    
+                        <div>Total: 6</div>
+                        <div>Passed: <span class="success">6</span></div>
+                        <div>Failed: <span class="error">0</span></div>
+                        <div>Skipped: <span class="warning">0</span></div>
+                        <div>Duration: 118s</div>
+                    
+                </div>
+            
+                <div class="category">
+                    <div class="category-header">
+                        <div class="category-title">E2E</div>
+                        <div class="status-badge status-failed">FAILED</div>
+                    </div>
+                    
+                        <div>Total: 0</div>
+                        <div>Passed: <span class="success">0</span></div>
+                        <div>Failed: <span class="error">0</span></div>
+                        <div>Skipped: <span class="warning">0</span></div>
+                        <div>Duration: 35s</div>
+                    
+                </div>
+            
+                <div class="category">
+                    <div class="category-header">
+                        <div class="category-title">PERFORMANCE</div>
+                        <div class="status-badge status-failed">FAILED</div>
+                    </div>
+                    
+                        <div>Total: 8</div>
+                        <div>Passed: <span class="success">4</span></div>
+                        <div>Failed: <span class="error">3</span></div>
+                        <div>Skipped: <span class="warning">1</span></div>
+                        <div>Duration: 29s</div>
+                    
+                </div>
+            
+                <div class="category">
+                    <div class="category-header">
+                        <div class="category-title">ACCESSIBILITY</div>
+                        <div class="status-badge status-passed">PASSED</div>
+                    </div>
+                    
+                        <div>Total: 8</div>
+                        <div>Passed: <span class="success">7</span></div>
+                        <div>Failed: <span class="error">1</span></div>
+                        <div>Skipped: <span class="warning">0</span></div>
+                        <div>Duration: 306s</div>
+                    
+                </div>
+            
+                <div class="category">
+                    <div class="category-header">
+                        <div class="category-title">FUNCTIONALITY</div>
+                        <div class="status-badge status-failed">FAILED</div>
+                    </div>
+                    
+                        <div>Total: 13</div>
+                        <div>Passed: <span class="success">6</span></div>
+                        <div>Failed: <span class="error">7</span></div>
+                        <div>Skipped: <span class="warning">0</span></div>
+                        <div>Duration: 140s</div>
+                    
+                </div>
+            
+        </div>
+        
+        
+            <div class="alerts">
+                <h2>Alerts</h2>
+                
+                    <div class="alert alert-error">
+                        <strong>UNIT tests failed</strong><br>
+                        Command failed: npm run test
+[33mThe CJS build of Vite's Node API is deprecated. See https://vite.dev/guide/troubleshooting.html#vite-cjs-node-api-deprecated for more details.[39m
+[90mstderr[2m | src/hooks/__tests__/useLazyLoad.test.ts[2m > [22m[2museLazyLoad[2m > [22m[2mshould initialize with correct default values[22m[39m
+Warning: `ReactDOMTestUtils.act` is deprecated in favor of `React.act`. Import `act` from `react` instead of `react-dom/test-utils`. See https://react.dev/warnings/react-dom-test-utils for more info.
+
+[90mstderr[2m | src/lib/__tests__/performance-monitoring.test.ts[2m > [22m[2mPerformanceMonitor[2m > [22m[2minitialization[2m > [22m[2mshould set up performance observers[22m[39m
+LCP observer not supported
+FID observer not supported
+CLS observer not supported
+FCP observer not supported
+
+[90mstderr[2m | src/lib/__tests__/performance-monitoring.test.ts[2m > [22m[2mPerformanceMonitor[2m > [22m[2mmetrics collection[2m > [22m[2mshould return current metrics[22m[39m
+LCP observer not supported
+FID observer not supported
+CLS observer not supported
+FCP observer not supported
+
+[90mstderr[2m | src/lib/__tests__/performance-monitoring.test.ts[2m > [22m[2mPerformanceMonitor[2m > [22m[2mmetrics collection[2m > [22m[2mshould handle null values for unavailable metrics[22m[39m
+LCP observer not supported
+FID observer not supported
+CLS observer not supported
+FCP observer not supported
+
+[90mstderr[2m | src/lib/__tests__/performance-monitoring.test.ts[2m > [22m[2mPerformanceMonitor[2m > [22m[2mbudget checking[2m > [22m[2mshould check performance budgets[22m[39m
+LCP observer not supported
+FID observer not supported
+CLS observer not supported
+FCP observer not supported
+
+[90mstderr[2m | src/lib/__tests__/performance-monitoring.test.ts[2m > [22m[2mPerformanceMonitor[2m > [22m[2mbudget checking[2m > [22m[2mshould allow custom budget configuration[22m[39m
+LCP observer not supported
+FID observer not supported
+CLS observer not supported
+FCP observer not supported
+
+[90mstderr[2m | src/lib/__tests__/performance-monitoring.test.ts[2m > [22m[2mPerformanceMonitor[2m > [22m[2mreport generation[2m > [22m[2mshould generate comprehensive performance report[22m[39m
+LCP observer not supported
+FID observer not supported
+CLS observer not supported
+FCP observer not supported
+
+[90mstderr[2m | src/lib/__tests__/performance-monitoring.test.ts[2m > [22m[2mPerformanceMonitor[2m > [22m[2mreport generation[2m > [22m[2mshould provide relevant recommendations for poor metrics[22m[39m
+LCP observer not supported
+FID observer not supported
+CLS observer not supported
+FCP observer not supported
+LCP observer not supported
+FID observer not supported
+CLS observer not supported
+FCP observer not supported
+
+[90mstderr[2m | src/lib/__tests__/performance-monitoring.test.ts[2m > [22m[2mPerformanceMonitor[2m > [22m[2mcleanup[2m > [22m[2mshould disconnect all observers on cleanup[22m[39m
+LCP observer not supported
+FID observer not supported
+CLS observer not supported
+FCP observer not supported
+
+[90mstderr[2m | src/lib/__tests__/form-handler.test.ts[2m > [22m[2mFormHandler[2m > [22m[2mprocessSubmission[2m > [22m[2mshould process valid submission successfully[22m[39m
+Error processing form submission: Error: Cannot find module './analytics'
+Require stack:
+- C:\Users\Joe\Projects\website-sync-20251003_133144\src\lib\form-handler.ts
+[90m    at Function._resolveFilename (node:internal/modules/cjs/loader:1145:15)[39m
+[90m    at Function._load (node:internal/modules/cjs/loader:986:27)[39m
+[90m    at Module.require (node:internal/modules/cjs/loader:1233:19)[39m
+[90m    at require (node:internal/modules/helpers:179:18)[39m
+    at Function.processSubmission [90m(C:\Users\Joe\Projects\website-sync-20251003_133144\[39msrc\lib\form-handler.ts:316:27[90m)[39m
+    at [90mC:\Users\Joe\Projects\website-sync-20251003_133144\[39msrc\lib\__tests__\form-handler.test.ts:266:22
+    at runTest [90m(file:///C:/Users/Joe/Projects/website-sync-20251003_133144/[39mnode_modules/[4m@vitest[24m/runner/dist/index.js:663:11[90m)[39m
+    at runSuite [90m(file:///C:/Users/Joe/Projects/website-sync-20251003_133144/[39mnode_modules/[4m@vitest[24m/runner/dist/index.js:782:15[90m)[39m
+    at runSuite [90m(file:///C:/Users/Joe/Projects/website-sync-20251003_133144/[39mnode_modules/[4m@vitest[24m/runner/dist/index.js:782:15[90m)[39m
+    at runSuite [90m(file:///C:/Users/Joe/Projects/website-sync-20251003_133144/[39mnode_modules/[4m@vitest[24m/runner/dist/index.js:782:15[90m)[39m {
+  code: [32m'MODULE_NOT_FOUND'[39m,
+  requireStack: [
+    [32m'C:\\Users\\Joe\\Projects\\website-sync-20251003_133144\\src\\lib\\form-handler.ts'[39m
+  ]
+}
+
+[90mstderr[2m | src/lib/__tests__/form-handler.test.ts[2m > [22m[2mFormHandler[2m > [22m[2mprocessSubmission[2m > [22m[2mshould enforce rate limiting[22m[39m
+Error processing form submission: Error: Cannot find module './analytics'
+Require stack:
+- C:\Users\Joe\Projects\website-sync-20251003_133144\src\lib\form-handler.ts
+[90m    at Function._resolveFilename (node:internal/modules/cjs/loader:1145:15)[39m
+[90m    at Function._load (node:internal/modules/cjs/loader:986:27)[39m
+[90m    at Module.require (node:internal/modules/cjs/loader:1233:19)[39m
+[90m    at require (node:internal/modules/helpers:179:18)[39m
+    at Function.processSubmission [90m(C:\Users\Joe\Projects\website-sync-20251003_133144\[39msrc\lib\form-handler.ts:316:27[90m)[39m
+    at [90mC:\Users\Joe\Projects\website-sync-20251003_133144\[39msrc\lib\__tests__\form-handler.test.ts:303:7
+    at runTest [90m(file:///C:/Users/Joe/Projects/website-sync-20251003_133144/[39mnode_modules/[4m@vitest[24m/runner/dist/index.js:663:11[90m)[39m
+    at runSuite [90m(file:///C:/Users/Joe/Projects/website-sync-20251003_133144/[39mnode_modules/[4m@vitest[24m/runner/dist/index.js:782:15[90m)[39m
+    at runSuite [90m(file:///C:/Users/Joe/Projects/website-sync-20251003_133144/[39mnode_modules/[4m@vitest[24m/runner/dist/index.js:782:15[90m)[39m
+    at runSuite [90m(file:///C:/Users/Joe/Projects/website-sync-20251003_133144/[39mnode_modules/[4m@vitest[24m/runner/dist/index.js:782:15[90m)[39m {
+  code: [32m'MODULE_NOT_FOUND'[39m,
+  requireStack: [
+    [32m'C:\\Users\\Joe\\Projects\\website-sync-20251003_133144\\src\\lib\\form-handler.ts'[39m
+  ]
+}
+
+[90mstderr[2m | src/lib/__tests__/form-handler.test.ts[2m > [22m[2msubmitContactForm[2m > [22m[2mshould handle network errors[22m[39m
+Error submitting form: Error: Network error
+    at [90mC:\Users\Joe\Projects\website-sync-20251003_133144\[39msrc\lib\__tests__\form-handler.test.ts:355:45
+    at [90mfile:///C:/Users/Joe/Projects/website-sync-20251003_133144/[39mnode_modules/[4m@vitest[24m/runner/dist/index.js:135:14
+    at [90mfile:///C:/Users/Joe/Projects/website-sync-20251003_133144/[39mnode_modules/[4m@vitest[24m/runner/dist/index.js:58:26
+    at runTest [90m(file:///C:/Users/Joe/Projects/website-sync-20251003_133144/[39mnode_modules/[4m@vitest[24m/runner/dist/index.js:663:17[90m)[39m
+    at runSuite [90m(file:///C:/Users/Joe/Projects/website-sync-20251003_133144/[39mnode_modules/[4m@vitest[24m/runner/dist/index.js:782:15[90m)[39m
+    at runSuite [90m(file:///C:/Users/Joe/Projects/website-sync-20251003_133144/[39mnode_modules/[4m@vitest[24m/runner/dist/index.js:782:15[90m)[39m
+    at runFiles [90m(file:///C:/Users/Joe/Projects/website-sync-20251003_133144/[39mnode_modules/[4m@vitest[24m/runner/dist/index.js:834:5[90m)[39m
+    at startTests [90m(file:///C:/Users/Joe/Projects/website-sync-20251003_133144/[39mnode_modules/[4m@vitest[24m/runner/dist/index.js:843:3[90m)[39m
+    at [90mfile:///C:/Users/Joe/Projects/website-sync-20251003_133144/[39mnode_modules/[4mvitest[24m/dist/entry.js:103:7
+    at withEnv [90m(file:///C:/Users/Joe/Projects/website-sync-20251003_133144/[39mnode_modules/[4mvitest[24m/dist/entry.js:73:5[90m)[39m
+
+[90mstderr[2m | src/lib/__tests__/form-handler.test.ts[2m > [22m[2msubmitContactForm[2m > [22m[2mshould handle HTTP errors[22m[39m
+Error submitting form: Error: HTTP error! status: 500
+    at Module.submitContactForm [90m(C:\Users\Joe\Projects\website-sync-20251003_133144\[39msrc\lib\form-handler.ts:356:13[90m)[39m
+    at [90mC:\Users\Joe\Projects\website-sync-20251003_133144\[39msrc\lib\__tests__\form-handler.test.ts:385:20
+    at runTest [90m(file:///C:/Users/Joe/Projects/website-sync-20251003_133144/[39mnode_modules/[4m@vitest[24m/runner/dist/index.js:663:11[90m)[39m
+    at runSuite [90m(file:///C:/Users/Joe/Projects/website-sync-20251003_133144/[39mnode_modules/[4m@vitest[24m/runner/dist/index.js:782:15[90m)[39m
+    at runSuite [90m(file:///C:/Users/Joe/Projects/website-sync-20251003_133144/[39mnode_modules/[4m@vitest[24m/runner/dist/index.js:782:15[90m)[39m
+    at runFiles [90m(file:///C:/Users/Joe/Projects/website-sync-20251003_133144/[39mnode_modules/[4m@vitest[24m/runner/dist/index.js:834:5[90m)[39m
+    at startTests [90m(file:///C:/Users/Joe/Projects/website-sync-20251003_133144/[39mnode_modules/[4m@vitest[24m/runner/dist/index.js:843:3[90m)[39m
+    at [90mfile:///C:/Users/Joe/Projects/website-sync-20251003_133144/[39mnode_modules/[4mvitest[24m/dist/entry.js:103:7
+    at withEnv [90m(file:///C:/Users/Joe/Projects/website-sync-20251003_133144/[39mnode_modules/[4mvitest[24m/dist/entry.js:73:5[90m)[39m
+    at run [90m(file:///C:/Users/Joe/Projects/website-sync-20251003_133144/[39mnode_modules/[4mvitest[24m/dist/entry.js:95:3[90m)[39m
+
+[90mstderr[2m | src/components/ui/__tests__/OptimizedImage.test.tsx[2m > [22m[2mOptimizedImage[2m > [22m[2mrenders with required props[22m[39m
+Warning: `ReactDOMTestUtils.act` is deprecated in favor of `React.act`. Import `act` from `react` instead of `react-dom/test-utils`. See https://react.dev/warnings/react-dom-test-utils for more info.
+Warning: Received `false` for a non-boolean attribute `priority`.
+
+If you want to write it to the DOM, pass a string instead: priority="false" or priority={value.toString()}.
+
+If you used to conditionally omit it with priority={condition && value}, pass priority={condition ? value : undefined} instead.
+    at img
+    at spy (file:///C:/Users/Joe/Projects/website-sync-20251003_133144/node_modules/tinyspy/dist/index.js:42:80)
+    at OptimizedImage (C:\Users\Joe\Projects\website-sync-20251003_133144\src\components\ui\OptimizedImage.tsx:36:3)
+Warning: React does not recognize the `blurDataURL` prop on a DOM element. If you intentionally want it to appear in the DOM as a custom attribute, spell it as lowercase `blurdataurl` instead. If you accidentally passed it from a parent component, remove it from the DOM element.
+    at img
+    at spy (file:///C:/Users/Joe/Projects/website-sync-20251003_133144/node_modules/tinyspy/dist/index.js:42:80)
+    at OptimizedImage (C:\Users\Joe\Projects\website-sync-20251003_133144\src\components\ui\OptimizedImage.tsx:36:3)
+
+[90mstderr[2m | src/components/layout/__tests__/MobileMenu.test.tsx[2m > [22m[2mMobileMenu[2m > [22m[2mrenders when isOpen is true[22m[39m
+Warning: `ReactDOMTestUtils.act` is deprecated in favor of `React.act`. Import `act` from `react` instead of `react-dom/test-utils`. See https://react.dev/warnings/react-dom-test-utils for more info.
+
+[90mstderr[2m | src/components/layout/__tests__/MobileMenu.test.tsx[2m > [22m[2mMobileMenu[2m > [22m[2mcalls onClose when backdrop is clicked[22m[39m
+Warning: An update to ForwardRef(LinkComponent) inside a test was not wrapped in act(...).
+
+When testing, code that causes React state updates should be wrapped into act(...):
+
+act(() => {
+  /* fire events that update state */
+});
+/* assert on the output */
+
+This ensures that you're testing the behavior the user would see in the browser. Learn more at https://reactjs.org/link/wrap-tests-with-act
+    at LinkComponent (C:\Users\Joe\Projects\website-sync-20251003_133144\node_modules\next\dist\client\link.js:121:19)
+    at nav
+    at div
+    at MobileMenu (C:\Users\Joe\Projects\website-sync-20251003_133144\src\components\layout\MobileMenu.tsx:7:3)
+Warning: An update to ForwardRef(LinkComponent) inside a test was not wrapped in act(...).
+
+When testing, code that causes React state updates should be wrapped into act(...):
+
+act(() => {
+  /* fire events that update state */
+});
+/* assert on the output */
+
+This ensures that you're testing the behavior the user would see in the browser. Learn more at https://reactjs.org/link/wrap-tests-with-act
+    at LinkComponent (C:\Users\Joe\Projects\website-sync-20251003_133144\node_modules\next\dist\client\link.js:121:19)
+    at nav
+    at div
+    at MobileMenu (C:\Users\Joe\Projects\website-sync-20251003_133144\src\components\layout\MobileMenu.tsx:7:3)
+Warning: An update to ForwardRef(LinkComponent) inside a test was not wrapped in act(...).
+
+When testing, code that causes React state updates should be wrapped into act(...):
+
+act(() => {
+  /* fire events that update state */
+});
+/* assert on the output */
+
+This ensures that you're testing the behavior the user would see in the browser. Learn more at https://reactjs.org/link/wrap-tests-with-act
+    at LinkComponent (C:\Users\Joe\Projects\website-sync-20251003_133144\node_modules\next\dist\client\link.js:121:19)
+    at nav
+    at div
+    at MobileMenu (C:\Users\Joe\Projects\website-sync-20251003_133144\src\components\layout\MobileMenu.tsx:7:3)
+Warning: An update to ForwardRef(LinkComponent) inside a test was not wrapped in act(...).
+
+When testing, code that causes React state updates should be wrapped into act(...):
+
+act(() => {
+  /* fire events that update state */
+});
+/* assert on the output */
+
+This ensures that you're testing the behavior the user would see in the browser. Learn more at https://reactjs.org/link/wrap-tests-with-act
+    at LinkComponent (C:\Users\Joe\Projects\website-sync-20251003_133144\node_modules\next\dist\client\link.js:121:19)
+    at nav
+    at div
+    at MobileMenu (C:\Users\Joe\Projects\website-sync-20251003_133144\src\components\layout\MobileMenu.tsx:7:3)
+Warning: An update to ForwardRef(LinkComponent) inside a test was not wrapped in act(...).
+
+When testing, code that causes React state updates should be wrapped into act(...):
+
+act(() => {
+  /* fire events that update state */
+});
+/* assert on the output */
+
+This ensures that you're testing the behavior the user would see in the browser. Learn more at https://reactjs.org/link/wrap-tests-with-act
+    at LinkComponent (C:\Users\Joe\Projects\website-sync-20251003_133144\node_modules\next\dist\client\link.js:121:19)
+    at div
+    at div
+    at MobileMenu (C:\Users\Joe\Projects\website-sync-20251003_133144\src\components\layout\MobileMenu.tsx:7:3)
+
+[90mstderr[2m | src/components/ui/__tests__/Button.test.tsx[2m > [22m[2mButton[2m > [22m[2mrenders children correctly[22m[39m
+Warning: `ReactDOMTestUtils.act` is deprecated in favor of `React.act`. Import `act` from `react` instead of `react-dom/test-utils`. See https://react.dev/warnings/react-dom-test-utils for more info.
+
+[90mstderr[2m | src/components/layout/__tests__/MobileMenu.test.tsx[2m > [22m[2mMobileMenu[2m > [22m[2mcalls onClose when close button is clicked[22m[39m
+Warning: An update to ForwardRef(LinkComponent) inside a test was not wrapped in act(...).
+
+When testing, code that causes React state updates should be wrapped into act(...):
+
+act(() => {
+  /* fire events that update state */
+});
+/* assert on the output */
+
+This ensures that you're testing the behavior the user would see in the browser. Learn more at https://reactjs.org/link/wrap-tests-with-act
+    at LinkComponent (C:\Users\Joe\Projects\website-sync-20251003_133144\node_modules\next\dist\client\link.js:121:19)
+    at nav
+    at div
+    at MobileMenu (C:\Users\Joe\Projects\website-sync-20251003_133144\src\components\layout\MobileMenu.tsx:7:3)
+Warning: An update to ForwardRef(LinkComponent) inside a test was not wrapped in act(...).
+
+When testing, code that causes React state updates should be wrapped into act(...):
+
+act(() => {
+  /* fire events that update state */
+});
+/* assert on the output */
+
+This ensures that you're testing the behavior the user would see in the browser. Learn more at https://reactjs.org/link/wrap-tests-with-act
+    at LinkComponent (C:\Users\Joe\Projects\website-sync-20251003_133144\node_modules\next\dist\client\link.js:121:19)
+    at nav
+    at div
+    at MobileMenu (C:\Users\Joe\Projects\website-sync-20251003_133144\src\components\layout\MobileMenu.tsx:7:3)
+Warning: An update to ForwardRef(LinkComponent) inside a test was not wrapped in act(...).
+
+When testing, code that causes React state updates should be wrapped into act(...):
+
+act(() => {
+  /* fire events that update state */
+});
+/* assert on the output */
+
+This ensures that you're testing the behavior the user would see in the browser. Learn more at https://reactjs.org/link/wrap-tests-with-act
+    at LinkComponent (C:\Users\Joe\Projects\website-sync-20251003_133144\node_modules\next\dist\client\link.js:121:19)
+    at nav
+    at div
+    at MobileMenu (C:\Users\Joe\Projects\website-sync-20251003_133144\src\components\layout\MobileMenu.tsx:7:3)
+Warning: An update to ForwardRef(LinkComponent) inside a test was not wrapped in act(...).
+
+When testing, code that causes React state updates should be wrapped into act(...):
+
+act(() => {
+  /* fire events that update state */
+});
+/* assert on the output */
+
+This ensures that you're testing the behavior the user would see in the browser. Learn more at https://reactjs.org/link/wrap-tests-with-act
+    at LinkComponent (C:\Users\Joe\Projects\website-sync-20251003_133144\node_modules\next\dist\client\link.js:121:19)
+    at nav
+    at div
+    at MobileMenu (C:\Users\Joe\Projects\website-sync-20251003_133144\src\components\layout\MobileMenu.tsx:7:3)
+Warning: An update to ForwardRef(LinkComponent) inside a test was not wrapped in act(...).
+
+When testing, code that causes React state updates should be wrapped into act(...):
+
+act(() => {
+  /* fire events that update state */
+});
+/* assert on the output */
+
+This ensures that you're testing the behavior the user would see in the browser. Learn more at https://reactjs.org/link/wrap-tests-with-act
+    at LinkComponent (C:\Users\Joe\Projects\website-sync-20251003_133144\node_modules\next\dist\client\link.js:121:19)
+    at div
+    at div
+    at MobileMenu (C:\Users\Joe\Projects\website-sync-20251003_133144\src\components\layout\MobileMenu.tsx:7:3)
+
+[90mstderr[2m | src/components/layout/__tests__/MobileMenu.test.tsx[2m > [22m[2mMobileMenu[2m > [22m[2mcalls onClose when navigation link is clicked[22m[39m
+Warning: An update to ForwardRef(LinkComponent) inside a test was not wrapped in act(...).
+
+When testing, code that causes React state updates should be wrapped into act(...):
+
+act(() => {
+  /* fire events that update state */
+});
+/* assert on the output */
+
+This ensures that you're testing the behavior the user would see in the browser. Learn more at https://reactjs.org/link/wrap-tests-with-act
+    at LinkComponent (C:\Users\Joe\Projects\website-sync-20251003_133144\node_modules\next\dist\client\link.js:121:19)
+    at nav
+    at div
+    at MobileMenu (C:\Users\Joe\Projects\website-sync-20251003_133144\src\components\layout\MobileMenu.tsx:7:3)
+Warning: An update to ForwardRef(LinkComponent) inside a test was not wrapped in act(...).
+
+When testing, code that causes React state updates should be wrapped into act(...):
+
+act(() => {
+  /* fire events that update state */
+});
+/* assert on the output */
+
+This ensures that you're testing the behavior the user would see in the browser. Learn more at https://reactjs.org/link/wrap-tests-with-act
+    at LinkComponent (C:\Users\Joe\Projects\website-sync-20251003_133144\node_modules\next\dist\client\link.js:121:19)
+    at nav
+    at div
+    at MobileMenu (C:\Users\Joe\Projects\website-sync-20251003_133144\src\components\layout\MobileMenu.tsx:7:3)
+Warning: An update to ForwardRef(LinkComponent) inside a test was not wrapped in act(...).
+
+When testing, code that causes React state updates should be wrapped into act(...):
+
+act(() => {
+  /* fire events that update state */
+});
+/* assert on the output */
+
+This ensures that you're testing the behavior the user would see in the browser. Learn more at https://reactjs.org/link/wrap-tests-with-act
+    at LinkComponent (C:\Users\Joe\Projects\website-sync-20251003_133144\node_modules\next\dist\client\link.js:121:19)
+    at nav
+    at div
+    at MobileMenu (C:\Users\Joe\Projects\website-sync-20251003_133144\src\components\layout\MobileMenu.tsx:7:3)
+Warning: An update to ForwardRef(LinkComponent) inside a test was not wrapped in act(...).
+
+When testing, code that causes React state updates should be wrapped into act(...):
+
+act(() => {
+  /* fire events that update state */
+});
+/* assert on the output */
+
+This ensures that you're testing the behavior the user would see in the browser. Learn more at https://reactjs.org/link/wrap-tests-with-act
+    at LinkComponent (C:\Users\Joe\Projects\website-sync-20251003_133144\node_modules\next\dist\client\link.js:121:19)
+    at nav
+    at div
+    at MobileMenu (C:\Users\Joe\Projects\website-sync-20251003_133144\src\components\layout\MobileMenu.tsx:7:3)
+Warning: An update to ForwardRef(LinkComponent) inside a test was not wrapped in act(...).
+
+When testing, code that causes React state updates should be wrapped into act(...):
+
+act(() => {
+  /* fire events that update state */
+});
+/* assert on the output */
+
+This ensures that you're testing the behavior the user would see in the browser. Learn more at https://reactjs.org/link/wrap-tests-with-act
+    at LinkComponent (C:\Users\Joe\Projects\website-sync-20251003_133144\node_modules\next\dist\client\link.js:121:19)
+    at div
+    at div
+    at MobileMenu (C:\Users\Joe\Projects\website-sync-20251003_133144\src\components\layout\MobileMenu.tsx:7:3)
+
+[90mstderr[2m | src/components/layout/__tests__/MobileMenu.test.tsx[2m > [22m[2mMobileMenu[2m > [22m[2mcalls onClose when CTA button is clicked[22m[39m
+Warning: An update to ForwardRef(LinkComponent) inside a test was not wrapped in act(...).
+
+When testing, code that causes React state updates should be wrapped into act(...):
+
+act(() => {
+  /* fire events that update state */
+});
+/* assert on the output */
+
+This ensures that you're testing the behavior the user would see in the browser. Learn more at https://reactjs.org/link/wrap-tests-with-act
+    at LinkComponent (C:\Users\Joe\Projects\website-sync-20251003_133144\node_modules\next\dist\client\link.js:121:19)
+    at nav
+    at div
+    at MobileMenu (C:\Users\Joe\Projects\website-sync-20251003_133144\src\components\layout\MobileMenu.tsx:7:3)
+Warning: An update to ForwardRef(LinkComponent) inside a test was not wrapped in act(...).
+
+When testing, code that causes React state updates should be wrapped into act(...):
+
+act(() => {
+  /* fire events that update state */
+});
+/* assert on the output */
+
+This ensures that you're testing the behavior the user would see in the browser. Learn more at https://reactjs.org/link/wrap-tests-with-act
+    at LinkComponent (C:\Users\Joe\Projects\website-sync-20251003_133144\node_modules\next\dist\client\link.js:121:19)
+    at nav
+    at div
+    at MobileMenu (C:\Users\Joe\Projects\website-sync-20251003_133144\src\components\layout\MobileMenu.tsx:7:3)
+Warning: An update to ForwardRef(LinkComponent) inside a test was not wrapped in act(...).
+
+When testing, code that causes React state updates should be wrapped into act(...):
+
+act(() => {
+  /* fire events that update state */
+});
+/* assert on the output */
+
+This ensures that you're testing the behavior the user would see in the browser. Learn more at https://reactjs.org/link/wrap-tests-with-act
+    at LinkComponent (C:\Users\Joe\Projects\website-sync-20251003_133144\node_modules\next\dist\client\link.js:121:19)
+    at nav
+    at div
+    at MobileMenu (C:\Users\Joe\Projects\website-sync-20251003_133144\src\components\layout\MobileMenu.tsx:7:3)
+Warning: An update to ForwardRef(LinkComponent) inside a test was not wrapped in act(...).
+
+When testing, code that causes React state updates should be wrapped into act(...):
+
+act(() => {
+  /* fire events that update state */
+});
+/* assert on the output */
+
+This ensures that you're testing the behavior the user would see in the browser. Learn more at https://reactjs.org/link/wrap-tests-with-act
+    at LinkComponent (C:\Users\Joe\Projects\website-sync-20251003_133144\node_modules\next\dist\client\link.js:121:19)
+    at nav
+    at div
+    at MobileMenu (C:\Users\Joe\Projects\website-sync-20251003_133144\src\components\layout\MobileMenu.tsx:7:3)
+Warning: An update to ForwardRef(LinkComponent) inside a test was not wrapped in act(...).
+
+When testing, code that causes React state updates should be wrapped into act(...):
+
+act(() => {
+  /* fire events that update state */
+});
+/* assert on the output */
+
+This ensures that you're testing the behavior the user would see in the browser. Learn more at https://reactjs.org/link/wrap-tests-with-act
+    at LinkComponent (C:\Users\Joe\Projects\website-sync-20251003_133144\node_modules\next\dist\client\link.js:121:19)
+    at div
+    at div
+    at MobileMenu (C:\Users\Joe\Projects\website-sync-20251003_133144\src\components\layout\MobileMenu.tsx:7:3)
+
+[90mstderr[2m | src/components/layout/__tests__/MobileMenu.test.tsx[2m > [22m[2mMobileMenu[2m > [22m[2mcalls onClose when CTA button is clicked[22m[39m
+Error: Not implemented: navigation (except hash changes)
+    at module.exports (C:\Users\Joe\Projects\website-sync-20251003_133144\node_modules\jsdom\lib\jsdom\browser\not-implemented.js:9:17)
+    at navigateFetch (C:\Users\Joe\Projects\website-sync-20251003_133144\node_modules\jsdom\lib\jsdom\living\window\navigation.js:77:3)
+    at exports.navigate (C:\Users\Joe\Projects\website-sync-20251003_133144\node_modules\jsdom\lib\jsdom\living\window\navigation.js:55:3)
+    at Timeout._onTimeout (C:\Users\Joe\Projects\website-sync-20251003_133144\node_modules\jsdom\lib\jsdom\living\nodes\HTMLHyperlinkElementUtils-impl.js:81:7)
+    at listOnTimeout (node:internal/timers:573:17)
+    at processTimers (node:internal/timers:514:7) [90mundefined[39m
+
+[90mstderr[2m | src/components/layout/__tests__/TailwindConfig.test.tsx[2m > [22m[2mTailwind Mobile-First Configuration[2m > [22m[2mapplies mobile-first container classes[22m[39m
+Warning: `ReactDOMTestUtils.act` is deprecated in favor of `React.act`. Import `act` from `react` instead of `react-dom/test-utils`. See https://react.dev/warnings/react-dom-test-utils for more info.
+
+[90mstderr[2m | src/components/layout/__tests__/BottomNavigation.test.tsx[2m > [22m[2mBottomNavigation[2m > [22m[2mrenders all navigation items[22m[39m
+Warning: `ReactDOMTestUtils.act` is deprecated in favor of `React.act`. Import `act` from `react` instead of `react-dom/test-utils`. See https://react.dev/warnings/react-dom-test-utils for more info.
+
+[90mstderr[2m | src/components/layout/__tests__/Header.test.tsx[2m > [22m[2mHeader[2m > [22m[2mrenders logo and brand name[22m[39m
+Warning: `ReactDOMTestUtils.act` is deprecated in favor of `React.act`. Import `act` from `react` instead of `react-dom/test-utils`. See https://react.dev/warnings/react-dom-test-utils for more info.
+
+[90mstderr[2m | src/components/layout/__tests__/Header.test.tsx[2m > [22m[2mHeader[2m > [22m[2mtoggles mobile menu when button is clicked[22m[39m
+Warning: An update to ForwardRef(LinkComponent) inside a test was not wrapped in act(...).
+
+When testing, code that causes React state updates should be wrapped into act(...):
+
+act(() => {
+  /* fire events that update state */
+});
+/* assert on the output */
+
+This ensures that you're testing the behavior the user would see in the browser. Learn more at https://reactjs.org/link/wrap-tests-with-act
+    at LinkComponent (C:\Users\Joe\Projects\website-sync-20251003_133144\node_modules\next\dist\client\link.js:121:19)
+    at div
+    at div
+    at header
+    at Header (C:\Users\Joe\Projects\website-sync-20251003_133144\src\components\layout\Header.tsx:17:30)
+Warning: An update to ForwardRef(LinkComponent) inside a test was not wrapped in act(...).
+
+When testing, code that causes React state updates should be wrapped into act(...):
+
+act(() => {
+  /* fire events that update state */
+});
+/* assert on the output */
+
+This ensures that you're testing the behavior the user would see in the browser. Learn more at https://reactjs.org/link/wrap-tests-with-act
+    at LinkComponent (C:\Users\Joe\Projects\website-sync-20251003_133144\node_modules\next\dist\client\link.js:121:19)
+    at nav
+    at div
+    at div
+    at header
+    at Header (C:\Users\Joe\Projects\website-sync-20251003_133144\src\components\layout\Header.tsx:17:30)
+Warning: An update to ForwardRef(LinkComponent) inside a test was not wrapped in act(...).
+
+When testing, code that causes React state updates should be wrapped into act(...):
+
+act(() => {
+  /* fire events that update state */
+});
+/* assert on the output */
+
+This ensures that you're testing the behavior the user would see in the browser. Learn more at https://reactjs.org/link/wrap-tests-with-act
+    at LinkComponent (C:\Users\Joe\Projects\website-sync-20251003_133144\node_modules\next\dist\client\link.js:121:19)
+    at nav
+    at div
+    at div
+    at header
+    at Header (C:\Users\Joe\Projects\website-sync-20251003_133144\src\components\layout\Header.tsx:17:30)
+Warning: An update to ForwardRef(LinkComponent) inside a test was not wrapped in act(...).
+
+When testing, code that causes React state updates should be wrapped into act(...):
+
+act(() => {
+  /* fire events that update state */
+});
+/* assert on the output */
+
+This ensures that you're testing the behavior the user would see in the browser. Learn more at https://reactjs.org/link/wrap-tests-with-act
+    at LinkComponent (C:\Users\Joe\Projects\website-sync-20251003_133144\node_modules\next\dist\client\link.js:121:19)
+    at nav
+    at div
+    at div
+    at header
+    at Header (C:\Users\Joe\Projects\website-sync-20251003_133144\src\components\layout\Header.tsx:17:30)
+Warning: An update to ForwardRef(LinkComponent) inside a test was not wrapped in act(...).
+
+When testing, code that causes React state updates should be wrapped into act(...):
+
+act(() => {
+  /* fire events that update state */
+});
+/* assert on the output */
+
+This ensures that you're testing the behavior the user would see in the browser. Learn more at https://reactjs.org/link/wrap-tests-with-act
+    at LinkComponent (C:\Users\Joe\Projects\website-sync-20251003_133144\node_modules\next\dist\client\link.js:121:19)
+    at nav
+    at div
+    at div
+    at header
+    at Header (C:\Users\Joe\Projects\website-sync-20251003_133144\src\components\layout\Header.tsx:17:30)
+Warning: An update to ForwardRef(LinkComponent) inside a test was not wrapped in act(...).
+
+When testing, code that causes React state updates should be wrapped into act(...):
+
+act(() => {
+  /* fire events that update state */
+});
+/* assert on the output */
+
+This ensures that you're testing the behavior the user would see in the browser. Learn more at https://reactjs.org/link/wrap-tests-with-act
+    at LinkComponent (C:\Users\Joe\Projects\website-sync-20251003_133144\node_modules\next\dist\client\link.js:121:19)
+    at nav
+    at div
+    at div
+    at header
+    at Header (C:\Users\Joe\Projects\website-sync-20251003_133144\src\components\layout\Header.tsx:17:30)
+Warning: An update to ForwardRef(LinkComponent) inside a test was not wrapped in act(...).
+
+When testing, code that causes React state updates should be wrapped into act(...):
+
+act(() => {
+  /* fire events that update state */
+});
+/* assert on the output */
+
+This ensures that you're testing the behavior the user would see in the browser. Learn more at https://reactjs.org/link/wrap-tests-with-act
+    at LinkComponent (C:\Users\Joe\Projects\website-sync-20251003_133144\node_modules\next\dist\client\link.js:121:19)
+    at div
+    at div
+    at div
+    at header
+    at Header (C:\Users\Joe\Projects\website-sync-20251003_133144\src\components\layout\Header.tsx:17:30)
+
+[90mstderr[2m | src/components/layout/__tests__/Header.test.tsx[2m > [22m[2mHeader[2m > [22m[2mtoggles mobile menu when button is clicked[22m[39m
+Warning: An update to Header inside a test was not wrapped in act(...).
+
+When testing, code that causes React state updates should be wrapped into act(...):
+
+act(() => {
+  /* fire events that update state */
+});
+/* assert on the output */
+
+This ensures that you're testing the behavior the user would see in the browser. Learn more at https://reactjs.org/link/wrap-tests-with-act
+    at Header (C:\Users\Joe\Projects\website-sync-20251003_133144\src\components\layout\Header.tsx:17:30)
+
+[90mstderr[2m | src/components/layout/__tests__/Header.test.tsx[2m > [22m[2mHeader[2m > [22m[2mtoggles mobile menu when button is clicked[22m[39m
+Warning: An update to ForwardRef(LinkComponent) inside a test was not wrapped in act(...).
+
+When testing, code that causes React state updates should be wrapped into act(...):
+
+act(() => {
+  /* fire events that update state */
+});
+/* assert on the output */
+
+This ensures that you're testing the behavior the user would see in the browser. Learn more at https://reactjs.org/link/wrap-tests-with-act
+    at LinkComponent (C:\Users\Joe\Projects\website-sync-20251003_133144\node_modules\next\dist\client\link.js:121:19)
+    at nav
+    at div
+    at MobileMenu (C:\Users\Joe\Projects\website-sync-20251003_133144\src\components\layout\MobileMenu.tsx:7:3)
+    at Header (C:\Users\Joe\Projects\website-sync-20251003_133144\src\components\layout\Header.tsx:17:30)
+Warning: An update to ForwardRef(LinkComponent) inside a test was not wrapped in act(...).
+
+When testing, code that causes React state updates should be wrapped into act(...):
+
+act(() => {
+  /* fire events that update state */
+});
+/* assert on the output */
+
+This ensures that you're testing the behavior the user would see in the browser. Learn more at https://reactjs.org/link/wrap-tests-with-act
+    at LinkComponent (C:\Users\Joe\Projects\website-sync-20251003_133144\node_modules\next\dist\client\link.js:121:19)
+    at nav
+    at div
+    at MobileMenu (C:\Users\Joe\Projects\website-sync-20251003_133144\src\components\layout\MobileMenu.tsx:7:3)
+    at Header (C:\Users\Joe\Projects\website-sync-20251003_133144\src\components\layout\Header.tsx:17:30)
+Warning: An update to ForwardRef(LinkComponent) inside a test was not wrapped in act(...).
+
+When testing, code that causes React state updates should be wrapped into act(...):
+
+act(() => {
+  /* fire events that update state */
+});
+/* assert on the output */
+
+This ensures that you're testing the behavior the user would see in the browser. Learn more at https://reactjs.org/link/wrap-tests-with-act
+    at LinkComponent (C:\Users\Joe\Projects\website-sync-20251003_133144\node_modules\next\dist\client\link.js:121:19)
+    at nav
+    at div
+    at MobileMenu (C:\Users\Joe\Projects\website-sync-20251003_133144\src\components\layout\MobileMenu.tsx:7:3)
+    at Header (C:\Users\Joe\Projects\website-sync-20251003_133144\src\components\layout\Header.tsx:17:30)
+Warning: An update to ForwardRef(LinkComponent) inside a test was not wrapped in act(...).
+
+When testing, code that causes React state updates should be wrapped into act(...):
+
+act(() => {
+  /* fire events that update state */
+});
+/* assert on the output */
+
+This ensures that you're testing the behavior the user would see in the browser. Learn more at https://reactjs.org/link/wrap-tests-with-act
+    at LinkComponent (C:\Users\Joe\Projects\website-sync-20251003_133144\node_modules\next\dist\client\link.js:121:19)
+    at nav
+    at div
+    at MobileMenu (C:\Users\Joe\Projects\website-sync-20251003_133144\src\components\layout\MobileMenu.tsx:7:3)
+    at Header (C:\Users\Joe\Projects\website-sync-20251003_133144\src\components\layout\Header.tsx:17:30)
+Warning: An update to ForwardRef(LinkComponent) inside a test was not wrapped in act(...).
+
+When testing, code that causes React state updates should be wrapped into act(...):
+
+act(() => {
+  /* fire events that update state */
+});
+/* assert on the output */
+
+This ensures that you're testing the behavior the user would see in the browser. Learn more at https://reactjs.org/link/wrap-tests-with-act
+    at LinkComponent (C:\Users\Joe\Projects\website-sync-20251003_133144\node_modules\next\dist\client\link.js:121:19)
+    at nav
+    at div
+    at MobileMenu (C:\Users\Joe\Projects\website-sync-20251003_133144\src\components\layout\MobileMenu.tsx:7:3)
+    at Header (C:\Users\Joe\Projects\website-sync-20251003_133144\src\components\layout\Header.tsx:17:30)
+Warning: An update to ForwardRef(LinkComponent) inside a test was not wrapped in act(...).
+
+When testing, code that causes React state updates should be wrapped into act(...):
+
+act(() => {
+  /* fire events that update state */
+});
+/* assert on the output */
+
+This ensures that you're testing the behavior the user would see in the browser. Learn more at https://reactjs.org/link/wrap-tests-with-act
+    at LinkComponent (C:\Users\Joe\Projects\website-sync-20251003_133144\node_modules\next\dist\client\link.js:121:19)
+    at div
+    at div
+    at MobileMenu (C:\Users\Joe\Projects\website-sync-20251003_133144\src\components\layout\MobileMenu.tsx:7:3)
+    at Header (C:\Users\Joe\Projects\website-sync-20251003_133144\src\components\layout\Header.tsx:17:30)
+
+[90mstderr[2m | src/components/layout/__tests__/Header.test.tsx[2m > [22m[2mHeader[2m > [22m[2mtoggles mobile menu when button is clicked[22m[39m
+Warning: An update to Header inside a test was not wrapped in act(...).
+
+When testing, code that causes React state updates should be wrapped into act(...):
+
+act(() => {
+  /* fire events that update state */
+});
+/* assert on the output */
+
+This ensures that you're testing the behavior the user would see in the browser. Learn more at https://reactjs.org/link/wrap-tests-with-act
+    at Header (C:\Users\Joe\Projects\website-sync-20251003_133144\src\components\layout\Header.tsx:17:30)
+
+[90mstderr[2m | src/components/layout/__tests__/Header.test.tsx[2m > [22m[2mHeader[2m > [22m[2mshows close icon when menu is open[22m[39m
+Warning: An update to ForwardRef(LinkComponent) inside a test was not wrapped in act(...).
+
+When testing, code that causes React state updates should be wrapped into act(...):
+
+act(() => {
+  /* fire events that update state */
+});
+/* assert on the output */
+
+This ensures that you're testing the behavior the user would see in the browser. Learn more at https://reactjs.org/link/wrap-tests-with-act
+    at LinkComponent (C:\Users\Joe\Projects\website-sync-20251003_133144\node_modules\next\dist\client\link.js:121:19)
+    at div
+    at div
+    at header
+    at Header (C:\Users\Joe\Projects\website-sync-20251003_133144\src\components\layout\Header.tsx:17:30)
+Warning: An update to ForwardRef(LinkComponent) inside a test was not wrapped in act(...).
+
+When testing, code that causes React state updates should be wrapped into act(...):
+
+act(() => {
+  /* fire events that update state */
+});
+/* assert on the output */
+
+This ensures that you're testing the behavior the user would see in the browser. Learn more at https://reactjs.org/link/wrap-tests-with-act
+    at LinkComponent (C:\Users\Joe\Projects\website-sync-20251003_133144\node_modules\next\dist\client\link.js:121:19)
+    at nav
+    at div
+    at div
+    at header
+    at Header (C:\Users\Joe\Projects\website-sync-20251003_133144\src\components\layout\Header.tsx:17:30)
+Warning: An update to ForwardRef(LinkComponent) inside a test was not wrapped in act(...).
+
+When testing, code that causes React state updates should be wrapped into act(...):
+
+act(() => {
+  /* fire events that update state */
+});
+/* assert on the output */
+
+This ensures that you're testing the behavior the user would see in the browser. Learn more at https://reactjs.org/link/wrap-tests-with-act
+    at LinkComponent (C:\Users\Joe\Projects\website-sync-20251003_133144\node_modules\next\dist\client\link.js:121:19)
+    at nav
+    at div
+    at div
+    at header
+    at Header (C:\Users\Joe\Projects\website-sync-20251003_133144\src\components\layout\Header.tsx:17:30)
+Warning: An update to ForwardRef(LinkComponent) inside a test was not wrapped in act(...).
+
+When testing, code that causes React state updates should be wrapped into act(...):
+
+act(() => {
+  /* fire events that update state */
+});
+/* assert on the output */
+
+This ensures that you're testing the behavior the user would see in the browser. Learn more at https://reactjs.org/link/wrap-tests-with-act
+    at LinkComponent (C:\Users\Joe\Projects\website-sync-20251003_133144\node_modules\next\dist\client\link.js:121:19)
+    at nav
+    at div
+    at div
+    at header
+    at Header (C:\Users\Joe\Projects\website-sync-20251003_133144\src\components\layout\Header.tsx:17:30)
+Warning: An update to ForwardRef(LinkComponent) inside a test was not wrapped in act(...).
+
+When testing, code that causes React state updates should be wrapped into act(...):
+
+act(() => {
+  /* fire events that update state */
+});
+/* assert on the output */
+
+This ensures that you're testing the behavior the user would see in the browser. Learn more at https://reactjs.org/link/wrap-tests-with-act
+    at LinkComponent (C:\Users\Joe\Projects\website-sync-20251003_133144\node_modules\next\dist\client\link.js:121:19)
+    at nav
+    at div
+    at div
+    at header
+    at Header (C:\Users\Joe\Projects\website-sync-20251003_133144\src\components\layout\Header.tsx:17:30)
+Warning: An update to ForwardRef(LinkComponent) inside a test was not wrapped in act(...).
+
+When testing, code that causes React state updates should be wrapped into act(...):
+
+act(() => {
+  /* fire events that update state */
+});
+/* assert on the output */
+
+This ensures that you're testing the behavior the user would see in the browser. Learn more at https://reactjs.org/link/wrap-tests-with-act
+    at LinkComponent (C:\Users\Joe\Projects\website-sync-20251003_133144\node_modules\next\dist\client\link.js:121:19)
+    at nav
+    at div
+    at div
+    at header
+    at Header (C:\Users\Joe\Projects\website-sync-20251003_133144\src\components\layout\Header.tsx:17:30)
+Warning: An update to ForwardRef(LinkComponent) inside a test was not wrapped in act(...).
+
+When testing, code that causes React state updates should be wrapped into act(...):
+
+act(() => {
+  /* fire events that update state */
+});
+/* assert on the output */
+
+This ensures that you're testing the behavior the user would see in the browser. Learn more at https://reactjs.org/link/wrap-tests-with-act
+    at LinkComponent (C:\Users\Joe\Projects\website-sync-20251003_133144\node_modules\next\dist\client\link.js:121:19)
+    at div
+    at div
+    at div
+    at header
+    at Header (C:\Users\Joe\Projects\website-sync-20251003_133144\src\components\layout\Header.tsx:17:30)
+
+[90mstderr[2m | src/components/layout/__tests__/Header.test.tsx[2m > [22m[2mHeader[2m > [22m[2mshows close icon when menu is open[22m[39m
+Warning: An update to Header inside a test was not wrapped in act(...).
+
+When testing, code that causes React state updates should be wrapped into act(...):
+
+act(() => {
+  /* fire events that update state */
+});
+/* assert on the output */
+
+This ensures that you're testing the behavior the user would see in the browser. Learn more at https://reactjs.org/link/wrap-tests-with-act
+    at Header (C:\Users\Joe\Projects\website-sync-20251003_133144\src\components\layout\Header.tsx:17:30)
+
+[90mstderr[2m | src/components/layout/__tests__/Header.test.tsx[2m > [22m[2mHeader[2m > [22m[2mshows close icon when menu is open[22m[39m
+Warning: An update to ForwardRef(LinkComponent) inside a test was not wrapped in act(...).
+
+When testing, code that causes React state updates should be wrapped into act(...):
+
+act(() => {
+  /* fire events that update state */
+});
+/* assert on the output */
+
+This ensures that you're testing the behavior the user would see in the browser. Learn more at https://reactjs.org/link/wrap-tests-with-act
+    at LinkComponent (C:\Users\Joe\Projects\website-sync-20251003_133144\node_modules\next\dist\client\link.js:121:19)
+    at nav
+    at div
+    at MobileMenu (C:\Users\Joe\Projects\website-sync-20251003_133144\src\components\layout\MobileMenu.tsx:7:3)
+    at Header (C:\Users\Joe\Projects\website-sync-20251003_133144\src\components\layout\Header.tsx:17:30)
+Warning: An update to ForwardRef(LinkComponent) inside a test was not wrapped in act(...).
+
+When testing, code that causes React state updates should be wrapped into act(...):
+
+act(() => {
+  /* fire events that update state */
+});
+/* assert on the output */
+
+This ensures that you're testing the behavior the user would see in the browser. Learn more at https://reactjs.org/link/wrap-tests-with-act
+    at LinkComponent (C:\Users\Joe\Projects\website-sync-20251003_133144\node_modules\next\dist\client\link.js:121:19)
+    at nav
+    at div
+    at MobileMenu (C:\Users\Joe\Projects\website-sync-20251003_133144\src\components\layout\MobileMenu.tsx:7:3)
+    at Header (C:\Users\Joe\Projects\website-sync-20251003_133144\src\components\layout\Header.tsx:17:30)
+Warning: An update to ForwardRef(LinkComponent) inside a test was not wrapped in act(...).
+
+When testing, code that causes React state updates should be wrapped into act(...):
+
+act(() => {
+  /* fire events that update state */
+});
+/* assert on the output */
+
+This ensures that you're testing the behavior the user would see in the browser. Learn more at https://reactjs.org/link/wrap-tests-with-act
+    at LinkComponent (C:\Users\Joe\Projects\website-sync-20251003_133144\node_modules\next\dist\client\link.js:121:19)
+    at nav
+    at div
+    at MobileMenu (C:\Users\Joe\Projects\website-sync-20251003_133144\src\components\layout\MobileMenu.tsx:7:3)
+    at Header (C:\Users\Joe\Projects\website-sync-20251003_133144\src\components\layout\Header.tsx:17:30)
+Warning: An update to ForwardRef(LinkComponent) inside a test was not wrapped in act(...).
+
+When testing, code that causes React state updates should be wrapped into act(...):
+
+act(() => {
+  /* fire events that update state */
+});
+/* assert on the output */
+
+This ensures that you're testing the behavior the user would see in the browser. Learn more at https://reactjs.org/link/wrap-tests-with-act
+    at LinkComponent (C:\Users\Joe\Projects\website-sync-20251003_133144\node_modules\next\dist\client\link.js:121:19)
+    at nav
+    at div
+    at MobileMenu (C:\Users\Joe\Projects\website-sync-20251003_133144\src\components\layout\MobileMenu.tsx:7:3)
+    at Header (C:\Users\Joe\Projects\website-sync-20251003_133144\src\components\layout\Header.tsx:17:30)
+Warning: An update to ForwardRef(LinkComponent) inside a test was not wrapped in act(...).
+
+When testing, code that causes React state updates should be wrapped into act(...):
+
+act(() => {
+  /* fire events that update state */
+});
+/* assert on the output */
+
+This ensures that you're testing the behavior the user would see in the browser. Learn more at https://reactjs.org/link/wrap-tests-with-act
+    at LinkComponent (C:\Users\Joe\Projects\website-sync-20251003_133144\node_modules\next\dist\client\link.js:121:19)
+    at nav
+    at div
+    at MobileMenu (C:\Users\Joe\Projects\website-sync-20251003_133144\src\components\layout\MobileMenu.tsx:7:3)
+    at Header (C:\Users\Joe\Projects\website-sync-20251003_133144\src\components\layout\Header.tsx:17:30)
+Warning: An update to ForwardRef(LinkComponent) inside a test was not wrapped in act(...).
+
+When testing, code that causes React state updates should be wrapped into act(...):
+
+act(() => {
+  /* fire events that update state */
+});
+/* assert on the output */
+
+This ensures that you're testing the behavior the user would see in the browser. Learn more at https://reactjs.org/link/wrap-tests-with-act
+    at LinkComponent (C:\Users\Joe\Projects\website-sync-20251003_133144\node_modules\next\dist\client\link.js:121:19)
+    at div
+    at div
+    at MobileMenu (C:\Users\Joe\Projects\website-sync-20251003_133144\src\components\layout\MobileMenu.tsx:7:3)
+    at Header (C:\Users\Joe\Projects\website-sync-20251003_133144\src\components\layout\Header.tsx:17:30)
+
+[90mstderr[2m | src/components/layout/__tests__/Layout.test.tsx[2m > [22m[2mLayout[2m > [22m[2mrenders children correctly[22m[39m
+Warning: `ReactDOMTestUtils.act` is deprecated in favor of `React.act`. Import `act` from `react` instead of `react-dom/test-utils`. See https://react.dev/warnings/react-dom-test-utils for more info.
+
+[31m⎯⎯⎯⎯⎯⎯[1m[7m Failed Suites 7 [27m[22m⎯⎯⎯⎯⎯⎯⎯[39m
+
+[31m[1m[7m FAIL [27m[22m[39m e2e/accessibility.spec.ts [2m[ e2e/accessibility.spec.ts ][22m
+[31m[1mError[22m: Playwright Test did not expect test.describe() to be called here.
+Most common reasons include:
+- You are calling test.describe() in a configuration file.
+- You are calling test.describe() in a file that is imported by the configuration file.
+- You have two different versions of @playwright/test. This usually happens
+  when one of the dependencies in your package.json depends on @playwright/test.[39m
+[90m [2m❯[22m TestTypeImpl._currentSuite node_modules/playwright/lib/common/testType.js:[2m74:13[22m[39m
+[90m [2m❯[22m TestTypeImpl._describe node_modules/playwright/lib/common/testType.js:[2m114:24[22m[39m
+[90m [2m❯[22m Function.describe node_modules/playwright/lib/transform/transform.js:[2m275:12[22m[39m
+[36m [2m❯[22m e2e/accessibility.spec.ts:[2m4:6[22m[39m
+    [90m  2| [39mimport AxeBuilder from '@axe-core/playwright';
+    [90m  3| [39m
+    [90m  4| [39mtest.describe('Accessibility Validation', () => {
+    [90m   | [39m     [31m^[39m
+    [90m  5| [39m  test.describe('WCAG 2.1 AA Compliance - Automated Testing', () => {
+    [90m  6| [39m    test('should pass axe-core WCAG 2.1 AA compliance tests', async ({
+
+[31m[2m⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[1/51]⎯[22m[39m
+
+[31m[1m[7m FAIL [27m[22m[39m e2e/contact-form.spec.ts [2m[ e2e/contact-form.spec.ts ][22m
+[31m[1mError[22m: Playwright Test did not expect test.describe() to be called here.
+Most common reasons include:
+- You are calling test.describe() in a configuration file.
+- You are calling test.describe() in a file that is imported by the configuration file.
+- You have two different versions of @playwright/test. This usually happens
+  when one of the dependencies in your package.json depends on @playwright/test.[39m
+[90m [2m❯[22m TestTypeImpl._currentSuite node_modules/playwright/lib/common/testType.js:[2m74:13[22m[39m
+[90m [2m❯[22m TestTypeImpl._describe node_modules/playwright/lib/common/testType.js:[2m114:24[22m[39m
+[90m [2m❯[22m Function.describe node_modules/playwright/lib/transform/transform.js:[2m275:12[22m[39m
+[36m [2m❯[22m e2e/contact-form.spec.ts:[2m3:6[22m[39m
+    [90m  1| [39mimport { test, expect } from '@playwright/test';
+    [90m  2| [39m
+    [90m  3| [39mtest.describe('Contact Form', () => {
+    [90m   | [39m     [31m^[39m
+    [90m  4| [39m  test.beforeEach(async ({ page }) => {
+    [90m  5| [39m    await page.goto('/contact');
+
+[31m[2m⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[2/51]⎯[22m[39m
+
+[31m[1m[7m FAIL [27m[22m[39m e2e/core-functionality.spec.ts [2m[ e2e/core-functionality.spec.ts ][22m
+[31m[1mError[22m: Playwright Test did not expect test.describe() to be called here.
+Most common reasons include:
+- You are calling test.describe() in a configuration file.
+- You are calling test.describe() in a file that is imported by the configuration file.
+- You have two different versions of @playwright/test. This usually happens
+  when one of the dependencies in your package.json depends on @playwright/test.[39m
+[90m [2m❯[22m TestTypeImpl._currentSuite node_modules/playwright/lib/common/testType.js:[2m74:13[22m[39m
+[90m [2m❯[22m TestTypeImpl._describe node_modules/playwright/lib/common/testType.js:[2m114:24[22m[39m
+[90m [2m❯[22m Function.describe node_modules/playwright/lib/transform/transform.js:[2m275:12[22m[39m
+[36m [2m❯[22m e2e/core-functionality.spec.ts:[2m3:6[22m[39m
+    [90m  1| [39mimport { test, expect } from '@playwright/test';
+    [90m  2| [39m
+    [90m  3| [39mtest.describe('Core Site Functionality', () => {
+    [90m   | [39m     [31m^[39m
+    [90m  4| [39m  test.describe('Basic Page Loading and Navigation', () => {
+    [90m  5| [39m    test('should load homepage successfully', async ({ page }) => {
+
+[31m[2m⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[3/51]⎯[22m[39m
+
+[31m[1m[7m FAIL [27m[22m[39m e2e/critical-user-journeys.spec.ts [2m[ e2e/critical-user-journeys.spec.ts ][22m
+[31m[1mError[22m: Playwright Test did not expect test.describe() to be called here.
+Most common reasons include:
+- You are calling test.describe() in a configuration file.
+- You are calling test.describe() in a file that is imported by the configuration file.
+- You have two different versions of @playwright/test. This usually happens
+  when one of the dependencies in your package.json depends on @playwright/test.[39m
+[90m [2m❯[22m TestTypeImpl._currentSuite node_modules/playwright/lib/common/testType.js:[2m74:13[22m[39m
+[90m [2m❯[22m TestTypeImpl._describe node_modules/playwright/lib/common/testType.js:[2m114:24[22m[39m
+[90m [2m❯[22m Function.describe node_modules/playwright/lib/transform/transform.js:[2m275:12[22m[39m
+[36m [2m❯[22m e2e/critical-user-journeys.spec.ts:[2m3:6[22m[39m
+    [90m  1| [39mimport { test, expect } from '@playwright/test';
+    [90m  2| [39m
+    [90m  3| [39mtest.describe('Critical User Journeys', () => {
+    [90m   | [39m     [31m^[39m
+    [90m  4| [39m  test.describe('Visitor to Lead Conversion', () => {
+    [90m  5| [39m    test('should complete full visitor-to-lead journey', async ({ page…
+
+[31m[2m⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[4/51]⎯[22m[39m
+
+[31m[1m[7m FAIL [27m[22m[39m e2e/homepage.spec.ts [2m[ e2e/homepage.spec.ts ][22m
+[31m[1mError[22m: Playwright Test did not expect test.describe() to be called here.
+Most common reasons include:
+- You are calling test.describe() in a configuration file.
+- You are calling test.describe() in a file that is imported by the configuration file.
+- You have two different versions of @playwright/test. This usually happens
+  when one of the dependencies in your package.json depends on @playwright/test.[39m
+[90m [2m❯[22m TestTypeImpl._currentSuite node_modules/playwright/lib/common/testType.js:[2m74:13[22m[39m
+[90m [2m❯[22m TestTypeImpl._describe node_modules/playwright/lib/common/testType.js:[2m114:24[22m[39m
+[90m [2m❯[22m Function.describe node_modules/playwright/lib/transform/transform.js:[2m275:12[22m[39m
+[36m [2m❯[22m e2e/homepage.spec.ts:[2m3:6[22m[39m
+    [90m  1| [39mimport { test, expect } from '@playwright/test';
+    [90m  2| [39m
+    [90m  3| [39mtest.describe('Homepage', () => {
+    [90m   | [39m     [31m^[39m
+    [90m  4| [39m  test.beforeEach(async ({ page }) => {
+    [90m  5| [39m    await page.goto('/');
+
+[31m[2m⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[5/51]⎯[22m[39m
+
+[31m[1m[7m FAIL [27m[22m[39m e2e/navigation.spec.ts [2m[ e2e/navigation.spec.ts ][22m
+[31m[1mError[22m: Playwright Test did not expect test.describe() to be called here.
+Most common reasons include:
+- You are calling test.describe() in a configuration file.
+- You are calling test.describe() in a file that is imported by the configuration file.
+- You have two different versions of @playwright/test. This usually happens
+  when one of the dependencies in your package.json depends on @playwright/test.[39m
+[90m [2m❯[22m TestTypeImpl._currentSuite node_modules/playwright/lib/common/testType.js:[2m74:13[22m[39m
+[90m [2m❯[22m TestTypeImpl._describe node_modules/playwright/lib/common/testType.js:[2m114:24[22m[39m
+[90m [2m❯[22m Function.describe node_modules/playwright/lib/transform/transform.js:[2m275:12[22m[39m
+[36m [2m❯[22m e2e/navigation.spec.ts:[2m3:6[22m[39m
+    [90m  1| [39mimport { test, expect } from '@playwright/test';
+    [90m  2| [39m
+    [90m  3| [39mtest.describe('Navigation', () => {
+    [90m   | [39m     [31m^[39m
+    [90m  4| [39m  test.beforeEach(async ({ page }) => {
+    [90m  5| [39m    await page.goto('/');
+
+[31m[2m⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[6/51]⎯[22m[39m
+
+[31m[1m[7m FAIL [27m[22m[39m e2e/performance.spec.ts [2m[ e2e/performance.spec.ts ][22m
+[31m[1mError[22m: Transform failed with 1 error:
+C:/Users/Joe/Projects/website-sync-20251003_133144/e2e/performance.spec.ts:391:6: ERROR: "await" can only be used inside an "async" function[39m
+[90m [2m❯[22m failureErrorWithLog node_modules/vitest/node_modules/esbuild/lib/main.js:[2m1472:15[22m[39m
+[90m [2m❯[22m node_modules/vitest/node_modules/esbuild/lib/main.js:[2m755:50[22m[39m
+[90m [2m❯[22m responseCallbacks.<computed> node_modules/vitest/node_modules/esbuild/lib/main.js:[2m622:9[22m[39m
+[90m [2m❯[22m handleIncomingPacket node_modules/vitest/node_modules/esbuild/lib/main.js:[2m677:12[22m[39m
+[90m [2m❯[22m Socket.readFromStdout node_modules/vitest/node_modules/esbuild/lib/main.js:[2m600:7[22m[39m
+[90m [2m❯[22m Socket.emit node:events:[2m519:28[22m[39m
+
+[31m[2m⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[7/51]⎯[22m[39m
+
+[31m⎯⎯⎯⎯⎯⎯[1m[7m Failed Tests 44 [27m[22m⎯⎯⎯⎯⎯⎯⎯[39m
+
+[31m[1m[7m FAIL [27m[22m[39m src/app/__tests__/page.test.tsx[2m > [22mHomePage[2m > [22mrenders hero section
+[31m[1mError[22m: [vitest] No "getFilteredTestimonials" export is defined on the "@/lib/content" mock. Did you forget to return it from "vi.mock"?
+If you need to partially mock a module, you can use "vi.importActual" inside:
+
+[32mvi.mock("@/lib/content", async () => {
+  const actual = await vi.importActual("@/lib/content")
+  return {
+    ...actual,
+    // your mocked methods
+  },
+})[31m
+[39m
+[36m [2m❯[22m Home src/app/page.tsx:[2m43:24[22m[39m
+    [90m 41| [39mexport default function Home() {
+    [90m 42| [39m  const services = getAllServices();
+    [90m 43| [39m  const testimonials = getFilteredTestimonials({ featured: true });
+    [90m   | [39m                       [31m^[39m
+    [90m 44| [39m  const latestPosts = getFilteredPosts({ limit: 3 });
+    [90m 45| [39m
+[90m [2m❯[22m src/app/__tests__/page.test.tsx:[2m102:18[22m[39m
+
+[31m[2m⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[8/51]⎯[22m[39m
+
+[31m[1m[7m FAIL [27m[22m[39m src/app/__tests__/page.test.tsx[2m > [22mHomePage[2m > [22mrenders services showcase
+[31m[1mError[22m: [vitest] No "getFilteredTestimonials" export is defined on the "@/lib/content" mock. Did you forget to return it from "vi.mock"?
+If you need to partially mock a module, you can use "vi.importActual" inside:
+
+[32mvi.mock("@/lib/content", async () => {
+  const actual = await vi.importActual("@/lib/content")
+  return {
+    ...actual,
+    // your mocked methods
+  },
+})[31m
+[39m
+[36m [2m❯[22m Home src/app/page.tsx:[2m43:24[22m[39m
+    [90m 41| [39mexport default function Home() {
+    [90m 42| [39m  const services = getAllServices();
+    [90m 43| [39m  const testimonials = getFilteredTestimonials({ featured: true });
+    [90m   | [39m                       [31m^[39m
+    [90m 44| [39m  const latestPosts = getFilteredPosts({ limit: 3 });
+    [90m 45| [39m
+[90m [2m❯[22m src/app/__tests__/page.test.tsx:[2m114:18[22m[39m
+
+[31m[2m⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[9/51]⎯[22m[39m
+
+[31m[1m[7m FAIL [27m[22m[39m src/app/__tests__/page.test.tsx[2m > [22mHomePage[2m > [22mrenders testimonials carousel
+[31m[1mError[22m: [vitest] No "getFilteredTestimonials" export is defined on the "@/lib/content" mock. Did you forget to return it from "vi.mock"?
+If you need to partially mock a module, you can use "vi.importActual" inside:
+
+[32mvi.mock("@/lib/content", async () => {
+  const actual = await vi.importActual("@/lib/content")
+  return {
+    ...actual,
+    // your mocked methods
+  },
+})[31m
+[39m
+[36m [2m❯[22m Home src/app/page.tsx:[2m43:24[22m[39m
+    [90m 41| [39mexport default function Home() {
+    [90m 42| [39m  const services = getAllServices();
+    [90m 43| [39m  const testimonials = getFilteredTestimonials({ featured: true });
+    [90m   | [39m                       [31m^[39m
+    [90m 44| [39m  const latestPosts = getFilteredPosts({ limit: 3 });
+    [90m 45| [39m
+[90m [2m❯[22m src/app/__tests__/page.test.tsx:[2m125:18[22m[39m
+
+[31m[2m⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[10/51]⎯[22m[39m
+
+[31m[1m[7m FAIL [27m[22m[39m src/app/__tests__/page.test.tsx[2m > [22mHomePage[2m > [22mrenders blog preview section
+[31m[1mError[22m: [vitest] No "getFilteredTestimonials" export is defined on the "@/lib/content" mock. Did you forget to return it from "vi.mock"?
+If you need to partially mock a module, you can use "vi.importActual" inside:
+
+[32mvi.mock("@/lib/content", async () => {
+  const actual = await vi.importActual("@/lib/content")
+  return {
+    ...actual,
+    // your mocked methods
+  },
+})[31m
+[39m
+[36m [2m❯[22m Home src/app/page.tsx:[2m43:24[22m[39m
+    [90m 41| [39mexport default function Home() {
+    [90m 42| [39m  const services = getAllServices();
+    [90m 43| [39m  const testimonials = getFilteredTestimonials({ featured: true });
+    [90m   | [39m                       [31m^[39m
+    [90m 44| [39m  const latestPosts = getFilteredPosts({ limit: 3 });
+    [90m 45| [39m
+[90m [2m❯[22m src/app/__tests__/page.test.tsx:[2m134:18[22m[39m
+
+[31m[2m⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[11/51]⎯[22m[39m
+
+[31m[1m[7m FAIL [27m[22m[39m src/app/__tests__/page.test.tsx[2m > [22mHomePage[2m > [22mhas proper semantic structure
+[31m[1mError[22m: [vitest] No "getFilteredTestimonials" export is defined on the "@/lib/content" mock. Did you forget to return it from "vi.mock"?
+If you need to partially mock a module, you can use "vi.importActual" inside:
+
+[32mvi.mock("@/lib/content", async () => {
+  const actual = await vi.importActual("@/lib/content")
+  return {
+    ...actual,
+    // your mocked methods
+  },
+})[31m
+[39m
+[36m [2m❯[22m Home src/app/page.tsx:[2m43:24[22m[39m
+    [90m 41| [39mexport default function Home() {
+    [90m 42| [39m  const services = getAllServices();
+    [90m 43| [39m  const testimonials = getFilteredTestimonials({ featured: true });
+    [90m   | [39m                       [31m^[39m
+    [90m 44| [39m  const latestPosts = getFilteredPosts({ limit: 3 });
+    [90m 45| [39m
+[90m [2m❯[22m src/app/__tests__/page.test.tsx:[2m143:18[22m[39m
+
+[31m[2m⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[12/51]⎯[22m[39m
+
+[31m[1m[7m FAIL [27m[22m[39m src/app/__tests__/page.test.tsx[2m > [22mHomePage[2m > [22mincludes call-to-action buttons
+[31m[1mError[22m: [vitest] No "getFilteredTestimonials" export is defined on the "@/lib/content" mock. Did you forget to return it from "vi.mock"?
+If you need to partially mock a module, you can use "vi.importActual" inside:
+
+[32mvi.mock("@/lib/content", async () => {
+  const actual = await vi.importActual("@/lib/content")
+  return {
+    ...actual,
+    // your mocked methods
+  },
+})[31m
+[39m
+[36m [2m❯[22m Home src/app/page.tsx:[2m43:24[22m[39m
+    [90m 41| [39mexport default function Home() {
+    [90m 42| [39m  const services = getAllServices();
+    [90m 43| [39m  const testimonials = getFilteredTestimonials({ featured: true });
+    [90m   | [39m                       [31m^[39m
+    [90m 44| [39m  const latestPosts = getFilteredPosts({ limit: 3 });
+    [90m 45| [39m
+[90m [2m❯[22m src/app/__tests__/page.test.tsx:[2m154:18[22m[39m
+
+[31m[2m⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[13/51]⎯[22m[39m
+
+[31m[1m[7m FAIL [27m[22m[39m src/app/__tests__/page.test.tsx[2m > [22mHomePage[2m > [22mis mobile-responsive
+[31m[1mError[22m: [vitest] No "getFilteredTestimonials" export is defined on the "@/lib/content" mock. Did you forget to return it from "vi.mock"?
+If you need to partially mock a module, you can use "vi.importActual" inside:
+
+[32mvi.mock("@/lib/content", async () => {
+  const actual = await vi.importActual("@/lib/content")
+  return {
+    ...actual,
+    // your mocked methods
+  },
+})[31m
+[39m
+[36m [2m❯[22m Home src/app/page.tsx:[2m43:24[22m[39m
+    [90m 41| [39mexport default function Home() {
+    [90m 42| [39m  const services = getAllServices();
+    [90m 43| [39m  const testimonials = getFilteredTestimonials({ featured: true });
+    [90m   | [39m                       [31m^[39m
+    [90m 44| [39m  const latestPosts = getFilteredPosts({ limit: 3 });
+    [90m 45| [39m
+[90m [2m❯[22m src/app/__tests__/page.test.tsx:[2m162:18[22m[39m
+
+[31m[2m⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[14/51]⎯[22m[39m
+
+[31m[1m[7m FAIL [27m[22m[39m src/app/__tests__/page.test.tsx[2m > [22mHomePage[2m > [22mloads content from CMS
+[31m[1mError[22m: [vitest] No "getFilteredTestimonials" export is defined on the "@/lib/content" mock. Did you forget to return it from "vi.mock"?
+If you need to partially mock a module, you can use "vi.importActual" inside:
+
+[32mvi.mock("@/lib/content", async () => {
+  const actual = await vi.importActual("@/lib/content")
+  return {
+    ...actual,
+    // your mocked methods
+  },
+})[31m
+[39m
+[36m [2m❯[22m Home src/app/page.tsx:[2m43:24[22m[39m
+    [90m 41| [39mexport default function Home() {
+    [90m 42| [39m  const services = getAllServices();
+    [90m 43| [39m  const testimonials = getFilteredTestimonials({ featured: true });
+    [90m   | [39m                       [31m^[39m
+    [90m 44| [39m  const latestPosts = getFilteredPosts({ limit: 3 });
+    [90m 45| [39m
+[90m [2m❯[22m src/app/__tests__/page.test.tsx:[2m174:18[22m[39m
+
+[31m[2m⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[15/51]⎯[22m[39m
+
+[31m[1m[7m FAIL [27m[22m[39m src/app/__tests__/page.test.tsx[2m > [22mHomePage[2m > [22mhandles empty content gracefully
+[31m[1mError[22m: [vitest] No "getFilteredTestimonials" export is defined on the "@/lib/content" mock. Did you forget to return it from "vi.mock"?
+If you need to partially mock a module, you can use "vi.importActual" inside:
+
+[32mvi.mock("@/lib/content", async () => {
+  const actual = await vi.importActual("@/lib/content")
+  return {
+    ...actual,
+    // your mocked methods
+  },
+})[31m
+[39m
+[36m [2m❯[22m Home src/app/page.tsx:[2m43:24[22m[39m
+    [90m 41| [39mexport default function Home() {
+    [90m 42| [39m  const services = getAllServices();
+    [90m 43| [39m  const testimonials = getFilteredTestimonials({ featured: true });
+    [90m   | [39m                       [31m^[39m
+    [90m 44| [39m  const latestPosts = getFilteredPosts({ limit: 3 });
+    [90m 45| [39m
+[90m [2m❯[22m src/app/__tests__/page.test.tsx:[2m192:18[22m[39m
+
+[31m[2m⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[16/51]⎯[22m[39m
+
+[31m[1m[7m FAIL [27m[22m[39m src/test/__tests__/mobile-testing.test.ts[2m > [22mMobile Testing Utilities[2m > [22msimulateTouch[2m > [22mshould simulate tap gesture
+[31m[1mReferenceError[22m: Touch is not defined[39m
+[36m [2m❯[22m Module.simulateTouch src/test/mobile-testing.ts:[2m149:17[22m[39m
+    [90m147| [39m        new TouchEvent('touchstart', {
+    [90m148| [39m          touches: [
+    [90m149| [39m            new Touch({
+    [90m   | [39m                [31m^[39m
+    [90m150| [39m              identifier: 1,
+    [90m151| [39m              target: element,
+[90m [2m❯[22m src/test/__tests__/mobile-testing.test.ts:[2m102:7[22m[39m
+
+[31m[2m⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[17/51]⎯[22m[39m
+
+[31m[1m[7m FAIL [27m[22m[39m src/test/__tests__/mobile-testing.test.ts[2m > [22mMobile Testing Utilities[2m > [22msimulateTouch[2m > [22mshould simulate swipe gesture
+[31m[1mReferenceError[22m: Touch is not defined[39m
+[36m [2m❯[22m Module.simulateTouch src/test/mobile-testing.ts:[2m179:17[22m[39m
+    [90m177| [39m        new TouchEvent('touchstart', {
+    [90m178| [39m          touches: [
+    [90m179| [39m            new Touch({
+    [90m   | [39m                [31m^[39m
+    [90m180| [39m              identifier: 1,
+    [90m181| [39m              target: element,
+[90m [2m❯[22m src/test/__tests__/mobile-testing.test.ts:[2m117:7[22m[39m
+
+[31m[2m⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[18/51]⎯[22m[39m
+
+[31m[1m[7m FAIL [27m[22m[39m src/hooks/__tests__/useLazyLoad.test.ts[2m > [22museLazyLoad[2m > [22mshould create IntersectionObserver with correct options
+[31m[1mAssertionError[22m: expected "spy" to be called with arguments: [ Any{ …(3) }, …(1) ]
+
+Received: 
+
+
+
+Number of calls: 0
+[39m
+[36m [2m❯[22m src/hooks/__tests__/useLazyLoad.test.ts:[2m55:38[22m[39m
+    [90m 53| [39m    renderHook(() => useLazyLoad(options));
+    [90m 54| [39m
+    [90m 55| [39m    expect(mockIntersectionObserver).toHaveBeenCalledWith(
+    [90m   | [39m                                     [31m^[39m
+    [90m 56| [39m      expect.any(Function),
+    [90m 57| [39m      {
+
+[31m[2m⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[19/51]⎯[22m[39m
+
+[31m[1m[7m FAIL [27m[22m[39m src/hooks/__tests__/useLazyLoad.test.ts[2m > [22museLazyLoad[2m > [22mshould observe element when ref is set
+[31m[1mAssertionError[22m: expected "spy" to be called with arguments: [ <div></div> ]
+
+Received: 
+
+
+
+Number of calls: 0
+[39m
+[36m [2m❯[22m src/hooks/__tests__/useLazyLoad.test.ts:[2m81:25[22m[39m
+    [90m 79| [39m    renderHook(() => useLazyLoad());
+    [90m 80| [39m
+    [90m 81| [39m    expect(mockObserve).toHaveBeenCalledWith(mockElement);
+    [90m   | [39m                        [31m^[39m
+    [90m 82| [39m  });
+    [90m 83| [39m
+
+[31m[2m⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[20/51]⎯[22m[39m
+
+[31m[1m[7m FAIL [27m[22m[39m src/hooks/__tests__/useLazyLoad.test.ts[2m > [22museLazyLoad[2m > [22mshould update intersection state when callback is triggered
+[31m[1mTypeError[22m: intersectionCallback is not a function[39m
+[36m [2m❯[22m src/hooks/__tests__/useLazyLoad.test.ts:[2m100:7[22m[39m
+    [90m 98| [39m    // Simulate intersection
+    [90m 99| [39m    act(() => {
+    [90m100| [39m      intersectionCallback([
+    [90m   | [39m      [31m^[39m
+    [90m101| [39m        { isIntersecting: true } as IntersectionObserverEntry,
+    [90m102| [39m      ]);
+[90m [2m❯[22m node_modules/@testing-library/react/dist/act-compat.js:[2m64:24[22m[39m
+[90m [2m❯[22m act node_modules/react/cjs/react.development.js:[2m2512:16[22m[39m
+[90m [2m❯[22m actWithWarning node_modules/react-dom/cjs/react-dom-test-utils.development.js:[2m1740:10[22m[39m
+[90m [2m❯[22m Proxy.<anonymous> node_modules/@testing-library/react/dist/act-compat.js:[2m63:25[22m[39m
+[90m [2m❯[22m src/hooks/__tests__/useLazyLoad.test.ts:[2m99:5[22m[39m
+
+[31m[2m⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[21/51]⎯[22m[39m
+
+[31m[1m[7m FAIL [27m[22m[39m src/hooks/__tests__/useLazyLoad.test.ts[2m > [22museLazyLoad[2m > [22mshould set hasTriggered when triggerOnce is true and element intersects
+[31m[1mTypeError[22m: intersectionCallback is not a function[39m
+[36m [2m❯[22m src/hooks/__tests__/useLazyLoad.test.ts:[2m123:7[22m[39m
+    [90m121| [39m
+    [90m122| [39m    act(() => {
+    [90m123| [39m      intersectionCallback([
+    [90m   | [39m      [31m^[39m
+    [90m124| [39m        { isIntersecting: true } as IntersectionObserverEntry,
+    [90m125| [39m      ]);
+[90m [2m❯[22m node_modules/@testing-library/react/dist/act-compat.js:[2m64:24[22m[39m
+[90m [2m❯[22m act node_modules/react/cjs/react.development.js:[2m2512:16[22m[39m
+[90m [2m❯[22m actWithWarning node_modules/react-dom/cjs/react-dom-test-utils.development.js:[2m1740:10[22m[39m
+[90m [2m❯[22m Proxy.<anonymous> node_modules/@testing-library/react/dist/act-compat.js:[2m63:25[22m[39m
+[90m [2m❯[22m src/hooks/__tests__/useLazyLoad.test.ts:[2m122:5[22m[39m
+
+[31m[2m⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[22/51]⎯[22m[39m
+
+[31m[1m[7m FAIL [27m[22m[39m src/hooks/__tests__/useLazyLoad.test.ts[2m > [22museLazyLoad[2m > [22mshould not create new observer if already triggered and triggerOnce is true
+[31m[1mTypeError[22m: intersectionCallback is not a function[39m
+[36m [2m❯[22m src/hooks/__tests__/useLazyLoad.test.ts:[2m150:7[22m[39m
+    [90m148| [39m    // Trigger intersection
+    [90m149| [39m    act(() => {
+    [90m150| [39m      intersectionCallback([
+    [90m   | [39m      [31m^[39m
+    [90m151| [39m        { isIntersecting: true } as IntersectionObserverEntry,
+    [90m152| [39m      ]);
+[90m [2m❯[22m node_modules/@testing-library/react/dist/act-compat.js:[2m64:24[22m[39m
+[90m [2m❯[22m act node_modules/react/cjs/react.development.js:[2m2512:16[22m[39m
+[90m [2m❯[22m actWithWarning node_modules/react-dom/cjs/react-dom-test-utils.development.js:[2m1740:10[22m[39m
+[90m [2m❯[22m Proxy.<anonymous> node_modules/@testing-library/react/dist/act-compat.js:[2m63:25[22m[39m
+[90m [2m❯[22m src/hooks/__tests__/useLazyLoad.test.ts:[2m149:5[22m[39m
+
+[31m[2m⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[23/51]⎯[22m[39m
+
+[31m[1m[7m FAIL [27m[22m[39m src/hooks/__tests__/useLazyLoad.test.ts[2m > [22museLazyLoad[2m > [22mshould unobserve element on cleanup
+[31m[1mAssertionError[22m: expected "spy" to be called with arguments: [ <div></div> ]
+
+Received: 
+
+
+
+Number of calls: 0
+[39m
+[36m [2m❯[22m src/hooks/__tests__/useLazyLoad.test.ts:[2m179:27[22m[39m
+    [90m177| [39m    unmount();
+    [90m178| [39m
+    [90m179| [39m    expect(mockUnobserve).toHaveBeenCalledWith(mockElement);
+    [90m   | [39m                          [31m^[39m
+    [90m180| [39m  });
+    [90m181| [39m});
+
+[31m[2m⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[24/51]⎯[22m[39m
+
+[31m[1m[7m FAIL [27m[22m[39m src/hooks/__tests__/useLazyLoad.test.ts[2m > [22museLazyImage[2m > [22mshould set imageSrc when intersecting
+[31m[1mTypeError[22m: intersectionCallback is not a function[39m
+[36m [2m❯[22m src/hooks/__tests__/useLazyLoad.test.ts:[2m212:7[22m[39m
+    [90m210| [39m
+    [90m211| [39m    act(() => {
+    [90m212| [39m      intersectionCallback([
+    [90m   | [39m      [31m^[39m
+    [90m213| [39m        { isIntersecting: true } as IntersectionObserverEntry,
+    [90m214| [39m      ]);
+[90m [2m❯[22m node_modules/@testing-library/react/dist/act-compat.js:[2m64:24[22m[39m
+[90m [2m❯[22m act node_modules/react/cjs/react.development.js:[2m2512:16[22m[39m
+[90m [2m❯[22m actWithWarning node_modules/react-dom/cjs/react-dom-test-utils.development.js:[2m1740:10[22m[39m
+[90m [2m❯[22m Proxy.<anonymous> node_modules/@testing-library/react/dist/act-compat.js:[2m63:25[22m[39m
+[90m [2m❯[22m src/hooks/__tests__/useLazyLoad.test.ts:[2m211:5[22m[39m
+
+[31m[2m⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[25/51]⎯[22m[39m
+
+[31m[1m[7m FAIL [27m[22m[39m src/hooks/__tests__/useLazyLoad.test.ts[2m > [22museLazyImage[2m > [22mshould not set imageSrc if already set
+[31m[1mTypeError[22m: intersectionCallback is not a function[39m
+[36m [2m❯[22m src/hooks/__tests__/useLazyLoad.test.ts:[2m236:7[22m[39m
+    [90m234| [39m    // First intersection
+    [90m235| [39m    act(() => {
+    [90m236| [39m      intersectionCallback([
+    [90m   | [39m      [31m^[39m
+    [90m237| [39m        { isIntersecting: true } as IntersectionObserverEntry,
+    [90m238| [39m      ]);
+[90m [2m❯[22m node_modules/@testing-library/react/dist/act-compat.js:[2m64:24[22m[39m
+[90m [2m❯[22m act node_modules/react/cjs/react.development.js:[2m2512:16[22m[39m
+[90m [2m❯[22m actWithWarning node_modules/react-dom/cjs/react-dom-test-utils.development.js:[2m1740:10[22m[39m
+[90m [2m❯[22m Proxy.<anonymous> node_modules/@testing-library/react/dist/act-compat.js:[2m63:25[22m[39m
+[90m [2m❯[22m src/hooks/__tests__/useLazyLoad.test.ts:[2m235:5[22m[39m
+
+[31m[2m⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[26/51]⎯[22m[39m
+
+[31m[1m[7m FAIL [27m[22m[39m src/hooks/__tests__/useLazyLoad.test.ts[2m > [22museLazyImage[2m > [22mshould not set imageSrc if src is empty
+[31m[1mTypeError[22m: intersectionCallback is not a function[39m
+[36m [2m❯[22m src/hooks/__tests__/useLazyLoad.test.ts:[2m287:7[22m[39m
+    [90m285| [39m
+    [90m286| [39m    act(() => {
+    [90m287| [39m      intersectionCallback([
+    [90m   | [39m      [31m^[39m
+    [90m288| [39m        { isIntersecting: true } as IntersectionObserverEntry,
+    [90m289| [39m      ]);
+[90m [2m❯[22m node_modules/@testing-library/react/dist/act-compat.js:[2m64:24[22m[39m
+[90m [2m❯[22m act node_modules/react/cjs/react.development.js:[2m2512:16[22m[39m
+[90m [2m❯[22m actWithWarning node_modules/react-dom/cjs/react-dom-test-utils.development.js:[2m1740:10[22m[39m
+[90m [2m❯[22m Proxy.<anonymous> node_modules/@testing-library/react/dist/act-compat.js:[2m63:25[22m[39m
+[90m [2m❯[22m src/hooks/__tests__/useLazyLoad.test.ts:[2m286:5[22m[39m
+
+[31m[2m⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[27/51]⎯[22m[39m
+
+[31m[1m[7m FAIL [27m[22m[39m src/lib/__tests__/form-handler.test.ts[2m > [22mFormHandler[2m > [22mcheckRateLimit[2m > [22mshould reset rate limit after time window
+[31m[1mAssertionError[22m: expected true to be false // Object.is equality[39m
+
+- Expected
++ Received
+
+- false
++ true
+
+[36m [2m❯[22m src/lib/__tests__/form-handler.test.ts:[2m207:54[22m[39m
+    [90m205| [39m      mockTime += 61 * 1000;
+    [90m206| [39m
+    [90m207| [39m      expect(FormHandler.checkRateLimit(identifier)).toBe(false);
+    [90m   | [39m                                                     [31m^[39m
+    [90m208| [39m
+    [90m209| [39m      Date.now = originalNow;
+
+[31m[2m⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[28/51]⎯[22m[39m
+
+[31m[1m[7m FAIL [27m[22m[39m src/lib/__tests__/form-handler.test.ts[2m > [22mFormHandler[2m > [22mprocessSubmission[2m > [22mshould process valid submission successfully
+[31m[1mAssertionError[22m: expected false to be true // Object.is equality[39m
+
+- Expected
++ Received
+
+- true
++ false
+
+[36m [2m❯[22m src/lib/__tests__/form-handler.test.ts:[2m271:30[22m[39m
+    [90m269| [39m      );
+    [90m270| [39m
+    [90m271| [39m      expect(result.success).toBe(true);
+    [90m   | [39m                             [31m^[39m
+    [90m272| [39m      expect(result.message).toContain('Thank you');
+    [90m273| [39m      expect(result.submissionId).toBeDefined();
+
+[31m[2m⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[29/51]⎯[22m[39m
+
+[31m[1m[7m FAIL [27m[22m[39m src/lib/__tests__/performance-monitoring.test.ts[2m > [22mPerformanceMonitor[2m > [22minitialization[2m > [22mshould set up performance observers
+[31m[1mAssertionError[22m: expected "spy" to be called at least once[39m
+[36m [2m❯[22m src/lib/__tests__/performance-monitoring.test.ts:[2m66:27[22m[39m
+    [90m 64| [39m      // PerformanceObserver should be called for each metric type
+    [90m 65| [39m      expect(mockPerformanceObserver).toHaveBeenCalled();
+    [90m 66| [39m      expect(mockObserve).toHaveBeenCalled();
+    [90m   | [39m                          [31m^[39m
+    [90m 67| [39m    });
+    [90m 68| [39m  });
+
+[31m[2m⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[30/51]⎯[22m[39m
+
+[31m[1m[7m FAIL [27m[22m[39m src/lib/__tests__/performance-monitoring.test.ts[2m > [22mPerformanceMonitor[2m > [22mreport generation[2m > [22mshould provide relevant recommendations for poor metrics
+[31m[1mAssertionError[22m: expected 0 to be greater than 0[39m
+[36m [2m❯[22m src/lib/__tests__/performance-monitoring.test.ts:[2m152:45[22m[39m
+    [90m150| [39m
+    [90m151| [39m      // Should have recommendations for failing metrics
+    [90m152| [39m      expect(report.recommendations.length).toBeGreaterThan(0);
+    [90m   | [39m                                            [31m^[39m
+    [90m153| [39m
+    [90m154| [39m      poorMonitor.cleanup();
+
+[31m[2m⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[31/51]⎯[22m[39m
+
+[31m[1m[7m FAIL [27m[22m[39m src/lib/__tests__/performance-monitoring.test.ts[2m > [22mPerformanceMonitor[2m > [22mcleanup[2m > [22mshould disconnect all observers on cleanup
+[31m[1mAssertionError[22m: expected "spy" to be called at least once[39m
+[36m [2m❯[22m src/lib/__tests__/performance-monitoring.test.ts:[2m162:30[22m[39m
+    [90m160| [39m      monitor.cleanup();
+    [90m161| [39m
+    [90m162| [39m      expect(mockDisconnect).toHaveBeenCalled();
+    [90m   | [39m                             [31m^[39m
+    [90m163| [39m    });
+    [90m164| [39m  });
+
+[31m[2m⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[32/51]⎯[22m[39m
+
+[31m[1m[7m FAIL [27m[22m[39m src/lib/__tests__/seo-utils.test.ts[2m > [22mSEO Utils[2m > [22moptimizeMetaDescription[2m > [22mshould truncate long descriptions at word boundary
+[31m[1mAssertionError[22m: expected 'This is a very long description that …' not to match /\w\.\.\.$/[39m
+[36m [2m❯[22m src/lib/__tests__/seo-utils.test.ts:[2m227:26[22m[39m
+    [90m225| [39m      expect(result.length).toBeLessThanOrEqual(103); // 100 + '...'
+    [90m226| [39m      expect(result.endsWith('...')).toBe(true);
+    [90m227| [39m      expect(result).not.toMatch(/\w\.\.\.$/); // Should not cut words
+    [90m   | [39m                         [31m^[39m
+    [90m228| [39m    });
+    [90m229| [39m
+
+[31m[2m⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[33/51]⎯[22m[39m
+
+[31m[1m[7m FAIL [27m[22m[39m src/components/layout/__tests__/Header.test.tsx[2m > [22mHeader[2m > [22mrenders logo and brand name
+[31m[1mTestingLibraryElementError[22m: Unable to find an element with the text: Marketing. This could be because the text is broken up by multiple elements. In this case, you can provide a function for your text matcher to make your matcher more flexible.
+
+Ignored nodes: comments, script, style
+[36m<body>[31m
+  [36m<div>[31m
+    [36m<header[31m
+      [33mclass[31m=[32m"sticky top-0 z-50 bg-white border-b border-gray-200 shadow-sm"[31m
+    [36m>[31m
+      [36m<div[31m
+        [33mclass[31m=[32m"max-w-7xl mx-auto px-4 sm:px-6 lg:px-8"[31m
+      [36m>[31m
+        [36m<div[31m
+          [33mclass[31m=[32m"flex justify-between items-center h-16 md:h-20"[31m
+        [36m>[31m
+          [36m<a[31m
+            [33maria-label[31m=[32m"Go to homepage"[31m
+            [33mclass[31m=[32m"flex items-center text-xl font-bold text-gray-900 hover:text-blue-600 transition-colors"[31m
+            [33mhref[31m=[32m"/"[31m
+          [36m>[31m
+            [36m<img[31m
+              [33malt[31m=[32m"Vivid Auto Photography Logo"[31m
+              [33mclass[31m=[32m"w-48 h-48 object-contain"[31m
+              [33mheight[31m=[32m"192"[31m
+              [33msrc[31m=[32m"/images/icons/Vivid Auto Photography Logo.png"[31m
+              [33mwidth[31m=[32m"192"[31m
+            [36m/>[31m
+          [36m</a>[31m
+          [36m<nav[31m
+            [33mclass[31m=[32m"hidden md:flex items-center space-x-8"[31m
+            [33mrole[31m=[32m"navigation"[31m
+          [36m>[31m
+            [36m<a[31m
+              [33maria-current[31m=[32m"page"[31m
+              [33mclass[31m=[32m"text-sm font-medium transition-colors hover:text-blue-600 text-blue-600 border-b-2 border-blue-600 pb-1"[31m
+              [33mhref[31m=[32m"/"[31m
+            [36m>[31m
+              [0mHome[0m
+            [36m</a>[31m
+            [36m<a[31m
+              [33mclass[31m=[32m"text-sm font-medium transition-colors hover:text-blue-600 text-gray-700"[31m
+              [33mhref[31m=[32m"/services"[31m
+            [36m>[31m
+              [0mServices[0m
+            [36m</a>[31m
+            [36m<a[31m
+              [33mclass[31m=[32m"text-sm font-medium transition-colors hover:text-blue-600 text-gray-700"[31m
+              [33mhref[31m=[32m"/blog"[31m
+            [36m>[31m
+              [0mBlog[0m
+            [36m</a>[31m
+            [36m<a[31m
+              [33mclass[31m=[32m"text-sm font-medium transition-colors hover:text-blue-600 text-gray-700"[31m
+              [33mhref[31m=[32m"/about"[31m
+            [36m>[31m
+              [0mAbout[0m
+            [36m</a>[31m
+            [36m<a[31m
+              [33mclass[31m=[32m"text-sm font-medium transition-colors hover:text-blue-600 text-gray-700"[31m
+              [33mhref[31m=[32m"/contact"[31m
+            [36m>[31m
+              [0mContact[0m
+            [36m</a>[31m
+          [36m</nav>[31m
+          [36m<div[31m
+            [33mclass[31m=[32m"hidden md:flex items-center space-x-4"[31m
+          [36m>[31m
+            [36m<a[31m
+              [33mclass[31m=[32m"bg-blue-600 text-white px-4 py-2 rounded-lg text-sm font-medium hover:bg-blue-700 transition-colors focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2"[31m
+              [33mhref[31m=[32m"/contact"[31m
+            [36m>[31m
+              [0mGet Started[0m
+            [36m</a>[31m
+          [36m</div>[31m
+          [36m<button[31m
+            [33maria-expanded[31m=[32m"false"[31m
+            [33maria-label[31m=[32m"Toggle mobile menu"[31m
+            [33mclass[31m=[32m"md:hidden p-2 rounded-lg text-gray-600 hover:text-gray-900 hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 min-w-[44px] min-h-[44px] flex items-center justify-center"[31m
+          [36m>[31m
+            [36m<svg[31m
+              [33maria-hidden[31m=[32m"true"[31m
+              [33mclass[31m=[32m"w-6 h-6"[31m
+              [33mfill[31m=[32m"none"[31m
+              [33mstroke[31m=[32m"currentColor"[31m
+              [33mviewBox[31m=[32m"0 0 24 24"[31m
+            [36m>[31m
+              [36m<path[31m
+                [33md[31m=[32m"M4 6h16M4 12h16M4 18h16"[31m
+                [33mstroke-linecap[31m=[32m"round"[31m
+                [33mstroke-linejoin[31m=[32m"round"[31m
+                [33mstroke-width[31m=[32m"2"[31m
+              [36m/>[31m
+            [36m</svg>[31m
+          [36m</button>[31m
+        [36m</div>[31m
+      [36m</div>[31m
+    [36m</header>[31m
+  [36m</div>[31m
+[36m</body>[31m[39m
+[90m [2m❯[22m Object.getElementError node_modules/@testing-library/react/node_modules/@testing-library/dom/dist/config.js:[2m37:19[22m[39m
+[90m [2m❯[22m node_modules/@testing-library/react/node_modules/@testing-library/dom/dist/query-helpers.js:[2m76:38[22m[39m
+[90m [2m❯[22m node_modules/@testing-library/react/node_modules/@testing-library/dom/dist/query-helpers.js:[2m52:17[22m[39m
+[90m [2m❯[22m node_modules/@testing-library/react/node_modules/@testing-library/dom/dist/query-helpers.js:[2m95:19[22m[39m
+[36m [2m❯[22m src/components/layout/__tests__/Header.test.tsx:[2m22:19[22m[39m
+    [90m 20| [39m
+    [90m 21| [39m    expect(screen.getByLabelText('Go to homepage')).toBeInTheDocument(…
+    [90m 22| [39m    expect(screen.getByText('Marketing')).toBeInTheDocument();
+    [90m   | [39m                  [31m^[39m
+    [90m 23| [39m  });
+    [90m 24| [39m
+
+[31m[2m⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[34/51]⎯[22m[39m
+
+[31m[1m[7m FAIL [27m[22m[39m src/components/ui/__tests__/Button.test.tsx[2m > [22mButton[2m > [22mapplies default classes
+[31m[1mError[22m: expect(element).toHaveClass("inline-flex items-center justify-center rounded-md text-sm font-medium transition-colors focus-visible:outline-none focus-visible:ring-2 disabled:pointer-events-none disabled:opacity-50")
+
+Expected the element to have class:
+  inline-flex items-center justify-center rounded-md text-sm font-medium transition-colors focus-visible:outline-none focus-visible:ring-2 disabled:pointer-events-none disabled:opacity-50
+Received:
+  inline-flex items-center justify-center font-medium rounded-lg transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-offset-2 disabled:opacity-50 disabled:cursor-not-allowed bg-blue-600 text-white hover:bg-blue-700 focus:ring-blue-500 active:bg-blue-800 px-4 py-2 text-base min-h-[40px][39m
+[36m [2m❯[22m src/components/ui/__tests__/Button.test.tsx:[2m17:20[22m[39m
+    [90m 15| [39m
+    [90m 16| [39m    const button = screen.getByRole('button');
+    [90m 17| [39m    expect(button).toHaveClass(
+    [90m   | [39m                   [31m^[39m
+    [90m 18| [39m      'inline-flex',
+    [90m 19| [39m      'items-center',
+
+[31m[2m⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[35/51]⎯[22m[39m
+
+[31m[1m[7m FAIL [27m[22m[39m src/components/ui/__tests__/Button.test.tsx[2m > [22mButton[2m > [22mapplies primary variant classes
+[31m[1mError[22m: expect(element).toHaveClass("bg-blue-600 text-white hover:bg-blue-700 focus-visible:ring-blue-500")
+
+Expected the element to have class:
+  bg-blue-600 text-white hover:bg-blue-700 focus-visible:ring-blue-500
+Received:
+  inline-flex items-center justify-center font-medium rounded-lg transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-offset-2 disabled:opacity-50 disabled:cursor-not-allowed bg-blue-600 text-white hover:bg-blue-700 focus:ring-blue-500 active:bg-blue-800 px-4 py-2 text-base min-h-[40px][39m
+[36m [2m❯[22m src/components/ui/__tests__/Button.test.tsx:[2m36:20[22m[39m
+    [90m 34| [39m
+    [90m 35| [39m    const button = screen.getByRole('button');
+    [90m 36| [39m    expect(button).toHaveClass(
+    [90m   | [39m                   [31m^[39m
+    [90m 37| [39m      'bg-blue-600',
+    [90m 38| [39m      'text-white',
+
+[31m[2m⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[36/51]⎯[22m[39m
+
+[31m[1m[7m FAIL [27m[22m[39m src/components/ui/__tests__/Button.test.tsx[2m > [22mButton[2m > [22mapplies secondary variant classes
+[31m[1mError[22m: expect(element).toHaveClass("bg-gray-100 text-gray-900 hover:bg-gray-200 focus-visible:ring-gray-500")
+
+Expected the element to have class:
+  bg-gray-100 text-gray-900 hover:bg-gray-200 focus-visible:ring-gray-500
+Received:
+  inline-flex items-center justify-center font-medium rounded-lg transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-offset-2 disabled:opacity-50 disabled:cursor-not-allowed bg-gray-600 text-white hover:bg-gray-700 focus:ring-gray-500 active:bg-gray-800 px-4 py-2 text-base min-h-[40px][39m
+[36m [2m❯[22m src/components/ui/__tests__/Button.test.tsx:[2m48:20[22m[39m
+    [90m 46| [39m
+    [90m 47| [39m    const button = screen.getByRole('button');
+    [90m 48| [39m    expect(button).toHaveClass(
+    [90m   | [39m                   [31m^[39m
+    [90m 49| [39m      'bg-gray-100',
+    [90m 50| [39m      'text-gray-900',
+
+[31m[2m⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[37/51]⎯[22m[39m
+
+[31m[1m[7m FAIL [27m[22m[39m src/components/ui/__tests__/Button.test.tsx[2m > [22mButton[2m > [22mapplies outline variant classes
+[31m[1mError[22m: expect(element).toHaveClass("border border-gray-300 bg-transparent text-gray-700 hover:bg-gray-50 focus-visible:ring-gray-500")
+
+Expected the element to have class:
+  border border-gray-300 bg-transparent text-gray-700 hover:bg-gray-50 focus-visible:ring-gray-500
+Received:
+  inline-flex items-center justify-center font-medium rounded-lg transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-offset-2 disabled:opacity-50 disabled:cursor-not-allowed border-2 border-blue-600 text-blue-600 hover:bg-blue-600 hover:text-white focus:ring-blue-500 active:bg-blue-700 active:text-white px-4 py-2 text-base min-h-[40px][39m
+[36m [2m❯[22m src/components/ui/__tests__/Button.test.tsx:[2m60:20[22m[39m
+    [90m 58| [39m
+    [90m 59| [39m    const button = screen.getByRole('button');
+    [90m 60| [39m    expect(button).toHaveClass(
+    [90m   | [39m                   [31m^[39m
+    [90m 61| [39m      'border',
+    [90m 62| [39m      'border-gray-300',
+
+[31m[2m⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[38/51]⎯[22m[39m
+
+[31m[1m[7m FAIL [27m[22m[39m src/components/ui/__tests__/Button.test.tsx[2m > [22mButton[2m > [22mapplies ghost variant classes
+[31m[1mError[22m: expect(element).toHaveClass("bg-transparent text-gray-700 hover:bg-gray-100 focus-visible:ring-gray-500")
+
+Expected the element to have class:
+  bg-transparent text-gray-700 hover:bg-gray-100 focus-visible:ring-gray-500
+Received:
+  inline-flex items-center justify-center font-medium rounded-lg transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-offset-2 disabled:opacity-50 disabled:cursor-not-allowed text-gray-600 hover:bg-gray-100 hover:text-gray-900 focus:ring-gray-500 active:bg-gray-200 px-4 py-2 text-base min-h-[40px][39m
+[36m [2m❯[22m src/components/ui/__tests__/Button.test.tsx:[2m74:20[22m[39m
+    [90m 72| [39m
+    [90m 73| [39m    const button = screen.getByRole('button');
+    [90m 74| [39m    expect(button).toHaveClass(
+    [90m   | [39m                   [31m^[39m
+    [90m 75| [39m      'bg-transparent',
+    [90m 76| [39m      'text-gray-700',
+
+[31m[2m⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[39/51]⎯[22m[39m
+
+[31m[1m[7m FAIL [27m[22m[39m src/components/ui/__tests__/Button.test.tsx[2m > [22mButton[2m > [22mapplies small size classes
+[31m[1mError[22m: expect(element).toHaveClass("h-9 px-3 text-xs")
+
+Expected the element to have class:
+  h-9 px-3 text-xs
+Received:
+  inline-flex items-center justify-center font-medium rounded-lg transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-offset-2 disabled:opacity-50 disabled:cursor-not-allowed bg-blue-600 text-white hover:bg-blue-700 focus:ring-blue-500 active:bg-blue-800 px-3 py-2 text-sm min-h-[36px][39m
+[36m [2m❯[22m src/components/ui/__tests__/Button.test.tsx:[2m86:20[22m[39m
+    [90m 84| [39m
+    [90m 85| [39m    const button = screen.getByRole('button');
+    [90m 86| [39m    expect(button).toHaveClass('h-9', 'px-3', 'text-xs');
+    [90m   | [39m                   [31m^[39m
+    [90m 87| [39m  });
+    [90m 88| [39m
+
+[31m[2m⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[40/51]⎯[22m[39m
+
+[31m[1m[7m FAIL [27m[22m[39m src/components/ui/__tests__/Button.test.tsx[2m > [22mButton[2m > [22mapplies medium size classes
+[31m[1mError[22m: expect(element).toHaveClass("h-10 px-4 py-2")
+
+Expected the element to have class:
+  h-10 px-4 py-2
+Received:
+  inline-flex items-center justify-center font-medium rounded-lg transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-offset-2 disabled:opacity-50 disabled:cursor-not-allowed bg-blue-600 text-white hover:bg-blue-700 focus:ring-blue-500 active:bg-blue-800 px-4 py-2 text-base min-h-[40px][39m
+[36m [2m❯[22m src/components/ui/__tests__/Button.test.tsx:[2m93:20[22m[39m
+    [90m 91| [39m
+    [90m 92| [39m    const button = screen.getByRole('button');
+    [90m 93| [39m    expect(button).toHaveClass('h-10', 'px-4', 'py-2');
+    [90m   | [39m                   [31m^[39m
+    [90m 94| [39m  });
+    [90m 95| [39m
+
+[31m[2m⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[41/51]⎯[22m[39m
+
+[31m[1m[7m FAIL [27m[22m[39m src/components/ui/__tests__/Button.test.tsx[2m > [22mButton[2m > [22mapplies large size classes
+[31m[1mError[22m: expect(element).toHaveClass("h-11 px-8 text-base")
+
+Expected the element to have class:
+  h-11 px-8 text-base
+Received:
+  inline-flex items-center justify-center font-medium rounded-lg transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-offset-2 disabled:opacity-50 disabled:cursor-not-allowed bg-blue-600 text-white hover:bg-blue-700 focus:ring-blue-500 active:bg-blue-800 px-6 py-3 text-lg min-h-[44px][39m
+[36m [2m❯[22m src/components/ui/__tests__/Button.test.tsx:[2m100:20[22m[39m
+    [90m 98| [39m
+    [90m 99| [39m    const button = screen.getByRole('button');
+    [90m100| [39m    expect(button).toHaveClass('h-11', 'px-8', 'text-base');
+    [90m   | [39m                   [31m^[39m
+    [90m101| [39m  });
+    [90m102| [39m
+
+[31m[2m⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[42/51]⎯[22m[39m
+
+[31m[1m[7m FAIL [27m[22m[39m src/components/ui/__tests__/Button.test.tsx[2m > [22mButton[2m > [22mapplies icon size classes
+[31m[1mError[22m: expect(element).toHaveClass("h-10 w-10")
+
+Expected the element to have class:
+  h-10 w-10
+Received:
+  inline-flex items-center justify-center font-medium rounded-lg transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-offset-2 disabled:opacity-50 disabled:cursor-not-allowed bg-blue-600 text-white hover:bg-blue-700 focus:ring-blue-500 active:bg-blue-800 p-2 min-h-[44px] min-w-[44px][39m
+[36m [2m❯[22m src/components/ui/__tests__/Button.test.tsx:[2m107:20[22m[39m
+    [90m105| [39m
+    [90m106| [39m    const button = screen.getByRole('button');
+    [90m107| [39m    expect(button).toHaveClass('h-10', 'w-10');
+    [90m   | [39m                   [31m^[39m
+    [90m108| [39m  });
+    [90m109| [39m
+
+[31m[2m⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[43/51]⎯[22m[39m
+
+[31m[1m[7m FAIL [27m[22m[39m src/components/ui/__tests__/Button.test.tsx[2m > [22mButton[2m > [22mspreads additional props
+[31m[1mTestingLibraryElementError[22m: Unable to find an element by: [data-testid="test-button"]
+
+Ignored nodes: comments, script, style
+[36m<body>[31m
+  [36m<div>[31m
+    [36m<button[31m
+      [33mclass[31m=[32m"inline-flex items-center justify-center font-medium rounded-lg transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-offset-2 disabled:opacity-50 disabled:cursor-not-allowed bg-blue-600 text-white hover:bg-blue-700 focus:ring-blue-500 active:bg-blue-800 px-4 py-2 text-base min-h-[40px] "[31m
+      [33mtype[31m=[32m"button"[31m
+    [36m>[31m
+      [0mButton with Props[0m
+    [36m</button>[31m
+  [36m</div>[31m
+[36m</body>[31m[39m
+[90m [2m❯[22m Object.getElementError node_modules/@testing-library/react/node_modules/@testing-library/dom/dist/config.js:[2m37:19[22m[39m
+[90m [2m❯[22m node_modules/@testing-library/react/node_modules/@testing-library/dom/dist/query-helpers.js:[2m76:38[22m[39m
+[90m [2m❯[22m node_modules/@testing-library/react/node_modules/@testing-library/dom/dist/query-helpers.js:[2m52:17[22m[39m
+[90m [2m❯[22m node_modules/@testing-library/react/node_modules/@testing-library/dom/dist/query-helpers.js:[2m95:19[22m[39m
+[36m [2m❯[22m src/components/ui/__tests__/Button.test.tsx:[2m160:27[22m[39m
+    [90m158| [39m    );
+    [90m159| [39m
+    [90m160| [39m    const button = screen.getByTestId('test-button');
+    [90m   | [39m                          [31m^[39m
+    [90m161| [39m    expect(button).toHaveAttribute('aria-label', 'Test button');
+    [90m162| [39m  });
+
+[31m[2m⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[44/51]⎯[22m[39m
+
+[31m[1m[7m FAIL [27m[22m[39m src/components/ui/__tests__/Button.test.tsx[2m > [22mButton[2m > [22mhas proper touch target size for mobile
+[31m[1mError[22m: expect(element).toHaveClass("h-10")
+
+Expected the element to have class:
+  h-10
+Received:
+  inline-flex items-center justify-center font-medium rounded-lg transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-offset-2 disabled:opacity-50 disabled:cursor-not-allowed bg-blue-600 text-white hover:bg-blue-700 focus:ring-blue-500 active:bg-blue-800 px-4 py-2 text-base min-h-[40px][39m
+[36m [2m❯[22m src/components/ui/__tests__/Button.test.tsx:[2m169:20[22m[39m
+    [90m167| [39m    const button = screen.getByRole('button');
+    [90m168| [39m    // Default medium size should have min-h-[44px] for touch targets
+    [90m169| [39m    expect(button).toHaveClass('h-10'); // 40px, but with padding shou…
+    [90m   | [39m                   [31m^[39m
+    [90m170| [39m  });
+    [90m171| [39m
+
+[31m[2m⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[45/51]⎯[22m[39m
+
+[31m[1m[7m FAIL [27m[22m[39m src/components/ui/__tests__/Button.test.tsx[2m > [22mButton[2m > [22mhas proper focus styles
+[31m[1mError[22m: expect(element).toHaveClass("focus-visible:outline-none focus-visible:ring-2")
+
+Expected the element to have class:
+  focus-visible:outline-none focus-visible:ring-2
+Received:
+  inline-flex items-center justify-center font-medium rounded-lg transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-offset-2 disabled:opacity-50 disabled:cursor-not-allowed bg-blue-600 text-white hover:bg-blue-700 focus:ring-blue-500 active:bg-blue-800 px-4 py-2 text-base min-h-[40px][39m
+[36m [2m❯[22m src/components/ui/__tests__/Button.test.tsx:[2m196:20[22m[39m
+    [90m194| [39m
+    [90m195| [39m    const button = screen.getByRole('button');
+    [90m196| [39m    expect(button).toHaveClass(
+    [90m   | [39m                   [31m^[39m
+    [90m197| [39m      'focus-visible:outline-none',
+    [90m198| [39m      'focus-visible:ring-2'
+
+[31m[2m⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[46/51]⎯[22m[39m
+
+[31m[1m[7m FAIL [27m[22m[39m src/components/ui/__tests__/OptimizedImage.test.tsx[2m > [22mOptimizedImage[2m > [22mhandles loading state
+[31m[1mError[22m: expect(received).toBeInTheDocument()
+
+received value must be an HTMLElement or an SVGElement.
+[39m
+[36m [2m❯[22m src/components/ui/__tests__/OptimizedImage.test.tsx:[2m58:55[22m[39m
+    [90m 56| [39m
+    [90m 57| [39m    // Should have loading placeholder initially
+    [90m 58| [39m    expect(container.querySelector('.animate-pulse')).toBeInTheDocumen…
+    [90m   | [39m                                                      [31m^[39m
+    [90m 59| [39m  });
+    [90m 60| [39m
+
+[31m[2m⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[47/51]⎯[22m[39m
+
+[31m[1m[7m FAIL [27m[22m[39m src/components/ui/__tests__/OptimizedImage.test.tsx[2m > [22mOptimizedImage[2m > [22mhandles error state
+[31m[1mTestingLibraryElementError[22m: Unable to find an element with the text: Failed to load image. This could be because the text is broken up by multiple elements. In this case, you can provide a function for your text matcher to make your matcher more flexible.
+
+Ignored nodes: comments, script, style
+[36m<body>[31m
+  [36m<div>[31m
+    [36m<div[31m
+      [33mclass[31m=[32m" bg-gray-200 flex items-center justify-center text-gray-500 text-sm"[31m
+      [33mstyle[31m=[32m"width: 400px; height: 300px;"[31m
+    [36m>[31m
+      [36m<span>[31m
+        [0mImage failed to load[0m
+      [36m</span>[31m
+    [36m</div>[31m
+  [36m</div>[31m
+[36m</body>[31m[39m
+[90m [2m❯[22m Object.getElementError node_modules/@testing-library/react/node_modules/@testing-library/dom/dist/config.js:[2m37:19[22m[39m
+[90m [2m❯[22m node_modules/@testing-library/react/node_modules/@testing-library/dom/dist/query-helpers.js:[2m76:38[22m[39m
+[90m [2m❯[22m node_modules/@testing-library/react/node_modules/@testing-library/dom/dist/query-helpers.js:[2m52:17[22m[39m
+[90m [2m❯[22m node_modules/@testing-library/react/node_modules/@testing-library/dom/dist/query-helpers.js:[2m95:19[22m[39m
+[36m [2m❯[22m src/components/ui/__tests__/OptimizedImage.test.tsx:[2m96:19[22m[39m
+    [90m 94| [39m
+    [90m 95| [39m    // Should show error state
+    [90m 96| [39m    expect(screen.getByText('Failed to load image')).toBeInTheDocument…
+    [90m   | [39m                  [31m^[39m
+    [90m 97| [39m  });
+    [90m 98| [39m
+
+[31m[2m⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[48/51]⎯[22m[39m
+
+[31m[1m[7m FAIL [27m[22m[39m src/components/ui/__tests__/OptimizedImage.test.tsx[2m > [22mOptimizedImage[2m > [22mapplies custom className
+[31m[1mError[22m: expect(element).toHaveClass("custom-class")
+
+Expected the element to have class:
+  custom-class
+Received:
+[39m
+[36m [2m❯[22m src/components/ui/__tests__/OptimizedImage.test.tsx:[2m111:23[22m[39m
+    [90m109| [39m
+    [90m110| [39m    const container = screen.getByAltText('Custom image').closest('div…
+    [90m111| [39m    expect(container).toHaveClass('custom-class');
+    [90m   | [39m                      [31m^[39m
+    [90m112| [39m  });
+    [90m113| [39m
+
+[31m[2m⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[49/51]⎯[22m[39m
+
+[31m[1m[7m FAIL [27m[22m[39m src/components/ui/__tests__/OptimizedImage.test.tsx[2m > [22mOptimizedImage[2m > [22muses blur placeholder by default
+[31m[1mError[22m: expect(received).toBeInTheDocument()
+
+received value must be an HTMLElement or an SVGElement.
+[39m
+[36m [2m❯[22m src/components/ui/__tests__/OptimizedImage.test.tsx:[2m126:54[22m[39m
+    [90m124| [39m    // Should have blur placeholder
+    [90m125| [39m    const container = screen.getByAltText('Blur image').closest('div');
+    [90m126| [39m    expect(container?.querySelector('.bg-gray-200')).toBeInTheDocument…
+    [90m   | [39m                                                     [31m^[39m
+    [90m127| [39m  });
+    [90m128| [39m
+
+[31m[2m⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[50/51]⎯[22m[39m
+
+[31m[1m[7m FAIL [27m[22m[39m src/components/ui/__tests__/OptimizedImage.test.tsx[2m > [22mOptimizedImage[2m > [22mmaintains aspect ratio
+[31m[1mError[22m: expect(element).toHaveStyle()
+
+- Expected
++ Received
+
+- aspectRatio: 800 / 400;[39m
+[36m [2m❯[22m src/components/ui/__tests__/OptimizedImage.test.tsx:[2m169:23[22m[39m
+    [90m167| [39m
+    [90m168| [39m    const container = screen.getByAltText('Aspect ratio image').closes…
+    [90m169| [39m    expect(container).toHaveStyle({ aspectRatio: '800 / 400' });
+    [90m   | [39m                      [31m^[39m
+    [90m170| [39m  });
+    [90m171| [39m
+
+[31m[2m⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[51/51]⎯[22m[39m
+
+
+                    </div>
+                
+                    <div class="alert alert-error">
+                        <strong>E2E tests failed</strong><br>
+                        Command failed: npx playwright test --reporter=json
+                    </div>
+                
+                    <div class="alert alert-error">
+                        <strong>PERFORMANCE tests failed</strong><br>
+                        Command failed: npm run performance:validate
+⚠️  Playwright performance tests failed: Command failed: npx playwright test e2e/performance.spec.ts --reporter=json
+
+                    </div>
+                
+                    <div class="alert alert-error">
+                        <strong>FUNCTIONALITY tests failed</strong><br>
+                        Command failed: npm run test:core-functionality
+                    </div>
+                
+            </div>
+        
+        
+        
+            <div class="recommendations">
+                <h2>Recommendations</h2>
+                
+                    <div class="alert alert-error">
+                        <strong>Test success rate is below 80%</strong><br>
+                        Review and fix failing tests before deployment
+                    </div>
+                
+                    <div class="alert alert-warning">
+                        <strong>UNIT tests are taking too long</strong><br>
+                        Consider optimizing test performance
+                    </div>
+                
+                    <div class="alert alert-warning">
+                        <strong>ACCESSIBILITY tests are taking too long</strong><br>
+                        Consider optimizing test performance
+                    </div>
+                
+                    <div class="alert alert-warning">
+                        <strong>FUNCTIONALITY tests are taking too long</strong><br>
+                        Consider optimizing test performance
+                    </div>
+                
+            </div>
+        
+    </div>
+</body>
+</html>
+    

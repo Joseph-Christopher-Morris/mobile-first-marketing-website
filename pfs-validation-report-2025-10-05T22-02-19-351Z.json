@@ -1,0 +1,503 @@
+{
+  "timestamp": "2025-10-05T22:02:11.066Z",
+  "validationResults": {},
+  "overallStatus": "PASS",
+  "recommendations": [],
+  "domainResults": {
+    "github.com": {
+      "status": "PASS",
+      "securityLevel": "GOOD",
+      "details": {
+        "timestamp": "2025-10-05T22:02:11.077Z",
+        "testResults": {
+          "ecdheSupport": {
+            "supportedCiphers": [
+              {
+                "cipher": "ECDHE-RSA-AES256-GCM-SHA384",
+                "keyExchange": "ECDHE",
+                "ephemeralKey": {
+                  "type": "ECDH",
+                  "name": "X25519",
+                  "size": 253
+                }
+              },
+              {
+                "cipher": "ECDHE-RSA-AES128-GCM-SHA256",
+                "keyExchange": "ECDHE",
+                "ephemeralKey": {
+                  "type": "ECDH",
+                  "name": "X25519",
+                  "size": 253
+                }
+              },
+              {
+                "cipher": "ECDHE-RSA-AES256-SHA384",
+                "keyExchange": "ECDHE",
+                "ephemeralKey": {
+                  "type": "ECDH",
+                  "name": "X25519",
+                  "size": 253
+                }
+              },
+              {
+                "cipher": "ECDHE-RSA-AES128-SHA256",
+                "keyExchange": "ECDHE",
+                "ephemeralKey": {
+                  "type": "ECDH",
+                  "name": "X25519",
+                  "size": 253
+                }
+              },
+              {
+                "cipher": "ECDHE-RSA-AES256-SHA",
+                "keyExchange": "ECDHE",
+                "ephemeralKey": {
+                  "type": "ECDH",
+                  "name": "X25519",
+                  "size": 253
+                }
+              }
+            ],
+            "unsupportedCiphers": [
+              {
+                "cipher": "ECDHE-RSA-AES128-SHA",
+                "error": "write EPROTO DCA70000:error:0A000410:SSL routines:ssl3_read_bytes:sslv3 alert handshake failure:c:\\ws\\deps\\openssl\\openssl\\ssl\\record\\rec_layer_s3.c:1590:SSL alert number 40\n"
+              }
+            ],
+            "testPassed": true,
+            "details": {}
+          },
+          "dheSupport": {
+            "supportedCiphers": [],
+            "unsupportedCiphers": [
+              {
+                "cipher": "DHE-RSA-AES256-GCM-SHA384",
+                "error": "write EPROTO DCA70000:error:0A000410:SSL routines:ssl3_read_bytes:sslv3 alert handshake failure:c:\\ws\\deps\\openssl\\openssl\\ssl\\record\\rec_layer_s3.c:1590:SSL alert number 40\n"
+              },
+              {
+                "cipher": "DHE-RSA-AES128-GCM-SHA256",
+                "error": "write EPROTO DCA70000:error:0A000410:SSL routines:ssl3_read_bytes:sslv3 alert handshake failure:c:\\ws\\deps\\openssl\\openssl\\ssl\\record\\rec_layer_s3.c:1590:SSL alert number 40\n"
+              },
+              {
+                "cipher": "DHE-RSA-AES256-SHA256",
+                "error": "write EPROTO DCA70000:error:0A000410:SSL routines:ssl3_read_bytes:sslv3 alert handshake failure:c:\\ws\\deps\\openssl\\openssl\\ssl\\record\\rec_layer_s3.c:1590:SSL alert number 40\n"
+              },
+              {
+                "cipher": "DHE-RSA-AES128-SHA256",
+                "error": "write EPROTO DCA70000:error:0A000410:SSL routines:ssl3_read_bytes:sslv3 alert handshake failure:c:\\ws\\deps\\openssl\\openssl\\ssl\\record\\rec_layer_s3.c:1590:SSL alert number 40\n"
+              },
+              {
+                "cipher": "DHE-RSA-AES256-SHA",
+                "error": "write EPROTO DCA70000:error:0A000410:SSL routines:ssl3_read_bytes:sslv3 alert handshake failure:c:\\ws\\deps\\openssl\\openssl\\ssl\\record\\rec_layer_s3.c:1590:SSL alert number 40\n"
+              },
+              {
+                "cipher": "DHE-RSA-AES128-SHA",
+                "error": "write EPROTO DCA70000:error:0A000410:SSL routines:ssl3_read_bytes:sslv3 alert handshake failure:c:\\ws\\deps\\openssl\\openssl\\ssl\\record\\rec_layer_s3.c:1590:SSL alert number 40\n"
+              }
+            ],
+            "testPassed": false,
+            "details": {}
+          },
+          "ephemeralKeyGeneration": {
+            "connections": [
+              {
+                "keyType": "ECDH",
+                "keySize": 253,
+                "keyName": "X25519"
+              },
+              {
+                "keyType": "ECDH",
+                "keySize": 253,
+                "keyName": "X25519"
+              },
+              {
+                "keyType": "ECDH",
+                "keySize": 253,
+                "keyName": "X25519"
+              },
+              {
+                "keyType": "ECDH",
+                "keySize": 253,
+                "keyName": "X25519"
+              },
+              {
+                "keyType": "ECDH",
+                "keySize": 253,
+                "keyName": "X25519"
+              }
+            ],
+            "uniqueKeys": {},
+            "ephemeralKeySupport": true,
+            "testPassed": true
+          },
+          "pfsCompliance": {
+            "pfsEnabledConnections": 3,
+            "totalConnections": 4,
+            "nonPfsDetected": [
+              {
+                "cipher": "TLS_AES_128_GCM_SHA256",
+                "keyExchange": "RSA"
+              }
+            ],
+            "compliancePercentage": 75,
+            "testPassed": false
+          }
+        },
+        "summary": {
+          "totalTests": 4,
+          "passed": 2,
+          "failed": 2,
+          "warnings": 0
+        },
+        "pfsCompliance": {
+          "ecdheCipherSupport": true,
+          "dheCipherSupport": false,
+          "ephemeralKeyGeneration": true,
+          "overallCompliance": true
+        },
+        "recommendations": [
+          {
+            "priority": "MEDIUM",
+            "category": "Key Exchange",
+            "issue": "DHE cipher suites not supported",
+            "recommendation": "Consider enabling DHE cipher suites as fallback for ECDHE"
+          }
+        ],
+        "securityLevel": "GOOD"
+      },
+      "timestamp": "2025-10-05T22:02:12.330Z"
+    },
+    "cloudfront.amazonaws.com": {
+      "status": "PASS",
+      "securityLevel": "GOOD",
+      "details": {
+        "timestamp": "2025-10-05T22:02:12.330Z",
+        "testResults": {
+          "ecdheSupport": {
+            "supportedCiphers": [
+              {
+                "cipher": "ECDHE-RSA-AES256-GCM-SHA384",
+                "keyExchange": "ECDHE",
+                "ephemeralKey": {
+                  "type": "ECDH",
+                  "name": "prime256v1",
+                  "size": 256
+                }
+              },
+              {
+                "cipher": "ECDHE-RSA-AES128-GCM-SHA256",
+                "keyExchange": "ECDHE",
+                "ephemeralKey": {
+                  "type": "ECDH",
+                  "name": "prime256v1",
+                  "size": 256
+                }
+              },
+              {
+                "cipher": "ECDHE-RSA-AES256-SHA384",
+                "keyExchange": "ECDHE",
+                "ephemeralKey": {
+                  "type": "ECDH",
+                  "name": "prime256v1",
+                  "size": 256
+                }
+              },
+              {
+                "cipher": "ECDHE-RSA-AES128-SHA256",
+                "keyExchange": "ECDHE",
+                "ephemeralKey": {
+                  "type": "ECDH",
+                  "name": "prime256v1",
+                  "size": 256
+                }
+              },
+              {
+                "cipher": "ECDHE-RSA-AES256-SHA",
+                "keyExchange": "ECDHE",
+                "ephemeralKey": {
+                  "type": "ECDH",
+                  "name": "prime256v1",
+                  "size": 256
+                }
+              },
+              {
+                "cipher": "ECDHE-RSA-AES128-SHA",
+                "keyExchange": "ECDHE",
+                "ephemeralKey": {
+                  "type": "ECDH",
+                  "name": "prime256v1",
+                  "size": 256
+                }
+              }
+            ],
+            "unsupportedCiphers": [],
+            "testPassed": true,
+            "details": {}
+          },
+          "dheSupport": {
+            "supportedCiphers": [],
+            "unsupportedCiphers": [
+              {
+                "cipher": "DHE-RSA-AES256-GCM-SHA384",
+                "error": "read ECONNRESET"
+              },
+              {
+                "cipher": "DHE-RSA-AES128-GCM-SHA256",
+                "error": "read ECONNRESET"
+              },
+              {
+                "cipher": "DHE-RSA-AES256-SHA256",
+                "error": "read ECONNRESET"
+              },
+              {
+                "cipher": "DHE-RSA-AES128-SHA256",
+                "error": "read ECONNRESET"
+              },
+              {
+                "cipher": "DHE-RSA-AES256-SHA",
+                "error": "read ECONNRESET"
+              },
+              {
+                "cipher": "DHE-RSA-AES128-SHA",
+                "error": "read ECONNRESET"
+              }
+            ],
+            "testPassed": false,
+            "details": {}
+          },
+          "ephemeralKeyGeneration": {
+            "connections": [
+              {
+                "keyType": "ECDH",
+                "keySize": 256,
+                "keyName": "prime256v1"
+              },
+              {
+                "keyType": "ECDH",
+                "keySize": 256,
+                "keyName": "prime256v1"
+              },
+              {
+                "keyType": "ECDH",
+                "keySize": 256,
+                "keyName": "prime256v1"
+              },
+              {
+                "keyType": "ECDH",
+                "keySize": 256,
+                "keyName": "prime256v1"
+              },
+              {
+                "keyType": "ECDH",
+                "keySize": 256,
+                "keyName": "prime256v1"
+              }
+            ],
+            "uniqueKeys": {},
+            "ephemeralKeySupport": true,
+            "testPassed": true
+          },
+          "pfsCompliance": {
+            "pfsEnabledConnections": 3,
+            "totalConnections": 4,
+            "nonPfsDetected": [
+              {
+                "cipher": "TLS_AES_128_GCM_SHA256",
+                "keyExchange": "RSA"
+              }
+            ],
+            "compliancePercentage": 75,
+            "testPassed": false
+          }
+        },
+        "summary": {
+          "totalTests": 4,
+          "passed": 2,
+          "failed": 2,
+          "warnings": 0
+        },
+        "pfsCompliance": {
+          "ecdheCipherSupport": true,
+          "dheCipherSupport": false,
+          "ephemeralKeyGeneration": true,
+          "overallCompliance": true
+        },
+        "recommendations": [
+          {
+            "priority": "MEDIUM",
+            "category": "Key Exchange",
+            "issue": "DHE cipher suites not supported",
+            "recommendation": "Consider enabling DHE cipher suites as fallback for ECDHE"
+          }
+        ],
+        "securityLevel": "GOOD"
+      },
+      "timestamp": "2025-10-05T22:02:17.574Z"
+    },
+    "aws.amazon.com": {
+      "status": "PASS",
+      "securityLevel": "GOOD",
+      "details": {
+        "timestamp": "2025-10-05T22:02:17.574Z",
+        "testResults": {
+          "ecdheSupport": {
+            "supportedCiphers": [
+              {
+                "cipher": "ECDHE-RSA-AES256-GCM-SHA384",
+                "keyExchange": "ECDHE",
+                "ephemeralKey": {
+                  "type": "ECDH",
+                  "name": "X25519",
+                  "size": 253
+                }
+              },
+              {
+                "cipher": "ECDHE-RSA-AES128-GCM-SHA256",
+                "keyExchange": "ECDHE",
+                "ephemeralKey": {
+                  "type": "ECDH",
+                  "name": "X25519",
+                  "size": 253
+                }
+              },
+              {
+                "cipher": "ECDHE-RSA-AES256-SHA384",
+                "keyExchange": "ECDHE",
+                "ephemeralKey": {
+                  "type": "ECDH",
+                  "name": "X25519",
+                  "size": 253
+                }
+              },
+              {
+                "cipher": "ECDHE-RSA-AES128-SHA256",
+                "keyExchange": "ECDHE",
+                "ephemeralKey": {
+                  "type": "ECDH",
+                  "name": "X25519",
+                  "size": 253
+                }
+              }
+            ],
+            "unsupportedCiphers": [
+              {
+                "cipher": "ECDHE-RSA-AES256-SHA",
+                "error": "Client network socket disconnected before secure TLS connection was established"
+              },
+              {
+                "cipher": "ECDHE-RSA-AES128-SHA",
+                "error": "Client network socket disconnected before secure TLS connection was established"
+              }
+            ],
+            "testPassed": true,
+            "details": {}
+          },
+          "dheSupport": {
+            "supportedCiphers": [],
+            "unsupportedCiphers": [
+              {
+                "cipher": "DHE-RSA-AES256-GCM-SHA384",
+                "error": "Client network socket disconnected before secure TLS connection was established"
+              },
+              {
+                "cipher": "DHE-RSA-AES128-GCM-SHA256",
+                "error": "Client network socket disconnected before secure TLS connection was established"
+              },
+              {
+                "cipher": "DHE-RSA-AES256-SHA256",
+                "error": "Client network socket disconnected before secure TLS connection was established"
+              },
+              {
+                "cipher": "DHE-RSA-AES128-SHA256",
+                "error": "Client network socket disconnected before secure TLS connection was established"
+              },
+              {
+                "cipher": "DHE-RSA-AES256-SHA",
+                "error": "Client network socket disconnected before secure TLS connection was established"
+              },
+              {
+                "cipher": "DHE-RSA-AES128-SHA",
+                "error": "Client network socket disconnected before secure TLS connection was established"
+              }
+            ],
+            "testPassed": false,
+            "details": {}
+          },
+          "ephemeralKeyGeneration": {
+            "connections": [
+              {
+                "keyType": "ECDH",
+                "keySize": 253,
+                "keyName": "X25519"
+              },
+              {
+                "keyType": "ECDH",
+                "keySize": 253,
+                "keyName": "X25519"
+              },
+              {
+                "keyType": "ECDH",
+                "keySize": 253,
+                "keyName": "X25519"
+              },
+              {
+                "keyType": "ECDH",
+                "keySize": 253,
+                "keyName": "X25519"
+              },
+              {
+                "keyType": "ECDH",
+                "keySize": 253,
+                "keyName": "X25519"
+              }
+            ],
+            "uniqueKeys": {},
+            "ephemeralKeySupport": true,
+            "testPassed": true
+          },
+          "pfsCompliance": {
+            "pfsEnabledConnections": 3,
+            "totalConnections": 4,
+            "nonPfsDetected": [
+              {
+                "cipher": "TLS_AES_128_GCM_SHA256",
+                "keyExchange": "RSA"
+              }
+            ],
+            "compliancePercentage": 75,
+            "testPassed": false
+          }
+        },
+        "summary": {
+          "totalTests": 4,
+          "passed": 2,
+          "failed": 2,
+          "warnings": 0
+        },
+        "pfsCompliance": {
+          "ecdheCipherSupport": true,
+          "dheCipherSupport": false,
+          "ephemeralKeyGeneration": true,
+          "overallCompliance": true
+        },
+        "recommendations": [
+          {
+            "priority": "MEDIUM",
+            "category": "Key Exchange",
+            "issue": "DHE cipher suites not supported",
+            "recommendation": "Consider enabling DHE cipher suites as fallback for ECDHE"
+          }
+        ],
+        "securityLevel": "GOOD"
+      },
+      "timestamp": "2025-10-05T22:02:19.349Z"
+    }
+  },
+  "cloudFrontResults": null,
+  "summary": {
+    "totalDomains": 3,
+    "passedDomains": 3,
+    "failedDomains": 0,
+    "errorDomains": 0
+  }
+}

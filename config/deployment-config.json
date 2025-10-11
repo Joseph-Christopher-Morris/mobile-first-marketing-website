@@ -1,0 +1,27 @@
+{
+  "environment": "production",
+  "bucketName": "mobile-marketing-site-prod",
+  "distributionId": "E1234567890ABC",
+  "customDomain": "example.com",
+  "certificateArn": "arn:aws:acm:us-east-1:123456789012:certificate/12345678-1234-1234-1234-123456789012",
+  "region": "us-east-1",
+  "cacheSettings": {
+    "htmlTtl": 300,
+    "staticAssetTtl": 31536000,
+    "apiTtl": 0,
+    "compressionEnabled": true,
+    "gzipTypes": ["text/html", "text/css", "application/javascript", "application/json"]
+  },
+  "securityHeaders": {
+    "strictTransportSecurity": "max-age=31536000; includeSubDomains",
+    "contentTypeOptions": "nosniff",
+    "frameOptions": "DENY",
+    "xssProtection": "1; mode=block",
+    "referrerPolicy": "strict-origin-when-cross-origin"
+  },
+  "monitoring": {
+    "enableCloudWatch": true,
+    "enableAccessLogs": true,
+    "notificationEmail": "admin@example.com"
+  }
+}

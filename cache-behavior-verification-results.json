@@ -1,0 +1,135 @@
+{
+  "timestamp": "2025-10-10T21:57:48.057Z",
+  "baseUrl": "https://d15sc9fc739ev2.cloudfront.net",
+  "tests": [
+    {
+      "url": "https://d15sc9fc739ev2.cloudfront.net/images/about/A7302858.webp",
+      "requests": [
+        {
+          "requestNumber": 1,
+          "responseTime": 862,
+          "statusCode": 200,
+          "cacheHit": false,
+          "cloudFrontPop": "MAN51-P6",
+          "contentLength": 30697,
+          "etag": "\"2099943e4607c4a8b1b1e9faf2085969\"",
+          "lastModified": "Wed, 08 Oct 2025 14:53:57 GMT",
+          "xCache": "Miss from cloudfront"
+        },
+        {
+          "requestNumber": 2,
+          "responseTime": 30,
+          "statusCode": 200,
+          "cacheHit": true,
+          "cloudFrontPop": "MAN51-P6",
+          "contentLength": 30696,
+          "etag": "\"2099943e4607c4a8b1b1e9faf2085969\"",
+          "lastModified": "Wed, 08 Oct 2025 14:53:57 GMT",
+          "xCache": "Hit from cloudfront"
+        },
+        {
+          "requestNumber": 3,
+          "responseTime": 12,
+          "statusCode": 200,
+          "cacheHit": true,
+          "cloudFrontPop": "MAN51-P6",
+          "contentLength": 30696,
+          "etag": "\"2099943e4607c4a8b1b1e9faf2085969\"",
+          "lastModified": "Wed, 08 Oct 2025 14:53:57 GMT",
+          "xCache": "Hit from cloudfront"
+        }
+      ],
+      "cacheEffective": true,
+      "averageResponseTime": 301,
+      "cacheHitRate": "66.7"
+    },
+    {
+      "url": "https://d15sc9fc739ev2.cloudfront.net/index.html",
+      "requests": [
+        {
+          "requestNumber": 1,
+          "responseTime": 422,
+          "statusCode": 200,
+          "cacheHit": false,
+          "cloudFrontPop": "MAN51-P6",
+          "contentLength": 83896,
+          "etag": "\"79dfe82a3331ba8da3e590936b9866b3\"",
+          "lastModified": "Fri, 10 Oct 2025 21:49:03 GMT",
+          "xCache": "Miss from cloudfront"
+        },
+        {
+          "requestNumber": 2,
+          "responseTime": 409,
+          "statusCode": 200,
+          "cacheHit": false,
+          "cloudFrontPop": "MAN51-P6",
+          "contentLength": 83896,
+          "etag": "\"79dfe82a3331ba8da3e590936b9866b3\"",
+          "lastModified": "Fri, 10 Oct 2025 21:49:03 GMT",
+          "xCache": "Miss from cloudfront"
+        },
+        {
+          "requestNumber": 3,
+          "responseTime": 175,
+          "statusCode": 200,
+          "cacheHit": false,
+          "cloudFrontPop": "MAN51-P6",
+          "contentLength": 83896,
+          "etag": "\"79dfe82a3331ba8da3e590936b9866b3\"",
+          "lastModified": "Fri, 10 Oct 2025 21:49:03 GMT",
+          "xCache": "Miss from cloudfront"
+        }
+      ],
+      "cacheEffective": true,
+      "averageResponseTime": 335,
+      "cacheHitRate": "0.0"
+    },
+    {
+      "url": "https://d15sc9fc739ev2.cloudfront.net/_next/static/chunks/255-3260b6c822d7a91e.js",
+      "requests": [
+        {
+          "requestNumber": 1,
+          "responseTime": 468,
+          "statusCode": 200,
+          "cacheHit": false,
+          "cloudFrontPop": "MAN51-P6",
+          "contentLength": 171824,
+          "etag": "\"8e1de0162b76c5fb02b35f2758b173b7\"",
+          "lastModified": "Mon, 06 Oct 2025 08:09:09 GMT",
+          "xCache": "Miss from cloudfront"
+        },
+        {
+          "requestNumber": 2,
+          "responseTime": 31,
+          "statusCode": 200,
+          "cacheHit": true,
+          "cloudFrontPop": "MAN51-P6",
+          "contentLength": 171824,
+          "etag": "\"8e1de0162b76c5fb02b35f2758b173b7\"",
+          "lastModified": "Mon, 06 Oct 2025 08:09:09 GMT",
+          "xCache": "Hit from cloudfront"
+        },
+        {
+          "requestNumber": 3,
+          "responseTime": 13,
+          "statusCode": 200,
+          "cacheHit": true,
+          "cloudFrontPop": "MAN51-P6",
+          "contentLength": 171824,
+          "etag": "\"8e1de0162b76c5fb02b35f2758b173b7\"",
+          "lastModified": "Mon, 06 Oct 2025 08:09:09 GMT",
+          "xCache": "Hit from cloudfront"
+        }
+      ],
+      "cacheEffective": true,
+      "averageResponseTime": 171,
+      "cacheHitRate": "66.7"
+    }
+  ],
+  "summary": {
+    "totalTests": 3,
+    "effectiveCache": 3,
+    "averageCacheHitRate": "44.5",
+    "overallEffective": true
+  }
+}

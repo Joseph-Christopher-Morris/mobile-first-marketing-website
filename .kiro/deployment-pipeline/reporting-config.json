@@ -1,0 +1,37 @@
+{
+  "version": "1.0.0",
+  "outputDirectory": "./test-results",
+  "formats": {
+    "json": {
+      "enabled": true,
+      "filename": "deployment-test-results.json",
+      "includeDetails": true
+    },
+    "html": {
+      "enabled": true,
+      "filename": "deployment-test-results.html",
+      "template": "comprehensive",
+      "includeScreenshots": true
+    },
+    "junit": {
+      "enabled": true,
+      "filename": "deployment-test-results.xml",
+      "suiteName": "Deployment Tests"
+    }
+  },
+  "aggregation": {
+    "enabled": true,
+    "sources": [
+      "vitest-results.json",
+      "playwright-results.json",
+      "accessibility-results.json",
+      "performance-results.json",
+      "functionality-results.json"
+    ],
+    "outputFile": "aggregated-test-results.json"
+  },
+  "retention": {
+    "maxReports": 50,
+    "maxAge": "30d"
+  }
+}

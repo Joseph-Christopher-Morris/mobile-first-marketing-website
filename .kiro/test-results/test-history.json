@@ -1,0 +1,13 @@
+[
+  {
+    "timestamp": "2025-10-05T15:48:29.024Z",
+    "summary": {
+      "total": 35,
+      "passed": 23,
+      "failed": 11,
+      "skipped": 1,
+      "success_rate": 66
+    },
+    "duration": 627187
+  }
+]

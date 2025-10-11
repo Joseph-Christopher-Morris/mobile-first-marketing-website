@@ -1,0 +1,840 @@
+{
+  "buildVerification": {
+    "sourceCount": 36,
+    "buildCount": 36,
+    "missingCount": 0,
+    "missingImages": [],
+    "passed": true
+  },
+  "s3Upload": {
+    "totalImages": 36,
+    "uploadedCount": 36,
+    "missingCount": 0,
+    "uploadResults": [
+      {
+        "key": "images/about/A7302858.webp",
+        "exists": true,
+        "size": 32354,
+        "lastModified": "2025-10-08T14:53:57.000Z"
+      },
+      {
+        "key": "images/blog/google-ads-analytics-screenshot.webp",
+        "exists": true,
+        "size": 23692,
+        "lastModified": "2025-10-07T15:46:33.000Z"
+      },
+      {
+        "key": "images/blog/mobile-first-design.jpg",
+        "exists": true,
+        "size": 48,
+        "lastModified": "2025-10-06T08:09:02.000Z"
+      },
+      {
+        "key": "images/blog/Screenshot 2025-08-11 143853.webp",
+        "exists": true,
+        "size": 23692,
+        "lastModified": "2025-10-07T15:15:17.000Z"
+      },
+      {
+        "key": "images/blog/welcome-hero.jpg",
+        "exists": true,
+        "size": 36,
+        "lastModified": "2025-10-06T08:09:02.000Z"
+      },
+      {
+        "key": "images/google-analytics.webp",
+        "exists": true,
+        "size": 23692,
+        "lastModified": "2025-10-07T17:53:23.000Z"
+      },
+      {
+        "key": "images/hero/240619-London-19.webp",
+        "exists": true,
+        "size": 42274,
+        "lastModified": "2025-10-09T10:16:42.000Z"
+      },
+      {
+        "key": "images/hero/A7302858.webp",
+        "exists": true,
+        "size": 32354,
+        "lastModified": "2025-10-08T14:53:57.000Z"
+      },
+      {
+        "key": "images/hero/aston-martin-db6-website.webp",
+        "exists": true,
+        "size": 49328,
+        "lastModified": "2025-10-06T08:09:02.000Z"
+      },
+      {
+        "key": "images/hero/google-ads-analytics-dashboard.webp",
+        "exists": true,
+        "size": 23692,
+        "lastModified": "2025-10-07T17:14:41.000Z"
+      },
+      {
+        "key": "images/hero/hero-bg.jpg",
+        "exists": true,
+        "size": 149,
+        "lastModified": "2025-10-06T08:09:03.000Z"
+      },
+      {
+        "key": "images/hero/paid-ads-analytics-screenshot.webp",
+        "exists": true,
+        "size": 23692,
+        "lastModified": "2025-10-07T17:39:33.000Z"
+      },
+      {
+        "key": "images/hero/Screenshot 2025-08-11 143853.webp",
+        "exists": true,
+        "size": 23692,
+        "lastModified": "2025-10-07T15:51:51.000Z"
+      },
+      {
+        "key": "images/hero/Screenshot 2025-09-23 201649.webp",
+        "exists": true,
+        "size": 38464,
+        "lastModified": "2025-10-09T10:16:43.000Z"
+      },
+      {
+        "key": "images/hero/Stock_Photography_SAMIRA.webp",
+        "exists": true,
+        "size": 26170,
+        "lastModified": "2025-10-09T10:16:43.000Z"
+      },
+      {
+        "key": "images/hero/WhatsApp Image 2025-07-11 at 2.22.33 PM (2).webp",
+        "exists": true,
+        "size": 49522,
+        "lastModified": "2025-10-09T10:16:43.000Z"
+      },
+      {
+        "key": "images/icons/Vivid Auto Photography Logo.png",
+        "exists": true,
+        "size": 66959,
+        "lastModified": "2025-10-06T08:09:03.000Z"
+      },
+      {
+        "key": "images/services/240217-Australia_Trip-232 (1).webp",
+        "exists": true,
+        "size": 48688,
+        "lastModified": "2025-10-09T10:16:43.000Z"
+      },
+      {
+        "key": "images/services/240219-Australia_Trip-148.webp",
+        "exists": true,
+        "size": 68510,
+        "lastModified": "2025-10-09T10:16:44.000Z"
+      },
+      {
+        "key": "images/services/240619-London-19.webp",
+        "exists": true,
+        "size": 42274,
+        "lastModified": "2025-10-09T10:16:44.000Z"
+      },
+      {
+        "key": "images/services/240619-London-26 (1).webp",
+        "exists": true,
+        "size": 46984,
+        "lastModified": "2025-10-09T10:16:44.000Z"
+      },
+      {
+        "key": "images/services/240619-London-64.webp",
+        "exists": true,
+        "size": 49972,
+        "lastModified": "2025-10-09T10:16:44.000Z"
+      },
+      {
+        "key": "images/services/250125-Liverpool-40.webp",
+        "exists": true,
+        "size": 50126,
+        "lastModified": "2025-10-09T10:16:45.000Z"
+      },
+      {
+        "key": "images/services/250928-Hampson_Auctions_Sunday-11.webp",
+        "exists": true,
+        "size": 50868,
+        "lastModified": "2025-10-09T10:16:45.000Z"
+      },
+      {
+        "key": "images/services/accessible_top8_campaigns Source.webp",
+        "exists": true,
+        "size": 29688,
+        "lastModified": "2025-10-09T16:28:14.000Z"
+      },
+      {
+        "key": "images/services/ad-campaigns-hero.webp",
+        "exists": true,
+        "size": 23692,
+        "lastModified": "2025-10-06T08:09:04.000Z"
+      },
+      {
+        "key": "images/services/analytics-hero.webp",
+        "exists": true,
+        "size": 23692,
+        "lastModified": "2025-10-07T18:24:23.000Z"
+      },
+      {
+        "key": "images/services/output (5).webp",
+        "exists": true,
+        "size": 21610,
+        "lastModified": "2025-10-09T16:28:14.000Z"
+      },
+      {
+        "key": "images/services/photography-hero.webp",
+        "exists": true,
+        "size": 57180,
+        "lastModified": "2025-10-06T08:09:05.000Z"
+      },
+      {
+        "key": "images/services/Screenshot 2025-08-12 124550.webp",
+        "exists": true,
+        "size": 46204,
+        "lastModified": "2025-10-09T16:28:15.000Z"
+      },
+      {
+        "key": "images/services/Screenshot 2025-09-23 201649.webp",
+        "exists": true,
+        "size": 38464,
+        "lastModified": "2025-10-09T10:16:45.000Z"
+      },
+      {
+        "key": "images/services/Top 3 Mediums by Conversion Rate.webp",
+        "exists": true,
+        "size": 18422,
+        "lastModified": "2025-10-09T16:28:15.000Z"
+      },
+      {
+        "key": "images/testimonials/david-kim.jpg",
+        "exists": true,
+        "size": 34,
+        "lastModified": "2025-10-06T08:09:05.000Z"
+      },
+      {
+        "key": "images/testimonials/lisa-rodriguez.jpg",
+        "exists": true,
+        "size": 39,
+        "lastModified": "2025-10-06T08:09:05.000Z"
+      },
+      {
+        "key": "images/testimonials/michael-chen.jpg",
+        "exists": true,
+        "size": 37,
+        "lastModified": "2025-10-06T08:09:06.000Z"
+      },
+      {
+        "key": "images/testimonials/sarah-johnson.jpg",
+        "exists": true,
+        "size": 38,
+        "lastModified": "2025-10-06T08:09:06.000Z"
+      }
+    ]
+  },
+  "mimeTypes": {
+    "totalChecked": 36,
+    "correctCount": 36,
+    "incorrectCount": 0,
+    "results": [
+      {
+        "key": "images/about/A7302858.webp",
+        "expected": "image/webp",
+        "actual": "image/webp",
+        "correct": true
+      },
+      {
+        "key": "images/blog/google-ads-analytics-screenshot.webp",
+        "expected": "image/webp",
+        "actual": "image/webp",
+        "correct": true
+      },
+      {
+        "key": "images/blog/mobile-first-design.jpg",
+        "expected": "image/jpeg",
+        "actual": "image/jpeg",
+        "correct": true
+      },
+      {
+        "key": "images/blog/Screenshot 2025-08-11 143853.webp",
+        "expected": "image/webp",
+        "actual": "image/webp",
+        "correct": true
+      },
+      {
+        "key": "images/blog/welcome-hero.jpg",
+        "expected": "image/jpeg",
+        "actual": "image/jpeg",
+        "correct": true
+      },
+      {
+        "key": "images/google-analytics.webp",
+        "expected": "image/webp",
+        "actual": "image/webp",
+        "correct": true
+      },
+      {
+        "key": "images/hero/240619-London-19.webp",
+        "expected": "image/webp",
+        "actual": "image/webp",
+        "correct": true
+      },
+      {
+        "key": "images/hero/A7302858.webp",
+        "expected": "image/webp",
+        "actual": "image/webp",
+        "correct": true
+      },
+      {
+        "key": "images/hero/aston-martin-db6-website.webp",
+        "expected": "image/webp",
+        "actual": "image/webp",
+        "correct": true
+      },
+      {
+        "key": "images/hero/google-ads-analytics-dashboard.webp",
+        "expected": "image/webp",
+        "actual": "image/webp",
+        "correct": true
+      },
+      {
+        "key": "images/hero/hero-bg.jpg",
+        "expected": "image/jpeg",
+        "actual": "image/jpeg",
+        "correct": true
+      },
+      {
+        "key": "images/hero/paid-ads-analytics-screenshot.webp",
+        "expected": "image/webp",
+        "actual": "image/webp",
+        "correct": true
+      },
+      {
+        "key": "images/hero/Screenshot 2025-08-11 143853.webp",
+        "expected": "image/webp",
+        "actual": "image/webp",
+        "correct": true
+      },
+      {
+        "key": "images/hero/Screenshot 2025-09-23 201649.webp",
+        "expected": "image/webp",
+        "actual": "image/webp",
+        "correct": true
+      },
+      {
+        "key": "images/hero/Stock_Photography_SAMIRA.webp",
+        "expected": "image/webp",
+        "actual": "image/webp",
+        "correct": true
+      },
+      {
+        "key": "images/hero/WhatsApp Image 2025-07-11 at 2.22.33 PM (2).webp",
+        "expected": "image/webp",
+        "actual": "image/webp",
+        "correct": true
+      },
+      {
+        "key": "images/icons/Vivid Auto Photography Logo.png",
+        "expected": "image/png",
+        "actual": "image/png",
+        "correct": true
+      },
+      {
+        "key": "images/services/240217-Australia_Trip-232 (1).webp",
+        "expected": "image/webp",
+        "actual": "image/webp",
+        "correct": true
+      },
+      {
+        "key": "images/services/240219-Australia_Trip-148.webp",
+        "expected": "image/webp",
+        "actual": "image/webp",
+        "correct": true
+      },
+      {
+        "key": "images/services/240619-London-19.webp",
+        "expected": "image/webp",
+        "actual": "image/webp",
+        "correct": true
+      },
+      {
+        "key": "images/services/240619-London-26 (1).webp",
+        "expected": "image/webp",
+        "actual": "image/webp",
+        "correct": true
+      },
+      {
+        "key": "images/services/240619-London-64.webp",
+        "expected": "image/webp",
+        "actual": "image/webp",
+        "correct": true
+      },
+      {
+        "key": "images/services/250125-Liverpool-40.webp",
+        "expected": "image/webp",
+        "actual": "image/webp",
+        "correct": true
+      },
+      {
+        "key": "images/services/250928-Hampson_Auctions_Sunday-11.webp",
+        "expected": "image/webp",
+        "actual": "image/webp",
+        "correct": true
+      },
+      {
+        "key": "images/services/accessible_top8_campaigns Source.webp",
+        "expected": "image/webp",
+        "actual": "image/webp",
+        "correct": true
+      },
+      {
+        "key": "images/services/ad-campaigns-hero.webp",
+        "expected": "image/webp",
+        "actual": "image/webp",
+        "correct": true
+      },
+      {
+        "key": "images/services/analytics-hero.webp",
+        "expected": "image/webp",
+        "actual": "image/webp",
+        "correct": true
+      },
+      {
+        "key": "images/services/output (5).webp",
+        "expected": "image/webp",
+        "actual": "image/webp",
+        "correct": true
+      },
+      {
+        "key": "images/services/photography-hero.webp",
+        "expected": "image/webp",
+        "actual": "image/webp",
+        "correct": true
+      },
+      {
+        "key": "images/services/Screenshot 2025-08-12 124550.webp",
+        "expected": "image/webp",
+        "actual": "image/webp",
+        "correct": true
+      },
+      {
+        "key": "images/services/Screenshot 2025-09-23 201649.webp",
+        "expected": "image/webp",
+        "actual": "image/webp",
+        "correct": true
+      },
+      {
+        "key": "images/services/Top 3 Mediums by Conversion Rate.webp",
+        "expected": "image/webp",
+        "actual": "image/webp",
+        "correct": true
+      },
+      {
+        "key": "images/testimonials/david-kim.jpg",
+        "expected": "image/jpeg",
+        "actual": "image/jpeg",
+        "correct": true
+      },
+      {
+        "key": "images/testimonials/lisa-rodriguez.jpg",
+        "expected": "image/jpeg",
+        "actual": "image/jpeg",
+        "correct": true
+      },
+      {
+        "key": "images/testimonials/michael-chen.jpg",
+        "expected": "image/jpeg",
+        "actual": "image/jpeg",
+        "correct": true
+      },
+      {
+        "key": "images/testimonials/sarah-johnson.jpg",
+        "expected": "image/jpeg",
+        "actual": "image/jpeg",
+        "correct": true
+      }
+    ]
+  },
+  "accessibility": {
+    "domain": "d15sc9fc739ev2.cloudfront.net",
+    "totalTested": 10,
+    "successfulCount": 10,
+    "failedCount": 0,
+    "results": [
+      {
+        "key": "images/about/A7302858.webp",
+        "url": "https://d15sc9fc739ev2.cloudfront.net/images/about/A7302858.webp",
+        "statusCode": 200,
+        "headers": {
+          "content-type": "image/webp",
+          "content-length": "32354",
+          "connection": "keep-alive",
+          "date": "Thu, 09 Oct 2025 16:28:34 GMT",
+          "last-modified": "Wed, 08 Oct 2025 14:53:57 GMT",
+          "etag": "\"2099943e4607c4a8b1b1e9faf2085969\"",
+          "x-amz-server-side-encryption": "AES256",
+          "x-amz-meta-deployment-id": "deploy-1759935156958",
+          "x-amz-meta-uploaded-at": "2025-10-08T14:53:58.437Z",
+          "x-amz-version-id": "oDZ.UzunDtznv0aTf.wQzVkKCFZHNHVl",
+          "x-amz-meta-file-hash": "2099943e4607c4a8b1b1e9faf2085969",
+          "accept-ranges": "bytes",
+          "server": "AmazonS3",
+          "x-cache": "Miss from cloudfront",
+          "via": "1.1 8e49b170478612b328a739365178d0c2.cloudfront.net (CloudFront)",
+          "x-amz-cf-pop": "MAN51-P6",
+          "alt-svc": "h3=\":443\"; ma=86400",
+          "x-amz-cf-id": "X_cIBuYMs0aHLXOeBGsO-dGJrnG_iYd7ObOWowIPaY8m1t22h9ZDpw==",
+          "x-xss-protection": "1; mode=block",
+          "x-frame-options": "SAMEORIGIN",
+          "referrer-policy": "strict-origin-when-cross-origin",
+          "x-content-type-options": "nosniff",
+          "strict-transport-security": "max-age=31536000"
+        },
+        "contentLength": 32354,
+        "contentType": "image/webp",
+        "success": true
+      },
+      {
+        "key": "images/blog/google-ads-analytics-screenshot.webp",
+        "url": "https://d15sc9fc739ev2.cloudfront.net/images/blog/google-ads-analytics-screenshot.webp",
+        "statusCode": 200,
+        "headers": {
+          "content-type": "image/webp",
+          "content-length": "23692",
+          "connection": "keep-alive",
+          "date": "Thu, 09 Oct 2025 16:28:35 GMT",
+          "last-modified": "Tue, 07 Oct 2025 15:46:33 GMT",
+          "etag": "\"22189f8ddf74516911a294da9d05347d\"",
+          "x-amz-server-side-encryption": "AES256",
+          "x-amz-meta-deployment-id": "deploy-1759851954955",
+          "x-amz-meta-uploaded-at": "2025-10-07T15:46:31.918Z",
+          "x-amz-version-id": "YpNhMcxpQViIt3CvaGYkYdcQho8xFTC9",
+          "x-amz-meta-file-hash": "22189f8ddf74516911a294da9d05347d",
+          "accept-ranges": "bytes",
+          "server": "AmazonS3",
+          "x-cache": "Miss from cloudfront",
+          "via": "1.1 8e49b170478612b328a739365178d0c2.cloudfront.net (CloudFront)",
+          "x-amz-cf-pop": "MAN51-P6",
+          "alt-svc": "h3=\":443\"; ma=86400",
+          "x-amz-cf-id": "s09oh9Tws9Jv8avC5PKKQJS6Q45KFKDgT181DR4kww7kWrC9bhxZXQ==",
+          "x-xss-protection": "1; mode=block",
+          "x-frame-options": "SAMEORIGIN",
+          "referrer-policy": "strict-origin-when-cross-origin",
+          "x-content-type-options": "nosniff",
+          "strict-transport-security": "max-age=31536000"
+        },
+        "contentLength": 23692,
+        "contentType": "image/webp",
+        "success": true
+      },
+      {
+        "key": "images/blog/mobile-first-design.jpg",
+        "url": "https://d15sc9fc739ev2.cloudfront.net/images/blog/mobile-first-design.jpg",
+        "statusCode": 200,
+        "headers": {
+          "content-type": "image/jpeg",
+          "content-length": "48",
+          "connection": "keep-alive",
+          "date": "Thu, 09 Oct 2025 16:28:35 GMT",
+          "last-modified": "Mon, 06 Oct 2025 08:09:02 GMT",
+          "etag": "\"900b1df361d792e79bc49143d92b6eec\"",
+          "x-amz-server-side-encryption": "AES256",
+          "x-amz-meta-deployment-id": "deploy-1759738078735",
+          "x-amz-meta-uploaded-at": "2025-10-06T08:09:00.385Z",
+          "x-amz-version-id": "5tkmKRcAaRW9VowcDau2j9jjA6PAjnOQ",
+          "x-amz-meta-file-hash": "900b1df361d792e79bc49143d92b6eec",
+          "accept-ranges": "bytes",
+          "server": "AmazonS3",
+          "x-cache": "Miss from cloudfront",
+          "via": "1.1 8e49b170478612b328a739365178d0c2.cloudfront.net (CloudFront)",
+          "x-amz-cf-pop": "MAN51-P6",
+          "alt-svc": "h3=\":443\"; ma=86400",
+          "x-amz-cf-id": "X17vPignFJZaBG1f3qktIUyAmyozOFI0wP-5yZ78IGlHV-j08fkckQ==",
+          "x-xss-protection": "1; mode=block",
+          "x-frame-options": "SAMEORIGIN",
+          "referrer-policy": "strict-origin-when-cross-origin",
+          "x-content-type-options": "nosniff",
+          "strict-transport-security": "max-age=31536000"
+        },
+        "contentLength": 48,
+        "contentType": "image/jpeg",
+        "success": true
+      },
+      {
+        "key": "images/blog/Screenshot 2025-08-11 143853.webp",
+        "url": "https://d15sc9fc739ev2.cloudfront.net/images/blog/Screenshot 2025-08-11 143853.webp",
+        "statusCode": 200,
+        "headers": {
+          "content-type": "image/webp",
+          "content-length": "23692",
+          "connection": "keep-alive",
+          "date": "Thu, 09 Oct 2025 16:28:35 GMT",
+          "last-modified": "Tue, 07 Oct 2025 15:15:17 GMT",
+          "etag": "\"22189f8ddf74516911a294da9d05347d\"",
+          "x-amz-server-side-encryption": "AES256",
+          "x-amz-meta-deployment-id": "deploy-1759850033641",
+          "x-amz-meta-uploaded-at": "2025-10-07T15:15:16.230Z",
+          "x-amz-version-id": "qIGFm.LS1eunaVeqr.FpJCAZ8JqC2rf5",
+          "x-amz-meta-file-hash": "22189f8ddf74516911a294da9d05347d",
+          "accept-ranges": "bytes",
+          "server": "AmazonS3",
+          "x-cache": "Miss from cloudfront",
+          "via": "1.1 8e49b170478612b328a739365178d0c2.cloudfront.net (CloudFront)",
+          "x-amz-cf-pop": "MAN51-P6",
+          "alt-svc": "h3=\":443\"; ma=86400",
+          "x-amz-cf-id": "FWRp299Xxv3Fl5gg3bX1DwxAs4BqyHWl5tbDAVlPcSMHf0VVsET7Fg==",
+          "x-xss-protection": "1; mode=block",
+          "x-frame-options": "SAMEORIGIN",
+          "referrer-policy": "strict-origin-when-cross-origin",
+          "x-content-type-options": "nosniff",
+          "strict-transport-security": "max-age=31536000"
+        },
+        "contentLength": 23692,
+        "contentType": "image/webp",
+        "success": true
+      },
+      {
+        "key": "images/blog/welcome-hero.jpg",
+        "url": "https://d15sc9fc739ev2.cloudfront.net/images/blog/welcome-hero.jpg",
+        "statusCode": 200,
+        "headers": {
+          "content-type": "image/jpeg",
+          "content-length": "36",
+          "connection": "keep-alive",
+          "date": "Thu, 09 Oct 2025 16:28:36 GMT",
+          "last-modified": "Mon, 06 Oct 2025 08:09:02 GMT",
+          "etag": "\"70153c06863ee27d92bc3d8e42004123\"",
+          "x-amz-server-side-encryption": "AES256",
+          "x-amz-meta-deployment-id": "deploy-1759738078735",
+          "x-amz-meta-uploaded-at": "2025-10-06T08:09:00.587Z",
+          "x-amz-version-id": "Nx1DLo05VTwX3svg_6P3an2evTgiOOVd",
+          "x-amz-meta-file-hash": "70153c06863ee27d92bc3d8e42004123",
+          "accept-ranges": "bytes",
+          "server": "AmazonS3",
+          "x-cache": "Miss from cloudfront",
+          "via": "1.1 8e49b170478612b328a739365178d0c2.cloudfront.net (CloudFront)",
+          "x-amz-cf-pop": "MAN51-P6",
+          "alt-svc": "h3=\":443\"; ma=86400",
+          "x-amz-cf-id": "lhQ8om6REAVMCLxQaGk5sbeoHlMDnhVVeSwe44mld9t3F7DjcbJsrQ==",
+          "x-xss-protection": "1; mode=block",
+          "x-frame-options": "SAMEORIGIN",
+          "referrer-policy": "strict-origin-when-cross-origin",
+          "x-content-type-options": "nosniff",
+          "strict-transport-security": "max-age=31536000"
+        },
+        "contentLength": 36,
+        "contentType": "image/jpeg",
+        "success": true
+      },
+      {
+        "key": "images/google-analytics.webp",
+        "url": "https://d15sc9fc739ev2.cloudfront.net/images/google-analytics.webp",
+        "statusCode": 200,
+        "headers": {
+          "content-type": "image/webp",
+          "content-length": "23692",
+          "connection": "keep-alive",
+          "date": "Thu, 09 Oct 2025 16:28:36 GMT",
+          "last-modified": "Tue, 07 Oct 2025 17:53:23 GMT",
+          "etag": "\"22189f8ddf74516911a294da9d05347d\"",
+          "x-amz-server-side-encryption": "AES256",
+          "x-amz-meta-deployment-id": "deploy-1759859525541",
+          "x-amz-meta-uploaded-at": "2025-10-07T17:53:22.940Z",
+          "x-amz-version-id": "0yy2IIrXZRzOqB9mbN4gW.HEFo3uhZpN",
+          "x-amz-meta-file-hash": "22189f8ddf74516911a294da9d05347d",
+          "accept-ranges": "bytes",
+          "server": "AmazonS3",
+          "x-cache": "Miss from cloudfront",
+          "via": "1.1 8e49b170478612b328a739365178d0c2.cloudfront.net (CloudFront)",
+          "x-amz-cf-pop": "MAN51-P6",
+          "alt-svc": "h3=\":443\"; ma=86400",
+          "x-amz-cf-id": "4uO8uUVhRCZrQV3VJmgObBcmjNA4eT9X8ccGiJbzFvxg7fZRLs_b3g==",
+          "x-xss-protection": "1; mode=block",
+          "x-frame-options": "SAMEORIGIN",
+          "referrer-policy": "strict-origin-when-cross-origin",
+          "x-content-type-options": "nosniff",
+          "strict-transport-security": "max-age=31536000"
+        },
+        "contentLength": 23692,
+        "contentType": "image/webp",
+        "success": true
+      },
+      {
+        "key": "images/hero/240619-London-19.webp",
+        "url": "https://d15sc9fc739ev2.cloudfront.net/images/hero/240619-London-19.webp",
+        "statusCode": 200,
+        "headers": {
+          "content-type": "image/webp",
+          "content-length": "42274",
+          "connection": "keep-alive",
+          "date": "Thu, 09 Oct 2025 16:28:36 GMT",
+          "last-modified": "Thu, 09 Oct 2025 10:16:42 GMT",
+          "etag": "\"7f7a4c9fe23ce8d8c3cf564826981a82\"",
+          "x-amz-server-side-encryption": "AES256",
+          "x-amz-meta-deployment-id": "deploy-1760004918928",
+          "x-amz-meta-uploaded-at": "2025-10-09T10:16:44.433Z",
+          "x-amz-version-id": "EKHvQGhtnWelOqpNDDjriHWJmRrK1e0g",
+          "x-amz-meta-file-hash": "7f7a4c9fe23ce8d8c3cf564826981a82",
+          "accept-ranges": "bytes",
+          "server": "AmazonS3",
+          "x-cache": "Miss from cloudfront",
+          "via": "1.1 8e49b170478612b328a739365178d0c2.cloudfront.net (CloudFront)",
+          "x-amz-cf-pop": "MAN51-P6",
+          "alt-svc": "h3=\":443\"; ma=86400",
+          "x-amz-cf-id": "HIJ0d4zgZBmpm4z0KNajubeIquuFO4xmyCyHDUMw-hpnWu0RtTkTVQ==",
+          "x-xss-protection": "1; mode=block",
+          "x-frame-options": "SAMEORIGIN",
+          "referrer-policy": "strict-origin-when-cross-origin",
+          "x-content-type-options": "nosniff",
+          "strict-transport-security": "max-age=31536000"
+        },
+        "contentLength": 42274,
+        "contentType": "image/webp",
+        "success": true
+      },
+      {
+        "key": "images/hero/A7302858.webp",
+        "url": "https://d15sc9fc739ev2.cloudfront.net/images/hero/A7302858.webp",
+        "statusCode": 200,
+        "headers": {
+          "content-type": "image/webp",
+          "content-length": "32354",
+          "connection": "keep-alive",
+          "date": "Thu, 09 Oct 2025 16:28:37 GMT",
+          "last-modified": "Wed, 08 Oct 2025 14:53:57 GMT",
+          "etag": "\"2099943e4607c4a8b1b1e9faf2085969\"",
+          "x-amz-server-side-encryption": "AES256",
+          "x-amz-meta-deployment-id": "deploy-1759935156958",
+          "x-amz-meta-uploaded-at": "2025-10-08T14:53:58.667Z",
+          "x-amz-version-id": "kh0m2HnmVEHUbX0mck1oRweHJO3vDNAu",
+          "x-amz-meta-file-hash": "2099943e4607c4a8b1b1e9faf2085969",
+          "accept-ranges": "bytes",
+          "server": "AmazonS3",
+          "x-cache": "Miss from cloudfront",
+          "via": "1.1 8e49b170478612b328a739365178d0c2.cloudfront.net (CloudFront)",
+          "x-amz-cf-pop": "MAN51-P6",
+          "alt-svc": "h3=\":443\"; ma=86400",
+          "x-amz-cf-id": "UzmyPsh71fh-Bn_CmUnPbS_iw15I7TgPtq4DQOddwLOJ7-bBJlWbPw==",
+          "x-xss-protection": "1; mode=block",
+          "x-frame-options": "SAMEORIGIN",
+          "referrer-policy": "strict-origin-when-cross-origin",
+          "x-content-type-options": "nosniff",
+          "strict-transport-security": "max-age=31536000"
+        },
+        "contentLength": 32354,
+        "contentType": "image/webp",
+        "success": true
+      },
+      {
+        "key": "images/hero/aston-martin-db6-website.webp",
+        "url": "https://d15sc9fc739ev2.cloudfront.net/images/hero/aston-martin-db6-website.webp",
+        "statusCode": 200,
+        "headers": {
+          "content-type": "image/webp",
+          "content-length": "49328",
+          "connection": "keep-alive",
+          "date": "Thu, 09 Oct 2025 16:28:37 GMT",
+          "last-modified": "Mon, 06 Oct 2025 08:09:02 GMT",
+          "etag": "\"53cf7567f07aff02f9e591ac6dc093d5\"",
+          "x-amz-server-side-encryption": "AES256",
+          "x-amz-meta-deployment-id": "deploy-1759738078735",
+          "x-amz-meta-uploaded-at": "2025-10-06T08:09:01.306Z",
+          "x-amz-version-id": "MtG7z7vfhukqIxZrvdnZ8aQiwOpCXXpY",
+          "x-amz-meta-file-hash": "53cf7567f07aff02f9e591ac6dc093d5",
+          "accept-ranges": "bytes",
+          "server": "AmazonS3",
+          "x-cache": "Miss from cloudfront",
+          "via": "1.1 8e49b170478612b328a739365178d0c2.cloudfront.net (CloudFront)",
+          "x-amz-cf-pop": "MAN51-P6",
+          "alt-svc": "h3=\":443\"; ma=86400",
+          "x-amz-cf-id": "A6MkyvBELj0HUt8fyt0dIrHGZEWvNlTqlmmpxSrM8CGEUTVM9hP7Vw==",
+          "x-xss-protection": "1; mode=block",
+          "x-frame-options": "SAMEORIGIN",
+          "referrer-policy": "strict-origin-when-cross-origin",
+          "x-content-type-options": "nosniff",
+          "strict-transport-security": "max-age=31536000"
+        },
+        "contentLength": 49328,
+        "contentType": "image/webp",
+        "success": true
+      },
+      {
+        "key": "images/hero/google-ads-analytics-dashboard.webp",
+        "url": "https://d15sc9fc739ev2.cloudfront.net/images/hero/google-ads-analytics-dashboard.webp",
+        "statusCode": 200,
+        "headers": {
+          "content-type": "image/webp",
+          "content-length": "23692",
+          "connection": "keep-alive",
+          "date": "Thu, 09 Oct 2025 16:28:37 GMT",
+          "last-modified": "Tue, 07 Oct 2025 17:14:41 GMT",
+          "etag": "\"22189f8ddf74516911a294da9d05347d\"",
+          "x-amz-server-side-encryption": "AES256",
+          "x-amz-meta-deployment-id": "deploy-1759857187454",
+          "x-amz-meta-uploaded-at": "2025-10-07T17:14:40.142Z",
+          "x-amz-version-id": "r69Lvw1fvpQrIVuDa2xcJKd9uLb2FrO7",
+          "x-amz-meta-file-hash": "22189f8ddf74516911a294da9d05347d",
+          "accept-ranges": "bytes",
+          "server": "AmazonS3",
+          "x-cache": "Miss from cloudfront",
+          "via": "1.1 8e49b170478612b328a739365178d0c2.cloudfront.net (CloudFront)",
+          "x-amz-cf-pop": "MAN51-P6",
+          "alt-svc": "h3=\":443\"; ma=86400",
+          "x-amz-cf-id": "BUhIW2G5yrv6gAwCmH-8ypCtyVG5Hx6CO1bPJO3BM9dtQ2Rd7MMWeg==",
+          "x-xss-protection": "1; mode=block",
+          "x-frame-options": "SAMEORIGIN",
+          "referrer-policy": "strict-origin-when-cross-origin",
+          "x-content-type-options": "nosniff",
+          "strict-transport-security": "max-age=31536000"
+        },
+        "contentLength": 23692,
+        "contentType": "image/webp",
+        "success": true
+      }
+    ],
+    "passed": true
+  },
+  "summary": {},
+  "blogImageTest": {
+    "imagePath": "/images/hero/paid-ads-analytics-screenshot.webp",
+    "s3Key": "images/hero/paid-ads-analytics-screenshot.webp",
+    "sourceExists": true,
+    "buildExists": true,
+    "s3Exists": true,
+    "s3Info": {
+      "size": 23692,
+      "contentType": "image/webp",
+      "lastModified": "2025-10-07T17:39:33.000Z"
+    },
+    "accessibilityResult": {
+      "statusCode": 200,
+      "headers": {
+        "content-type": "image/webp",
+        "content-length": "23692",
+        "connection": "keep-alive",
+        "date": "Thu, 09 Oct 2025 16:15:10 GMT",
+        "last-modified": "Tue, 07 Oct 2025 17:39:33 GMT",
+        "etag": "\"22189f8ddf74516911a294da9d05347d\"",
+        "x-amz-server-side-encryption": "AES256",
+        "x-amz-meta-deployment-id": "deploy-1759858676820",
+        "x-amz-meta-uploaded-at": "2025-10-07T17:39:32.193Z",
+        "x-amz-version-id": "0BPvqqPV8IQO_l.M.paleOo0DhYGDlW9",
+        "x-amz-meta-file-hash": "22189f8ddf74516911a294da9d05347d",
+        "accept-ranges": "bytes",
+        "server": "AmazonS3",
+        "x-cache": "Hit from cloudfront",
+        "via": "1.1 8e49b170478612b328a739365178d0c2.cloudfront.net (CloudFront)",
+        "x-amz-cf-pop": "MAN51-P6",
+        "alt-svc": "h3=\":443\"; ma=86400",
+        "x-amz-cf-id": "AMV-0p0-_5KTidLIEYYxIwQAly8fZI6XdAe4POkCqg24-u5PDF000w==",
+        "age": "808",
+        "x-xss-protection": "1; mode=block",
+        "x-frame-options": "SAMEORIGIN",
+        "referrer-policy": "strict-origin-when-cross-origin",
+        "x-content-type-options": "nosniff",
+        "strict-transport-security": "max-age=31536000"
+      },
+      "contentLength": 23692,
+      "contentType": "image/webp",
+      "success": true
+    },
+    "allChecksPass": true
+  }
+}

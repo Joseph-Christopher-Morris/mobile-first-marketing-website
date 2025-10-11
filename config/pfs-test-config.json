@@ -1,0 +1,89 @@
+{
+  "testConfiguration": {
+    "name": "Perfect Forward Secrecy Test Configuration",
+    "version": "1.0.0",
+    "description": "Configuration for testing Perfect Forward Secrecy compliance"
+  },
+  "testDomains": [
+    "github.com",
+    "cloudfront.amazonaws.com",
+    "example.com"
+  ],
+  "pfsCipherSuites": {
+    "ecdhe": [
+      "ECDHE-RSA-AES256-GCM-SHA384",
+      "ECDHE-RSA-AES128-GCM-SHA256",
+      "ECDHE-RSA-AES256-SHA384",
+      "ECDHE-RSA-AES128-SHA256",
+      "ECDHE-RSA-AES256-SHA",
+      "ECDHE-RSA-AES128-SHA",
+      "ECDHE-ECDSA-AES256-GCM-SHA384",
+      "ECDHE-ECDSA-AES128-GCM-SHA256",
+      "ECDHE-ECDSA-AES256-SHA384",
+      "ECDHE-ECDSA-AES128-SHA256"
+    ],
+    "dhe": [
+      "DHE-RSA-AES256-GCM-SHA384",
+      "DHE-RSA-AES128-GCM-SHA256",
+      "DHE-RSA-AES256-SHA256",
+      "DHE-RSA-AES128-SHA256",
+      "DHE-RSA-AES256-SHA",
+      "DHE-RSA-AES128-SHA"
+    ]
+  },
+  "nonPfsCipherSuites": [
+    "AES256-GCM-SHA384",
+    "AES128-GCM-SHA256",
+    "AES256-SHA256",
+    "AES128-SHA256",
+    "AES256-SHA",
+    "AES128-SHA",
+    "DES-CBC3-SHA",
+    "RC4-SHA",
+    "RC4-MD5"
+  ],
+  "testParameters": {
+    "connectionTimeout": 10000,
+    "maxRetries": 3,
+    "ephemeralKeyTestConnections": 5,
+    "complianceThreshold": 80,
+    "concurrentConnections": 3
+  },
+  "securityLevels": {
+    "excellent": {
+      "minPassedTests": 4,
+      "description": "All PFS tests passed with strong cipher support"
+    },
+    "good": {
+      "minPassedTests": 3,
+      "description": "Most PFS tests passed with adequate cipher support"
+    },
+    "fair": {
+      "minPassedTests": 2,
+      "description": "Some PFS tests passed but improvements needed"
+    },
+    "poor": {
+      "minPassedTests": 0,
+      "description": "PFS tests failed, immediate attention required"
+    }
+  },
+  "reportSettings": {
+    "includeDetailedCipherInfo": true,
+    "includeEphemeralKeyDetails": true,
+    "includeRecommendations": true,
+    "saveToFile": true,
+    "outputFormat": "json"
+  },
+  "cloudFrontSpecific": {
+    "expectedPfsCiphers": [
+      "ECDHE-RSA-AES256-GCM-SHA384",
+      "ECDHE-RSA-AES128-GCM-SHA256"
+    ],
+    "minimumTlsVersion": "TLSv1.2",
+    "requiredSecurityHeaders": [
+      "Strict-Transport-Security",
+      "X-Content-Type-Options",
+      "X-Frame-Options"
+    ]
+  }
+}

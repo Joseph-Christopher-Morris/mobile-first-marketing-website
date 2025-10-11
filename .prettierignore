@@ -1,0 +1,48 @@
+# Dependencies
+node_modules/
+
+# Build outputs
+.next/
+out/
+build/
+dist/
+
+# Generated files
+*.tsbuildinfo
+next-env.d.ts
+
+# Package manager files
+package-lock.json
+yarn.lock
+pnpm-lock.yaml
+
+# Environment files
+.env*
+
+# Zone template files (exclude from formatting)
+Zone_*/**/*
+*.zip
+
+# Coverage reports
+coverage/
+
+# Logs
+*.log
+
+# OS generated files
+.DS_Store
+Thumbs.db
+
+# IDE files
+.vscode/
+.idea/
+
+# Amplify
+amplify/
+aws-exports.js
+awsconfiguration.json
+amplifyconfiguration.json
+
+# Large data files
+*.min.js
+*.min.css

@@ -1,0 +1,243 @@
+{
+  "httpsRedirectValidation": {
+    "description": "Configuration for HTTPS redirect validation testing",
+    "version": "1.0.0",
+    "lastUpdated": "2025-10-05T22:00:00.000Z",
+    
+    "defaultSettings": {
+      "timeout": 10000,
+      "maxRedirects": 5,
+      "userAgent": "HTTPS-Redirect-Validator/1.0",
+      "followRedirects": true,
+      "validateCertificates": true
+    },
+    
+    "testConfiguration": {
+      "httpToHttpsRedirect": {
+        "enabled": true,
+        "expectedStatusCodes": [301, 302, 307, 308],
+        "testUrls": [
+          "http://{domain}",
+          "http://{domain}/",
+          "http://{domain}/index.html",
+          "http://www.{domain}"
+        ]
+      },
+      
+      "hstsHeader": {
+        "enabled": true,
+        "requiredDirectives": ["max-age"],
+        "recommendedDirectives": ["includeSubDomains", "preload"],
+        "minimumMaxAge": 31536000,
+        "warningMaxAge": 86400
+      },
+      
+      "secureCookies": {
+        "enabled": true,
+        "requiredFlags": ["Secure"],
+        "recommendedFlags": ["HttpOnly", "SameSite"],
+        "allowedSameSiteValues": ["Strict", "Lax", "None"]
+      },
+      
+      "redirectChain": {
+        "enabled": true,
+        "maxAllowedRedirects": 5,
+        "detectLoops": true,
+        "validateFinalUrl": true
+      },
+      
+      "securityHeaders": {
+        "enabled": true,
+        "requiredHeaders": {
+          "strict-transport-security": {
+            "required": true,
+            "pattern": "max-age=\\d+"
+          }
+        },
+        "recommendedHeaders": {
+          "x-content-type-options": {
+            "expected": "nosniff"
+          },
+          "x-frame-options": {
+            "expected": ["DENY", "SAMEORIGIN"]
+          },
+          "x-xss-protection": {
+            "expected": "1; mode=block"
+          },
+          "referrer-policy": {
+            "expected": ["strict-origin-when-cross-origin", "no-referrer", "same-origin"]
+          },
+          "content-security-policy": {
+            "checkPresence": true
+          }
+        }
+      }
+    },
+    
+    "validationRules": {
+      "redirectValidation": {
+        "httpToHttps": {
+          "rule": "All HTTP requests must redirect to HTTPS",
+          "severity": "HIGH",
+          "description": "Ensures all traffic is encrypted in transit"
+        },
+        "redirectStatusCode": {
+          "rule": "Use appropriate redirect status codes (301/302/307/308)",
+          "severity": "MEDIUM",
+          "description": "301 for permanent redirects, 302/307 for temporary"
+        },
+        "redirectLoop": {
+          "rule": "No redirect loops allowed",
+          "severity": "HIGH",
+          "description": "Prevents infinite redirect chains"
+        }
+      },
+      
+      "hstsValidation": {
+        "headerPresence": {
+          "rule": "HSTS header must be present on HTTPS responses",
+          "severity": "HIGH",
+          "description": "Prevents protocol downgrade attacks"
+        },
+        "maxAgeValue": {
+          "rule": "HSTS max-age should be at least 1 year (31536000 seconds)",
+          "severity": "MEDIUM",
+          "description": "Ensures long-term HTTPS enforcement"
+        },
+        "includeSubDomains": {
+          "rule": "Consider including subdomains in HSTS policy",
+          "severity": "LOW",
+          "description": "Extends HTTPS enforcement to all subdomains"
+        }
+      },
+      
+      "cookieValidation": {
+        "secureFlag": {
+          "rule": "All cookies must have Secure flag when served over HTTPS",
+          "severity": "HIGH",
+          "description": "Prevents cookie transmission over unencrypted connections"
+        },
+        "httpOnlyFlag": {
+          "rule": "Session cookies should have HttpOnly flag",
+          "severity": "MEDIUM",
+          "description": "Prevents XSS attacks from accessing cookies"
+        },
+        "sameSiteAttribute": {
+          "rule": "Cookies should have SameSite attribute",
+          "severity": "MEDIUM",
+          "description": "Prevents CSRF attacks"
+        }
+      }
+    },
+    
+    "reportingConfiguration": {
+      "outputFormats": ["json", "html", "markdown"],
+      "includeDetails": true,
+      "includeRecommendations": true,
+      "includeTechnicalDetails": true,
+      "groupByCategory": true
+    },
+    
+    "testDomains": {
+      "knownGoodDomains": [
+        "github.com",
+        "google.com",
+        "cloudflare.com"
+      ],
+      "testScenarios": [
+        {
+          "name": "Basic HTTPS Redirect",
+          "description": "Test basic HTTP to HTTPS redirect functionality",
+          "tests": ["httpToHttpsRedirect", "hstsHeader"]
+        },
+        {
+          "name": "Security Headers",
+          "description": "Validate security header implementation",
+          "tests": ["securityHeaders", "hstsHeader"]
+        },
+        {
+          "name": "Cookie Security",
+          "description": "Check secure cookie configuration",
+          "tests": ["secureCookies"]
+        },
+        {
+          "name": "Redirect Chain",
+          "description": "Validate redirect chain behavior",
+          "tests": ["redirectChain", "httpToHttpsRedirect"]
+        }
+      ]
+    },
+    
+    "complianceStandards": {
+      "owasp": {
+        "name": "OWASP Security Guidelines",
+        "requirements": [
+          "Force HTTPS for all communications",
+          "Implement HSTS header",
+          "Use secure cookie flags",
+          "Implement security headers"
+        ]
+      },
+      "pci": {
+        "name": "PCI DSS Compliance",
+        "requirements": [
+          "Encrypt transmission of cardholder data",
+          "Use strong cryptography and security protocols",
+          "Implement secure authentication"
+        ]
+      },
+      "gdpr": {
+        "name": "GDPR Privacy Requirements",
+        "requirements": [
+          "Ensure data protection by design",
+          "Implement appropriate technical measures",
+          "Secure data transmission"
+        ]
+      }
+    },
+    
+    "troubleshooting": {
+      "commonIssues": [
+        {
+          "issue": "HTTP requests not redirecting to HTTPS",
+          "causes": [
+            "CloudFront not configured for HTTPS redirect",
+            "Origin server not handling redirects",
+            "DNS configuration issues"
+          ],
+          "solutions": [
+            "Configure CloudFront behavior for HTTPS redirect",
+            "Update origin server configuration",
+            "Verify DNS settings"
+          ]
+        },
+        {
+          "issue": "HSTS header not present",
+          "causes": [
+            "CloudFront not configured to add HSTS header",
+            "Origin server not sending HSTS header",
+            "Cache configuration issues"
+          ],
+          "solutions": [
+            "Add HSTS header in CloudFront response headers policy",
+            "Configure origin server to send HSTS header",
+            "Clear cache and test again"
+          ]
+        },
+        {
+          "issue": "Insecure cookies detected",
+          "causes": [
+            "Application not setting Secure flag",
+            "Third-party cookies without security flags",
+            "Development vs production configuration"
+          ],
+          "solutions": [
+            "Update application cookie configuration",
+            "Review third-party integrations",
+            "Ensure production security settings"
+          ]
+        }
+      ]
+    }
+  }
+}

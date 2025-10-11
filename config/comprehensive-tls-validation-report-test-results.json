@@ -1,0 +1,123 @@
+{
+  "timestamp": "2025-10-05T22:04:56.290Z",
+  "tests": [
+    {
+      "name": "Basic Report Generation",
+      "status": "passed",
+      "startTime": "2025-10-05T22:04:56.303Z",
+      "checks": [
+        {
+          "name": "Command Execution",
+          "expected": true,
+          "actual": true,
+          "status": "passed"
+        }
+      ],
+      "endTime": "2025-10-05T22:05:18.734Z"
+    },
+    {
+      "name": "Report File Creation",
+      "status": "passed",
+      "startTime": "2025-10-05T22:05:18.737Z",
+      "checks": [
+        {
+          "name": "JSON Report Created",
+          "expected": true,
+          "actual": true,
+          "status": "passed"
+        },
+        {
+          "name": "Markdown Report Created",
+          "expected": true,
+          "actual": true,
+          "status": "passed"
+        },
+        {
+          "name": "HTML Report Created",
+          "expected": true,
+          "actual": true,
+          "status": "passed"
+        },
+        {
+          "name": "Summary Report Created",
+          "expected": true,
+          "actual": true,
+          "status": "passed"
+        }
+      ],
+      "endTime": "2025-10-05T22:05:18.744Z"
+    },
+    {
+      "name": "Report Content Validation",
+      "status": "passed",
+      "startTime": "2025-10-05T22:05:18.744Z",
+      "checks": [
+        {
+          "name": "Report Structure",
+          "expected": true,
+          "actual": true,
+          "status": "passed"
+        },
+        {
+          "name": "Metadata Present",
+          "expected": true,
+          "actual": true,
+          "status": "passed"
+        },
+        {
+          "name": "Executive Summary",
+          "expected": true,
+          "actual": "A",
+          "status": "failed"
+        },
+        {
+          "name": "Recommendations Present",
+          "expected": true,
+          "actual": true,
+          "status": "passed"
+        }
+      ],
+      "endTime": "2025-10-05T22:05:18.748Z"
+    },
+    {
+      "name": "Command Line Options",
+      "status": "passed",
+      "startTime": "2025-10-05T22:05:18.749Z",
+      "checks": [
+        {
+          "name": "Help Option",
+          "expected": true,
+          "actual": true,
+          "status": "passed"
+        },
+        {
+          "name": "No-HTML Option",
+          "expected": true,
+          "actual": true,
+          "status": "passed"
+        }
+      ],
+      "endTime": "2025-10-05T22:05:31.741Z"
+    },
+    {
+      "name": "Error Handling",
+      "status": "passed",
+      "startTime": "2025-10-05T22:05:31.742Z",
+      "checks": [
+        {
+          "name": "Invalid Domain Handling",
+          "expected": true,
+          "actual": true,
+          "status": "passed"
+        }
+      ],
+      "endTime": "2025-10-05T22:05:43.302Z"
+    }
+  ],
+  "summary": {
+    "total": 5,
+    "passed": 5,
+    "failed": 0,
+    "warnings": 0
+  }
+}

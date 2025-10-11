@@ -1,0 +1,51 @@
+{
+  "monitoring": {
+    "enabled": true,
+    "interval": 300000,
+    "alerts": {
+      "success_rate_threshold": 80,
+      "critical_threshold": 50,
+      "notification_channels": {
+        "console": true,
+        "file": true,
+        "webhook": null
+      }
+    },
+    "retention": {
+      "max_history_entries": 50,
+      "cleanup_interval": 86400000
+    }
+  },
+  "test_categories": {
+    "unit": {
+      "enabled": true,
+      "timeout": 60000,
+      "command": "npm run test"
+    },
+    "e2e": {
+      "enabled": true,
+      "timeout": 300000,
+      "command": "npx playwright test --reporter=json"
+    },
+    "performance": {
+      "enabled": true,
+      "timeout": 120000,
+      "command": "npm run performance:validate"
+    },
+    "accessibility": {
+      "enabled": true,
+      "timeout": 120000,
+      "command": "npm run test:accessibility"
+    },
+    "functionality": {
+      "enabled": true,
+      "timeout": 180000,
+      "command": "npm run test:core-functionality"
+    }
+  },
+  "dashboard": {
+    "auto_generate_html": true,
+    "include_detailed_output": false,
+    "theme": "light"
+  }
+}

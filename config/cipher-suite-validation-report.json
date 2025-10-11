@@ -1,0 +1,515 @@
+{
+  "timestamp": "2025-10-05T21:40:11.105Z",
+  "domain": "github.com",
+  "strongCiphers": [],
+  "weakCiphers": [
+    {
+      "cipher": "DHE-PSK-AES128-CBC-SHA",
+      "weakness": "PSK",
+      "details": {
+        "name": "DHE-PSK-AES128-CBC-SHA",
+        "supported": true
+      }
+    },
+    {
+      "cipher": "DHE-PSK-AES128-CBC-SHA256",
+      "weakness": "PSK",
+      "details": {
+        "name": "DHE-PSK-AES128-CBC-SHA256",
+        "supported": true
+      }
+    },
+    {
+      "cipher": "DHE-PSK-AES128-GCM-SHA256",
+      "weakness": "PSK",
+      "details": {
+        "name": "DHE-PSK-AES128-GCM-SHA256",
+        "supported": true
+      }
+    },
+    {
+      "cipher": "DHE-PSK-AES256-CBC-SHA",
+      "weakness": "PSK",
+      "details": {
+        "name": "DHE-PSK-AES256-CBC-SHA",
+        "supported": true
+      }
+    },
+    {
+      "cipher": "DHE-PSK-AES256-CBC-SHA384",
+      "weakness": "PSK",
+      "details": {
+        "name": "DHE-PSK-AES256-CBC-SHA384",
+        "supported": true
+      }
+    },
+    {
+      "cipher": "DHE-PSK-AES256-GCM-SHA384",
+      "weakness": "PSK",
+      "details": {
+        "name": "DHE-PSK-AES256-GCM-SHA384",
+        "supported": true
+      }
+    },
+    {
+      "cipher": "DHE-PSK-CHACHA20-POLY1305",
+      "weakness": "PSK",
+      "details": {
+        "name": "DHE-PSK-CHACHA20-POLY1305",
+        "supported": true
+      }
+    },
+    {
+      "cipher": "ECDHE-PSK-AES128-CBC-SHA",
+      "weakness": "PSK",
+      "details": {
+        "name": "ECDHE-PSK-AES128-CBC-SHA",
+        "supported": true
+      }
+    },
+    {
+      "cipher": "ECDHE-PSK-AES128-CBC-SHA256",
+      "weakness": "PSK",
+      "details": {
+        "name": "ECDHE-PSK-AES128-CBC-SHA256",
+        "supported": true
+      }
+    },
+    {
+      "cipher": "ECDHE-PSK-AES256-CBC-SHA",
+      "weakness": "PSK",
+      "details": {
+        "name": "ECDHE-PSK-AES256-CBC-SHA",
+        "supported": true
+      }
+    },
+    {
+      "cipher": "ECDHE-PSK-AES256-CBC-SHA384",
+      "weakness": "PSK",
+      "details": {
+        "name": "ECDHE-PSK-AES256-CBC-SHA384",
+        "supported": true
+      }
+    },
+    {
+      "cipher": "ECDHE-PSK-CHACHA20-POLY1305",
+      "weakness": "PSK",
+      "details": {
+        "name": "ECDHE-PSK-CHACHA20-POLY1305",
+        "supported": true
+      }
+    },
+    {
+      "cipher": "PSK-AES128-CBC-SHA",
+      "weakness": "PSK",
+      "details": {
+        "name": "PSK-AES128-CBC-SHA",
+        "supported": true
+      }
+    },
+    {
+      "cipher": "PSK-AES128-CBC-SHA256",
+      "weakness": "PSK",
+      "details": {
+        "name": "PSK-AES128-CBC-SHA256",
+        "supported": true
+      }
+    },
+    {
+      "cipher": "PSK-AES128-GCM-SHA256",
+      "weakness": "PSK",
+      "details": {
+        "name": "PSK-AES128-GCM-SHA256",
+        "supported": true
+      }
+    },
+    {
+      "cipher": "PSK-AES256-CBC-SHA",
+      "weakness": "PSK",
+      "details": {
+        "name": "PSK-AES256-CBC-SHA",
+        "supported": true
+      }
+    },
+    {
+      "cipher": "PSK-AES256-CBC-SHA384",
+      "weakness": "PSK",
+      "details": {
+        "name": "PSK-AES256-CBC-SHA384",
+        "supported": true
+      }
+    },
+    {
+      "cipher": "PSK-AES256-GCM-SHA384",
+      "weakness": "PSK",
+      "details": {
+        "name": "PSK-AES256-GCM-SHA384",
+        "supported": true
+      }
+    },
+    {
+      "cipher": "PSK-CHACHA20-POLY1305",
+      "weakness": "PSK",
+      "details": {
+        "name": "PSK-CHACHA20-POLY1305",
+        "supported": true
+      }
+    },
+    {
+      "cipher": "RSA-PSK-AES128-CBC-SHA",
+      "weakness": "PSK",
+      "details": {
+        "name": "RSA-PSK-AES128-CBC-SHA",
+        "supported": true
+      }
+    },
+    {
+      "cipher": "RSA-PSK-AES128-CBC-SHA256",
+      "weakness": "PSK",
+      "details": {
+        "name": "RSA-PSK-AES128-CBC-SHA256",
+        "supported": true
+      }
+    },
+    {
+      "cipher": "RSA-PSK-AES128-GCM-SHA256",
+      "weakness": "PSK",
+      "details": {
+        "name": "RSA-PSK-AES128-GCM-SHA256",
+        "supported": true
+      }
+    },
+    {
+      "cipher": "RSA-PSK-AES256-CBC-SHA",
+      "weakness": "PSK",
+      "details": {
+        "name": "RSA-PSK-AES256-CBC-SHA",
+        "supported": true
+      }
+    },
+    {
+      "cipher": "RSA-PSK-AES256-CBC-SHA384",
+      "weakness": "PSK",
+      "details": {
+        "name": "RSA-PSK-AES256-CBC-SHA384",
+        "supported": true
+      }
+    },
+    {
+      "cipher": "RSA-PSK-AES256-GCM-SHA384",
+      "weakness": "PSK",
+      "details": {
+        "name": "RSA-PSK-AES256-GCM-SHA384",
+        "supported": true
+      }
+    },
+    {
+      "cipher": "RSA-PSK-CHACHA20-POLY1305",
+      "weakness": "PSK",
+      "details": {
+        "name": "RSA-PSK-CHACHA20-POLY1305",
+        "supported": true
+      }
+    },
+    {
+      "cipher": "SRP-AES-128-CBC-SHA",
+      "weakness": "SRP",
+      "details": {
+        "name": "SRP-AES-128-CBC-SHA",
+        "supported": true
+      }
+    },
+    {
+      "cipher": "SRP-AES-256-CBC-SHA",
+      "weakness": "SRP",
+      "details": {
+        "name": "SRP-AES-256-CBC-SHA",
+        "supported": true
+      }
+    },
+    {
+      "cipher": "SRP-RSA-AES-128-CBC-SHA",
+      "weakness": "SRP",
+      "details": {
+        "name": "SRP-RSA-AES-128-CBC-SHA",
+        "supported": true
+      }
+    },
+    {
+      "cipher": "SRP-RSA-AES-256-CBC-SHA",
+      "weakness": "SRP",
+      "details": {
+        "name": "SRP-RSA-AES-256-CBC-SHA",
+        "supported": true
+      }
+    }
+  ],
+  "supportedCiphers": [
+    {
+      "name": "AES128-GCM-SHA256",
+      "supported": true
+    },
+    {
+      "name": "AES128-SHA",
+      "supported": true
+    },
+    {
+      "name": "AES128-SHA256",
+      "supported": true
+    },
+    {
+      "name": "AES256-GCM-SHA384",
+      "supported": true
+    },
+    {
+      "name": "AES256-SHA",
+      "supported": true
+    },
+    {
+      "name": "AES256-SHA256",
+      "supported": true
+    },
+    {
+      "name": "DHE-PSK-AES128-CBC-SHA",
+      "supported": true
+    },
+    {
+      "name": "DHE-PSK-AES128-CBC-SHA256",
+      "supported": true
+    },
+    {
+      "name": "DHE-PSK-AES128-GCM-SHA256",
+      "supported": true
+    },
+    {
+      "name": "DHE-PSK-AES256-CBC-SHA",
+      "supported": true
+    },
+    {
+      "name": "DHE-PSK-AES256-CBC-SHA384",
+      "supported": true
+    },
+    {
+      "name": "DHE-PSK-AES256-GCM-SHA384",
+      "supported": true
+    },
+    {
+      "name": "DHE-PSK-CHACHA20-POLY1305",
+      "supported": true
+    },
+    {
+      "name": "DHE-RSA-AES128-GCM-SHA256",
+      "supported": true
+    },
+    {
+      "name": "DHE-RSA-AES128-SHA",
+      "supported": true
+    },
+    {
+      "name": "DHE-RSA-AES128-SHA256",
+      "supported": true
+    },
+    {
+      "name": "DHE-RSA-AES256-GCM-SHA384",
+      "supported": true
+    },
+    {
+      "name": "DHE-RSA-AES256-SHA",
+      "supported": true
+    },
+    {
+      "name": "DHE-RSA-AES256-SHA256",
+      "supported": true
+    },
+    {
+      "name": "DHE-RSA-CHACHA20-POLY1305",
+      "supported": true
+    },
+    {
+      "name": "ECDHE-ECDSA-AES128-GCM-SHA256",
+      "supported": true
+    },
+    {
+      "name": "ECDHE-ECDSA-AES128-SHA",
+      "supported": true
+    },
+    {
+      "name": "ECDHE-ECDSA-AES128-SHA256",
+      "supported": true
+    },
+    {
+      "name": "ECDHE-ECDSA-AES256-GCM-SHA384",
+      "supported": true
+    },
+    {
+      "name": "ECDHE-ECDSA-AES256-SHA",
+      "supported": true
+    },
+    {
+      "name": "ECDHE-ECDSA-AES256-SHA384",
+      "supported": true
+    },
+    {
+      "name": "ECDHE-ECDSA-CHACHA20-POLY1305",
+      "supported": true
+    },
+    {
+      "name": "ECDHE-PSK-AES128-CBC-SHA",
+      "supported": true
+    },
+    {
+      "name": "ECDHE-PSK-AES128-CBC-SHA256",
+      "supported": true
+    },
+    {
+      "name": "ECDHE-PSK-AES256-CBC-SHA",
+      "supported": true
+    },
+    {
+      "name": "ECDHE-PSK-AES256-CBC-SHA384",
+      "supported": true
+    },
+    {
+      "name": "ECDHE-PSK-CHACHA20-POLY1305",
+      "supported": true
+    },
+    {
+      "name": "ECDHE-RSA-AES128-GCM-SHA256",
+      "supported": true
+    },
+    {
+      "name": "ECDHE-RSA-AES128-SHA",
+      "supported": true
+    },
+    {
+      "name": "ECDHE-RSA-AES128-SHA256",
+      "supported": true
+    },
+    {
+      "name": "ECDHE-RSA-AES256-GCM-SHA384",
+      "supported": true
+    },
+    {
+      "name": "ECDHE-RSA-AES256-SHA",
+      "supported": true
+    },
+    {
+      "name": "ECDHE-RSA-AES256-SHA384",
+      "supported": true
+    },
+    {
+      "name": "ECDHE-RSA-CHACHA20-POLY1305",
+      "supported": true
+    },
+    {
+      "name": "PSK-AES128-CBC-SHA",
+      "supported": true
+    },
+    {
+      "name": "PSK-AES128-CBC-SHA256",
+      "supported": true
+    },
+    {
+      "name": "PSK-AES128-GCM-SHA256",
+      "supported": true
+    },
+    {
+      "name": "PSK-AES256-CBC-SHA",
+      "supported": true
+    },
+    {
+      "name": "PSK-AES256-CBC-SHA384",
+      "supported": true
+    },
+    {
+      "name": "PSK-AES256-GCM-SHA384",
+      "supported": true
+    },
+    {
+      "name": "PSK-CHACHA20-POLY1305",
+      "supported": true
+    },
+    {
+      "name": "RSA-PSK-AES128-CBC-SHA",
+      "supported": true
+    },
+    {
+      "name": "RSA-PSK-AES128-CBC-SHA256",
+      "supported": true
+    },
+    {
+      "name": "RSA-PSK-AES128-GCM-SHA256",
+      "supported": true
+    },
+    {
+      "name": "RSA-PSK-AES256-CBC-SHA",
+      "supported": true
+    },
+    {
+      "name": "RSA-PSK-AES256-CBC-SHA384",
+      "supported": true
+    },
+    {
+      "name": "RSA-PSK-AES256-GCM-SHA384",
+      "supported": true
+    },
+    {
+      "name": "RSA-PSK-CHACHA20-POLY1305",
+      "supported": true
+    },
+    {
+      "name": "SRP-AES-128-CBC-SHA",
+      "supported": true
+    },
+    {
+      "name": "SRP-AES-256-CBC-SHA",
+      "supported": true
+    },
+    {
+      "name": "SRP-RSA-AES-128-CBC-SHA",
+      "supported": true
+    },
+    {
+      "name": "SRP-RSA-AES-256-CBC-SHA",
+      "supported": true
+    },
+    {
+      "name": "TLS_AES_128_CCM_8_SHA256",
+      "supported": true
+    },
+    {
+      "name": "TLS_AES_128_CCM_SHA256",
+      "supported": true
+    },
+    {
+      "name": "TLS_AES_128_GCM_SHA256",
+      "supported": true
+    },
+    {
+      "name": "TLS_AES_256_GCM_SHA384",
+      "supported": true
+    },
+    {
+      "name": "TLS_CHACHA20_POLY1305_SHA256",
+      "supported": true
+    }
+  ],
+  "cipherOrdering": [],
+  "encryptionStrength": {
+    "aes256": 0,
+    "aes128": 0,
+    "chacha20": 0,
+    "weakEncryption": 0,
+    "perfectForwardSecrecy": 0
+  },
+  "recommendations": [
+    "Add support for AES-256 encryption",
+    "Consider adding ChaCha20-Poly1305 cipher suites",
+    "Enable Perfect Forward Secrecy with ECDHE or DHE key exchange",
+    "Disable weak cipher suites found in the configuration",
+    "Increase cipher suite diversity for better client compatibility",
+    "Add modern AEAD cipher suites (GCM, ChaCha20-Poly1305)"
+  ],
+  "passed": false,
+  "score": 0
+}

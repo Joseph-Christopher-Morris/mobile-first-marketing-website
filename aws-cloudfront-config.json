@@ -1,0 +1,345 @@
+{
+  "version": "1.0",
+  "description": "AWS CloudFront configuration for mobile-first marketing website",
+  "distribution": {
+    "callerReference": "mobile-first-marketing-website",
+    "comment": "Mobile-first marketing website CDN distribution",
+    "enabled": true,
+    "priceClass": "PriceClass_All",
+    "httpVersion": "http2",
+    "isIPV6Enabled": true,
+    "defaultRootObject": "index.html",
+    "origins": [
+      {
+        "id": "amplify-origin",
+        "domainName": "${AMPLIFY_DOMAIN}",
+        "customOriginConfig": {
+          "httpPort": 80,
+          "httpsPort": 443,
+          "originProtocolPolicy": "https-only",
+          "originSslProtocols": ["TLSv1.2"],
+          "originReadTimeout": 30,
+          "originKeepaliveTimeout": 5
+        }
+      }
+    ],
+    "defaultCacheBehavior": {
+      "targetOriginId": "amplify-origin",
+      "viewerProtocolPolicy": "redirect-to-https",
+      "allowedMethods": ["GET", "HEAD", "OPTIONS"],
+      "cachedMethods": ["GET", "HEAD"],
+      "compress": true,
+      "cachePolicyId": "html-cache-policy",
+      "originRequestPolicyId": "cors-s3-origin-policy",
+      "responseHeadersPolicyId": "security-headers-policy",
+      "smoothStreaming": false,
+      "fieldLevelEncryptionId": "",
+      "realtimeLogConfigArn": ""
+    },
+    "cacheBehaviors": [
+      {
+        "pathPattern": "*.{js,css,png,jpg,jpeg,gif,ico,svg,woff,woff2,ttf,eot,webp,avif}",
+        "targetOriginId": "amplify-origin",
+        "viewerProtocolPolicy": "redirect-to-https",
+        "allowedMethods": ["GET", "HEAD"],
+        "cachedMethods": ["GET", "HEAD"],
+        "compress": true,
+        "cachePolicyId": "static-assets-cache-policy",
+        "originRequestPolicyId": "cors-s3-origin-policy",
+        "responseHeadersPolicyId": "security-headers-policy",
+        "precedence": 1
+      },
+      {
+        "pathPattern": "/api/*",
+        "targetOriginId": "amplify-origin",
+        "viewerProtocolPolicy": "redirect-to-https",
+        "allowedMethods": ["GET", "HEAD", "OPTIONS", "PUT", "POST", "PATCH", "DELETE"],
+        "cachedMethods": ["GET", "HEAD"],
+        "compress": false,
+        "cachePolicyId": "no-cache-policy",
+        "originRequestPolicyId": "all-viewer-policy",
+        "responseHeadersPolicyId": "cors-headers-policy",
+        "precedence": 2
+      },
+      {
+        "pathPattern": "/sw.js",
+        "targetOriginId": "amplify-origin",
+        "viewerProtocolPolicy": "redirect-to-https",
+        "allowedMethods": ["GET", "HEAD"],
+        "cachedMethods": ["GET", "HEAD"],
+        "compress": true,
+        "cachePolicyId": "no-cache-policy",
+        "originRequestPolicyId": "cors-s3-origin-policy",
+        "responseHeadersPolicyId": "security-headers-policy",
+        "precedence": 3
+      },
+      {
+        "pathPattern": "/manifest.json",
+        "targetOriginId": "amplify-origin",
+        "viewerProtocolPolicy": "redirect-to-https",
+        "allowedMethods": ["GET", "HEAD"],
+        "cachedMethods": ["GET", "HEAD"],
+        "compress": true,
+        "cachePolicyId": "manifest-cache-policy",
+        "originRequestPolicyId": "cors-s3-origin-policy",
+        "responseHeadersPolicyId": "security-headers-policy",
+        "precedence": 4
+      }
+    ],
+    "customErrorResponses": [
+      {
+        "errorCode": 404,
+        "responsePagePath": "/404.html",
+        "responseCode": "404",
+        "errorCachingMinTTL": 300
+      },
+      {
+        "errorCode": 500,
+        "responsePagePath": "/500.html",
+        "responseCode": "500",
+        "errorCachingMinTTL": 0
+      }
+    ],
+    "webACLId": "",
+    "logging": {
+      "enabled": true,
+      "includeCookies": false,
+      "bucket": "${LOG_BUCKET}",
+      "prefix": "cloudfront-logs/"
+    }
+  },
+  "cachePolicies": {
+    "static-assets-cache-policy": {
+      "name": "StaticAssetsOptimized",
+      "comment": "Optimized caching for static assets (JS, CSS, images, fonts)",
+      "defaultTTL": 31536000,
+      "maxTTL": 31536000,
+      "minTTL": 31536000,
+      "parametersInCacheKeyAndForwardedToOrigin": {
+        "enableAcceptEncodingGzip": true,
+        "enableAcceptEncodingBrotli": true,
+        "queryStringsConfig": {
+          "queryStringBehavior": "none"
+        },
+        "headersConfig": {
+          "headerBehavior": "whitelist",
+          "headers": ["CloudFront-Is-Mobile-Viewer", "CloudFront-Viewer-Country"]
+        },
+        "cookiesConfig": {
+          "cookieBehavior": "none"
+        }
+      }
+    },
+    "html-cache-policy": {
+      "name": "HTMLPagesOptimized",
+      "comment": "Optimized caching for HTML pages",
+      "defaultTTL": 3600,
+      "maxTTL": 86400,
+      "minTTL": 0,
+      "parametersInCacheKeyAndForwardedToOrigin": {
+        "enableAcceptEncodingGzip": true,
+        "enableAcceptEncodingBrotli": true,
+        "queryStringsConfig": {
+          "queryStringBehavior": "whitelist",
+          "queryStrings": ["utm_source", "utm_medium", "utm_campaign"]
+        },
+        "headersConfig": {
+          "headerBehavior": "whitelist",
+          "headers": ["CloudFront-Is-Mobile-Viewer", "CloudFront-Viewer-Country", "Accept"]
+        },
+        "cookiesConfig": {
+          "cookieBehavior": "none"
+        }
+      }
+    },
+    "no-cache-policy": {
+      "name": "NoCachePolicy",
+      "comment": "No caching for dynamic content and APIs",
+      "defaultTTL": 0,
+      "maxTTL": 0,
+      "minTTL": 0,
+      "parametersInCacheKeyAndForwardedToOrigin": {
+        "enableAcceptEncodingGzip": false,
+        "enableAcceptEncodingBrotli": false,
+        "queryStringsConfig": {
+          "queryStringBehavior": "all"
+        },
+        "headersConfig": {
+          "headerBehavior": "whitelist",
+          "headers": ["Authorization", "Content-Type", "Accept", "Origin", "Referer"]
+        },
+        "cookiesConfig": {
+          "cookieBehavior": "all"
+        }
+      }
+    },
+    "manifest-cache-policy": {
+      "name": "ManifestCachePolicy",
+      "comment": "Medium-term caching for manifest files",
+      "defaultTTL": 86400,
+      "maxTTL": 86400,
+      "minTTL": 3600,
+      "parametersInCacheKeyAndForwardedToOrigin": {
+        "enableAcceptEncodingGzip": true,
+        "enableAcceptEncodingBrotli": true,
+        "queryStringsConfig": {
+          "queryStringBehavior": "none"
+        },
+        "headersConfig": {
+          "headerBehavior": "none"
+        },
+        "cookiesConfig": {
+          "cookieBehavior": "none"
+        }
+      }
+    }
+  },
+  "originRequestPolicies": {
+    "cors-s3-origin-policy": {
+      "name": "CORS-S3-Origin",
+      "comment": "CORS-enabled origin request policy for S3",
+      "headersConfig": {
+        "headerBehavior": "whitelist",
+        "headers": ["CloudFront-Viewer-Country", "CloudFront-Is-Mobile-Viewer", "Accept", "Accept-Language"]
+      },
+      "queryStringsConfig": {
+        "queryStringBehavior": "none"
+      },
+      "cookiesConfig": {
+        "cookieBehavior": "none"
+      }
+    },
+    "all-viewer-policy": {
+      "name": "AllViewerExceptHostHeader",
+      "comment": "Forward all viewer information except host header",
+      "headersConfig": {
+        "headerBehavior": "allViewerAndWhitelistCloudFront",
+        "headers": ["CloudFront-Viewer-Country", "CloudFront-Is-Mobile-Viewer"]
+      },
+      "queryStringsConfig": {
+        "queryStringBehavior": "all"
+      },
+      "cookiesConfig": {
+        "cookieBehavior": "all"
+      }
+    }
+  },
+  "responseHeadersPolicies": {
+    "security-headers-policy": {
+      "name": "SecurityHeadersOptimized",
+      "comment": "Comprehensive security headers for web application",
+      "securityHeadersConfig": {
+        "strictTransportSecurity": {
+          "accessControlMaxAgeSec": 31536000,
+          "includeSubdomains": true,
+          "preload": true,
+          "override": true
+        },
+        "contentTypeOptions": {
+          "override": true
+        },
+        "frameOptions": {
+          "frameOption": "DENY",
+          "override": true
+        },
+        "xssProtection": {
+          "modeBlock": true,
+          "protection": true,
+          "override": true
+        },
+        "referrerPolicy": {
+          "referrerPolicy": "strict-origin-when-cross-origin",
+          "override": true
+        },
+        "contentSecurityPolicy": {
+          "contentSecurityPolicy": "default-src 'self'; script-src 'self' 'unsafe-inline' 'unsafe-eval' https://www.googletagmanager.com https://www.google-analytics.com; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' data: https:; connect-src 'self' https://www.google-analytics.com; frame-ancestors 'none';",
+          "override": true
+        }
+      },
+      "customHeadersConfig": {
+        "items": [
+          {
+            "header": "Permissions-Policy",
+            "value": "camera=(), microphone=(), geolocation=()",
+            "override": true
+          },
+          {
+            "header": "X-Robots-Tag",
+            "value": "index, follow",
+            "override": false
+          }
+        ]
+      }
+    },
+    "cors-headers-policy": {
+      "name": "CORSHeadersPolicy",
+      "comment": "CORS headers for API endpoints",
+      "corsConfig": {
+        "accessControlAllowCredentials": false,
+        "accessControlAllowHeaders": {
+          "items": ["Content-Type", "Authorization", "X-Requested-With", "Accept", "Origin"]
+        },
+        "accessControlAllowMethods": {
+          "items": ["GET", "POST", "PUT", "DELETE", "OPTIONS", "HEAD"]
+        },
+        "accessControlAllowOrigins": {
+          "items": ["*"]
+        },
+        "accessControlExposeHeaders": {
+          "items": ["Content-Length", "Date", "Server"]
+        },
+        "accessControlMaxAgeSec": 86400,
+        "originOverride": true
+      }
+    }
+  },
+  "performance": {
+    "compression": {
+      "enabled": true,
+      "types": [
+        "text/html",
+        "text/css",
+        "application/javascript",
+        "application/json",
+        "image/svg+xml",
+        "application/xml",
+        "text/xml",
+        "text/plain"
+      ]
+    },
+    "http2": {
+      "enabled": true
+    },
+    "ipv6": {
+      "enabled": true
+    },
+    "edgeLocations": {
+      "priceClass": "PriceClass_All",
+      "regions": ["US", "Canada", "Europe", "Asia", "Australia", "South America"]
+    }
+  },
+  "monitoring": {
+    "realTimeMetrics": {
+      "enabled": true
+    },
+    "standardMetrics": {
+      "enabled": true
+    },
+    "alarms": [
+      {
+        "name": "HighErrorRate",
+        "metric": "4xxErrorRate",
+        "threshold": 5,
+        "comparisonOperator": "GreaterThanThreshold",
+        "evaluationPeriods": 2
+      },
+      {
+        "name": "HighLatency",
+        "metric": "OriginLatency",
+        "threshold": 3000,
+        "comparisonOperator": "GreaterThanThreshold",
+        "evaluationPeriods": 3
+      }
+    ]
+  }
+}

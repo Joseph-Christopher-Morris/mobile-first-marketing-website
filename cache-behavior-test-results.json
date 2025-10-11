@@ -1,0 +1,1373 @@
+{
+  "timestamp": "2025-10-10T21:49:47.447Z",
+  "totalFiles": 113,
+  "strategies": {
+    "images": {
+      "expected": {
+        "patterns": [
+          ".webp",
+          ".jpg",
+          ".jpeg",
+          ".png",
+          ".gif",
+          ".svg",
+          ".ico",
+          ".avif"
+        ],
+        "maxAge": 31536000,
+        "cacheControl": "public, max-age=31536000, immutable",
+        "description": "Long-term caching for images (1 year)",
+        "cloudFrontBehavior": "*.{webp,jpg,jpeg,png,gif,svg,ico,avif}"
+      },
+      "files": [
+        {
+          "key": "images/about/A7302858.webp",
+          "expectedCacheControl": "public, max-age=31536000, immutable",
+          "actualCacheControl": "not-set",
+          "correct": false,
+          "size": 32354
+        },
+        {
+          "key": "images/blog/google-ads-analytics-screenshot.webp",
+          "expectedCacheControl": "public, max-age=31536000, immutable",
+          "actualCacheControl": "not-set",
+          "correct": false,
+          "size": 23692
+        },
+        {
+          "key": "images/blog/mobile-first-design.jpg",
+          "expectedCacheControl": "public, max-age=31536000, immutable",
+          "actualCacheControl": "not-set",
+          "correct": false,
+          "size": 48
+        },
+        {
+          "key": "images/blog/screenshot-2025-08-11-analytics-data.webp",
+          "expectedCacheControl": "public, max-age=31536000, immutable",
+          "actualCacheControl": "not-set",
+          "correct": false,
+          "size": 23692
+        },
+        {
+          "key": "images/blog/welcome-hero.jpg",
+          "expectedCacheControl": "public, max-age=31536000, immutable",
+          "actualCacheControl": "not-set",
+          "correct": false,
+          "size": 36
+        },
+        {
+          "key": "images/google-analytics.webp",
+          "expectedCacheControl": "public, max-age=31536000, immutable",
+          "actualCacheControl": "not-set",
+          "correct": false,
+          "size": 23692
+        },
+        {
+          "key": "images/hero/240619-london-19.webp",
+          "expectedCacheControl": "public, max-age=31536000, immutable",
+          "actualCacheControl": "not-set",
+          "correct": false,
+          "size": 42274
+        },
+        {
+          "key": "images/hero/A7302858.webp",
+          "expectedCacheControl": "public, max-age=31536000, immutable",
+          "actualCacheControl": "not-set",
+          "correct": false,
+          "size": 32354
+        },
+        {
+          "key": "images/hero/aston-martin-db6-website.webp",
+          "expectedCacheControl": "public, max-age=31536000, immutable",
+          "actualCacheControl": "not-set",
+          "correct": false,
+          "size": 49328
+        },
+        {
+          "key": "images/hero/google-ads-analytics-dashboard.webp",
+          "expectedCacheControl": "public, max-age=31536000, immutable",
+          "actualCacheControl": "not-set",
+          "correct": false,
+          "size": 23692
+        },
+        {
+          "key": "images/hero/hero-bg.jpg",
+          "expectedCacheControl": "public, max-age=31536000, immutable",
+          "actualCacheControl": "not-set",
+          "correct": false,
+          "size": 149
+        },
+        {
+          "key": "images/hero/paid-ads-analytics-screenshot.webp",
+          "expectedCacheControl": "public, max-age=31536000, immutable",
+          "actualCacheControl": "not-set",
+          "correct": false,
+          "size": 23692
+        },
+        {
+          "key": "images/hero/screenshot-2025-08-11-analytics-data.webp",
+          "expectedCacheControl": "public, max-age=31536000, immutable",
+          "actualCacheControl": "not-set",
+          "correct": false,
+          "size": 23692
+        },
+        {
+          "key": "images/hero/screenshot-2025-09-23-analytics-dashboard.webp",
+          "expectedCacheControl": "public, max-age=31536000, immutable",
+          "actualCacheControl": "not-set",
+          "correct": false,
+          "size": 38464
+        },
+        {
+          "key": "images/hero/stock-photography-samira.webp",
+          "expectedCacheControl": "public, max-age=31536000, immutable",
+          "actualCacheControl": "not-set",
+          "correct": false,
+          "size": 26170
+        },
+        {
+          "key": "images/hero/whatsapp-image-2025-07-11-flyers-roi.webp",
+          "expectedCacheControl": "public, max-age=31536000, immutable",
+          "actualCacheControl": "not-set",
+          "correct": false,
+          "size": 49522
+        },
+        {
+          "key": "images/icons/vivid-auto-photography-logo.png",
+          "expectedCacheControl": "public, max-age=31536000, immutable",
+          "actualCacheControl": "not-set",
+          "correct": false,
+          "size": 66959
+        },
+        {
+          "key": "images/services/240217-australia-trip-232.webp",
+          "expectedCacheControl": "public, max-age=31536000, immutable",
+          "actualCacheControl": "not-set",
+          "correct": false,
+          "size": 48688
+        },
+        {
+          "key": "images/services/240219-australia-trip-148.webp",
+          "expectedCacheControl": "public, max-age=31536000, immutable",
+          "actualCacheControl": "not-set",
+          "correct": false,
+          "size": 68510
+        },
+        {
+          "key": "images/services/240619-london-19.webp",
+          "expectedCacheControl": "public, max-age=31536000, immutable",
+          "actualCacheControl": "not-set",
+          "correct": false,
+          "size": 42274
+        },
+        {
+          "key": "images/services/240619-london-26.webp",
+          "expectedCacheControl": "public, max-age=31536000, immutable",
+          "actualCacheControl": "not-set",
+          "correct": false,
+          "size": 46984
+        },
+        {
+          "key": "images/services/240619-london-64.webp",
+          "expectedCacheControl": "public, max-age=31536000, immutable",
+          "actualCacheControl": "not-set",
+          "correct": false,
+          "size": 49972
+        },
+        {
+          "key": "images/services/250125-liverpool-40.webp",
+          "expectedCacheControl": "public, max-age=31536000, immutable",
+          "actualCacheControl": "not-set",
+          "correct": false,
+          "size": 50126
+        },
+        {
+          "key": "images/services/250928-hampson-auctions-sunday-11.webp",
+          "expectedCacheControl": "public, max-age=31536000, immutable",
+          "actualCacheControl": "not-set",
+          "correct": false,
+          "size": 50868
+        },
+        {
+          "key": "images/services/accessible-top8-campaigns-source.webp",
+          "expectedCacheControl": "public, max-age=31536000, immutable",
+          "actualCacheControl": "not-set",
+          "correct": false,
+          "size": 29688
+        },
+        {
+          "key": "images/services/ad-campaigns-hero.webp",
+          "expectedCacheControl": "public, max-age=31536000, immutable",
+          "actualCacheControl": "not-set",
+          "correct": false,
+          "size": 23692
+        },
+        {
+          "key": "images/services/analytics-hero.webp",
+          "expectedCacheControl": "public, max-age=31536000, immutable",
+          "actualCacheControl": "not-set",
+          "correct": false,
+          "size": 23692
+        },
+        {
+          "key": "images/services/output-5-analytics-chart.webp",
+          "expectedCacheControl": "public, max-age=31536000, immutable",
+          "actualCacheControl": "not-set",
+          "correct": false,
+          "size": 21610
+        },
+        {
+          "key": "images/services/photography-hero.webp",
+          "expectedCacheControl": "public, max-age=31536000, immutable",
+          "actualCacheControl": "not-set",
+          "correct": false,
+          "size": 57180
+        },
+        {
+          "key": "images/services/screenshot-2025-08-12-analytics-report.webp",
+          "expectedCacheControl": "public, max-age=31536000, immutable",
+          "actualCacheControl": "not-set",
+          "correct": false,
+          "size": 46204
+        },
+        {
+          "key": "images/services/screenshot-2025-09-23-analytics-dashboard.webp",
+          "expectedCacheControl": "public, max-age=31536000, immutable",
+          "actualCacheControl": "not-set",
+          "correct": false,
+          "size": 38464
+        },
+        {
+          "key": "images/services/top-3-mediums-by-conversion-rate.webp",
+          "expectedCacheControl": "public, max-age=31536000, immutable",
+          "actualCacheControl": "not-set",
+          "correct": false,
+          "size": 18422
+        },
+        {
+          "key": "images/testimonials/david-kim.jpg",
+          "expectedCacheControl": "public, max-age=31536000, immutable",
+          "actualCacheControl": "not-set",
+          "correct": false,
+          "size": 34
+        },
+        {
+          "key": "images/testimonials/lisa-rodriguez.jpg",
+          "expectedCacheControl": "public, max-age=31536000, immutable",
+          "actualCacheControl": "not-set",
+          "correct": false,
+          "size": 39
+        },
+        {
+          "key": "images/testimonials/michael-chen.jpg",
+          "expectedCacheControl": "public, max-age=31536000, immutable",
+          "actualCacheControl": "not-set",
+          "correct": false,
+          "size": 37
+        },
+        {
+          "key": "images/testimonials/sarah-johnson.jpg",
+          "expectedCacheControl": "public, max-age=31536000, immutable",
+          "actualCacheControl": "not-set",
+          "correct": false,
+          "size": 38
+        }
+      ],
+      "correct": 0,
+      "incorrect": 36
+    },
+    "html": {
+      "expected": {
+        "patterns": [
+          ".html"
+        ],
+        "maxAge": 300,
+        "cacheControl": "public, max-age=300, must-revalidate",
+        "description": "Short-term caching for HTML pages (5 minutes)",
+        "cloudFrontBehavior": "*.html"
+      },
+      "files": [
+        {
+          "key": "404.html",
+          "expectedCacheControl": "public, max-age=300, must-revalidate",
+          "actualCacheControl": "not-set",
+          "correct": false,
+          "size": 15260
+        },
+        {
+          "key": "404/index.html",
+          "expectedCacheControl": "public, max-age=300, must-revalidate",
+          "actualCacheControl": "not-set",
+          "correct": false,
+          "size": 15260
+        },
+        {
+          "key": "about/index.html",
+          "expectedCacheControl": "public, max-age=300, must-revalidate",
+          "actualCacheControl": "not-set",
+          "correct": false,
+          "size": 52048
+        },
+        {
+          "key": "blog/flyers-roi-breakdown/index.html",
+          "expectedCacheControl": "public, max-age=300, must-revalidate",
+          "actualCacheControl": "not-set",
+          "correct": false,
+          "size": 55516
+        },
+        {
+          "key": "blog/index.html",
+          "expectedCacheControl": "public, max-age=300, must-revalidate",
+          "actualCacheControl": "not-set",
+          "correct": false,
+          "size": 62875
+        },
+        {
+          "key": "blog/paid-ads-campaign-learnings/index.html",
+          "expectedCacheControl": "public, max-age=300, must-revalidate",
+          "actualCacheControl": "not-set",
+          "correct": false,
+          "size": 52349
+        },
+        {
+          "key": "blog/stock-photography-lessons/index.html",
+          "expectedCacheControl": "public, max-age=300, must-revalidate",
+          "actualCacheControl": "not-set",
+          "correct": false,
+          "size": 65325
+        },
+        {
+          "key": "contact/index.html",
+          "expectedCacheControl": "public, max-age=300, must-revalidate",
+          "actualCacheControl": "not-set",
+          "correct": false,
+          "size": 56265
+        },
+        {
+          "key": "index.html",
+          "expectedCacheControl": "public, max-age=300, must-revalidate",
+          "actualCacheControl": "not-set",
+          "correct": false,
+          "size": 83979
+        },
+        {
+          "key": "services/ad-campaigns/index.html",
+          "expectedCacheControl": "public, max-age=300, must-revalidate",
+          "actualCacheControl": "not-set",
+          "correct": false,
+          "size": 85955
+        },
+        {
+          "key": "services/analytics/index.html",
+          "expectedCacheControl": "public, max-age=300, must-revalidate",
+          "actualCacheControl": "not-set",
+          "correct": false,
+          "size": 84561
+        },
+        {
+          "key": "services/index.html",
+          "expectedCacheControl": "public, max-age=300, must-revalidate",
+          "actualCacheControl": "not-set",
+          "correct": false,
+          "size": 51485
+        },
+        {
+          "key": "services/photography/index.html",
+          "expectedCacheControl": "public, max-age=300, must-revalidate",
+          "actualCacheControl": "not-set",
+          "correct": false,
+          "size": 87234
+        },
+        {
+          "key": "test-image-error-handling/index.html",
+          "expectedCacheControl": "public, max-age=300, must-revalidate",
+          "actualCacheControl": "not-set",
+          "correct": false,
+          "size": 21599
+        }
+      ],
+      "correct": 0,
+      "incorrect": 14
+    },
+    "staticAssets": {
+      "expected": {
+        "patterns": [
+          ".js",
+          ".css",
+          ".woff",
+          ".woff2",
+          ".ttf",
+          ".eot"
+        ],
+        "maxAge": 31536000,
+        "cacheControl": "public, max-age=31536000, immutable",
+        "description": "Long-term caching for static assets (1 year)",
+        "cloudFrontBehavior": "*.{js,css,woff,woff2,ttf,eot}"
+      },
+      "files": [
+        {
+          "key": "_next/static/chunks/139.7a5a8e93a21948c1.js",
+          "expectedCacheControl": "public, max-age=31536000, immutable",
+          "actualCacheControl": "not-set",
+          "correct": false,
+          "size": 740
+        },
+        {
+          "key": "_next/static/chunks/255-3260b6c822d7a91e.js",
+          "expectedCacheControl": "public, max-age=31536000, immutable",
+          "actualCacheControl": "not-set",
+          "correct": false,
+          "size": 171824
+        },
+        {
+          "key": "_next/static/chunks/4bd1b696-c023c6e3521b1417.js",
+          "expectedCacheControl": "public, max-age=31536000, immutable",
+          "actualCacheControl": "not-set",
+          "correct": false,
+          "size": 173019
+        },
+        {
+          "key": "_next/static/chunks/619-ba102abea3e3d0e4.js",
+          "expectedCacheControl": "public, max-age=31536000, immutable",
+          "actualCacheControl": "not-set",
+          "correct": false,
+          "size": 8537
+        },
+        {
+          "key": "_next/static/chunks/646.f342b7cffc01feb0.js",
+          "expectedCacheControl": "public, max-age=31536000, immutable",
+          "actualCacheControl": "not-set",
+          "correct": false,
+          "size": 5444
+        },
+        {
+          "key": "_next/static/chunks/851-a86e1c8846928d5d.js",
+          "expectedCacheControl": "public, max-age=31536000, immutable",
+          "actualCacheControl": "not-set",
+          "correct": false,
+          "size": 36918
+        },
+        {
+          "key": "_next/static/chunks/app/_not-found/page-842c680e661176d2.js",
+          "expectedCacheControl": "public, max-age=31536000, immutable",
+          "actualCacheControl": "not-set",
+          "correct": false,
+          "size": 2670
+        },
+        {
+          "key": "_next/static/chunks/app/about/page-f628ef11fa985bb3.js",
+          "expectedCacheControl": "public, max-age=31536000, immutable",
+          "actualCacheControl": "not-set",
+          "correct": false,
+          "size": 12936
+        },
+        {
+          "key": "_next/static/chunks/app/blog/[slug]/page-8da58a1f9d934e4f.js",
+          "expectedCacheControl": "public, max-age=31536000, immutable",
+          "actualCacheControl": "not-set",
+          "correct": false,
+          "size": 8159
+        },
+        {
+          "key": "_next/static/chunks/app/blog/page-9b8844861af297bc.js",
+          "expectedCacheControl": "public, max-age=31536000, immutable",
+          "actualCacheControl": "not-set",
+          "correct": false,
+          "size": 22733
+        },
+        {
+          "key": "_next/static/chunks/app/contact/page-e32282b4986a4cf9.js",
+          "expectedCacheControl": "public, max-age=31536000, immutable",
+          "actualCacheControl": "not-set",
+          "correct": false,
+          "size": 22197
+        },
+        {
+          "key": "_next/static/chunks/app/layout-06caebcab1c80a7a.js",
+          "expectedCacheControl": "public, max-age=31536000, immutable",
+          "actualCacheControl": "not-set",
+          "correct": false,
+          "size": 12875
+        },
+        {
+          "key": "_next/static/chunks/app/page-8579ed9016e44637.js",
+          "expectedCacheControl": "public, max-age=31536000, immutable",
+          "actualCacheControl": "not-set",
+          "correct": false,
+          "size": 31967
+        },
+        {
+          "key": "_next/static/chunks/app/robots.txt/route-068ba3586843ea10.js",
+          "expectedCacheControl": "public, max-age=31536000, immutable",
+          "actualCacheControl": "not-set",
+          "correct": false,
+          "size": 135
+        },
+        {
+          "key": "_next/static/chunks/app/services/[slug]/not-found-0c8fd3df041e2fff.js",
+          "expectedCacheControl": "public, max-age=31536000, immutable",
+          "actualCacheControl": "not-set",
+          "correct": false,
+          "size": 183
+        },
+        {
+          "key": "_next/static/chunks/app/services/[slug]/page-65579d586bc55c42.js",
+          "expectedCacheControl": "public, max-age=31536000, immutable",
+          "actualCacheControl": "not-set",
+          "correct": false,
+          "size": 39684
+        },
+        {
+          "key": "_next/static/chunks/app/services/page-36feccce57380053.js",
+          "expectedCacheControl": "public, max-age=31536000, immutable",
+          "actualCacheControl": "not-set",
+          "correct": false,
+          "size": 19506
+        },
+        {
+          "key": "_next/static/chunks/app/sitemap.xml/route-068ba3586843ea10.js",
+          "expectedCacheControl": "public, max-age=31536000, immutable",
+          "actualCacheControl": "not-set",
+          "correct": false,
+          "size": 135
+        },
+        {
+          "key": "_next/static/chunks/app/test-image-error-handling/page-e8dc3ba6ee813665.js",
+          "expectedCacheControl": "public, max-age=31536000, immutable",
+          "actualCacheControl": "not-set",
+          "correct": false,
+          "size": 11353
+        },
+        {
+          "key": "_next/static/chunks/framework-a6e0b7e30f98059a.js",
+          "expectedCacheControl": "public, max-age=31536000, immutable",
+          "actualCacheControl": "not-set",
+          "correct": false,
+          "size": 139834
+        },
+        {
+          "key": "_next/static/chunks/main-0e5273bff2ae30e4.js",
+          "expectedCacheControl": "public, max-age=31536000, immutable",
+          "actualCacheControl": "not-set",
+          "correct": false,
+          "size": 118916
+        },
+        {
+          "key": "_next/static/chunks/main-app-ffe87789895e1d2d.js",
+          "expectedCacheControl": "public, max-age=31536000, immutable",
+          "actualCacheControl": "not-set",
+          "correct": false,
+          "size": 557
+        },
+        {
+          "key": "_next/static/chunks/pages/_app-82835f42865034fa.js",
+          "expectedCacheControl": "public, max-age=31536000, immutable",
+          "actualCacheControl": "not-set",
+          "correct": false,
+          "size": 912
+        },
+        {
+          "key": "_next/static/chunks/pages/_error-013f4188946cdd04.js",
+          "expectedCacheControl": "public, max-age=31536000, immutable",
+          "actualCacheControl": "not-set",
+          "correct": false,
+          "size": 5652
+        },
+        {
+          "key": "_next/static/chunks/polyfills-42372ed130431b0a.js",
+          "expectedCacheControl": "public, max-age=31536000, immutable",
+          "actualCacheControl": "not-set",
+          "correct": false,
+          "size": 112594
+        },
+        {
+          "key": "_next/static/chunks/webpack-01c9f6446a87a987.js",
+          "expectedCacheControl": "public, max-age=31536000, immutable",
+          "actualCacheControl": "not-set",
+          "correct": false,
+          "size": 3513
+        },
+        {
+          "key": "_next/static/css/05cf675b5e4428e9.css",
+          "expectedCacheControl": "public, max-age=31536000, immutable",
+          "actualCacheControl": "not-set",
+          "correct": false,
+          "size": 4055
+        },
+        {
+          "key": "_next/static/css/8b217ca013afcbd7.css",
+          "expectedCacheControl": "public, max-age=31536000, immutable",
+          "actualCacheControl": "not-set",
+          "correct": false,
+          "size": 6187
+        },
+        {
+          "key": "_next/static/css/aebaa3fbe963b721.css",
+          "expectedCacheControl": "public, max-age=31536000, immutable",
+          "actualCacheControl": "not-set",
+          "correct": false,
+          "size": 11024
+        },
+        {
+          "key": "_next/static/css/c983b200ec65f324.css",
+          "expectedCacheControl": "public, max-age=31536000, immutable",
+          "actualCacheControl": "not-set",
+          "correct": false,
+          "size": 77138
+        },
+        {
+          "key": "_next/static/media/19cfc7226ec3afaa-s.woff2",
+          "expectedCacheControl": "public, max-age=31536000, immutable",
+          "actualCacheControl": "not-set",
+          "correct": false,
+          "size": 19044
+        },
+        {
+          "key": "_next/static/media/21350d82a1f187e9-s.woff2",
+          "expectedCacheControl": "public, max-age=31536000, immutable",
+          "actualCacheControl": "not-set",
+          "correct": false,
+          "size": 18744
+        },
+        {
+          "key": "_next/static/media/8e9860b6e62d6359-s.woff2",
+          "expectedCacheControl": "public, max-age=31536000, immutable",
+          "actualCacheControl": "not-set",
+          "correct": false,
+          "size": 85272
+        },
+        {
+          "key": "_next/static/media/ba9851c3c22cd980-s.woff2",
+          "expectedCacheControl": "public, max-age=31536000, immutable",
+          "actualCacheControl": "not-set",
+          "correct": false,
+          "size": 25844
+        },
+        {
+          "key": "_next/static/media/c5fe6dc8356a8c31-s.woff2",
+          "expectedCacheControl": "public, max-age=31536000, immutable",
+          "actualCacheControl": "not-set",
+          "correct": false,
+          "size": 11272
+        },
+        {
+          "key": "_next/static/media/df0a9ae256c0569c-s.woff2",
+          "expectedCacheControl": "public, max-age=31536000, immutable",
+          "actualCacheControl": "not-set",
+          "correct": false,
+          "size": 10280
+        },
+        {
+          "key": "_next/static/media/e4af272ccee01ff0-s.p.woff2",
+          "expectedCacheControl": "public, max-age=31536000, immutable",
+          "actualCacheControl": "not-set",
+          "correct": false,
+          "size": 48432
+        },
+        {
+          "key": "_next/static/static-build/_buildManifest.js",
+          "expectedCacheControl": "public, max-age=31536000, immutable",
+          "actualCacheControl": "not-set",
+          "correct": false,
+          "size": 856
+        },
+        {
+          "key": "_next/static/static-build/_ssgManifest.js",
+          "expectedCacheControl": "public, max-age=31536000, immutable",
+          "actualCacheControl": "not-set",
+          "correct": false,
+          "size": 133
+        }
+      ],
+      "correct": 0,
+      "incorrect": 39
+    },
+    "nextStatic": {
+      "expected": {
+        "patterns": [
+          "/_next/static/"
+        ],
+        "maxAge": 31536000,
+        "cacheControl": "public, max-age=31536000, immutable",
+        "description": "Long-term caching for Next.js static files (1 year)",
+        "cloudFrontBehavior": "/_next/static/*"
+      },
+      "files": [],
+      "correct": 0,
+      "incorrect": 0
+    },
+    "serviceWorker": {
+      "expected": {
+        "patterns": [
+          "/sw.js",
+          "/service-worker.js"
+        ],
+        "maxAge": 0,
+        "cacheControl": "no-cache, no-store, must-revalidate",
+        "description": "No caching for service worker",
+        "cloudFrontBehavior": "/sw.js"
+      },
+      "files": [],
+      "correct": 0,
+      "incorrect": 0
+    },
+    "json": {
+      "expected": {
+        "patterns": [
+          ".json"
+        ],
+        "maxAge": 86400,
+        "cacheControl": "public, max-age=86400",
+        "description": "Medium-term caching for JSON files (1 day)",
+        "cloudFrontBehavior": "*.json"
+      },
+      "files": [
+        {
+          "key": "build-info.json",
+          "expectedCacheControl": "public, max-age=86400",
+          "actualCacheControl": "not-set",
+          "correct": false,
+          "size": 175
+        }
+      ],
+      "correct": 0,
+      "incorrect": 1
+    }
+  },
+  "issues": [
+    {
+      "file": "404.html",
+      "expected": "public, max-age=300, must-revalidate",
+      "actual": "not-set",
+      "strategy": "html"
+    },
+    {
+      "file": "404/index.html",
+      "expected": "public, max-age=300, must-revalidate",
+      "actual": "not-set",
+      "strategy": "html"
+    },
+    {
+      "file": "_next/static/chunks/139.7a5a8e93a21948c1.js",
+      "expected": "public, max-age=31536000, immutable",
+      "actual": "not-set",
+      "strategy": "staticAssets"
+    },
+    {
+      "file": "_next/static/chunks/255-3260b6c822d7a91e.js",
+      "expected": "public, max-age=31536000, immutable",
+      "actual": "not-set",
+      "strategy": "staticAssets"
+    },
+    {
+      "file": "_next/static/chunks/4bd1b696-c023c6e3521b1417.js",
+      "expected": "public, max-age=31536000, immutable",
+      "actual": "not-set",
+      "strategy": "staticAssets"
+    },
+    {
+      "file": "_next/static/chunks/619-ba102abea3e3d0e4.js",
+      "expected": "public, max-age=31536000, immutable",
+      "actual": "not-set",
+      "strategy": "staticAssets"
+    },
+    {
+      "file": "_next/static/chunks/646.f342b7cffc01feb0.js",
+      "expected": "public, max-age=31536000, immutable",
+      "actual": "not-set",
+      "strategy": "staticAssets"
+    },
+    {
+      "file": "_next/static/chunks/851-a86e1c8846928d5d.js",
+      "expected": "public, max-age=31536000, immutable",
+      "actual": "not-set",
+      "strategy": "staticAssets"
+    },
+    {
+      "file": "_next/static/chunks/app/_not-found/page-842c680e661176d2.js",
+      "expected": "public, max-age=31536000, immutable",
+      "actual": "not-set",
+      "strategy": "staticAssets"
+    },
+    {
+      "file": "_next/static/chunks/app/about/page-f628ef11fa985bb3.js",
+      "expected": "public, max-age=31536000, immutable",
+      "actual": "not-set",
+      "strategy": "staticAssets"
+    },
+    {
+      "file": "_next/static/chunks/app/blog/[slug]/page-8da58a1f9d934e4f.js",
+      "expected": "public, max-age=31536000, immutable",
+      "actual": "not-set",
+      "strategy": "staticAssets"
+    },
+    {
+      "file": "_next/static/chunks/app/blog/page-9b8844861af297bc.js",
+      "expected": "public, max-age=31536000, immutable",
+      "actual": "not-set",
+      "strategy": "staticAssets"
+    },
+    {
+      "file": "_next/static/chunks/app/contact/page-e32282b4986a4cf9.js",
+      "expected": "public, max-age=31536000, immutable",
+      "actual": "not-set",
+      "strategy": "staticAssets"
+    },
+    {
+      "file": "_next/static/chunks/app/layout-06caebcab1c80a7a.js",
+      "expected": "public, max-age=31536000, immutable",
+      "actual": "not-set",
+      "strategy": "staticAssets"
+    },
+    {
+      "file": "_next/static/chunks/app/page-8579ed9016e44637.js",
+      "expected": "public, max-age=31536000, immutable",
+      "actual": "not-set",
+      "strategy": "staticAssets"
+    },
+    {
+      "file": "_next/static/chunks/app/robots.txt/route-068ba3586843ea10.js",
+      "expected": "public, max-age=31536000, immutable",
+      "actual": "not-set",
+      "strategy": "staticAssets"
+    },
+    {
+      "file": "_next/static/chunks/app/services/[slug]/not-found-0c8fd3df041e2fff.js",
+      "expected": "public, max-age=31536000, immutable",
+      "actual": "not-set",
+      "strategy": "staticAssets"
+    },
+    {
+      "file": "_next/static/chunks/app/services/[slug]/page-65579d586bc55c42.js",
+      "expected": "public, max-age=31536000, immutable",
+      "actual": "not-set",
+      "strategy": "staticAssets"
+    },
+    {
+      "file": "_next/static/chunks/app/services/page-36feccce57380053.js",
+      "expected": "public, max-age=31536000, immutable",
+      "actual": "not-set",
+      "strategy": "staticAssets"
+    },
+    {
+      "file": "_next/static/chunks/app/sitemap.xml/route-068ba3586843ea10.js",
+      "expected": "public, max-age=31536000, immutable",
+      "actual": "not-set",
+      "strategy": "staticAssets"
+    },
+    {
+      "file": "_next/static/chunks/app/test-image-error-handling/page-e8dc3ba6ee813665.js",
+      "expected": "public, max-age=31536000, immutable",
+      "actual": "not-set",
+      "strategy": "staticAssets"
+    },
+    {
+      "file": "_next/static/chunks/framework-a6e0b7e30f98059a.js",
+      "expected": "public, max-age=31536000, immutable",
+      "actual": "not-set",
+      "strategy": "staticAssets"
+    },
+    {
+      "file": "_next/static/chunks/main-0e5273bff2ae30e4.js",
+      "expected": "public, max-age=31536000, immutable",
+      "actual": "not-set",
+      "strategy": "staticAssets"
+    },
+    {
+      "file": "_next/static/chunks/main-app-ffe87789895e1d2d.js",
+      "expected": "public, max-age=31536000, immutable",
+      "actual": "not-set",
+      "strategy": "staticAssets"
+    },
+    {
+      "file": "_next/static/chunks/pages/_app-82835f42865034fa.js",
+      "expected": "public, max-age=31536000, immutable",
+      "actual": "not-set",
+      "strategy": "staticAssets"
+    },
+    {
+      "file": "_next/static/chunks/pages/_error-013f4188946cdd04.js",
+      "expected": "public, max-age=31536000, immutable",
+      "actual": "not-set",
+      "strategy": "staticAssets"
+    },
+    {
+      "file": "_next/static/chunks/polyfills-42372ed130431b0a.js",
+      "expected": "public, max-age=31536000, immutable",
+      "actual": "not-set",
+      "strategy": "staticAssets"
+    },
+    {
+      "file": "_next/static/chunks/webpack-01c9f6446a87a987.js",
+      "expected": "public, max-age=31536000, immutable",
+      "actual": "not-set",
+      "strategy": "staticAssets"
+    },
+    {
+      "file": "_next/static/css/05cf675b5e4428e9.css",
+      "expected": "public, max-age=31536000, immutable",
+      "actual": "not-set",
+      "strategy": "staticAssets"
+    },
+    {
+      "file": "_next/static/css/8b217ca013afcbd7.css",
+      "expected": "public, max-age=31536000, immutable",
+      "actual": "not-set",
+      "strategy": "staticAssets"
+    },
+    {
+      "file": "_next/static/css/aebaa3fbe963b721.css",
+      "expected": "public, max-age=31536000, immutable",
+      "actual": "not-set",
+      "strategy": "staticAssets"
+    },
+    {
+      "file": "_next/static/css/c983b200ec65f324.css",
+      "expected": "public, max-age=31536000, immutable",
+      "actual": "not-set",
+      "strategy": "staticAssets"
+    },
+    {
+      "file": "_next/static/media/19cfc7226ec3afaa-s.woff2",
+      "expected": "public, max-age=31536000, immutable",
+      "actual": "not-set",
+      "strategy": "staticAssets"
+    },
+    {
+      "file": "_next/static/media/21350d82a1f187e9-s.woff2",
+      "expected": "public, max-age=31536000, immutable",
+      "actual": "not-set",
+      "strategy": "staticAssets"
+    },
+    {
+      "file": "_next/static/media/8e9860b6e62d6359-s.woff2",
+      "expected": "public, max-age=31536000, immutable",
+      "actual": "not-set",
+      "strategy": "staticAssets"
+    },
+    {
+      "file": "_next/static/media/ba9851c3c22cd980-s.woff2",
+      "expected": "public, max-age=31536000, immutable",
+      "actual": "not-set",
+      "strategy": "staticAssets"
+    },
+    {
+      "file": "_next/static/media/c5fe6dc8356a8c31-s.woff2",
+      "expected": "public, max-age=31536000, immutable",
+      "actual": "not-set",
+      "strategy": "staticAssets"
+    },
+    {
+      "file": "_next/static/media/df0a9ae256c0569c-s.woff2",
+      "expected": "public, max-age=31536000, immutable",
+      "actual": "not-set",
+      "strategy": "staticAssets"
+    },
+    {
+      "file": "_next/static/media/e4af272ccee01ff0-s.p.woff2",
+      "expected": "public, max-age=31536000, immutable",
+      "actual": "not-set",
+      "strategy": "staticAssets"
+    },
+    {
+      "file": "_next/static/static-build/_buildManifest.js",
+      "expected": "public, max-age=31536000, immutable",
+      "actual": "not-set",
+      "strategy": "staticAssets"
+    },
+    {
+      "file": "_next/static/static-build/_ssgManifest.js",
+      "expected": "public, max-age=31536000, immutable",
+      "actual": "not-set",
+      "strategy": "staticAssets"
+    },
+    {
+      "file": "about/index.html",
+      "expected": "public, max-age=300, must-revalidate",
+      "actual": "not-set",
+      "strategy": "html"
+    },
+    {
+      "file": "about/index.txt",
+      "error": "Cannot read properties of undefined (reading 'files')"
+    },
+    {
+      "file": "blog/flyers-roi-breakdown/index.html",
+      "expected": "public, max-age=300, must-revalidate",
+      "actual": "not-set",
+      "strategy": "html"
+    },
+    {
+      "file": "blog/flyers-roi-breakdown/index.txt",
+      "error": "Cannot read properties of undefined (reading 'files')"
+    },
+    {
+      "file": "blog/index.html",
+      "expected": "public, max-age=300, must-revalidate",
+      "actual": "not-set",
+      "strategy": "html"
+    },
+    {
+      "file": "blog/index.txt",
+      "error": "Cannot read properties of undefined (reading 'files')"
+    },
+    {
+      "file": "blog/paid-ads-campaign-learnings/index.html",
+      "expected": "public, max-age=300, must-revalidate",
+      "actual": "not-set",
+      "strategy": "html"
+    },
+    {
+      "file": "blog/paid-ads-campaign-learnings/index.txt",
+      "error": "Cannot read properties of undefined (reading 'files')"
+    },
+    {
+      "file": "blog/stock-photography-lessons/index.html",
+      "expected": "public, max-age=300, must-revalidate",
+      "actual": "not-set",
+      "strategy": "html"
+    },
+    {
+      "file": "blog/stock-photography-lessons/index.txt",
+      "error": "Cannot read properties of undefined (reading 'files')"
+    },
+    {
+      "file": "build-info.json",
+      "expected": "public, max-age=86400",
+      "actual": "not-set",
+      "strategy": "json"
+    },
+    {
+      "file": "contact/index.html",
+      "expected": "public, max-age=300, must-revalidate",
+      "actual": "not-set",
+      "strategy": "html"
+    },
+    {
+      "file": "contact/index.txt",
+      "error": "Cannot read properties of undefined (reading 'files')"
+    },
+    {
+      "file": "images/.gitkeep",
+      "error": "Cannot read properties of undefined (reading 'files')"
+    },
+    {
+      "file": "images/README.md",
+      "error": "Cannot read properties of undefined (reading 'files')"
+    },
+    {
+      "file": "images/about/.gitkeep",
+      "error": "Cannot read properties of undefined (reading 'files')"
+    },
+    {
+      "file": "images/about/A7302858.webp",
+      "expected": "public, max-age=31536000, immutable",
+      "actual": "not-set",
+      "strategy": "images"
+    },
+    {
+      "file": "images/blog/.gitkeep",
+      "error": "Cannot read properties of undefined (reading 'files')"
+    },
+    {
+      "file": "images/blog/google-ads-analytics-screenshot.webp",
+      "expected": "public, max-age=31536000, immutable",
+      "actual": "not-set",
+      "strategy": "images"
+    },
+    {
+      "file": "images/blog/mobile-first-design.jpg",
+      "expected": "public, max-age=31536000, immutable",
+      "actual": "not-set",
+      "strategy": "images"
+    },
+    {
+      "file": "images/blog/screenshot-2025-08-11-analytics-data.webp",
+      "expected": "public, max-age=31536000, immutable",
+      "actual": "not-set",
+      "strategy": "images"
+    },
+    {
+      "file": "images/blog/welcome-hero.jpg",
+      "expected": "public, max-age=31536000, immutable",
+      "actual": "not-set",
+      "strategy": "images"
+    },
+    {
+      "file": "images/general/.gitkeep",
+      "error": "Cannot read properties of undefined (reading 'files')"
+    },
+    {
+      "file": "images/google-analytics.webp",
+      "expected": "public, max-age=31536000, immutable",
+      "actual": "not-set",
+      "strategy": "images"
+    },
+    {
+      "file": "images/hero/.gitkeep",
+      "error": "Cannot read properties of undefined (reading 'files')"
+    },
+    {
+      "file": "images/hero/240619-london-19.webp",
+      "expected": "public, max-age=31536000, immutable",
+      "actual": "not-set",
+      "strategy": "images"
+    },
+    {
+      "file": "images/hero/A7302858.webp",
+      "expected": "public, max-age=31536000, immutable",
+      "actual": "not-set",
+      "strategy": "images"
+    },
+    {
+      "file": "images/hero/aston-martin-db6-website.webp",
+      "expected": "public, max-age=31536000, immutable",
+      "actual": "not-set",
+      "strategy": "images"
+    },
+    {
+      "file": "images/hero/google-ads-analytics-dashboard.webp",
+      "expected": "public, max-age=31536000, immutable",
+      "actual": "not-set",
+      "strategy": "images"
+    },
+    {
+      "file": "images/hero/hero-bg.jpg",
+      "expected": "public, max-age=31536000, immutable",
+      "actual": "not-set",
+      "strategy": "images"
+    },
+    {
+      "file": "images/hero/paid-ads-analytics-screenshot.webp",
+      "expected": "public, max-age=31536000, immutable",
+      "actual": "not-set",
+      "strategy": "images"
+    },
+    {
+      "file": "images/hero/screenshot-2025-08-11-analytics-data.webp",
+      "expected": "public, max-age=31536000, immutable",
+      "actual": "not-set",
+      "strategy": "images"
+    },
+    {
+      "file": "images/hero/screenshot-2025-09-23-analytics-dashboard.webp",
+      "expected": "public, max-age=31536000, immutable",
+      "actual": "not-set",
+      "strategy": "images"
+    },
+    {
+      "file": "images/hero/stock-photography-samira.webp",
+      "expected": "public, max-age=31536000, immutable",
+      "actual": "not-set",
+      "strategy": "images"
+    },
+    {
+      "file": "images/hero/whatsapp-image-2025-07-11-flyers-roi.webp",
+      "expected": "public, max-age=31536000, immutable",
+      "actual": "not-set",
+      "strategy": "images"
+    },
+    {
+      "file": "images/icons/.gitkeep",
+      "error": "Cannot read properties of undefined (reading 'files')"
+    },
+    {
+      "file": "images/icons/vivid-auto-photography-logo.png",
+      "expected": "public, max-age=31536000, immutable",
+      "actual": "not-set",
+      "strategy": "images"
+    },
+    {
+      "file": "images/services/.gitkeep",
+      "error": "Cannot read properties of undefined (reading 'files')"
+    },
+    {
+      "file": "images/services/240217-australia-trip-232.webp",
+      "expected": "public, max-age=31536000, immutable",
+      "actual": "not-set",
+      "strategy": "images"
+    },
+    {
+      "file": "images/services/240219-australia-trip-148.webp",
+      "expected": "public, max-age=31536000, immutable",
+      "actual": "not-set",
+      "strategy": "images"
+    },
+    {
+      "file": "images/services/240619-london-19.webp",
+      "expected": "public, max-age=31536000, immutable",
+      "actual": "not-set",
+      "strategy": "images"
+    },
+    {
+      "file": "images/services/240619-london-26.webp",
+      "expected": "public, max-age=31536000, immutable",
+      "actual": "not-set",
+      "strategy": "images"
+    },
+    {
+      "file": "images/services/240619-london-64.webp",
+      "expected": "public, max-age=31536000, immutable",
+      "actual": "not-set",
+      "strategy": "images"
+    },
+    {
+      "file": "images/services/250125-liverpool-40.webp",
+      "expected": "public, max-age=31536000, immutable",
+      "actual": "not-set",
+      "strategy": "images"
+    },
+    {
+      "file": "images/services/250928-hampson-auctions-sunday-11.webp",
+      "expected": "public, max-age=31536000, immutable",
+      "actual": "not-set",
+      "strategy": "images"
+    },
+    {
+      "file": "images/services/accessible-top8-campaigns-source.webp",
+      "expected": "public, max-age=31536000, immutable",
+      "actual": "not-set",
+      "strategy": "images"
+    },
+    {
+      "file": "images/services/ad-campaigns-hero.webp",
+      "expected": "public, max-age=31536000, immutable",
+      "actual": "not-set",
+      "strategy": "images"
+    },
+    {
+      "file": "images/services/analytics-hero.webp",
+      "expected": "public, max-age=31536000, immutable",
+      "actual": "not-set",
+      "strategy": "images"
+    },
+    {
+      "file": "images/services/output-5-analytics-chart.webp",
+      "expected": "public, max-age=31536000, immutable",
+      "actual": "not-set",
+      "strategy": "images"
+    },
+    {
+      "file": "images/services/photography-hero.webp",
+      "expected": "public, max-age=31536000, immutable",
+      "actual": "not-set",
+      "strategy": "images"
+    },
+    {
+      "file": "images/services/screenshot-2025-08-12-analytics-report.webp",
+      "expected": "public, max-age=31536000, immutable",
+      "actual": "not-set",
+      "strategy": "images"
+    },
+    {
+      "file": "images/services/screenshot-2025-09-23-analytics-dashboard.webp",
+      "expected": "public, max-age=31536000, immutable",
+      "actual": "not-set",
+      "strategy": "images"
+    },
+    {
+      "file": "images/services/top-3-mediums-by-conversion-rate.webp",
+      "expected": "public, max-age=31536000, immutable",
+      "actual": "not-set",
+      "strategy": "images"
+    },
+    {
+      "file": "images/testimonials/.gitkeep",
+      "error": "Cannot read properties of undefined (reading 'files')"
+    },
+    {
+      "file": "images/testimonials/david-kim.jpg",
+      "expected": "public, max-age=31536000, immutable",
+      "actual": "not-set",
+      "strategy": "images"
+    },
+    {
+      "file": "images/testimonials/lisa-rodriguez.jpg",
+      "expected": "public, max-age=31536000, immutable",
+      "actual": "not-set",
+      "strategy": "images"
+    },
+    {
+      "file": "images/testimonials/michael-chen.jpg",
+      "expected": "public, max-age=31536000, immutable",
+      "actual": "not-set",
+      "strategy": "images"
+    },
+    {
+      "file": "images/testimonials/sarah-johnson.jpg",
+      "expected": "public, max-age=31536000, immutable",
+      "actual": "not-set",
+      "strategy": "images"
+    },
+    {
+      "file": "index.html",
+      "expected": "public, max-age=300, must-revalidate",
+      "actual": "not-set",
+      "strategy": "html"
+    },
+    {
+      "file": "index.txt",
+      "error": "Cannot read properties of undefined (reading 'files')"
+    },
+    {
+      "file": "robots.txt",
+      "error": "Cannot read properties of undefined (reading 'files')"
+    },
+    {
+      "file": "services/ad-campaigns/index.html",
+      "expected": "public, max-age=300, must-revalidate",
+      "actual": "not-set",
+      "strategy": "html"
+    },
+    {
+      "file": "services/ad-campaigns/index.txt",
+      "error": "Cannot read properties of undefined (reading 'files')"
+    },
+    {
+      "file": "services/analytics/index.html",
+      "expected": "public, max-age=300, must-revalidate",
+      "actual": "not-set",
+      "strategy": "html"
+    },
+    {
+      "file": "services/analytics/index.txt",
+      "error": "Cannot read properties of undefined (reading 'files')"
+    },
+    {
+      "file": "services/index.html",
+      "expected": "public, max-age=300, must-revalidate",
+      "actual": "not-set",
+      "strategy": "html"
+    },
+    {
+      "file": "services/index.txt",
+      "error": "Cannot read properties of undefined (reading 'files')"
+    },
+    {
+      "file": "services/photography/index.html",
+      "expected": "public, max-age=300, must-revalidate",
+      "actual": "not-set",
+      "strategy": "html"
+    },
+    {
+      "file": "services/photography/index.txt",
+      "error": "Cannot read properties of undefined (reading 'files')"
+    },
+    {
+      "file": "sitemap.xml",
+      "error": "Cannot read properties of undefined (reading 'files')"
+    },
+    {
+      "file": "test-image-error-handling/index.html",
+      "expected": "public, max-age=300, must-revalidate",
+      "actual": "not-set",
+      "strategy": "html"
+    },
+    {
+      "file": "test-image-error-handling/index.txt",
+      "error": "Cannot read properties of undefined (reading 'files')"
+    }
+  ],
+  "passed": 0,
+  "failed": 113
+}

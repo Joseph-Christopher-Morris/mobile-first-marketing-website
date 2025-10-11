@@ -1,0 +1,140 @@
+{
+  "timestamp": "2025-10-05T22:12:56.369Z",
+  "tests": [
+    {
+      "test": "Known Good Domain Test",
+      "status": "PASSED",
+      "timestamp": "2025-10-05T22:12:57.172Z",
+      "details": {
+        "domain": "github.com",
+        "totalTests": 15,
+        "passed": 13,
+        "failed": 0,
+        "successRate": "86.7%"
+      }
+    },
+    {
+      "test": "CloudFront Domain Test",
+      "status": "SKIPPED",
+      "timestamp": "2025-10-05T22:12:57.177Z",
+      "details": {
+        "reason": "No domain found in configuration"
+      }
+    },
+    {
+      "test": "HSTS Header Parsing",
+      "status": "PASSED",
+      "timestamp": "2025-10-05T22:12:57.178Z",
+      "details": {
+        "input": "max-age=31536000; includeSubDomains; preload",
+        "expected": {
+          "maxAge": 31536000,
+          "includeSubDomains": true,
+          "preload": true
+        },
+        "actual": {
+          "maxAge": 31536000,
+          "includeSubDomains": true,
+          "preload": true
+        }
+      }
+    },
+    {
+      "test": "HSTS Header Parsing",
+      "status": "PASSED",
+      "timestamp": "2025-10-05T22:12:57.178Z",
+      "details": {
+        "input": "max-age=86400",
+        "expected": {
+          "maxAge": 86400,
+          "includeSubDomains": false,
+          "preload": false
+        },
+        "actual": {
+          "maxAge": 86400,
+          "includeSubDomains": false,
+          "preload": false
+        }
+      }
+    },
+    {
+      "test": "Cookie Analysis",
+      "status": "PASSED",
+      "timestamp": "2025-10-05T22:12:57.178Z",
+      "details": {
+        "input": "sessionId=abc123; Secure; HttpOnly; SameSite=Strict",
+        "expected": {
+          "secure": true,
+          "httpOnly": true
+        },
+        "actual": {
+          "secure": true,
+          "httpOnly": true
+        }
+      }
+    },
+    {
+      "test": "Cookie Analysis",
+      "status": "PASSED",
+      "timestamp": "2025-10-05T22:12:57.179Z",
+      "details": {
+        "input": "trackingId=xyz789",
+        "expected": {
+          "secure": false,
+          "httpOnly": false
+        },
+        "actual": {
+          "secure": false,
+          "httpOnly": false
+        }
+      }
+    },
+    {
+      "test": "Redirect Type Identification",
+      "status": "PASSED",
+      "timestamp": "2025-10-05T22:12:57.179Z",
+      "details": {
+        "statusCode": 301,
+        "expected": "Permanent Redirect",
+        "actual": "Permanent Redirect"
+      }
+    },
+    {
+      "test": "Redirect Type Identification",
+      "status": "PASSED",
+      "timestamp": "2025-10-05T22:12:57.179Z",
+      "details": {
+        "statusCode": 302,
+        "expected": "Temporary Redirect",
+        "actual": "Temporary Redirect"
+      }
+    },
+    {
+      "test": "Redirect Type Identification",
+      "status": "PASSED",
+      "timestamp": "2025-10-05T22:12:57.179Z",
+      "details": {
+        "statusCode": 307,
+        "expected": "Temporary Redirect (Method Preserved)",
+        "actual": "Temporary Redirect (Method Preserved)"
+      }
+    },
+    {
+      "test": "Redirect Type Identification",
+      "status": "PASSED",
+      "timestamp": "2025-10-05T22:12:57.179Z",
+      "details": {
+        "statusCode": 308,
+        "expected": "Permanent Redirect (Method Preserved)",
+        "actual": "Permanent Redirect (Method Preserved)"
+      }
+    }
+  ],
+  "summary": {
+    "totalTests": 10,
+    "passed": 9,
+    "failed": 0,
+    "successRate": "90.0%",
+    "overallStatus": "PASSED"
+  }
+}

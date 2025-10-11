@@ -1,0 +1,23 @@
+version: 1
+frontend:
+  phases:
+    preBuild:
+      commands:
+        - npm ci
+        - export NEXT_PUBLIC_SITE_URL=$AMPLIFY_APP_URL
+        - export NODE_ENV=production
+    build:
+      commands:
+        - npm run build
+    postBuild:
+      commands:
+        - echo "Build completed"
+        - ls -la out/
+  artifacts:
+    baseDirectory: out
+    files:
+      - "**/*"
+  cache:
+    paths:
+      - node_modules/**/*
+      - .next/cache/**/*

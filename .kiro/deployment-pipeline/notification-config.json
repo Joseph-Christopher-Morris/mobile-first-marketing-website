@@ -1,0 +1,55 @@
+{
+  "version": "1.0.0",
+  "enabled": true,
+  "channels": {
+    "console": {
+      "enabled": true,
+      "level": "all",
+      "format": "detailed"
+    },
+    "file": {
+      "enabled": true,
+      "outputFile": "test-results\\notifications.log",
+      "format": "json",
+      "maxSize": "10MB",
+      "maxFiles": 5
+    },
+    "dashboard": {
+      "enabled": true,
+      "realTime": true,
+      "persistent": true
+    }
+  },
+  "triggers": {
+    "onTestFailure": {
+      "enabled": true,
+      "severity": "warning",
+      "includeDetails": true
+    },
+    "onCriticalFailure": {
+      "enabled": true,
+      "severity": "critical",
+      "includeDetails": true,
+      "blockDeployment": true
+    },
+    "onTestSuccess": {
+      "enabled": false,
+      "severity": "info"
+    }
+  },
+  "templates": {
+    "testFailure": {
+      "title": "Deployment Test Failure",
+      "message": "Test suite \"{{suiteName}}\" failed with {{errorCount}} errors",
+      "includeStackTrace": true,
+      "includeLogs": true
+    },
+    "criticalFailure": {
+      "title": "Critical Deployment Test Failure",
+      "message": "Critical test suite \"{{suiteName}}\" failed - Deployment blocked",
+      "includeStackTrace": true,
+      "includeLogs": true,
+      "includeScreenshots": true
+    }
+  }
+}

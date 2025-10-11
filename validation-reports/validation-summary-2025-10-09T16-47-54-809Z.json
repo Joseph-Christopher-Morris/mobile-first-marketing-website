@@ -1,0 +1,36 @@
+{
+  "timestamp": "2025-10-09T16-47-54-809Z",
+  "testPhases": {
+    "comprehensive": {
+      "totalImages": 5,
+      "successful": 2,
+      "failed": 3,
+      "warnings": 0,
+      "duration": 2848
+    },
+    "blogSpecific": {
+      "targetImage": "/images/hero/paid-ads-analytics-screenshot.webp",
+      "status": "WORKING",
+      "securityStatus": "SECURE",
+      "recommendations": 2,
+      "nextSteps": 0
+    }
+  },
+  "overallStatus": "GOOD",
+  "criticalIssues": [
+    {
+      "type": "DEPLOYMENT",
+      "severity": "HIGH",
+      "description": "Majority of images failing to load",
+      "impact": "Widespread image loading issues across site",
+      "action": "Review deployment pipeline and S3 upload process"
+    }
+  ],
+  "recommendations": [
+    "Fix failed image loads by checking deployment pipeline",
+    "Verify all images exist in source and are included in build",
+    "Set up monitoring for ongoing image accessibility",
+    "Implement automated testing in CI/CD pipeline",
+    "Document image deployment best practices"
+  ]
+}

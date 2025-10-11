@@ -1,0 +1,225 @@
+{
+  "timestamp": "2025-10-10T21:03:45.720Z",
+  "baseUrl": "https://d15sc9fc739ev2.cloudfront.net",
+  "imageTests": {
+    "/images/hero/paid-ads-analytics-screenshot.webp": {
+      "url": "https://d15sc9fc739ev2.cloudfront.net/images/hero/paid-ads-analytics-screenshot.webp",
+      "success": true,
+      "statusCode": 200,
+      "loadTime": 542,
+      "fileSize": 23692,
+      "contentType": "image/webp",
+      "etag": "\"22189f8ddf74516911a294da9d05347d\"",
+      "lastModified": "Tue, 07 Oct 2025 17:39:33 GMT",
+      "recommendations": [
+        "Missing cache headers - implement caching"
+      ]
+    },
+    "/images/services/analytics-hero.webp": {
+      "url": "https://d15sc9fc739ev2.cloudfront.net/images/services/analytics-hero.webp",
+      "success": true,
+      "statusCode": 200,
+      "loadTime": 382,
+      "fileSize": 23692,
+      "contentType": "image/webp",
+      "etag": "\"22189f8ddf74516911a294da9d05347d\"",
+      "lastModified": "Tue, 07 Oct 2025 18:24:23 GMT",
+      "recommendations": [
+        "Missing cache headers - implement caching"
+      ]
+    },
+    "/images/blog/test-image.jpg": {
+      "url": "https://d15sc9fc739ev2.cloudfront.net/images/blog/test-image.jpg",
+      "success": true,
+      "statusCode": 200,
+      "loadTime": 684,
+      "fileSize": 83941,
+      "contentType": "text/html",
+      "etag": "\"cf26e3925e6b3082dc951c973d2c036c\"",
+      "lastModified": "Thu, 09 Oct 2025 21:26:06 GMT",
+      "recommendations": [
+        "Missing cache headers - implement caching",
+        "Consider WebP format for better compression"
+      ]
+    }
+  },
+  "performanceMetrics": {
+    "responsive": {
+      "viewportSizes": [
+        {
+          "name": "Mobile",
+          "width": 375,
+          "expectedSize": "small"
+        },
+        {
+          "name": "Tablet",
+          "width": 768,
+          "expectedSize": "medium"
+        },
+        {
+          "name": "Desktop",
+          "width": 1920,
+          "expectedSize": "large"
+        }
+      ],
+      "results": {
+        "Mobile": {
+          "viewport": "Mobile",
+          "width": 375,
+          "optimalImageSize": "400px width",
+          "currentImageSize": "Not implemented",
+          "performanceImpact": "High - mobile users sensitive to load times",
+          "recommendations": [
+            "Use smaller images for mobile devices"
+          ]
+        },
+        "Tablet": {
+          "viewport": "Tablet",
+          "width": 768,
+          "optimalImageSize": "800px width",
+          "currentImageSize": "Not implemented",
+          "performanceImpact": "Medium - balance between quality and speed",
+          "recommendations": []
+        },
+        "Desktop": {
+          "viewport": "Desktop",
+          "width": 1920,
+          "optimalImageSize": "1200px width",
+          "currentImageSize": "Not implemented",
+          "performanceImpact": "Low - desktop users can handle larger images",
+          "recommendations": [
+            "Provide high-resolution images for large screens"
+          ]
+        }
+      },
+      "recommendations": [
+        "Implement srcset attribute for responsive images",
+        "Use picture element for art direction",
+        "Provide multiple image sizes for different viewports",
+        "Consider lazy loading for images below the fold"
+      ]
+    }
+  },
+  "compressionAnalysis": {
+    "webpVsJpeg": {},
+    "compressionRatios": {
+      "/images/hero/paid-ads-analytics-screenshot.webp": {
+        "originalFormat": "WebP",
+        "fileSize": 23692,
+        "estimatedUncompressed": 71076,
+        "compressionRatio": "65%",
+        "qualityScore": "Good",
+        "webpBenefit": "Already using WebP format",
+        "estimatedJpegSize": 30800
+      },
+      "/images/services/analytics-hero.webp": {
+        "originalFormat": "WebP",
+        "fileSize": 23692,
+        "estimatedUncompressed": 71076,
+        "compressionRatio": "65%",
+        "qualityScore": "Good",
+        "webpBenefit": "Already using WebP format",
+        "estimatedJpegSize": 30800
+      },
+      "/images/blog/test-image.jpg": {
+        "originalFormat": "JPEG",
+        "fileSize": 83941,
+        "estimatedUncompressed": 251823,
+        "compressionRatio": "45%",
+        "qualityScore": "Could be optimized",
+        "webpBenefit": "Could reduce size by ~30% with WebP",
+        "estimatedWebpSize": 58759
+      }
+    },
+    "qualityAssessment": {},
+    "recommendations": [
+      "Convert JPEG images to WebP format for better compression",
+      "Implement responsive images with multiple sizes",
+      "Use progressive JPEG for large images",
+      "Consider AVIF format for even better compression (when supported)"
+    ]
+  },
+  "cacheEfficiency": {
+    "firstLoad": {
+      "/images/hero/paid-ads-analytics-screenshot.webp": {
+        "success": true,
+        "statusCode": 200,
+        "loadTime": 18,
+        "fileSize": 23692,
+        "contentType": "image/webp",
+        "etag": "\"22189f8ddf74516911a294da9d05347d\"",
+        "lastModified": "Tue, 07 Oct 2025 17:39:33 GMT"
+      },
+      "/images/services/analytics-hero.webp": {
+        "success": true,
+        "statusCode": 200,
+        "loadTime": 40,
+        "fileSize": 23692,
+        "contentType": "image/webp",
+        "etag": "\"22189f8ddf74516911a294da9d05347d\"",
+        "lastModified": "Tue, 07 Oct 2025 18:24:23 GMT"
+      },
+      "/images/blog/test-image.jpg": {
+        "success": true,
+        "statusCode": 200,
+        "loadTime": 658,
+        "fileSize": 83941,
+        "contentType": "text/html",
+        "etag": "\"cf26e3925e6b3082dc951c973d2c036c\"",
+        "lastModified": "Thu, 09 Oct 2025 21:26:06 GMT"
+      }
+    },
+    "secondLoad": {
+      "/images/hero/paid-ads-analytics-screenshot.webp": {
+        "success": true,
+        "statusCode": 200,
+        "loadTime": 9,
+        "fileSize": 23692,
+        "contentType": "image/webp",
+        "etag": "\"22189f8ddf74516911a294da9d05347d\"",
+        "lastModified": "Tue, 07 Oct 2025 17:39:33 GMT"
+      },
+      "/images/services/analytics-hero.webp": {
+        "success": true,
+        "statusCode": 200,
+        "loadTime": 7,
+        "fileSize": 23692,
+        "contentType": "image/webp",
+        "etag": "\"22189f8ddf74516911a294da9d05347d\"",
+        "lastModified": "Tue, 07 Oct 2025 18:24:23 GMT"
+      },
+      "/images/blog/test-image.jpg": {
+        "success": true,
+        "statusCode": 200,
+        "loadTime": 494,
+        "fileSize": 83941,
+        "contentType": "text/html",
+        "etag": "\"cf26e3925e6b3082dc951c973d2c036c\"",
+        "lastModified": "Thu, 09 Oct 2025 21:26:06 GMT"
+      }
+    },
+    "cacheHitRate": 0,
+    "recommendations": [
+      "Implement proper cache headers for static images",
+      "Use CDN for global cache distribution",
+      "Set appropriate cache expiration times",
+      "Implement cache invalidation strategy for updates"
+    ]
+  },
+  "recommendations": [
+    "Implement lazy loading for images below the fold",
+    "Use responsive images with srcset attribute",
+    "Enable browser caching with proper headers",
+    "Consider using a CDN for global performance",
+    "Optimize images before deployment",
+    "Monitor Core Web Vitals for image impact"
+  ],
+  "summary": {
+    "totalImages": 3,
+    "successfulLoads": 3,
+    "averageLoadTime": 536,
+    "totalDataTransferred": 131325,
+    "compressionSavings": 25182,
+    "performanceGrade": "A"
+  }
+}

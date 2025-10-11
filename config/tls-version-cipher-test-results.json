@@ -1,0 +1,166 @@
+{
+  "timestamp": "2025-10-05T21:08:40.851Z",
+  "testSuite": "TLS Version and Cipher Suite Validation",
+  "tests": [
+    {
+      "name": "CloudFront Domain TLS Validation",
+      "domain": "d111111abcdef8.cloudfront.net",
+      "status": "passed",
+      "startTime": "2025-10-05T21:08:40.867Z",
+      "checks": [
+        {
+          "name": "TLS 1.2 Support",
+          "expected": true,
+          "actual": false,
+          "status": "failed"
+        },
+        {
+          "name": "Weak TLS Versions Disabled",
+          "expected": 0,
+          "actual": 0,
+          "status": "passed"
+        },
+        {
+          "name": "Strong Cipher Suites",
+          "expected": true,
+          "actual": false,
+          "status": "warning"
+        },
+        {
+          "name": "No Weak Ciphers",
+          "expected": 0,
+          "actual": 0,
+          "status": "passed"
+        },
+        {
+          "name": "Perfect Forward Secrecy",
+          "expected": true,
+          "actual": false,
+          "status": "warning"
+        },
+        {
+          "name": "Security Score Above 70",
+          "expected": true,
+          "actual": false,
+          "status": "warning",
+          "score": 0
+        }
+      ],
+      "endTime": "2025-10-05T21:08:41.066Z",
+      "securityScore": 0
+    },
+    {
+      "name": "Secure Domain TLS Validation",
+      "domain": "github.com",
+      "status": "passed",
+      "startTime": "2025-10-05T21:08:41.067Z",
+      "checks": [
+        {
+          "name": "TLS 1.3 Support",
+          "expected": true,
+          "actual": false,
+          "status": "warning"
+        },
+        {
+          "name": "Security Best Practices",
+          "expected": true,
+          "actual": false,
+          "status": "warning"
+        }
+      ],
+      "endTime": "2025-10-05T21:08:41.117Z",
+      "securityScore": 0
+    },
+    {
+      "name": "Validation Logic Tests",
+      "status": "passed",
+      "startTime": "2025-10-05T21:08:41.118Z",
+      "checks": [
+        {
+          "name": "Strong Cipher Detection",
+          "expected": "strong",
+          "actual": "strong",
+          "status": "passed"
+        },
+        {
+          "name": "Weak Cipher Detection",
+          "expected": "weak",
+          "actual": "weak",
+          "status": "passed"
+        },
+        {
+          "name": "TLS Version Classification",
+          "expected": true,
+          "actual": true,
+          "status": "passed"
+        },
+        {
+          "name": "Security Scoring Algorithm",
+          "expected": true,
+          "actual": true,
+          "status": "passed",
+          "score": 80
+        },
+        {
+          "name": "Compliance Calculation",
+          "expected": true,
+          "actual": true,
+          "status": "passed"
+        }
+      ],
+      "endTime": "2025-10-05T21:08:41.139Z"
+    },
+    {
+      "name": "Configuration Loading Tests",
+      "status": "passed",
+      "startTime": "2025-10-05T21:08:41.140Z",
+      "checks": [
+        {
+          "name": "Config File Loading",
+          "expected": true,
+          "actual": {
+            "minimumTlsVersion": "1.2",
+            "recommendedTlsVersion": "1.3",
+            "securityPolicy": "TLSv1.2_2021",
+            "minimumSecurityScore": 70,
+            "targetSecurityScore": 90
+          },
+          "status": "passed"
+        },
+        {
+          "name": "Default Config Fallback",
+          "expected": true,
+          "actual": true,
+          "status": "passed"
+        }
+      ],
+      "endTime": "2025-10-05T21:08:41.142Z"
+    },
+    {
+      "name": "Error Handling Tests",
+      "status": "passed",
+      "startTime": "2025-10-05T21:08:41.146Z",
+      "checks": [
+        {
+          "name": "Invalid Domain Handling",
+          "expected": false,
+          "actual": true,
+          "status": "failed"
+        },
+        {
+          "name": "Timeout Handling",
+          "expected": true,
+          "actual": true,
+          "status": "passed"
+        }
+      ],
+      "endTime": "2025-10-05T21:08:41.195Z"
+    }
+  ],
+  "summary": {
+    "total": 5,
+    "passed": 5,
+    "failed": 0,
+    "warnings": 0
+  }
+}

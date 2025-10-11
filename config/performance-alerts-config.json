@@ -1,0 +1,181 @@
+{
+  "timestamp": "2025-10-10T21:40:33.858Z",
+  "enabled": true,
+  "alertRules": [
+    {
+      "id": "image-loading-failure",
+      "name": "Image Loading Failure",
+      "description": "Triggered when images fail to load",
+      "condition": {
+        "metric": "image_success_rate",
+        "operator": "less_than",
+        "threshold": 95,
+        "duration": "5m"
+      },
+      "severity": "ERROR",
+      "actions": [
+        "log",
+        "notify"
+      ],
+      "cooldown": "10m",
+      "message": "Critical: Images failing to load - immediate attention required"
+    },
+    {
+      "id": "slow-image-loading",
+      "name": "Slow Image Loading",
+      "description": "Triggered when images load slowly",
+      "condition": {
+        "metric": "avg_image_load_time",
+        "operator": "greater_than",
+        "threshold": 2000,
+        "duration": "10m"
+      },
+      "severity": "WARNING",
+      "actions": [
+        "log",
+        "notify"
+      ],
+      "cooldown": "30m",
+      "message": "Warning: Images loading slowly - performance optimization needed"
+    },
+    {
+      "id": "poor-lcp-performance",
+      "name": "Poor LCP Performance",
+      "description": "Triggered when LCP exceeds threshold",
+      "condition": {
+        "metric": "lcp",
+        "operator": "greater_than",
+        "threshold": 4000,
+        "duration": "5m"
+      },
+      "severity": "ERROR",
+      "actions": [
+        "log",
+        "notify",
+        "escalate"
+      ],
+      "cooldown": "15m",
+      "message": "Critical: LCP performance poor - SEO impact likely"
+    },
+    {
+      "id": "layout-shift-issues",
+      "name": "Layout Shift Issues",
+      "description": "Triggered when CLS exceeds threshold",
+      "condition": {
+        "metric": "cls",
+        "operator": "greater_than",
+        "threshold": 0.5,
+        "duration": "10m"
+      },
+      "severity": "WARNING",
+      "actions": [
+        "log",
+        "notify"
+      ],
+      "cooldown": "20m",
+      "message": "Warning: Layout shift issues detected - user experience impact"
+    },
+    {
+      "id": "large-image-sizes",
+      "name": "Large Image Sizes",
+      "description": "Triggered when images are too large",
+      "condition": {
+        "metric": "avg_image_size",
+        "operator": "greater_than",
+        "threshold": 512000,
+        "duration": "1h"
+      },
+      "severity": "INFO",
+      "actions": [
+        "log"
+      ],
+      "cooldown": "4h",
+      "message": "Info: Large image sizes detected - consider optimization"
+    }
+  ],
+  "notificationChannels": {
+    "console": {
+      "enabled": true,
+      "format": "colored",
+      "includeTimestamp": true
+    },
+    "file": {
+      "enabled": true,
+      "logFile": "./logs/performance-alerts.log",
+      "format": "json",
+      "rotation": {
+        "enabled": true,
+        "maxSize": "10MB",
+        "maxFiles": 5
+      }
+    },
+    "webhook": {
+      "enabled": false,
+      "url": null,
+      "headers": {},
+      "timeout": 5000
+    },
+    "email": {
+      "enabled": false,
+      "recipients": [],
+      "smtp": {}
+    }
+  },
+  "escalationPolicies": {
+    "levels": [
+      {
+        "level": 1,
+        "severity": [
+          "INFO"
+        ],
+        "actions": [
+          "log"
+        ],
+        "delay": "0m"
+      },
+      {
+        "level": 2,
+        "severity": [
+          "WARNING"
+        ],
+        "actions": [
+          "log",
+          "notify"
+        ],
+        "delay": "5m"
+      },
+      {
+        "level": 3,
+        "severity": [
+          "ERROR"
+        ],
+        "actions": [
+          "log",
+          "notify",
+          "escalate"
+        ],
+        "delay": "2m"
+      }
+    ],
+    "escalationDelay": "30m",
+    "maxEscalations": 3
+  },
+  "monitoringSchedule": {
+    "enabled": true,
+    "frequency": "1h",
+    "timezone": "UTC",
+    "activeHours": {
+      "enabled": false,
+      "start": "09:00",
+      "end": "17:00",
+      "days": [
+        "monday",
+        "tuesday",
+        "wednesday",
+        "thursday",
+        "friday"
+      ]
+    },
+    "maintenanceWindows": []
+  }
+}

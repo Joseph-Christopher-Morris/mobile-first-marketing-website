@@ -1,0 +1,111 @@
+{
+  "timestamp": "2025-10-05T20:58:19.340Z",
+  "tests": [
+    {
+      "name": "CloudFront Domain Validation",
+      "domain": "d111111abcdef8.cloudfront.net",
+      "status": "passed",
+      "startTime": "2025-10-05T20:58:19.358Z",
+      "checks": [
+        {
+          "name": "TLS 1.2 Support",
+          "expected": true,
+          "actual": false,
+          "status": "failed"
+        },
+        {
+          "name": "Weak TLS Versions Disabled",
+          "expected": false,
+          "actual": false,
+          "status": "passed"
+        },
+        {
+          "name": "Security Score Above 70",
+          "expected": true,
+          "actual": false,
+          "status": "warning"
+        }
+      ],
+      "endTime": "2025-10-05T20:58:19.508Z"
+    },
+    {
+      "name": "Secure Domain Validation",
+      "domain": "github.com",
+      "status": "passed",
+      "startTime": "2025-10-05T20:58:19.509Z",
+      "checks": [
+        {
+          "name": "TLS 1.3 Support",
+          "expected": true,
+          "actual": false,
+          "status": "warning"
+        },
+        {
+          "name": "Perfect Forward Secrecy",
+          "expected": true,
+          "actual": false,
+          "status": "warning"
+        },
+        {
+          "name": "No Weak Ciphers",
+          "expected": 0,
+          "actual": 0,
+          "status": "passed"
+        }
+      ],
+      "endTime": "2025-10-05T20:58:19.533Z"
+    },
+    {
+      "name": "Validation Logic Tests",
+      "status": "passed",
+      "startTime": "2025-10-05T20:58:19.533Z",
+      "checks": [
+        {
+          "name": "TLS Version Logic",
+          "expected": true,
+          "actual": true,
+          "status": "passed"
+        },
+        {
+          "name": "Cipher Strength Logic",
+          "expected": true,
+          "actual": true,
+          "status": "passed"
+        },
+        {
+          "name": "Security Scoring Logic",
+          "expected": true,
+          "actual": true,
+          "status": "passed"
+        }
+      ],
+      "endTime": "2025-10-05T20:58:19.535Z"
+    },
+    {
+      "name": "Error Handling Tests",
+      "status": "passed",
+      "startTime": "2025-10-05T20:58:19.536Z",
+      "checks": [
+        {
+          "name": "Invalid Domain Handling",
+          "expected": false,
+          "actual": true,
+          "status": "failed"
+        },
+        {
+          "name": "Timeout Handling",
+          "expected": true,
+          "actual": true,
+          "status": "passed"
+        }
+      ],
+      "endTime": "2025-10-05T20:58:19.564Z"
+    }
+  ],
+  "summary": {
+    "total": 4,
+    "passed": 4,
+    "failed": 0,
+    "warnings": 0
+  }
+}

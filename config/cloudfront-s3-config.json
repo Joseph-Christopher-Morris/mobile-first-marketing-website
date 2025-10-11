@@ -1,0 +1,251 @@
+{
+  "version": "2.0",
+  "description": "CloudFront configuration for S3 static website hosting with Origin Access Control",
+  "distribution": {
+    "comment": "Mobile-first marketing website - S3 + CloudFront",
+    "enabled": true,
+    "priceClass": "PriceClass_100",
+    "httpVersion": "http2and3",
+    "isIPV6Enabled": true,
+    "defaultRootObject": "index.html",
+    "origins": [
+      {
+        "id": "s3-private-origin",
+        "domainName": "${S3_BUCKET_NAME}.s3.${AWS_REGION}.amazonaws.com",
+        "originAccessControlId": "${OAC_ID}",
+        "connectionAttempts": 3,
+        "connectionTimeout": 10,
+        "customHeaders": []
+      }
+    ],
+    "defaultCacheBehavior": {
+      "targetOriginId": "s3-private-origin",
+      "viewerProtocolPolicy": "redirect-to-https",
+      "allowedMethods": ["GET", "HEAD", "OPTIONS"],
+      "cachedMethods": ["GET", "HEAD"],
+      "compress": true,
+      "cachePolicyId": "4135ea2d-6df8-44a3-9df3-4b5a84be39ad",
+      "originRequestPolicyId": "88a5eaf4-2fd4-4709-b370-b4c650ea3fcf",
+      "responseHeadersPolicyId": "67f7725c-6f97-4210-82d7-5512b31e9d03",
+      "smoothStreaming": false,
+      "fieldLevelEncryptionId": "",
+      "realtimeLogConfigArn": ""
+    },
+    "cacheBehaviors": [
+      {
+        "pathPattern": "/_next/static/*",
+        "targetOriginId": "s3-private-origin",
+        "viewerProtocolPolicy": "redirect-to-https",
+        "allowedMethods": ["GET", "HEAD"],
+        "cachedMethods": ["GET", "HEAD"],
+        "compress": true,
+        "cachePolicyId": "658327ea-f89d-4fab-a63d-7e88639e58f6",
+        "originRequestPolicyId": "88a5eaf4-2fd4-4709-b370-b4c650ea3fcf",
+        "responseHeadersPolicyId": "67f7725c-6f97-4210-82d7-5512b31e9d03",
+        "precedence": 1,
+        "description": "Long cache for Next.js static assets"
+      },
+      {
+        "pathPattern": "*.{js,css,png,jpg,jpeg,gif,ico,svg,woff,woff2,ttf,eot,webp,avif}",
+        "targetOriginId": "s3-private-origin",
+        "viewerProtocolPolicy": "redirect-to-https",
+        "allowedMethods": ["GET", "HEAD"],
+        "cachedMethods": ["GET", "HEAD"],
+        "compress": true,
+        "cachePolicyId": "658327ea-f89d-4fab-a63d-7e88639e58f6",
+        "originRequestPolicyId": "88a5eaf4-2fd4-4709-b370-b4c650ea3fcf",
+        "responseHeadersPolicyId": "67f7725c-6f97-4210-82d7-5512b31e9d03",
+        "precedence": 2,
+        "description": "Long cache for static assets"
+      },
+      {
+        "pathPattern": "*.html",
+        "targetOriginId": "s3-private-origin",
+        "viewerProtocolPolicy": "redirect-to-https",
+        "allowedMethods": ["GET", "HEAD", "OPTIONS"],
+        "cachedMethods": ["GET", "HEAD"],
+        "compress": true,
+        "cachePolicyId": "4135ea2d-6df8-44a3-9df3-4b5a84be39ad",
+        "originRequestPolicyId": "88a5eaf4-2fd4-4709-b370-b4c650ea3fcf",
+        "responseHeadersPolicyId": "67f7725c-6f97-4210-82d7-5512b31e9d03",
+        "precedence": 3,
+        "description": "Short cache for HTML files (5 minutes)"
+      },
+      {
+        "pathPattern": "/sw.js",
+        "targetOriginId": "s3-private-origin",
+        "viewerProtocolPolicy": "redirect-to-https",
+        "allowedMethods": ["GET", "HEAD", "OPTIONS"],
+        "cachedMethods": ["GET", "HEAD"],
+        "compress": true,
+        "cachePolicyId": "4135ea2d-6df8-44a3-9df3-4b5a84be39ad",
+        "originRequestPolicyId": "88a5eaf4-2fd4-4709-b370-b4c650ea3fcf",
+        "responseHeadersPolicyId": "67f7725c-6f97-4210-82d7-5512b31e9d03",
+        "precedence": 4,
+        "description": "No cache for service worker"
+      },
+      {
+        "pathPattern": "/manifest.json",
+        "targetOriginId": "s3-private-origin",
+        "viewerProtocolPolicy": "redirect-to-https",
+        "allowedMethods": ["GET", "HEAD"],
+        "cachedMethods": ["GET", "HEAD"],
+        "compress": true,
+        "cachePolicyId": "b2884449-e4de-46a7-ac36-70bc7f1ddd6d",
+        "originRequestPolicyId": "88a5eaf4-2fd4-4709-b370-b4c650ea3fcf",
+        "responseHeadersPolicyId": "67f7725c-6f97-4210-82d7-5512b31e9d03",
+        "precedence": 5,
+        "description": "Medium cache for manifest file"
+      }
+    ],
+    "customErrorResponses": [
+      {
+        "errorCode": 404,
+        "responsePagePath": "/index.html",
+        "responseCode": "200",
+        "errorCachingMinTTL": 300,
+        "description": "SPA routing support - serve index.html for 404s"
+      },
+      {
+        "errorCode": 403,
+        "responsePagePath": "/index.html",
+        "responseCode": "200",
+        "errorCachingMinTTL": 300,
+        "description": "Handle S3 403 errors as 404s for SPA routing"
+      }
+    ],
+    "webACLId": "",
+    "logging": {
+      "enabled": false,
+      "includeCookies": false,
+      "bucket": "",
+      "prefix": "cloudfront-logs/"
+    }
+  },
+  "managedPolicies": {
+    "cachePolicies": {
+      "CachingOptimized": "658327ea-f89d-4fab-a63d-7e88639e58f6",
+      "CachingDisabled": "4135ea2d-6df8-44a3-9df3-4b5a84be39ad",
+      "CachingOptimizedForUncompressedObjects": "b2884449-e4de-46a7-ac36-70bc7f1ddd6d"
+    },
+    "originRequestPolicies": {
+      "CORS-S3Origin": "88a5eaf4-2fd4-4709-b370-b4c650ea3fcf",
+      "AllViewer": "216adef6-5c7f-47e4-b989-5492eafa07d3"
+    },
+    "responseHeadersPolicies": {
+      "SecurityHeadersPolicy": "67f7725c-6f97-4210-82d7-5512b31e9d03",
+      "CORS-WithPreflight": "5cc3b908-e619-4b99-88e5-2cf7f45965bd"
+    }
+  },
+  "security": {
+    "originAccessControl": {
+      "name": "${S3_BUCKET_NAME}-oac",
+      "description": "Origin Access Control for secure S3 access",
+      "signingBehavior": "always",
+      "signingProtocol": "sigv4",
+      "originType": "s3"
+    },
+    "s3BucketPolicy": {
+      "version": "2012-10-17",
+      "statement": [
+        {
+          "sid": "AllowCloudFrontServicePrincipal",
+          "effect": "Allow",
+          "principal": {
+            "service": "cloudfront.amazonaws.com"
+          },
+          "action": "s3:GetObject",
+          "resource": "arn:aws:s3:::${S3_BUCKET_NAME}/*",
+          "condition": {
+            "StringEquals": {
+              "AWS:SourceArn": "arn:aws:cloudfront::${AWS_ACCOUNT_ID}:distribution/${DISTRIBUTION_ID}"
+            }
+          }
+        }
+      ]
+    }
+  },
+  "performance": {
+    "compression": {
+      "enabled": true,
+      "types": [
+        "text/html",
+        "text/css",
+        "application/javascript",
+        "application/json",
+        "image/svg+xml",
+        "application/xml",
+        "text/xml",
+        "text/plain",
+        "application/manifest+json"
+      ]
+    },
+    "http2": {
+      "enabled": true
+    },
+    "http3": {
+      "enabled": true
+    },
+    "ipv6": {
+      "enabled": true
+    },
+    "edgeLocations": {
+      "priceClass": "PriceClass_100",
+      "regions": ["US", "Canada", "Europe"]
+    }
+  },
+  "caching": {
+    "strategies": {
+      "staticAssets": {
+        "ttl": 31536000,
+        "description": "1 year cache for versioned static assets"
+      },
+      "htmlFiles": {
+        "ttl": 300,
+        "description": "5 minutes cache for HTML files"
+      },
+      "manifestFiles": {
+        "ttl": 86400,
+        "description": "1 day cache for manifest files"
+      },
+      "serviceWorker": {
+        "ttl": 0,
+        "description": "No cache for service worker"
+      }
+    }
+  },
+  "monitoring": {
+    "realTimeMetrics": {
+      "enabled": true
+    },
+    "standardMetrics": {
+      "enabled": true
+    },
+    "recommendedAlarms": [
+      {
+        "name": "HighErrorRate",
+        "metric": "4xxErrorRate",
+        "threshold": 5,
+        "comparisonOperator": "GreaterThanThreshold",
+        "evaluationPeriods": 2,
+        "description": "Alert when 4xx error rate exceeds 5%"
+      },
+      {
+        "name": "HighOriginLatency",
+        "metric": "OriginLatency",
+        "threshold": 3000,
+        "comparisonOperator": "GreaterThanThreshold",
+        "evaluationPeriods": 3,
+        "description": "Alert when origin latency exceeds 3 seconds"
+      },
+      {
+        "name": "LowCacheHitRate",
+        "metric": "CacheHitRate",
+        "threshold": 80,
+        "comparisonOperator": "LessThanThreshold",
+        "evaluationPeriods": 3,
+        "description": "Alert when cache hit rate falls below 80%"
+      }
+    ]
+  }
+}

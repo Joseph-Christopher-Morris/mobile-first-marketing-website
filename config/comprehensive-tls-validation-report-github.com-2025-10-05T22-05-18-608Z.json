@@ -1,0 +1,745 @@
+{
+  "metadata": {
+    "title": "Comprehensive TLS Validation Report",
+    "domain": "github.com",
+    "timestamp": "2025-10-05T22:04:56.460Z",
+    "version": "1.0.0",
+    "generatedBy": "Comprehensive TLS Validation Report Generator"
+  },
+  "executiveSummary": {
+    "overallSecurityRating": "A",
+    "keyFindings": [
+      "Overall TLS security score: 90/100 (Grade: A)",
+      "✅ TLS 1.2 is supported",
+      "✅ TLS 1.3 is supported",
+      "✅ Perfect Forward Secrecy is supported",
+      "⚠️  Cipher suite security level is medium"
+    ],
+    "criticalIssues": [],
+    "recommendations": [
+      "Ensure TLS 1.2 and 1.3 are enabled",
+      "Disable weak TLS versions (1.0, 1.1)",
+      "Configure Perfect Forward Secrecy cipher suites",
+      "Use strong encryption algorithms (AES-256, ChaCha20)",
+      "Implement comprehensive security headers"
+    ],
+    "complianceStatus": {},
+    "riskLevel": "LOW"
+  },
+  "tlsConfiguration": {
+    "supportedProtocols": {
+      "TLS 1.2": {
+        "supported": true,
+        "required": true,
+        "negotiatedProtocol": "TLSv1.2",
+        "cipher": {
+          "name": "ECDHE-ECDSA-AES128-GCM-SHA256",
+          "standardName": "TLS_ECDHE_ECDSA_WITH_AES_128_GCM_SHA256",
+          "version": "TLSv1.2"
+        },
+        "connectionTime": 297,
+        "status": "✅ SUPPORTED"
+      },
+      "TLS 1.3": {
+        "supported": true,
+        "required": false,
+        "negotiatedProtocol": "TLSv1.3",
+        "cipher": {
+          "name": "TLS_AES_128_GCM_SHA256",
+          "standardName": "TLS_AES_128_GCM_SHA256",
+          "version": "TLSv1.3"
+        },
+        "connectionTime": 57,
+        "status": "✅ SUPPORTED"
+      },
+      "SSL 3.0": {
+        "supported": false,
+        "shouldBeDisabled": true,
+        "critical": true,
+        "status": "✅ DISABLED"
+      },
+      "TLS 1.0": {
+        "supported": false,
+        "shouldBeDisabled": true,
+        "critical": true,
+        "status": "✅ DISABLED"
+      },
+      "TLS 1.1": {
+        "supported": false,
+        "shouldBeDisabled": true,
+        "critical": true,
+        "status": "✅ DISABLED"
+      }
+    },
+    "cipherSuites": {
+      "negotiatedCiphers": [
+        {
+          "tlsVersion": "TLSv1.3",
+          "cipher": {
+            "name": "TLS_AES_128_GCM_SHA256",
+            "standardName": "TLS_AES_128_GCM_SHA256",
+            "version": "TLSv1.3"
+          },
+          "analysis": {
+            "name": "TLS_AES_128_GCM_SHA256",
+            "pfs": true,
+            "strongEncryption": false,
+            "keyExchange": "ECDHE",
+            "encryption": "AES-128",
+            "mac": "SHA256",
+            "strong": false
+          }
+        },
+        {
+          "tlsVersion": "TLSv1.2",
+          "cipher": {
+            "name": "ECDHE-ECDSA-AES128-GCM-SHA256",
+            "standardName": "TLS_ECDHE_ECDSA_WITH_AES_128_GCM_SHA256",
+            "version": "TLSv1.2"
+          },
+          "analysis": {
+            "name": "ECDHE-ECDSA-AES128-GCM-SHA256",
+            "pfs": true,
+            "strongEncryption": false,
+            "keyExchange": "ECDHE",
+            "encryption": "AES-128",
+            "mac": "SHA256",
+            "strong": false
+          }
+        }
+      ],
+      "strongCiphers": [],
+      "weakCiphers": [
+        "TLS_AES_128_GCM_SHA256",
+        "ECDHE-ECDSA-AES128-GCM-SHA256"
+      ],
+      "pfsSupported": true,
+      "strongEncryption": false,
+      "securityLevel": "MEDIUM"
+    },
+    "securityFeatures": {
+      "perfectForwardSecrecy": true,
+      "strongEncryption": false,
+      "modernProtocols": true
+    },
+    "configuration": {
+      "platform": "AWS CloudFront",
+      "recommendedSecurityPolicy": "TLSv1.2_2021",
+      "currentConfiguration": "To be determined from CloudFront distribution settings"
+    }
+  },
+  "securityAssessment": {
+    "overallScore": 90,
+    "categoryScores": {
+      "tlsVersions": {
+        "score": 40,
+        "maxScore": 40,
+        "weight": 0.4
+      },
+      "cipherSuites": {
+        "score": 20,
+        "maxScore": 30,
+        "weight": 0.3
+      },
+      "perfectForwardSecrecy": {
+        "score": 20,
+        "maxScore": 20,
+        "weight": 0.2
+      },
+      "compliance": {
+        "score": 10,
+        "maxScore": 10,
+        "weight": 0.1
+      }
+    },
+    "vulnerabilities": [],
+    "strengths": [
+      "TLS 1.2 support enabled",
+      "TLS 1.3 support enabled",
+      "Perfect Forward Secrecy implemented"
+    ],
+    "riskFactors": []
+  },
+  "complianceAnalysis": {
+    "standards": {
+      "PCI DSS": false,
+      "NIST": true,
+      "OWASP": true,
+      "details": {
+        "PCI DSS": {
+          "required": [
+            "TLS 1.2+",
+            "No weak TLS",
+            "Strong encryption"
+          ],
+          "status": "NON-COMPLIANT"
+        },
+        "NIST": {
+          "required": [
+            "TLS 1.2+",
+            "Perfect Forward Secrecy"
+          ],
+          "status": "COMPLIANT"
+        },
+        "OWASP": {
+          "required": [
+            "TLS 1.2+",
+            "No weak TLS",
+            "Strong ciphers"
+          ],
+          "status": "COMPLIANT"
+        }
+      }
+    },
+    "overallCompliance": "PARTIALLY_COMPLIANT",
+    "gaps": [
+      {
+        "standard": "PCI DSS",
+        "description": "TLS configuration does not meet PCI DSS requirements for secure payment processing",
+        "remediation": "Enable TLS 1.2+, disable weak TLS versions, use strong encryption"
+      }
+    ],
+    "requirements": {
+      "PCI DSS": {
+        "description": "Payment Card Industry Data Security Standard",
+        "requirements": [
+          "Use TLS 1.2 or higher",
+          "Disable weak TLS versions",
+          "Use strong encryption algorithms",
+          "Regular security testing"
+        ]
+      },
+      "NIST": {
+        "description": "National Institute of Standards and Technology",
+        "requirements": [
+          "Use approved cryptographic algorithms",
+          "Implement Perfect Forward Secrecy",
+          "Regular certificate validation",
+          "Proper key management"
+        ]
+      },
+      "OWASP": {
+        "description": "Open Web Application Security Project",
+        "requirements": [
+          "Use secure TLS configurations",
+          "Disable weak protocols and ciphers",
+          "Implement security headers",
+          "Regular vulnerability testing"
+        ]
+      }
+    }
+  },
+  "recommendations": {
+    "immediate": [],
+    "shortTerm": [
+      {
+        "priority": "HIGH",
+        "action": "Enable TLS 1.3 support for enhanced security and performance",
+        "timeline": "1-2 weeks",
+        "effort": "Medium"
+      },
+      {
+        "priority": "HIGH",
+        "action": "Implement comprehensive security headers",
+        "timeline": "1 week",
+        "effort": "Low"
+      },
+      {
+        "priority": "MEDIUM",
+        "action": "Configure Perfect Forward Secrecy cipher suites",
+        "timeline": "2-3 weeks",
+        "effort": "Medium"
+      }
+    ],
+    "longTerm": [
+      {
+        "priority": "MEDIUM",
+        "action": "Implement automated TLS configuration monitoring",
+        "timeline": "1-2 months",
+        "effort": "High"
+      },
+      {
+        "priority": "LOW",
+        "action": "Set up regular security assessments and penetration testing",
+        "timeline": "2-3 months",
+        "effort": "High"
+      },
+      {
+        "priority": "LOW",
+        "action": "Develop incident response procedures for TLS vulnerabilities",
+        "timeline": "1-2 months",
+        "effort": "Medium"
+      }
+    ],
+    "monitoring": [
+      {
+        "priority": "HIGH",
+        "action": "Monitor TLS certificate expiration dates",
+        "timeline": "Ongoing",
+        "effort": "Low"
+      },
+      {
+        "priority": "MEDIUM",
+        "action": "Track TLS security score and compliance status",
+        "timeline": "Ongoing",
+        "effort": "Medium"
+      },
+      {
+        "priority": "MEDIUM",
+        "action": "Monitor for new TLS vulnerabilities and updates",
+        "timeline": "Ongoing",
+        "effort": "Low"
+      }
+    ]
+  },
+  "technicalDetails": {
+    "comprehensiveValidation": {
+      "domain": "github.com",
+      "port": 443,
+      "timestamp": "2025-10-05T22:04:56.747Z",
+      "tlsVersionSupport": {
+        "TLS 1.2": {
+          "supported": true,
+          "required": true,
+          "negotiatedProtocol": "TLSv1.2",
+          "cipher": {
+            "name": "ECDHE-ECDSA-AES128-GCM-SHA256",
+            "standardName": "TLS_ECDHE_ECDSA_WITH_AES_128_GCM_SHA256",
+            "version": "TLSv1.2"
+          },
+          "connectionTime": 297,
+          "status": "✅ SUPPORTED"
+        },
+        "TLS 1.3": {
+          "supported": true,
+          "required": false,
+          "negotiatedProtocol": "TLSv1.3",
+          "cipher": {
+            "name": "TLS_AES_128_GCM_SHA256",
+            "standardName": "TLS_AES_128_GCM_SHA256",
+            "version": "TLSv1.3"
+          },
+          "connectionTime": 57,
+          "status": "✅ SUPPORTED"
+        },
+        "SSL 3.0": {
+          "supported": false,
+          "shouldBeDisabled": true,
+          "critical": true,
+          "status": "✅ DISABLED"
+        },
+        "TLS 1.0": {
+          "supported": false,
+          "shouldBeDisabled": true,
+          "critical": true,
+          "status": "✅ DISABLED"
+        },
+        "TLS 1.1": {
+          "supported": false,
+          "shouldBeDisabled": true,
+          "critical": true,
+          "status": "✅ DISABLED"
+        }
+      },
+      "cipherSuiteAnalysis": {
+        "negotiatedCiphers": [
+          {
+            "tlsVersion": "TLSv1.3",
+            "cipher": {
+              "name": "TLS_AES_128_GCM_SHA256",
+              "standardName": "TLS_AES_128_GCM_SHA256",
+              "version": "TLSv1.3"
+            },
+            "analysis": {
+              "name": "TLS_AES_128_GCM_SHA256",
+              "pfs": true,
+              "strongEncryption": false,
+              "keyExchange": "ECDHE",
+              "encryption": "AES-128",
+              "mac": "SHA256",
+              "strong": false
+            }
+          },
+          {
+            "tlsVersion": "TLSv1.2",
+            "cipher": {
+              "name": "ECDHE-ECDSA-AES128-GCM-SHA256",
+              "standardName": "TLS_ECDHE_ECDSA_WITH_AES_128_GCM_SHA256",
+              "version": "TLSv1.2"
+            },
+            "analysis": {
+              "name": "ECDHE-ECDSA-AES128-GCM-SHA256",
+              "pfs": true,
+              "strongEncryption": false,
+              "keyExchange": "ECDHE",
+              "encryption": "AES-128",
+              "mac": "SHA256",
+              "strong": false
+            }
+          }
+        ],
+        "strongCiphers": [],
+        "weakCiphers": [
+          "TLS_AES_128_GCM_SHA256",
+          "ECDHE-ECDSA-AES128-GCM-SHA256"
+        ],
+        "pfsSupported": true,
+        "strongEncryption": false,
+        "securityLevel": "MEDIUM"
+      },
+      "securityAssessment": {
+        "perfectForwardSecrecy": {
+          "supported": true,
+          "ciphersWithPFS": [
+            {
+              "tlsVersion": "TLSv1.3",
+              "cipher": "TLS_AES_128_GCM_SHA256",
+              "keyExchange": "ECDHE"
+            },
+            {
+              "tlsVersion": "TLSv1.2",
+              "cipher": "ECDHE-ECDSA-AES128-GCM-SHA256",
+              "keyExchange": "ECDHE"
+            }
+          ],
+          "ciphersWithoutPFS": [],
+          "recommendation": ""
+        },
+        "overall": {
+          "overallScore": 90,
+          "maxScore": 100,
+          "categories": {
+            "tlsVersions": {
+              "score": 40,
+              "maxScore": 40,
+              "weight": 0.4
+            },
+            "cipherSuites": {
+              "score": 20,
+              "maxScore": 30,
+              "weight": 0.3
+            },
+            "perfectForwardSecrecy": {
+              "score": 20,
+              "maxScore": 20,
+              "weight": 0.2
+            },
+            "compliance": {
+              "score": 10,
+              "maxScore": 10,
+              "weight": 0.1
+            }
+          },
+          "grade": "A",
+          "status": "EXCELLENT"
+        }
+      },
+      "complianceCheck": {
+        "PCI DSS": false,
+        "NIST": true,
+        "OWASP": true,
+        "details": {
+          "PCI DSS": {
+            "required": [
+              "TLS 1.2+",
+              "No weak TLS",
+              "Strong encryption"
+            ],
+            "status": "NON-COMPLIANT"
+          },
+          "NIST": {
+            "required": [
+              "TLS 1.2+",
+              "Perfect Forward Secrecy"
+            ],
+            "status": "COMPLIANT"
+          },
+          "OWASP": {
+            "required": [
+              "TLS 1.2+",
+              "No weak TLS",
+              "Strong ciphers"
+            ],
+            "status": "COMPLIANT"
+          }
+        }
+      },
+      "recommendations": [
+        "Use stronger encryption algorithms (AES-256, ChaCha20)"
+      ],
+      "testDetails": {
+        "totalTests": 8,
+        "passedTests": 7,
+        "failedTests": 1,
+        "warnings": 0
+      },
+      "summary": {
+        "domain": "github.com",
+        "timestamp": "2025-10-05T22:04:56.747Z",
+        "overallScore": 90,
+        "grade": "A",
+        "status": "EXCELLENT",
+        "testResults": {
+          "totalTests": 8,
+          "passedTests": 7,
+          "failedTests": 1,
+          "warnings": 0
+        },
+        "criticalIssues": 0,
+        "totalRecommendations": 1
+      }
+    },
+    "tlsVersionValidation": {
+      "timestamp": "2025-10-05T21:09:43.532Z",
+      "domain": "google.com",
+      "tlsVersionSupport": {
+        "TLSv1.0": {
+          "supported": false,
+          "secure": false,
+          "tested": true,
+          "connectionTime": 7
+        },
+        "TLSv1.1": {
+          "supported": false,
+          "secure": false,
+          "tested": true,
+          "connectionTime": 4
+        },
+        "TLSv1.2": {
+          "supported": false,
+          "secure": true,
+          "tested": true,
+          "connectionTime": 219
+        },
+        "TLSv1.3": {
+          "supported": false,
+          "secure": true,
+          "tested": true,
+          "connectionTime": 5
+        }
+      },
+      "weakTlsVersions": [],
+      "cipherSuites": [],
+      "weakCiphers": [],
+      "strongCiphers": [],
+      "perfectForwardSecrecy": {
+        "supported": false,
+        "algorithms": [],
+        "ephemeralKeyTypes": [],
+        "details": []
+      },
+      "securityScore": 0,
+      "complianceStatus": {
+        "PCI-DSS": false,
+        "NIST": false,
+        "OWASP": false
+      },
+      "recommendations": [
+        {
+          "type": "critical",
+          "category": "tls_version",
+          "title": "Enable TLS 1.2 Support",
+          "description": "TLS 1.2 is not supported, which is a critical security issue",
+          "action": "Configure CloudFront to support TLS 1.2 minimum",
+          "priority": 1
+        },
+        {
+          "type": "high",
+          "category": "overall_security",
+          "title": "Improve Overall Security Score",
+          "description": "Security score is 0/100, below recommended threshold",
+          "action": "Address the security issues identified in this report",
+          "priority": 1
+        },
+        {
+          "type": "recommended",
+          "category": "tls_version",
+          "title": "Enable TLS 1.3 Support",
+          "description": "TLS 1.3 provides improved security and performance",
+          "action": "Update CloudFront security policy to TLSv1.2_TLSv1.3_2021",
+          "priority": 2
+        },
+        {
+          "type": "medium",
+          "category": "perfect_forward_secrecy",
+          "title": "Enable Perfect Forward Secrecy",
+          "description": "Perfect Forward Secrecy not detected in cipher suites",
+          "action": "Ensure cipher suites support ECDHE or DHE key exchange",
+          "priority": 2
+        },
+        {
+          "type": "info",
+          "category": "cloudfront",
+          "title": "CloudFront Security Policy Recommendation",
+          "description": "Use the latest CloudFront security policy for optimal security",
+          "action": "Set CloudFront security policy to TLSv1.2_TLSv1.3_2021 or newer",
+          "priority": 3
+        }
+      ],
+      "errors": [],
+      "testDetails": {
+        "connectionAttempts": 4,
+        "successfulConnections": 0,
+        "failedConnections": 4
+      }
+    },
+    "pfsValidation": {
+      "error": "spawnSync C:\\WINDOWS\\system32\\cmd.exe ETIMEDOUT"
+    },
+    "cipherSuiteValidation": {
+      "error": "Command failed: node \"C:\\Users\\Joe\\Projects\\website-sync-20251003_133144\\scripts\\cipher-suite-configuration-validator.js\" \"github.com\""
+    },
+    "summary": {
+      "validationSteps": 4,
+      "dataCollected": "2025-10-05T22:05:18.607Z",
+      "validationTools": [
+        "Comprehensive TLS Validator",
+        "TLS Version Cipher Validator",
+        "Perfect Forward Secrecy Validator",
+        "Cipher Suite Configuration Validator"
+      ]
+    }
+  },
+  "testResults": {},
+  "appendices": {
+    "glossary": {
+      "TLS": "Transport Layer Security - A cryptographic protocol for secure communication",
+      "SSL": "Secure Sockets Layer - Predecessor to TLS, now deprecated",
+      "PFS": "Perfect Forward Secrecy - Ensures past communications remain secure even if private keys are compromised",
+      "Cipher Suite": "A set of algorithms that help secure a network connection",
+      "ECDHE": "Elliptic Curve Diffie-Hellman Ephemeral - Key exchange algorithm that provides PFS",
+      "AES": "Advanced Encryption Standard - Symmetric encryption algorithm",
+      "SHA": "Secure Hash Algorithm - Cryptographic hash function",
+      "CloudFront": "AWS Content Delivery Network service",
+      "OAC": "Origin Access Control - AWS CloudFront security feature"
+    },
+    "references": [
+      {
+        "title": "RFC 8446 - The Transport Layer Security (TLS) Protocol Version 1.3",
+        "url": "https://tools.ietf.org/html/rfc8446"
+      },
+      {
+        "title": "NIST SP 800-52 Rev. 2 - Guidelines for TLS Implementations",
+        "url": "https://csrc.nist.gov/publications/detail/sp/800-52/rev-2/final"
+      },
+      {
+        "title": "OWASP Transport Layer Protection Cheat Sheet",
+        "url": "https://cheatsheetseries.owasp.org/cheatsheets/Transport_Layer_Protection_Cheat_Sheet.html"
+      },
+      {
+        "title": "PCI DSS Requirements for TLS",
+        "url": "https://www.pcisecuritystandards.org/"
+      },
+      {
+        "title": "AWS CloudFront Security Policies",
+        "url": "https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/secure-connections-supported-viewer-protocols-ciphers.html"
+      }
+    ],
+    "configuration": {
+      "tlsValidation": {
+        "requiredVersions": [
+          "TLS 1.2",
+          "TLS 1.3"
+        ],
+        "prohibitedVersions": [
+          "SSL 2.0",
+          "SSL 3.0",
+          "TLS 1.0",
+          "TLS 1.1"
+        ],
+        "minimumSecurityLevel": "MEDIUM",
+        "requirePFS": true,
+        "strongEncryptionRequired": true
+      },
+      "cipherSuites": {
+        "recommended": [
+          "ECDHE-RSA-AES256-GCM-SHA384",
+          "ECDHE-RSA-AES128-GCM-SHA256",
+          "ECDHE-RSA-AES256-SHA384",
+          "ECDHE-RSA-AES128-SHA256",
+          "ECDHE-RSA-CHACHA20-POLY1305"
+        ],
+        "acceptable": [
+          "AES256-GCM-SHA384",
+          "AES128-GCM-SHA256",
+          "AES256-SHA256",
+          "AES128-SHA256"
+        ],
+        "prohibited": [
+          "RC4",
+          "DES",
+          "3DES",
+          "MD5",
+          "SHA1-only"
+        ]
+      },
+      "securityHeaders": {
+        "strictTransportSecurity": {
+          "required": true,
+          "minAge": 31536000,
+          "includeSubDomains": true,
+          "preload": true
+        },
+        "contentSecurityPolicy": {
+          "required": true,
+          "directives": [
+            "default-src 'self'",
+            "script-src 'self' 'unsafe-inline'",
+            "style-src 'self' 'unsafe-inline'",
+            "img-src 'self' data: https:",
+            "font-src 'self'",
+            "connect-src 'self'",
+            "frame-ancestors 'none'"
+          ]
+        }
+      },
+      "cloudfront": {
+        "securityPolicy": "TLSv1.2_2021",
+        "minimumProtocolVersion": "TLSv1.2_2021",
+        "sslSupportMethod": "sni-only",
+        "certificateSource": "acm"
+      },
+      "validation": {
+        "timeout": 10000,
+        "retries": 3,
+        "endpoints": [
+          "https://www.ssllabs.com/ssltest/",
+          "https://testssl.sh/"
+        ]
+      },
+      "compliance": {
+        "standards": [
+          "PCI DSS",
+          "NIST",
+          "OWASP"
+        ],
+        "requirements": {
+          "pciDss": {
+            "tlsVersion": "1.2+",
+            "strongCryptography": true,
+            "regularTesting": true
+          },
+          "nist": {
+            "approvedAlgorithms": true,
+            "keyManagement": true,
+            "certificateValidation": true
+          },
+          "owasp": {
+            "secureDefaults": true,
+            "regularUpdates": true,
+            "vulnerabilityTesting": true
+          }
+        }
+      }
+    },
+    "rawData": {
+      "note": "Raw validation data is available in the technicalDetails section",
+      "files": [
+        "comprehensive-tls-validation.json",
+        "tls-version-cipher-validation-report.json",
+        "pfs-validation-report.json",
+        "cipher-suite-validation-report.json"
+      ]
+    }
+  }
+}

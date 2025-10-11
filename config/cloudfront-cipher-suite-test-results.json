@@ -1,0 +1,237 @@
+{
+  "timestamp": "2025-10-05T21:44:09.814Z",
+  "cloudFrontTests": [
+    {
+      "validationScore": 75,
+      "passed": false,
+      "recommendations": [
+        "Disable 38 weak cipher suites found in configuration",
+        "Regularly update cipher suite configurations",
+        "Monitor for new cipher suite vulnerabilities",
+        "Test cipher configurations in staging before production"
+      ],
+      "complianceCheck": {
+        "strongCipherSupport": true,
+        "noWeakCiphers": false,
+        "modernEncryption": true,
+        "perfectForwardSecrecy": true,
+        "aeadSupport": true,
+        "overallCompliant": true
+      }
+    }
+  ],
+  "securityPolicyTests": [
+    {
+      "policyName": "TLSv1.2_2021",
+      "description": "Latest CloudFront security policy (recommended)",
+      "supportedProtocols": [
+        "TLSv1.2",
+        "TLSv1.3"
+      ],
+      "requiredCiphers": [
+        "ECDHE-RSA-AES256-GCM-SHA384",
+        "ECDHE-RSA-AES128-GCM-SHA256",
+        "ECDHE-ECDSA-AES256-GCM-SHA384",
+        "ECDHE-ECDSA-AES128-GCM-SHA256",
+        "ECDHE-RSA-CHACHA20-POLY1305",
+        "ECDHE-ECDSA-CHACHA20-POLY1305"
+      ],
+      "testResults": {
+        "protocolSupport": {
+          "supportedProtocols": [
+            "TLSv1.2",
+            "TLSv1.3"
+          ],
+          "modernProtocols": [
+            "TLSv1.2",
+            "TLSv1.3"
+          ],
+          "legacyProtocols": [],
+          "score": 90
+        },
+        "cipherSupport": {
+          "requiredCiphers": [
+            "ECDHE-RSA-AES256-GCM-SHA384",
+            "ECDHE-RSA-AES128-GCM-SHA256",
+            "ECDHE-ECDSA-AES256-GCM-SHA384",
+            "ECDHE-ECDSA-AES128-GCM-SHA256",
+            "ECDHE-RSA-CHACHA20-POLY1305",
+            "ECDHE-ECDSA-CHACHA20-POLY1305"
+          ],
+          "strongCiphers": [
+            "ECDHE-RSA-AES256-GCM-SHA384",
+            "ECDHE-RSA-AES128-GCM-SHA256",
+            "ECDHE-ECDSA-AES256-GCM-SHA384",
+            "ECDHE-ECDSA-AES128-GCM-SHA256"
+          ],
+          "modernCiphers": [
+            "ECDHE-RSA-CHACHA20-POLY1305",
+            "ECDHE-ECDSA-CHACHA20-POLY1305"
+          ],
+          "score": 100
+        },
+        "securityScore": 95,
+        "passed": true
+      }
+    },
+    {
+      "policyName": "TLSv1.2_2019",
+      "description": "CloudFront security policy from 2019",
+      "supportedProtocols": [
+        "TLSv1.2"
+      ],
+      "requiredCiphers": [
+        "ECDHE-RSA-AES256-GCM-SHA384",
+        "ECDHE-RSA-AES128-GCM-SHA256",
+        "ECDHE-ECDSA-AES256-GCM-SHA384",
+        "ECDHE-ECDSA-AES128-GCM-SHA256"
+      ],
+      "testResults": {
+        "protocolSupport": {
+          "supportedProtocols": [
+            "TLSv1.2"
+          ],
+          "modernProtocols": [
+            "TLSv1.2"
+          ],
+          "legacyProtocols": [],
+          "score": 40
+        },
+        "cipherSupport": {
+          "requiredCiphers": [
+            "ECDHE-RSA-AES256-GCM-SHA384",
+            "ECDHE-RSA-AES128-GCM-SHA256",
+            "ECDHE-ECDSA-AES256-GCM-SHA384",
+            "ECDHE-ECDSA-AES128-GCM-SHA256"
+          ],
+          "strongCiphers": [
+            "ECDHE-RSA-AES256-GCM-SHA384",
+            "ECDHE-RSA-AES128-GCM-SHA256",
+            "ECDHE-ECDSA-AES256-GCM-SHA384",
+            "ECDHE-ECDSA-AES128-GCM-SHA256"
+          ],
+          "modernCiphers": [],
+          "score": 60
+        },
+        "securityScore": 50,
+        "passed": false
+      }
+    },
+    {
+      "policyName": "TLSv1.2_2017",
+      "description": "Legacy CloudFront security policy (minimum)",
+      "supportedProtocols": [
+        "TLSv1.2"
+      ],
+      "requiredCiphers": [
+        "ECDHE-RSA-AES256-GCM-SHA384",
+        "ECDHE-RSA-AES128-GCM-SHA256"
+      ],
+      "testResults": {
+        "protocolSupport": {
+          "supportedProtocols": [
+            "TLSv1.2"
+          ],
+          "modernProtocols": [
+            "TLSv1.2"
+          ],
+          "legacyProtocols": [],
+          "score": 40
+        },
+        "cipherSupport": {
+          "requiredCiphers": [
+            "ECDHE-RSA-AES256-GCM-SHA384",
+            "ECDHE-RSA-AES128-GCM-SHA256"
+          ],
+          "strongCiphers": [
+            "ECDHE-RSA-AES256-GCM-SHA384",
+            "ECDHE-RSA-AES128-GCM-SHA256"
+          ],
+          "modernCiphers": [],
+          "score": 30
+        },
+        "securityScore": 35,
+        "passed": false
+      }
+    }
+  ],
+  "cipherSuiteTests": [
+    {
+      "name": "Perfect Forward Secrecy",
+      "description": "Verify ECDHE/DHE key exchange support",
+      "passed": true,
+      "result": {
+        "passed": true,
+        "details": "Found 6 PFS ciphers",
+        "pfsCiphers": [
+          "ECDHE-RSA-AES256-GCM-SHA384",
+          "ECDHE-RSA-AES128-GCM-SHA256",
+          "ECDHE-ECDSA-AES256-GCM-SHA384",
+          "ECDHE-ECDSA-AES128-GCM-SHA256",
+          "ECDHE-RSA-CHACHA20-POLY1305",
+          "ECDHE-ECDSA-CHACHA20-POLY1305"
+        ]
+      }
+    },
+    {
+      "name": "AEAD Cipher Support",
+      "description": "Verify GCM and ChaCha20-Poly1305 support",
+      "passed": true,
+      "result": {
+        "passed": true,
+        "details": "Found 6 AEAD ciphers",
+        "aeadCiphers": [
+          "ECDHE-RSA-AES256-GCM-SHA384",
+          "ECDHE-RSA-AES128-GCM-SHA256",
+          "ECDHE-ECDSA-AES256-GCM-SHA384",
+          "ECDHE-ECDSA-AES128-GCM-SHA256",
+          "ECDHE-RSA-CHACHA20-POLY1305",
+          "ECDHE-ECDSA-CHACHA20-POLY1305"
+        ]
+      }
+    },
+    {
+      "name": "Strong Encryption",
+      "description": "Verify AES-256 and ChaCha20 support",
+      "passed": true,
+      "result": {
+        "passed": true,
+        "details": "Found 4 strong encryption ciphers",
+        "strongCiphers": [
+          "ECDHE-RSA-AES256-GCM-SHA384",
+          "ECDHE-ECDSA-AES256-GCM-SHA384",
+          "ECDHE-RSA-CHACHA20-POLY1305",
+          "ECDHE-ECDSA-CHACHA20-POLY1305"
+        ]
+      }
+    },
+    {
+      "name": "Weak Cipher Rejection",
+      "description": "Verify weak ciphers are not supported",
+      "passed": true,
+      "result": {
+        "passed": true,
+        "details": "Found 0 weak ciphers",
+        "weakCiphers": []
+      }
+    },
+    {
+      "name": "Modern TLS Support",
+      "description": "Verify TLS 1.2+ protocol support",
+      "passed": true,
+      "result": {
+        "passed": true,
+        "details": "Supports 2 modern TLS protocols",
+        "modernProtocols": [
+          "TLSv1.2",
+          "TLSv1.3"
+        ]
+      }
+    }
+  ],
+  "summary": {
+    "total": 3,
+    "passed": 1,
+    "failed": 2
+  }
+}

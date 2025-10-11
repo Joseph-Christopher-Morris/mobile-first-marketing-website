@@ -1,0 +1,200 @@
+{
+  "timestamp": "2025-10-05T15:51:31.523Z",
+  "summary": {
+    "totalTests": 10,
+    "passed": 5,
+    "failed": 5,
+    "warnings": 1,
+    "passRate": 50
+  },
+  "budgets": {
+    "lcp": 2500,
+    "fid": 100,
+    "cls": 0.1,
+    "fcp": 1800,
+    "tti": 3800,
+    "tbt": 200,
+    "si": 3400,
+    "jsBundle": 512000,
+    "cssBundle": 102400,
+    "totalAssets": 2097152,
+    "imageOptimization": 0.8,
+    "pageLoadTime": 3000,
+    "timeToFirstByte": 600,
+    "cacheHitRate": 0.9,
+    "compressionRate": 0.7,
+    "performanceScore": 85,
+    "accessibilityScore": 95,
+    "bestPracticesScore": 90,
+    "seoScore": 95
+  },
+  "results": {
+    "passed": [
+      {
+        "metric": "Lighthouse Performance Score",
+        "value": "92.4",
+        "budget": 85,
+        "status": "passed"
+      },
+      {
+        "metric": "TBT",
+        "value": "156ms",
+        "budget": "200ms",
+        "status": "passed",
+        "rawValue": 155.8469232386447,
+        "rawBudget": 200
+      },
+      {
+        "metric": "SI",
+        "value": "3105ms",
+        "budget": "3400ms",
+        "status": "passed",
+        "rawValue": 3105.026619190349,
+        "rawBudget": 3400
+      },
+      {
+        "metric": "CSS Bundle",
+        "value": "81.8 KB",
+        "budget": "100 KB",
+        "status": "passed",
+        "rawValue": 83801.88069301122,
+        "rawBudget": 102400
+      },
+      {
+        "metric": "Total Assets",
+        "value": "1.8 MB",
+        "budget": "2 MB",
+        "status": "passed",
+        "rawValue": 1865863.9421776994,
+        "rawBudget": 2097152
+      }
+    ],
+    "failed": [
+      {
+        "metric": "LCP",
+        "value": "2626ms",
+        "budget": "2500ms",
+        "status": "failed",
+        "rawValue": 2626.054404093942,
+        "rawBudget": 2500
+      },
+      {
+        "metric": "CLS",
+        "value": "0.111",
+        "budget": "0.1",
+        "status": "failed",
+        "rawValue": 0.11102711464620843,
+        "rawBudget": 0.1
+      },
+      {
+        "metric": "FCP",
+        "value": "1876ms",
+        "budget": "1800ms",
+        "status": "failed",
+        "rawValue": 1875.5272777398834,
+        "rawBudget": 1800
+      },
+      {
+        "metric": "TTI",
+        "value": "3912ms",
+        "budget": "3800ms",
+        "status": "failed",
+        "rawValue": 3911.9446514080296,
+        "rawBudget": 3800
+      },
+      {
+        "metric": "JavaScript Bundle",
+        "value": "509.4 KB",
+        "budget": "500 KB",
+        "status": "failed",
+        "rawValue": 521592.7612369554,
+        "rawBudget": 512000
+      }
+    ],
+    "warnings": [
+      {
+        "category": "playwright",
+        "message": "Playwright performance tests failed",
+        "details": "Command failed: npx playwright test e2e/performance.spec.ts --reporter=json"
+      }
+    ],
+    "metrics": {
+      "lighthouse": {
+        "performance": 92.39966700404705,
+        "accessibility": 98.46564763534643,
+        "bestPractices": 92.95927906293767,
+        "seo": 97.56604473571991,
+        "metrics": {
+          "first-contentful-paint": 1875.5272777398834,
+          "largest-contentful-paint": 2626.054404093942,
+          "cumulative-layout-shift": 0.11102711464620843,
+          "total-blocking-time": 155.8469232386447,
+          "speed-index": 3105.026619190349,
+          "interactive": 3911.9446514080296
+        }
+      },
+      "bundles": {
+        "jsSize": 521592.7612369554,
+        "cssSize": 83801.88069301122,
+        "totalSize": 1865863.9421776994,
+        "chunks": [
+          {
+            "name": "main",
+            "size": 204800,
+            "type": "js"
+          },
+          {
+            "name": "framework",
+            "size": 153600,
+            "type": "js"
+          },
+          {
+            "name": "commons",
+            "size": 102400,
+            "type": "js"
+          },
+          {
+            "name": "styles",
+            "size": 81920,
+            "type": "css"
+          }
+        ]
+      }
+    }
+  },
+  "recommendations": [
+    {
+      "metric": "LCP",
+      "priority": "high",
+      "title": "Optimize Largest Contentful Paint",
+      "actions": [
+        "Optimize and compress hero images",
+        "Implement critical CSS inlining",
+        "Preload key resources",
+        "Optimize server response times"
+      ]
+    },
+    {
+      "metric": "CLS",
+      "priority": "medium",
+      "title": "Reduce Cumulative Layout Shift",
+      "actions": [
+        "Add size attributes to images and videos",
+        "Reserve space for dynamic content",
+        "Use CSS aspect-ratio for responsive media",
+        "Avoid inserting content above existing content"
+      ]
+    },
+    {
+      "metric": "JavaScript Bundle",
+      "priority": "high",
+      "title": "Reduce JavaScript Bundle Size",
+      "actions": [
+        "Implement code splitting",
+        "Remove unused dependencies",
+        "Use dynamic imports for non-critical code",
+        "Enable tree shaking optimization"
+      ]
+    }
+  ]
+}

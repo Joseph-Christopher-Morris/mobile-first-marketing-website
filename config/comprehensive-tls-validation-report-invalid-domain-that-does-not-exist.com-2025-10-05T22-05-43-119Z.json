@@ -1,0 +1,311 @@
+{
+  "metadata": {
+    "title": "Comprehensive TLS Validation Report",
+    "domain": "invalid-domain-that-does-not-exist.com",
+    "timestamp": "2025-10-05T22:05:31.979Z",
+    "version": "1.0.0",
+    "generatedBy": "Comprehensive TLS Validation Report Generator"
+  },
+  "executiveSummary": {
+    "overallSecurityRating": "UNKNOWN",
+    "keyFindings": [],
+    "criticalIssues": [],
+    "recommendations": [
+      "Ensure TLS 1.2 and 1.3 are enabled",
+      "Disable weak TLS versions (1.0, 1.1)",
+      "Configure Perfect Forward Secrecy cipher suites",
+      "Use strong encryption algorithms (AES-256, ChaCha20)",
+      "Implement comprehensive security headers"
+    ],
+    "complianceStatus": {},
+    "riskLevel": "UNKNOWN"
+  },
+  "tlsConfiguration": {
+    "supportedProtocols": {},
+    "cipherSuites": {},
+    "securityFeatures": {
+      "perfectForwardSecrecy": false,
+      "strongEncryption": false,
+      "modernProtocols": false
+    },
+    "configuration": {
+      "platform": "AWS CloudFront",
+      "recommendedSecurityPolicy": "TLSv1.2_2021",
+      "currentConfiguration": "To be determined from CloudFront distribution settings"
+    }
+  },
+  "securityAssessment": {
+    "overallScore": 0,
+    "categoryScores": {},
+    "vulnerabilities": [],
+    "strengths": [],
+    "riskFactors": [
+      {
+        "category": "Key Exchange",
+        "risk": "No Perfect Forward Secrecy",
+        "severity": "MEDIUM",
+        "description": "Without PFS, past communications could be decrypted if keys are compromised"
+      }
+    ]
+  },
+  "complianceAnalysis": {
+    "standards": {},
+    "overallCompliance": "UNKNOWN",
+    "gaps": [],
+    "requirements": {
+      "PCI DSS": {
+        "description": "Payment Card Industry Data Security Standard",
+        "requirements": [
+          "Use TLS 1.2 or higher",
+          "Disable weak TLS versions",
+          "Use strong encryption algorithms",
+          "Regular security testing"
+        ]
+      },
+      "NIST": {
+        "description": "National Institute of Standards and Technology",
+        "requirements": [
+          "Use approved cryptographic algorithms",
+          "Implement Perfect Forward Secrecy",
+          "Regular certificate validation",
+          "Proper key management"
+        ]
+      },
+      "OWASP": {
+        "description": "Open Web Application Security Project",
+        "requirements": [
+          "Use secure TLS configurations",
+          "Disable weak protocols and ciphers",
+          "Implement security headers",
+          "Regular vulnerability testing"
+        ]
+      }
+    }
+  },
+  "recommendations": {
+    "immediate": [],
+    "shortTerm": [
+      {
+        "priority": "HIGH",
+        "action": "Enable TLS 1.3 support for enhanced security and performance",
+        "timeline": "1-2 weeks",
+        "effort": "Medium"
+      },
+      {
+        "priority": "HIGH",
+        "action": "Implement comprehensive security headers",
+        "timeline": "1 week",
+        "effort": "Low"
+      },
+      {
+        "priority": "MEDIUM",
+        "action": "Configure Perfect Forward Secrecy cipher suites",
+        "timeline": "2-3 weeks",
+        "effort": "Medium"
+      }
+    ],
+    "longTerm": [
+      {
+        "priority": "MEDIUM",
+        "action": "Implement automated TLS configuration monitoring",
+        "timeline": "1-2 months",
+        "effort": "High"
+      },
+      {
+        "priority": "LOW",
+        "action": "Set up regular security assessments and penetration testing",
+        "timeline": "2-3 months",
+        "effort": "High"
+      },
+      {
+        "priority": "LOW",
+        "action": "Develop incident response procedures for TLS vulnerabilities",
+        "timeline": "1-2 months",
+        "effort": "Medium"
+      }
+    ],
+    "monitoring": [
+      {
+        "priority": "HIGH",
+        "action": "Monitor TLS certificate expiration dates",
+        "timeline": "Ongoing",
+        "effort": "Low"
+      },
+      {
+        "priority": "MEDIUM",
+        "action": "Track TLS security score and compliance status",
+        "timeline": "Ongoing",
+        "effort": "Medium"
+      },
+      {
+        "priority": "MEDIUM",
+        "action": "Monitor for new TLS vulnerabilities and updates",
+        "timeline": "Ongoing",
+        "effort": "Low"
+      }
+    ]
+  },
+  "technicalDetails": {
+    "comprehensiveValidation": {
+      "error": "Command failed: node \"C:\\Users\\Joe\\Projects\\website-sync-20251003_133144\\scripts\\comprehensive-tls-validator.js\" \"invalid-domain-that-does-not-exist.com\" --output \"C:\\Users\\Joe\\Projects\\website-sync-20251003_133144\\config\\comprehensive-tls-validation.json\""
+    },
+    "tlsVersionValidation": {
+      "error": "Command failed: node \"C:\\Users\\Joe\\Projects\\website-sync-20251003_133144\\scripts\\tls-version-cipher-validator.js\" \"invalid-domain-that-does-not-exist.com\"\n  ❌ Error analyzing cipher suites: getaddrinfo ENOTFOUND invalid-domain-that-does-not-exist.com\n'nmap' is not recognized as an internal or external command,\r\noperable program or batch file.\r\n'testssl.sh' is not recognized as an internal or external command,\r\noperable program or batch file.\r\n"
+    },
+    "cipherSuiteValidation": {
+      "error": "Command failed: node \"C:\\Users\\Joe\\Projects\\website-sync-20251003_133144\\scripts\\cipher-suite-configuration-validator.js\" \"invalid-domain-that-does-not-exist.com\""
+    },
+    "summary": {
+      "validationSteps": 3,
+      "dataCollected": "2025-10-05T22:05:43.117Z",
+      "validationTools": [
+        "Comprehensive TLS Validator",
+        "TLS Version Cipher Validator",
+        "Perfect Forward Secrecy Validator",
+        "Cipher Suite Configuration Validator"
+      ]
+    }
+  },
+  "testResults": {},
+  "appendices": {
+    "glossary": {
+      "TLS": "Transport Layer Security - A cryptographic protocol for secure communication",
+      "SSL": "Secure Sockets Layer - Predecessor to TLS, now deprecated",
+      "PFS": "Perfect Forward Secrecy - Ensures past communications remain secure even if private keys are compromised",
+      "Cipher Suite": "A set of algorithms that help secure a network connection",
+      "ECDHE": "Elliptic Curve Diffie-Hellman Ephemeral - Key exchange algorithm that provides PFS",
+      "AES": "Advanced Encryption Standard - Symmetric encryption algorithm",
+      "SHA": "Secure Hash Algorithm - Cryptographic hash function",
+      "CloudFront": "AWS Content Delivery Network service",
+      "OAC": "Origin Access Control - AWS CloudFront security feature"
+    },
+    "references": [
+      {
+        "title": "RFC 8446 - The Transport Layer Security (TLS) Protocol Version 1.3",
+        "url": "https://tools.ietf.org/html/rfc8446"
+      },
+      {
+        "title": "NIST SP 800-52 Rev. 2 - Guidelines for TLS Implementations",
+        "url": "https://csrc.nist.gov/publications/detail/sp/800-52/rev-2/final"
+      },
+      {
+        "title": "OWASP Transport Layer Protection Cheat Sheet",
+        "url": "https://cheatsheetseries.owasp.org/cheatsheets/Transport_Layer_Protection_Cheat_Sheet.html"
+      },
+      {
+        "title": "PCI DSS Requirements for TLS",
+        "url": "https://www.pcisecuritystandards.org/"
+      },
+      {
+        "title": "AWS CloudFront Security Policies",
+        "url": "https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/secure-connections-supported-viewer-protocols-ciphers.html"
+      }
+    ],
+    "configuration": {
+      "tlsValidation": {
+        "requiredVersions": [
+          "TLS 1.2",
+          "TLS 1.3"
+        ],
+        "prohibitedVersions": [
+          "SSL 2.0",
+          "SSL 3.0",
+          "TLS 1.0",
+          "TLS 1.1"
+        ],
+        "minimumSecurityLevel": "MEDIUM",
+        "requirePFS": true,
+        "strongEncryptionRequired": true
+      },
+      "cipherSuites": {
+        "recommended": [
+          "ECDHE-RSA-AES256-GCM-SHA384",
+          "ECDHE-RSA-AES128-GCM-SHA256",
+          "ECDHE-RSA-AES256-SHA384",
+          "ECDHE-RSA-AES128-SHA256",
+          "ECDHE-RSA-CHACHA20-POLY1305"
+        ],
+        "acceptable": [
+          "AES256-GCM-SHA384",
+          "AES128-GCM-SHA256",
+          "AES256-SHA256",
+          "AES128-SHA256"
+        ],
+        "prohibited": [
+          "RC4",
+          "DES",
+          "3DES",
+          "MD5",
+          "SHA1-only"
+        ]
+      },
+      "securityHeaders": {
+        "strictTransportSecurity": {
+          "required": true,
+          "minAge": 31536000,
+          "includeSubDomains": true,
+          "preload": true
+        },
+        "contentSecurityPolicy": {
+          "required": true,
+          "directives": [
+            "default-src 'self'",
+            "script-src 'self' 'unsafe-inline'",
+            "style-src 'self' 'unsafe-inline'",
+            "img-src 'self' data: https:",
+            "font-src 'self'",
+            "connect-src 'self'",
+            "frame-ancestors 'none'"
+          ]
+        }
+      },
+      "cloudfront": {
+        "securityPolicy": "TLSv1.2_2021",
+        "minimumProtocolVersion": "TLSv1.2_2021",
+        "sslSupportMethod": "sni-only",
+        "certificateSource": "acm"
+      },
+      "validation": {
+        "timeout": 10000,
+        "retries": 3,
+        "endpoints": [
+          "https://www.ssllabs.com/ssltest/",
+          "https://testssl.sh/"
+        ]
+      },
+      "compliance": {
+        "standards": [
+          "PCI DSS",
+          "NIST",
+          "OWASP"
+        ],
+        "requirements": {
+          "pciDss": {
+            "tlsVersion": "1.2+",
+            "strongCryptography": true,
+            "regularTesting": true
+          },
+          "nist": {
+            "approvedAlgorithms": true,
+            "keyManagement": true,
+            "certificateValidation": true
+          },
+          "owasp": {
+            "secureDefaults": true,
+            "regularUpdates": true,
+            "vulnerabilityTesting": true
+          }
+        }
+      }
+    },
+    "rawData": {
+      "note": "Raw validation data is available in the technicalDetails section",
+      "files": [
+        "comprehensive-tls-validation.json",
+        "tls-version-cipher-validation-report.json",
+        "pfs-validation-report.json",
+        "cipher-suite-validation-report.json"
+      ]
+    }
+  }
+}

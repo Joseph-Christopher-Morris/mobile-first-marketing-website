@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Blog Image Debug Test</title>
+    <style>
+        body { font-family: Arial, sans-serif; margin: 20px; }
+        .test-section { margin: 20px 0; padding: 15px; border: 1px solid #ccc; }
+        .success { color: green; }
+        .error { color: red; }
+        img { max-width: 300px; border: 1px solid #ddd; }
+    </style>
+</head>
+<body>
+    <h1>Blog Image Debug Test</h1>
+    
+    <div class="test-section">
+        <h2>Test 1: NEW Blog Image Path</h2>
+        <p>Testing: <code>/images/blog/Screenshot 2025-08-11 143853.webp</code></p>
+        <img id="testImage" src="/images/blog/Screenshot 2025-08-11 143853.webp" alt="Analytics Screenshot" 
+             onload="imageLoadSuccess()" 
+             onerror="imageLoadError()">
+        <div id="imageResult"></div>
+    </div>
+    
+    <div class="test-section">
+        <h2>Test 2: Fetch API Test</h2>
+        <div id="fetchResult">Testing...</div>
+    </div>
+    
+    <div class="test-section">
+        <h2>Test 3: Other Blog Images</h2>
+        <p>Testing other images in blog directory:</p>
+        <img src="/images/hero/240619-London-19.webp" alt="Stock Photography London" style="max-width: 150px;">
+        <img src="/images/blog/welcome-hero.jpg" alt="Welcome Hero" style="max-width: 150px;">
+    </div>
+    
+    <div class="test-section">
+        <h2>Test 4: Original Services Images</h2>
+        <p>Testing original services directory images:</p>
+        <img src="/images/services/photography-hero.webp" alt="Photography Hero" style="max-width: 150px;">
+        <img src="/images/services/ad-campaigns-hero.webp" alt="Ad Campaigns Hero" style="max-width: 150px;">
+        <img src="/images/services/analytics-hero.webp" alt="Analytics Hero" style="max-width: 150px;">
+    </div>
+    
+    <div class="test-section">
+        <h2>Debug Information</h2>
+        <div id="debugInfo"></div>
+    </div>
+    
+    <script>
+        function imageLoadSuccess() {
+            document.getElementById('imageResult').innerHTML = '<span class="success">✅ Image loaded successfully!</span>';
+            console.log('✅ Image loaded successfully');
+        }
+        
+        function imageLoadError() {
+            document.getElementById('imageResult').innerHTML = '<span class="error">❌ Image failed to load</span>';
+            console.error('❌ Image failed to load');
+        }
+        
+        // Test direct fetch
+        fetch('/images/blog/Screenshot 2025-08-11 143853.webp')
+            .then(response => {
+                const status = response.status;
+                const ok = response.ok;
+                const contentType = response.headers.get('content-type');
+                
+                console.log('Fetch response status:', status);
+                console.log('Fetch response ok:', ok);
+                console.log('Content-Type:', contentType);
+                
+                if (ok) {
+                    document.getElementById('fetchResult').innerHTML = 
+                        `<span class="success">✅ Fetch successful - Status: ${status}, Content-Type: ${contentType}</span>`;
+                } else {
+                    document.getElementById('fetchResult').innerHTML = 
+                        `<span class="error">❌ Fetch failed - Status: ${status}</span>`;
+                }
+            })
+            .catch(error => {
+                console.error('❌ Fetch error:', error);
+                document.getElementById('fetchResult').innerHTML = 
+                    `<span class="error">❌ Fetch error: ${error.message}</span>`;
+            });
+        
+        // Debug info
+        document.getElementById('debugInfo').innerHTML = `
+            <p><strong>Current URL:</strong> ${window.location.href}</p>
+            <p><strong>User Agent:</strong> ${navigator.userAgent}</p>
+            <p><strong>Timestamp:</strong> ${new Date().toISOString()}</p>
+        `;
+    </script>
+</body>
+</html>

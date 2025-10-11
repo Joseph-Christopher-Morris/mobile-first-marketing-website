@@ -1,0 +1,42 @@
+{
+  "deploymentId": "prod-1759704932832",
+  "timestamp": "2025-10-05T22:55:32.832Z",
+  "environment": "production",
+  "bucketName": "mobile-marketing-site-prod-1759704801413-5k2y86",
+  "distributionId": "E2VQL1W68479S6",
+  "cloudfrontDomain": "d1e6nq1oke03ll.cloudfront.net",
+  "steps": [
+    {
+      "step": "environment_validation",
+      "status": "completed",
+      "timestamp": "2025-10-05T22:55:33.748Z",
+      "details": {
+        "bucketName": "mobile-marketing-site-prod-1759704801413-5k2y86",
+        "distributionId": "E2VQL1W68479S6",
+        "distributionStatus": "InProgress"
+      }
+    },
+    {
+      "step": "build_application",
+      "status": "completed",
+      "timestamp": "2025-10-05T22:56:02.437Z",
+      "details": {
+        "fileCount": 75,
+        "buildSize": 2226558,
+        "buildOutput": "\n> mobile-first-marketing-website@0.1.0 build\n> next build\n\n   ▲ Next.js 15.5.4\n   - Environments: .env.local, .env.production\n   - Experiments (use with caution):\n     · optimizePackageImports\n\n   Creating an optimized production build ...\n ✓ Compiled successfully in 6.3s\n   Skipping validation of types\n   Skipping linting\n   Collecting page data ...\n   Generating static pages (0/12) ...\n   Generating static pages (3/12) \r\n   Generating static pages (6/12) \r\n   Generating static pages (9/12) \r\n"
+      }
+    },
+    {
+      "step": "deploy_to_s3",
+      "status": "failed",
+      "timestamp": "2025-10-05T22:56:02.805Z",
+      "details": {
+        "error": "User: arn:aws:iam::996193447244:user/joe-admin is not authorized to perform: s3:PutObject on resource: \"arn:aws:s3:::mobile-marketing-site-prod-1759704801413-5k2y86/404/index.html\" with an explicit deny in a resource-based policy"
+      }
+    }
+  ],
+  "validation": {},
+  "status": "completed",
+  "error": "User: arn:aws:iam::996193447244:user/joe-admin is not authorized to perform: s3:PutObject on resource: \"arn:aws:s3:::mobile-marketing-site-prod-1759704801413-5k2y86/404/index.html\" with an explicit deny in a resource-based policy",
+  "completedAt": "2025-10-05T22:56:02.806Z"
+}

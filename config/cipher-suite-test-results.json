@@ -1,0 +1,94 @@
+{
+  "timestamp": "2025-10-05T21:38:16.950Z",
+  "tests": [
+    {
+      "domain": "github.com",
+      "startTime": "2025-10-05T21:38:16.957Z",
+      "duration": 86,
+      "passed": false,
+      "error": null,
+      "validationResults": {
+        "timestamp": "2025-10-05T21:38:16.958Z",
+        "domain": "github.com",
+        "strongCiphers": [],
+        "weakCiphers": [],
+        "supportedCiphers": [],
+        "cipherOrdering": [],
+        "encryptionStrength": {},
+        "recommendations": [],
+        "passed": false,
+        "score": 0,
+        "error": "Command failed: openssl ciphers -v 'ALL:!EXPORT:!NULL:!aNULL:!MD5:!DES:!RC4:!3DES:!IDEA'\n'openssl' is not recognized as an internal or external command,\r\noperable program or batch file.\r\n"
+      },
+      "endTime": "2025-10-05T21:38:17.045Z"
+    },
+    {
+      "domain": "cloudfront.net",
+      "startTime": "2025-10-05T21:38:17.047Z",
+      "duration": 70,
+      "passed": false,
+      "error": null,
+      "validationResults": {
+        "timestamp": "2025-10-05T21:38:17.048Z",
+        "domain": "cloudfront.net",
+        "strongCiphers": [],
+        "weakCiphers": [],
+        "supportedCiphers": [],
+        "cipherOrdering": [],
+        "encryptionStrength": {},
+        "recommendations": [],
+        "passed": false,
+        "score": 0,
+        "error": "Command failed: openssl ciphers -v 'ALL:!EXPORT:!NULL:!aNULL:!MD5:!DES:!RC4:!3DES:!IDEA'\n'openssl' is not recognized as an internal or external command,\r\noperable program or batch file.\r\n"
+      },
+      "endTime": "2025-10-05T21:38:17.117Z"
+    },
+    {
+      "domain": "aws.amazon.com",
+      "startTime": "2025-10-05T21:38:17.119Z",
+      "duration": 82,
+      "passed": false,
+      "error": null,
+      "validationResults": {
+        "timestamp": "2025-10-05T21:38:17.119Z",
+        "domain": "aws.amazon.com",
+        "strongCiphers": [],
+        "weakCiphers": [],
+        "supportedCiphers": [],
+        "cipherOrdering": [],
+        "encryptionStrength": {},
+        "recommendations": [],
+        "passed": false,
+        "score": 0,
+        "error": "Command failed: openssl ciphers -v 'ALL:!EXPORT:!NULL:!aNULL:!MD5:!DES:!RC4:!3DES:!IDEA'\n'openssl' is not recognized as an internal or external command,\r\noperable program or batch file.\r\n"
+      },
+      "endTime": "2025-10-05T21:38:17.202Z"
+    },
+    {
+      "domain": "d111111abcdef8.cloudfront.net",
+      "startTime": "2025-10-05T21:38:17.203Z",
+      "duration": 57,
+      "passed": false,
+      "error": null,
+      "validationResults": {
+        "timestamp": "2025-10-05T21:38:17.203Z",
+        "domain": "d111111abcdef8.cloudfront.net",
+        "strongCiphers": [],
+        "weakCiphers": [],
+        "supportedCiphers": [],
+        "cipherOrdering": [],
+        "encryptionStrength": {},
+        "recommendations": [],
+        "passed": false,
+        "score": 0,
+        "error": "Command failed: openssl ciphers -v 'ALL:!EXPORT:!NULL:!aNULL:!MD5:!DES:!RC4:!3DES:!IDEA'\n'openssl' is not recognized as an internal or external command,\r\noperable program or batch file.\r\n"
+      },
+      "endTime": "2025-10-05T21:38:17.261Z"
+    }
+  ],
+  "summary": {
+    "total": 4,
+    "passed": 0,
+    "failed": 4
+  }
+}

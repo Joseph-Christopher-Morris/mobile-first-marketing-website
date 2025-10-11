@@ -1,0 +1,182 @@
+{
+  "metadata": {
+    "timestamp": "2025-10-11T11-02-18-167Z",
+    "cloudfrontDomain": "d15sc9fc739ev2.cloudfront.net",
+    "testConfiguration": {
+      "cloudfrontDomain": "d15sc9fc739ev2.cloudfront.net",
+      "testImages": [
+        "/images/hero/paid-ads-analytics-screenshot.webp",
+        "/images/services/analytics-hero.webp",
+        "/images/hero/mobile-marketing-hero.webp",
+        "/images/services/flyer-design-hero.webp",
+        "/images/services/stock-photography-hero.webp"
+      ],
+      "timeout": 10000,
+      "maxRetries": 3,
+      "outputDir": "validation-reports"
+    },
+    "summary": {
+      "totalImages": 5,
+      "successful": 2,
+      "failed": 3,
+      "warnings": 0,
+      "startTime": "2025-10-11T11:02:18.185Z",
+      "endTime": "2025-10-11T11:02:21.221Z",
+      "duration": 3036
+    }
+  },
+  "results": [
+    {
+      "imagePath": "/images/hero/paid-ads-analytics-screenshot.webp",
+      "url": "https://d15sc9fc739ev2.cloudfront.net/images/hero/paid-ads-analytics-screenshot.webp",
+      "timestamp": "2025-10-11T11:02:18.186Z",
+      "attempt": 1,
+      "success": true,
+      "statusCode": 200,
+      "responseTime": 415,
+      "contentType": "image/webp",
+      "contentLength": "23692",
+      "cacheStatus": "Miss from cloudfront",
+      "errors": [],
+      "warnings": [],
+      "details": {
+        "headers": {
+          "content-type": "image/webp",
+          "content-length": "23692",
+          "etag": "\"22189f8ddf74516911a294da9d05347d\"",
+          "last-modified": "Tue, 07 Oct 2025 17:39:33 GMT",
+          "x-cache": "Miss from cloudfront",
+          "x-amz-cf-pop": "MAN51-P6",
+          "x-amz-cf-id": "58-wC_AShjY36YbphAhCjUHorsFpRfqG5toYSjRmsIi8EEmKmj31kQ=="
+        },
+        "fileSizeBytes": 23692,
+        "fileSizeKB": 23.14,
+        "cacheHit": false
+      },
+      "s3DirectAccess": {
+        "url": "https://mobile-marketing-site-prod-1759705011281-tyzuo9.s3.amazonaws.com/images/hero/paid-ads-analytics-screenshot.webp",
+        "statusCode": 403,
+        "accessible": false,
+        "warning": null
+      }
+    },
+    {
+      "imagePath": "/images/services/analytics-hero.webp",
+      "url": "https://d15sc9fc739ev2.cloudfront.net/images/services/analytics-hero.webp",
+      "timestamp": "2025-10-11T11:02:19.091Z",
+      "attempt": 1,
+      "success": true,
+      "statusCode": 200,
+      "responseTime": 27,
+      "contentType": "image/webp",
+      "contentLength": "23692",
+      "cacheStatus": "Hit from cloudfront",
+      "errors": [],
+      "warnings": [],
+      "details": {
+        "headers": {
+          "content-type": "image/webp",
+          "content-length": "23692",
+          "etag": "\"22189f8ddf74516911a294da9d05347d\"",
+          "last-modified": "Tue, 07 Oct 2025 18:24:23 GMT",
+          "x-cache": "Hit from cloudfront",
+          "x-amz-cf-pop": "MAN51-P6",
+          "x-amz-cf-id": "7QIy6W4EPquolsmRMEcmygNDAQiH-sORpc_h9YUPG-JKfQbfnLUfgw=="
+        },
+        "fileSizeBytes": 23692,
+        "fileSizeKB": 23.14,
+        "cacheHit": true
+      }
+    },
+    {
+      "imagePath": "/images/hero/mobile-marketing-hero.webp",
+      "url": "https://d15sc9fc739ev2.cloudfront.net/images/hero/mobile-marketing-hero.webp",
+      "timestamp": "2025-10-11T11:02:19.120Z",
+      "attempt": 1,
+      "success": false,
+      "statusCode": 200,
+      "responseTime": 708,
+      "contentType": "text/html",
+      "contentLength": "83979",
+      "cacheStatus": "Error from cloudfront",
+      "errors": [
+        "Invalid Content-Type: text/html"
+      ],
+      "warnings": [],
+      "details": {
+        "headers": {
+          "content-type": "text/html",
+          "content-length": "83979",
+          "etag": "\"79dfe82a3331ba8da3e590936b9866b3\"",
+          "last-modified": "Fri, 10 Oct 2025 21:49:03 GMT",
+          "x-cache": "Error from cloudfront",
+          "x-amz-cf-pop": "MAN51-P6",
+          "x-amz-cf-id": "aMk2ORWjEkkyOTXPRh8J8xVAfSMVKvfhGeyvn4l-CIrkPNpMFI0OWw=="
+        },
+        "fileSizeBytes": 83979,
+        "fileSizeKB": 82.01,
+        "cacheHit": false
+      }
+    },
+    {
+      "imagePath": "/images/services/flyer-design-hero.webp",
+      "url": "https://d15sc9fc739ev2.cloudfront.net/images/services/flyer-design-hero.webp",
+      "timestamp": "2025-10-11T11:02:19.834Z",
+      "attempt": 1,
+      "success": false,
+      "statusCode": 200,
+      "responseTime": 677,
+      "contentType": "text/html",
+      "contentLength": "83979",
+      "cacheStatus": "Error from cloudfront",
+      "errors": [
+        "Invalid Content-Type: text/html"
+      ],
+      "warnings": [],
+      "details": {
+        "headers": {
+          "content-type": "text/html",
+          "content-length": "83979",
+          "etag": "\"79dfe82a3331ba8da3e590936b9866b3\"",
+          "last-modified": "Fri, 10 Oct 2025 21:49:03 GMT",
+          "x-cache": "Error from cloudfront",
+          "x-amz-cf-pop": "MAN51-P6",
+          "x-amz-cf-id": "a2CIO8sDhJ9-4yQuuUHVmzb3v0AHlte_4jPV8toKN0P-HASfDbEGew=="
+        },
+        "fileSizeBytes": 83979,
+        "fileSizeKB": 82.01,
+        "cacheHit": false
+      }
+    },
+    {
+      "imagePath": "/images/services/stock-photography-hero.webp",
+      "url": "https://d15sc9fc739ev2.cloudfront.net/images/services/stock-photography-hero.webp",
+      "timestamp": "2025-10-11T11:02:20.516Z",
+      "attempt": 1,
+      "success": false,
+      "statusCode": 200,
+      "responseTime": 702,
+      "contentType": "text/html",
+      "contentLength": "83979",
+      "cacheStatus": "Error from cloudfront",
+      "errors": [
+        "Invalid Content-Type: text/html"
+      ],
+      "warnings": [],
+      "details": {
+        "headers": {
+          "content-type": "text/html",
+          "content-length": "83979",
+          "etag": "\"79dfe82a3331ba8da3e590936b9866b3\"",
+          "last-modified": "Fri, 10 Oct 2025 21:49:03 GMT",
+          "x-cache": "Error from cloudfront",
+          "x-amz-cf-pop": "MAN51-P6",
+          "x-amz-cf-id": "gRLf8pKzW7Op4pbfUWv_CVq7yQDaZypOUt-sZUyuEqvvQJT-5bOyBw=="
+        },
+        "fileSizeBytes": 83979,
+        "fileSizeKB": 82.01,
+        "cacheHit": false
+      }
+    }
+  ]
+}

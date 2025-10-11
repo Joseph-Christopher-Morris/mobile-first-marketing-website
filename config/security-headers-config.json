@@ -1,0 +1,227 @@
+{
+  "version": "1.0",
+  "description": "Comprehensive security headers configuration for CloudFront distribution",
+  "lastUpdated": "2024-12-19",
+  "securityHeaders": {
+    "strictTransportSecurity": {
+      "enabled": true,
+      "maxAge": 63072000,
+      "includeSubDomains": true,
+      "preload": true,
+      "description": "Forces HTTPS connections and prevents protocol downgrade attacks",
+      "requirement": "7.3"
+    },
+    "contentSecurityPolicy": {
+      "enabled": true,
+      "directives": {
+        "default-src": "'self'",
+        "script-src": "'self' 'unsafe-inline' 'unsafe-eval' https://www.googletagmanager.com https://www.google-analytics.com https://analytics.google.com https://region1.google-analytics.com https://www.gstatic.com",
+        "style-src": "'self' 'unsafe-inline' https://fonts.googleapis.com https://cdnjs.cloudflare.com",
+        "font-src": "'self' https://fonts.gstatic.com https://cdnjs.cloudflare.com data:",
+        "img-src": "'self' data: https: blob:",
+        "media-src": "'self' data: https:",
+        "connect-src": "'self' https://www.google-analytics.com https://analytics.google.com https://region1.google-analytics.com https://stats.g.doubleclick.net",
+        "object-src": "'none'",
+        "base-uri": "'self'",
+        "form-action": "'self'",
+        "frame-ancestors": "'none'",
+        "frame-src": "'none'",
+        "worker-src": "'self' blob:",
+        "manifest-src": "'self'",
+        "child-src": "'self'",
+        "prefetch-src": "'self'",
+        "upgrade-insecure-requests": true,
+        "block-all-mixed-content": true
+      },
+      "description": "Prevents XSS attacks by controlling resource loading",
+      "requirement": "7.3"
+    },
+    "xContentTypeOptions": {
+      "enabled": true,
+      "value": "nosniff",
+      "description": "Prevents MIME type sniffing attacks",
+      "requirement": "7.3"
+    },
+    "xFrameOptions": {
+      "enabled": true,
+      "value": "DENY",
+      "description": "Prevents clickjacking attacks by denying iframe embedding",
+      "requirement": "7.3"
+    },
+    "xXSSProtection": {
+      "enabled": true,
+      "protection": true,
+      "modeBlock": true,
+      "description": "Enables XSS filtering in older browsers",
+      "requirement": "7.3"
+    },
+    "referrerPolicy": {
+      "enabled": true,
+      "value": "strict-origin-when-cross-origin",
+      "description": "Controls referrer information sent with requests",
+      "requirement": "7.3"
+    },
+    "permissionsPolicy": {
+      "enabled": true,
+      "policies": {
+        "camera": "none",
+        "microphone": "none",
+        "geolocation": "none",
+        "payment": "none",
+        "usb": "none",
+        "bluetooth": "none",
+        "magnetometer": "none",
+        "gyroscope": "none",
+        "accelerometer": "none",
+        "ambient-light-sensor": "none",
+        "autoplay": "none",
+        "encrypted-media": "none",
+        "fullscreen": "none",
+        "picture-in-picture": "none"
+      },
+      "description": "Controls access to browser features and APIs",
+      "requirement": "7.3"
+    },
+    "crossOriginEmbedderPolicy": {
+      "enabled": true,
+      "value": "unsafe-none",
+      "description": "Controls cross-origin resource embedding",
+      "requirement": "7.3"
+    },
+    "crossOriginOpenerPolicy": {
+      "enabled": true,
+      "value": "same-origin-allow-popups",
+      "description": "Controls cross-origin window interactions",
+      "requirement": "7.3"
+    },
+    "crossOriginResourcePolicy": {
+      "enabled": true,
+      "value": "cross-origin",
+      "description": "Controls cross-origin resource sharing",
+      "requirement": "7.3"
+    },
+    "xDNSPrefetchControl": {
+      "enabled": true,
+      "value": "on",
+      "description": "Controls DNS prefetching for performance",
+      "requirement": "7.3"
+    }
+  },
+  "customErrorResponses": {
+    "404": {
+      "responsePagePath": "/index.html",
+      "responseCode": "200",
+      "errorCachingMinTTL": 300,
+      "description": "SPA routing support - serve index.html for 404s"
+    },
+    "403": {
+      "responsePagePath": "/index.html",
+      "responseCode": "200",
+      "errorCachingMinTTL": 300,
+      "description": "Handle S3 403 errors as 404s for SPA routing"
+    },
+    "500": {
+      "responsePagePath": "/500.html",
+      "responseCode": "500",
+      "errorCachingMinTTL": 0,
+      "description": "Custom 500 error page"
+    },
+    "502": {
+      "responsePagePath": "/500.html",
+      "responseCode": "502",
+      "errorCachingMinTTL": 0,
+      "description": "Bad gateway error page"
+    },
+    "503": {
+      "responsePagePath": "/500.html",
+      "responseCode": "503",
+      "errorCachingMinTTL": 0,
+      "description": "Service unavailable error page"
+    },
+    "504": {
+      "responsePagePath": "/500.html",
+      "responseCode": "504",
+      "errorCachingMinTTL": 0,
+      "description": "Gateway timeout error page"
+    }
+  },
+  "securityFeatures": {
+    "httpsRedirect": {
+      "enabled": true,
+      "description": "Redirects all HTTP traffic to HTTPS"
+    },
+    "compressionEnabled": {
+      "enabled": true,
+      "description": "Enables gzip/brotli compression for text content"
+    },
+    "http2Support": {
+      "enabled": true,
+      "description": "Enables HTTP/2 for better performance"
+    },
+    "http3Support": {
+      "enabled": true,
+      "description": "Enables HTTP/3 for optimal performance"
+    },
+    "ipv6Support": {
+      "enabled": true,
+      "description": "Enables IPv6 support for broader accessibility"
+    }
+  },
+  "compliance": {
+    "owasp": {
+      "version": "2021",
+      "categories": [
+        "A01:2021 – Broken Access Control",
+        "A02:2021 – Cryptographic Failures",
+        "A03:2021 – Injection",
+        "A05:2021 – Security Misconfiguration",
+        "A06:2021 – Vulnerable and Outdated Components"
+      ]
+    },
+    "nist": {
+      "framework": "Cybersecurity Framework",
+      "functions": ["Protect", "Detect", "Respond"]
+    },
+    "cis": {
+      "controls": [
+        "CIS Control 3: Data Protection",
+        "CIS Control 7: Email and Web Browser Protections",
+        "CIS Control 11: Data Recovery"
+      ]
+    }
+  },
+  "monitoring": {
+    "securityMetrics": [
+      "Security header compliance rate",
+      "HTTPS redirect success rate",
+      "CSP violation reports",
+      "Error page serving rate"
+    ],
+    "alerting": {
+      "cspViolations": {
+        "enabled": true,
+        "threshold": 10,
+        "period": "5 minutes"
+      },
+      "httpTraffic": {
+        "enabled": true,
+        "threshold": 5,
+        "period": "1 minute"
+      }
+    }
+  },
+  "testing": {
+    "securityScanners": [
+      "Mozilla Observatory",
+      "Security Headers",
+      "SSL Labs",
+      "Qualys SSL Test"
+    ],
+    "automatedTests": [
+      "Security headers presence",
+      "CSP directive validation",
+      "HTTPS redirect testing",
+      "Error page functionality"
+    ]
+  }
+}

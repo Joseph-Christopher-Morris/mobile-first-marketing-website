@@ -1,0 +1,28 @@
+{
+  "sync_timestamp": "20251003_133144",
+  "bucket": "joe-vivid-s3-transfer-bucket",
+  "version_prefix": "website-sync-20251003_133144",
+  "synced_directories": ["src/", "content/", "public/", "docs/", "scripts/", ".github/", ".kiro/", "e2e/"],
+  "config_files_copied": [
+    "package.json",
+    "package-lock.json",
+    "next.config.js",
+    "tailwind.config.js",
+    "tsconfig.json",
+    "next-env.d.ts",
+    "postcss.config.js",
+    "prettier.config.js",
+    "vitest.config.ts",
+    "playwright.config.ts",
+    "lighthouserc.json",
+    ".eslintrc.json",
+    ".prettierignore",
+    ".gitignore",
+    ".editorconfig",
+    "README.md",
+    "amplify.yml",
+    "aws-cloudfront-config.json"
+  ],
+  "aws_profile": "daily-dashboard",
+  "sync_completed": "2025-10-03T12:33:21Z"
+}

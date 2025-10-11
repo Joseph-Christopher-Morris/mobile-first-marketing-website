@@ -1,0 +1,208 @@
+{
+  "timestamp": "2025-10-10T21:38:26.775Z",
+  "baseUrl": "https://d15sc9fc739ev2.cloudfront.net",
+  "vitalsMetrics": {
+    "/": {
+      "name": "Homepage",
+      "metrics": {
+        "fcp": 1200,
+        "lcp": 2900,
+        "cls": 0.09000000000000001,
+        "fid": 50,
+        "tbt": 150
+      },
+      "scores": {
+        "lcp": 42,
+        "cls": 100,
+        "fid": 100,
+        "overall": 81
+      },
+      "status": "NEEDS_IMPROVEMENT",
+      "imageTypes": [
+        "services",
+        "blog-preview"
+      ]
+    },
+    "/services/photography": {
+      "name": "Photography Services",
+      "metrics": {
+        "fcp": 1400,
+        "lcp": 3600,
+        "cls": 0.08,
+        "fid": 50,
+        "tbt": 150
+      },
+      "scores": {
+        "lcp": 28,
+        "cls": 100,
+        "fid": 100,
+        "overall": 76
+      },
+      "status": "NEEDS_IMPROVEMENT",
+      "imageTypes": [
+        "hero",
+        "portfolio"
+      ]
+    },
+    "/services/analytics": {
+      "name": "Data Analytics",
+      "metrics": {
+        "fcp": 1400,
+        "lcp": 3600,
+        "cls": 0.08,
+        "fid": 50,
+        "tbt": 150
+      },
+      "scores": {
+        "lcp": 28,
+        "cls": 100,
+        "fid": 100,
+        "overall": 76
+      },
+      "status": "NEEDS_IMPROVEMENT",
+      "imageTypes": [
+        "hero",
+        "portfolio"
+      ]
+    },
+    "/services/ad-campaigns": {
+      "name": "Ad Campaigns",
+      "metrics": {
+        "fcp": 1400,
+        "lcp": 3600,
+        "cls": 0.08,
+        "fid": 50,
+        "tbt": 150
+      },
+      "scores": {
+        "lcp": 28,
+        "cls": 100,
+        "fid": 100,
+        "overall": 76
+      },
+      "status": "NEEDS_IMPROVEMENT",
+      "imageTypes": [
+        "hero",
+        "portfolio"
+      ]
+    },
+    "/about": {
+      "name": "About Page",
+      "metrics": {
+        "fcp": 1400,
+        "lcp": 3200,
+        "cls": 0.05,
+        "fid": 50,
+        "tbt": 150
+      },
+      "scores": {
+        "lcp": 36,
+        "cls": 100,
+        "fid": 100,
+        "overall": 79
+      },
+      "status": "NEEDS_IMPROVEMENT",
+      "imageTypes": [
+        "hero"
+      ]
+    },
+    "/blog": {
+      "name": "Blog Page",
+      "metrics": {
+        "fcp": 1200,
+        "lcp": 2900,
+        "cls": 0.09000000000000001,
+        "fid": 50,
+        "tbt": 150
+      },
+      "scores": {
+        "lcp": 42,
+        "cls": 100,
+        "fid": 100,
+        "overall": 81
+      },
+      "status": "NEEDS_IMPROVEMENT",
+      "imageTypes": [
+        "services",
+        "blog-preview"
+      ]
+    }
+  },
+  "imageImpact": {},
+  "alerts": [
+    {
+      "type": "LCP_POOR",
+      "severity": "ERROR",
+      "page": "Homepage",
+      "message": "LCP of 2900ms exceeds 2.5s threshold",
+      "impact": "HIGH",
+      "recommendation": "Optimize hero images and critical image loading"
+    },
+    {
+      "type": "LCP_POOR",
+      "severity": "ERROR",
+      "page": "Photography Services",
+      "message": "LCP of 3600ms exceeds 2.5s threshold",
+      "impact": "HIGH",
+      "recommendation": "Optimize hero images and critical image loading"
+    },
+    {
+      "type": "LCP_POOR",
+      "severity": "ERROR",
+      "page": "Data Analytics",
+      "message": "LCP of 3600ms exceeds 2.5s threshold",
+      "impact": "HIGH",
+      "recommendation": "Optimize hero images and critical image loading"
+    },
+    {
+      "type": "LCP_POOR",
+      "severity": "ERROR",
+      "page": "Ad Campaigns",
+      "message": "LCP of 3600ms exceeds 2.5s threshold",
+      "impact": "HIGH",
+      "recommendation": "Optimize hero images and critical image loading"
+    },
+    {
+      "type": "LCP_POOR",
+      "severity": "ERROR",
+      "page": "About Page",
+      "message": "LCP of 3200ms exceeds 2.5s threshold",
+      "impact": "HIGH",
+      "recommendation": "Optimize hero images and critical image loading"
+    },
+    {
+      "type": "LCP_POOR",
+      "severity": "ERROR",
+      "page": "Blog Page",
+      "message": "LCP of 2900ms exceeds 2.5s threshold",
+      "impact": "HIGH",
+      "recommendation": "Optimize hero images and critical image loading"
+    }
+  ],
+  "recommendations": [
+    {
+      "priority": "HIGH",
+      "category": "LCP_OPTIMIZATION",
+      "issue": "6 pages have poor LCP scores",
+      "action": "Optimize critical image loading",
+      "details": [
+        "Preload hero images with <link rel=\"preload\">",
+        "Optimize hero image file sizes",
+        "Use CDN for faster image delivery",
+        "Consider image sprites for small icons"
+      ]
+    },
+    {
+      "priority": "LOW",
+      "category": "MONITORING",
+      "issue": "Need continuous performance monitoring",
+      "action": "Set up automated Core Web Vitals monitoring",
+      "details": [
+        "Implement Real User Monitoring (RUM)",
+        "Set up performance budgets",
+        "Create alerts for performance regressions",
+        "Monitor image loading metrics continuously"
+      ]
+    }
+  ]
+}

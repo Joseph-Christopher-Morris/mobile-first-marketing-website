@@ -1,0 +1,46 @@
+{
+  "environment": "production",
+  "bucketName": "mobile-marketing-site-production",
+  "distributionId": "EXAMPLE123456789",
+  "region": "us-east-1",
+  "alerting": {
+    "errorRateThreshold": 5,
+    "cacheHitRateThreshold": 80,
+    "latencyThreshold": 5000,
+    "snsTopicArn": null
+  },
+  "budget": {
+    "monthlyLimit": 50,
+    "alertEmail": null
+  },
+  "logging": {
+    "s3AccessLogging": {
+      "enabled": true,
+      "targetBucket": "mobile-marketing-site-logs",
+      "targetPrefix": "access-logs/"
+    },
+    "cloudTrail": {
+      "enabled": true,
+      "s3BucketName": "mobile-marketing-site-cloudtrail",
+      "includeGlobalServices": true,
+      "isMultiRegionTrail": true
+    }
+  },
+  "performance": {
+    "coreWebVitals": {
+      "enabled": true,
+      "thresholds": {
+        "lcp": 2500,
+        "fid": 100,
+        "cls": 0.1
+      }
+    },
+    "lighthouse": {
+      "enabled": true,
+      "performanceThreshold": 90,
+      "accessibilityThreshold": 95,
+      "bestPracticesThreshold": 90,
+      "seoThreshold": 90
+    }
+  }
+}

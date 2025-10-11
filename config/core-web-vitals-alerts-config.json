@@ -1,0 +1,48 @@
+{
+  "thresholds": {
+    "lcp": {
+      "good": 1200,
+      "needsImprovement": 2500,
+      "poor": 4000
+    },
+    "cls": {
+      "good": 0.1,
+      "needsImprovement": 0.25,
+      "poor": 0.5
+    },
+    "fid": {
+      "good": 100,
+      "needsImprovement": 300,
+      "poor": 500
+    }
+  },
+  "alertRules": [
+    {
+      "metric": "lcp",
+      "condition": "greater_than",
+      "threshold": 2500,
+      "severity": "ERROR",
+      "message": "LCP exceeds 2.5s threshold - critical performance issue"
+    },
+    {
+      "metric": "cls",
+      "condition": "greater_than",
+      "threshold": 0.1,
+      "severity": "WARNING",
+      "message": "CLS exceeds 0.1 threshold - layout stability issue"
+    },
+    {
+      "metric": "fid",
+      "condition": "greater_than",
+      "threshold": 300,
+      "severity": "WARNING",
+      "message": "FID exceeds 300ms threshold - interactivity issue"
+    }
+  ],
+  "monitoringFrequency": "1h",
+  "notificationChannels": [
+    "console",
+    "file"
+  ],
+  "retentionDays": 30
+}

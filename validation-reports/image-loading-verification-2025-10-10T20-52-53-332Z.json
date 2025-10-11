@@ -1,0 +1,937 @@
+{
+  "metadata": {
+    "timestamp": "2025-10-10T20-52-53-332Z",
+    "baseUrl": "https://d15sc9fc739ev2.cloudfront.net",
+    "testConfiguration": {
+      "baseUrl": "https://d15sc9fc739ev2.cloudfront.net",
+      "timeout": 30000,
+      "imageLoadTimeout": 10000,
+      "outputDir": "validation-reports",
+      "viewport": {
+        "width": 1280,
+        "height": 720
+      },
+      "mobileViewport": {
+        "width": 375,
+        "height": 667
+      },
+      "slowNetworkThrottle": {
+        "downloadThroughput": 196608,
+        "uploadThroughput": 96000,
+        "latency": 40
+      }
+    },
+    "summary": {
+      "totalPages": 12,
+      "successfulPages": 0,
+      "failedPages": 12,
+      "totalImages": 28,
+      "loadedImages": 0,
+      "failedImages": 28,
+      "placeholdersFound": 60,
+      "startTime": "2025-10-10T20:52:53.596Z",
+      "endTime": "2025-10-10T20:53:31.495Z",
+      "duration": 37899
+    }
+  },
+  "results": [
+    {
+      "page": "Homepage",
+      "url": "/",
+      "deviceType": "desktop",
+      "timestamp": "2025-10-10T20:52:54.610Z",
+      "success": false,
+      "loadTime": 2072,
+      "images": [
+        {
+          "selector": "[data-testid=\"service-card-photography\"] img",
+          "category": "service-card",
+          "name": "Photography Service Card",
+          "success": false,
+          "error": "Image element not found",
+          "loadTime": null,
+          "src": null,
+          "dimensions": null
+        },
+        {
+          "selector": "[data-testid=\"service-card-analytics\"] img",
+          "category": "service-card",
+          "name": "Analytics Service Card",
+          "success": false,
+          "error": "Image element not found",
+          "loadTime": null,
+          "src": null,
+          "dimensions": null
+        },
+        {
+          "selector": "[data-testid=\"service-card-ad-campaigns\"] img",
+          "category": "service-card",
+          "name": "Ad Campaigns Service Card",
+          "success": false,
+          "error": "Image element not found",
+          "loadTime": null,
+          "src": null,
+          "dimensions": null
+        },
+        {
+          "selector": "[data-testid=\"blog-preview\"] img",
+          "category": "blog-preview",
+          "name": "Blog Preview Images",
+          "success": false,
+          "error": "Image element not found",
+          "loadTime": null,
+          "src": null,
+          "dimensions": null
+        },
+        {
+          "selector": "[data-testid=\"hero-section\"] img",
+          "category": "hero",
+          "name": "Hero Image",
+          "success": false,
+          "error": "Image element not found",
+          "loadTime": null,
+          "src": null,
+          "dimensions": null
+        }
+      ],
+      "placeholders": [
+        {
+          "type": "loading-text",
+          "count": 9,
+          "message": "Found 9 \"Loading image...\" placeholders"
+        },
+        {
+          "type": "gradient-overlay",
+          "message": "Found gradient overlay without image - possible loading state"
+        },
+        {
+          "type": "gradient-overlay",
+          "message": "Found gradient overlay without image - possible loading state"
+        },
+        {
+          "type": "gradient-overlay",
+          "message": "Found gradient overlay without image - possible loading state"
+        },
+        {
+          "type": "gradient-overlay",
+          "message": "Found gradient overlay without image - possible loading state"
+        }
+      ],
+      "errors": [],
+      "warnings": [],
+      "performance": {
+        "totalImages": 5,
+        "loadedImages": 0,
+        "failedImages": 5,
+        "averageLoadTime": 0,
+        "slowImages": [],
+        "slowNetworkLoadTime": 1029
+      }
+    },
+    {
+      "page": "Homepage",
+      "url": "/",
+      "deviceType": "mobile",
+      "timestamp": "2025-10-10T20:52:58.219Z",
+      "success": false,
+      "loadTime": 1719,
+      "images": [
+        {
+          "selector": "[data-testid=\"service-card-photography\"] img",
+          "category": "service-card",
+          "name": "Photography Service Card",
+          "success": false,
+          "error": "Image element not found",
+          "loadTime": null,
+          "src": null,
+          "dimensions": null
+        },
+        {
+          "selector": "[data-testid=\"service-card-analytics\"] img",
+          "category": "service-card",
+          "name": "Analytics Service Card",
+          "success": false,
+          "error": "Image element not found",
+          "loadTime": null,
+          "src": null,
+          "dimensions": null
+        },
+        {
+          "selector": "[data-testid=\"service-card-ad-campaigns\"] img",
+          "category": "service-card",
+          "name": "Ad Campaigns Service Card",
+          "success": false,
+          "error": "Image element not found",
+          "loadTime": null,
+          "src": null,
+          "dimensions": null
+        },
+        {
+          "selector": "[data-testid=\"blog-preview\"] img",
+          "category": "blog-preview",
+          "name": "Blog Preview Images",
+          "success": false,
+          "error": "Image element not found",
+          "loadTime": null,
+          "src": null,
+          "dimensions": null
+        },
+        {
+          "selector": "[data-testid=\"hero-section\"] img",
+          "category": "hero",
+          "name": "Hero Image",
+          "success": false,
+          "error": "Image element not found",
+          "loadTime": null,
+          "src": null,
+          "dimensions": null
+        }
+      ],
+      "placeholders": [
+        {
+          "type": "loading-text",
+          "count": 9,
+          "message": "Found 9 \"Loading image...\" placeholders"
+        },
+        {
+          "type": "gradient-overlay",
+          "message": "Found gradient overlay without image - possible loading state"
+        },
+        {
+          "type": "gradient-overlay",
+          "message": "Found gradient overlay without image - possible loading state"
+        },
+        {
+          "type": "gradient-overlay",
+          "message": "Found gradient overlay without image - possible loading state"
+        },
+        {
+          "type": "gradient-overlay",
+          "message": "Found gradient overlay without image - possible loading state"
+        }
+      ],
+      "errors": [],
+      "warnings": [],
+      "performance": {
+        "totalImages": 5,
+        "loadedImages": 0,
+        "failedImages": 5,
+        "averageLoadTime": 0,
+        "slowImages": []
+      }
+    },
+    {
+      "page": "Photography Service Page",
+      "url": "/services/photography",
+      "deviceType": "desktop",
+      "timestamp": "2025-10-10T20:53:00.198Z",
+      "success": false,
+      "loadTime": 1922,
+      "images": [
+        {
+          "selector": "[data-testid=\"service-hero\"] img",
+          "category": "service-hero",
+          "name": "Photography Hero Image",
+          "success": false,
+          "error": "Image element not found",
+          "loadTime": null,
+          "src": null,
+          "dimensions": null
+        },
+        {
+          "selector": "[data-testid=\"portfolio-gallery\"] img",
+          "category": "portfolio",
+          "name": "Photography Portfolio Images",
+          "success": false,
+          "error": "Image element not found",
+          "loadTime": null,
+          "src": null,
+          "dimensions": null
+        }
+      ],
+      "placeholders": [
+        {
+          "type": "loading-text",
+          "count": 9,
+          "message": "Found 9 \"Loading image...\" placeholders"
+        },
+        {
+          "type": "gradient-overlay",
+          "message": "Found gradient overlay without image - possible loading state"
+        },
+        {
+          "type": "gradient-overlay",
+          "message": "Found gradient overlay without image - possible loading state"
+        },
+        {
+          "type": "gradient-overlay",
+          "message": "Found gradient overlay without image - possible loading state"
+        },
+        {
+          "type": "gradient-overlay",
+          "message": "Found gradient overlay without image - possible loading state"
+        }
+      ],
+      "errors": [],
+      "warnings": [],
+      "performance": {
+        "totalImages": 2,
+        "loadedImages": 0,
+        "failedImages": 2,
+        "averageLoadTime": 0,
+        "slowImages": [],
+        "slowNetworkLoadTime": 1874
+      }
+    },
+    {
+      "page": "Photography Service Page",
+      "url": "/services/photography",
+      "deviceType": "mobile",
+      "timestamp": "2025-10-10T20:53:04.370Z",
+      "success": false,
+      "loadTime": 1753,
+      "images": [
+        {
+          "selector": "[data-testid=\"service-hero\"] img",
+          "category": "service-hero",
+          "name": "Photography Hero Image",
+          "success": false,
+          "error": "Image element not found",
+          "loadTime": null,
+          "src": null,
+          "dimensions": null
+        },
+        {
+          "selector": "[data-testid=\"portfolio-gallery\"] img",
+          "category": "portfolio",
+          "name": "Photography Portfolio Images",
+          "success": false,
+          "error": "Image element not found",
+          "loadTime": null,
+          "src": null,
+          "dimensions": null
+        }
+      ],
+      "placeholders": [
+        {
+          "type": "loading-text",
+          "count": 9,
+          "message": "Found 9 \"Loading image...\" placeholders"
+        },
+        {
+          "type": "gradient-overlay",
+          "message": "Found gradient overlay without image - possible loading state"
+        },
+        {
+          "type": "gradient-overlay",
+          "message": "Found gradient overlay without image - possible loading state"
+        },
+        {
+          "type": "gradient-overlay",
+          "message": "Found gradient overlay without image - possible loading state"
+        },
+        {
+          "type": "gradient-overlay",
+          "message": "Found gradient overlay without image - possible loading state"
+        }
+      ],
+      "errors": [],
+      "warnings": [],
+      "performance": {
+        "totalImages": 2,
+        "loadedImages": 0,
+        "failedImages": 2,
+        "averageLoadTime": 0,
+        "slowImages": []
+      }
+    },
+    {
+      "page": "Analytics Service Page",
+      "url": "/services/analytics",
+      "deviceType": "desktop",
+      "timestamp": "2025-10-10T20:53:06.565Z",
+      "success": false,
+      "loadTime": 2125,
+      "images": [
+        {
+          "selector": "[data-testid=\"service-hero\"] img",
+          "category": "service-hero",
+          "name": "Analytics Hero Image",
+          "success": false,
+          "error": "Image element not found",
+          "loadTime": null,
+          "src": null,
+          "dimensions": null
+        },
+        {
+          "selector": "[data-testid=\"portfolio-gallery\"] img",
+          "category": "portfolio",
+          "name": "Analytics Portfolio Images",
+          "success": false,
+          "error": "Image element not found",
+          "loadTime": null,
+          "src": null,
+          "dimensions": null
+        }
+      ],
+      "placeholders": [
+        {
+          "type": "loading-text",
+          "count": 9,
+          "message": "Found 9 \"Loading image...\" placeholders"
+        },
+        {
+          "type": "gradient-overlay",
+          "message": "Found gradient overlay without image - possible loading state"
+        },
+        {
+          "type": "gradient-overlay",
+          "message": "Found gradient overlay without image - possible loading state"
+        },
+        {
+          "type": "gradient-overlay",
+          "message": "Found gradient overlay without image - possible loading state"
+        },
+        {
+          "type": "gradient-overlay",
+          "message": "Found gradient overlay without image - possible loading state"
+        }
+      ],
+      "errors": [],
+      "warnings": [],
+      "performance": {
+        "totalImages": 2,
+        "loadedImages": 0,
+        "failedImages": 2,
+        "averageLoadTime": 0,
+        "slowImages": [],
+        "slowNetworkLoadTime": 1672
+      }
+    },
+    {
+      "page": "Analytics Service Page",
+      "url": "/services/analytics",
+      "deviceType": "mobile",
+      "timestamp": "2025-10-10T20:53:10.630Z",
+      "success": false,
+      "loadTime": 1972,
+      "images": [
+        {
+          "selector": "[data-testid=\"service-hero\"] img",
+          "category": "service-hero",
+          "name": "Analytics Hero Image",
+          "success": false,
+          "error": "Image element not found",
+          "loadTime": null,
+          "src": null,
+          "dimensions": null
+        },
+        {
+          "selector": "[data-testid=\"portfolio-gallery\"] img",
+          "category": "portfolio",
+          "name": "Analytics Portfolio Images",
+          "success": false,
+          "error": "Image element not found",
+          "loadTime": null,
+          "src": null,
+          "dimensions": null
+        }
+      ],
+      "placeholders": [
+        {
+          "type": "loading-text",
+          "count": 9,
+          "message": "Found 9 \"Loading image...\" placeholders"
+        },
+        {
+          "type": "gradient-overlay",
+          "message": "Found gradient overlay without image - possible loading state"
+        },
+        {
+          "type": "gradient-overlay",
+          "message": "Found gradient overlay without image - possible loading state"
+        },
+        {
+          "type": "gradient-overlay",
+          "message": "Found gradient overlay without image - possible loading state"
+        },
+        {
+          "type": "gradient-overlay",
+          "message": "Found gradient overlay without image - possible loading state"
+        }
+      ],
+      "errors": [],
+      "warnings": [],
+      "performance": {
+        "totalImages": 2,
+        "loadedImages": 0,
+        "failedImages": 2,
+        "averageLoadTime": 0,
+        "slowImages": []
+      }
+    },
+    {
+      "page": "Ad Campaigns Service Page",
+      "url": "/services/ad-campaigns",
+      "deviceType": "desktop",
+      "timestamp": "2025-10-10T20:53:12.931Z",
+      "success": false,
+      "loadTime": 2099,
+      "images": [
+        {
+          "selector": "[data-testid=\"service-hero\"] img",
+          "category": "service-hero",
+          "name": "Ad Campaigns Hero Image",
+          "success": false,
+          "error": "Image element not found",
+          "loadTime": null,
+          "src": null,
+          "dimensions": null
+        },
+        {
+          "selector": "[data-testid=\"portfolio-gallery\"] img",
+          "category": "portfolio",
+          "name": "Ad Campaigns Portfolio Images",
+          "success": false,
+          "error": "Image element not found",
+          "loadTime": null,
+          "src": null,
+          "dimensions": null
+        }
+      ],
+      "placeholders": [
+        {
+          "type": "loading-text",
+          "count": 9,
+          "message": "Found 9 \"Loading image...\" placeholders"
+        },
+        {
+          "type": "gradient-overlay",
+          "message": "Found gradient overlay without image - possible loading state"
+        },
+        {
+          "type": "gradient-overlay",
+          "message": "Found gradient overlay without image - possible loading state"
+        },
+        {
+          "type": "gradient-overlay",
+          "message": "Found gradient overlay without image - possible loading state"
+        },
+        {
+          "type": "gradient-overlay",
+          "message": "Found gradient overlay without image - possible loading state"
+        }
+      ],
+      "errors": [],
+      "warnings": [],
+      "performance": {
+        "totalImages": 2,
+        "loadedImages": 0,
+        "failedImages": 2,
+        "averageLoadTime": 0,
+        "slowImages": [],
+        "slowNetworkLoadTime": 1564
+      }
+    },
+    {
+      "page": "Ad Campaigns Service Page",
+      "url": "/services/ad-campaigns",
+      "deviceType": "mobile",
+      "timestamp": "2025-10-10T20:53:16.981Z",
+      "success": false,
+      "loadTime": 1942,
+      "images": [
+        {
+          "selector": "[data-testid=\"service-hero\"] img",
+          "category": "service-hero",
+          "name": "Ad Campaigns Hero Image",
+          "success": false,
+          "error": "Image element not found",
+          "loadTime": null,
+          "src": null,
+          "dimensions": null
+        },
+        {
+          "selector": "[data-testid=\"portfolio-gallery\"] img",
+          "category": "portfolio",
+          "name": "Ad Campaigns Portfolio Images",
+          "success": false,
+          "error": "Image element not found",
+          "loadTime": null,
+          "src": null,
+          "dimensions": null
+        }
+      ],
+      "placeholders": [
+        {
+          "type": "loading-text",
+          "count": 9,
+          "message": "Found 9 \"Loading image...\" placeholders"
+        },
+        {
+          "type": "gradient-overlay",
+          "message": "Found gradient overlay without image - possible loading state"
+        },
+        {
+          "type": "gradient-overlay",
+          "message": "Found gradient overlay without image - possible loading state"
+        },
+        {
+          "type": "gradient-overlay",
+          "message": "Found gradient overlay without image - possible loading state"
+        },
+        {
+          "type": "gradient-overlay",
+          "message": "Found gradient overlay without image - possible loading state"
+        }
+      ],
+      "errors": [],
+      "warnings": [],
+      "performance": {
+        "totalImages": 2,
+        "loadedImages": 0,
+        "failedImages": 2,
+        "averageLoadTime": 0,
+        "slowImages": []
+      }
+    },
+    {
+      "page": "About Page",
+      "url": "/about",
+      "deviceType": "desktop",
+      "timestamp": "2025-10-10T20:53:19.321Z",
+      "success": false,
+      "loadTime": 2131,
+      "images": [
+        {
+          "selector": "[data-testid=\"about-hero\"] img",
+          "category": "about-hero",
+          "name": "About Hero Image",
+          "success": false,
+          "error": "Image element not found",
+          "loadTime": null,
+          "src": null,
+          "dimensions": null
+        }
+      ],
+      "placeholders": [
+        {
+          "type": "loading-text",
+          "count": 9,
+          "message": "Found 9 \"Loading image...\" placeholders"
+        },
+        {
+          "type": "gradient-overlay",
+          "message": "Found gradient overlay without image - possible loading state"
+        },
+        {
+          "type": "gradient-overlay",
+          "message": "Found gradient overlay without image - possible loading state"
+        },
+        {
+          "type": "gradient-overlay",
+          "message": "Found gradient overlay without image - possible loading state"
+        },
+        {
+          "type": "gradient-overlay",
+          "message": "Found gradient overlay without image - possible loading state"
+        }
+      ],
+      "errors": [],
+      "warnings": [],
+      "performance": {
+        "totalImages": 1,
+        "loadedImages": 0,
+        "failedImages": 1,
+        "averageLoadTime": 0,
+        "slowImages": [],
+        "slowNetworkLoadTime": 1602
+      }
+    },
+    {
+      "page": "About Page",
+      "url": "/about",
+      "deviceType": "mobile",
+      "timestamp": "2025-10-10T20:53:23.456Z",
+      "success": false,
+      "loadTime": 1999,
+      "images": [
+        {
+          "selector": "[data-testid=\"about-hero\"] img",
+          "category": "about-hero",
+          "name": "About Hero Image",
+          "success": false,
+          "error": "Image element not found",
+          "loadTime": null,
+          "src": null,
+          "dimensions": null
+        }
+      ],
+      "placeholders": [
+        {
+          "type": "loading-text",
+          "count": 9,
+          "message": "Found 9 \"Loading image...\" placeholders"
+        },
+        {
+          "type": "gradient-overlay",
+          "message": "Found gradient overlay without image - possible loading state"
+        },
+        {
+          "type": "gradient-overlay",
+          "message": "Found gradient overlay without image - possible loading state"
+        },
+        {
+          "type": "gradient-overlay",
+          "message": "Found gradient overlay without image - possible loading state"
+        },
+        {
+          "type": "gradient-overlay",
+          "message": "Found gradient overlay without image - possible loading state"
+        }
+      ],
+      "errors": [],
+      "warnings": [],
+      "performance": {
+        "totalImages": 1,
+        "loadedImages": 0,
+        "failedImages": 1,
+        "averageLoadTime": 0,
+        "slowImages": []
+      }
+    },
+    {
+      "page": "Blog Page",
+      "url": "/blog",
+      "deviceType": "desktop",
+      "timestamp": "2025-10-10T20:53:25.934Z",
+      "success": false,
+      "loadTime": 1781,
+      "images": [
+        {
+          "selector": "[data-testid=\"service-card\"] img",
+          "category": "service-card",
+          "name": "Service Card Images",
+          "success": false,
+          "error": "Image element not found",
+          "loadTime": null,
+          "src": null,
+          "dimensions": null
+        },
+        {
+          "selector": "[data-testid=\"blog-preview\"] img",
+          "category": "blog-preview",
+          "name": "Blog Preview Images",
+          "success": false,
+          "error": "Image element not found",
+          "loadTime": null,
+          "src": null,
+          "dimensions": null
+        }
+      ],
+      "placeholders": [
+        {
+          "type": "loading-text",
+          "count": 9,
+          "message": "Found 9 \"Loading image...\" placeholders"
+        },
+        {
+          "type": "gradient-overlay",
+          "message": "Found gradient overlay without image - possible loading state"
+        },
+        {
+          "type": "gradient-overlay",
+          "message": "Found gradient overlay without image - possible loading state"
+        },
+        {
+          "type": "gradient-overlay",
+          "message": "Found gradient overlay without image - possible loading state"
+        },
+        {
+          "type": "gradient-overlay",
+          "message": "Found gradient overlay without image - possible loading state"
+        }
+      ],
+      "errors": [],
+      "warnings": [],
+      "performance": {
+        "totalImages": 2,
+        "loadedImages": 0,
+        "failedImages": 2,
+        "averageLoadTime": 0,
+        "slowImages": [],
+        "slowNetworkLoadTime": 1662
+      }
+    },
+    {
+      "page": "Blog Page",
+      "url": "/blog",
+      "deviceType": "mobile",
+      "timestamp": "2025-10-10T20:53:29.733Z",
+      "success": false,
+      "loadTime": 1697,
+      "images": [
+        {
+          "selector": "[data-testid=\"service-card\"] img",
+          "category": "service-card",
+          "name": "Service Card Images",
+          "success": false,
+          "error": "Image element not found",
+          "loadTime": null,
+          "src": null,
+          "dimensions": null
+        },
+        {
+          "selector": "[data-testid=\"blog-preview\"] img",
+          "category": "blog-preview",
+          "name": "Blog Preview Images",
+          "success": false,
+          "error": "Image element not found",
+          "loadTime": null,
+          "src": null,
+          "dimensions": null
+        }
+      ],
+      "placeholders": [
+        {
+          "type": "loading-text",
+          "count": 9,
+          "message": "Found 9 \"Loading image...\" placeholders"
+        },
+        {
+          "type": "gradient-overlay",
+          "message": "Found gradient overlay without image - possible loading state"
+        },
+        {
+          "type": "gradient-overlay",
+          "message": "Found gradient overlay without image - possible loading state"
+        },
+        {
+          "type": "gradient-overlay",
+          "message": "Found gradient overlay without image - possible loading state"
+        },
+        {
+          "type": "gradient-overlay",
+          "message": "Found gradient overlay without image - possible loading state"
+        }
+      ],
+      "errors": [],
+      "warnings": [],
+      "performance": {
+        "totalImages": 2,
+        "loadedImages": 0,
+        "failedImages": 2,
+        "averageLoadTime": 0,
+        "slowImages": []
+      }
+    }
+  ],
+  "testPages": {
+    "homepage": {
+      "url": "/",
+      "name": "Homepage",
+      "expectedImages": [
+        {
+          "selector": "[data-testid=\"service-card-photography\"] img",
+          "category": "service-card",
+          "name": "Photography Service Card"
+        },
+        {
+          "selector": "[data-testid=\"service-card-analytics\"] img",
+          "category": "service-card",
+          "name": "Analytics Service Card"
+        },
+        {
+          "selector": "[data-testid=\"service-card-ad-campaigns\"] img",
+          "category": "service-card",
+          "name": "Ad Campaigns Service Card"
+        },
+        {
+          "selector": "[data-testid=\"blog-preview\"] img",
+          "category": "blog-preview",
+          "name": "Blog Preview Images"
+        },
+        {
+          "selector": "[data-testid=\"hero-section\"] img",
+          "category": "hero",
+          "name": "Hero Image"
+        }
+      ]
+    },
+    "photographyService": {
+      "url": "/services/photography",
+      "name": "Photography Service Page",
+      "expectedImages": [
+        {
+          "selector": "[data-testid=\"service-hero\"] img",
+          "category": "service-hero",
+          "name": "Photography Hero Image"
+        },
+        {
+          "selector": "[data-testid=\"portfolio-gallery\"] img",
+          "category": "portfolio",
+          "name": "Photography Portfolio Images"
+        }
+      ]
+    },
+    "analyticsService": {
+      "url": "/services/analytics",
+      "name": "Analytics Service Page",
+      "expectedImages": [
+        {
+          "selector": "[data-testid=\"service-hero\"] img",
+          "category": "service-hero",
+          "name": "Analytics Hero Image"
+        },
+        {
+          "selector": "[data-testid=\"portfolio-gallery\"] img",
+          "category": "portfolio",
+          "name": "Analytics Portfolio Images"
+        }
+      ]
+    },
+    "adCampaignsService": {
+      "url": "/services/ad-campaigns",
+      "name": "Ad Campaigns Service Page",
+      "expectedImages": [
+        {
+          "selector": "[data-testid=\"service-hero\"] img",
+          "category": "service-hero",
+          "name": "Ad Campaigns Hero Image"
+        },
+        {
+          "selector": "[data-testid=\"portfolio-gallery\"] img",
+          "category": "portfolio",
+          "name": "Ad Campaigns Portfolio Images"
+        }
+      ]
+    },
+    "about": {
+      "url": "/about",
+      "name": "About Page",
+      "expectedImages": [
+        {
+          "selector": "[data-testid=\"about-hero\"] img",
+          "category": "about-hero",
+          "name": "About Hero Image"
+        }
+      ]
+    },
+    "blog": {
+      "url": "/blog",
+      "name": "Blog Page",
+      "expectedImages": [
+        {
+          "selector": "[data-testid=\"service-card\"] img",
+          "category": "service-card",
+          "name": "Service Card Images"
+        },
+        {
+          "selector": "[data-testid=\"blog-preview\"] img",
+          "category": "blog-preview",
+          "name": "Blog Preview Images"
+        }
+      ]
+    }
+  }
+}

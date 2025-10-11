@@ -1,0 +1,111 @@
+{
+  "version": "1.0.0",
+  "enabled": true,
+  "description": "Deployment pipeline test integration configuration",
+  "preDeploymentTests": {
+    "enabled": true,
+    "failFast": true,
+    "timeout": 1800000,
+    "testSuites": [
+      {
+        "id": "core-functionality",
+        "name": "Core Functionality Tests",
+        "description": "Essential site functionality validation",
+        "script": "npm run test:core-functionality",
+        "timeout": 120000,
+        "required": true,
+        "failFast": true,
+        "retries": 1,
+        "outputFile": "core-functionality-results.json"
+      },
+      {
+        "id": "site-functionality",
+        "name": "Site Functionality Tests",
+        "description": "Comprehensive site functionality validation",
+        "script": "npm run test:functionality",
+        "timeout": 300000,
+        "required": true,
+        "failFast": false,
+        "retries": 1,
+        "outputFile": "site-functionality-results.json"
+      },
+      {
+        "id": "accessibility",
+        "name": "Accessibility Compliance Tests",
+        "description": "WCAG 2.1 AA compliance validation",
+        "script": "npx playwright test e2e/accessibility.spec.ts --reporter=json",
+        "timeout": 180000,
+        "required": true,
+        "failFast": false,
+        "retries": 2,
+        "outputFile": "accessibility-results.json"
+      },
+      {
+        "id": "performance",
+        "name": "Performance Tests",
+        "description": "Core Web Vitals and performance validation",
+        "script": "npx playwright test e2e/performance.spec.ts --reporter=json",
+        "timeout": 240000,
+        "required": true,
+        "failFast": false,
+        "retries": 2,
+        "outputFile": "performance-results.json"
+      },
+      {
+        "id": "critical-journeys",
+        "name": "Critical User Journey Tests",
+        "description": "End-to-end user journey validation",
+        "script": "npx playwright test e2e/critical-user-journeys.spec.ts --reporter=json",
+        "timeout": 180000,
+        "required": true,
+        "failFast": false,
+        "retries": 2,
+        "outputFile": "critical-journeys-results.json"
+      },
+      {
+        "id": "unit-tests",
+        "name": "Unit Tests",
+        "description": "Component and utility unit tests",
+        "script": "npm run test -- --run --reporter=json",
+        "timeout": 60000,
+        "required": false,
+        "failFast": false,
+        "retries": 1,
+        "outputFile": "unit-test-results.json"
+      }
+    ]
+  },
+  "reporting": {
+    "enabled": true,
+    "formats": ["json", "html", "junit"],
+    "aggregation": {
+      "enabled": true,
+      "script": "node scripts/test-result-aggregator.js"
+    },
+    "artifacts": {
+      "screenshots": true,
+      "logs": true,
+      "videos": false,
+      "traces": false
+    }
+  },
+  "notifications": {
+    "enabled": true,
+    "channels": ["console", "file", "dashboard"],
+    "onSuccess": false,
+    "onFailure": true,
+    "onCriticalFailure": true,
+    "templates": {
+      "success": "✅ All deployment tests passed - Ready for deployment",
+      "failure": "❌ Deployment tests failed - {{failedCount}}/{{totalCount}} test suites failed",
+      "criticalFailure": "🚨 Critical deployment tests failed - Deployment blocked"
+    }
+  },
+  "dashboard": {
+    "enabled": true,
+    "autoRefresh": true,
+    "refreshInterval": 30000,
+    "historyLimit": 50,
+    "metrics": ["success-rate", "duration", "failure-rate", "trends"]
+  }
+}

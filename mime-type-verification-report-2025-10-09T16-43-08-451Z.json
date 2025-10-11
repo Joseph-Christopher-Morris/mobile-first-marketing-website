@@ -1,0 +1,439 @@
+{
+  "timestamp": "2025-10-09T16:43:08.486Z",
+  "config": {
+    "s3BucketName": "mobile-marketing-site-prod-1759705011281-tyzuo9",
+    "cloudfrontDomain": "d15sc9fc739ev2.cloudfront.net",
+    "region": "us-east-1"
+  },
+  "results": {
+    "s3Objects": [
+      {
+        "key": "404.html",
+        "extension": ".html",
+        "actualMimeType": "text/html",
+        "expectedMimeType": "text/html",
+        "correct": true,
+        "size": 15260
+      },
+      {
+        "key": "404/index.html",
+        "extension": ".html",
+        "actualMimeType": "text/html",
+        "expectedMimeType": "text/html",
+        "correct": true,
+        "size": 15260
+      },
+      {
+        "key": "_next/static/chunks/139.7a5a8e93a21948c1.js",
+        "extension": ".js",
+        "actualMimeType": "application/javascript",
+        "expectedMimeType": "application/javascript",
+        "correct": true,
+        "size": 740
+      },
+      {
+        "key": "_next/static/chunks/255-3260b6c822d7a91e.js",
+        "extension": ".js",
+        "actualMimeType": "application/javascript",
+        "expectedMimeType": "application/javascript",
+        "correct": true,
+        "size": 171824
+      },
+      {
+        "key": "_next/static/chunks/4bd1b696-c023c6e3521b1417.js",
+        "extension": ".js",
+        "actualMimeType": "application/javascript",
+        "expectedMimeType": "application/javascript",
+        "correct": true,
+        "size": 173019
+      },
+      {
+        "key": "_next/static/chunks/619-ba102abea3e3d0e4.js",
+        "extension": ".js",
+        "actualMimeType": "application/javascript",
+        "expectedMimeType": "application/javascript",
+        "correct": true,
+        "size": 8537
+      },
+      {
+        "key": "_next/static/chunks/646.f342b7cffc01feb0.js",
+        "extension": ".js",
+        "actualMimeType": "application/javascript",
+        "expectedMimeType": "application/javascript",
+        "correct": true,
+        "size": 5444
+      },
+      {
+        "key": "_next/static/chunks/851-a86e1c8846928d5d.js",
+        "extension": ".js",
+        "actualMimeType": "application/javascript",
+        "expectedMimeType": "application/javascript",
+        "correct": true,
+        "size": 36918
+      },
+      {
+        "key": "_next/static/chunks/app/_not-found/page-842c680e661176d2.js",
+        "extension": ".js",
+        "actualMimeType": "application/javascript",
+        "expectedMimeType": "application/javascript",
+        "correct": true,
+        "size": 2670
+      },
+      {
+        "key": "_next/static/chunks/app/about/page-bedc5bbc84a89c1b.js",
+        "extension": ".js",
+        "actualMimeType": "application/javascript",
+        "expectedMimeType": "application/javascript",
+        "correct": true,
+        "size": 12936
+      },
+      {
+        "key": "_next/static/chunks/app/blog/[slug]/page-ff78702677ee0d62.js",
+        "extension": ".js",
+        "actualMimeType": "application/javascript",
+        "expectedMimeType": "application/javascript",
+        "correct": true,
+        "size": 8159
+      },
+      {
+        "key": "_next/static/chunks/app/blog/page-a0c8ea5262fde596.js",
+        "extension": ".js",
+        "actualMimeType": "application/javascript",
+        "expectedMimeType": "application/javascript",
+        "correct": true,
+        "size": 11386
+      },
+      {
+        "key": "_next/static/chunks/app/contact/page-3a6e6f35b2b09454.js",
+        "extension": ".js",
+        "actualMimeType": "application/javascript",
+        "expectedMimeType": "application/javascript",
+        "correct": true,
+        "size": 22197
+      },
+      {
+        "key": "_next/static/chunks/app/layout-06caebcab1c80a7a.js",
+        "extension": ".js",
+        "actualMimeType": "application/javascript",
+        "expectedMimeType": "application/javascript",
+        "correct": true,
+        "size": 12875
+      },
+      {
+        "key": "_next/static/chunks/app/page-006d0033784862ed.js",
+        "extension": ".js",
+        "actualMimeType": "application/javascript",
+        "expectedMimeType": "application/javascript",
+        "correct": true,
+        "size": 31828
+      },
+      {
+        "key": "_next/static/chunks/app/robots.txt/route-068ba3586843ea10.js",
+        "extension": ".js",
+        "actualMimeType": "application/javascript",
+        "expectedMimeType": "application/javascript",
+        "correct": true,
+        "size": 135
+      },
+      {
+        "key": "_next/static/chunks/app/services/[slug]/not-found-0c8fd3df041e2fff.js",
+        "extension": ".js",
+        "actualMimeType": "application/javascript",
+        "expectedMimeType": "application/javascript",
+        "correct": true,
+        "size": 183
+      },
+      {
+        "key": "_next/static/chunks/app/services/[slug]/page-f28befcba619e942.js",
+        "extension": ".js",
+        "actualMimeType": "application/javascript",
+        "expectedMimeType": "application/javascript",
+        "correct": true,
+        "size": 39684
+      },
+      {
+        "key": "_next/static/chunks/app/services/page-24aafb8e2071d3b7.js",
+        "extension": ".js",
+        "actualMimeType": "application/javascript",
+        "expectedMimeType": "application/javascript",
+        "correct": true,
+        "size": 19506
+      },
+      {
+        "key": "_next/static/chunks/app/sitemap.xml/route-068ba3586843ea10.js",
+        "extension": ".js",
+        "actualMimeType": "application/javascript",
+        "expectedMimeType": "application/javascript",
+        "correct": true,
+        "size": 135
+      },
+      {
+        "key": "_next/static/chunks/app/test-image-error-handling/page-e8dc3ba6ee813665.js",
+        "extension": ".js",
+        "actualMimeType": "application/javascript",
+        "expectedMimeType": "application/javascript",
+        "correct": true,
+        "size": 11353
+      },
+      {
+        "key": "_next/static/chunks/framework-a6e0b7e30f98059a.js",
+        "extension": ".js",
+        "actualMimeType": "application/javascript",
+        "expectedMimeType": "application/javascript",
+        "correct": true,
+        "size": 139834
+      },
+      {
+        "key": "_next/static/chunks/main-0e5273bff2ae30e4.js",
+        "extension": ".js",
+        "actualMimeType": "application/javascript",
+        "expectedMimeType": "application/javascript",
+        "correct": true,
+        "size": 118916
+      },
+      {
+        "key": "_next/static/chunks/main-app-ffe87789895e1d2d.js",
+        "extension": ".js",
+        "actualMimeType": "application/javascript",
+        "expectedMimeType": "application/javascript",
+        "correct": true,
+        "size": 557
+      },
+      {
+        "key": "_next/static/chunks/pages/_app-82835f42865034fa.js",
+        "extension": ".js",
+        "actualMimeType": "application/javascript",
+        "expectedMimeType": "application/javascript",
+        "correct": true,
+        "size": 912
+      },
+      {
+        "key": "_next/static/chunks/pages/_error-013f4188946cdd04.js",
+        "extension": ".js",
+        "actualMimeType": "application/javascript",
+        "expectedMimeType": "application/javascript",
+        "correct": true,
+        "size": 5652
+      },
+      {
+        "key": "_next/static/chunks/polyfills-42372ed130431b0a.js",
+        "extension": ".js",
+        "actualMimeType": "application/javascript",
+        "expectedMimeType": "application/javascript",
+        "correct": true,
+        "size": 112594
+      },
+      {
+        "key": "_next/static/chunks/webpack-01c9f6446a87a987.js",
+        "extension": ".js",
+        "actualMimeType": "application/javascript",
+        "expectedMimeType": "application/javascript",
+        "correct": true,
+        "size": 3513
+      },
+      {
+        "key": "_next/static/css/05cf675b5e4428e9.css",
+        "extension": ".css",
+        "actualMimeType": "text/css",
+        "expectedMimeType": "text/css",
+        "correct": true,
+        "size": 4055
+      },
+      {
+        "key": "_next/static/css/8b217ca013afcbd7.css",
+        "extension": ".css",
+        "actualMimeType": "text/css",
+        "expectedMimeType": "text/css",
+        "correct": true,
+        "size": 6187
+      },
+      {
+        "key": "_next/static/css/a46e7b07f0a3dd70.css",
+        "extension": ".css",
+        "actualMimeType": "text/css",
+        "expectedMimeType": "text/css",
+        "correct": true,
+        "size": 76926
+      },
+      {
+        "key": "_next/static/css/aebaa3fbe963b721.css",
+        "extension": ".css",
+        "actualMimeType": "text/css",
+        "expectedMimeType": "text/css",
+        "correct": true,
+        "size": 11024
+      },
+      {
+        "key": "_next/static/media/19cfc7226ec3afaa-s.woff2",
+        "extension": ".woff2",
+        "actualMimeType": "font/woff2",
+        "expectedMimeType": "application/octet-stream",
+        "correct": false,
+        "size": 19044
+      },
+      {
+        "key": "_next/static/media/21350d82a1f187e9-s.woff2",
+        "extension": ".woff2",
+        "actualMimeType": "font/woff2",
+        "expectedMimeType": "application/octet-stream",
+        "correct": false,
+        "size": 18744
+      },
+      {
+        "key": "_next/static/media/8e9860b6e62d6359-s.woff2",
+        "extension": ".woff2",
+        "actualMimeType": "font/woff2",
+        "expectedMimeType": "application/octet-stream",
+        "correct": false,
+        "size": 85272
+      },
+      {
+        "key": "_next/static/media/ba9851c3c22cd980-s.woff2",
+        "extension": ".woff2",
+        "actualMimeType": "font/woff2",
+        "expectedMimeType": "application/octet-stream",
+        "correct": false,
+        "size": 25844
+      },
+      {
+        "key": "_next/static/media/c5fe6dc8356a8c31-s.woff2",
+        "extension": ".woff2",
+        "actualMimeType": "font/woff2",
+        "expectedMimeType": "application/octet-stream",
+        "correct": false,
+        "size": 11272
+      },
+      {
+        "key": "_next/static/media/df0a9ae256c0569c-s.woff2",
+        "extension": ".woff2",
+        "actualMimeType": "font/woff2",
+        "expectedMimeType": "application/octet-stream",
+        "correct": false,
+        "size": 10280
+      },
+      {
+        "key": "_next/static/media/e4af272ccee01ff0-s.p.woff2",
+        "extension": ".woff2",
+        "actualMimeType": "font/woff2",
+        "expectedMimeType": "application/octet-stream",
+        "correct": false,
+        "size": 48432
+      },
+      {
+        "key": "_next/static/static-build/_buildManifest.js",
+        "extension": ".js",
+        "actualMimeType": "application/javascript",
+        "expectedMimeType": "application/javascript",
+        "correct": true,
+        "size": 856
+      },
+      {
+        "key": "_next/static/static-build/_ssgManifest.js",
+        "extension": ".js",
+        "actualMimeType": "application/javascript",
+        "expectedMimeType": "application/javascript",
+        "correct": true,
+        "size": 133
+      },
+      {
+        "key": "about/index.html",
+        "extension": ".html",
+        "actualMimeType": "text/html",
+        "expectedMimeType": "text/html",
+        "correct": true,
+        "size": 52048
+      },
+      {
+        "key": "about/index.txt",
+        "extension": ".txt",
+        "actualMimeType": "text/plain",
+        "expectedMimeType": "application/octet-stream",
+        "correct": false,
+        "size": 25001
+      },
+      {
+        "key": "blog/flyers-roi-breakdown/index.html",
+        "extension": ".html",
+        "actualMimeType": "text/html",
+        "expectedMimeType": "text/html",
+        "correct": true,
+        "size": 55527
+      },
+      {
+        "key": "blog/flyers-roi-breakdown/index.txt",
+        "extension": ".txt",
+        "actualMimeType": "text/plain",
+        "expectedMimeType": "application/octet-stream",
+        "correct": false,
+        "size": 25803
+      },
+      {
+        "key": "blog/index.html",
+        "extension": ".html",
+        "actualMimeType": "text/html",
+        "expectedMimeType": "text/html",
+        "correct": true,
+        "size": 41844
+      },
+      {
+        "key": "blog/index.txt",
+        "extension": ".txt",
+        "actualMimeType": "text/plain",
+        "expectedMimeType": "application/octet-stream",
+        "correct": false,
+        "size": 18693
+      },
+      {
+        "key": "blog/paid-ads-campaign-learnings/index.html",
+        "extension": ".html",
+        "actualMimeType": "text/html",
+        "expectedMimeType": "text/html",
+        "correct": true,
+        "size": 52336
+      },
+      {
+        "key": "blog/paid-ads-campaign-learnings/index.txt",
+        "extension": ".txt",
+        "actualMimeType": "text/plain",
+        "expectedMimeType": "application/octet-stream",
+        "correct": false,
+        "size": 24454
+      },
+      {
+        "key": "blog/stock-photography-lessons/index.html",
+        "extension": ".html",
+        "actualMimeType": "text/html",
+        "expectedMimeType": "text/html",
+        "correct": true,
+        "size": 65315
+      }
+    ],
+    "cloudfrontResponses": [],
+    "blogImageTest": {
+      "s3": {
+        "contentType": "image/webp",
+        "correct": true,
+        "size": 23692,
+        "lastModified": "2025-10-07T17:39:33+00:00"
+      },
+      "cloudfront": {
+        "contentType": "image/webp",
+        "correct": true,
+        "cacheStatus": "Hit from cloudfront",
+        "server": "AmazonS3"
+      }
+    },
+    "summary": {
+      "totalChecked": 50,
+      "correctMimeTypes": 39,
+      "incorrectMimeTypes": 11,
+      "errors": 0
+    }
+  },
+  "taskCompletion": {
+    "s3MimeTypesCorrect": false,
+    "cloudfrontMimeTypesCorrect": true,
+    "blogImageWorking": true,
+    "overallSuccess": false
+  }
+}
