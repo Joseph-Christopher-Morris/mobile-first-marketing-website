@@ -2,20 +2,37 @@ import { Metadata } from 'next';
 import { GeneralContactForm } from '@/components/sections/GeneralContactForm';
 import { Layout } from '@/components/layout';
 import { siteConfig } from '@/config/site';
-import {
-  ContactPageClient,
-  ContactLink,
-} from '@/components/sections/ContactPageClient';
+import { ContactLink } from '@/components/sections/ContactPageClient';
 
 export const metadata: Metadata = {
-  title: 'Contact Joe | Vivid Auto Photography & Digital Marketing',
+  title: 'Contact Vivid Auto Photography | Professional Automotive Photography Services',
   description:
-    'Get in touch about automotive photography, digital marketing analytics, or advertising campaigns. I usually reply within one business day (UK time).',
+    'Get in touch about professional automotive photography, data analytics, or strategic advertising campaigns in Nantwich & Cheshire. Free consultation available. Response within one business day (UK time).',
+  keywords: [
+    'contact automotive photographer',
+    'automotive photography Nantwich',
+    'car photography Cheshire',
+    'automotive photography consultation',
+    'professional car photographer contact',
+    'automotive marketing services contact',
+    'vehicle photography enquiry',
+    'automotive advertising consultation',
+    'car dealership photography contact',
+    'automotive photography quote'
+  ],
   openGraph: {
-    title: 'Contact Joe | Vivid Auto Photography & Digital Marketing',
+    title: 'Contact Vivid Auto Photography | Professional Automotive Photography Services',
     description:
-      "Let&apos;s discuss your automotive photography or digital marketing project — professional results guaranteed.",
+      'Get in touch about professional automotive photography, data analytics, or strategic advertising campaigns in Nantwich & Cheshire. Free consultation available.',
     type: 'website',
+    images: [
+      {
+        url: '/images/hero/aston-martin-db6-website.webp',
+        width: 1200,
+        height: 630,
+        alt: 'Contact Vivid Auto Photography for professional automotive photography services in Nantwich & Cheshire',
+      },
+    ],
   },
 };
 
@@ -24,7 +41,7 @@ export default function ContactPage() {
     <Layout pageTitle='Contact'>
       <div className='min-h-screen bg-white'>
         {/* Hero Section */}
-        <section className='bg-gradient-to-br from-blue-50 to-indigo-100 py-12 md:py-20'>
+        <section className='bg-brand-white py-12 md:py-20'>
           <div className='container mx-auto px-4'>
             <div className='max-w-4xl mx-auto text-center'>
               <h1 className='text-2xl md:text-4xl lg:text-5xl font-bold text-gray-900 mb-4 md:mb-6'>
@@ -37,10 +54,6 @@ export default function ContactPage() {
                 <span className='font-semibold'>one business day</span> (UK
                 time).
               </p>
-
-              <ContactPageClient>
-                <div></div>
-              </ContactPageClient>
             </div>
           </div>
         </section>
@@ -63,7 +76,7 @@ export default function ContactPage() {
                     </h3>
                     <div className='space-y-6'>
                       <div className='flex items-start space-x-4'>
-                        <div className='flex-shrink-0 w-6 h-6 text-blue-600 mt-1'>
+                        <div className='flex-shrink-0 w-6 h-6 text-brand-pink mt-1'>
                           <svg
                             fill='none'
                             stroke='currentColor'
@@ -84,7 +97,7 @@ export default function ContactPage() {
                           <ContactLink
                             type='email'
                             value='joe@vividauto.photography'
-                            className='text-blue-600 hover:text-blue-700 underline underline-offset-2'
+                            className='text-brand-pink hover:text-brand-pink2 underline underline-offset-2'
                             aria-label='Email Joe'
                           >
                             joe@vividauto.photography
@@ -93,7 +106,7 @@ export default function ContactPage() {
                       </div>
 
                       <div className='flex items-start space-x-4'>
-                        <div className='flex-shrink-0 w-6 h-6 text-blue-600 mt-1'>
+                        <div className='flex-shrink-0 w-6 h-6 text-brand-pink mt-1'>
                           <svg
                             fill='none'
                             stroke='currentColor'
@@ -114,7 +127,7 @@ export default function ContactPage() {
                           <ContactLink
                             type='phone'
                             value='+447586378502'
-                            className='text-blue-600 hover:text-blue-700 underline underline-offset-2'
+                            className='text-brand-pink hover:text-brand-pink2 underline underline-offset-2'
                             aria-label='Call me'
                           >
                             (+44) 07586 378502
@@ -123,7 +136,7 @@ export default function ContactPage() {
                       </div>
 
                       <div className='flex items-start space-x-4'>
-                        <div className='flex-shrink-0 w-6 h-6 text-blue-600 mt-1'>
+                        <div className='flex-shrink-0 w-6 h-6 text-brand-pink mt-1'>
                           <svg
                             fill='none'
                             stroke='currentColor'
@@ -170,7 +183,7 @@ export default function ContactPage() {
                       </div>
                       <div className='flex justify-between items-center'>
                         <span className='font-medium'>Sunday</span>
-                        <span className='text-red-600'>Closed</span>
+                        <span className='text-brand-pink'>Closed</span>
                       </div>
                     </div>
                     <p className='text-xs text-gray-500 mt-2'>
@@ -251,17 +264,17 @@ export default function ContactPage() {
                   </div>
 
                   {/* Urgent Contact */}
-                  <div className='bg-red-50 border border-red-200 rounded-lg p-4'>
-                    <h4 className='text-lg font-semibold text-red-900 mb-2'>
+                  <div className='bg-brand-white border border-brand-pink rounded-lg p-4'>
+                    <h4 className='text-lg font-semibold text-brand-black mb-2'>
                       Urgent project or same-day shoot?
                     </h4>
-                    <p className='text-red-700 text-sm mb-3'>
+                    <p className='text-brand-black text-sm mb-3'>
                       For live events, auction days, or time-sensitive
                       campaigns, call me directly.
                     </p>
                     <a
                       href='tel:+447586378502'
-                      className='inline-flex items-center space-x-2 text-red-600 hover:text-red-700 font-semibold'
+                      className='inline-flex items-center space-x-2 text-brand-pink hover:text-brand-pink2 font-semibold'
                       aria-label='Call now'
                     >
                       <svg

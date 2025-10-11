@@ -1,0 +1,59 @@
+{
+  "timestamp": "2025-10-11T22:21:35.369Z",
+  "summary": {
+    "total": 8,
+    "passed": 8,
+    "failed": 0,
+    "successRate": "100.0"
+  },
+  "results": [
+    {
+      "testName": "Dashboard Initialization",
+      "passed": true,
+      "message": "Dashboard initialized successfully",
+      "timestamp": "2025-10-11T22:21:35.289Z"
+    },
+    {
+      "testName": "Configuration Loading",
+      "passed": true,
+      "message": "Configuration loaded with all required sections",
+      "timestamp": "2025-10-11T22:21:35.290Z"
+    },
+    {
+      "testName": "Metrics Collection",
+      "passed": true,
+      "message": "Mock metrics processed successfully",
+      "timestamp": "2025-10-11T22:21:35.292Z"
+    },
+    {
+      "testName": "Baseline Calculation",
+      "passed": true,
+      "message": "Baseline calculated successfully",
+      "timestamp": "2025-10-11T22:21:35.295Z"
+    },
+    {
+      "testName": "Regression Detection",
+      "passed": true,
+      "message": "Detected 2 regressions as expected",
+      "timestamp": "2025-10-11T22:21:35.297Z"
+    },
+    {
+      "testName": "Alert System",
+      "passed": true,
+      "message": "Alert processing and storage working",
+      "timestamp": "2025-10-11T22:21:35.343Z"
+    },
+    {
+      "testName": "Report Generation",
+      "passed": true,
+      "message": "All report formats generated successfully",
+      "timestamp": "2025-10-11T22:21:35.354Z"
+    },
+    {
+      "testName": "File Operations",
+      "passed": true,
+      "message": "Configuration and alert files saved successfully",
+      "timestamp": "2025-10-11T22:21:35.367Z"
+    }
+  ]
+}

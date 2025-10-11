@@ -44,16 +44,17 @@ export function Header({ pageTitle: _pageTitle }: HeaderProps) {
             {/* Logo */}
             <Link
               href='/'
-              className='flex items-center text-xl font-bold text-gray-900 hover:text-blue-600 transition-colors'
+              className='flex items-center text-xl font-bold text-gray-900 hover:text-brand-pink transition-colors'
               aria-label='Go to homepage'
             >
               <Image
-                src='/images/icons/vivid-auto-photography-logo.png'
+                src='/images/icons/vivid-auto-photography-logo.webp'
                 alt='Vivid Auto Photography Logo'
                 width={192}
                 height={192}
                 className='w-48 h-48 object-contain'
                 priority
+                sizes='192px'
               />
             </Link>
 

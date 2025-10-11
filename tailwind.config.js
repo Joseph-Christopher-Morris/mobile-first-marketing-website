@@ -85,24 +85,18 @@ module.exports = {
         touch: '44px',
         'touch-lg': '56px',
       },
-      // Enhanced colors for mobile accessibility
+      // Brand colors - only approved colors
       colors: {
-        // High contrast colors for mobile readability
-        'mobile-primary': {
-          50: '#eff6ff',
-          100: '#dbeafe',
-          200: '#bfdbfe',
-          300: '#93c5fd',
-          400: '#60a5fa',
-          500: '#3b82f6',
-          600: '#2563eb',
-          700: '#1d4ed8',
-          800: '#1e40af',
-          900: '#1e3a8a',
+        brand: {
+          white: '#ffffff',
+          pink: '#ff2d7a', // Hot Pink - Primary brand color
+          pink2: '#d81b60', // Dark Hot Pink - Hover/active states
+          black: '#0b0b0b', // Brand black
+          grey: '#969696', // Brand grey
         },
-        // Touch feedback colors
+        // Touch feedback colors using brand colors
         'touch-feedback': {
-          light: 'rgba(0, 0, 0, 0.04)',
+          light: 'rgba(11, 11, 11, 0.04)',
           dark: 'rgba(255, 255, 255, 0.08)',
         },
       },

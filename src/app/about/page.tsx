@@ -1,7 +1,6 @@
 import { Metadata } from 'next';
 import { Layout } from '@/components/layout';
-import OptimizedImage from '@/components/ui/OptimizedImage';
-
+import Image from 'next/image';
 
 export const metadata: Metadata = {
   title: 'About Me | Digital Marketing & Photography Expert',
@@ -20,16 +19,16 @@ export default function AboutPage() {
     <Layout pageTitle='About'>
       <div className='min-h-screen bg-white'>
         {/* Hero Section */}
-        <section className='bg-gradient-to-br from-blue-50 to-indigo-100 py-16 md:py-24'>
+        <section className='bg-brand-white py-16 md:py-24'>
           <div className='container mx-auto px-4'>
             <div className='max-w-4xl mx-auto text-center'>
               <h1 className='text-3xl md:text-5xl font-bold text-gray-900 mb-6'>
                 About Me
               </h1>
               <p className='text-lg md:text-xl text-gray-600 mb-8'>
-                I&apos;m a digital marketer and photographer helping small businesses
-                grow through smart strategy, creative visuals, and data-led
-                decisions.
+                I&apos;m a digital marketer and photographer helping small
+                businesses grow through smart strategy, creative visuals, and
+                data-led decisions.
               </p>
             </div>
           </div>
@@ -67,14 +66,15 @@ export default function AboutPage() {
                   </div>
                 </div>
                 <div className='relative'>
-                  <OptimizedImage
-                    src='/images/about/A7302858.webp'
-                    alt='Professional headshot'
-                    width={600}
-                    height={400}
-                    className='rounded-lg shadow-lg'
-                    priority
-                  />
+                  <div className='relative h-96 w-full'>
+                    <Image
+                      src='/images/about/A7302858.webp'
+                      alt='Professional headshot'
+                      fill
+                      className='object-cover rounded-lg shadow-lg'
+                      priority
+                    />
+                  </div>
                 </div>
               </div>
             </div>
@@ -98,9 +98,9 @@ export default function AboutPage() {
               <div className='grid grid-cols-1 md:grid-cols-3 gap-8'>
                 {/* Photography */}
                 <div className='bg-white rounded-lg p-8 shadow-sm text-center'>
-                  <div className='w-16 h-16 bg-blue-100 rounded-full flex items-center justify-center mx-auto mb-6'>
+                  <div className='w-16 h-16 bg-brand-white border-2 border-brand-pink rounded-full flex items-center justify-center mx-auto mb-6'>
                     <svg
-                      className='w-8 h-8 text-blue-600'
+                      className='w-8 h-8 text-brand-pink'
                       fill='none'
                       stroke='currentColor'
                       viewBox='0 0 24 24'
@@ -129,9 +129,9 @@ export default function AboutPage() {
 
                 {/* Data Analytics */}
                 <div className='bg-white rounded-lg p-8 shadow-sm text-center'>
-                  <div className='w-16 h-16 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-6'>
+                  <div className='w-16 h-16 bg-brand-white border-2 border-brand-pink rounded-full flex items-center justify-center mx-auto mb-6'>
                     <svg
-                      className='w-8 h-8 text-green-600'
+                      className='w-8 h-8 text-brand-pink'
                       fill='none'
                       stroke='currentColor'
                       viewBox='0 0 24 24'
@@ -154,9 +154,9 @@ export default function AboutPage() {
 
                 {/* Ad Campaigns */}
                 <div className='bg-white rounded-lg p-8 shadow-sm text-center'>
-                  <div className='w-16 h-16 bg-purple-100 rounded-full flex items-center justify-center mx-auto mb-6'>
+                  <div className='w-16 h-16 bg-brand-white border-2 border-brand-pink rounded-full flex items-center justify-center mx-auto mb-6'>
                     <svg
-                      className='w-8 h-8 text-purple-600'
+                      className='w-8 h-8 text-brand-pink'
                       fill='none'
                       stroke='currentColor'
                       viewBox='0 0 24 24'
@@ -204,9 +204,9 @@ export default function AboutPage() {
               <div className='grid grid-cols-1 md:grid-cols-3 gap-8'>
                 {/* Creative & Data-Driven */}
                 <div className='text-center'>
-                  <div className='w-20 h-20 bg-blue-100 rounded-full flex items-center justify-center mx-auto mb-6'>
+                  <div className='w-20 h-20 bg-brand-white border-2 border-brand-pink rounded-full flex items-center justify-center mx-auto mb-6'>
                     <svg
-                      className='w-10 h-10 text-blue-600'
+                      className='w-10 h-10 text-brand-pink'
                       fill='none'
                       stroke='currentColor'
                       viewBox='0 0 24 24'
@@ -229,9 +229,9 @@ export default function AboutPage() {
 
                 {/* Results-Focused */}
                 <div className='text-center'>
-                  <div className='w-20 h-20 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-6'>
+                  <div className='w-20 h-20 bg-brand-white border-2 border-brand-pink rounded-full flex items-center justify-center mx-auto mb-6'>
                     <svg
-                      className='w-10 h-10 text-green-600'
+                      className='w-10 h-10 text-brand-pink'
                       fill='none'
                       stroke='currentColor'
                       viewBox='0 0 24 24'
@@ -254,9 +254,9 @@ export default function AboutPage() {
 
                 {/* Client-Centered */}
                 <div className='text-center'>
-                  <div className='w-20 h-20 bg-purple-100 rounded-full flex items-center justify-center mx-auto mb-6'>
+                  <div className='w-20 h-20 bg-brand-white border-2 border-brand-pink rounded-full flex items-center justify-center mx-auto mb-6'>
                     <svg
-                      className='w-10 h-10 text-purple-600'
+                      className='w-10 h-10 text-brand-pink'
                       fill='none'
                       stroke='currentColor'
                       viewBox='0 0 24 24'
@@ -342,7 +342,7 @@ export default function AboutPage() {
         </section>
 
         {/* CTA Section */}
-        <section className='py-16 md:py-24 bg-blue-600 text-white'>
+        <section className='py-16 md:py-24 bg-brand-black text-white'>
           <div className='container mx-auto px-4'>
             <div className='max-w-4xl mx-auto text-center'>
               <h2 className='text-2xl md:text-3xl font-bold mb-6'>
@@ -356,7 +356,7 @@ export default function AboutPage() {
               <div className='flex flex-col sm:flex-row gap-4 justify-center'>
                 <a
                   href='/contact'
-                  className='inline-flex items-center justify-center px-8 py-3 bg-white text-blue-600 font-semibold rounded-lg hover:bg-gray-100 transition-colors'
+                  className='inline-flex items-center justify-center px-8 py-3 bg-white text-brand-pink font-semibold rounded-lg hover:bg-gray-100 transition-colors'
                 >
                   Contact Me
                 </a>

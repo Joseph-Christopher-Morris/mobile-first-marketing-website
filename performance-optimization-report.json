@@ -1,0 +1,91 @@
+{
+  "summary": {
+    "totalChecks": 26,
+    "passed": 25,
+    "failed": 1,
+    "score": 96,
+    "issues": 10
+  },
+  "categories": {
+    "imageOptimization": {
+      "passed": 17,
+      "failed": 0,
+      "issues": [
+        {
+          "file": "C:\\Users\\Joe\\Projects\\website-sync-20251003_133144\\src\\app\\blog\\page.tsx",
+          "issue": "Hero image should have priority prop",
+          "usage": "<Image\r\n                      src={featuredPost.image || '/images/hero-bg.webp'}\r\n                  ..."
+        },
+        {
+          "file": "C:\\Users\\Joe\\Projects\\website-sync-20251003_133144\\src\\app\\blog\\[slug]\\page.tsx",
+          "issue": "Hero image should have priority prop",
+          "usage": "<Image\r\n                src={post.image}\r\n                alt={post.title}\r\n                fill\r\n  ..."
+        },
+        {
+          "file": "C:\\Users\\Joe\\Projects\\website-sync-20251003_133144\\src\\app\\page.tsx",
+          "issue": "Hero image should have priority prop",
+          "usage": "<Image\r\n                    src='/images/services/photography-hero.webp'\r\n                    alt='P..."
+        },
+        {
+          "file": "C:\\Users\\Joe\\Projects\\website-sync-20251003_133144\\src\\app\\page.tsx",
+          "issue": "Hero image should have priority prop",
+          "usage": "<Image\r\n                    src='/images/services/screenshot-2025-09-23-analytics-dashboard.webp'\r\n ..."
+        },
+        {
+          "file": "C:\\Users\\Joe\\Projects\\website-sync-20251003_133144\\src\\app\\page.tsx",
+          "issue": "Hero image should have priority prop",
+          "usage": "<Image\r\n                    src='/images/services/ad-campaigns-hero.webp'\r\n                    alt='..."
+        },
+        {
+          "file": "C:\\Users\\Joe\\Projects\\website-sync-20251003_133144\\src\\app\\page.tsx",
+          "issue": "Hero image should have priority prop",
+          "usage": "<Image\r\n                      src={post.image}\r\n                      alt={`${post.title} - Blog pos..."
+        },
+        {
+          "file": "C:\\Users\\Joe\\Projects\\website-sync-20251003_133144\\src\\app\\services\\ad-campaigns\\page.tsx",
+          "issue": "Hero image should have priority prop",
+          "usage": "<Image\r\n                      src={image.src}\r\n                      alt={image.alt}\r\n              ..."
+        },
+        {
+          "file": "C:\\Users\\Joe\\Projects\\website-sync-20251003_133144\\src\\app\\services\\analytics\\page.tsx",
+          "issue": "Hero image should have priority prop",
+          "usage": "<Image\r\n                      src={image.src}\r\n                      alt={image.alt}\r\n              ..."
+        },
+        {
+          "file": "C:\\Users\\Joe\\Projects\\website-sync-20251003_133144\\src\\app\\services\\photography\\page.tsx",
+          "issue": "Hero image should have priority prop",
+          "usage": "<Image\r\n                      src={image.src}\r\n                      alt={image.alt}\r\n              ..."
+        }
+      ]
+    },
+    "cachingHeaders": {
+      "passed": 3,
+      "failed": 0,
+      "issues": []
+    },
+    "nextjsConfig": {
+      "passed": 4,
+      "failed": 0,
+      "issues": []
+    },
+    "compression": {
+      "passed": 1,
+      "failed": 1,
+      "issues": [
+        {
+          "file": "C:\\Users\\Joe\\Projects\\website-sync-20251003_133144\\public\\images",
+          "issue": "Only 78.0% images are WebP (should be 80%+)"
+        }
+      ]
+    }
+  },
+  "recommendations": [
+    {
+      "category": "Image Compression",
+      "priority": "Medium",
+      "action": "Convert more images to WebP format for better compression",
+      "impact": "Reduces image file sizes by 25-35%"
+    }
+  ],
+  "timestamp": "2025-10-11T21:17:35.806Z"
+}

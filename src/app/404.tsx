@@ -14,7 +14,7 @@ export default function Custom404() {
           </p>
           <a
             href='/'
-            className='inline-flex items-center px-6 py-3 bg-blue-600 text-white font-semibold rounded-lg hover:bg-blue-700 transition-colors'
+            className='inline-flex items-center px-6 py-3 bg-brand-pink text-white font-semibold rounded-lg hover:bg-brand-pink2 transition-colors'
           >
             Go Home
           </a>

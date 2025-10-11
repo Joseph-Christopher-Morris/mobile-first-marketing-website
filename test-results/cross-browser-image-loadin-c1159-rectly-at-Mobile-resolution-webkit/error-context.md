@@ -1,0 +1,207 @@
+# Page snapshot
+
+```yaml
+- generic [active] [ref=e1]:
+  - generic [ref=e2]:
+    - banner [ref=e3]:
+      - generic [ref=e5]:
+        - link "Go to homepage" [ref=e6]:
+          - /url: /
+          - img "Vivid Auto Photography Logo" [ref=e7]
+        - button "Toggle mobile menu" [ref=e9] [cursor=pointer]:
+          - img [ref=e10] [cursor=pointer]
+    - main [ref=e12]:
+      - generic [ref=e13]:
+        - generic [ref=e17]:
+          - generic [ref=e18]:
+            - heading "More than Photography. Data-Driven Vivid Auto Photography that Delivers!" [level=1] [ref=e19]:
+              - text: More than Photography.
+              - generic [ref=e20]: Data-Driven Vivid Auto Photography that Delivers!
+            - paragraph [ref=e21]: Helping businesses in Nantwich & Cheshire grow through professional automotive photography, comprehensive analytics, and strategic advertising campaigns that deliver measurable results.
+            - generic [ref=e22]:
+              - link "Get Started" [ref=e23]:
+                - /url: /contact/
+              - link "View Services" [ref=e24]:
+                - /url: /services/
+          - img "Professional automotive photography showcase - Aston Martin DB6 captured with expert lighting and composition in Nantwich, Cheshire" [ref=e27]
+        - generic [ref=e29]:
+          - generic [ref=e30]:
+            - heading "Our Services" [level=2] [ref=e31]
+            - paragraph [ref=e32]: Comprehensive solutions designed to elevate your business with professional photography, data-driven insights, and strategic advertising campaigns.
+          - generic [ref=e33]:
+            - generic [ref=e34]:
+              - generic [ref=e35]:
+                - img "Professional photography services - automotive and commercial photography showcase" [ref=e36]
+                - heading "Photography Services" [level=3] [ref=e39]
+              - generic [ref=e40]:
+                - paragraph [ref=e41]: Professional automotive and commercial photography with mobile-optimized delivery and stunning visual storytelling.
+                - link "Learn more about professional photography services" [ref=e42]:
+                  - /url: /services/photography/
+                  - text: Learn More
+                  - img [ref=e43]
+            - generic [ref=e45]:
+              - generic [ref=e46]:
+                - img "Data analytics and insights dashboard - comprehensive analytics reporting and business intelligence" [ref=e47]
+                - heading "Data Analytics & Insights" [level=3] [ref=e50]
+              - generic [ref=e51]:
+                - paragraph [ref=e52]: Comprehensive analytics and data-driven insights to optimize your business performance and drive growth.
+                - link "Learn more about data analytics and business insights services" [ref=e53]:
+                  - /url: /services/analytics/
+                  - text: Learn More
+                  - img [ref=e54]
+            - generic [ref=e56]:
+              - generic [ref=e57]:
+                - img "Strategic ad campaigns - targeted advertising and marketing campaign management" [ref=e58]
+                - heading "Strategic Ad Campaigns" [level=3] [ref=e61]
+              - generic [ref=e62]:
+                - paragraph [ref=e63]: Targeted advertising campaigns designed to maximize ROI and reach your ideal customers across all platforms.
+                - link "Learn more about strategic advertising campaigns and ROI optimization" [ref=e64]:
+                  - /url: /services/ad-campaigns/
+                  - text: Learn More
+                  - img [ref=e65]
+        - generic [ref=e68]:
+          - generic [ref=e69]:
+            - heading "Latest Insights" [level=2] [ref=e70]
+            - paragraph [ref=e71]: Stay updated with our latest insights, tips, and industry knowledge to help grow your business.
+          - generic [ref=e72]:
+            - article [ref=e73]:
+              - generic [ref=e74]:
+                - img "What I Learned From My Paid Ads Campaign - Blog post cover image" [ref=e75]
+                - generic [ref=e76]: 6 min read
+              - generic [ref=e77]:
+                - generic [ref=e78]:
+                  - time [ref=e79]: August 11, 2025
+                  - generic [ref=e80]: •
+                  - generic [ref=e81]: Marketing
+                - heading "What I Learned From My Paid Ads Campaign" [level=3] [ref=e82]
+                - paragraph [ref=e83]: Discover how I used Meta Ads, Google Ads, and UX insights to drive qualified traffic, grow my newsletter, and improve future marketing campaigns.
+                - generic [ref=e84]:
+                  - 'link "Read full article: What I Learned From My Paid Ads Campaign" [ref=e85]':
+                    - /url: /blog/paid-ads-campaign-learnings/
+                    - text: Read More
+                    - img [ref=e86]
+                  - generic [ref=e88]: 6 min read
+            - article [ref=e89]:
+              - generic [ref=e90]:
+                - img "Stock Photography Lessons and Applications - Blog post cover image" [ref=e91]
+                - generic [ref=e92]: 7 min read
+              - generic [ref=e93]:
+                - generic [ref=e94]:
+                  - time [ref=e95]: July 18, 2025
+                  - generic [ref=e96]: •
+                  - generic [ref=e97]: Marketing
+                - heading "Stock Photography Lessons and Applications" [level=3] [ref=e98]
+                - paragraph [ref=e99]: How selling stock photos taught me long-term content ROI — and how I applied these lessons to real campaigns for Hampson Auctions and NYCC.
+                - generic [ref=e100]:
+                  - 'link "Read full article: Stock Photography Lessons and Applications" [ref=e101]':
+                    - /url: /blog/stock-photography-lessons/
+                    - text: Read More
+                    - img [ref=e102]
+                  - generic [ref=e104]: 7 min read
+            - article [ref=e105]:
+              - generic [ref=e106]:
+                - 'img "How I Turned £546 into £13.5K With Flyers: Year-by-Year ROI Breakdown (2021–2025) - Blog post cover image" [ref=e107]'
+                - generic [ref=e108]: 8 min read
+              - generic [ref=e109]:
+                - generic [ref=e110]:
+                  - time [ref=e111]: July 12, 2025
+                  - generic [ref=e112]: •
+                  - generic [ref=e113]: Marketing
+                - 'heading "How I Turned £546 into £13.5K With Flyers: Year-by-Year ROI Breakdown (2021–2025)" [level=3] [ref=e114]'
+                - paragraph [ref=e115]: How one offline flyer campaign grew from a single print run into £13.5K in client revenue. Real data, key lessons, and why print marketing still works in 2025.
+                - generic [ref=e116]:
+                  - 'link "Read full article: How I Turned £546 into £13.5K With Flyers: Year-by-Year ROI Breakdown (2021–2025)" [ref=e117]':
+                    - /url: /blog/flyers-roi-breakdown/
+                    - text: Read More
+                    - img [ref=e118]
+                  - generic [ref=e120]: 8 min read
+          - link "View All Posts" [ref=e122]:
+            - /url: /blog/
+            - text: View All Posts
+            - img [ref=e123]
+        - region "What Our Clients Say" [ref=e125]:
+          - generic [ref=e126]:
+            - heading "What Our Clients Say" [level=2] [ref=e127]
+            - region "Testimonials carousel" [ref=e128]:
+              - generic [ref=e130]:
+                - tabpanel "Testimonial from Lee Murfitt" [ref=e131]:
+                  - blockquote [ref=e133]:
+                    - paragraph [ref=e134]: "\"A huge thank you! Joe Morris is a Fantastic photographer from Cheshire who has been providing us with amazing images of our cars for over 18 months at LSH Auto UK!\""
+                    - generic [ref=e135]:
+                      - generic [ref=e136]: Lee Murfitt
+                      - generic [ref=e137]: Lead Strategist for Digital Growth & SEO
+                      - generic [ref=e138]: SciMed
+                - tabpanel "Testimonial from Scott Beercroft" [ref=e139]:
+                  - blockquote [ref=e141]:
+                    - paragraph [ref=e142]: "\"Joe was very flexible at the JSCC Scholarships, doing various shots of the teams working on the Citroen Saxos on the paddock, drivers posing with their cars and exciting pictures of the Saxos on track.\""
+                    - generic [ref=e143]:
+                      - generic [ref=e144]: Scott Beercroft
+                      - generic [ref=e145]: JSCC Day Manager and Social Media Manager
+                      - generic [ref=e146]: JSCC
+              - generic [ref=e147]:
+                - button "Previous testimonial" [ref=e148] [cursor=pointer]:
+                  - img [ref=e149] [cursor=pointer]
+                - tablist "Testimonial navigation" [ref=e151]:
+                  - tab "Go to testimonial 1" [ref=e152] [cursor=pointer]
+                  - tab "Go to testimonial 2" [selected] [ref=e153] [cursor=pointer]
+                - button "Next testimonial" [ref=e154] [cursor=pointer]:
+                  - img [ref=e155] [cursor=pointer]
+              - generic [ref=e157]: Showing testimonial 2 of 2
+        - generic [ref=e159]:
+          - heading "Ready to Grow Your Business?" [level=2] [ref=e160]
+          - paragraph [ref=e161]: Let's work together to create stunning visuals, gain valuable insights, and launch successful campaigns that drive real results.
+          - link "Get Started Today" [ref=e162]:
+            - /url: /contact/
+            - text: Get Started Today
+            - img [ref=e163]
+    - contentinfo [ref=e165]:
+      - generic [ref=e166]:
+        - generic [ref=e167]:
+          - generic [ref=e168]:
+            - heading "Vivid Auto Photography" [level=3] [ref=e169]
+            - paragraph [ref=e170]: Professional Vivid Auto Photography services with mobile-first design approach.
+            - generic [ref=e171]:
+              - link "Facebook" [ref=e172]:
+                - /url: "#"
+                - img [ref=e173]
+              - link "Twitter" [ref=e175]:
+                - /url: "#"
+                - img [ref=e176]
+              - link "Instagram" [ref=e178]:
+                - /url: "#"
+                - img [ref=e179]
+          - generic [ref=e181]:
+            - heading "Quick Links" [level=4] [ref=e182]
+            - list [ref=e183]:
+              - listitem [ref=e184]:
+                - link "Home" [ref=e185]:
+                  - /url: /
+              - listitem [ref=e186]:
+                - link "Services" [ref=e187]:
+                  - /url: /services/
+              - listitem [ref=e188]:
+                - link "Blog" [ref=e189]:
+                  - /url: /blog/
+              - listitem [ref=e190]:
+                - link "About" [ref=e191]:
+                  - /url: /about/
+              - listitem [ref=e192]:
+                - link "Contact" [ref=e193]:
+                  - /url: /contact/
+          - generic [ref=e194]:
+            - heading "Services" [level=4] [ref=e195]
+            - list [ref=e196]:
+              - listitem [ref=e197]:
+                - link "Photography Services" [ref=e198]:
+                  - /url: /services/photography/
+              - listitem [ref=e199]:
+                - link "Data Analytics & Insights" [ref=e200]:
+                  - /url: /services/analytics/
+              - listitem [ref=e201]:
+                - link "Strategic Ad Campaigns" [ref=e202]:
+                  - /url: /services/ad-campaigns/
+        - paragraph [ref=e204]: © 2025 Vivid Auto Photography. All rights reserved.
+  - button "Open Next.js Dev Tools" [ref=e210] [cursor=pointer]:
+    - img [ref=e211] [cursor=pointer]
+  - alert [ref=e216]
+```

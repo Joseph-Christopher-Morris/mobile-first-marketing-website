@@ -17,9 +17,10 @@ const ScottTestimonial: React.FC = () => {
       {/* Testimonial Content */}
       <div className='testimonial-content'>
         <blockquote className='testimonial-text'>
-          &quot;Joe was very flexible at the JSCC Scholarships, doing various shots
-          of the teams working on the Citroen Saxos on the paddock, drivers
-          posing with their cars and exciting pictures of the Saxos on track.&quot;
+          &quot;Joe was very flexible at the JSCC Scholarships, doing various
+          shots of the teams working on the Citroen Saxos on the paddock,
+          drivers posing with their cars and exciting pictures of the Saxos on
+          track.&quot;
         </blockquote>
 
         {/* Author Info */}
