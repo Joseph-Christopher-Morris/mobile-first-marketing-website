@@ -27,6 +27,8 @@ export function Header({ pageTitle: _pageTitle }: HeaderProps) {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const pathname = usePathname();
 
+
+
   const toggleMobileMenu = () => {
     setIsMobileMenuOpen(!isMobileMenuOpen);
   };
@@ -57,18 +59,22 @@ export function Header({ pageTitle: _pageTitle }: HeaderProps) {
 
             {/* Desktop Navigation */}
             <nav
-              className='hidden md:flex items-center space-x-8'
+              className='hidden md:flex items-center space-x-6 md:space-x-8'
               role='navigation'
             >
               {navigationItems.map(item => (
                 <Link
                   key={item.href}
                   href={item.href}
-                  className={`text-sm font-medium transition-colors hover:text-blue-600 ${
+                  className={`text-sm font-medium transition-colors nav-link-brand ${
                     pathname === item.href
-                      ? 'text-blue-600 border-b-2 border-blue-600 pb-1'
+                      ? 'border-b-2 pb-1'
                       : 'text-gray-700'
                   }`}
+                  style={pathname === item.href ? {
+                    color: '#F5276F',
+                    borderBottomColor: '#F5276F'
+                  } : {}}
                   aria-current={pathname === item.href ? 'page' : undefined}
                 >
                   {item.label}
@@ -80,43 +86,55 @@ export function Header({ pageTitle: _pageTitle }: HeaderProps) {
             <div className='hidden md:flex items-center space-x-4'>
               <Link
                 href='/contact'
-                className='bg-blue-600 text-white px-4 py-2 rounded-lg text-sm font-medium hover:bg-blue-700 transition-colors focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2'
+                className='bg-brand-primary text-white px-4 py-2 rounded-lg text-sm font-medium hover:bg-brand-primary-dark transition-colors focus:outline-none focus:ring-2 focus:ring-brand-primary focus:ring-offset-2'
+                style={{
+                  backgroundColor: '#F5276F',
+                  color: 'white'
+                }}
+                onMouseEnter={(e) => {
+                  e.currentTarget.style.backgroundColor = '#C8094C';
+                }}
+                onMouseLeave={(e) => {
+                  e.currentTarget.style.backgroundColor = '#F5276F';
+                }}
               >
                 Get Started
               </Link>
             </div>
 
-            {/* Mobile Menu Button */}
-            <button
-              onClick={toggleMobileMenu}
-              className='md:hidden p-2 rounded-lg text-gray-600 hover:text-gray-900 hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 min-w-[44px] min-h-[44px] flex items-center justify-center'
-              aria-label='Toggle mobile menu'
-              aria-expanded={isMobileMenuOpen}
-            >
-              <svg
-                className='w-6 h-6'
-                fill='none'
-                stroke='currentColor'
-                viewBox='0 0 24 24'
-                aria-hidden='true'
+            {/* Mobile Menu Button - Only render on mobile (below 768px) */}
+            <div className='md:hidden'>
+              <button
+                onClick={toggleMobileMenu}
+                className='p-2 rounded-lg text-gray-600 hover:text-gray-900 hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 min-w-[44px] min-h-[44px] flex items-center justify-center'
+                aria-label='Toggle mobile menu'
+                aria-expanded={isMobileMenuOpen}
               >
-                {isMobileMenuOpen ? (
-                  <path
-                    strokeLinecap='round'
-                    strokeLinejoin='round'
-                    strokeWidth={2}
-                    d='M6 18L18 6M6 6l12 12'
-                  />
-                ) : (
-                  <path
-                    strokeLinecap='round'
-                    strokeLinejoin='round'
-                    strokeWidth={2}
-                    d='M4 6h16M4 12h16M4 18h16'
-                  />
-                )}
-              </svg>
-            </button>
+                <svg
+                  className='w-6 h-6'
+                  fill='none'
+                  stroke='currentColor'
+                  viewBox='0 0 24 24'
+                  aria-hidden='true'
+                >
+                  {isMobileMenuOpen ? (
+                    <path
+                      strokeLinecap='round'
+                      strokeLinejoin='round'
+                      strokeWidth={2}
+                      d='M6 18L18 6M6 6l12 12'
+                    />
+                  ) : (
+                    <path
+                      strokeLinecap='round'
+                      strokeLinejoin='round'
+                      strokeWidth={2}
+                      d='M4 6h16M4 12h16M4 18h16'
+                    />
+                  )}
+                </svg>
+              </button>
+            </div>
           </div>
         </div>
       </header>

@@ -4,7 +4,7 @@ shortDescription:
   'Transform your data into actionable insights that drive business growth.'
 order: 2
 icon: 'chart-bar'
-featuredImage: '/images/services/analytics-hero.webp'
+featuredImage: '/images/services/screenshot-2025-09-23-analytics-dashboard.webp'
 features:
   - 'Web Analytics Setup'
   - 'Custom Dashboard Creation'

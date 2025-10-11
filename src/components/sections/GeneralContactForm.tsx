@@ -1,6 +1,6 @@
 'use client';
 
-import { useState } from 'react';
+import React, { useState } from 'react';
 import { submitContactForm, FormSubmissionResult } from '@/lib/form-handler';
 import Analytics from '@/lib/analytics';
 
@@ -28,6 +28,23 @@ export function GeneralContactForm() {
     service: '',
     message: '',
   });
+
+  // Check for success parameter in URL
+  React.useEffect(() => {
+    if (typeof window !== 'undefined') {
+      const urlParams = new URLSearchParams(window.location.search);
+      if (urlParams.get('success') === 'true') {
+        setSubmissionResult({
+          success: true,
+          message: "Thank you for your message! We'll get back to you within 24 hours.",
+          submissionId: 'success_' + Date.now(),
+        });
+
+        // Clear the URL parameter
+        window.history.replaceState({}, document.title, window.location.pathname);
+      }
+    }
+  }, []);
 
   const [errors, setErrors] = useState<FormErrors>({});
   const [isSubmitting, setIsSubmitting] = useState(false);
@@ -61,51 +78,23 @@ export function GeneralContactForm() {
     }
   };
 
-  const handleSubmit = async (e: React.FormEvent) => {
-    e.preventDefault();
+  const handleSubmit = (e: React.FormEvent) => {
+    console.log('Form submission intercepted');
 
-    setIsSubmitting(true);
-    setErrors({});
-    setSubmissionResult(null);
-
-    try {
-      const result = await submitContactForm(formData);
-      setSubmissionResult(result);
-
-      if (result.success) {
-        // Track successful form submission
-        Analytics.trackFormSubmission('general_contact', {
-          service: formData.service,
-          submission_id: result.submissionId,
-        });
-
-        // Reset form on successful submission
-        setFormData({
-          name: '',
-          email: '',
-          phone: '',
-          company: '',
-          subject: '',
-          service: '',
-          message: '',
-        });
-      } else if (result.errors) {
-        // Set field-specific errors
-        const fieldErrors: FormErrors = {};
-        result.errors.forEach(error => {
-          fieldErrors[error.field] = error.message;
-        });
-        setErrors(fieldErrors);
-      }
-    } catch (error) {
-      console.error('Form submission error:', error);
+    // Basic validation
+    if (!formData.name || !formData.email || !formData.subject || !formData.message) {
+      e.preventDefault();
+      console.log('Validation failed - missing required fields');
       setSubmissionResult({
         success: false,
-        message: 'An unexpected error occurred. Please try again later.',
+        message: 'Please fill in all required fields (Name, Email, Subject, Message).',
       });
-    } finally {
-      setIsSubmitting(false);
+      return;
     }
+
+    // If validation passes, let the form submit naturally to Formspree
+    console.log('Validation passed - allowing form to submit to Formspree');
+    // Don't prevent default - let it submit naturally
   };
 
   // Show success message
@@ -167,7 +156,17 @@ export function GeneralContactForm() {
         </p>
       </div>
 
-      <form onSubmit={handleSubmit} className='space-y-6'>
+      <form
+        onSubmit={handleSubmit}
+        action="https://formspree.io/f/xovkngyr"
+        method="POST"
+        className='space-y-6'
+      >
+        {/* Hidden inputs for Formspree */}
+        <input type="hidden" name="_subject" value="New Contact Form Submission from Website" />
+        <input type="hidden" name="_next" value="https://d15sc9fc739ev2.cloudfront.net/contact?success=true" />
+        <input type="hidden" name="_captcha" value="false" />
+        <input type="hidden" name="_template" value="table" />
         {/* Personal Information */}
         <div className='grid grid-cols-1 md:grid-cols-2 gap-6'>
           <div>
@@ -183,10 +182,10 @@ export function GeneralContactForm() {
               name='name'
               value={formData.name}
               onChange={handleInputChange}
-              className={`w-full px-4 py-3 border rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition-colors ${
-                errors.name ? 'border-red-300' : 'border-gray-300'
-              }`}
+              className={`w-full px-4 py-3 border rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition-colors text-gray-900 placeholder-gray-500 ${errors.name ? 'border-red-300' : 'border-gray-300'
+                }`}
               placeholder='Enter your full name'
+              required
             />
             {errors.name && (
               <p className='mt-1 text-sm text-red-600'>{errors.name}</p>
@@ -206,10 +205,10 @@ export function GeneralContactForm() {
               name='email'
               value={formData.email}
               onChange={handleInputChange}
-              className={`w-full px-4 py-3 border rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition-colors ${
-                errors.email ? 'border-red-300' : 'border-gray-300'
-              }`}
+              className={`w-full px-4 py-3 border rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition-colors text-gray-900 placeholder-gray-500 ${errors.email ? 'border-red-300' : 'border-gray-300'
+                }`}
               placeholder='Enter your email address'
+              required
             />
             {errors.email && (
               <p className='mt-1 text-sm text-red-600'>{errors.email}</p>
@@ -231,7 +230,7 @@ export function GeneralContactForm() {
               name='phone'
               value={formData.phone}
               onChange={handleInputChange}
-              className='w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition-colors'
+              className='w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition-colors text-gray-900 placeholder-gray-500'
               placeholder='Enter your phone number'
             />
           </div>
@@ -249,7 +248,7 @@ export function GeneralContactForm() {
               name='company'
               value={formData.company}
               onChange={handleInputChange}
-              className='w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition-colors'
+              className='w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition-colors text-gray-900 placeholder-gray-500'
               placeholder='Enter your company name'
             />
           </div>
@@ -269,7 +268,7 @@ export function GeneralContactForm() {
               name='service'
               value={formData.service}
               onChange={handleInputChange}
-              className='w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition-colors'
+              className='w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition-colors text-gray-900'
             >
               <option value=''>Select a service</option>
               {services.map(service => (
@@ -293,10 +292,10 @@ export function GeneralContactForm() {
               name='subject'
               value={formData.subject}
               onChange={handleInputChange}
-              className={`w-full px-4 py-3 border rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition-colors ${
-                errors.subject ? 'border-red-300' : 'border-gray-300'
-              }`}
+              className={`w-full px-4 py-3 border rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition-colors text-gray-900 placeholder-gray-500 ${errors.subject ? 'border-red-300' : 'border-gray-300'
+                }`}
               placeholder='Enter message subject'
+              required
             />
             {errors.subject && (
               <p className='mt-1 text-sm text-red-600'>{errors.subject}</p>
@@ -317,10 +316,10 @@ export function GeneralContactForm() {
             rows={6}
             value={formData.message}
             onChange={handleInputChange}
-            className={`w-full px-4 py-3 border rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition-colors resize-vertical ${
-              errors.message ? 'border-red-300' : 'border-gray-300'
-            }`}
+            className={`w-full px-4 py-3 border rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition-colors resize-vertical text-gray-900 placeholder-gray-500 ${errors.message ? 'border-red-300' : 'border-gray-300'
+              }`}
             placeholder='Tell us how we can help you...'
+            required
           />
           {errors.message && (
             <p className='mt-1 text-sm text-red-600'>{errors.message}</p>
@@ -363,11 +362,10 @@ export function GeneralContactForm() {
           <button
             type='submit'
             disabled={isSubmitting}
-            className={`w-full px-6 py-4 bg-blue-600 text-white font-semibold rounded-lg transition-colors focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 min-h-[56px] ${
-              isSubmitting
-                ? 'opacity-50 cursor-not-allowed'
-                : 'hover:bg-blue-700'
-            }`}
+            className={`w-full px-6 py-4 bg-blue-600 text-white font-semibold rounded-lg transition-colors focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 min-h-[56px] ${isSubmitting
+              ? 'opacity-50 cursor-not-allowed'
+              : 'hover:bg-blue-700'
+              }`}
           >
             {isSubmitting ? (
               <span className='flex items-center justify-center'>

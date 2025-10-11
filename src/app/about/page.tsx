@@ -4,13 +4,13 @@ import OptimizedImage from '@/components/ui/OptimizedImage';
 import { siteConfig } from '@/config/site';
 
 export const metadata: Metadata = {
-  title: 'About Us | Mobile-First Marketing Agency',
+  title: 'About Me | Digital Marketing & Photography Expert',
   description:
-    'Learn about our mobile-first marketing agency. We specialize in photography, analytics, and ad campaigns designed to help your business grow.',
+    'Learn about my journey from professional photography to data-driven digital marketing, with expertise in Adobe Experience Cloud and Google Marketing Platform.',
   openGraph: {
-    title: 'About Us | Mobile-First Marketing Agency',
+    title: 'About Me | Digital Marketing & Photography Expert',
     description:
-      'Learn about our mobile-first marketing agency. We specialize in photography, analytics, and ad campaigns designed to help your business grow.',
+      'Learn about my journey from professional photography to data-driven digital marketing, with expertise in Adobe Experience Cloud and Google Marketing Platform.',
     type: 'website',
   },
 };
@@ -24,54 +24,40 @@ export default function AboutPage() {
           <div className='container mx-auto px-4'>
             <div className='max-w-4xl mx-auto text-center'>
               <h1 className='text-3xl md:text-5xl font-bold text-gray-900 mb-6'>
-                About Our Agency
+                About Me
               </h1>
               <p className='text-lg md:text-xl text-gray-600 mb-8'>
-                We're a mobile-first marketing agency dedicated to helping
-                businesses thrive in the digital age.
+                I'm a digital marketer and photographer helping small businesses grow through smart strategy, creative visuals, and data-led decisions.
               </p>
             </div>
           </div>
         </section>
 
-        {/* Our Story Section */}
+        {/* My Journey Section */}
         <section className='py-16 md:py-24'>
           <div className='container mx-auto px-4'>
             <div className='max-w-6xl mx-auto'>
               <div className='grid grid-cols-1 lg:grid-cols-2 gap-12 items-center'>
                 <div>
                   <h2 className='text-2xl md:text-3xl font-bold text-gray-900 mb-6'>
-                    Our Story
+                    My Journey
                   </h2>
                   <div className='space-y-4 text-gray-600'>
                     <p>
-                      Founded with a vision to revolutionize digital marketing,
-                      our agency has been at the forefront of mobile-first
-                      design and strategy since day one. We recognized early on
-                      that the future of marketing lies in creating experiences
-                      that work seamlessly across all devices, with mobile
-                      leading the way.
+                      I began with photography, capturing classic cars, auctions, and events, and built a thriving business from scratch. Along the way, I discovered the power of <strong>analytics and marketing technology</strong>.
                     </p>
                     <p>
-                      Our team combines creative expertise with data-driven
-                      insights to deliver marketing solutions that not only look
-                      great but also drive real results. From stunning
-                      photography that captures your brand's essence to
-                      sophisticated analytics that reveal actionable insights,
-                      we're your partners in growth.
+                      Now, I combine creative storytelling with tools like <strong>Adobe Analytics</strong>, <strong>Meta Ads</strong>, and <strong>Google Ads</strong> to help brands stand out and reach their target audience.
                     </p>
                     <p>
-                      Today, we're proud to serve businesses of all sizes,
-                      helping them navigate the complex digital landscape and
-                      achieve their marketing goals through innovative,
-                      mobile-first strategies.
+                      My work has been featured in <strong>Business Insider</strong> and the <strong>Daily Mail</strong>, and I'm certified in <strong>Adobe Experience Cloud</strong> and <strong>Google Marketing Platform</strong>.
                     </p>
                   </div>
                 </div>
                 <div className='relative'>
                   <OptimizedImage
-                    src='/images/about-team.jpg'
-                    alt='Our marketing team at work'
+                    src='/images/about/A7302858.webp'
+                    alt='Professional headshot'
                     width={600}
                     height={400}
                     className='rounded-lg shadow-lg'
@@ -83,127 +69,25 @@ export default function AboutPage() {
           </div>
         </section>
 
-        {/* Our Mission & Values */}
+        {/* What I Do */}
         <section className='py-16 md:py-24 bg-gray-50'>
           <div className='container mx-auto px-4'>
             <div className='max-w-6xl mx-auto'>
               <div className='text-center mb-16'>
                 <h2 className='text-2xl md:text-3xl font-bold text-gray-900 mb-4'>
-                  Our Mission & Values
+                  What I Do
                 </h2>
                 <p className='text-lg text-gray-600 max-w-3xl mx-auto'>
-                  We're driven by a simple mission: to help businesses succeed
-                  in the mobile-first world through innovative marketing
-                  strategies and exceptional service.
-                </p>
-              </div>
-
-              <div className='grid grid-cols-1 md:grid-cols-3 gap-8'>
-                {/* Mission */}
-                <div className='bg-white rounded-lg p-8 shadow-sm text-center'>
-                  <div className='w-16 h-16 bg-blue-100 rounded-full flex items-center justify-center mx-auto mb-6'>
-                    <svg
-                      className='w-8 h-8 text-blue-600'
-                      fill='none'
-                      stroke='currentColor'
-                      viewBox='0 0 24 24'
-                    >
-                      <path
-                        strokeLinecap='round'
-                        strokeLinejoin='round'
-                        strokeWidth={2}
-                        d='M13 10V3L4 14h7v7l9-11h-7z'
-                      />
-                    </svg>
-                  </div>
-                  <h3 className='text-xl font-bold text-gray-900 mb-4'>
-                    Our Mission
-                  </h3>
-                  <p className='text-gray-600'>
-                    To empower businesses with mobile-first marketing strategies
-                    that drive growth, engagement, and lasting success in the
-                    digital landscape.
-                  </p>
-                </div>
-
-                {/* Innovation */}
-                <div className='bg-white rounded-lg p-8 shadow-sm text-center'>
-                  <div className='w-16 h-16 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-6'>
-                    <svg
-                      className='w-8 h-8 text-green-600'
-                      fill='none'
-                      stroke='currentColor'
-                      viewBox='0 0 24 24'
-                    >
-                      <path
-                        strokeLinecap='round'
-                        strokeLinejoin='round'
-                        strokeWidth={2}
-                        d='M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z'
-                      />
-                    </svg>
-                  </div>
-                  <h3 className='text-xl font-bold text-gray-900 mb-4'>
-                    Innovation
-                  </h3>
-                  <p className='text-gray-600'>
-                    We stay ahead of the curve, constantly exploring new
-                    technologies and strategies to deliver cutting-edge
-                    marketing solutions.
-                  </p>
-                </div>
-
-                {/* Results */}
-                <div className='bg-white rounded-lg p-8 shadow-sm text-center'>
-                  <div className='w-16 h-16 bg-purple-100 rounded-full flex items-center justify-center mx-auto mb-6'>
-                    <svg
-                      className='w-8 h-8 text-purple-600'
-                      fill='none'
-                      stroke='currentColor'
-                      viewBox='0 0 24 24'
-                    >
-                      <path
-                        strokeLinecap='round'
-                        strokeLinejoin='round'
-                        strokeWidth={2}
-                        d='M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z'
-                      />
-                    </svg>
-                  </div>
-                  <h3 className='text-xl font-bold text-gray-900 mb-4'>
-                    Results-Driven
-                  </h3>
-                  <p className='text-gray-600'>
-                    Every strategy we develop is focused on delivering
-                    measurable results that contribute to your business growth
-                    and success.
-                  </p>
-                </div>
-              </div>
-            </div>
-          </div>
-        </section>
-
-        {/* Our Services Overview */}
-        <section className='py-16 md:py-24'>
-          <div className='container mx-auto px-4'>
-            <div className='max-w-6xl mx-auto'>
-              <div className='text-center mb-16'>
-                <h2 className='text-2xl md:text-3xl font-bold text-gray-900 mb-4'>
-                  What We Do
-                </h2>
-                <p className='text-lg text-gray-600 max-w-3xl mx-auto'>
-                  We offer a comprehensive suite of marketing services designed
-                  to help your business succeed in the mobile-first world.
+                  I combine creative storytelling with data-driven insights to help brands stand out and reach the right audience.
                 </p>
               </div>
 
               <div className='grid grid-cols-1 md:grid-cols-3 gap-8'>
                 {/* Photography */}
-                <div className='text-center'>
-                  <div className='w-20 h-20 bg-blue-100 rounded-full flex items-center justify-center mx-auto mb-6'>
+                <div className='bg-white rounded-lg p-8 shadow-sm text-center'>
+                  <div className='w-16 h-16 bg-blue-100 rounded-full flex items-center justify-center mx-auto mb-6'>
                     <svg
-                      className='w-10 h-10 text-blue-600'
+                      className='w-8 h-8 text-blue-600'
                       fill='none'
                       stroke='currentColor'
                       viewBox='0 0 24 24'
@@ -223,19 +107,18 @@ export default function AboutPage() {
                     </svg>
                   </div>
                   <h3 className='text-xl font-bold text-gray-900 mb-4'>
-                    Professional Photography
+                    Photography
                   </h3>
                   <p className='text-gray-600'>
-                    High-quality visual content that captures your brand's
-                    essence and engages your audience across all platforms.
+                    Professional visuals that connect with your audience
                   </p>
                 </div>
 
-                {/* Analytics */}
-                <div className='text-center'>
-                  <div className='w-20 h-20 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-6'>
+                {/* Data Analytics */}
+                <div className='bg-white rounded-lg p-8 shadow-sm text-center'>
+                  <div className='w-16 h-16 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-6'>
                     <svg
-                      className='w-10 h-10 text-green-600'
+                      className='w-8 h-8 text-green-600'
                       fill='none'
                       stroke='currentColor'
                       viewBox='0 0 24 24'
@@ -252,17 +135,15 @@ export default function AboutPage() {
                     Data Analytics
                   </h3>
                   <p className='text-gray-600'>
-                    Comprehensive analytics and insights that help you
-                    understand your audience and optimize your marketing
-                    efforts.
+                    Turn insights into clear actions and growth
                   </p>
                 </div>
 
                 {/* Ad Campaigns */}
-                <div className='text-center'>
-                  <div className='w-20 h-20 bg-purple-100 rounded-full flex items-center justify-center mx-auto mb-6'>
+                <div className='bg-white rounded-lg p-8 shadow-sm text-center'>
+                  <div className='w-16 h-16 bg-purple-100 rounded-full flex items-center justify-center mx-auto mb-6'>
                     <svg
-                      className='w-10 h-10 text-purple-600'
+                      className='w-8 h-8 text-purple-600'
                       fill='none'
                       stroke='currentColor'
                       viewBox='0 0 24 24'
@@ -282,11 +163,10 @@ export default function AboutPage() {
                     </svg>
                   </div>
                   <h3 className='text-xl font-bold text-gray-900 mb-4'>
-                    Strategic Ad Campaigns
+                    Ad Campaigns
                   </h3>
                   <p className='text-gray-600'>
-                    Targeted advertising campaigns designed to reach your ideal
-                    customers and drive conversions across all channels.
+                    Strategy and optimisation across Meta & Google Ads
                   </p>
                 </div>
               </div>
@@ -294,62 +174,150 @@ export default function AboutPage() {
           </div>
         </section>
 
-        {/* Why Choose Us */}
+        {/* Why Work With Me */}
+        <section className='py-16 md:py-24'>
+          <div className='container mx-auto px-4'>
+            <div className='max-w-6xl mx-auto'>
+              <div className='text-center mb-16'>
+                <h2 className='text-2xl md:text-3xl font-bold text-gray-900 mb-4'>
+                  Why Work With Me
+                </h2>
+                <p className='text-lg text-gray-600 max-w-3xl mx-auto'>
+                  I bring together creative expertise and data-driven insights to deliver marketing solutions that drive real results.
+                </p>
+              </div>
+
+              <div className='grid grid-cols-1 md:grid-cols-3 gap-8'>
+                {/* Creative & Data-Driven */}
+                <div className='text-center'>
+                  <div className='w-20 h-20 bg-blue-100 rounded-full flex items-center justify-center mx-auto mb-6'>
+                    <svg
+                      className='w-10 h-10 text-blue-600'
+                      fill='none'
+                      stroke='currentColor'
+                      viewBox='0 0 24 24'
+                    >
+                      <path
+                        strokeLinecap='round'
+                        strokeLinejoin='round'
+                        strokeWidth={2}
+                        d='M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z'
+                      />
+                    </svg>
+                  </div>
+                  <h3 className='text-xl font-bold text-gray-900 mb-4'>
+                    Creative & Data-Driven
+                  </h3>
+                  <p className='text-gray-600'>
+                    Eye-catching content backed by analytics
+                  </p>
+                </div>
+
+                {/* Results-Focused */}
+                <div className='text-center'>
+                  <div className='w-20 h-20 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-6'>
+                    <svg
+                      className='w-10 h-10 text-green-600'
+                      fill='none'
+                      stroke='currentColor'
+                      viewBox='0 0 24 24'
+                    >
+                      <path
+                        strokeLinecap='round'
+                        strokeLinejoin='round'
+                        strokeWidth={2}
+                        d='M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z'
+                      />
+                    </svg>
+                  </div>
+                  <h3 className='text-xl font-bold text-gray-900 mb-4'>
+                    Results-Focused
+                  </h3>
+                  <p className='text-gray-600'>
+                    Measurable improvements and ROI
+                  </p>
+                </div>
+
+                {/* Client-Centered */}
+                <div className='text-center'>
+                  <div className='w-20 h-20 bg-purple-100 rounded-full flex items-center justify-center mx-auto mb-6'>
+                    <svg
+                      className='w-10 h-10 text-purple-600'
+                      fill='none'
+                      stroke='currentColor'
+                      viewBox='0 0 24 24'
+                    >
+                      <path
+                        strokeLinecap='round'
+                        strokeLinejoin='round'
+                        strokeWidth={2}
+                        d='M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z'
+                      />
+                    </svg>
+                  </div>
+                  <h3 className='text-xl font-bold text-gray-900 mb-4'>
+                    Client-Centred
+                  </h3>
+                  <p className='text-gray-600'>
+                    Collaborative and tailored to your goals
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        {/* Credentials & Recognition */}
         <section className='py-16 md:py-24 bg-gray-50'>
           <div className='container mx-auto px-4'>
             <div className='max-w-6xl mx-auto'>
               <div className='text-center mb-16'>
                 <h2 className='text-2xl md:text-3xl font-bold text-gray-900 mb-4'>
-                  Why Choose Us
+                  Credentials & Recognition
                 </h2>
                 <p className='text-lg text-gray-600 max-w-3xl mx-auto'>
-                  We're not just another marketing agency. Here's what sets us
-                  apart from the competition.
+                  My work has been recognized by leading publications and I hold certifications from top marketing platforms.
                 </p>
               </div>
 
               <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8'>
                 <div className='text-center'>
-                  <div className='text-3xl mb-4'>📱</div>
+                  <div className='text-3xl mb-4'>📰</div>
                   <h3 className='text-lg font-bold text-gray-900 mb-2'>
-                    Mobile-First Approach
+                    Business Insider
                   </h3>
                   <p className='text-gray-600 text-sm'>
-                    Every strategy is designed with mobile users in mind,
-                    ensuring optimal performance across all devices.
+                    Featured work and insights in leading business publication
                   </p>
                 </div>
 
                 <div className='text-center'>
-                  <div className='text-3xl mb-4'>📊</div>
+                  <div className='text-3xl mb-4'>📰</div>
                   <h3 className='text-lg font-bold text-gray-900 mb-2'>
-                    Data-Driven Decisions
+                    Daily Mail
                   </h3>
                   <p className='text-gray-600 text-sm'>
-                    We use comprehensive analytics to inform every decision and
-                    continuously optimize your campaigns.
+                    Photography and marketing work featured in major media outlet
                   </p>
                 </div>
 
                 <div className='text-center'>
                   <div className='text-3xl mb-4'>🎯</div>
                   <h3 className='text-lg font-bold text-gray-900 mb-2'>
-                    Targeted Results
+                    Adobe Experience Cloud
                   </h3>
                   <p className='text-gray-600 text-sm'>
-                    Our strategies are tailored to your specific audience and
-                    business goals for maximum impact.
+                    Certified in Adobe's comprehensive marketing platform
                   </p>
                 </div>
 
                 <div className='text-center'>
-                  <div className='text-3xl mb-4'>🤝</div>
+                  <div className='text-3xl mb-4'>📊</div>
                   <h3 className='text-lg font-bold text-gray-900 mb-2'>
-                    Partnership Approach
+                    Google Marketing Platform
                   </h3>
                   <p className='text-gray-600 text-sm'>
-                    We work as an extension of your team, providing ongoing
-                    support and strategic guidance.
+                    Certified in Google's advanced marketing and analytics tools
                   </p>
                 </div>
               </div>
@@ -357,132 +325,30 @@ export default function AboutPage() {
           </div>
         </section>
 
-        {/* Team Section */}
-        <section className='py-16 md:py-24'>
-          <div className='container mx-auto px-4'>
-            <div className='max-w-6xl mx-auto'>
-              <div className='text-center mb-16'>
-                <h2 className='text-2xl md:text-3xl font-bold text-gray-900 mb-4'>
-                  Meet Our Team
-                </h2>
-                <p className='text-lg text-gray-600 max-w-3xl mx-auto'>
-                  Our diverse team of marketing experts, designers, and
-                  strategists work together to deliver exceptional results for
-                  our clients.
-                </p>
-              </div>
 
-              <div className='grid grid-cols-1 md:grid-cols-3 gap-8'>
-                {/* Team Member 1 */}
-                <div className='text-center'>
-                  <div className='w-32 h-32 bg-gray-200 rounded-full mx-auto mb-6 flex items-center justify-center'>
-                    <svg
-                      className='w-16 h-16 text-gray-400'
-                      fill='currentColor'
-                      viewBox='0 0 20 20'
-                    >
-                      <path
-                        fillRule='evenodd'
-                        d='M10 9a3 3 0 100-6 3 3 0 000 6zm-7 9a7 7 0 1114 0H3z'
-                        clipRule='evenodd'
-                      />
-                    </svg>
-                  </div>
-                  <h3 className='text-xl font-bold text-gray-900 mb-2'>
-                    Sarah Johnson
-                  </h3>
-                  <p className='text-blue-600 font-medium mb-3'>
-                    Creative Director
-                  </p>
-                  <p className='text-gray-600 text-sm'>
-                    With over 10 years of experience in digital marketing, Sarah
-                    leads our creative team in developing innovative campaigns
-                    that drive results.
-                  </p>
-                </div>
-
-                {/* Team Member 2 */}
-                <div className='text-center'>
-                  <div className='w-32 h-32 bg-gray-200 rounded-full mx-auto mb-6 flex items-center justify-center'>
-                    <svg
-                      className='w-16 h-16 text-gray-400'
-                      fill='currentColor'
-                      viewBox='0 0 20 20'
-                    >
-                      <path
-                        fillRule='evenodd'
-                        d='M10 9a3 3 0 100-6 3 3 0 000 6zm-7 9a7 7 0 1114 0H3z'
-                        clipRule='evenodd'
-                      />
-                    </svg>
-                  </div>
-                  <h3 className='text-xl font-bold text-gray-900 mb-2'>
-                    Mike Chen
-                  </h3>
-                  <p className='text-blue-600 font-medium mb-3'>
-                    Analytics Specialist
-                  </p>
-                  <p className='text-gray-600 text-sm'>
-                    Mike transforms complex data into actionable insights,
-                    helping our clients understand their audience and optimize
-                    their marketing efforts.
-                  </p>
-                </div>
-
-                {/* Team Member 3 */}
-                <div className='text-center'>
-                  <div className='w-32 h-32 bg-gray-200 rounded-full mx-auto mb-6 flex items-center justify-center'>
-                    <svg
-                      className='w-16 h-16 text-gray-400'
-                      fill='currentColor'
-                      viewBox='0 0 20 20'
-                    >
-                      <path
-                        fillRule='evenodd'
-                        d='M10 9a3 3 0 100-6 3 3 0 000 6zm-7 9a7 7 0 1114 0H3z'
-                        clipRule='evenodd'
-                      />
-                    </svg>
-                  </div>
-                  <h3 className='text-xl font-bold text-gray-900 mb-2'>
-                    Emily Rodriguez
-                  </h3>
-                  <p className='text-blue-600 font-medium mb-3'>
-                    Photography Lead
-                  </p>
-                  <p className='text-gray-600 text-sm'>
-                    Emily captures stunning visuals that tell your brand's story
-                    and connect with your audience on an emotional level.
-                  </p>
-                </div>
-              </div>
-            </div>
-          </div>
-        </section>
 
         {/* CTA Section */}
         <section className='py-16 md:py-24 bg-blue-600 text-white'>
           <div className='container mx-auto px-4'>
             <div className='max-w-4xl mx-auto text-center'>
               <h2 className='text-2xl md:text-3xl font-bold mb-6'>
-                Ready to Grow Your Business?
+                Ready to take your marketing further?
               </h2>
               <p className='text-lg mb-8 opacity-90'>
-                Let's work together to create a mobile-first marketing strategy
-                that drives real results for your business.
+                Let's discuss your project and how I can help you achieve your marketing goals through creative visuals and data-driven strategy.
               </p>
               <div className='flex flex-col sm:flex-row gap-4 justify-center'>
                 <a
                   href='/contact'
                   className='inline-flex items-center justify-center px-8 py-3 bg-white text-blue-600 font-semibold rounded-lg hover:bg-gray-100 transition-colors'
                 >
-                  Get Started Today
+                  Contact Me
                 </a>
                 <a
                   href='/services'
-                  className='inline-flex items-center justify-center px-8 py-3 border-2 border-white text-white font-semibold rounded-lg hover:bg-white hover:text-blue-600 transition-colors'
+                  className='inline-flex items-center justify-center px-8 py-3 border-2 border-white text-white font-semibold rounded-lg hover:bg-white hover:text-black transition-colors'
                 >
-                  View Our Services
+                  View My Services
                 </a>
               </div>
             </div>

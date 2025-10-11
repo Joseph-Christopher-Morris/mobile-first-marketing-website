@@ -2,14 +2,11 @@ import type { Metadata } from 'next';
 import { Layout } from '@/components/layout';
 import Hero from '@/components/sections/Hero';
 import { ServicesShowcase } from '@/components/sections/ServicesShowcase';
-import TestimonialsCarousel from '@/components/sections/TestimonialsCarousel';
+import TestimonialsCarousel from '@/components/TestimonialsCarousel';
 import BlogPreview from '@/components/sections/BlogPreview';
 import { heroConfig } from '@/config/hero';
-import {
-  getAllServices,
-  getFilteredTestimonials,
-  getFilteredPosts,
-} from '@/lib/content';
+import { getAllServices } from '@/lib/content';
+import { getAllBlogPosts } from '@/lib/blog-api';
 
 export const metadata: Metadata = {
   title: 'Vivid Auto Photography | Photography, Analytics & Ad Campaigns',
@@ -38,16 +35,16 @@ export const metadata: Metadata = {
   },
 };
 
-export default function Home() {
+export default async function Home() {
   const services = getAllServices();
-  const testimonials = getFilteredTestimonials({ featured: true });
-  const latestPosts = getFilteredPosts({ limit: 3 });
+  const allPosts = await getAllBlogPosts();
+  const latestPosts = allPosts.slice(0, 3);
 
   return (
     <Layout pageTitle='Home'>
       <Hero config={heroConfig} />
       <ServicesShowcase services={services} />
-      <TestimonialsCarousel testimonials={testimonials} />
+      <TestimonialsCarousel />
       <BlogPreview posts={latestPosts} />
     </Layout>
   );
