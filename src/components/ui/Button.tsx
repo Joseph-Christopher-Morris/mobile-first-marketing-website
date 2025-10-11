@@ -31,11 +31,11 @@ const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
 
     const variantClasses = {
       primary:
-        'text-white hover:opacity-90 focus:ring-offset-2 active:opacity-95',
+        'bg-blue-600 text-white hover:bg-blue-700 focus:ring-blue-500 active:bg-blue-800',
       secondary:
         'bg-gray-600 text-white hover:bg-gray-700 focus:ring-gray-500 active:bg-gray-800',
       outline:
-        'border-2 border-gray-300 text-gray-700 bg-white hover:bg-gray-50 hover:border-gray-400 focus:ring-gray-500 active:bg-gray-100',
+        'border-2 border-blue-600 text-blue-600 hover:bg-blue-600 hover:text-white focus:ring-blue-500 active:bg-blue-700 active:text-white',
       ghost:
         'text-gray-600 hover:bg-gray-100 hover:text-gray-900 focus:ring-gray-500 active:bg-gray-200',
     };
@@ -47,18 +47,11 @@ const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
       icon: 'p-2 min-h-[44px] min-w-[44px]', // Square icon button
     };
 
-    // Add brand classes for primary and outline variants
-    const brandClass = variant === 'primary' ? 'brand-button-primary' : 
-                      variant === 'outline' ? 'brand-button-outline' : '';
-    
-    const classes = `${baseClasses} ${variantClasses[variant]} ${sizeClasses[size]} ${brandClass} ${className}`;
+    const classes = `${baseClasses} ${variantClasses[variant]} ${sizeClasses[size]} ${className}`;
 
     if (href) {
       return (
-        <Link 
-          href={href} 
-          className={classes}
-        >
+        <Link href={href} className={classes}>
           {children}
         </Link>
       );

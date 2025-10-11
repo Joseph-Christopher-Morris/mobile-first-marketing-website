@@ -1,12 +1,7 @@
 {
   "compilerOptions": {
     "target": "es2015",
-    "lib": [
-      "dom",
-      "dom.iterable",
-      "es6",
-      "es2015"
-    ],
+    "lib": ["dom", "dom.iterable", "es6", "es2015"],
     "downlevelIteration": true,
     "allowJs": true,
     "skipLibCheck": true,
@@ -29,39 +24,13 @@
     ],
     "baseUrl": ".",
     "paths": {
-      "@/*": [
-        "./src/*"
-      ],
-      "@/components/*": [
-        "./src/components/*"
-      ],
-      "@/lib/*": [
-        "./src/lib/*"
-      ],
-      "@/types/*": [
-        "./src/types/*"
-      ],
-      "@/content/*": [
-        "./content/*"
-      ]
+      "@/*": ["./src/*"],
+      "@/components/*": ["./src/components/*"],
+      "@/lib/*": ["./src/lib/*"],
+      "@/types/*": ["./src/types/*"],
+      "@/content/*": ["./content/*"]
     }
   },
-  "include": [
-    ".next/types/**/*.ts",
-    "build-output/types/**/*.ts",
-    "build/types/**/*.ts",
-    "fresh-build/types/**/*.ts",
-    "next-env.d.ts",
-    "out/types/**/*.ts",
-    "src/**/*.ts",
-    "src/**/*.tsx",
-    "src/test/types.d.ts",
-    "build-1760027167401/types/**/*.ts"
-  ],
-  "exclude": [
-    "node_modules",
-    "Zone_*/**/*",
-    "Zone_*",
-    "*.zip"
-  ]
+  "include": ["next-env.d.ts", "src/**/*.ts", "src/**/*.tsx", ".next/types/**/*.ts", "src/test/types.d.ts"],
+  "exclude": ["node_modules", "Zone_*/**/*", "Zone_*", "*.zip"]
 }

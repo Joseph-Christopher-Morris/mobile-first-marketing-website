@@ -5,7 +5,7 @@ shortDescription:
   services.'
 order: 1
 icon: 'camera'
-featuredImage: '/images/services/250928-hampson-auctions-sunday-11.webp'
+featuredImage: '/images/services/photography-hero.webp'
 features:
   - 'Event Photography'
   - 'Portrait Sessions'
