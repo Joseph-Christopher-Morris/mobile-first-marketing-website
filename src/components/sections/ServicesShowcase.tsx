@@ -126,7 +126,7 @@ const ServiceCard: React.FC<ServiceCardProps> = ({ service }) => {
         <div className='flex flex-col sm:flex-row gap-3'>
           <Button
             href={`/services/${service.slug}`}
-            variant='primary'
+            variant='outline'
             size='md'
             className='flex-1 text-center'
           >
@@ -134,11 +134,11 @@ const ServiceCard: React.FC<ServiceCardProps> = ({ service }) => {
           </Button>
           <Button
             href='/contact'
-            variant='outline'
+            variant='primary'
             size='md'
             className='flex-1 text-center'
           >
-            Get Quote
+            Get Started
           </Button>
         </div>
       </div>

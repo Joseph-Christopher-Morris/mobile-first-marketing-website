@@ -8,6 +8,7 @@ const nextConfig = {
   trailingSlash: true,
   distDir: 'out',
   generateBuildId: () => 'static-build',
+  outputFileTracingRoot: __dirname, // Fix workspace root warning
   eslint: {
     // Warning: This allows production builds to successfully complete even if
     // your project has ESLint errors.

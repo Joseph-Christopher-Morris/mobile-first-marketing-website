@@ -146,6 +146,32 @@
     --color-border-default: #4b5563;
     --color-border-strong: #6b7280;
   }
+
+  /* Ensure form inputs remain readable in dark mode */
+  input,
+  textarea,
+  select {
+    background-color: #ffffff !important;
+    color: #111827 !important;
+    border-color: #d1d5db !important;
+  }
+
+  /* Specific select styling for dark mode */
+  select option {
+    background-color: #ffffff !important;
+    color: #111827 !important;
+  }
+
+  select:focus,
+  select:active {
+    background-color: #ffffff !important;
+    color: #111827 !important;
+  }
+
+  input::placeholder,
+  textarea::placeholder {
+    color: #6b7280 !important;
+  }
 }
 
 /* Reduced motion support */
@@ -229,6 +255,39 @@ select {
   font-size: 16px;
   /* Improve touch interaction */
   touch-action: manipulation;
+}
+
+/* Ensure form inputs are visible and readable */
+form input,
+form textarea,
+form select {
+  color: #111827 !important;
+  background-color: #ffffff !important;
+  border: 1px solid #d1d5db !important;
+}
+
+/* Ensure placeholder text is visible */
+form input::placeholder,
+form textarea::placeholder {
+  color: #6b7280 !important;
+}
+
+/* Specific styling for select elements and their options */
+form select {
+  color: #111827 !important;
+  background-color: #ffffff !important;
+}
+
+form select option {
+  color: #111827 !important;
+  background-color: #ffffff !important;
+}
+
+/* Ensure select dropdown text is readable */
+form select:focus,
+form select:active {
+  color: #111827 !important;
+  background-color: #ffffff !important;
 }
 
 /* Mobile-optimized link styles */

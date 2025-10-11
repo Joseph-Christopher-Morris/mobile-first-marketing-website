@@ -8,13 +8,12 @@ import {
 } from '@/components/sections/ContactPageClient';
 
 export const metadata: Metadata = {
-  title: 'Contact Us | Get in Touch',
+  title: 'Contact Joe | Vivid Auto Photography & Digital Marketing',
   description:
-    "Get in touch with our team for professional marketing services. We're here to help with your photography, analytics, and advertising needs.",
+    "Get in touch about automotive photography, digital marketing analytics, or advertising campaigns. I usually reply within one business day (UK time).",
   openGraph: {
-    title: 'Contact Us | Get in Touch',
-    description:
-      'Get in touch with our team for professional marketing services.',
+    title: 'Contact Joe | Vivid Auto Photography & Digital Marketing',
+    description: 'Let\'s discuss your automotive photography or digital marketing project — professional results guaranteed.',
     type: 'website',
   },
 };
@@ -28,12 +27,10 @@ export default function ContactPage() {
           <div className='container mx-auto px-4'>
             <div className='max-w-4xl mx-auto text-center'>
               <h1 className='text-2xl md:text-4xl lg:text-5xl font-bold text-gray-900 mb-4 md:mb-6'>
-                Get in Touch
+                Let's Work Together
               </h1>
               <p className='text-base md:text-lg lg:text-xl text-gray-600 mb-6 md:mb-8'>
-                Ready to start your next project? We&apos;d love to hear from
-                you. Send us a message and we&apos;ll respond as soon as
-                possible.
+                Need professional automotive or event photography, GA4 setup, ad campaigns or website hosting support? Share the details of your project and I will be in touch within <span className='font-semibold'>one business day</span> (UK time).
               </p>
 
               <ContactPageClient>
@@ -57,7 +54,7 @@ export default function ContactPage() {
                 <div className='order-1 lg:order-2 space-y-8'>
                   <div>
                     <h3 className='text-xl font-bold text-gray-900 mb-6'>
-                      Contact Information
+                      Contact details
                     </h3>
                     <div className='space-y-6'>
                       <div className='flex items-start space-x-4'>
@@ -81,10 +78,11 @@ export default function ContactPage() {
                           </p>
                           <ContactLink
                             type='email'
-                            value={siteConfig.contact.email}
-                            className='text-blue-600 hover:text-blue-700 transition-colors'
+                            value='joe@vividauto.photography'
+                            className='text-blue-600 hover:text-blue-700 underline underline-offset-2'
+                            aria-label='Email Joe'
                           >
-                            {siteConfig.contact.email}
+                            joe@vividauto.photography
                           </ContactLink>
                         </div>
                       </div>
@@ -110,10 +108,11 @@ export default function ContactPage() {
                           </p>
                           <ContactLink
                             type='phone'
-                            value={siteConfig.contact.phone}
-                            className='text-blue-600 hover:text-blue-700 transition-colors'
+                            value='+447586378502'
+                            className='text-blue-600 hover:text-blue-700 underline underline-offset-2'
+                            aria-label='Call me'
                           >
-                            {siteConfig.contact.phone}
+                            (+44) 07586 378502
                           </ContactLink>
                         </div>
                       </div>
@@ -141,10 +140,10 @@ export default function ContactPage() {
                         </div>
                         <div>
                           <p className='font-medium text-gray-900 mb-1'>
-                            Address
+                            Location
                           </p>
                           <address className='text-gray-600 not-italic'>
-                            {siteConfig.contact.address}
+                            Nantwich, Cheshire UK
                           </address>
                         </div>
                       </div>
@@ -153,27 +152,30 @@ export default function ContactPage() {
 
                   <div>
                     <h3 className='text-xl font-bold text-gray-900 mb-4'>
-                      Business Hours
+                      Hours (UK time)
                     </h3>
-                    <div className='space-y-3 text-gray-600'>
+                    <div className='space-y-3 text-gray-700'>
                       <div className='flex justify-between items-center'>
-                        <span className='font-medium'>Monday - Friday</span>
-                        <span>9:00 AM - 6:00 PM</span>
+                        <span className='font-medium'>Monday – Friday</span>
+                        <span>09:00 – 18:00</span>
                       </div>
                       <div className='flex justify-between items-center'>
                         <span className='font-medium'>Saturday</span>
-                        <span>10:00 AM - 4:00 PM</span>
+                        <span>10:00 – 14:00</span>
                       </div>
                       <div className='flex justify-between items-center'>
                         <span className='font-medium'>Sunday</span>
                         <span className='text-red-600'>Closed</span>
                       </div>
                     </div>
+                    <p className='text-xs text-gray-500 mt-2'>
+                      Response times may vary on shoot days and auction events.
+                    </p>
                   </div>
 
                   <div>
                     <h3 className='text-xl font-bold text-gray-900 mb-4'>
-                      Follow Us
+                      Follow me
                     </h3>
                     <div className='flex space-x-4'>
                       {siteConfig.socialMedia.facebook && (
@@ -181,8 +183,8 @@ export default function ContactPage() {
                           href={siteConfig.socialMedia.facebook}
                           target='_blank'
                           rel='noopener noreferrer'
-                          className='w-12 h-12 bg-blue-600 text-white rounded-full flex items-center justify-center hover:bg-blue-700 transition-colors'
-                          aria-label='Follow us on Facebook'
+                          className='w-12 h-12 bg-pink-600 text-white rounded-full flex items-center justify-center hover:bg-pink-700 transition-colors'
+                          aria-label='Follow on Facebook'
                         >
                           <svg
                             className='w-6 h-6'
@@ -197,30 +199,14 @@ export default function ContactPage() {
                           </svg>
                         </a>
                       )}
-                      {siteConfig.socialMedia.twitter && (
-                        <a
-                          href={siteConfig.socialMedia.twitter}
-                          target='_blank'
-                          rel='noopener noreferrer'
-                          className='w-12 h-12 bg-blue-400 text-white rounded-full flex items-center justify-center hover:bg-blue-500 transition-colors'
-                          aria-label='Follow us on Twitter'
-                        >
-                          <svg
-                            className='w-6 h-6'
-                            fill='currentColor'
-                            viewBox='0 0 20 20'
-                          >
-                            <path d='M6.29 18.251c7.547 0 11.675-6.253 11.675-11.675 0-.178 0-.355-.012-.53A8.348 8.348 0 0020 3.92a8.19 8.19 0 01-2.357.646 4.118 4.118 0 001.804-2.27 8.224 8.224 0 01-2.605.996 4.107 4.107 0 00-6.993 3.743 11.65 11.65 0 01-8.457-4.287 4.106 4.106 0 001.27 5.477A4.073 4.073 0 01.8 7.713v.052a4.105 4.105 0 003.292 4.022 4.095 4.095 0 01-1.853.07 4.108 4.108 0 003.834 2.85A8.233 8.233 0 010 16.407a11.616 11.616 0 006.29 1.84' />
-                          </svg>
-                        </a>
-                      )}
+
                       {siteConfig.socialMedia.linkedin && (
                         <a
                           href={siteConfig.socialMedia.linkedin}
                           target='_blank'
                           rel='noopener noreferrer'
-                          className='w-12 h-12 bg-blue-700 text-white rounded-full flex items-center justify-center hover:bg-blue-800 transition-colors'
-                          aria-label='Follow us on LinkedIn'
+                          className='w-12 h-12 bg-pink-600 text-white rounded-full flex items-center justify-center hover:bg-pink-700 transition-colors'
+                          aria-label='Connect on LinkedIn'
                         >
                           <svg
                             className='w-6 h-6'
@@ -241,7 +227,7 @@ export default function ContactPage() {
                           target='_blank'
                           rel='noopener noreferrer'
                           className='w-12 h-12 bg-pink-600 text-white rounded-full flex items-center justify-center hover:bg-pink-700 transition-colors'
-                          aria-label='Follow us on Instagram'
+                          aria-label='Follow on Instagram'
                         >
                           <svg
                             className='w-6 h-6'
@@ -259,17 +245,18 @@ export default function ContactPage() {
                     </div>
                   </div>
 
-                  {/* Emergency Contact */}
+                  {/* Urgent Contact */}
                   <div className='bg-red-50 border border-red-200 rounded-lg p-4'>
                     <h4 className='text-lg font-semibold text-red-900 mb-2'>
-                      Urgent Projects?
+                      Urgent project or same-day shoot?
                     </h4>
                     <p className='text-red-700 text-sm mb-3'>
-                      Need immediate assistance with your marketing campaign?
+                      For live events, auction days, or time-sensitive campaigns, call me directly.
                     </p>
                     <a
-                      href={`tel:${siteConfig.contact.phone.replace(/\D/g, '')}`}
+                      href='tel:+447586378502'
                       className='inline-flex items-center space-x-2 text-red-600 hover:text-red-700 font-semibold'
+                      aria-label='Call now'
                     >
                       <svg
                         className='w-4 h-4'
@@ -284,7 +271,7 @@ export default function ContactPage() {
                           d='M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z'
                         />
                       </svg>
-                      <span>Call Now</span>
+                      <span>Call now</span>
                     </a>
                   </div>
                 </div>
@@ -298,17 +285,34 @@ export default function ContactPage() {
           <div className='container mx-auto px-4'>
             <div className='max-w-4xl mx-auto'>
               <h2 className='text-2xl md:text-3xl font-bold text-gray-900 text-center mb-8'>
-                Frequently Asked Questions
+                Frequently asked questions
               </h2>
 
               <div className='space-y-6'>
                 <div className='bg-white rounded-lg p-6 shadow-sm'>
                   <h3 className='text-lg font-semibold text-gray-900 mb-2'>
-                    How quickly do you respond to inquiries?
+                    How quickly do you respond to enquiries?
                   </h3>
-                  <p className='text-gray-600'>
-                    We typically respond to all inquiries within 24 hours during
-                    business days. For urgent matters, please call us directly.
+                  <p className='text-gray-700'>
+                    I personally reply to all messages within one business day. If something is urgent, you are welcome to call so I can help sooner.
+                  </p>
+                </div>
+
+                <div className='bg-white rounded-lg p-6 shadow-sm'>
+                  <h3 className='text-lg font-semibold text-gray-900 mb-2'>
+                    Where do you work?
+                  </h3>
+                  <p className='text-gray-700'>
+                    I mainly work with small businesses in Nantwich and across Cheshire, but I am happy to support nearby areas as well.
+                  </p>
+                </div>
+
+                <div className='bg-white rounded-lg p-6 shadow-sm'>
+                  <h3 className='text-lg font-semibold text-gray-900 mb-2'>
+                    What services do you offer?
+                  </h3>
+                  <p className='text-gray-700'>
+                    I provide automotive and event photography, Google Analytics and GA4 implementation, Google Ads, Meta Ads, paid advertising campaigns and website migration to AWS CloudFront.
                   </p>
                 </div>
 
@@ -316,10 +320,8 @@ export default function ContactPage() {
                   <h3 className='text-lg font-semibold text-gray-900 mb-2'>
                     What information should I include in my message?
                   </h3>
-                  <p className='text-gray-600'>
-                    Please include details about your project, timeline, budget
-                    range, and specific services you&apos;re interested in. The
-                    more information you provide, the better we can assist you.
+                  <p className='text-gray-700'>
+                    Please share details about your project and goals, your timeline or launch date, budget or ad spend range, and access to tools like Google Analytics or ad accounts if available. The more context you give, the easier it is for me to recommend the right approach.
                   </p>
                 </div>
 
@@ -327,10 +329,17 @@ export default function ContactPage() {
                   <h3 className='text-lg font-semibold text-gray-900 mb-2'>
                     Do you offer free consultations?
                   </h3>
-                  <p className='text-gray-600'>
-                    Yes! We offer a free 30-minute consultation to discuss your
-                    project needs and how our services can help achieve your
-                    goals.
+                  <p className='text-gray-700'>
+                    Yes. I offer a free 30-minute consultation by phone, video meeting or email review to talk through your goals and explore how I can best support your business.
+                  </p>
+                </div>
+
+                <div className='bg-white rounded-lg p-6 shadow-sm'>
+                  <h3 className='text-lg font-semibold text-gray-900 mb-2'>
+                    Can you help if I am not sure what I need yet?
+                  </h3>
+                  <p className='text-gray-700'>
+                    Absolutely. If you are unsure where to start, we can look at your current marketing together and decide on the most helpful next steps during the free consultation.
                   </p>
                 </div>
               </div>

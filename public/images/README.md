@@ -89,7 +89,7 @@ public/images/
 
 ### Blog Images
 
-- `blog/mobile-first-design.jpg` - Mobile-first design principles post
+- `hero/240619-London-19.webp` - Stock photography lessons post
 - `blog/welcome-hero.jpg` - Welcome post hero image
 
 ### Service Images
