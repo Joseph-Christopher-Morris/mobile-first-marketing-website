@@ -1,71 +1,8 @@
 import { Service } from '@/lib/content';
-import OptimizedImage from '@/components/ui/OptimizedImage';
 
 interface ServiceContentProps {
   service: Service;
   contentHtml: string;
-}
-
-// Portfolio images for each service - Updated per requirements
-function getPortfolioImages(serviceSlug: string): Array<{src: string, alt: string}> {
-  const portfolioImages: Record<string, Array<{src: string, alt: string}>> = {
-    photography: [
-      {
-        src: '240217-australia-trip-232.webp',
-        alt: 'Sydney harbour editorial — automotive travel photography'
-      },
-      {
-        src: '240219-australia-trip-148.webp', 
-        alt: 'Australia automotive travel photography — scenic landscape'
-      },
-      {
-        src: '240619-london-19.webp',
-        alt: 'Central London street photography — automotive'
-      },
-      {
-        src: '240619-london-26.webp',
-        alt: 'London urban automotive photography — city streets'
-      },
-      {
-        src: '240619-london-64.webp',
-        alt: 'London automotive photography — urban environment'
-      },
-      {
-        src: '250125-liverpool-40.webp',
-        alt: 'Liverpool automotive photography — urban environment'
-      },
-    ],
-    analytics: [
-      {
-        src: 'screenshot-2025-08-12-analytics-report.webp',
-        alt: 'Analytics dashboard metrics — performance tracking'
-      },
-      {
-        src: '../hero/stock-photography-samira.webp',
-        alt: 'Stock photography analytics — SAMIRA performance data'
-      },
-      {
-        src: 'output-5-analytics-chart.webp',
-        alt: 'Analytics data visualization — custom reporting dashboard'
-      },
-    ],
-    'ad-campaigns': [
-      {
-        src: 'accessible-top8-campaigns-source.webp',
-        alt: 'Top 8 advertising campaigns — performance analysis'
-      },
-      {
-        src: 'top-3-mediums-by-conversion-rate.webp',
-        alt: 'Top 3 mediums by conversion rate — bar chart analysis'
-      },
-      {
-        src: 'screenshot-2025-08-12-analytics-report.webp',
-        alt: 'Analytics report screenshot — campaign performance data'
-      },
-    ],
-  };
-
-  return portfolioImages[serviceSlug] || [];
 }
 
 export function ServiceContent({ service, contentHtml }: ServiceContentProps) {
@@ -187,24 +124,59 @@ export function ServiceContent({ service, contentHtml }: ServiceContentProps) {
               Our Work in Action
             </h2>
             <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6'>
-              {getPortfolioImages(service.slug).map((imageData, index) => (
+              {/* Sample portfolio items - in a real implementation, these would come from the service data */}
+              {[1, 2, 3, 4, 5, 6].map(item => (
                 <div
-                  key={index}
+                  key={item}
                   className='relative group overflow-hidden rounded-lg bg-gray-200 aspect-video hover:shadow-lg transition-all duration-300'
                 >
-                  <OptimizedImage
-                    src={`/images/services/${imageData.src}`}
-                    alt={imageData.alt}
-                    width={400}
-                    height={225}
-                    className='w-full h-full object-cover group-hover:scale-105 transition-transform duration-300'
-                    loading={index < 3 ? 'eager' : 'lazy'}
-                    priority={index < 3}
-                    sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 33vw"
-                  />
+                  <div className='absolute inset-0 bg-gradient-to-br from-blue-500/20 to-indigo-600/20 flex items-center justify-center'>
+                    <div className='text-center text-gray-600'>
+                      <svg
+                        className='w-12 h-12 mx-auto mb-2 opacity-50'
+                        fill='none'
+                        stroke='currentColor'
+                        viewBox='0 0 24 24'
+                      >
+                        <path
+                          strokeLinecap='round'
+                          strokeLinejoin='round'
+                          strokeWidth={2}
+                          d='M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z'
+                        />
+                      </svg>
+                      <p className='text-sm font-medium'>
+                        Portfolio Item {item}
+                      </p>
+                    </div>
+                  </div>
                   <div className='absolute inset-0 bg-black/0 group-hover:bg-black/10 transition-colors duration-300' />
                 </div>
               ))}
+            </div>
+            <div className='text-center mt-8'>
+              <p className='text-gray-600 mb-4'>
+                Want to see more examples of our work?
+              </p>
+              <a
+                href='/portfolio'
+                className='inline-flex items-center px-6 py-3 bg-white border border-gray-300 text-gray-700 font-semibold rounded-lg hover:bg-gray-50 transition-colors focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2'
+              >
+                View Full Portfolio
+                <svg
+                  className='w-5 h-5 ml-2'
+                  fill='none'
+                  stroke='currentColor'
+                  viewBox='0 0 24 24'
+                >
+                  <path
+                    strokeLinecap='round'
+                    strokeLinejoin='round'
+                    strokeWidth={2}
+                    d='M17 8l4 4m0 0l-4 4m4-4H3'
+                  />
+                </svg>
+              </a>
             </div>
           </section>
         </div>

@@ -1,7 +1,6 @@
 import type { Metadata } from 'next';
 import { Inter } from 'next/font/google';
 import './globals.css';
-import '../styles/brand-theme.css';
 import { AnalyticsProvider } from '@/components/analytics/AnalyticsProvider';
 import { StructuredData } from '@/components/seo';
 
