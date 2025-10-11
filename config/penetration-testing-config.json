@@ -58,14 +58,7 @@
               "1' AND (SELECT COUNT(*) FROM information_schema.tables)>0--",
               "' OR (SELECT COUNT(*) FROM sysobjects)>0--"
             ],
-            "testPoints": [
-              "/?id=",
-              "/?user=",
-              "/?search=",
-              "/api/user?id=",
-              "/login?username=",
-              "/search?query="
-            ]
+            "testPoints": ["/?id=", "/?user=", "/?search=", "/api/user?id=", "/login?username=", "/search?query="]
           },
           "inputValidation": {
             "enabled": true,
@@ -314,11 +307,7 @@
       }
     },
     "compliance": {
-      "standards": [
-        "OWASP Top 10",
-        "AWS Security Best Practices",
-        "CloudFront Security Guidelines"
-      ],
+      "standards": ["OWASP Top 10", "AWS Security Best Practices", "CloudFront Security Guidelines"],
       "minimumSecurityScore": 80,
       "maxCriticalIssues": 0,
       "maxHighSeverityIssues": 2

@@ -31,7 +31,5 @@
   "securityAnalysis": {
     "error": "getaddrinfo ENOTFOUND invalid-domain-that-does-not-exist.com"
   },
-  "recommendations": [
-    "Enable TLS 1.2 and/or TLS 1.3 support"
-  ]
+  "recommendations": ["Enable TLS 1.2 and/or TLS 1.3 support"]
 }

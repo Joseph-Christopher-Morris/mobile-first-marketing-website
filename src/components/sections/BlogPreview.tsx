@@ -38,7 +38,10 @@ const BlogPreview: React.FC<BlogPreviewProps> = ({
         </div>
 
         {/* Blog Posts Grid */}
-        <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8 mb-12' data-testid="blog-preview">
+        <div
+          className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8 mb-12'
+          data-testid='blog-preview'
+        >
           {posts.map((post, index) => (
             <BlogPostCard key={post.slug} post={post} isFirstRow={index < 3} />
           ))}
@@ -67,7 +70,10 @@ interface BlogPostCardProps {
   isFirstRow?: boolean;
 }
 
-const BlogPostCard: React.FC<BlogPostCardProps> = ({ post, isFirstRow = false }) => {
+const BlogPostCard: React.FC<BlogPostCardProps> = ({
+  post,
+  isFirstRow = false,
+}) => {
   const [imageError, setImageError] = useState(false);
   const [imageLoading, setImageLoading] = useState(true);
   const [retryCount, setRetryCount] = useState(0);
@@ -95,8 +101,10 @@ const BlogPostCard: React.FC<BlogPostCardProps> = ({ post, isFirstRow = false })
   };
 
   const handleImageError = () => {
-    console.error(`❌ Image failed to load: ${post.image} (attempt ${retryCount + 1})`);
-    
+    console.error(
+      `❌ Image failed to load: ${post.image} (attempt ${retryCount + 1})`
+    );
+
     // Try to retry loading the image up to 2 times
     if (retryCount < 2) {
       setRetryCount(prev => prev + 1);
@@ -139,10 +147,21 @@ const BlogPostCard: React.FC<BlogPostCardProps> = ({ post, isFirstRow = false })
     }
 
     // Fallback: Show analytics chart for analytics/campaign related posts
-    if (post.tags?.some(tag => ['analytics', 'campaigns', 'paid-ads', 'data-driven', 'meta-ads', 'google-ads'].includes(tag))) {
+    if (
+      post.tags?.some(tag =>
+        [
+          'analytics',
+          'campaigns',
+          'paid-ads',
+          'data-driven',
+          'meta-ads',
+          'google-ads',
+        ].includes(tag)
+      )
+    ) {
       return (
         <div className='w-full h-full flex items-center justify-center bg-gradient-to-br from-blue-50 to-indigo-50'>
-          <AnalyticsChart 
+          <AnalyticsChart
             className='w-full max-w-sm scale-75 sm:scale-90'
             title='Campaign Performance'
             metric='2.9%'
@@ -168,9 +187,7 @@ const BlogPostCard: React.FC<BlogPostCardProps> = ({ post, isFirstRow = false })
     <article className='bg-white rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 group overflow-hidden border border-gray-100'>
       {/* Analytics Chart/Image Section */}
       <div className='relative h-48 sm:h-52 bg-gray-50 overflow-hidden'>
-        <div className='absolute inset-0'>
-          {renderImageContent()}
-        </div>
+        <div className='absolute inset-0'>{renderImageContent()}</div>
 
         {/* Reading Time Badge */}
         <div className='absolute top-4 right-4 bg-white/90 backdrop-blur-sm text-gray-700 px-3 py-1 rounded-full text-sm font-medium shadow-sm z-20'>
@@ -194,14 +211,20 @@ const BlogPostCard: React.FC<BlogPostCardProps> = ({ post, isFirstRow = false })
 
         {/* Key Features/Tags */}
         <div className='mb-6'>
-          <h4 className='text-sm font-semibold text-gray-900 mb-3'>Key Topics:</h4>
+          <h4 className='text-sm font-semibold text-gray-900 mb-3'>
+            Key Topics:
+          </h4>
           <div className='space-y-2'>
-            {post.tags && post.tags.slice(0, 3).map((tag) => (
-              <div key={tag} className='flex items-center text-sm text-gray-600'>
-                <div className='w-2 h-2 bg-pink-500 rounded-full mr-3'></div>
-                <span className='capitalize'>{tag.replace('-', ' ')}</span>
-              </div>
-            ))}
+            {post.tags &&
+              post.tags.slice(0, 3).map(tag => (
+                <div
+                  key={tag}
+                  className='flex items-center text-sm text-gray-600'
+                >
+                  <div className='w-2 h-2 bg-pink-500 rounded-full mr-3'></div>
+                  <span className='capitalize'>{tag.replace('-', ' ')}</span>
+                </div>
+              ))}
             {post.tags && post.tags.length > 3 && (
               <div className='flex items-center text-sm text-gray-500 italic'>
                 <div className='w-2 h-2 bg-gray-300 rounded-full mr-3'></div>
@@ -221,7 +244,7 @@ const BlogPostCard: React.FC<BlogPostCardProps> = ({ post, isFirstRow = false })
           >
             Read Article
           </Button>
-          
+
           {/* Meta Information */}
           <div className='flex items-center justify-between text-sm text-gray-500 pt-2 border-t border-gray-100'>
             <span>By {post.author}</span>

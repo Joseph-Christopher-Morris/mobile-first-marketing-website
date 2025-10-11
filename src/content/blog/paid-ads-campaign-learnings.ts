@@ -3,7 +3,8 @@ import { BlogPost } from '../../lib/blog-types';
 const post: BlogPost = {
   slug: 'paid-ads-campaign-learnings',
   title: 'What I Learned From My Paid Ads Campaign',
-  excerpt: 'Discover how I used Meta Ads, Google Ads, and UX insights to drive qualified traffic, grow my newsletter, and improve future marketing campaigns.',
+  excerpt:
+    'Discover how I used Meta Ads, Google Ads, and UX insights to drive qualified traffic, grow my newsletter, and improve future marketing campaigns.',
   content: `
 # What I Learned From My Paid Ads Campaign
 
@@ -66,10 +67,16 @@ This campaign proved that ads, UX optimisation, and targeting refinements work b
   date: '2025-08-11',
   author: 'Joe from Vivid Auto',
   category: 'marketing',
-  tags: ['meta-ads', 'google-ads', 'hotjar', 'paid-traffic', 'newsletter-growth'],
+  tags: [
+    'meta-ads',
+    'google-ads',
+    'hotjar',
+    'paid-traffic',
+    'newsletter-growth',
+  ],
   featured: false,
   image: '/images/hero/google-ads-analytics-dashboard.webp',
-  readTime: 3
+  readTime: 3,
 };
 
 export default post;

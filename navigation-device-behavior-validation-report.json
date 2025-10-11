@@ -2,10 +2,7 @@
   "timestamp": "2025-10-10T21:29:19.451Z",
   "validation": "Navigation Device Behavior Validation",
   "task": "13.2 Validate navigation behavior across devices",
-  "requirements": [
-    "6.3",
-    "6.4"
-  ],
+  "requirements": ["6.3", "6.4"],
   "testCategories": [
     {
       "category": "Desktop Navigation (≥768px)",
@@ -34,12 +31,7 @@
     {
       "category": "Touch Device Support",
       "description": "Navigation works on touch devices",
-      "devices": [
-        "iPhone",
-        "iPad",
-        "Android phones",
-        "Android tablets"
-      ],
+      "devices": ["iPhone", "iPad", "Android phones", "Android tablets"],
       "expectedBehavior": [
         "Touch interactions work correctly",
         "Tap targets are appropriately sized",
@@ -50,9 +42,7 @@
     {
       "category": "Accessibility Features",
       "description": "Navigation is accessible to all users",
-      "standards": [
-        "WCAG 2.1 AA"
-      ],
+      "standards": ["WCAG 2.1 AA"],
       "expectedBehavior": [
         "Keyboard navigation support",
         "Screen reader compatibility",

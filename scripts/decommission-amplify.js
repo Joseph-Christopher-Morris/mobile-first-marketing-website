@@ -2,12 +2,12 @@
 
 /**
  * Amplify Decommissioning Script
- * 
+ *
  * This script handles the safe decommissioning of AWS Amplify resources:
  * - Document Amplify configuration for reference
  * - Safely remove Amplify application and resources
  * - Update all documentation and procedures
- * 
+ *
  * Requirements addressed:
  * - 8.2: Documentation and procedures update
  */
@@ -21,7 +21,7 @@ class AmplifyDecommissioning {
     this.timestamp = new Date().toISOString();
     this.backupDir = path.join(process.cwd(), 'amplify-backup');
     this.docsDir = path.join(process.cwd(), 'docs');
-    
+
     this.decommissioningResults = {
       timestamp: this.timestamp,
       status: 'in_progress',
@@ -29,7 +29,7 @@ class AmplifyDecommissioning {
       backupLocation: this.backupDir,
       amplifyConfig: null,
       removedFiles: [],
-      updatedDocs: []
+      updatedDocs: [],
     };
   }
 
@@ -50,7 +50,7 @@ class AmplifyDecommissioning {
       step: stepName,
       status,
       timestamp: new Date().toISOString(),
-      details
+      details,
     });
   }
 
@@ -59,7 +59,7 @@ class AmplifyDecommissioning {
    */
   async documentAmplifyConfiguration() {
     this.log('📋 Documenting Amplify configuration for reference...', 'info');
-    
+
     try {
       // Create backup directory
       if (!fs.existsSync(this.backupDir)) {
@@ -74,17 +74,17 @@ class AmplifyDecommissioning {
         environmentVariables: {},
         buildSettings: {},
         customDomains: [],
-        branches: []
+        branches: [],
       };
 
       // Check for Amplify configuration files
       const amplifyFiles = [
         'amplify.yml',
-        'amplify-simple.yml', 
+        'amplify-simple.yml',
         'amplify-minimal.yml',
         'amplify-static.yml',
         '.env.production',
-        '.env.local'
+        '.env.local',
       ];
 
       for (const fileName of amplifyFiles) {
@@ -92,11 +92,11 @@ class AmplifyDecommissioning {
         if (fs.existsSync(filePath)) {
           const content = fs.readFileSync(filePath, 'utf8');
           amplifyConfig.originalConfiguration[fileName] = content;
-          
+
           // Copy to backup
           const backupPath = path.join(this.backupDir, fileName);
           fs.writeFileSync(backupPath, content);
-          
+
           this.log(`   Backed up: ${fileName}`, 'info');
         }
       }
@@ -106,39 +106,41 @@ class AmplifyDecommissioning {
       if (fs.existsSync(envProdPath)) {
         const envContent = fs.readFileSync(envProdPath, 'utf8');
         const envVars = {};
-        
+
         envContent.split('\n').forEach(line => {
           const [key, value] = line.split('=');
           if (key && value && !key.startsWith('#')) {
             envVars[key.trim()] = value.trim();
           }
         });
-        
+
         amplifyConfig.environmentVariables = envVars;
       }
 
       // Check for deployment logs
       const logsDir = path.join(process.cwd(), 'logs');
       if (fs.existsSync(logsDir)) {
-        const logFiles = fs.readdirSync(logsDir).filter(file => 
-          file.includes('amplify') || file.includes('deployment')
-        );
-        
+        const logFiles = fs
+          .readdirSync(logsDir)
+          .filter(
+            file => file.includes('amplify') || file.includes('deployment')
+          );
+
         amplifyConfig.deploymentHistory = logFiles.map(file => ({
           file,
           size: fs.statSync(path.join(logsDir, file)).size,
-          modified: fs.statSync(path.join(logsDir, file)).mtime
+          modified: fs.statSync(path.join(logsDir, file)).mtime,
         }));
       }
 
       // Try to get Amplify app info (if CLI is available and configured)
       try {
-        const amplifyStatus = execSync('amplify status --json', { 
-          encoding: 'utf8', 
+        const amplifyStatus = execSync('amplify status --json', {
+          encoding: 'utf8',
           timeout: 30000,
-          stdio: 'pipe'
+          stdio: 'pipe',
         });
-        
+
         amplifyConfig.amplifyStatus = JSON.parse(amplifyStatus);
       } catch (error) {
         this.log('   Amplify CLI not available or not configured', 'info');
@@ -146,7 +148,10 @@ class AmplifyDecommissioning {
       }
 
       // Save configuration documentation
-      const configPath = path.join(this.backupDir, 'amplify-configuration.json');
+      const configPath = path.join(
+        this.backupDir,
+        'amplify-configuration.json'
+      );
       fs.writeFileSync(configPath, JSON.stringify(amplifyConfig, null, 2));
 
       // Create human-readable documentation
@@ -158,14 +163,19 @@ class AmplifyDecommissioning {
       this.recordStep('document_configuration', 'completed', {
         backupDir: this.backupDir,
         configFiles: Object.keys(amplifyConfig.originalConfiguration),
-        envVarsCount: Object.keys(amplifyConfig.environmentVariables).length
+        envVarsCount: Object.keys(amplifyConfig.environmentVariables).length,
       });
 
       this.decommissioningResults.amplifyConfig = amplifyConfig;
       return amplifyConfig;
     } catch (error) {
-      this.log(`❌ Failed to document Amplify configuration: ${error.message}`, 'error');
-      this.recordStep('document_configuration', 'failed', { error: error.message });
+      this.log(
+        `❌ Failed to document Amplify configuration: ${error.message}`,
+        'error'
+      );
+      this.recordStep('document_configuration', 'failed', {
+        error: error.message,
+      });
       throw error;
     }
   }
@@ -184,17 +194,25 @@ class AmplifyDecommissioning {
 ## Original Amplify Configuration
 
 ### Configuration Files
-${Object.keys(config.originalConfiguration).map(file => `- ${file}`).join('\n')}
+${Object.keys(config.originalConfiguration)
+  .map(file => `- ${file}`)
+  .join('\n')}
 
 ### Environment Variables
-${Object.entries(config.environmentVariables).map(([key, value]) => 
-  `- **${key}**: ${key.includes('SECRET') || key.includes('PASSWORD') ? '[REDACTED]' : value}`
-).join('\n')}
+${Object.entries(config.environmentVariables)
+  .map(
+    ([key, value]) =>
+      `- **${key}**: ${key.includes('SECRET') || key.includes('PASSWORD') ? '[REDACTED]' : value}`
+  )
+  .join('\n')}
 
 ### Deployment History
-${config.deploymentHistory.length > 0 ? 
-  config.deploymentHistory.map(log => `- ${log.file} (${(log.size / 1024).toFixed(1)} KB)`).join('\n') :
-  'No deployment logs found'
+${
+  config.deploymentHistory.length > 0
+    ? config.deploymentHistory
+        .map(log => `- ${log.file} (${(log.size / 1024).toFixed(1)} KB)`)
+        .join('\n')
+    : 'No deployment logs found'
 }
 
 ## Migration Summary
@@ -254,49 +272,61 @@ For ongoing support with the new S3/CloudFront infrastructure:
    */
   async removeAmplifyFiles() {
     this.log('🗑️  Removing Amplify-specific files...', 'info');
-    
+
     try {
       const filesToRemove = [
         // Amplify configuration files (keep as backup only)
         // Note: We're being conservative and not removing these automatically
         // 'amplify.yml',
         // 'amplify-simple.yml',
-        // 'amplify-minimal.yml', 
+        // 'amplify-minimal.yml',
         // 'amplify-static.yml'
       ];
 
-      const filesToUpdate = [
-        'package.json',
-        'README.md',
-        '.gitignore'
-      ];
+      const filesToUpdate = ['package.json', 'README.md', '.gitignore'];
 
       // Remove Amplify-specific files (if user confirms)
-      this.log('⚠️  Amplify configuration files preserved for reference', 'warning');
-      this.log('💡 You can manually remove amplify*.yml files if no longer needed', 'info');
+      this.log(
+        '⚠️  Amplify configuration files preserved for reference',
+        'warning'
+      );
+      this.log(
+        '💡 You can manually remove amplify*.yml files if no longer needed',
+        'info'
+      );
 
       // Update package.json to remove Amplify-specific scripts
       const packageJsonPath = path.join(process.cwd(), 'package.json');
       if (fs.existsSync(packageJsonPath)) {
-        const packageJson = JSON.parse(fs.readFileSync(packageJsonPath, 'utf8'));
-        
+        const packageJson = JSON.parse(
+          fs.readFileSync(packageJsonPath, 'utf8')
+        );
+
         // Remove Amplify-specific scripts
-        const amplifyScripts = Object.keys(packageJson.scripts || {}).filter(script => 
-          script.includes('amplify')
+        const amplifyScripts = Object.keys(packageJson.scripts || {}).filter(
+          script => script.includes('amplify')
         );
 
         if (amplifyScripts.length > 0) {
-          this.log(`   Removing Amplify scripts: ${amplifyScripts.join(', ')}`, 'info');
-          
+          this.log(
+            `   Removing Amplify scripts: ${amplifyScripts.join(', ')}`,
+            'info'
+          );
+
           amplifyScripts.forEach(script => {
             delete packageJson.scripts[script];
           });
 
           // Add new production deployment scripts
-          packageJson.scripts['deploy:production'] = 'node scripts/production-deployment.js';
-          packageJson.scripts['infrastructure:setup:production'] = 'node scripts/production-infrastructure-setup.js';
-          
-          fs.writeFileSync(packageJsonPath, JSON.stringify(packageJson, null, 2));
+          packageJson.scripts['deploy:production'] =
+            'node scripts/production-deployment.js';
+          packageJson.scripts['infrastructure:setup:production'] =
+            'node scripts/production-infrastructure-setup.js';
+
+          fs.writeFileSync(
+            packageJsonPath,
+            JSON.stringify(packageJson, null, 2)
+          );
           this.decommissioningResults.updatedDocs.push('package.json');
         }
       }
@@ -304,13 +334,15 @@ For ongoing support with the new S3/CloudFront infrastructure:
       this.log('✅ Amplify files cleanup completed', 'success');
       this.recordStep('remove_amplify_files', 'completed', {
         preservedFiles: ['amplify*.yml files preserved for reference'],
-        updatedFiles: this.decommissioningResults.updatedDocs
+        updatedFiles: this.decommissioningResults.updatedDocs,
       });
 
       return true;
     } catch (error) {
       this.log(`❌ Failed to remove Amplify files: ${error.message}`, 'error');
-      this.recordStep('remove_amplify_files', 'failed', { error: error.message });
+      this.recordStep('remove_amplify_files', 'failed', {
+        error: error.message,
+      });
       throw error;
     }
   }
@@ -320,26 +352,28 @@ For ongoing support with the new S3/CloudFront infrastructure:
    */
   async updateDocumentation() {
     this.log('📝 Updating documentation and procedures...', 'info');
-    
+
     try {
       // Update README.md
       await this.updateReadme();
-      
+
       // Create migration summary document
       await this.createMigrationSummary();
-      
+
       // Update deployment documentation
       await this.updateDeploymentDocs();
 
       this.log('✅ Documentation updated successfully', 'success');
       this.recordStep('update_documentation', 'completed', {
-        updatedDocs: this.decommissioningResults.updatedDocs
+        updatedDocs: this.decommissioningResults.updatedDocs,
       });
 
       return true;
     } catch (error) {
       this.log(`❌ Failed to update documentation: ${error.message}`, 'error');
-      this.recordStep('update_documentation', 'failed', { error: error.message });
+      this.recordStep('update_documentation', 'failed', {
+        error: error.message,
+      });
       throw error;
     }
   }
@@ -349,10 +383,10 @@ For ongoing support with the new S3/CloudFront infrastructure:
    */
   async updateReadme() {
     const readmePath = path.join(process.cwd(), 'README.md');
-    
+
     if (fs.existsSync(readmePath)) {
       let readme = fs.readFileSync(readmePath, 'utf8');
-      
+
       // Add migration notice at the top
       const migrationNotice = `
 ## 🚀 Migration Complete: AWS Amplify → S3/CloudFront
@@ -383,7 +417,10 @@ For detailed deployment instructions, see \`config/production-deployment-instruc
       const titleMatch = readme.match(/^#\s+.+$/m);
       if (titleMatch) {
         const insertIndex = readme.indexOf('\n', titleMatch.index) + 1;
-        readme = readme.slice(0, insertIndex) + migrationNotice + readme.slice(insertIndex);
+        readme =
+          readme.slice(0, insertIndex) +
+          migrationNotice +
+          readme.slice(insertIndex);
       } else {
         readme = migrationNotice + readme;
       }
@@ -558,9 +595,14 @@ npm run infrastructure:setup:production
 *Migration completed successfully on ${this.timestamp}*
 `;
 
-    const summaryPath = path.join(this.docsDir, 'amplify-to-s3-migration-summary.md');
+    const summaryPath = path.join(
+      this.docsDir,
+      'amplify-to-s3-migration-summary.md'
+    );
     fs.writeFileSync(summaryPath, summaryContent);
-    this.decommissioningResults.updatedDocs.push('docs/amplify-to-s3-migration-summary.md');
+    this.decommissioningResults.updatedDocs.push(
+      'docs/amplify-to-s3-migration-summary.md'
+    );
     this.log('   Created migration summary document', 'info');
   }
 
@@ -569,10 +611,13 @@ npm run infrastructure:setup:production
    */
   async updateDeploymentDocs() {
     // Update deployment runbook to reference new process
-    const runbookPath = path.join(this.docsDir, 's3-cloudfront-deployment-runbook.md');
+    const runbookPath = path.join(
+      this.docsDir,
+      's3-cloudfront-deployment-runbook.md'
+    );
     if (fs.existsSync(runbookPath)) {
       let runbook = fs.readFileSync(runbookPath, 'utf8');
-      
+
       // Add migration notice
       const migrationNotice = `
 > **Migration Notice**: This project has been migrated from AWS Amplify to S3/CloudFront.
@@ -583,7 +628,9 @@ npm run infrastructure:setup:production
       if (!runbook.includes('Migration Notice')) {
         runbook = migrationNotice + runbook;
         fs.writeFileSync(runbookPath, runbook);
-        this.decommissioningResults.updatedDocs.push('docs/s3-cloudfront-deployment-runbook.md');
+        this.decommissioningResults.updatedDocs.push(
+          'docs/s3-cloudfront-deployment-runbook.md'
+        );
         this.log('   Updated deployment runbook', 'info');
       }
     }
@@ -594,18 +641,27 @@ npm run infrastructure:setup:production
    */
   async saveResults() {
     this.log('💾 Saving decommissioning results...', 'info');
-    
+
     try {
       this.decommissioningResults.status = 'completed';
       this.decommissioningResults.completedAt = new Date().toISOString();
-      
-      const resultsPath = path.join(this.backupDir, 'decommissioning-results.json');
-      fs.writeFileSync(resultsPath, JSON.stringify(this.decommissioningResults, null, 2));
-      
+
+      const resultsPath = path.join(
+        this.backupDir,
+        'decommissioning-results.json'
+      );
+      fs.writeFileSync(
+        resultsPath,
+        JSON.stringify(this.decommissioningResults, null, 2)
+      );
+
       this.log(`✅ Decommissioning results saved to ${resultsPath}`, 'success');
       return resultsPath;
     } catch (error) {
-      this.log(`⚠️  Failed to save decommissioning results: ${error.message}`, 'warning');
+      this.log(
+        `⚠️  Failed to save decommissioning results: ${error.message}`,
+        'warning'
+      );
     }
   }
 
@@ -621,56 +677,88 @@ npm run infrastructure:setup:production
 
       // Step 1: Document Amplify configuration
       await this.documentAmplifyConfiguration();
-      
+
       // Step 2: Remove Amplify files (safely)
       await this.removeAmplifyFiles();
-      
+
       // Step 3: Update documentation
       await this.updateDocumentation();
-      
+
       // Step 4: Save results
       await this.saveResults();
-      
-      this.log('\n🎉 AWS Amplify decommissioning completed successfully!', 'success');
+
+      this.log(
+        '\n🎉 AWS Amplify decommissioning completed successfully!',
+        'success'
+      );
       this.log('\n📋 Decommissioning Summary:', 'info');
       this.log(`   • Backup Location: ${this.backupDir}`, 'info');
       this.log(`   • Configuration Documented: ✅`, 'info');
-      this.log(`   • Files Updated: ${this.decommissioningResults.updatedDocs.length}`, 'info');
+      this.log(
+        `   • Files Updated: ${this.decommissioningResults.updatedDocs.length}`,
+        'info'
+      );
       this.log(`   • Migration Complete: ✅`, 'info');
-      
+
       this.log('\n📁 Important Files:', 'info');
-      this.log(`   • ${this.backupDir}/AMPLIFY_CONFIGURATION.md - Complete Amplify documentation`, 'info');
-      this.log(`   • docs/amplify-to-s3-migration-summary.md - Migration summary`, 'info');
-      this.log(`   • config/production-deployment-instructions.md - New deployment guide`, 'info');
-      
+      this.log(
+        `   • ${this.backupDir}/AMPLIFY_CONFIGURATION.md - Complete Amplify documentation`,
+        'info'
+      );
+      this.log(
+        `   • docs/amplify-to-s3-migration-summary.md - Migration summary`,
+        'info'
+      );
+      this.log(
+        `   • config/production-deployment-instructions.md - New deployment guide`,
+        'info'
+      );
+
       this.log('\n✅ Migration Benefits Achieved:', 'info');
       this.log('   • Eliminated 31 failed Amplify deployments', 'info');
       this.log('   • Reliable S3/CloudFront deployment process', 'info');
       this.log('   • Enhanced security with private S3 + OAC', 'info');
       this.log('   • Improved performance with optimized caching', 'info');
       this.log('   • Production-ready monitoring and alerting', 'info');
-      
+
       this.log('\n🌐 Your site is now running on:', 'info');
-      this.log(`   https://${process.env.CLOUDFRONT_DOMAIN_NAME || '[See config/production.env]'}`, 'info');
-      
+      this.log(
+        `   https://${process.env.CLOUDFRONT_DOMAIN_NAME || '[See config/production.env]'}`,
+        'info'
+      );
+
       this.log('\n⚠️  Manual Steps (Optional):', 'info');
-      this.log('1. Review and manually remove amplify*.yml files if no longer needed', 'info');
-      this.log('2. Remove Amplify CLI if installed: npm uninstall -g @aws-amplify/cli', 'info');
-      this.log('3. Clean up any Amplify-related AWS resources in the console', 'info');
+      this.log(
+        '1. Review and manually remove amplify*.yml files if no longer needed',
+        'info'
+      );
+      this.log(
+        '2. Remove Amplify CLI if installed: npm uninstall -g @aws-amplify/cli',
+        'info'
+      );
+      this.log(
+        '3. Clean up any Amplify-related AWS resources in the console',
+        'info'
+      );
       this.log('4. Update team documentation and training materials', 'info');
-      
+
       return this.decommissioningResults;
-      
     } catch (error) {
       this.decommissioningResults.status = 'failed';
       this.decommissioningResults.error = error.message;
-      
-      this.log(`\n❌ Amplify decommissioning failed: ${error.message}`, 'error');
+
+      this.log(
+        `\n❌ Amplify decommissioning failed: ${error.message}`,
+        'error'
+      );
       this.log('\n🔧 Troubleshooting tips:', 'error');
       this.log('1. Check file permissions for backup directory', 'error');
-      this.log('2. Ensure all files are not in use by other processes', 'error');
+      this.log(
+        '2. Ensure all files are not in use by other processes',
+        'error'
+      );
       this.log('3. Verify sufficient disk space for backups', 'error');
-      
+
       await this.saveResults();
       process.exit(1);
     }
@@ -690,7 +778,7 @@ if (require.main === module) {
       }
     });
   }
-  
+
   const decommissioning = new AmplifyDecommissioning();
   decommissioning.run();
 }

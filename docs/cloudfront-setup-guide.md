@@ -1,13 +1,15 @@
 # CloudFront Distribution Setup Guide
 
-This guide explains how to set up a CloudFront distribution with S3 origin, Origin Access Control (OAC), security headers, and optimal caching strategies.
+This guide explains how to set up a CloudFront distribution with S3 origin,
+Origin Access Control (OAC), security headers, and optimal caching strategies.
 
 ## Overview
 
 The CloudFront setup consists of three main components:
 
 1. **Distribution with S3 Origin & OAC** - Secure access to private S3 bucket
-2. **Security Headers & Error Handling** - Comprehensive security and SPA routing
+2. **Security Headers & Error Handling** - Comprehensive security and SPA
+   routing
 3. **Caching Strategies** - Optimized performance for different content types
 
 ## Prerequisites
@@ -37,6 +39,7 @@ node scripts/setup-complete-cloudfront.js
 ```
 
 This script will:
+
 - Create CloudFront distribution with S3 origin and OAC
 - Configure security headers and error handling
 - Set up optimal caching strategies
@@ -53,6 +56,7 @@ node scripts/setup-cloudfront-distribution.js
 ```
 
 This creates:
+
 - CloudFront distribution with private S3 origin
 - Origin Access Control (OAC) for secure S3 access
 - Basic cache behaviors for different content types
@@ -66,6 +70,7 @@ node scripts/configure-cloudfront-security.js
 ```
 
 This configures:
+
 - Comprehensive security headers (HSTS, CSP, etc.)
 - Custom error pages for SPA routing (404 → index.html)
 - CORS headers policy for API endpoints
@@ -79,6 +84,7 @@ node scripts/configure-cloudfront-caching.js
 ```
 
 This sets up:
+
 - Long cache (1 year) for static assets
 - Short cache (5 minutes) for HTML files
 - No cache for service worker
@@ -87,7 +93,8 @@ This sets up:
 
 ## Configuration Files
 
-The setup scripts generate several configuration files in the `config/` directory:
+The setup scripts generate several configuration files in the `config/`
+directory:
 
 - `cloudfront-distribution.json` - Distribution information
 - `cloudfront-security.json` - Security configuration
@@ -97,13 +104,13 @@ The setup scripts generate several configuration files in the `config/` director
 
 ## Caching Strategies
 
-| Content Type | Cache Duration | Compression | Description |
-|--------------|----------------|-------------|-------------|
-| `/_next/static/*` | 1 year | Yes | Next.js static assets with versioned filenames |
-| `*.{js,css,png,jpg,...}` | 1 year | Yes | Static assets (images, fonts, etc.) |
-| `*.html` | 5 minutes | Yes | HTML files for frequent updates |
-| `/sw.js` | No cache | Yes | Service worker must always be fresh |
-| `/manifest.json` | 1 day | Yes | App manifest with medium-term cache |
+| Content Type             | Cache Duration | Compression | Description                                    |
+| ------------------------ | -------------- | ----------- | ---------------------------------------------- |
+| `/_next/static/*`        | 1 year         | Yes         | Next.js static assets with versioned filenames |
+| `*.{js,css,png,jpg,...}` | 1 year         | Yes         | Static assets (images, fonts, etc.)            |
+| `*.html`                 | 5 minutes      | Yes         | HTML files for frequent updates                |
+| `/sw.js`                 | No cache       | Yes         | Service worker must always be fresh            |
+| `/manifest.json`         | 1 day          | Yes         | App manifest with medium-term cache            |
 
 ## Security Headers
 

@@ -2,18 +2,20 @@
 
 ## Overview
 
-This guide covers TLS (Transport Layer Security) validation for CloudFront distributions, including testing TLS version support, cipher suite analysis, and security best practices.
+This guide covers TLS (Transport Layer Security) validation for CloudFront
+distributions, including testing TLS version support, cipher suite analysis, and
+security best practices.
 
 ## TLS Version Requirements
 
 ### Supported TLS Versions
 
-| Version | Status | Security | Recommendation |
-|---------|--------|----------|----------------|
-| TLS 1.0 | ❌ Deprecated | Insecure | Disable immediately |
-| TLS 1.1 | ❌ Deprecated | Insecure | Disable immediately |
-| TLS 1.2 | ✅ Current | Secure | Required minimum |
-| TLS 1.3 | ✅ Latest | Most Secure | Recommended |
+| Version | Status        | Security    | Recommendation      |
+| ------- | ------------- | ----------- | ------------------- |
+| TLS 1.0 | ❌ Deprecated | Insecure    | Disable immediately |
+| TLS 1.1 | ❌ Deprecated | Insecure    | Disable immediately |
+| TLS 1.2 | ✅ Current    | Secure      | Required minimum    |
+| TLS 1.3 | ✅ Latest     | Most Secure | Recommended         |
 
 ### Why Disable Old TLS Versions?
 
@@ -27,6 +29,7 @@ This guide covers TLS (Transport Layer Security) validation for CloudFront distr
 ### Strong Cipher Suites
 
 Recommended cipher suites include:
+
 - `ECDHE-RSA-AES256-GCM-SHA384`
 - `ECDHE-RSA-AES128-GCM-SHA256`
 - `ECDHE-ECDSA-AES256-GCM-SHA384`
@@ -45,9 +48,11 @@ Recommended cipher suites include:
 
 ### Perfect Forward Secrecy (PFS)
 
-PFS ensures that session keys cannot be compromised even if the private key is compromised later.
+PFS ensures that session keys cannot be compromised even if the private key is
+compromised later.
 
 **Required Key Exchange Algorithms:**
+
 - **ECDHE** (Elliptic Curve Diffie-Hellman Ephemeral)
 - **DHE** (Diffie-Hellman Ephemeral)
 
@@ -68,6 +73,7 @@ PFS ensures that session keys cannot be compromised even if the private key is c
 ### Deprecated Security Policies
 
 ❌ **Avoid these policies:**
+
 - `TLSv1` - Includes TLS 1.0/1.1
 - `TLSv1.1_2016` - Includes TLS 1.1
 - `TLSv1.2_2018` - Older cipher suites
@@ -149,6 +155,7 @@ Implement these security headers in CloudFront:
 ### 4. Monitoring and Alerting
 
 Set up CloudWatch alarms for:
+
 - SSL certificate expiration
 - TLS handshake failures
 - Cipher suite usage patterns
@@ -220,7 +227,7 @@ openssl s_client -connect domain.com:443 -servername domain.com
 - name: Validate TLS Configuration
   run: |
     node scripts/tls-validation-suite.js ${{ env.CLOUDFRONT_DOMAIN }}
-    
+
 - name: Check Security Score
   run: |
     SCORE=$(jq '.securityScore' config/tls-validation-report.json)
@@ -233,6 +240,7 @@ openssl s_client -connect domain.com:443 -servername domain.com
 ### Automated Monitoring
 
 Set up regular TLS validation:
+
 - Daily security checks
 - Alert on configuration changes
 - Monthly compliance reports
@@ -241,11 +249,13 @@ Set up regular TLS validation:
 ## Resources
 
 ### Tools
+
 - [SSL Labs SSL Test](https://www.ssllabs.com/ssltest/)
 - [Mozilla SSL Configuration Generator](https://ssl-config.mozilla.org/)
 - [OWASP TLS Cheat Sheet](https://cheatsheetseries.owasp.org/cheatsheets/Transport_Layer_Protection_Cheat_Sheet.html)
 
 ### Documentation
+
 - [AWS CloudFront Security Policies](https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/secure-connections-supported-viewer-protocols-ciphers.html)
 - [RFC 8446 - TLS 1.3](https://tools.ietf.org/html/rfc8446)
 - [NIST SP 800-52 Rev. 2](https://csrc.nist.gov/publications/detail/sp/800-52/rev-2/final)
@@ -253,6 +263,7 @@ Set up regular TLS validation:
 ## Support
 
 For issues with TLS validation:
+
 1. Check the troubleshooting section
 2. Review CloudFront security policy settings
 3. Validate certificate configuration

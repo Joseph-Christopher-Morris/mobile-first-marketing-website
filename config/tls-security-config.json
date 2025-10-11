@@ -14,19 +14,8 @@
       "ECDHE-RSA-AES128-SHA256",
       "ECDHE-RSA-CHACHA20-POLY1305"
     ],
-    "acceptable": [
-      "AES256-GCM-SHA384",
-      "AES128-GCM-SHA256",
-      "AES256-SHA256",
-      "AES128-SHA256"
-    ],
-    "prohibited": [
-      "RC4",
-      "DES",
-      "3DES",
-      "MD5",
-      "SHA1-only"
-    ]
+    "acceptable": ["AES256-GCM-SHA384", "AES128-GCM-SHA256", "AES256-SHA256", "AES128-SHA256"],
+    "prohibited": ["RC4", "DES", "3DES", "MD5", "SHA1-only"]
   },
   "securityHeaders": {
     "strictTransportSecurity": {
@@ -57,10 +46,7 @@
   "validation": {
     "timeout": 10000,
     "retries": 3,
-    "endpoints": [
-      "https://www.ssllabs.com/ssltest/",
-      "https://testssl.sh/"
-    ]
+    "endpoints": ["https://www.ssllabs.com/ssltest/", "https://testssl.sh/"]
   },
   "compliance": {
     "standards": ["PCI DSS", "NIST", "OWASP"],

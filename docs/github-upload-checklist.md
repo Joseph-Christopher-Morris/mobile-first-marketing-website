@@ -2,7 +2,8 @@
 
 ## 🚨 Current Issue: Missing `src/app` Directory
 
-Your deployment is failing because Next.js can't find the `src/app` directory. This means your GitHub repository is missing essential files.
+Your deployment is failing because Next.js can't find the `src/app` directory.
+This means your GitHub repository is missing essential files.
 
 ## 📁 Required Project Structure
 
@@ -33,11 +34,14 @@ mobile-first-marketing-website/
 ## 🔧 How to Fix This
 
 ### Option 1: Check Your GitHub Repository
-1. **Go to your GitHub repository**: https://github.com/Joseph-Christopher-Morris/mobile-first-marketing-website
+
+1. **Go to your GitHub repository**:
+   https://github.com/Joseph-Christopher-Morris/mobile-first-marketing-website
 2. **Check if the `src` folder exists**
 3. **If missing, you need to upload your local project files**
 
 ### Option 2: Upload Missing Files
+
 If your `src` directory is missing from GitHub:
 
 1. **Zip your local `src` folder**
@@ -47,31 +51,35 @@ If your `src` directory is missing from GitHub:
 5. **Commit the changes**
 
 ### Option 3: Create Minimal Required Files
-If you don't have the files locally, create these essential files in your GitHub repository:
+
+If you don't have the files locally, create these essential files in your GitHub
+repository:
 
 **1. Create `src/app/layout.tsx`:**
+
 ```tsx
-import './globals.css'
+import './globals.css';
 
 export const metadata = {
   title: 'Marketing Website',
   description: 'Mobile-first marketing website',
-}
+};
 
 export default function RootLayout({
   children,
 }: {
-  children: React.ReactNode
+  children: React.ReactNode;
 }) {
   return (
-    <html lang="en">
+    <html lang='en'>
       <body>{children}</body>
     </html>
-  )
+  );
 }
 ```
 
 **2. Create `src/app/page.tsx`:**
+
 ```tsx
 export default function Home() {
   return (
@@ -79,11 +87,12 @@ export default function Home() {
       <h1>Welcome to Our Marketing Website</h1>
       <p>This is the homepage of our mobile-first marketing website.</p>
     </main>
-  )
+  );
 }
 ```
 
 **3. Create `src/app/globals.css`:**
+
 ```css
 @tailwind base;
 @tailwind components;
@@ -115,6 +124,7 @@ body {
 ## ✅ Verification Steps
 
 After uploading the files:
+
 1. **Check your repository has the `src/app` directory**
 2. **Verify `src/app/layout.tsx` and `src/app/page.tsx` exist**
 3. **Trigger a new deployment in AWS Amplify**
@@ -122,7 +132,9 @@ After uploading the files:
 
 ## 🚀 Quick Fix Command
 
-If you have access to your local files, the fastest fix is to ensure your entire project is uploaded to GitHub, including:
+If you have access to your local files, the fastest fix is to ensure your entire
+project is uploaded to GitHub, including:
+
 - All files in the `src/` directory
 - `package.json`
 - `next.config.js`

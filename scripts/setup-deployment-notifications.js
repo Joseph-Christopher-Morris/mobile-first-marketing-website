@@ -2,7 +2,7 @@
 
 /**
  * Deployment Notifications Setup Script
- * 
+ *
  * This script helps configure various notification channels for deployment
  * status updates and alerts.
  */
@@ -22,9 +22,9 @@ class NotificationSetup {
       info: '📋',
       success: '✅',
       warning: '⚠️',
-      error: '❌'
+      error: '❌',
     }[type];
-    
+
     console.log(`${prefix} [${timestamp}] ${message}`);
   }
 
@@ -37,12 +37,12 @@ class NotificationSetup {
       channels: {
         console: {
           enabled: true,
-          level: 'info' // info, warning, error
+          level: 'info', // info, warning, error
         },
         file: {
           enabled: true,
           directory: '.kiro/deployment-notifications',
-          retention: 30 // days
+          retention: 30, // days
         },
         slack: {
           enabled: false,
@@ -50,14 +50,14 @@ class NotificationSetup {
           channel: '#deployments',
           username: 'DeployBot',
           icon: ':rocket:',
-          notifyOn: ['success', 'failure']
+          notifyOn: ['success', 'failure'],
         },
         discord: {
           enabled: false,
           webhookUrl: '',
           username: 'DeployBot',
           avatar: '',
-          notifyOn: ['success', 'failure']
+          notifyOn: ['success', 'failure'],
         },
         email: {
           enabled: false,
@@ -67,22 +67,22 @@ class NotificationSetup {
             secure: false,
             auth: {
               user: '',
-              pass: ''
-            }
+              pass: '',
+            },
           },
           from: '',
           to: [],
-          notifyOn: ['failure']
+          notifyOn: ['failure'],
         },
         webhook: {
           enabled: false,
           url: '',
           method: 'POST',
           headers: {
-            'Content-Type': 'application/json'
+            'Content-Type': 'application/json',
           },
-          notifyOn: ['success', 'failure']
-        }
+          notifyOn: ['success', 'failure'],
+        },
       },
       templates: {
         success: {
@@ -93,8 +93,8 @@ class NotificationSetup {
             { name: 'Deployment ID', value: '{{deploymentId}}', inline: true },
             { name: 'Site URL', value: '{{siteUrl}}', inline: false },
             { name: 'Deployed by', value: '{{actor}}', inline: true },
-            { name: 'Branch', value: '{{ref}}', inline: true }
-          ]
+            { name: 'Branch', value: '{{ref}}', inline: true },
+          ],
         },
         failure: {
           title: '❌ Deployment Failed',
@@ -102,12 +102,16 @@ class NotificationSetup {
           fields: [
             { name: 'Environment', value: '{{environment}}', inline: true },
             { name: 'Deployment ID', value: '{{deploymentId}}', inline: true },
-            { name: 'Failure Reason', value: '{{failureReason}}', inline: false },
+            {
+              name: 'Failure Reason',
+              value: '{{failureReason}}',
+              inline: false,
+            },
             { name: 'Deployed by', value: '{{actor}}', inline: true },
-            { name: 'Branch', value: '{{ref}}', inline: true }
-          ]
-        }
-      }
+            { name: 'Branch', value: '{{ref}}', inline: true },
+          ],
+        },
+      },
     };
 
     return defaultConfig;
@@ -151,39 +155,51 @@ class NotificationSetup {
     // Slack template
     const slackTemplate = {
       success: {
-        text: "Deployment Successful! :rocket:",
+        text: 'Deployment Successful! :rocket:',
         attachments: [
           {
-            color: "good",
+            color: 'good',
             fields: [
-              { title: "Environment", value: "{{environment}}", short: true },
-              { title: "Deployment ID", value: "{{deploymentId}}", short: true },
-              { title: "Site URL", value: "{{siteUrl}}", short: false },
-              { title: "Deployed by", value: "{{actor}}", short: true },
-              { title: "Branch", value: "{{ref}}", short: true }
+              { title: 'Environment', value: '{{environment}}', short: true },
+              {
+                title: 'Deployment ID',
+                value: '{{deploymentId}}',
+                short: true,
+              },
+              { title: 'Site URL', value: '{{siteUrl}}', short: false },
+              { title: 'Deployed by', value: '{{actor}}', short: true },
+              { title: 'Branch', value: '{{ref}}', short: true },
             ],
-            footer: "Deployment Bot",
-            ts: "{{timestamp}}"
-          }
-        ]
+            footer: 'Deployment Bot',
+            ts: '{{timestamp}}',
+          },
+        ],
       },
       failure: {
-        text: "Deployment Failed! :x:",
+        text: 'Deployment Failed! :x:',
         attachments: [
           {
-            color: "danger",
+            color: 'danger',
             fields: [
-              { title: "Environment", value: "{{environment}}", short: true },
-              { title: "Deployment ID", value: "{{deploymentId}}", short: true },
-              { title: "Failure Reason", value: "{{failureReason}}", short: false },
-              { title: "Deployed by", value: "{{actor}}", short: true },
-              { title: "Branch", value: "{{ref}}", short: true }
+              { title: 'Environment', value: '{{environment}}', short: true },
+              {
+                title: 'Deployment ID',
+                value: '{{deploymentId}}',
+                short: true,
+              },
+              {
+                title: 'Failure Reason',
+                value: '{{failureReason}}',
+                short: false,
+              },
+              { title: 'Deployed by', value: '{{actor}}', short: true },
+              { title: 'Branch', value: '{{ref}}', short: true },
             ],
-            footer: "Deployment Bot",
-            ts: "{{timestamp}}"
-          }
-        ]
-      }
+            footer: 'Deployment Bot',
+            ts: '{{timestamp}}',
+          },
+        ],
+      },
     };
 
     fs.writeFileSync(
@@ -196,39 +212,51 @@ class NotificationSetup {
       success: {
         embeds: [
           {
-            title: "✅ Deployment Successful",
-            description: "Deployment to {{environment}} completed successfully",
+            title: '✅ Deployment Successful',
+            description: 'Deployment to {{environment}} completed successfully',
             color: 3066993, // Green
             fields: [
-              { name: "Environment", value: "{{environment}}", inline: true },
-              { name: "Deployment ID", value: "{{deploymentId}}", inline: true },
-              { name: "Site URL", value: "{{siteUrl}}", inline: false },
-              { name: "Deployed by", value: "{{actor}}", inline: true },
-              { name: "Branch", value: "{{ref}}", inline: true }
+              { name: 'Environment', value: '{{environment}}', inline: true },
+              {
+                name: 'Deployment ID',
+                value: '{{deploymentId}}',
+                inline: true,
+              },
+              { name: 'Site URL', value: '{{siteUrl}}', inline: false },
+              { name: 'Deployed by', value: '{{actor}}', inline: true },
+              { name: 'Branch', value: '{{ref}}', inline: true },
             ],
-            footer: { text: "Deployment Bot" },
-            timestamp: "{{timestamp}}"
-          }
-        ]
+            footer: { text: 'Deployment Bot' },
+            timestamp: '{{timestamp}}',
+          },
+        ],
       },
       failure: {
         embeds: [
           {
-            title: "❌ Deployment Failed",
-            description: "Deployment to {{environment}} failed",
+            title: '❌ Deployment Failed',
+            description: 'Deployment to {{environment}} failed',
             color: 15158332, // Red
             fields: [
-              { name: "Environment", value: "{{environment}}", inline: true },
-              { name: "Deployment ID", value: "{{deploymentId}}", inline: true },
-              { name: "Failure Reason", value: "{{failureReason}}", inline: false },
-              { name: "Deployed by", value: "{{actor}}", inline: true },
-              { name: "Branch", value: "{{ref}}", inline: true }
+              { name: 'Environment', value: '{{environment}}', inline: true },
+              {
+                name: 'Deployment ID',
+                value: '{{deploymentId}}',
+                inline: true,
+              },
+              {
+                name: 'Failure Reason',
+                value: '{{failureReason}}',
+                inline: false,
+              },
+              { name: 'Deployed by', value: '{{actor}}', inline: true },
+              { name: 'Branch', value: '{{ref}}', inline: true },
             ],
-            footer: { text: "Deployment Bot" },
-            timestamp: "{{timestamp}}"
-          }
-        ]
-      }
+            footer: { text: 'Deployment Bot' },
+            timestamp: '{{timestamp}}',
+          },
+        ],
+      },
     };
 
     fs.writeFileSync(
@@ -239,7 +267,7 @@ class NotificationSetup {
     // Email template
     const emailTemplate = {
       success: {
-        subject: "✅ Deployment Successful - {{environment}}",
+        subject: '✅ Deployment Successful - {{environment}}',
         html: `
           <h2>✅ Deployment Successful</h2>
           <p>Deployment to <strong>{{environment}}</strong> completed successfully.</p>
@@ -261,10 +289,10 @@ class NotificationSetup {
           Deployed by: {{actor}}
           Branch: {{ref}}
           Timestamp: {{timestamp}}
-        `
+        `,
       },
       failure: {
-        subject: "❌ Deployment Failed - {{environment}}",
+        subject: '❌ Deployment Failed - {{environment}}',
         html: `
           <h2>❌ Deployment Failed</h2>
           <p>Deployment to <strong>{{environment}}</strong> failed.</p>
@@ -286,8 +314,8 @@ class NotificationSetup {
           Deployed by: {{actor}}
           Branch: {{ref}}
           Timestamp: {{timestamp}}
-        `
-      }
+        `,
+      },
     };
 
     fs.writeFileSync(
@@ -325,11 +353,11 @@ class NotificationSetup {
    */
   async run() {
     console.log('🔔 Deployment Notifications Setup\n');
-    
+
     try {
       await this.initialize();
       this.displayInstructions();
-      
+
       this.log('Setup completed successfully!', 'success');
     } catch (error) {
       this.log(`Setup failed: ${error.message}`, 'error');

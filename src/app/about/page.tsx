@@ -27,7 +27,9 @@ export default function AboutPage() {
                 About Me
               </h1>
               <p className='text-lg md:text-xl text-gray-600 mb-8'>
-                I'm a digital marketer and photographer helping small businesses grow through smart strategy, creative visuals, and data-led decisions.
+                I'm a digital marketer and photographer helping small businesses
+                grow through smart strategy, creative visuals, and data-led
+                decisions.
               </p>
             </div>
           </div>
@@ -44,13 +46,23 @@ export default function AboutPage() {
                   </h2>
                   <div className='space-y-4 text-gray-600'>
                     <p>
-                      I began with photography, capturing classic cars, auctions, and events, and built a thriving business from scratch. Along the way, I discovered the power of <strong>analytics and marketing technology</strong>.
+                      I began with photography, capturing classic cars,
+                      auctions, and events, and built a thriving business from
+                      scratch. Along the way, I discovered the power of{' '}
+                      <strong>analytics and marketing technology</strong>.
                     </p>
                     <p>
-                      Now, I combine creative storytelling with tools like <strong>Adobe Analytics</strong>, <strong>Meta Ads</strong>, and <strong>Google Ads</strong> to help brands stand out and reach their target audience.
+                      Now, I combine creative storytelling with tools like{' '}
+                      <strong>Adobe Analytics</strong>,{' '}
+                      <strong>Meta Ads</strong>, and <strong>Google Ads</strong>{' '}
+                      to help brands stand out and reach their target audience.
                     </p>
                     <p>
-                      My work has been featured in <strong>Business Insider</strong> and the <strong>Daily Mail</strong>, and I'm certified in <strong>Adobe Experience Cloud</strong> and <strong>Google Marketing Platform</strong>.
+                      My work has been featured in{' '}
+                      <strong>Business Insider</strong> and the{' '}
+                      <strong>Daily Mail</strong>, and I'm certified in{' '}
+                      <strong>Adobe Experience Cloud</strong> and{' '}
+                      <strong>Google Marketing Platform</strong>.
                     </p>
                   </div>
                 </div>
@@ -78,7 +90,8 @@ export default function AboutPage() {
                   What I Do
                 </h2>
                 <p className='text-lg text-gray-600 max-w-3xl mx-auto'>
-                  I combine creative storytelling with data-driven insights to help brands stand out and reach the right audience.
+                  I combine creative storytelling with data-driven insights to
+                  help brands stand out and reach the right audience.
                 </p>
               </div>
 
@@ -183,7 +196,8 @@ export default function AboutPage() {
                   Why Work With Me
                 </h2>
                 <p className='text-lg text-gray-600 max-w-3xl mx-auto'>
-                  I bring together creative expertise and data-driven insights to deliver marketing solutions that drive real results.
+                  I bring together creative expertise and data-driven insights
+                  to deliver marketing solutions that drive real results.
                 </p>
               </div>
 
@@ -276,7 +290,8 @@ export default function AboutPage() {
                   Credentials & Recognition
                 </h2>
                 <p className='text-lg text-gray-600 max-w-3xl mx-auto'>
-                  My work has been recognized by leading publications and I hold certifications from top marketing platforms.
+                  My work has been recognized by leading publications and I hold
+                  certifications from top marketing platforms.
                 </p>
               </div>
 
@@ -297,7 +312,8 @@ export default function AboutPage() {
                     Daily Mail
                   </h3>
                   <p className='text-gray-600 text-sm'>
-                    Photography and marketing work featured in major media outlet
+                    Photography and marketing work featured in major media
+                    outlet
                   </p>
                 </div>
 
@@ -325,8 +341,6 @@ export default function AboutPage() {
           </div>
         </section>
 
-
-
         {/* CTA Section */}
         <section className='py-16 md:py-24 bg-blue-600 text-white'>
           <div className='container mx-auto px-4'>
@@ -335,7 +349,9 @@ export default function AboutPage() {
                 Ready to take your marketing further?
               </h2>
               <p className='text-lg mb-8 opacity-90'>
-                Let's discuss your project and how I can help you achieve your marketing goals through creative visuals and data-driven strategy.
+                Let's discuss your project and how I can help you achieve your
+                marketing goals through creative visuals and data-driven
+                strategy.
               </p>
               <div className='flex flex-col sm:flex-row gap-4 justify-center'>
                 <a

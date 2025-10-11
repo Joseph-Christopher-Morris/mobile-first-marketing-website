@@ -4,11 +4,7 @@
     "version": "1.0.0",
     "description": "Configuration for testing Perfect Forward Secrecy compliance"
   },
-  "testDomains": [
-    "github.com",
-    "cloudfront.amazonaws.com",
-    "example.com"
-  ],
+  "testDomains": ["github.com", "cloudfront.amazonaws.com", "example.com"],
   "pfsCipherSuites": {
     "ecdhe": [
       "ECDHE-RSA-AES256-GCM-SHA384",
@@ -75,15 +71,8 @@
     "outputFormat": "json"
   },
   "cloudFrontSpecific": {
-    "expectedPfsCiphers": [
-      "ECDHE-RSA-AES256-GCM-SHA384",
-      "ECDHE-RSA-AES128-GCM-SHA256"
-    ],
+    "expectedPfsCiphers": ["ECDHE-RSA-AES256-GCM-SHA384", "ECDHE-RSA-AES128-GCM-SHA256"],
     "minimumTlsVersion": "TLSv1.2",
-    "requiredSecurityHeaders": [
-      "Strict-Transport-Security",
-      "X-Content-Type-Options",
-      "X-Frame-Options"
-    ]
+    "requiredSecurityHeaders": ["Strict-Transport-Security", "X-Content-Type-Options", "X-Frame-Options"]
   }
 }

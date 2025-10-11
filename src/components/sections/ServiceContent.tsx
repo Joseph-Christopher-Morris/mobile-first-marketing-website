@@ -7,60 +7,62 @@ interface ServiceContentProps {
 }
 
 // Portfolio images for each service - Updated per requirements
-function getPortfolioImages(serviceSlug: string): Array<{src: string, alt: string}> {
-  const portfolioImages: Record<string, Array<{src: string, alt: string}>> = {
+function getPortfolioImages(
+  serviceSlug: string
+): Array<{ src: string; alt: string }> {
+  const portfolioImages: Record<string, Array<{ src: string; alt: string }>> = {
     photography: [
       {
         src: '240217-australia-trip-232.webp',
-        alt: 'Sydney harbour editorial — automotive travel photography'
+        alt: 'Sydney harbour editorial — automotive travel photography',
       },
       {
-        src: '240219-australia-trip-148.webp', 
-        alt: 'Australia automotive travel photography — scenic landscape'
+        src: '240219-australia-trip-148.webp',
+        alt: 'Australia automotive travel photography — scenic landscape',
       },
       {
         src: '240619-london-19.webp',
-        alt: 'Central London street photography — automotive'
+        alt: 'Central London street photography — automotive',
       },
       {
         src: '240619-london-26.webp',
-        alt: 'London urban automotive photography — city streets'
+        alt: 'London urban automotive photography — city streets',
       },
       {
         src: '240619-london-64.webp',
-        alt: 'London automotive photography — urban environment'
+        alt: 'London automotive photography — urban environment',
       },
       {
         src: '250125-liverpool-40.webp',
-        alt: 'Liverpool automotive photography — urban environment'
+        alt: 'Liverpool automotive photography — urban environment',
       },
     ],
     analytics: [
       {
         src: 'screenshot-2025-08-12-analytics-report.webp',
-        alt: 'Analytics dashboard metrics — performance tracking'
+        alt: 'Analytics dashboard metrics — performance tracking',
       },
       {
         src: '../hero/stock-photography-samira.webp',
-        alt: 'Stock photography analytics — SAMIRA performance data'
+        alt: 'Stock photography analytics — SAMIRA performance data',
       },
       {
         src: 'output-5-analytics-chart.webp',
-        alt: 'Analytics data visualization — custom reporting dashboard'
+        alt: 'Analytics data visualization — custom reporting dashboard',
       },
     ],
     'ad-campaigns': [
       {
         src: 'accessible-top8-campaigns-source.webp',
-        alt: 'Top 8 advertising campaigns — performance analysis'
+        alt: 'Top 8 advertising campaigns — performance analysis',
       },
       {
         src: 'top-3-mediums-by-conversion-rate.webp',
-        alt: 'Top 3 mediums by conversion rate — bar chart analysis'
+        alt: 'Top 3 mediums by conversion rate — bar chart analysis',
       },
       {
         src: 'screenshot-2025-08-12-analytics-report.webp',
-        alt: 'Analytics report screenshot — campaign performance data'
+        alt: 'Analytics report screenshot — campaign performance data',
       },
     ],
   };
@@ -200,7 +202,7 @@ export function ServiceContent({ service, contentHtml }: ServiceContentProps) {
                     className='w-full h-full object-cover group-hover:scale-105 transition-transform duration-300'
                     loading={index < 3 ? 'eager' : 'lazy'}
                     priority={index < 3}
-                    sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 33vw"
+                    sizes='(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 33vw'
                   />
                   <div className='absolute inset-0 bg-black/0 group-hover:bg-black/10 transition-colors duration-300' />
                 </div>

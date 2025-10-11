@@ -2,10 +2,10 @@
 
 /**
  * Performance Optimization and Monitoring Script
- * 
+ *
  * Implements automated performance regression detection, CloudFront cache optimization,
  * and cost optimization alerts for the S3/CloudFront deployment.
- * 
+ *
  * Task 11.1: Performance optimization and monitoring
  * Requirements: 5.4, 6.5
  */
@@ -21,7 +21,7 @@ class PerformanceOptimizationMonitor {
     this.cloudfront = new AWS.CloudFront();
     this.cloudwatch = new AWS.CloudWatch();
     this.s3 = new AWS.S3();
-    
+
     this.config = {
       distributionId: process.env.CLOUDFRONT_DISTRIBUTION_ID,
       bucketName: process.env.S3_BUCKET_NAME,
@@ -36,7 +36,7 @@ class PerformanceOptimizationMonitor {
         cacheHitRatio: 95, // Target cache hit ratio (%)
         responseTime: 1500, // Target response time (ms)
         errorRate: 0.5, // Target error rate (%)
-      }
+      },
     };
 
     this.performanceHistory = [];
@@ -46,41 +46,43 @@ class PerformanceOptimizationMonitor {
 
   async runPerformanceOptimization() {
     console.log('🚀 Starting Performance Optimization and Monitoring...');
-    console.log('=' .repeat(60));
+    console.log('='.repeat(60));
 
     try {
       // Step 1: Collect current performance metrics
       const currentMetrics = await this.collectCurrentMetrics();
-      
+
       // Step 2: Load historical performance data
       await this.loadPerformanceHistory();
-      
+
       // Step 3: Detect performance regressions
-      const regressions = await this.detectPerformanceRegressions(currentMetrics);
-      
+      const regressions =
+        await this.detectPerformanceRegressions(currentMetrics);
+
       // Step 4: Analyze and optimize CloudFront cache configuration
       const cacheOptimizations = await this.optimizeCloudFrontCache();
-      
+
       // Step 5: Generate cost optimization alerts
       const costAlerts = await this.generateCostOptimizationAlerts();
-      
+
       // Step 6: Implement automated optimizations
       const automatedActions = await this.implementAutomatedOptimizations(
-        regressions, cacheOptimizations, costAlerts
+        regressions,
+        cacheOptimizations,
+        costAlerts
       );
-      
+
       // Step 7: Generate comprehensive optimization report
       const report = await this.generateOptimizationReport({
         currentMetrics,
         regressions,
         cacheOptimizations,
         costAlerts,
-        automatedActions
+        automatedActions,
       });
 
       console.log('✅ Performance optimization completed successfully');
       return report;
-
     } catch (error) {
       console.error('❌ Performance optimization failed:', error.message);
       throw error;
@@ -89,16 +91,16 @@ class PerformanceOptimizationMonitor {
 
   async collectCurrentMetrics() {
     console.log('\n📊 Collecting Current Performance Metrics...');
-    
+
     const performanceMonitor = new PerformanceMonitor();
     const performanceReport = await performanceMonitor.monitorPerformance();
-    
+
     const costOptimizer = new CostAnalysisOptimizer();
     await costOptimizer.generateCostAnalysis();
-    
+
     // Get CloudFront metrics
     const cfMetrics = await this.getCloudFrontMetrics();
-    
+
     const currentMetrics = {
       timestamp: new Date().toISOString(),
       performance: performanceReport.summary,
@@ -109,8 +111,12 @@ class PerformanceOptimizationMonitor {
 
     console.log('   ✅ Performance metrics collected');
     console.log(`   Cache Hit Ratio: ${cfMetrics.cacheHitRatio?.toFixed(1)}%`);
-    console.log(`   Average Response Time: ${currentMetrics.performance.globalLatency}ms`);
-    console.log(`   Error Rate: ${currentMetrics.performance.errorRate?.toFixed(2)}%`);
+    console.log(
+      `   Average Response Time: ${currentMetrics.performance.globalLatency}ms`
+    );
+    console.log(
+      `   Error Rate: ${currentMetrics.performance.errorRate?.toFixed(2)}%`
+    );
 
     return currentMetrics;
   }
@@ -126,63 +132,87 @@ class PerformanceOptimizationMonitor {
       const startTime = new Date(endTime.getTime() - 24 * 60 * 60 * 1000); // Last 24 hours
 
       // Get cache hit ratio
-      const cacheHitRatio = await this.cloudwatch.getMetricStatistics({
-        Namespace: 'AWS/CloudFront',
-        MetricName: 'CacheHitRate',
-        Dimensions: [{ Name: 'DistributionId', Value: this.config.distributionId }],
-        StartTime: startTime,
-        EndTime: endTime,
-        Period: 3600,
-        Statistics: ['Average']
-      }).promise();
+      const cacheHitRatio = await this.cloudwatch
+        .getMetricStatistics({
+          Namespace: 'AWS/CloudFront',
+          MetricName: 'CacheHitRate',
+          Dimensions: [
+            { Name: 'DistributionId', Value: this.config.distributionId },
+          ],
+          StartTime: startTime,
+          EndTime: endTime,
+          Period: 3600,
+          Statistics: ['Average'],
+        })
+        .promise();
 
       // Get origin latency
-      const originLatency = await this.cloudwatch.getMetricStatistics({
-        Namespace: 'AWS/CloudFront',
-        MetricName: 'OriginLatency',
-        Dimensions: [{ Name: 'DistributionId', Value: this.config.distributionId }],
-        StartTime: startTime,
-        EndTime: endTime,
-        Period: 3600,
-        Statistics: ['Average']
-      }).promise();
+      const originLatency = await this.cloudwatch
+        .getMetricStatistics({
+          Namespace: 'AWS/CloudFront',
+          MetricName: 'OriginLatency',
+          Dimensions: [
+            { Name: 'DistributionId', Value: this.config.distributionId },
+          ],
+          StartTime: startTime,
+          EndTime: endTime,
+          Period: 3600,
+          Statistics: ['Average'],
+        })
+        .promise();
 
       // Get error rates
-      const errorRate4xx = await this.cloudwatch.getMetricStatistics({
-        Namespace: 'AWS/CloudFront',
-        MetricName: '4xxErrorRate',
-        Dimensions: [{ Name: 'DistributionId', Value: this.config.distributionId }],
-        StartTime: startTime,
-        EndTime: endTime,
-        Period: 3600,
-        Statistics: ['Average']
-      }).promise();
+      const errorRate4xx = await this.cloudwatch
+        .getMetricStatistics({
+          Namespace: 'AWS/CloudFront',
+          MetricName: '4xxErrorRate',
+          Dimensions: [
+            { Name: 'DistributionId', Value: this.config.distributionId },
+          ],
+          StartTime: startTime,
+          EndTime: endTime,
+          Period: 3600,
+          Statistics: ['Average'],
+        })
+        .promise();
 
-      const errorRate5xx = await this.cloudwatch.getMetricStatistics({
-        Namespace: 'AWS/CloudFront',
-        MetricName: '5xxErrorRate',
-        Dimensions: [{ Name: 'DistributionId', Value: this.config.distributionId }],
-        StartTime: startTime,
-        EndTime: endTime,
-        Period: 3600,
-        Statistics: ['Average']
-      }).promise();
+      const errorRate5xx = await this.cloudwatch
+        .getMetricStatistics({
+          Namespace: 'AWS/CloudFront',
+          MetricName: '5xxErrorRate',
+          Dimensions: [
+            { Name: 'DistributionId', Value: this.config.distributionId },
+          ],
+          StartTime: startTime,
+          EndTime: endTime,
+          Period: 3600,
+          Statistics: ['Average'],
+        })
+        .promise();
 
-      const avgCacheHitRatio = cacheHitRatio.Datapoints.length > 0 
-        ? cacheHitRatio.Datapoints.reduce((sum, dp) => sum + dp.Average, 0) / cacheHitRatio.Datapoints.length
-        : 0;
+      const avgCacheHitRatio =
+        cacheHitRatio.Datapoints.length > 0
+          ? cacheHitRatio.Datapoints.reduce((sum, dp) => sum + dp.Average, 0) /
+            cacheHitRatio.Datapoints.length
+          : 0;
 
-      const avgOriginLatency = originLatency.Datapoints.length > 0
-        ? originLatency.Datapoints.reduce((sum, dp) => sum + dp.Average, 0) / originLatency.Datapoints.length
-        : 0;
+      const avgOriginLatency =
+        originLatency.Datapoints.length > 0
+          ? originLatency.Datapoints.reduce((sum, dp) => sum + dp.Average, 0) /
+            originLatency.Datapoints.length
+          : 0;
 
-      const avg4xxErrorRate = errorRate4xx.Datapoints.length > 0
-        ? errorRate4xx.Datapoints.reduce((sum, dp) => sum + dp.Average, 0) / errorRate4xx.Datapoints.length
-        : 0;
+      const avg4xxErrorRate =
+        errorRate4xx.Datapoints.length > 0
+          ? errorRate4xx.Datapoints.reduce((sum, dp) => sum + dp.Average, 0) /
+            errorRate4xx.Datapoints.length
+          : 0;
 
-      const avg5xxErrorRate = errorRate5xx.Datapoints.length > 0
-        ? errorRate5xx.Datapoints.reduce((sum, dp) => sum + dp.Average, 0) / errorRate5xx.Datapoints.length
-        : 0;
+      const avg5xxErrorRate =
+        errorRate5xx.Datapoints.length > 0
+          ? errorRate5xx.Datapoints.reduce((sum, dp) => sum + dp.Average, 0) /
+            errorRate5xx.Datapoints.length
+          : 0;
 
       return {
         cacheHitRatio: avgCacheHitRatio,
@@ -195,9 +225,8 @@ class PerformanceOptimizationMonitor {
           originLatency: originLatency.Datapoints.length,
           errorRate4xx: errorRate4xx.Datapoints.length,
           errorRate5xx: errorRate5xx.Datapoints.length,
-        }
+        },
       };
-
     } catch (error) {
       console.warn('⚠️  Failed to get CloudFront metrics:', error.message);
       return { error: error.message };
@@ -206,13 +235,19 @@ class PerformanceOptimizationMonitor {
 
   async loadPerformanceHistory() {
     console.log('\n📈 Loading Performance History...');
-    
-    const historyPath = path.join(process.cwd(), 'logs', 'performance-history.json');
-    
+
+    const historyPath = path.join(
+      process.cwd(),
+      'logs',
+      'performance-history.json'
+    );
+
     try {
       const historyData = await fs.readFile(historyPath, 'utf8');
       this.performanceHistory = JSON.parse(historyData);
-      console.log(`   ✅ Loaded ${this.performanceHistory.length} historical records`);
+      console.log(
+        `   ✅ Loaded ${this.performanceHistory.length} historical records`
+      );
     } catch (error) {
       console.log('   📝 No performance history found, starting fresh');
       this.performanceHistory = [];
@@ -221,9 +256,9 @@ class PerformanceOptimizationMonitor {
 
   async detectPerformanceRegressions(currentMetrics) {
     console.log('\n🔍 Detecting Performance Regressions...');
-    
+
     const regressions = [];
-    
+
     if (this.performanceHistory.length < 2) {
       console.log('   📊 Insufficient historical data for regression analysis');
       return regressions;
@@ -241,27 +276,41 @@ class PerformanceOptimizationMonitor {
     }
 
     const baseline = this.calculateBaseline(recentHistory);
-    
+
     // Check for regressions
-    if (currentMetrics.cloudfront.cacheHitRatio < baseline.cacheHitRatio * 0.9) {
+    if (
+      currentMetrics.cloudfront.cacheHitRatio <
+      baseline.cacheHitRatio * 0.9
+    ) {
       regressions.push({
         type: 'cache_hit_ratio',
         severity: 'high',
         current: currentMetrics.cloudfront.cacheHitRatio,
         baseline: baseline.cacheHitRatio,
-        degradation: ((baseline.cacheHitRatio - currentMetrics.cloudfront.cacheHitRatio) / baseline.cacheHitRatio * 100).toFixed(1),
-        message: `Cache hit ratio dropped from ${baseline.cacheHitRatio.toFixed(1)}% to ${currentMetrics.cloudfront.cacheHitRatio.toFixed(1)}%`
+        degradation: (
+          ((baseline.cacheHitRatio - currentMetrics.cloudfront.cacheHitRatio) /
+            baseline.cacheHitRatio) *
+          100
+        ).toFixed(1),
+        message: `Cache hit ratio dropped from ${baseline.cacheHitRatio.toFixed(1)}% to ${currentMetrics.cloudfront.cacheHitRatio.toFixed(1)}%`,
       });
     }
 
-    if (currentMetrics.performance.globalLatency > baseline.responseTime * 1.2) {
+    if (
+      currentMetrics.performance.globalLatency >
+      baseline.responseTime * 1.2
+    ) {
       regressions.push({
         type: 'response_time',
         severity: 'medium',
         current: currentMetrics.performance.globalLatency,
         baseline: baseline.responseTime,
-        degradation: ((currentMetrics.performance.globalLatency - baseline.responseTime) / baseline.responseTime * 100).toFixed(1),
-        message: `Response time increased from ${baseline.responseTime.toFixed(0)}ms to ${currentMetrics.performance.globalLatency.toFixed(0)}ms`
+        degradation: (
+          ((currentMetrics.performance.globalLatency - baseline.responseTime) /
+            baseline.responseTime) *
+          100
+        ).toFixed(1),
+        message: `Response time increased from ${baseline.responseTime.toFixed(0)}ms to ${currentMetrics.performance.globalLatency.toFixed(0)}ms`,
       });
     }
 
@@ -271,16 +320,24 @@ class PerformanceOptimizationMonitor {
         severity: 'high',
         current: currentMetrics.cloudfront.totalErrorRate,
         baseline: baseline.errorRate,
-        degradation: ((currentMetrics.cloudfront.totalErrorRate - baseline.errorRate) / baseline.errorRate * 100).toFixed(1),
-        message: `Error rate increased from ${baseline.errorRate.toFixed(2)}% to ${currentMetrics.cloudfront.totalErrorRate.toFixed(2)}%`
+        degradation: (
+          ((currentMetrics.cloudfront.totalErrorRate - baseline.errorRate) /
+            baseline.errorRate) *
+          100
+        ).toFixed(1),
+        message: `Error rate increased from ${baseline.errorRate.toFixed(2)}% to ${currentMetrics.cloudfront.totalErrorRate.toFixed(2)}%`,
       });
     }
 
     if (regressions.length > 0) {
-      console.log(`   🚨 ${regressions.length} performance regressions detected:`);
+      console.log(
+        `   🚨 ${regressions.length} performance regressions detected:`
+      );
       regressions.forEach(regression => {
         const severity = regression.severity === 'high' ? '🔴' : '🟡';
-        console.log(`     ${severity} ${regression.message} (${regression.degradation}% degradation)`);
+        console.log(
+          `     ${severity} ${regression.message} (${regression.degradation}% degradation)`
+        );
       });
     } else {
       console.log('   ✅ No performance regressions detected');
@@ -298,23 +355,32 @@ class PerformanceOptimizationMonitor {
 
     if (history.length === 0) return baseline;
 
-    baseline.cacheHitRatio = history.reduce((sum, record) => 
-      sum + (record.cloudfront?.cacheHitRatio || 0), 0) / history.length;
-    
-    baseline.responseTime = history.reduce((sum, record) => 
-      sum + (record.performance?.globalLatency || 0), 0) / history.length;
-    
-    baseline.errorRate = history.reduce((sum, record) => 
-      sum + (record.cloudfront?.totalErrorRate || 0), 0) / history.length;
+    baseline.cacheHitRatio =
+      history.reduce(
+        (sum, record) => sum + (record.cloudfront?.cacheHitRatio || 0),
+        0
+      ) / history.length;
+
+    baseline.responseTime =
+      history.reduce(
+        (sum, record) => sum + (record.performance?.globalLatency || 0),
+        0
+      ) / history.length;
+
+    baseline.errorRate =
+      history.reduce(
+        (sum, record) => sum + (record.cloudfront?.totalErrorRate || 0),
+        0
+      ) / history.length;
 
     return baseline;
   }
 
   async optimizeCloudFrontCache() {
     console.log('\n⚡ Optimizing CloudFront Cache Configuration...');
-    
+
     const optimizations = [];
-    
+
     if (!this.config.distributionId) {
       console.log('   ⚠️  CloudFront Distribution ID not configured');
       return optimizations;
@@ -322,15 +388,17 @@ class PerformanceOptimizationMonitor {
 
     try {
       // Get current distribution configuration
-      const distribution = await this.cloudfront.getDistribution({
-        Id: this.config.distributionId
-      }).promise();
+      const distribution = await this.cloudfront
+        .getDistribution({
+          Id: this.config.distributionId,
+        })
+        .promise();
 
       const config = distribution.Distribution.DistributionConfig;
-      
+
       // Analyze cache behaviors
       const cacheAnalysis = this.analyzeCacheBehaviors(config);
-      
+
       // Generate optimization recommendations
       if (cacheAnalysis.hasSuboptimalTTL) {
         optimizations.push({
@@ -338,8 +406,9 @@ class PerformanceOptimizationMonitor {
           priority: 'high',
           title: 'Optimize Cache TTL Settings',
           description: 'Some cache behaviors have suboptimal TTL settings',
-          recommendation: 'Increase TTL for static assets, decrease for dynamic content',
-          action: 'review_cache_behaviors'
+          recommendation:
+            'Increase TTL for static assets, decrease for dynamic content',
+          action: 'review_cache_behaviors',
         });
       }
 
@@ -349,8 +418,9 @@ class PerformanceOptimizationMonitor {
           priority: 'high',
           title: 'Enable Compression',
           description: 'Compression is not enabled for all cache behaviors',
-          recommendation: 'Enable compression to reduce bandwidth and improve performance',
-          action: 'enable_compression'
+          recommendation:
+            'Enable compression to reduce bandwidth and improve performance',
+          action: 'enable_compression',
         });
       }
 
@@ -360,25 +430,30 @@ class PerformanceOptimizationMonitor {
           priority: 'medium',
           title: 'Improve Cache Efficiency',
           description: 'Cache configuration could be more efficient',
-          recommendation: 'Optimize cache key parameters and query string handling',
-          action: 'optimize_cache_keys'
+          recommendation:
+            'Optimize cache key parameters and query string handling',
+          action: 'optimize_cache_keys',
         });
       }
 
-      console.log(`   📋 Generated ${optimizations.length} cache optimization recommendations`);
+      console.log(
+        `   📋 Generated ${optimizations.length} cache optimization recommendations`
+      );
       optimizations.forEach(opt => {
         const priority = opt.priority === 'high' ? '🔴' : '🟡';
         console.log(`     ${priority} ${opt.title}: ${opt.description}`);
       });
-
     } catch (error) {
-      console.warn('⚠️  Failed to analyze CloudFront configuration:', error.message);
+      console.warn(
+        '⚠️  Failed to analyze CloudFront configuration:',
+        error.message
+      );
       optimizations.push({
         type: 'error',
         priority: 'low',
         title: 'CloudFront Analysis Failed',
         description: error.message,
-        action: 'manual_review'
+        action: 'manual_review',
       });
     }
 
@@ -390,7 +465,7 @@ class PerformanceOptimizationMonitor {
       hasSuboptimalTTL: false,
       compressionEnabled: true,
       inefficientCaching: false,
-      behaviors: []
+      behaviors: [],
     };
 
     // Analyze default cache behavior
@@ -400,14 +475,15 @@ class PerformanceOptimizationMonitor {
       ttl: defaultBehavior.DefaultTTL,
       maxTTL: defaultBehavior.MaxTTL,
       compress: defaultBehavior.Compress,
-      queryString: defaultBehavior.ForwardedValues?.QueryString
+      queryString: defaultBehavior.ForwardedValues?.QueryString,
     });
 
     if (!defaultBehavior.Compress) {
       analysis.compressionEnabled = false;
     }
 
-    if (defaultBehavior.DefaultTTL < 300) { // Less than 5 minutes
+    if (defaultBehavior.DefaultTTL < 300) {
+      // Less than 5 minutes
       analysis.hasSuboptimalTTL = true;
     }
 
@@ -419,7 +495,7 @@ class PerformanceOptimizationMonitor {
           ttl: behavior.DefaultTTL,
           maxTTL: behavior.MaxTTL,
           compress: behavior.Compress,
-          queryString: behavior.ForwardedValues?.QueryString
+          queryString: behavior.ForwardedValues?.QueryString,
         });
 
         if (!behavior.Compress) {
@@ -427,7 +503,10 @@ class PerformanceOptimizationMonitor {
         }
 
         // Check for static assets with low TTL
-        if (behavior.PathPattern.includes('static') && behavior.DefaultTTL < 86400) {
+        if (
+          behavior.PathPattern.includes('static') &&
+          behavior.DefaultTTL < 86400
+        ) {
           analysis.hasSuboptimalTTL = true;
         }
       });
@@ -438,14 +517,18 @@ class PerformanceOptimizationMonitor {
 
   async generateCostOptimizationAlerts() {
     console.log('\n💰 Generating Cost Optimization Alerts...');
-    
+
     const alerts = [];
-    
+
     try {
       // Load cost history
-      const costHistoryPath = path.join(process.cwd(), 'logs', 'cost-analysis.json');
+      const costHistoryPath = path.join(
+        process.cwd(),
+        'logs',
+        'cost-analysis.json'
+      );
       let previousCost = null;
-      
+
       try {
         const costData = await fs.readFile(costHistoryPath, 'utf8');
         const costReport = JSON.parse(costData);
@@ -457,7 +540,7 @@ class PerformanceOptimizationMonitor {
       // Run current cost analysis
       const costOptimizer = new CostAnalysisOptimizer();
       await costOptimizer.generateCostAnalysis();
-      
+
       // Load current cost data
       const currentCostData = await fs.readFile(costHistoryPath, 'utf8');
       const currentCostReport = JSON.parse(currentCostData);
@@ -469,24 +552,32 @@ class PerformanceOptimizationMonitor {
           severity: 'high',
           current: currentCost,
           previous: previousCost,
-          increase: ((currentCost - previousCost) / previousCost * 100).toFixed(1),
+          increase: (
+            ((currentCost - previousCost) / previousCost) *
+            100
+          ).toFixed(1),
           message: `Monthly cost increased from $${previousCost.toFixed(2)} to $${currentCost.toFixed(2)}`,
-          recommendations: currentCostReport.recommendations || []
+          recommendations: currentCostReport.recommendations || [],
         });
       }
 
       // Check for high-cost patterns
-      if (currentCostReport.costs?.cloudfront?.dataTransfer > currentCostReport.costs?.cloudfront?.total * 0.7) {
+      if (
+        currentCostReport.costs?.cloudfront?.dataTransfer >
+        currentCostReport.costs?.cloudfront?.total * 0.7
+      ) {
         alerts.push({
           type: 'high_data_transfer',
           severity: 'medium',
           message: 'Data transfer costs are unusually high',
-          recommendation: 'Review cache hit ratio and compression settings'
+          recommendation: 'Review cache hit ratio and compression settings',
         });
       }
 
       if (alerts.length > 0) {
-        console.log(`   🚨 ${alerts.length} cost optimization alerts generated:`);
+        console.log(
+          `   🚨 ${alerts.length} cost optimization alerts generated:`
+        );
         alerts.forEach(alert => {
           const severity = alert.severity === 'high' ? '🔴' : '🟡';
           console.log(`     ${severity} ${alert.message}`);
@@ -494,7 +585,6 @@ class PerformanceOptimizationMonitor {
       } else {
         console.log('   ✅ No cost optimization alerts');
       }
-
     } catch (error) {
       console.warn('⚠️  Failed to generate cost alerts:', error.message);
     }
@@ -502,22 +592,32 @@ class PerformanceOptimizationMonitor {
     return alerts;
   }
 
-  async implementAutomatedOptimizations(regressions, cacheOptimizations, costAlerts) {
+  async implementAutomatedOptimizations(
+    regressions,
+    cacheOptimizations,
+    costAlerts
+  ) {
     console.log('\n🤖 Implementing Automated Optimizations...');
-    
+
     const actions = [];
-    
+
     // Automated cache optimization
     for (const optimization of cacheOptimizations) {
-      if (optimization.action === 'enable_compression' && optimization.priority === 'high') {
+      if (
+        optimization.action === 'enable_compression' &&
+        optimization.priority === 'high'
+      ) {
         try {
           // Note: In a real implementation, you would update the CloudFront distribution
           // For this demo, we'll just log the action
-          console.log('   🔧 Would enable compression for CloudFront distribution');
+          console.log(
+            '   🔧 Would enable compression for CloudFront distribution'
+          );
           actions.push({
             type: 'compression_enabled',
             status: 'simulated',
-            message: 'Compression optimization identified (manual action required)'
+            message:
+              'Compression optimization identified (manual action required)',
           });
         } catch (error) {
           console.warn('   ⚠️  Failed to enable compression:', error.message);
@@ -532,7 +632,7 @@ class PerformanceOptimizationMonitor {
           type: 'alert_sent',
           status: 'completed',
           message: `High severity regression alert: ${regression.message}`,
-          details: regression
+          details: regression,
         });
         console.log(`   📧 Alert sent for ${regression.type} regression`);
       }
@@ -545,7 +645,7 @@ class PerformanceOptimizationMonitor {
           type: 'cost_alert',
           status: 'completed',
           message: `Critical cost increase alert: ${alert.increase}% increase`,
-          details: alert
+          details: alert,
         });
         console.log(`   💸 Critical cost increase alert sent`);
       }
@@ -560,7 +660,7 @@ class PerformanceOptimizationMonitor {
 
   async generateOptimizationReport(data) {
     console.log('\n📋 Generating Optimization Report...');
-    
+
     const report = {
       timestamp: new Date().toISOString(),
       summary: {
@@ -568,19 +668,19 @@ class PerformanceOptimizationMonitor {
         regressionsDetected: data.regressions.length,
         optimizationsIdentified: data.cacheOptimizations.length,
         costAlertsGenerated: data.costAlerts.length,
-        automatedActionsExecuted: data.automatedActions.length
+        automatedActionsExecuted: data.automatedActions.length,
       },
       currentMetrics: data.currentMetrics,
       regressions: data.regressions,
       cacheOptimizations: data.cacheOptimizations,
       costAlerts: data.costAlerts,
       automatedActions: data.automatedActions,
-      recommendations: this.generateActionableRecommendations(data)
+      recommendations: this.generateActionableRecommendations(data),
     };
 
     // Save performance history
     this.performanceHistory.push(data.currentMetrics);
-    
+
     // Keep only last 30 days of history
     const thirtyDaysAgo = new Date(Date.now() - 30 * 24 * 60 * 60 * 1000);
     this.performanceHistory = this.performanceHistory.filter(
@@ -588,11 +688,21 @@ class PerformanceOptimizationMonitor {
     );
 
     // Save updated history
-    const historyPath = path.join(process.cwd(), 'logs', 'performance-history.json');
-    await fs.writeFile(historyPath, JSON.stringify(this.performanceHistory, null, 2));
+    const historyPath = path.join(
+      process.cwd(),
+      'logs',
+      'performance-history.json'
+    );
+    await fs.writeFile(
+      historyPath,
+      JSON.stringify(this.performanceHistory, null, 2)
+    );
 
     // Save optimization report
-    const reportPath = path.join(process.cwd(), 'performance-optimization-report.json');
+    const reportPath = path.join(
+      process.cwd(),
+      'performance-optimization-report.json'
+    );
     await fs.writeFile(reportPath, JSON.stringify(report, null, 2));
 
     // Generate human-readable summary
@@ -601,7 +711,9 @@ class PerformanceOptimizationMonitor {
     console.log('   ✅ Optimization report generated');
     console.log(`   📊 Performance Grade: ${report.summary.performanceGrade}`);
     console.log(`   🔍 Regressions: ${report.summary.regressionsDetected}`);
-    console.log(`   ⚡ Optimizations: ${report.summary.optimizationsIdentified}`);
+    console.log(
+      `   ⚡ Optimizations: ${report.summary.optimizationsIdentified}`
+    );
 
     return report;
   }
@@ -642,8 +754,8 @@ class PerformanceOptimizationMonitor {
             'Review recent CloudFront configuration changes',
             'Check for new content types not being cached',
             'Analyze cache invalidation patterns',
-            'Review cache behavior TTL settings'
-          ]
+            'Review cache behavior TTL settings',
+          ],
         });
       }
     });
@@ -654,7 +766,7 @@ class PerformanceOptimizationMonitor {
         priority: optimization.priority,
         title: optimization.title,
         description: optimization.description,
-        actions: [optimization.recommendation]
+        actions: [optimization.recommendation],
       });
     });
 
@@ -666,7 +778,7 @@ class PerformanceOptimizationMonitor {
             priority: 'high',
             title: `Cost Optimization: ${rec.title}`,
             description: rec.description,
-            actions: rec.actions || [rec.action]
+            actions: rec.actions || [rec.action],
           });
         });
       }
@@ -674,12 +786,17 @@ class PerformanceOptimizationMonitor {
 
     return recommendations.sort((a, b) => {
       const priorityOrder = { critical: 4, high: 3, medium: 2, low: 1 };
-      return (priorityOrder[b.priority] || 0) - (priorityOrder[a.priority] || 0);
+      return (
+        (priorityOrder[b.priority] || 0) - (priorityOrder[a.priority] || 0)
+      );
     });
   }
 
   async generateHumanReadableReport(report) {
-    const summaryPath = path.join(process.cwd(), 'performance-optimization-summary.md');
+    const summaryPath = path.join(
+      process.cwd(),
+      'performance-optimization-summary.md'
+    );
 
     const markdown = `# Performance Optimization Report
 
@@ -708,50 +825,65 @@ Generated: ${new Date(report.timestamp).toLocaleString()}
 
 ## Performance Regressions
 
-${report.regressions.length > 0 
-  ? report.regressions.map(reg => 
-      `### ${reg.type.replace('_', ' ').toUpperCase()} ${reg.severity === 'high' ? '🔴' : '🟡'}
+${
+  report.regressions.length > 0
+    ? report.regressions
+        .map(
+          reg =>
+            `### ${reg.type.replace('_', ' ').toUpperCase()} ${reg.severity === 'high' ? '🔴' : '🟡'}
       
 **Current:** ${reg.current}
 **Baseline:** ${reg.baseline}
 **Degradation:** ${reg.degradation}%
 
 ${reg.message}`
-    ).join('\n\n')
-  : 'No performance regressions detected.'
+        )
+        .join('\n\n')
+    : 'No performance regressions detected.'
 }
 
 ## Cache Optimizations
 
-${report.cacheOptimizations.length > 0
-  ? report.cacheOptimizations.map(opt =>
-      `### ${opt.title} ${opt.priority === 'high' ? '🔴' : '🟡'}
+${
+  report.cacheOptimizations.length > 0
+    ? report.cacheOptimizations
+        .map(
+          opt =>
+            `### ${opt.title} ${opt.priority === 'high' ? '🔴' : '🟡'}
       
 ${opt.description}
 
 **Recommendation:** ${opt.recommendation}`
-    ).join('\n\n')
-  : 'No cache optimizations identified.'
+        )
+        .join('\n\n')
+    : 'No cache optimizations identified.'
 }
 
 ## Actionable Recommendations
 
-${report.recommendations.map((rec, index) =>
-  `### ${index + 1}. ${rec.title} ${rec.priority === 'critical' ? '🚨' : rec.priority === 'high' ? '🔴' : '🟡'}
+${report.recommendations
+  .map(
+    (rec, index) =>
+      `### ${index + 1}. ${rec.title} ${rec.priority === 'critical' ? '🚨' : rec.priority === 'high' ? '🔴' : '🟡'}
 
 ${rec.description}
 
 **Actions:**
 ${rec.actions.map(action => `- ${action}`).join('\n')}
-`).join('\n')}
+`
+  )
+  .join('\n')}
 
 ## Automated Actions Taken
 
-${report.automatedActions.length > 0
-  ? report.automatedActions.map(action =>
-      `- **${action.type}:** ${action.message} (${action.status})`
-    ).join('\n')
-  : 'No automated actions were required.'
+${
+  report.automatedActions.length > 0
+    ? report.automatedActions
+        .map(
+          action => `- **${action.type}:** ${action.message} (${action.status})`
+        )
+        .join('\n')
+    : 'No automated actions were required.'
 }
 
 ---
@@ -766,10 +898,10 @@ ${report.automatedActions.length > 0
 // CLI execution
 async function main() {
   const optimizer = new PerformanceOptimizationMonitor();
-  
+
   try {
     const report = await optimizer.runPerformanceOptimization();
-    
+
     console.log('\n' + '='.repeat(60));
     console.log('🎯 Performance Optimization Summary:');
     console.log(`   Grade: ${report.summary.performanceGrade}`);
@@ -777,7 +909,7 @@ async function main() {
     console.log(`   Optimizations: ${report.summary.optimizationsIdentified}`);
     console.log(`   Recommendations: ${report.recommendations.length}`);
     console.log('='.repeat(60));
-    
+
     return report;
   } catch (error) {
     console.error('❌ Performance optimization failed:', error.message);

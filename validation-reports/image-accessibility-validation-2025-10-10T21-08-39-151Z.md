@@ -13,42 +13,49 @@
 ## Category Breakdown
 
 ### HOMEPAGE SERVICE-CARDS
+
 - **Total**: 3
 - **Successful**: 3
 - **Failed**: 0
 - **Success Rate**: 100%
 
 ### BLOG PREVIEWS
+
 - **Total**: 3
 - **Successful**: 1
 - **Failed**: 2
 - **Success Rate**: 33%
 
 ### SERVICE HEROES
+
 - **Total**: 3
 - **Successful**: 1
 - **Failed**: 2
 - **Success Rate**: 33%
 
 ### PORTFOLIO PHOTOGRAPHY
+
 - **Total**: 6
 - **Successful**: 0
 - **Failed**: 6
 - **Success Rate**: 0%
 
 ### PORTFOLIO ANALYTICS
+
 - **Total**: 3
 - **Successful**: 0
 - **Failed**: 3
 - **Success Rate**: 0%
 
 ### PORTFOLIO ADCAMPAIGNS
+
 - **Total**: 3
 - **Successful**: 0
 - **Failed**: 3
 - **Success Rate**: 0%
 
 ### ABOUT HERO
+
 - **Total**: 1
 - **Successful**: 1
 - **Failed**: 0
@@ -65,7 +72,8 @@
 
 #### 1. /images/services/photography-hero.webp ✅ PASS
 
-- **URL**: https://d15sc9fc739ev2.cloudfront.net/images/services/photography-hero.webp
+- **URL**:
+  https://d15sc9fc739ev2.cloudfront.net/images/services/photography-hero.webp
 - **Status Code**: 200
 - **Response Time**: 101ms
 - **Content Type**: image/webp
@@ -74,11 +82,13 @@
 - **Requirement**: 1.1
 
 **Warnings:**
+
 - Missing Cache-Control header
 
 #### 2. /images/services/analytics-hero.webp ✅ PASS
 
-- **URL**: https://d15sc9fc739ev2.cloudfront.net/images/services/analytics-hero.webp
+- **URL**:
+  https://d15sc9fc739ev2.cloudfront.net/images/services/analytics-hero.webp
 - **Status Code**: 200
 - **Response Time**: 9ms
 - **Content Type**: image/webp
@@ -87,11 +97,13 @@
 - **Requirement**: 1.1
 
 **Warnings:**
+
 - Missing Cache-Control header
 
 #### 3. /images/services/ad-campaigns-hero.webp ✅ PASS
 
-- **URL**: https://d15sc9fc739ev2.cloudfront.net/images/services/ad-campaigns-hero.webp
+- **URL**:
+  https://d15sc9fc739ev2.cloudfront.net/images/services/ad-campaigns-hero.webp
 - **Status Code**: 200
 - **Response Time**: 9ms
 - **Content Type**: image/webp
@@ -100,13 +112,15 @@
 - **Requirement**: 1.1
 
 **Warnings:**
+
 - Missing Cache-Control header
 
 ### BLOG PREVIEWS
 
 #### 1. /images/hero/google-ads-analytics-dashboard.webp ✅ PASS
 
-- **URL**: https://d15sc9fc739ev2.cloudfront.net/images/hero/google-ads-analytics-dashboard.webp
+- **URL**:
+  https://d15sc9fc739ev2.cloudfront.net/images/hero/google-ads-analytics-dashboard.webp
 - **Status Code**: 200
 - **Response Time**: 10ms
 - **Content Type**: image/webp
@@ -115,11 +129,13 @@
 - **Requirement**: 1.2
 
 **Warnings:**
+
 - Missing Cache-Control header
 
 #### 2. /images/hero/whatsapp-image-2025-07-11-flyers-roi.webp ❌ FAIL
 
-- **URL**: https://d15sc9fc739ev2.cloudfront.net/images/hero/whatsapp-image-2025-07-11-flyers-roi.webp
+- **URL**:
+  https://d15sc9fc739ev2.cloudfront.net/images/hero/whatsapp-image-2025-07-11-flyers-roi.webp
 - **Status Code**: 200
 - **Response Time**: 669ms
 - **Content Type**: text/html
@@ -128,14 +144,17 @@
 - **Requirement**: 1.2
 
 **Errors:**
-- Invalid Content-Type: text/html (expected image/*)
+
+- Invalid Content-Type: text/html (expected image/\*)
 
 **Warnings:**
+
 - Missing Cache-Control header
 
 #### 3. /images/hero/240619-london-19.webp ❌ FAIL
 
-- **URL**: https://d15sc9fc739ev2.cloudfront.net/images/hero/240619-london-19.webp
+- **URL**:
+  https://d15sc9fc739ev2.cloudfront.net/images/hero/240619-london-19.webp
 - **Status Code**: 200
 - **Response Time**: 438ms
 - **Content Type**: text/html
@@ -144,16 +163,19 @@
 - **Requirement**: 1.2
 
 **Errors:**
-- Invalid Content-Type: text/html (expected image/*)
+
+- Invalid Content-Type: text/html (expected image/\*)
 
 **Warnings:**
+
 - Missing Cache-Control header
 
 ### SERVICE HEROES
 
 #### 1. /images/services/250928-hampson-auctions-sunday-11.webp ❌ FAIL
 
-- **URL**: https://d15sc9fc739ev2.cloudfront.net/images/services/250928-hampson-auctions-sunday-11.webp
+- **URL**:
+  https://d15sc9fc739ev2.cloudfront.net/images/services/250928-hampson-auctions-sunday-11.webp
 - **Status Code**: 200
 - **Response Time**: 666ms
 - **Content Type**: text/html
@@ -162,14 +184,17 @@
 - **Requirement**: 2.1, 2.3, 2.5
 
 **Errors:**
-- Invalid Content-Type: text/html (expected image/*)
+
+- Invalid Content-Type: text/html (expected image/\*)
 
 **Warnings:**
+
 - Missing Cache-Control header
 
 #### 2. /images/services/screenshot-2025-09-23-analytics-dashboard.webp ❌ FAIL
 
-- **URL**: https://d15sc9fc739ev2.cloudfront.net/images/services/screenshot-2025-09-23-analytics-dashboard.webp
+- **URL**:
+  https://d15sc9fc739ev2.cloudfront.net/images/services/screenshot-2025-09-23-analytics-dashboard.webp
 - **Status Code**: 200
 - **Response Time**: 666ms
 - **Content Type**: text/html
@@ -178,14 +203,17 @@
 - **Requirement**: 2.1, 2.3, 2.5
 
 **Errors:**
-- Invalid Content-Type: text/html (expected image/*)
+
+- Invalid Content-Type: text/html (expected image/\*)
 
 **Warnings:**
+
 - Missing Cache-Control header
 
 #### 3. /images/services/ad-campaigns-hero.webp ✅ PASS
 
-- **URL**: https://d15sc9fc739ev2.cloudfront.net/images/services/ad-campaigns-hero.webp
+- **URL**:
+  https://d15sc9fc739ev2.cloudfront.net/images/services/ad-campaigns-hero.webp
 - **Status Code**: 200
 - **Response Time**: 11ms
 - **Content Type**: image/webp
@@ -194,13 +222,15 @@
 - **Requirement**: 2.1, 2.3, 2.5
 
 **Warnings:**
+
 - Missing Cache-Control header
 
 ### PORTFOLIO PHOTOGRAPHY
 
 #### 1. /images/services/240217-australia-trip-232.webp ❌ FAIL
 
-- **URL**: https://d15sc9fc739ev2.cloudfront.net/images/services/240217-australia-trip-232.webp
+- **URL**:
+  https://d15sc9fc739ev2.cloudfront.net/images/services/240217-australia-trip-232.webp
 - **Status Code**: 200
 - **Response Time**: 720ms
 - **Content Type**: text/html
@@ -209,14 +239,17 @@
 - **Requirement**: 2.2
 
 **Errors:**
-- Invalid Content-Type: text/html (expected image/*)
+
+- Invalid Content-Type: text/html (expected image/\*)
 
 **Warnings:**
+
 - Missing Cache-Control header
 
 #### 2. /images/services/240219-australia-trip-148.webp ❌ FAIL
 
-- **URL**: https://d15sc9fc739ev2.cloudfront.net/images/services/240219-australia-trip-148.webp
+- **URL**:
+  https://d15sc9fc739ev2.cloudfront.net/images/services/240219-australia-trip-148.webp
 - **Status Code**: 200
 - **Response Time**: 657ms
 - **Content Type**: text/html
@@ -225,14 +258,17 @@
 - **Requirement**: 2.2
 
 **Errors:**
-- Invalid Content-Type: text/html (expected image/*)
+
+- Invalid Content-Type: text/html (expected image/\*)
 
 **Warnings:**
+
 - Missing Cache-Control header
 
 #### 3. /images/services/240619-london-19.webp ❌ FAIL
 
-- **URL**: https://d15sc9fc739ev2.cloudfront.net/images/services/240619-london-19.webp
+- **URL**:
+  https://d15sc9fc739ev2.cloudfront.net/images/services/240619-london-19.webp
 - **Status Code**: 200
 - **Response Time**: 661ms
 - **Content Type**: text/html
@@ -241,14 +277,17 @@
 - **Requirement**: 2.2
 
 **Errors:**
-- Invalid Content-Type: text/html (expected image/*)
+
+- Invalid Content-Type: text/html (expected image/\*)
 
 **Warnings:**
+
 - Missing Cache-Control header
 
 #### 4. /images/services/240619-london-26.webp ❌ FAIL
 
-- **URL**: https://d15sc9fc739ev2.cloudfront.net/images/services/240619-london-26.webp
+- **URL**:
+  https://d15sc9fc739ev2.cloudfront.net/images/services/240619-london-26.webp
 - **Status Code**: 200
 - **Response Time**: 659ms
 - **Content Type**: text/html
@@ -257,14 +296,17 @@
 - **Requirement**: 2.2
 
 **Errors:**
-- Invalid Content-Type: text/html (expected image/*)
+
+- Invalid Content-Type: text/html (expected image/\*)
 
 **Warnings:**
+
 - Missing Cache-Control header
 
 #### 5. /images/services/240619-london-64.webp ❌ FAIL
 
-- **URL**: https://d15sc9fc739ev2.cloudfront.net/images/services/240619-london-64.webp
+- **URL**:
+  https://d15sc9fc739ev2.cloudfront.net/images/services/240619-london-64.webp
 - **Status Code**: 200
 - **Response Time**: 678ms
 - **Content Type**: text/html
@@ -273,14 +315,17 @@
 - **Requirement**: 2.2
 
 **Errors:**
-- Invalid Content-Type: text/html (expected image/*)
+
+- Invalid Content-Type: text/html (expected image/\*)
 
 **Warnings:**
+
 - Missing Cache-Control header
 
 #### 6. /images/services/250125-liverpool-40.webp ❌ FAIL
 
-- **URL**: https://d15sc9fc739ev2.cloudfront.net/images/services/250125-liverpool-40.webp
+- **URL**:
+  https://d15sc9fc739ev2.cloudfront.net/images/services/250125-liverpool-40.webp
 - **Status Code**: 200
 - **Response Time**: 259ms
 - **Content Type**: text/html
@@ -289,16 +334,19 @@
 - **Requirement**: 2.2
 
 **Errors:**
-- Invalid Content-Type: text/html (expected image/*)
+
+- Invalid Content-Type: text/html (expected image/\*)
 
 **Warnings:**
+
 - Missing Cache-Control header
 
 ### PORTFOLIO ANALYTICS
 
 #### 1. /images/services/screenshot-2025-08-12-analytics-report.webp ❌ FAIL
 
-- **URL**: https://d15sc9fc739ev2.cloudfront.net/images/services/screenshot-2025-08-12-analytics-report.webp
+- **URL**:
+  https://d15sc9fc739ev2.cloudfront.net/images/services/screenshot-2025-08-12-analytics-report.webp
 - **Status Code**: 200
 - **Response Time**: 659ms
 - **Content Type**: text/html
@@ -307,14 +355,17 @@
 - **Requirement**: 2.4
 
 **Errors:**
-- Invalid Content-Type: text/html (expected image/*)
+
+- Invalid Content-Type: text/html (expected image/\*)
 
 **Warnings:**
+
 - Missing Cache-Control header
 
 #### 2. /images/hero/stock-photography-samira.webp ❌ FAIL
 
-- **URL**: https://d15sc9fc739ev2.cloudfront.net/images/hero/stock-photography-samira.webp
+- **URL**:
+  https://d15sc9fc739ev2.cloudfront.net/images/hero/stock-photography-samira.webp
 - **Status Code**: 200
 - **Response Time**: 652ms
 - **Content Type**: text/html
@@ -323,14 +374,17 @@
 - **Requirement**: 2.4
 
 **Errors:**
-- Invalid Content-Type: text/html (expected image/*)
+
+- Invalid Content-Type: text/html (expected image/\*)
 
 **Warnings:**
+
 - Missing Cache-Control header
 
 #### 3. /images/services/output-5-analytics-chart.webp ❌ FAIL
 
-- **URL**: https://d15sc9fc739ev2.cloudfront.net/images/services/output-5-analytics-chart.webp
+- **URL**:
+  https://d15sc9fc739ev2.cloudfront.net/images/services/output-5-analytics-chart.webp
 - **Status Code**: 200
 - **Response Time**: 658ms
 - **Content Type**: text/html
@@ -339,16 +393,19 @@
 - **Requirement**: 2.4
 
 **Errors:**
-- Invalid Content-Type: text/html (expected image/*)
+
+- Invalid Content-Type: text/html (expected image/\*)
 
 **Warnings:**
+
 - Missing Cache-Control header
 
 ### PORTFOLIO ADCAMPAIGNS
 
 #### 1. /images/services/accessible-top8-campaigns-source.webp ❌ FAIL
 
-- **URL**: https://d15sc9fc739ev2.cloudfront.net/images/services/accessible-top8-campaigns-source.webp
+- **URL**:
+  https://d15sc9fc739ev2.cloudfront.net/images/services/accessible-top8-campaigns-source.webp
 - **Status Code**: 200
 - **Response Time**: 667ms
 - **Content Type**: text/html
@@ -357,14 +414,17 @@
 - **Requirement**: 2.6
 
 **Errors:**
-- Invalid Content-Type: text/html (expected image/*)
+
+- Invalid Content-Type: text/html (expected image/\*)
 
 **Warnings:**
+
 - Missing Cache-Control header
 
 #### 2. /images/services/top-3-mediums-by-conversion-rate.webp ❌ FAIL
 
-- **URL**: https://d15sc9fc739ev2.cloudfront.net/images/services/top-3-mediums-by-conversion-rate.webp
+- **URL**:
+  https://d15sc9fc739ev2.cloudfront.net/images/services/top-3-mediums-by-conversion-rate.webp
 - **Status Code**: 200
 - **Response Time**: 656ms
 - **Content Type**: text/html
@@ -373,14 +433,17 @@
 - **Requirement**: 2.6
 
 **Errors:**
-- Invalid Content-Type: text/html (expected image/*)
+
+- Invalid Content-Type: text/html (expected image/\*)
 
 **Warnings:**
+
 - Missing Cache-Control header
 
 #### 3. /images/services/screenshot-2025-08-12-analytics-report.webp ❌ FAIL
 
-- **URL**: https://d15sc9fc739ev2.cloudfront.net/images/services/screenshot-2025-08-12-analytics-report.webp
+- **URL**:
+  https://d15sc9fc739ev2.cloudfront.net/images/services/screenshot-2025-08-12-analytics-report.webp
 - **Status Code**: 200
 - **Response Time**: 654ms
 - **Content Type**: text/html
@@ -389,9 +452,11 @@
 - **Requirement**: 2.6
 
 **Errors:**
-- Invalid Content-Type: text/html (expected image/*)
+
+- Invalid Content-Type: text/html (expected image/\*)
 
 **Warnings:**
+
 - Missing Cache-Control header
 
 ### ABOUT HERO
@@ -407,6 +472,7 @@
 - **Requirement**: 3.1
 
 **Warnings:**
+
 - Missing Cache-Control header
 
 ## Recommendations
@@ -415,25 +481,41 @@
 
 The following images failed validation and need immediate attention:
 
-- **/images/hero/whatsapp-image-2025-07-11-flyers-roi.webp** (blog-previews): Invalid Content-Type: text/html (expected image/*)
-- **/images/hero/240619-london-19.webp** (blog-previews): Invalid Content-Type: text/html (expected image/*)
-- **/images/services/250928-hampson-auctions-sunday-11.webp** (service-heroes): Invalid Content-Type: text/html (expected image/*)
-- **/images/services/screenshot-2025-09-23-analytics-dashboard.webp** (service-heroes): Invalid Content-Type: text/html (expected image/*)
-- **/images/services/240217-australia-trip-232.webp** (portfolio-photography): Invalid Content-Type: text/html (expected image/*)
-- **/images/services/240219-australia-trip-148.webp** (portfolio-photography): Invalid Content-Type: text/html (expected image/*)
-- **/images/services/240619-london-19.webp** (portfolio-photography): Invalid Content-Type: text/html (expected image/*)
-- **/images/services/240619-london-26.webp** (portfolio-photography): Invalid Content-Type: text/html (expected image/*)
-- **/images/services/240619-london-64.webp** (portfolio-photography): Invalid Content-Type: text/html (expected image/*)
-- **/images/services/250125-liverpool-40.webp** (portfolio-photography): Invalid Content-Type: text/html (expected image/*)
-- **/images/services/screenshot-2025-08-12-analytics-report.webp** (portfolio-analytics): Invalid Content-Type: text/html (expected image/*)
-- **/images/hero/stock-photography-samira.webp** (portfolio-analytics): Invalid Content-Type: text/html (expected image/*)
-- **/images/services/output-5-analytics-chart.webp** (portfolio-analytics): Invalid Content-Type: text/html (expected image/*)
-- **/images/services/accessible-top8-campaigns-source.webp** (portfolio-adCampaigns): Invalid Content-Type: text/html (expected image/*)
-- **/images/services/top-3-mediums-by-conversion-rate.webp** (portfolio-adCampaigns): Invalid Content-Type: text/html (expected image/*)
-- **/images/services/screenshot-2025-08-12-analytics-report.webp** (portfolio-adCampaigns): Invalid Content-Type: text/html (expected image/*)
-
+- **/images/hero/whatsapp-image-2025-07-11-flyers-roi.webp** (blog-previews):
+  Invalid Content-Type: text/html (expected image/\*)
+- **/images/hero/240619-london-19.webp** (blog-previews): Invalid Content-Type:
+  text/html (expected image/\*)
+- **/images/services/250928-hampson-auctions-sunday-11.webp** (service-heroes):
+  Invalid Content-Type: text/html (expected image/\*)
+- **/images/services/screenshot-2025-09-23-analytics-dashboard.webp**
+  (service-heroes): Invalid Content-Type: text/html (expected image/\*)
+- **/images/services/240217-australia-trip-232.webp** (portfolio-photography):
+  Invalid Content-Type: text/html (expected image/\*)
+- **/images/services/240219-australia-trip-148.webp** (portfolio-photography):
+  Invalid Content-Type: text/html (expected image/\*)
+- **/images/services/240619-london-19.webp** (portfolio-photography): Invalid
+  Content-Type: text/html (expected image/\*)
+- **/images/services/240619-london-26.webp** (portfolio-photography): Invalid
+  Content-Type: text/html (expected image/\*)
+- **/images/services/240619-london-64.webp** (portfolio-photography): Invalid
+  Content-Type: text/html (expected image/\*)
+- **/images/services/250125-liverpool-40.webp** (portfolio-photography): Invalid
+  Content-Type: text/html (expected image/\*)
+- **/images/services/screenshot-2025-08-12-analytics-report.webp**
+  (portfolio-analytics): Invalid Content-Type: text/html (expected image/\*)
+- **/images/hero/stock-photography-samira.webp** (portfolio-analytics): Invalid
+  Content-Type: text/html (expected image/\*)
+- **/images/services/output-5-analytics-chart.webp** (portfolio-analytics):
+  Invalid Content-Type: text/html (expected image/\*)
+- **/images/services/accessible-top8-campaigns-source.webp**
+  (portfolio-adCampaigns): Invalid Content-Type: text/html (expected image/\*)
+- **/images/services/top-3-mediums-by-conversion-rate.webp**
+  (portfolio-adCampaigns): Invalid Content-Type: text/html (expected image/\*)
+- **/images/services/screenshot-2025-08-12-analytics-report.webp**
+  (portfolio-adCampaigns): Invalid Content-Type: text/html (expected image/\*)
 
 **Actions Required:**
+
 1. Verify images exist in the source repository
 2. Check build process includes all images
 3. Verify deployment script uploads images correctly
@@ -444,28 +526,39 @@ The following images failed validation and need immediate attention:
 - **/images/services/photography-hero.webp**: Missing Cache-Control header
 - **/images/services/analytics-hero.webp**: Missing Cache-Control header
 - **/images/services/ad-campaigns-hero.webp**: Missing Cache-Control header
-- **/images/hero/google-ads-analytics-dashboard.webp**: Missing Cache-Control header
-- **/images/hero/whatsapp-image-2025-07-11-flyers-roi.webp**: Missing Cache-Control header
+- **/images/hero/google-ads-analytics-dashboard.webp**: Missing Cache-Control
+  header
+- **/images/hero/whatsapp-image-2025-07-11-flyers-roi.webp**: Missing
+  Cache-Control header
 - **/images/hero/240619-london-19.webp**: Missing Cache-Control header
-- **/images/services/250928-hampson-auctions-sunday-11.webp**: Missing Cache-Control header
-- **/images/services/screenshot-2025-09-23-analytics-dashboard.webp**: Missing Cache-Control header
+- **/images/services/250928-hampson-auctions-sunday-11.webp**: Missing
+  Cache-Control header
+- **/images/services/screenshot-2025-09-23-analytics-dashboard.webp**: Missing
+  Cache-Control header
 - **/images/services/ad-campaigns-hero.webp**: Missing Cache-Control header
-- **/images/services/240217-australia-trip-232.webp**: Missing Cache-Control header
-- **/images/services/240219-australia-trip-148.webp**: Missing Cache-Control header
+- **/images/services/240217-australia-trip-232.webp**: Missing Cache-Control
+  header
+- **/images/services/240219-australia-trip-148.webp**: Missing Cache-Control
+  header
 - **/images/services/240619-london-19.webp**: Missing Cache-Control header
 - **/images/services/240619-london-26.webp**: Missing Cache-Control header
 - **/images/services/240619-london-64.webp**: Missing Cache-Control header
 - **/images/services/250125-liverpool-40.webp**: Missing Cache-Control header
-- **/images/services/screenshot-2025-08-12-analytics-report.webp**: Missing Cache-Control header
+- **/images/services/screenshot-2025-08-12-analytics-report.webp**: Missing
+  Cache-Control header
 - **/images/hero/stock-photography-samira.webp**: Missing Cache-Control header
-- **/images/services/output-5-analytics-chart.webp**: Missing Cache-Control header
-- **/images/services/accessible-top8-campaigns-source.webp**: Missing Cache-Control header
-- **/images/services/top-3-mediums-by-conversion-rate.webp**: Missing Cache-Control header
-- **/images/services/screenshot-2025-08-12-analytics-report.webp**: Missing Cache-Control header
+- **/images/services/output-5-analytics-chart.webp**: Missing Cache-Control
+  header
+- **/images/services/accessible-top8-campaigns-source.webp**: Missing
+  Cache-Control header
+- **/images/services/top-3-mediums-by-conversion-rate.webp**: Missing
+  Cache-Control header
+- **/images/services/screenshot-2025-08-12-analytics-report.webp**: Missing
+  Cache-Control header
 - **/images/about/A7302858.webp**: Missing Cache-Control header
 
-
 **Optimization Recommendations:**
+
 1. Configure long-term caching for images (max-age=31536000, immutable)
 2. Ensure correct Content-Type headers for WebP files
 3. Monitor image file sizes and optimize large images

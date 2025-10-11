@@ -1,7 +1,7 @@
 # Core Web Vitals Image Impact Report
 
-**Generated:** 2025-10-10T21:38:26.775Z
-**Site:** https://d15sc9fc739ev2.cloudfront.net
+**Generated:** 2025-10-10T21:38:26.775Z **Site:**
+https://d15sc9fc739ev2.cloudfront.net
 
 ## Executive Summary
 
@@ -12,129 +12,118 @@
 
 ## Page Performance Breakdown
 
-
 ### Homepage (/)
+
 - **Overall Score:** 81/100 (NEEDS_IMPROVEMENT)
 - **LCP:** 2900ms (Score: 42/100)
 - **CLS:** 0.09000000000000001 (Score: 100/100)
 - **FID:** 50ms (Score: 100/100)
 - **Critical Images:** services, blog-preview
 
-
 ### Photography Services (/services/photography)
+
 - **Overall Score:** 76/100 (NEEDS_IMPROVEMENT)
 - **LCP:** 3600ms (Score: 28/100)
 - **CLS:** 0.08 (Score: 100/100)
 - **FID:** 50ms (Score: 100/100)
 - **Critical Images:** hero, portfolio
-
 
 ### Data Analytics (/services/analytics)
+
 - **Overall Score:** 76/100 (NEEDS_IMPROVEMENT)
 - **LCP:** 3600ms (Score: 28/100)
 - **CLS:** 0.08 (Score: 100/100)
 - **FID:** 50ms (Score: 100/100)
 - **Critical Images:** hero, portfolio
-
 
 ### Ad Campaigns (/services/ad-campaigns)
+
 - **Overall Score:** 76/100 (NEEDS_IMPROVEMENT)
 - **LCP:** 3600ms (Score: 28/100)
 - **CLS:** 0.08 (Score: 100/100)
 - **FID:** 50ms (Score: 100/100)
 - **Critical Images:** hero, portfolio
 
-
 ### About Page (/about)
+
 - **Overall Score:** 79/100 (NEEDS_IMPROVEMENT)
 - **LCP:** 3200ms (Score: 36/100)
 - **CLS:** 0.05 (Score: 100/100)
 - **FID:** 50ms (Score: 100/100)
 - **Critical Images:** hero
 
-
 ### Blog Page (/blog)
+
 - **Overall Score:** 81/100 (NEEDS_IMPROVEMENT)
 - **LCP:** 2900ms (Score: 42/100)
 - **CLS:** 0.09000000000000001 (Score: 100/100)
 - **FID:** 50ms (Score: 100/100)
 - **Critical Images:** services, blog-preview
 
-
 ## Performance Alerts
 
+### ERROR: LCP_POOR
 
+**Page:** Homepage **Issue:** LCP of 2900ms exceeds 2.5s threshold **Impact:**
+HIGH **Recommendation:** Optimize hero images and critical image loading
 
 ### ERROR: LCP_POOR
-**Page:** Homepage
-**Issue:** LCP of 2900ms exceeds 2.5s threshold
-**Impact:** HIGH
-**Recommendation:** Optimize hero images and critical image loading
 
-
-### ERROR: LCP_POOR
-**Page:** Photography Services
-**Issue:** LCP of 3600ms exceeds 2.5s threshold
-**Impact:** HIGH
-**Recommendation:** Optimize hero images and critical image loading
-
+**Page:** Photography Services **Issue:** LCP of 3600ms exceeds 2.5s threshold
+**Impact:** HIGH **Recommendation:** Optimize hero images and critical image
+loading
 
 ### ERROR: LCP_POOR
-**Page:** Data Analytics
-**Issue:** LCP of 3600ms exceeds 2.5s threshold
-**Impact:** HIGH
-**Recommendation:** Optimize hero images and critical image loading
 
-
-### ERROR: LCP_POOR
-**Page:** Ad Campaigns
-**Issue:** LCP of 3600ms exceeds 2.5s threshold
-**Impact:** HIGH
-**Recommendation:** Optimize hero images and critical image loading
-
+**Page:** Data Analytics **Issue:** LCP of 3600ms exceeds 2.5s threshold
+**Impact:** HIGH **Recommendation:** Optimize hero images and critical image
+loading
 
 ### ERROR: LCP_POOR
-**Page:** About Page
-**Issue:** LCP of 3200ms exceeds 2.5s threshold
-**Impact:** HIGH
-**Recommendation:** Optimize hero images and critical image loading
 
+**Page:** Ad Campaigns **Issue:** LCP of 3600ms exceeds 2.5s threshold
+**Impact:** HIGH **Recommendation:** Optimize hero images and critical image
+loading
 
 ### ERROR: LCP_POOR
-**Page:** Blog Page
-**Issue:** LCP of 2900ms exceeds 2.5s threshold
-**Impact:** HIGH
-**Recommendation:** Optimize hero images and critical image loading
 
+**Page:** About Page **Issue:** LCP of 3200ms exceeds 2.5s threshold **Impact:**
+HIGH **Recommendation:** Optimize hero images and critical image loading
+
+### ERROR: LCP_POOR
+
+**Page:** Blog Page **Issue:** LCP of 2900ms exceeds 2.5s threshold **Impact:**
+HIGH **Recommendation:** Optimize hero images and critical image loading
 
 ## Optimization Recommendations
 
-
 ### HIGH Priority - LCP_OPTIMIZATION
-**Issue:** 6 pages have poor LCP scores
-**Action:** Optimize critical image loading
+
+**Issue:** 6 pages have poor LCP scores **Action:** Optimize critical image
+loading
+
 - Preload hero images with <link rel="preload">
 - Optimize hero image file sizes
 - Use CDN for faster image delivery
 - Consider image sprites for small icons
 
-
 ### LOW Priority - MONITORING
-**Issue:** Need continuous performance monitoring
-**Action:** Set up automated Core Web Vitals monitoring
+
+**Issue:** Need continuous performance monitoring **Action:** Set up automated
+Core Web Vitals monitoring
+
 - Implement Real User Monitoring (RUM)
 - Set up performance budgets
 - Create alerts for performance regressions
 - Monitor image loading metrics continuously
 
-
 ## Core Web Vitals Thresholds
 
-| Metric | Good | Needs Improvement | Poor |
-|--------|------|-------------------|------|
-| LCP | ≤ 1.2s | ≤ 2.5s | > 2.5s |
-| CLS | ≤ 0.1 | ≤ 0.25 | > 0.25 |
-| FID | ≤ 100ms | ≤ 300ms | > 300ms |
+| Metric | Good    | Needs Improvement | Poor    |
+| ------ | ------- | ----------------- | ------- |
+| LCP    | ≤ 1.2s  | ≤ 2.5s            | > 2.5s  |
+| CLS    | ≤ 0.1   | ≤ 0.25            | > 0.25  |
+| FID    | ≤ 100ms | ≤ 300ms           | > 300ms |
 
 ## Next Steps
 
@@ -154,4 +143,5 @@
    - Regular performance audits and optimizations
 
 ---
-*Report generated by Core Web Vitals Image Monitor*
+
+_Report generated by Core Web Vitals Image Monitor_

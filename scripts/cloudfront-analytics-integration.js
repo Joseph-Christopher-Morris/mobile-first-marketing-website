@@ -14,14 +14,15 @@ class CloudFrontAnalyticsIntegration {
     this.cloudfront = new AWS.CloudFront({
       region: 'us-east-1', // CloudFront is global but API is in us-east-1
     });
-    
+
     this.cloudwatch = new AWS.CloudWatch({
       region: 'us-east-1',
     });
 
     this.config = {
       distributionId: process.env.CLOUDFRONT_DISTRIBUTION_ID,
-      enableRealTimeLogs: process.env.ENABLE_CLOUDFRONT_REAL_TIME_LOGS === 'true',
+      enableRealTimeLogs:
+        process.env.ENABLE_CLOUDFRONT_REAL_TIME_LOGS === 'true',
       logRetentionDays: parseInt(process.env.LOG_RETENTION_DAYS) || 30,
       metricsNamespace: 'CloudFront/Performance',
     };
@@ -59,7 +60,10 @@ class CloudFrontAnalyticsIntegration {
       console.log('✅ CloudFront analytics integration completed');
       return report;
     } catch (error) {
-      console.error('❌ CloudFront analytics integration failed:', error.message);
+      console.error(
+        '❌ CloudFront analytics integration failed:',
+        error.message
+      );
       throw error;
     }
   }
@@ -68,7 +72,9 @@ class CloudFrontAnalyticsIntegration {
     console.log('🔍 Validating CloudFront distribution...');
 
     if (!this.config.distributionId) {
-      throw new Error('CLOUDFRONT_DISTRIBUTION_ID environment variable is required');
+      throw new Error(
+        'CLOUDFRONT_DISTRIBUTION_ID environment variable is required'
+      );
     }
 
     try {
@@ -76,8 +82,10 @@ class CloudFrontAnalyticsIntegration {
         Id: this.config.distributionId,
       };
 
-      const distribution = await this.cloudfront.getDistribution(params).promise();
-      
+      const distribution = await this.cloudfront
+        .getDistribution(params)
+        .promise();
+
       console.log('✅ CloudFront distribution validated');
       console.log(`   Distribution ID: ${this.config.distributionId}`);
       console.log(`   Domain Name: ${distribution.Distribution.DomainName}`);
@@ -92,7 +100,9 @@ class CloudFrontAnalyticsIntegration {
       };
     } catch (error) {
       if (error.code === 'NoSuchDistribution') {
-        throw new Error(`CloudFront distribution ${this.config.distributionId} not found`);
+        throw new Error(
+          `CloudFront distribution ${this.config.distributionId} not found`
+        );
       }
       throw error;
     }
@@ -103,11 +113,15 @@ class CloudFrontAnalyticsIntegration {
 
     try {
       // Check if real-time log config already exists
-      const existingConfigs = await this.cloudfront.listRealtimeLogConfigs().promise();
+      const existingConfigs = await this.cloudfront
+        .listRealtimeLogConfigs()
+        .promise();
       const configName = `realtime-logs-${this.config.distributionId}`;
-      
-      let realtimeLogConfig = existingConfigs.RealtimeLogConfigs?.RealtimeLogConfigs
-        ?.find(config => config.Name === configName);
+
+      let realtimeLogConfig =
+        existingConfigs.RealtimeLogConfigs?.RealtimeLogConfigs?.find(
+          config => config.Name === configName
+        );
 
       if (!realtimeLogConfig) {
         // Create real-time log configuration
@@ -117,8 +131,12 @@ class CloudFrontAnalyticsIntegration {
             {
               StreamType: 'Kinesis',
               KinesisStreamConfig: {
-                RoleArn: process.env.CLOUDFRONT_LOGS_ROLE_ARN || 'arn:aws:iam::ACCOUNT:role/CloudFrontLogsRole',
-                StreamArn: process.env.KINESIS_STREAM_ARN || 'arn:aws:kinesis:us-east-1:ACCOUNT:stream/cloudfront-logs',
+                RoleArn:
+                  process.env.CLOUDFRONT_LOGS_ROLE_ARN ||
+                  'arn:aws:iam::ACCOUNT:role/CloudFrontLogsRole',
+                StreamArn:
+                  process.env.KINESIS_STREAM_ARN ||
+                  'arn:aws:kinesis:us-east-1:ACCOUNT:stream/cloudfront-logs',
               },
             },
           ],
@@ -151,9 +169,13 @@ class CloudFrontAnalyticsIntegration {
           ],
         };
 
-        console.log('⚠️  Real-time logs configuration would be created in production');
-        console.log('   This requires proper IAM roles and Kinesis stream setup');
-        
+        console.log(
+          '⚠️  Real-time logs configuration would be created in production'
+        );
+        console.log(
+          '   This requires proper IAM roles and Kinesis stream setup'
+        );
+
         // In development, we simulate the configuration
         realtimeLogConfig = {
           Name: configName,
@@ -220,8 +242,18 @@ class CloudFrontAnalyticsIntegration {
             type: 'metric',
             properties: {
               metrics: [
-                ['AWS/CloudFront', 'Requests', 'DistributionId', this.config.distributionId],
-                ['AWS/CloudFront', 'BytesDownloaded', 'DistributionId', this.config.distributionId],
+                [
+                  'AWS/CloudFront',
+                  'Requests',
+                  'DistributionId',
+                  this.config.distributionId,
+                ],
+                [
+                  'AWS/CloudFront',
+                  'BytesDownloaded',
+                  'DistributionId',
+                  this.config.distributionId,
+                ],
               ],
               period: 300,
               stat: 'Sum',
@@ -233,7 +265,12 @@ class CloudFrontAnalyticsIntegration {
             type: 'metric',
             properties: {
               metrics: [
-                ['AWS/CloudFront', 'CacheHitRate', 'DistributionId', this.config.distributionId],
+                [
+                  'AWS/CloudFront',
+                  'CacheHitRate',
+                  'DistributionId',
+                  this.config.distributionId,
+                ],
               ],
               period: 300,
               stat: 'Average',
@@ -245,8 +282,18 @@ class CloudFrontAnalyticsIntegration {
             type: 'metric',
             properties: {
               metrics: [
-                ['AWS/CloudFront', '4xxErrorRate', 'DistributionId', this.config.distributionId],
-                ['AWS/CloudFront', '5xxErrorRate', 'DistributionId', this.config.distributionId],
+                [
+                  'AWS/CloudFront',
+                  '4xxErrorRate',
+                  'DistributionId',
+                  this.config.distributionId,
+                ],
+                [
+                  'AWS/CloudFront',
+                  '5xxErrorRate',
+                  'DistributionId',
+                  this.config.distributionId,
+                ],
               ],
               period: 300,
               stat: 'Average',
@@ -272,7 +319,10 @@ class CloudFrontAnalyticsIntegration {
         customMetrics: customMetrics.length,
       };
     } catch (error) {
-      console.warn('⚠️  CloudWatch metrics configuration failed:', error.message);
+      console.warn(
+        '⚠️  CloudWatch metrics configuration failed:',
+        error.message
+      );
       return { status: 'failed', error: error.message };
     }
   }
@@ -314,9 +364,15 @@ class CloudFrontAnalyticsIntegration {
 
           // In production, this would make actual CloudWatch API calls
           // For development, we simulate realistic data
-          analyticsData[metricName] = this.simulateMetricData(metricName, startTime, endTime);
-          
-          console.log(`   Collected ${metricName} data: ${analyticsData[metricName].dataPoints.length} points`);
+          analyticsData[metricName] = this.simulateMetricData(
+            metricName,
+            startTime,
+            endTime
+          );
+
+          console.log(
+            `   Collected ${metricName} data: ${analyticsData[metricName].dataPoints.length} points`
+          );
         } catch (error) {
           console.warn(`⚠️  Failed to collect ${metricName}:`, error.message);
           analyticsData[metricName] = { dataPoints: [], error: error.message };
@@ -348,7 +404,7 @@ class CloudFrontAnalyticsIntegration {
 
     for (let i = 0; i < hours; i++) {
       const timestamp = new Date(startTime.getTime() + i * 60 * 60 * 1000);
-      
+
       let value;
       switch (metricName) {
         case 'Requests':
@@ -381,21 +437,23 @@ class CloudFrontAnalyticsIntegration {
       metricName,
       dataPoints,
       summary: {
-        average: dataPoints.reduce((sum, dp) => sum + dp.value, 0) / dataPoints.length,
+        average:
+          dataPoints.reduce((sum, dp) => sum + dp.value, 0) / dataPoints.length,
         maximum: Math.max(...dataPoints.map(dp => dp.value)),
         minimum: Math.min(...dataPoints.map(dp => dp.value)),
-        total: metricName === 'Requests' || metricName === 'BytesDownloaded' 
-          ? dataPoints.reduce((sum, dp) => sum + dp.value, 0) 
-          : null,
+        total:
+          metricName === 'Requests' || metricName === 'BytesDownloaded'
+            ? dataPoints.reduce((sum, dp) => sum + dp.value, 0)
+            : null,
       },
     };
   }
 
   getMetricUnit(metricName) {
     const units = {
-      'Requests': 'Count',
-      'BytesDownloaded': 'Bytes',
-      'CacheHitRate': 'Percent',
+      Requests: 'Count',
+      BytesDownloaded: 'Bytes',
+      CacheHitRate: 'Percent',
       '4xxErrorRate': 'Percent',
       '5xxErrorRate': 'Percent',
     };
@@ -417,7 +475,10 @@ class CloudFrontAnalyticsIntegration {
     };
 
     // Write detailed report
-    const reportPath = path.join(process.cwd(), 'cloudfront-analytics-report.json');
+    const reportPath = path.join(
+      process.cwd(),
+      'cloudfront-analytics-report.json'
+    );
     fs.writeFileSync(reportPath, JSON.stringify(report, null, 2));
 
     // Generate human-readable summary
@@ -441,23 +502,28 @@ class CloudFrontAnalyticsIntegration {
     try {
       if (this.metrics.Requests?.dataPoints) {
         summary.totalRequests = this.metrics.Requests.summary.total || 0;
-        summary.peakRequestsPerHour = this.metrics.Requests.summary.maximum || 0;
+        summary.peakRequestsPerHour =
+          this.metrics.Requests.summary.maximum || 0;
       }
 
       if (this.metrics.BytesDownloaded?.dataPoints) {
-        summary.totalBandwidth = this.metrics.BytesDownloaded.summary.total || 0;
+        summary.totalBandwidth =
+          this.metrics.BytesDownloaded.summary.total || 0;
       }
 
       if (this.metrics.CacheHitRate?.dataPoints) {
-        summary.averageCacheHitRate = this.metrics.CacheHitRate.summary.average || 0;
+        summary.averageCacheHitRate =
+          this.metrics.CacheHitRate.summary.average || 0;
       }
 
       if (this.metrics['4xxErrorRate']?.dataPoints) {
-        summary.average4xxErrorRate = this.metrics['4xxErrorRate'].summary.average || 0;
+        summary.average4xxErrorRate =
+          this.metrics['4xxErrorRate'].summary.average || 0;
       }
 
       if (this.metrics['5xxErrorRate']?.dataPoints) {
-        summary.average5xxErrorRate = this.metrics['5xxErrorRate'].summary.average || 0;
+        summary.average5xxErrorRate =
+          this.metrics['5xxErrorRate'].summary.average || 0;
       }
 
       // Calculate performance grade
@@ -547,7 +613,8 @@ class CloudFrontAnalyticsIntegration {
           title: 'High Traffic Volume',
           description: `Peak traffic of ${Math.round(summary.peakRequestsPerHour)} requests/hour`,
           impact: 'Ensure adequate origin capacity and monitoring',
-          recommendation: 'Consider implementing auto-scaling and enhanced monitoring',
+          recommendation:
+            'Consider implementing auto-scaling and enhanced monitoring',
         });
       }
 
@@ -579,7 +646,8 @@ class CloudFrontAnalyticsIntegration {
         category: 'caching',
         priority: 'high',
         title: 'Optimize Cache Configuration',
-        description: 'Improve cache hit rate for better performance and cost efficiency',
+        description:
+          'Improve cache hit rate for better performance and cost efficiency',
         actions: [
           'Review and optimize cache behaviors',
           'Increase TTL for static assets',
@@ -589,7 +657,10 @@ class CloudFrontAnalyticsIntegration {
       });
     }
 
-    if (summary.average4xxErrorRate > 0.01 || summary.average5xxErrorRate > 0.001) {
+    if (
+      summary.average4xxErrorRate > 0.01 ||
+      summary.average5xxErrorRate > 0.001
+    ) {
       recommendations.push({
         category: 'reliability',
         priority: 'high',
@@ -663,7 +734,10 @@ class CloudFrontAnalyticsIntegration {
   }
 
   generateHumanReadableAnalyticsReport(report) {
-    const summaryPath = path.join(process.cwd(), 'cloudfront-analytics-summary.md');
+    const summaryPath = path.join(
+      process.cwd(),
+      'cloudfront-analytics-summary.md'
+    );
 
     const markdown = `# CloudFront Analytics Report
 
@@ -683,38 +757,52 @@ Time Range: ${new Date(report.timeRange.start).toLocaleString()} - ${new Date(re
 
 ## Performance Insights
 
-${report.insights.length > 0 
-  ? report.insights.map(insight => `
+${
+  report.insights.length > 0
+    ? report.insights
+        .map(
+          insight => `
 ### ${insight.title} (${insight.severity.toUpperCase()})
 
 **Description:** ${insight.description}
 **Impact:** ${insight.impact}
 **Recommendation:** ${insight.recommendation}
-`).join('\n')
-  : 'No performance issues detected ✅'
+`
+        )
+        .join('\n')
+    : 'No performance issues detected ✅'
 }
 
 ## Active Alerts
 
-${report.alerts.length > 0
-  ? report.alerts.map(alert => `
+${
+  report.alerts.length > 0
+    ? report.alerts
+        .map(
+          alert => `
 - **${alert.severity.toUpperCase()}:** ${alert.message}
   - Current Value: ${(alert.currentValue * 100).toFixed(3)}%
   - Threshold: ${(alert.threshold * 100).toFixed(1)}%
-`).join('\n')
-  : 'No active alerts 🎉'
+`
+        )
+        .join('\n')
+    : 'No active alerts 🎉'
 }
 
 ## Recommendations
 
-${report.recommendations.map(rec => `
+${report.recommendations
+  .map(
+    rec => `
 ### ${rec.title} (${rec.priority.toUpperCase()} Priority)
 
 ${rec.description}
 
 **Actions:**
 ${rec.actions.map(action => `- ${action}`).join('\n')}
-`).join('\n')}
+`
+  )
+  .join('\n')}
 
 ## Metrics Overview
 
@@ -724,16 +812,23 @@ ${rec.actions.map(action => `- ${action}`).join('\n')}
 
 ### Cache Performance
 - Cache Hit Rate: ${(report.summary.averageCacheHitRate * 100).toFixed(1)}%
-- ${report.summary.averageCacheHitRate >= 0.9 ? '✅ Excellent cache performance' : 
-     report.summary.averageCacheHitRate >= 0.8 ? '⚠️ Good cache performance' : 
-     '❌ Cache performance needs improvement'}
+- ${
+      report.summary.averageCacheHitRate >= 0.9
+        ? '✅ Excellent cache performance'
+        : report.summary.averageCacheHitRate >= 0.8
+          ? '⚠️ Good cache performance'
+          : '❌ Cache performance needs improvement'
+    }
 
 ### Error Rates
 - 4xx Error Rate: ${(report.summary.average4xxErrorRate * 100).toFixed(2)}%
 - 5xx Error Rate: ${(report.summary.average5xxErrorRate * 100).toFixed(3)}%
-- ${(report.summary.average4xxErrorRate < 0.02 && report.summary.average5xxErrorRate < 0.005) ? 
-    '✅ Error rates within acceptable limits' : 
-    '⚠️ Error rates may need attention'}
+- ${
+      report.summary.average4xxErrorRate < 0.02 &&
+      report.summary.average5xxErrorRate < 0.005
+        ? '✅ Error rates within acceptable limits'
+        : '⚠️ Error rates may need attention'
+    }
 
 ### Bandwidth Usage
 - Total Bandwidth: ${(report.summary.totalBandwidth / (1024 * 1024 * 1024)).toFixed(2)} GB
@@ -778,10 +873,18 @@ async function main() {
     const report = await integration.integrateCloudFrontAnalytics();
 
     console.log('\n📊 CloudFront Analytics Summary:');
-    console.log(`   Performance Grade: ${report.summary.performanceGrade.toUpperCase()}`);
-    console.log(`   Total Requests: ${report.summary.totalRequests.toLocaleString()}`);
-    console.log(`   Cache Hit Rate: ${(report.summary.averageCacheHitRate * 100).toFixed(1)}%`);
-    console.log(`   Error Rate: ${((report.summary.average4xxErrorRate + report.summary.average5xxErrorRate) * 100).toFixed(2)}%`);
+    console.log(
+      `   Performance Grade: ${report.summary.performanceGrade.toUpperCase()}`
+    );
+    console.log(
+      `   Total Requests: ${report.summary.totalRequests.toLocaleString()}`
+    );
+    console.log(
+      `   Cache Hit Rate: ${(report.summary.averageCacheHitRate * 100).toFixed(1)}%`
+    );
+    console.log(
+      `   Error Rate: ${((report.summary.average4xxErrorRate + report.summary.average5xxErrorRate) * 100).toFixed(2)}%`
+    );
 
     if (report.alerts.length > 0) {
       console.log(`\n🚨 Active Alerts: ${report.alerts.length}`);

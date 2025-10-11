@@ -84,26 +84,15 @@
     "OWASP": false,
     "details": {
       "PCI DSS": {
-        "required": [
-          "TLS 1.2+",
-          "No weak TLS",
-          "Strong encryption"
-        ],
+        "required": ["TLS 1.2+", "No weak TLS", "Strong encryption"],
         "status": "NON-COMPLIANT"
       },
       "NIST": {
-        "required": [
-          "TLS 1.2+",
-          "Perfect Forward Secrecy"
-        ],
+        "required": ["TLS 1.2+", "Perfect Forward Secrecy"],
         "status": "NON-COMPLIANT"
       },
       "OWASP": {
-        "required": [
-          "TLS 1.2+",
-          "No weak TLS",
-          "Strong ciphers"
-        ],
+        "required": ["TLS 1.2+", "No weak TLS", "Strong ciphers"],
         "status": "NON-COMPLIANT"
       }
     }

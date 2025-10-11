@@ -99,9 +99,7 @@
       "contentType": "text/html",
       "contentLength": "83979",
       "cacheStatus": "Error from cloudfront",
-      "errors": [
-        "Invalid Content-Type: text/html"
-      ],
+      "errors": ["Invalid Content-Type: text/html"],
       "warnings": [],
       "details": {
         "headers": {
@@ -129,9 +127,7 @@
       "contentType": "text/html",
       "contentLength": "83979",
       "cacheStatus": "Error from cloudfront",
-      "errors": [
-        "Invalid Content-Type: text/html"
-      ],
+      "errors": ["Invalid Content-Type: text/html"],
       "warnings": [],
       "details": {
         "headers": {
@@ -159,9 +155,7 @@
       "contentType": "text/html",
       "contentLength": "83979",
       "cacheStatus": "Error from cloudfront",
-      "errors": [
-        "Invalid Content-Type: text/html"
-      ],
+      "errors": ["Invalid Content-Type: text/html"],
       "warnings": [],
       "details": {
         "headers": {

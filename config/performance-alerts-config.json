@@ -13,10 +13,7 @@
         "duration": "5m"
       },
       "severity": "ERROR",
-      "actions": [
-        "log",
-        "notify"
-      ],
+      "actions": ["log", "notify"],
       "cooldown": "10m",
       "message": "Critical: Images failing to load - immediate attention required"
     },
@@ -31,10 +28,7 @@
         "duration": "10m"
       },
       "severity": "WARNING",
-      "actions": [
-        "log",
-        "notify"
-      ],
+      "actions": ["log", "notify"],
       "cooldown": "30m",
       "message": "Warning: Images loading slowly - performance optimization needed"
     },
@@ -49,11 +43,7 @@
         "duration": "5m"
       },
       "severity": "ERROR",
-      "actions": [
-        "log",
-        "notify",
-        "escalate"
-      ],
+      "actions": ["log", "notify", "escalate"],
       "cooldown": "15m",
       "message": "Critical: LCP performance poor - SEO impact likely"
     },
@@ -68,10 +58,7 @@
         "duration": "10m"
       },
       "severity": "WARNING",
-      "actions": [
-        "log",
-        "notify"
-      ],
+      "actions": ["log", "notify"],
       "cooldown": "20m",
       "message": "Warning: Layout shift issues detected - user experience impact"
     },
@@ -86,9 +73,7 @@
         "duration": "1h"
       },
       "severity": "INFO",
-      "actions": [
-        "log"
-      ],
+      "actions": ["log"],
       "cooldown": "4h",
       "message": "Info: Large image sizes detected - consider optimization"
     }
@@ -125,35 +110,20 @@
     "levels": [
       {
         "level": 1,
-        "severity": [
-          "INFO"
-        ],
-        "actions": [
-          "log"
-        ],
+        "severity": ["INFO"],
+        "actions": ["log"],
         "delay": "0m"
       },
       {
         "level": 2,
-        "severity": [
-          "WARNING"
-        ],
-        "actions": [
-          "log",
-          "notify"
-        ],
+        "severity": ["WARNING"],
+        "actions": ["log", "notify"],
         "delay": "5m"
       },
       {
         "level": 3,
-        "severity": [
-          "ERROR"
-        ],
-        "actions": [
-          "log",
-          "notify",
-          "escalate"
-        ],
+        "severity": ["ERROR"],
+        "actions": ["log", "notify", "escalate"],
         "delay": "2m"
       }
     ],
@@ -168,13 +138,7 @@
       "enabled": false,
       "start": "09:00",
       "end": "17:00",
-      "days": [
-        "monday",
-        "tuesday",
-        "wednesday",
-        "thursday",
-        "friday"
-      ]
+      "days": ["monday", "tuesday", "wednesday", "thursday", "friday"]
     },
     "maintenanceWindows": []
   }

@@ -10,8 +10,16 @@ const path = require('path');
 
 class ImagePerformanceAlertsSetup {
   constructor() {
-    this.configPath = path.join(process.cwd(), 'config', 'image-performance-monitoring-config.json');
-    this.alertsConfigPath = path.join(process.cwd(), 'config', 'performance-alerts-config.json');
+    this.configPath = path.join(
+      process.cwd(),
+      'config',
+      'image-performance-monitoring-config.json'
+    );
+    this.alertsConfigPath = path.join(
+      process.cwd(),
+      'config',
+      'performance-alerts-config.json'
+    );
     this.config = this.loadConfig();
   }
 
@@ -26,7 +34,7 @@ class ImagePerformanceAlertsSetup {
     } catch (error) {
       console.warn('⚠️  Could not load monitoring config, using defaults');
     }
-    
+
     return this.getDefaultConfig();
   }
 
@@ -39,18 +47,18 @@ class ImagePerformanceAlertsSetup {
         imageLoading: {
           maxLoadTime: 2000,
           maxFileSize: 500,
-          minSuccessRate: 95
+          minSuccessRate: 95,
         },
         coreWebVitals: {
           lcp: { good: 1200, poor: 2500 },
           cls: { good: 0.1, poor: 0.25 },
-          fid: { good: 100, poor: 300 }
-        }
+          fid: { good: 100, poor: 300 },
+        },
       },
       alerts: {
         enabled: true,
-        channels: ['console', 'file']
-      }
+        channels: ['console', 'file'],
+      },
     };
   }
 
@@ -59,28 +67,28 @@ class ImagePerformanceAlertsSetup {
    */
   setupAlerts() {
     console.log('🚨 Setting up Image Performance Monitoring Alerts...');
-    
+
     const alertsConfig = {
       timestamp: new Date().toISOString(),
       enabled: true,
       alertRules: this.createAlertRules(),
       notificationChannels: this.setupNotificationChannels(),
       escalationPolicies: this.createEscalationPolicies(),
-      monitoringSchedule: this.createMonitoringSchedule()
+      monitoringSchedule: this.createMonitoringSchedule(),
     };
-    
+
     // Save alerts configuration
     this.saveAlertsConfig(alertsConfig);
-    
+
     // Create alert handler script
     this.createAlertHandler();
-    
+
     // Create monitoring scheduler
     this.createMonitoringScheduler();
-    
+
     // Setup log rotation
     this.setupLogRotation();
-    
+
     console.log('✅ Image performance alerts setup completed');
     return alertsConfig;
   }
@@ -90,7 +98,7 @@ class ImagePerformanceAlertsSetup {
    */
   createAlertRules() {
     const rules = [];
-    
+
     // Image loading failure alerts
     rules.push({
       id: 'image-loading-failure',
@@ -100,14 +108,15 @@ class ImagePerformanceAlertsSetup {
         metric: 'image_success_rate',
         operator: 'less_than',
         threshold: this.config.thresholds.imageLoading.minSuccessRate,
-        duration: '5m'
+        duration: '5m',
       },
       severity: 'ERROR',
       actions: ['log', 'notify'],
       cooldown: '10m',
-      message: 'Critical: Images failing to load - immediate attention required'
+      message:
+        'Critical: Images failing to load - immediate attention required',
     });
-    
+
     // Slow image loading alerts
     rules.push({
       id: 'slow-image-loading',
@@ -117,14 +126,15 @@ class ImagePerformanceAlertsSetup {
         metric: 'avg_image_load_time',
         operator: 'greater_than',
         threshold: this.config.thresholds.imageLoading.maxLoadTime,
-        duration: '10m'
+        duration: '10m',
       },
       severity: 'WARNING',
       actions: ['log', 'notify'],
       cooldown: '30m',
-      message: 'Warning: Images loading slowly - performance optimization needed'
+      message:
+        'Warning: Images loading slowly - performance optimization needed',
     });
-    
+
     // LCP performance alerts
     rules.push({
       id: 'poor-lcp-performance',
@@ -134,14 +144,14 @@ class ImagePerformanceAlertsSetup {
         metric: 'lcp',
         operator: 'greater_than',
         threshold: this.config.thresholds.coreWebVitals.lcp.poor,
-        duration: '5m'
+        duration: '5m',
       },
       severity: 'ERROR',
       actions: ['log', 'notify', 'escalate'],
       cooldown: '15m',
-      message: 'Critical: LCP performance poor - SEO impact likely'
+      message: 'Critical: LCP performance poor - SEO impact likely',
     });
-    
+
     // CLS stability alerts
     rules.push({
       id: 'layout-shift-issues',
@@ -151,14 +161,14 @@ class ImagePerformanceAlertsSetup {
         metric: 'cls',
         operator: 'greater_than',
         threshold: this.config.thresholds.coreWebVitals.cls.poor,
-        duration: '10m'
+        duration: '10m',
       },
       severity: 'WARNING',
       actions: ['log', 'notify'],
       cooldown: '20m',
-      message: 'Warning: Layout shift issues detected - user experience impact'
+      message: 'Warning: Layout shift issues detected - user experience impact',
     });
-    
+
     // Image size optimization alerts
     rules.push({
       id: 'large-image-sizes',
@@ -168,14 +178,14 @@ class ImagePerformanceAlertsSetup {
         metric: 'avg_image_size',
         operator: 'greater_than',
         threshold: this.config.thresholds.imageLoading.maxFileSize * 1024, // Convert to bytes
-        duration: '1h'
+        duration: '1h',
       },
       severity: 'INFO',
       actions: ['log'],
       cooldown: '4h',
-      message: 'Info: Large image sizes detected - consider optimization'
+      message: 'Info: Large image sizes detected - consider optimization',
     });
-    
+
     return rules;
   }
 
@@ -187,7 +197,7 @@ class ImagePerformanceAlertsSetup {
       console: {
         enabled: true,
         format: 'colored',
-        includeTimestamp: true
+        includeTimestamp: true,
       },
       file: {
         enabled: true,
@@ -196,20 +206,20 @@ class ImagePerformanceAlertsSetup {
         rotation: {
           enabled: true,
           maxSize: '10MB',
-          maxFiles: 5
-        }
+          maxFiles: 5,
+        },
       },
       webhook: {
         enabled: false,
         url: null,
         headers: {},
-        timeout: 5000
+        timeout: 5000,
       },
       email: {
         enabled: false,
         recipients: [],
-        smtp: {}
-      }
+        smtp: {},
+      },
     };
   }
 
@@ -223,23 +233,23 @@ class ImagePerformanceAlertsSetup {
           level: 1,
           severity: ['INFO'],
           actions: ['log'],
-          delay: '0m'
+          delay: '0m',
         },
         {
           level: 2,
           severity: ['WARNING'],
           actions: ['log', 'notify'],
-          delay: '5m'
+          delay: '5m',
         },
         {
           level: 3,
           severity: ['ERROR'],
           actions: ['log', 'notify', 'escalate'],
-          delay: '2m'
-        }
+          delay: '2m',
+        },
       ],
       escalationDelay: '30m',
-      maxEscalations: 3
+      maxEscalations: 3,
     };
   }
 
@@ -255,9 +265,9 @@ class ImagePerformanceAlertsSetup {
         enabled: false,
         start: '09:00',
         end: '17:00',
-        days: ['monday', 'tuesday', 'wednesday', 'thursday', 'friday']
+        days: ['monday', 'tuesday', 'wednesday', 'thursday', 'friday'],
       },
-      maintenanceWindows: []
+      maintenanceWindows: [],
     };
   }
 
@@ -269,7 +279,7 @@ class ImagePerformanceAlertsSetup {
     if (!fs.existsSync(configDir)) {
       fs.mkdirSync(configDir, { recursive: true });
     }
-    
+
     fs.writeFileSync(this.alertsConfigPath, JSON.stringify(config, null, 2));
     console.log(`📄 Alerts configuration saved: ${this.alertsConfigPath}`);
   }
@@ -408,7 +418,11 @@ if (require.main === module) {
 module.exports = AlertHandler;
 `;
 
-    const handlerPath = path.join(process.cwd(), 'scripts', 'image-performance-alert-handler.js');
+    const handlerPath = path.join(
+      process.cwd(),
+      'scripts',
+      'image-performance-alert-handler.js'
+    );
     fs.writeFileSync(handlerPath, handlerScript);
     console.log(`📄 Alert handler created: ${handlerPath}`);
   }
@@ -573,7 +587,11 @@ if (require.main === module) {
 module.exports = MonitoringScheduler;
 `;
 
-    const schedulerPath = path.join(process.cwd(), 'scripts', 'image-performance-monitoring-scheduler.js');
+    const schedulerPath = path.join(
+      process.cwd(),
+      'scripts',
+      'image-performance-monitoring-scheduler.js'
+    );
     fs.writeFileSync(schedulerPath, schedulerScript);
     console.log(`📄 Monitoring scheduler created: ${schedulerPath}`);
   }
@@ -656,12 +674,14 @@ module.exports = LogRotation;
    */
   testAlerts() {
     console.log('🧪 Testing alert system...');
-    
+
     try {
       // Test alert handler
       const { execSync } = require('child_process');
-      execSync('node scripts/image-performance-alert-handler.js test', { stdio: 'inherit' });
-      
+      execSync('node scripts/image-performance-alert-handler.js test', {
+        stdio: 'inherit',
+      });
+
       console.log('✅ Alert system test completed');
       return true;
     } catch (error) {
@@ -681,50 +701,53 @@ module.exports = LogRotation;
           name: 'Alert Rules',
           status: 'configured',
           count: this.config.alerts?.rules?.length || 5,
-          description: 'Performance monitoring alert rules'
+          description: 'Performance monitoring alert rules',
         },
         {
           name: 'Notification Channels',
           status: 'configured',
           channels: ['console', 'file'],
-          description: 'Alert notification delivery channels'
+          description: 'Alert notification delivery channels',
         },
         {
           name: 'Monitoring Scheduler',
           status: 'configured',
           frequency: '1h',
-          description: 'Automated monitoring execution'
+          description: 'Automated monitoring execution',
         },
         {
           name: 'Log Rotation',
           status: 'configured',
           maxSize: '10MB',
-          description: 'Log file management and rotation'
-        }
+          description: 'Log file management and rotation',
+        },
       ],
       nextSteps: [
         'Run initial monitoring: node scripts/integrated-image-performance-monitor.js',
         'Start scheduler: node scripts/image-performance-monitoring-scheduler.js',
         'Monitor alerts: tail -f logs/performance-alerts.log',
-        'Test alert system: node scripts/image-performance-alert-handler.js test'
-      ]
+        'Test alert system: node scripts/image-performance-alert-handler.js test',
+      ],
     };
 
-    const summaryPath = path.join(process.cwd(), 'image-performance-alerts-setup-summary.json');
+    const summaryPath = path.join(
+      process.cwd(),
+      'image-performance-alerts-setup-summary.json'
+    );
     fs.writeFileSync(summaryPath, JSON.stringify(summary, null, 2));
-    
+
     console.log('\n📋 Setup Summary:');
     summary.components.forEach(comp => {
       console.log('  ✅ ' + comp.name + ': ' + comp.status);
     });
-    
+
     console.log('\n🚀 Next Steps:');
     summary.nextSteps.forEach((step, index) => {
       console.log('  ' + (index + 1) + '. ' + step);
     });
-    
+
     console.log('\n📄 Full summary saved: ' + summaryPath);
-    
+
     return summary;
   }
 }
@@ -732,19 +755,20 @@ module.exports = LogRotation;
 // CLI execution
 if (require.main === module) {
   const setup = new ImagePerformanceAlertsSetup();
-  
+
   try {
     const alertsConfig = setup.setupAlerts();
     const testResult = setup.testAlerts();
     const summary = setup.generateSetupSummary();
-    
-    console.log('\n🎉 Image Performance Monitoring Alerts setup completed successfully!');
-    
+
+    console.log(
+      '\n🎉 Image Performance Monitoring Alerts setup completed successfully!'
+    );
+
     if (!testResult) {
       console.warn('⚠️  Some tests failed - please review the configuration');
       process.exit(1);
     }
-    
   } catch (error) {
     console.error('❌ Setup failed:', error);
     process.exit(1);

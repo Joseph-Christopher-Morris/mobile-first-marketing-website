@@ -647,10 +647,7 @@
       }
     },
     "cipherSuitePreferences": {
-      "preferredCiphers": [
-        "ECDHE-RSA-AES256-GCM-SHA384",
-        "ECDHE-RSA-AES128-GCM-SHA256"
-      ],
+      "preferredCiphers": ["ECDHE-RSA-AES256-GCM-SHA384", "ECDHE-RSA-AES128-GCM-SHA256"],
       "supportedCiphers": [
         "ECDHE-RSA-AES256-GCM-SHA384",
         "ECDHE-RSA-AES128-GCM-SHA256",

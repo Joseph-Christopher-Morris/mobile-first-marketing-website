@@ -2,14 +2,16 @@
 
 ## Overview
 
-This document provides comprehensive operational procedures for the day-to-day management of the S3 + CloudFront deployment infrastructure. These procedures ensure consistent, reliable operations and maintenance of the system.
+This document provides comprehensive operational procedures for the day-to-day
+management of the S3 + CloudFront deployment infrastructure. These procedures
+ensure consistent, reliable operations and maintenance of the system.
 
 ## Daily Operations
 
 ### Morning Health Check (5 minutes)
 
-**Frequency**: Every business day at 9:00 AM
-**Responsible**: On-call engineer or designated team member
+**Frequency**: Every business day at 9:00 AM **Responsible**: On-call engineer
+or designated team member
 
 ```bash
 # Daily health check script
@@ -32,6 +34,7 @@ echo "=== Health Check Complete ===" >> logs/daily-health.log
 ```
 
 **Action Items:**
+
 - Review any alerts or warnings
 - Document any issues in incident log
 - Escalate critical issues immediately
@@ -40,6 +43,7 @@ echo "=== Health Check Complete ===" >> logs/daily-health.log
 ### Deployment Monitoring
 
 **Continuous Monitoring:**
+
 ```bash
 # Monitor GitHub Actions deployments
 # Check deployment status after each push to main branch
@@ -50,6 +54,7 @@ node scripts/validate-site-functionality.js
 ```
 
 **Post-Deployment Checklist:**
+
 1. Verify deployment completed successfully
 2. Check site functionality
 3. Validate performance metrics
@@ -60,8 +65,7 @@ node scripts/validate-site-functionality.js
 
 ### Weekly System Review (30 minutes)
 
-**Frequency**: Every Monday at 10:00 AM
-**Responsible**: DevOps team lead
+**Frequency**: Every Monday at 10:00 AM **Responsible**: DevOps team lead
 
 ```bash
 # Weekly review script
@@ -86,6 +90,7 @@ node scripts/validate-s3-infrastructure.js >> logs/weekly-review.log
 ```
 
 **Review Items:**
+
 - Performance trends and anomalies
 - Cost optimization opportunities
 - Security compliance status
@@ -95,6 +100,7 @@ node scripts/validate-s3-infrastructure.js >> logs/weekly-review.log
 ### Cache Management Review
 
 **Weekly Cache Analysis:**
+
 ```bash
 # Analyze cache performance
 node scripts/caching-cdn-optimizer.js
@@ -107,6 +113,7 @@ node scripts/cache-invalidation-manager.js report
 ```
 
 **Action Items:**
+
 - Identify cache optimization opportunities
 - Review invalidation costs and frequency
 - Adjust TTL settings if needed
@@ -116,8 +123,8 @@ node scripts/cache-invalidation-manager.js report
 
 ### Monthly Infrastructure Audit (2 hours)
 
-**Frequency**: First Monday of each month
-**Responsible**: Senior DevOps engineer
+**Frequency**: First Monday of each month **Responsible**: Senior DevOps
+engineer
 
 ```bash
 # Monthly audit script
@@ -143,6 +150,7 @@ node scripts/ssl-certificate-validator.js >> logs/monthly-audit.log
 ```
 
 **Audit Checklist:**
+
 - [ ] Security configurations validated
 - [ ] SSL certificates checked for expiration
 - [ ] Performance benchmarks within acceptable ranges
@@ -155,6 +163,7 @@ node scripts/ssl-certificate-validator.js >> logs/monthly-audit.log
 ### Dependency Updates
 
 **Monthly Dependency Review:**
+
 ```bash
 # Check for security updates
 npm audit
@@ -173,6 +182,7 @@ git push origin main
 ```
 
 **Process:**
+
 1. Review security advisories
 2. Update dependencies in development
 3. Run comprehensive tests
@@ -183,8 +193,8 @@ git push origin main
 
 ### Quarterly Security Review (4 hours)
 
-**Frequency**: First week of each quarter
-**Responsible**: Security team + DevOps lead
+**Frequency**: First week of each quarter **Responsible**: Security team +
+DevOps lead
 
 ```bash
 # Quarterly security review
@@ -209,6 +219,7 @@ node scripts/cloudfront-security-validator.js >> logs/quarterly-security.log
 ```
 
 **Security Review Checklist:**
+
 - [ ] Penetration testing completed
 - [ ] Vulnerability assessments performed
 - [ ] Access controls reviewed and updated
@@ -220,6 +231,7 @@ node scripts/cloudfront-security-validator.js >> logs/quarterly-security.log
 ### Disaster Recovery Testing
 
 **Quarterly DR Drill:**
+
 ```bash
 # Disaster recovery test
 #!/bin/bash
@@ -239,6 +251,7 @@ node scripts/validate-disaster-recovery.js >> logs/dr-test.log
 ```
 
 **DR Testing Checklist:**
+
 - [ ] Backup restoration tested
 - [ ] Rollback procedures validated
 - [ ] Infrastructure rebuild tested
@@ -253,16 +266,17 @@ node scripts/validate-disaster-recovery.js >> logs/dr-test.log
 
 **Severity Levels:**
 
-| Level | Description | Response Time | Escalation |
-|-------|-------------|---------------|------------|
-| P1 - Critical | Complete service outage | 5 minutes | All hands |
-| P2 - High | Significant degradation | 15 minutes | Senior team |
-| P3 - Medium | Minor issues | 1 hour | Team lead |
-| P4 - Low | Cosmetic/non-urgent | 4 hours | Standard |
+| Level         | Description             | Response Time | Escalation  |
+| ------------- | ----------------------- | ------------- | ----------- |
+| P1 - Critical | Complete service outage | 5 minutes     | All hands   |
+| P2 - High     | Significant degradation | 15 minutes    | Senior team |
+| P3 - Medium   | Minor issues            | 1 hour        | Team lead   |
+| P4 - Low      | Cosmetic/non-urgent     | 4 hours       | Standard    |
 
 ### Incident Response Process
 
 1. **Detection and Alert**
+
    ```bash
    # Automated monitoring alerts
    # Manual issue reports
@@ -270,27 +284,30 @@ node scripts/validate-disaster-recovery.js >> logs/dr-test.log
    ```
 
 2. **Initial Response**
+
    ```bash
    # Acknowledge incident
    echo "INCIDENT: $(date) - $DESCRIPTION" >> logs/incidents.log
-   
+
    # Assess severity
    node scripts/deployment-status-dashboard.js
-   
+
    # Notify team based on severity
    ```
 
 3. **Investigation and Diagnosis**
+
    ```bash
    # Run diagnostic scripts
    node scripts/comprehensive-deployment-test.js
    node scripts/validate-site-functionality.js
-   
+
    # Check logs and metrics
    # Identify root cause
    ```
 
 4. **Resolution**
+
    ```bash
    # Apply fix or workaround
    # Test resolution
@@ -309,16 +326,19 @@ node scripts/validate-disaster-recovery.js >> logs/dr-test.log
 ### Change Categories
 
 **Standard Changes:**
+
 - Routine deployments
 - Configuration updates
 - Security patches
 
 **Normal Changes:**
+
 - Infrastructure modifications
 - Major feature deployments
 - Third-party integrations
 
 **Emergency Changes:**
+
 - Security incidents
 - Critical bug fixes
 - Service outages
@@ -326,20 +346,22 @@ node scripts/validate-disaster-recovery.js >> logs/dr-test.log
 ### Change Process
 
 1. **Change Request**
+
    ```bash
    # Document change in change log
    echo "CHANGE REQUEST: $(date) - $DESCRIPTION" >> logs/changes.log
-   
+
    # Risk assessment
    # Impact analysis
    # Approval process
    ```
 
 2. **Change Implementation**
+
    ```bash
    # Pre-change validation
    node scripts/validate-env.js
-   
+
    # Implement change
    # Post-change validation
    node scripts/comprehensive-deployment-test.js
@@ -357,6 +379,7 @@ node scripts/validate-disaster-recovery.js >> logs/dr-test.log
 ### Performance Monitoring
 
 **Continuous Monitoring:**
+
 ```bash
 # Real-time performance monitoring
 node scripts/core-web-vitals-monitor.js
@@ -369,6 +392,7 @@ node scripts/caching-cdn-optimizer.js
 ```
 
 **Performance Thresholds:**
+
 - Page Load Time: < 3 seconds
 - First Contentful Paint: < 1.5 seconds
 - Largest Contentful Paint: < 2.5 seconds
@@ -378,6 +402,7 @@ node scripts/caching-cdn-optimizer.js
 ### Performance Optimization
 
 **Regular Optimization Tasks:**
+
 1. Cache configuration review
 2. Image optimization
 3. Code splitting analysis
@@ -389,6 +414,7 @@ node scripts/caching-cdn-optimizer.js
 ### Cost Monitoring
 
 **Daily Cost Tracking:**
+
 ```bash
 # Monitor daily costs
 node scripts/cost-analysis-optimizer.js
@@ -399,6 +425,7 @@ node scripts/cost-analysis-optimizer.js
 ```
 
 **Cost Optimization:**
+
 - S3 storage class optimization
 - CloudFront cache optimization
 - Invalidation cost reduction
@@ -407,6 +434,7 @@ node scripts/cost-analysis-optimizer.js
 ### Budget Management
 
 **Monthly Budget Review:**
+
 - Compare actual vs. budgeted costs
 - Identify cost drivers
 - Implement cost reduction measures
@@ -417,6 +445,7 @@ node scripts/cost-analysis-optimizer.js
 ### Compliance Monitoring
 
 **Regular Compliance Checks:**
+
 ```bash
 # Security compliance
 node scripts/security-validation-suite.js
@@ -431,12 +460,14 @@ node scripts/validate-operational-procedures.js
 ### Governance Procedures
 
 **Access Management:**
+
 - Regular access reviews
 - Principle of least privilege
 - Multi-factor authentication
 - Audit trail maintenance
 
 **Documentation Management:**
+
 - Keep procedures updated
 - Version control all changes
 - Regular documentation reviews
@@ -447,12 +478,14 @@ node scripts/validate-operational-procedures.js
 ### On-Call Rotation
 
 **On-Call Duties:**
+
 - Monitor system health
 - Respond to incidents
 - Perform daily health checks
 - Escalate issues as needed
 
 **On-Call Schedule:**
+
 - Primary on-call: 24/7 coverage
 - Secondary on-call: Backup support
 - Escalation: Management team
@@ -460,18 +493,21 @@ node scripts/validate-operational-procedures.js
 ### Role Responsibilities
 
 **DevOps Engineer:**
+
 - Daily operations
 - Deployment management
 - Performance monitoring
 - Incident response
 
 **Senior DevOps Engineer:**
+
 - Weekly reviews
 - Change management
 - Capacity planning
 - Team mentoring
 
 **DevOps Lead:**
+
 - Monthly audits
 - Strategic planning
 - Vendor management
@@ -482,12 +518,14 @@ node scripts/validate-operational-procedures.js
 ### Operational Tools
 
 **Monitoring Tools:**
+
 - CloudWatch dashboards
 - Custom monitoring scripts
 - Performance monitoring tools
 - Cost analysis tools
 
 **Automation Scripts:**
+
 - Deployment automation
 - Health check automation
 - Backup automation
@@ -496,6 +534,7 @@ node scripts/validate-operational-procedures.js
 ### Tool Maintenance
 
 **Regular Tool Updates:**
+
 - Update monitoring scripts
 - Enhance automation
 - Add new capabilities
@@ -506,12 +545,14 @@ node scripts/validate-operational-procedures.js
 ### Documentation Standards
 
 **Required Documentation:**
+
 - Operational procedures
 - Incident runbooks
 - Change procedures
 - Training materials
 
 **Documentation Maintenance:**
+
 - Monthly reviews
 - Version control
 - Change tracking
@@ -520,6 +561,7 @@ node scripts/validate-operational-procedures.js
 ### Knowledge Sharing
 
 **Team Knowledge Sharing:**
+
 - Weekly team meetings
 - Monthly technical reviews
 - Quarterly training sessions
@@ -530,12 +572,14 @@ node scripts/validate-operational-procedures.js
 ### Process Improvement
 
 **Regular Process Reviews:**
+
 - Monthly process evaluation
 - Quarterly improvement initiatives
 - Annual process overhaul
 - Continuous feedback collection
 
 **Improvement Metrics:**
+
 - Incident response time
 - Deployment success rate
 - System availability
@@ -545,6 +589,7 @@ node scripts/validate-operational-procedures.js
 ### Innovation and Modernization
 
 **Technology Updates:**
+
 - Evaluate new tools
 - Implement improvements
 - Modernize processes
@@ -552,8 +597,6 @@ node scripts/validate-operational-procedures.js
 
 ---
 
-**Document Classification**: INTERNAL
-**Last Updated**: [Insert date]
-**Version**: 1.0
-**Approved By**: [Insert approver]
-**Next Review Date**: [Insert date]
+**Document Classification**: INTERNAL **Last Updated**: [Insert date]
+**Version**: 1.0 **Approved By**: [Insert approver] **Next Review Date**:
+[Insert date]

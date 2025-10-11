@@ -1,10 +1,13 @@
 # GitHub Actions AWS Setup Guide
 
-This guide explains how to configure AWS credentials and security for the GitHub Actions deployment pipeline using OIDC (OpenID Connect) authentication.
+This guide explains how to configure AWS credentials and security for the GitHub
+Actions deployment pipeline using OIDC (OpenID Connect) authentication.
 
 ## Overview
 
-The deployment pipeline uses AWS IAM roles with OIDC authentication instead of long-term access keys for enhanced security. This follows AWS security best practices and eliminates the need to store sensitive credentials.
+The deployment pipeline uses AWS IAM roles with OIDC authentication instead of
+long-term access keys for enhanced security. This follows AWS security best
+practices and eliminates the need to store sensitive credentials.
 
 ## Prerequisites
 
@@ -101,13 +104,15 @@ Create an IAM role that can be assumed by GitHub Actions:
 ```
 
 Replace:
+
 - `ACCOUNT-ID` with your AWS account ID
 - `YOUR-GITHUB-USERNAME` with your GitHub username
 - `YOUR-REPO-NAME` with your repository name
 
 ## Step 4: Configure GitHub Secrets
 
-Add the following secrets to your GitHub repository (Settings → Secrets and variables → Actions):
+Add the following secrets to your GitHub repository (Settings → Secrets and
+variables → Actions):
 
 ### Required Secrets
 
@@ -116,7 +121,8 @@ Add the following secrets to your GitHub repository (Settings → Secrets and va
    - Description: ARN of the IAM role created in Step 3
 
 2. **SITE_URL**
-   - Value: Your CloudFront distribution URL (e.g., `https://d1234567890.cloudfront.net`)
+   - Value: Your CloudFront distribution URL (e.g.,
+     `https://d1234567890.cloudfront.net`)
    - Description: URL for post-deployment validation
 
 ### Optional Secrets (for staging environment)
@@ -136,16 +142,19 @@ node scripts/github-actions-setup-validator.js
 ## Security Best Practices
 
 ### Principle of Least Privilege
+
 - The IAM policy grants only the minimum permissions required
 - Access is restricted to specific S3 buckets and CloudFront distributions
 - Role can only be assumed from the main branch of your repository
 
 ### Credential Security
+
 - No long-term access keys are stored in GitHub Secrets
 - OIDC tokens are short-lived and automatically rotated
 - All API calls are logged in CloudTrail for auditing
 
 ### Branch Protection
+
 - The trust policy restricts access to the main branch only
 - Consider adding branch protection rules to prevent unauthorized deployments
 

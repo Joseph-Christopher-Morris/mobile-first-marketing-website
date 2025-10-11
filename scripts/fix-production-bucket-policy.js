@@ -2,7 +2,7 @@
 
 /**
  * Fix Production S3 Bucket Policy
- * 
+ *
  * This script fixes the overly restrictive S3 bucket policy to allow
  * deployment while maintaining security.
  */
@@ -40,11 +40,11 @@ async function fixBucketPolicy() {
 
   try {
     console.log('🔒 Fixing S3 bucket policy...');
-    
+
     // Get current user identity
     const identity = await stsClient.send(new GetCallerIdentityCommand({}));
     const userArn = identity.Arn;
-    
+
     console.log(`User ARN: ${userArn}`);
     console.log(`Account ID: ${accountId}`);
     console.log(`Bucket: ${bucketName}`);
@@ -58,57 +58,58 @@ async function fixBucketPolicy() {
           Sid: 'AllowCloudFrontServicePrincipal',
           Effect: 'Allow',
           Principal: {
-            Service: 'cloudfront.amazonaws.com'
+            Service: 'cloudfront.amazonaws.com',
           },
           Action: 's3:GetObject',
           Resource: `arn:aws:s3:::${bucketName}/*`,
           Condition: {
             StringEquals: {
-              'AWS:SourceArn': `arn:aws:cloudfront::${accountId}:distribution/${distributionId}`
-            }
-          }
+              'AWS:SourceArn': `arn:aws:cloudfront::${accountId}:distribution/${distributionId}`,
+            },
+          },
         },
         {
           Sid: 'AllowOwnerFullAccess',
           Effect: 'Allow',
           Principal: {
-            AWS: `arn:aws:iam::${accountId}:root`
+            AWS: `arn:aws:iam::${accountId}:root`,
           },
           Action: 's3:*',
           Resource: [
             `arn:aws:s3:::${bucketName}`,
-            `arn:aws:s3:::${bucketName}/*`
-          ]
+            `arn:aws:s3:::${bucketName}/*`,
+          ],
         },
         {
           Sid: 'AllowUserDeploymentAccess',
           Effect: 'Allow',
           Principal: {
-            AWS: userArn
+            AWS: userArn,
           },
           Action: [
             's3:PutObject',
             's3:PutObjectAcl',
             's3:GetObject',
             's3:DeleteObject',
-            's3:ListBucket'
+            's3:ListBucket',
           ],
           Resource: [
             `arn:aws:s3:::${bucketName}`,
-            `arn:aws:s3:::${bucketName}/*`
-          ]
-        }
-      ]
+            `arn:aws:s3:::${bucketName}/*`,
+          ],
+        },
+      ],
     };
 
-    await s3Client.send(new PutBucketPolicyCommand({
-      Bucket: bucketName,
-      Policy: JSON.stringify(bucketPolicy, null, 2)
-    }));
+    await s3Client.send(
+      new PutBucketPolicyCommand({
+        Bucket: bucketName,
+        Policy: JSON.stringify(bucketPolicy, null, 2),
+      })
+    );
 
     console.log('✅ S3 bucket policy updated successfully');
     console.log('✅ Deployment should now work');
-    
   } catch (error) {
     console.error('❌ Failed to fix bucket policy:', error.message);
     process.exit(1);

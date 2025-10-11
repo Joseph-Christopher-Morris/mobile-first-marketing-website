@@ -47,7 +47,8 @@
 
 - [x] 4. Photography Services Page Image Implementation
   - [x] 4.1 Implement photography services hero image
-    - Verify 250928-Hampson_Auctions_Sunday-11.webp exists in public/images/services/
+    - Verify 250928-Hampson_Auctions_Sunday-11.webp exists in
+      public/images/services/
     - Update photography service data with hero image path
     - Test ServiceHero component image loading
     - _Requirements: 2.1_
@@ -80,8 +81,10 @@
     - _Requirements: 2.5_
 
   - [x] 6.2 Implement ad campaigns portfolio images
-    - Verify accessible_top8_campaigns Source.webp exists and rename to kebab-case
-    - Verify Top 3 Mediums by Conversion Rate.webp exists and rename to kebab-case
+    - Verify accessible_top8_campaigns Source.webp exists and rename to
+      kebab-case
+    - Verify Top 3 Mediums by Conversion Rate.webp exists and rename to
+      kebab-case
     - Verify Screenshot 2025-08-12 124550.webp exists in public/images/services/
     - Update ad campaigns service data with portfolio image paths
     - _Requirements: 2.6_
@@ -99,34 +102,27 @@
   - _Requirements: 3.2_
 
 - [x] 9. Desktop Navigation Hamburger Removal (CRITICAL - ADDENDUM)
-
-
   - [x] 9.1 Implement conditional rendering for hamburger at md breakpoint
-
-
-
-
-    - Modify Header component to NOT render hamburger trigger at ≥ md breakpoint (768px)
+    - Modify Header component to NOT render hamburger trigger at ≥ md breakpoint
+      (768px)
     - Ensure hamburger doesn't take space or overlay elements on desktop
-    - Verify no absolute/fixed positioning creates floating layers over desktop UI
+    - Verify no absolute/fixed positioning creates floating layers over desktop
+      UI
     - _Requirements: 6.1, 6.4_
 
   - [x] 9.2 Update desktop navigation visibility logic
-
     - Ensure desktop navigation always visible at ≥ md breakpoint
     - Scope mobile menu logic to < md breakpoint only
     - Verify floating quick-action buttons use unique class and z-index < header
     - _Requirements: 6.2, 6.5_
 
   - [x] 9.3 Implement accessibility tab order fixes
-
     - Configure tab order to skip mobile-menu controls at ≥ md breakpoint
     - Test keyboard navigation never encounters hidden mobile button on desktop
     - Verify accessibility attributes maintained across breakpoints
     - _Requirements: 6.6_
 
   - [x] 9.4 Validate navigation behavior across specific viewport widths
-
     - Test at 768px, 1024px, 1280px: no hamburger present, desktop links visible
     - Test at 375px, 414px: hamburger present and functional
     - Verify keyboard tabbing behavior at each breakpoint
@@ -153,7 +149,7 @@
     - _Requirements: 4.1, 5.2_
 
   - [x] 11.2 Implement CloudFront cache invalidation for images
-    - Update deployment script to invalidate /images/* paths
+    - Update deployment script to invalidate /images/\* paths
     - Verify cache invalidation completes successfully
     - Test that updated images are served immediately after deployment
     - _Requirements: 5.4_
@@ -165,9 +161,6 @@
     - Check correct Content-Type headers are served
     - Generate validation report with success/failure status
     - _Requirements: 5.5, 7.2_
-
-
-
 
   - [x] 12.2 Implement automated image loading verification
     - Create test suite to verify images load on each page

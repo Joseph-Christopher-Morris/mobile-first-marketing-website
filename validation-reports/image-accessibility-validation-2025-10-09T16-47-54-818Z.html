@@ -1,322 +1,364 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Image Accessibility Validation Report</title>
     <style>
-        body { font-family: Arial, sans-serif; margin: 20px; line-height: 1.6; }
-        .header { background: #f4f4f4; padding: 20px; border-radius: 5px; margin-bottom: 20px; }
-        .summary { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 15px; margin-bottom: 30px; }
-        .summary-card { background: #fff; border: 1px solid #ddd; padding: 15px; border-radius: 5px; text-align: center; }
-        .success { color: #28a745; }
-        .error { color: #dc3545; }
-        .warning { color: #ffc107; }
-        .result-item { border: 1px solid #ddd; margin-bottom: 20px; border-radius: 5px; overflow: hidden; }
-        .result-header { background: #f8f9fa; padding: 15px; font-weight: bold; }
-        .result-body { padding: 15px; }
-        .result-details { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 10px; }
-        .detail-item { background: #f8f9fa; padding: 10px; border-radius: 3px; }
-        .error-list, .warning-list { margin: 10px 0; }
-        .error-list li { color: #dc3545; }
-        .warning-list li { color: #ffc107; }
-        table { width: 100%; border-collapse: collapse; margin-top: 20px; }
-        th, td { border: 1px solid #ddd; padding: 12px; text-align: left; }
-        th { background-color: #f2f2f2; }
-        .status-pass { color: #28a745; font-weight: bold; }
-        .status-fail { color: #dc3545; font-weight: bold; }
+      body {
+        font-family: Arial, sans-serif;
+        margin: 20px;
+        line-height: 1.6;
+      }
+      .header {
+        background: #f4f4f4;
+        padding: 20px;
+        border-radius: 5px;
+        margin-bottom: 20px;
+      }
+      .summary {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+        gap: 15px;
+        margin-bottom: 30px;
+      }
+      .summary-card {
+        background: #fff;
+        border: 1px solid #ddd;
+        padding: 15px;
+        border-radius: 5px;
+        text-align: center;
+      }
+      .success {
+        color: #28a745;
+      }
+      .error {
+        color: #dc3545;
+      }
+      .warning {
+        color: #ffc107;
+      }
+      .result-item {
+        border: 1px solid #ddd;
+        margin-bottom: 20px;
+        border-radius: 5px;
+        overflow: hidden;
+      }
+      .result-header {
+        background: #f8f9fa;
+        padding: 15px;
+        font-weight: bold;
+      }
+      .result-body {
+        padding: 15px;
+      }
+      .result-details {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+        gap: 10px;
+      }
+      .detail-item {
+        background: #f8f9fa;
+        padding: 10px;
+        border-radius: 3px;
+      }
+      .error-list,
+      .warning-list {
+        margin: 10px 0;
+      }
+      .error-list li {
+        color: #dc3545;
+      }
+      .warning-list li {
+        color: #ffc107;
+      }
+      table {
+        width: 100%;
+        border-collapse: collapse;
+        margin-top: 20px;
+      }
+      th,
+      td {
+        border: 1px solid #ddd;
+        padding: 12px;
+        text-align: left;
+      }
+      th {
+        background-color: #f2f2f2;
+      }
+      .status-pass {
+        color: #28a745;
+        font-weight: bold;
+      }
+      .status-fail {
+        color: #dc3545;
+        font-weight: bold;
+      }
     </style>
-</head>
-<body>
+  </head>
+  <body>
     <div class="header">
-        <h1>🔍 Image Accessibility Validation Report</h1>
-        <p><strong>Timestamp:</strong> 2025-10-09T16-47-54-818Z</p>
-        <p><strong>CloudFront Domain:</strong> d15sc9fc739ev2.cloudfront.net</p>
+      <h1>🔍 Image Accessibility Validation Report</h1>
+      <p><strong>Timestamp:</strong> 2025-10-09T16-47-54-818Z</p>
+      <p><strong>CloudFront Domain:</strong> d15sc9fc739ev2.cloudfront.net</p>
     </div>
 
     <div class="summary">
-        <div class="summary-card">
-            <h3>Total Images</h3>
-            <div style="font-size: 2em; font-weight: bold;">5</div>
-        </div>
-        <div class="summary-card">
-            <h3>Successful</h3>
-            <div style="font-size: 2em; font-weight: bold; color: #28a745;">2</div>
-        </div>
-        <div class="summary-card">
-            <h3>Failed</h3>
-            <div style="font-size: 2em; font-weight: bold; color: #dc3545;">3</div>
-        </div>
-        <div class="summary-card">
-            <h3>Warnings</h3>
-            <div style="font-size: 2em; font-weight: bold; color: #ffc107;">0</div>
-        </div>
+      <div class="summary-card">
+        <h3>Total Images</h3>
+        <div style="font-size: 2em; font-weight: bold">5</div>
+      </div>
+      <div class="summary-card">
+        <h3>Successful</h3>
+        <div style="font-size: 2em; font-weight: bold; color: #28a745">2</div>
+      </div>
+      <div class="summary-card">
+        <h3>Failed</h3>
+        <div style="font-size: 2em; font-weight: bold; color: #dc3545">3</div>
+      </div>
+      <div class="summary-card">
+        <h3>Warnings</h3>
+        <div style="font-size: 2em; font-weight: bold; color: #ffc107">0</div>
+      </div>
     </div>
 
     <h2>Detailed Results</h2>
-    
-    
+
     <div class="result-item">
-        <div class="result-header success">
-            1. /images/hero/paid-ads-analytics-screenshot.webp ✅ PASS
+      <div class="result-header success">
+        1. /images/hero/paid-ads-analytics-screenshot.webp ✅ PASS
+      </div>
+      <div class="result-body">
+        <div class="result-details">
+          <div class="detail-item">
+            <strong>URL:</strong><br />
+            <a
+              href="https://d15sc9fc739ev2.cloudfront.net/images/hero/paid-ads-analytics-screenshot.webp"
+              target="_blank"
+              >https://d15sc9fc739ev2.cloudfront.net/images/hero/paid-ads-analytics-screenshot.webp</a
+            >
+          </div>
+          <div class="detail-item"><strong>Status Code:</strong> 200</div>
+          <div class="detail-item"><strong>Response Time:</strong> 93ms</div>
+          <div class="detail-item">
+            <strong>Content Type:</strong> image/webp
+          </div>
+          <div class="detail-item">
+            <strong>Content Length:</strong> 23692 bytes
+          </div>
+          <div class="detail-item">
+            <strong>Cache Status:</strong> Hit from cloudfront
+          </div>
         </div>
-        <div class="result-body">
-            <div class="result-details">
-                <div class="detail-item">
-                    <strong>URL:</strong><br>
-                    <a href="https://d15sc9fc739ev2.cloudfront.net/images/hero/paid-ads-analytics-screenshot.webp" target="_blank">https://d15sc9fc739ev2.cloudfront.net/images/hero/paid-ads-analytics-screenshot.webp</a>
-                </div>
-                <div class="detail-item">
-                    <strong>Status Code:</strong> 200
-                </div>
-                <div class="detail-item">
-                    <strong>Response Time:</strong> 93ms
-                </div>
-                <div class="detail-item">
-                    <strong>Content Type:</strong> image/webp
-                </div>
-                <div class="detail-item">
-                    <strong>Content Length:</strong> 23692 bytes
-                </div>
-                <div class="detail-item">
-                    <strong>Cache Status:</strong> Hit from cloudfront
-                </div>
-            </div>
-            
-            
-            
-            
-            
-            
-            <h4>S3 Direct Access Test:</h4>
-            <p><strong>Status:</strong> ✅ Blocked (Secure)</p>
-            <p><strong>Status Code:</strong> 403</p>
-            
-        </div>
+
+        <h4>S3 Direct Access Test:</h4>
+        <p><strong>Status:</strong> ✅ Blocked (Secure)</p>
+        <p><strong>Status Code:</strong> 403</p>
+      </div>
     </div>
-    
+
     <div class="result-item">
-        <div class="result-header success">
-            2. /images/services/analytics-hero.webp ✅ PASS
+      <div class="result-header success">
+        2. /images/services/analytics-hero.webp ✅ PASS
+      </div>
+      <div class="result-body">
+        <div class="result-details">
+          <div class="detail-item">
+            <strong>URL:</strong><br />
+            <a
+              href="https://d15sc9fc739ev2.cloudfront.net/images/services/analytics-hero.webp"
+              target="_blank"
+              >https://d15sc9fc739ev2.cloudfront.net/images/services/analytics-hero.webp</a
+            >
+          </div>
+          <div class="detail-item"><strong>Status Code:</strong> 200</div>
+          <div class="detail-item"><strong>Response Time:</strong> 363ms</div>
+          <div class="detail-item">
+            <strong>Content Type:</strong> image/webp
+          </div>
+          <div class="detail-item">
+            <strong>Content Length:</strong> 23692 bytes
+          </div>
+          <div class="detail-item">
+            <strong>Cache Status:</strong> Miss from cloudfront
+          </div>
         </div>
-        <div class="result-body">
-            <div class="result-details">
-                <div class="detail-item">
-                    <strong>URL:</strong><br>
-                    <a href="https://d15sc9fc739ev2.cloudfront.net/images/services/analytics-hero.webp" target="_blank">https://d15sc9fc739ev2.cloudfront.net/images/services/analytics-hero.webp</a>
-                </div>
-                <div class="detail-item">
-                    <strong>Status Code:</strong> 200
-                </div>
-                <div class="detail-item">
-                    <strong>Response Time:</strong> 363ms
-                </div>
-                <div class="detail-item">
-                    <strong>Content Type:</strong> image/webp
-                </div>
-                <div class="detail-item">
-                    <strong>Content Length:</strong> 23692 bytes
-                </div>
-                <div class="detail-item">
-                    <strong>Cache Status:</strong> Miss from cloudfront
-                </div>
-            </div>
-            
-            
-            
-            
-            
-            
-        </div>
+      </div>
     </div>
-    
+
     <div class="result-item">
-        <div class="result-header error">
-            3. /images/hero/mobile-marketing-hero.webp ❌ FAIL
+      <div class="result-header error">
+        3. /images/hero/mobile-marketing-hero.webp ❌ FAIL
+      </div>
+      <div class="result-body">
+        <div class="result-details">
+          <div class="detail-item">
+            <strong>URL:</strong><br />
+            <a
+              href="https://d15sc9fc739ev2.cloudfront.net/images/hero/mobile-marketing-hero.webp"
+              target="_blank"
+              >https://d15sc9fc739ev2.cloudfront.net/images/hero/mobile-marketing-hero.webp</a
+            >
+          </div>
+          <div class="detail-item"><strong>Status Code:</strong> 200</div>
+          <div class="detail-item"><strong>Response Time:</strong> 739ms</div>
+          <div class="detail-item">
+            <strong>Content Type:</strong> text/html
+          </div>
+          <div class="detail-item">
+            <strong>Content Length:</strong> 83449 bytes
+          </div>
+          <div class="detail-item">
+            <strong>Cache Status:</strong> Error from cloudfront
+          </div>
         </div>
-        <div class="result-body">
-            <div class="result-details">
-                <div class="detail-item">
-                    <strong>URL:</strong><br>
-                    <a href="https://d15sc9fc739ev2.cloudfront.net/images/hero/mobile-marketing-hero.webp" target="_blank">https://d15sc9fc739ev2.cloudfront.net/images/hero/mobile-marketing-hero.webp</a>
-                </div>
-                <div class="detail-item">
-                    <strong>Status Code:</strong> 200
-                </div>
-                <div class="detail-item">
-                    <strong>Response Time:</strong> 739ms
-                </div>
-                <div class="detail-item">
-                    <strong>Content Type:</strong> text/html
-                </div>
-                <div class="detail-item">
-                    <strong>Content Length:</strong> 83449 bytes
-                </div>
-                <div class="detail-item">
-                    <strong>Cache Status:</strong> Error from cloudfront
-                </div>
-            </div>
-            
-            
-            <h4>Errors:</h4>
-            <ul class="error-list">
-                <li>Invalid Content-Type: text/html</li>
-            </ul>
-            
-            
-            
-            
-            
-        </div>
+
+        <h4>Errors:</h4>
+        <ul class="error-list">
+          <li>Invalid Content-Type: text/html</li>
+        </ul>
+      </div>
     </div>
-    
+
     <div class="result-item">
-        <div class="result-header error">
-            4. /images/services/flyer-design-hero.webp ❌ FAIL
+      <div class="result-header error">
+        4. /images/services/flyer-design-hero.webp ❌ FAIL
+      </div>
+      <div class="result-body">
+        <div class="result-details">
+          <div class="detail-item">
+            <strong>URL:</strong><br />
+            <a
+              href="https://d15sc9fc739ev2.cloudfront.net/images/services/flyer-design-hero.webp"
+              target="_blank"
+              >https://d15sc9fc739ev2.cloudfront.net/images/services/flyer-design-hero.webp</a
+            >
+          </div>
+          <div class="detail-item"><strong>Status Code:</strong> 200</div>
+          <div class="detail-item"><strong>Response Time:</strong> 695ms</div>
+          <div class="detail-item">
+            <strong>Content Type:</strong> text/html
+          </div>
+          <div class="detail-item">
+            <strong>Content Length:</strong> 83449 bytes
+          </div>
+          <div class="detail-item">
+            <strong>Cache Status:</strong> Error from cloudfront
+          </div>
         </div>
-        <div class="result-body">
-            <div class="result-details">
-                <div class="detail-item">
-                    <strong>URL:</strong><br>
-                    <a href="https://d15sc9fc739ev2.cloudfront.net/images/services/flyer-design-hero.webp" target="_blank">https://d15sc9fc739ev2.cloudfront.net/images/services/flyer-design-hero.webp</a>
-                </div>
-                <div class="detail-item">
-                    <strong>Status Code:</strong> 200
-                </div>
-                <div class="detail-item">
-                    <strong>Response Time:</strong> 695ms
-                </div>
-                <div class="detail-item">
-                    <strong>Content Type:</strong> text/html
-                </div>
-                <div class="detail-item">
-                    <strong>Content Length:</strong> 83449 bytes
-                </div>
-                <div class="detail-item">
-                    <strong>Cache Status:</strong> Error from cloudfront
-                </div>
-            </div>
-            
-            
-            <h4>Errors:</h4>
-            <ul class="error-list">
-                <li>Invalid Content-Type: text/html</li>
-            </ul>
-            
-            
-            
-            
-            
-        </div>
+
+        <h4>Errors:</h4>
+        <ul class="error-list">
+          <li>Invalid Content-Type: text/html</li>
+        </ul>
+      </div>
     </div>
-    
+
     <div class="result-item">
-        <div class="result-header error">
-            5. /images/services/stock-photography-hero.webp ❌ FAIL
+      <div class="result-header error">
+        5. /images/services/stock-photography-hero.webp ❌ FAIL
+      </div>
+      <div class="result-body">
+        <div class="result-details">
+          <div class="detail-item">
+            <strong>URL:</strong><br />
+            <a
+              href="https://d15sc9fc739ev2.cloudfront.net/images/services/stock-photography-hero.webp"
+              target="_blank"
+              >https://d15sc9fc739ev2.cloudfront.net/images/services/stock-photography-hero.webp</a
+            >
+          </div>
+          <div class="detail-item"><strong>Status Code:</strong> 200</div>
+          <div class="detail-item"><strong>Response Time:</strong> 453ms</div>
+          <div class="detail-item">
+            <strong>Content Type:</strong> text/html
+          </div>
+          <div class="detail-item">
+            <strong>Content Length:</strong> 83449 bytes
+          </div>
+          <div class="detail-item">
+            <strong>Cache Status:</strong> Error from cloudfront
+          </div>
         </div>
-        <div class="result-body">
-            <div class="result-details">
-                <div class="detail-item">
-                    <strong>URL:</strong><br>
-                    <a href="https://d15sc9fc739ev2.cloudfront.net/images/services/stock-photography-hero.webp" target="_blank">https://d15sc9fc739ev2.cloudfront.net/images/services/stock-photography-hero.webp</a>
-                </div>
-                <div class="detail-item">
-                    <strong>Status Code:</strong> 200
-                </div>
-                <div class="detail-item">
-                    <strong>Response Time:</strong> 453ms
-                </div>
-                <div class="detail-item">
-                    <strong>Content Type:</strong> text/html
-                </div>
-                <div class="detail-item">
-                    <strong>Content Length:</strong> 83449 bytes
-                </div>
-                <div class="detail-item">
-                    <strong>Cache Status:</strong> Error from cloudfront
-                </div>
-            </div>
-            
-            
-            <h4>Errors:</h4>
-            <ul class="error-list">
-                <li>Invalid Content-Type: text/html</li>
-            </ul>
-            
-            
-            
-            
-            
-        </div>
+
+        <h4>Errors:</h4>
+        <ul class="error-list">
+          <li>Invalid Content-Type: text/html</li>
+        </ul>
+      </div>
     </div>
-    
 
     <h2>Summary Table</h2>
     <table>
-        <thead>
-            <tr>
-                <th>Image Path</th>
-                <th>Status</th>
-                <th>Status Code</th>
-                <th>Response Time</th>
-                <th>Content Type</th>
-                <th>Size (KB)</th>
-            </tr>
-        </thead>
-        <tbody>
-            
-            <tr>
-                <td>/images/hero/paid-ads-analytics-screenshot.webp</td>
-                <td class="status-pass">PASS</td>
-                <td>200</td>
-                <td>93ms</td>
-                <td>image/webp</td>
-                <td>23.14</td>
-            </tr>
-            
-            <tr>
-                <td>/images/services/analytics-hero.webp</td>
-                <td class="status-pass">PASS</td>
-                <td>200</td>
-                <td>363ms</td>
-                <td>image/webp</td>
-                <td>23.14</td>
-            </tr>
-            
-            <tr>
-                <td>/images/hero/mobile-marketing-hero.webp</td>
-                <td class="status-fail">FAIL</td>
-                <td>200</td>
-                <td>739ms</td>
-                <td>text/html</td>
-                <td>81.49</td>
-            </tr>
-            
-            <tr>
-                <td>/images/services/flyer-design-hero.webp</td>
-                <td class="status-fail">FAIL</td>
-                <td>200</td>
-                <td>695ms</td>
-                <td>text/html</td>
-                <td>81.49</td>
-            </tr>
-            
-            <tr>
-                <td>/images/services/stock-photography-hero.webp</td>
-                <td class="status-fail">FAIL</td>
-                <td>200</td>
-                <td>453ms</td>
-                <td>text/html</td>
-                <td>81.49</td>
-            </tr>
-            
-        </tbody>
+      <thead>
+        <tr>
+          <th>Image Path</th>
+          <th>Status</th>
+          <th>Status Code</th>
+          <th>Response Time</th>
+          <th>Content Type</th>
+          <th>Size (KB)</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>/images/hero/paid-ads-analytics-screenshot.webp</td>
+          <td class="status-pass">PASS</td>
+          <td>200</td>
+          <td>93ms</td>
+          <td>image/webp</td>
+          <td>23.14</td>
+        </tr>
+
+        <tr>
+          <td>/images/services/analytics-hero.webp</td>
+          <td class="status-pass">PASS</td>
+          <td>200</td>
+          <td>363ms</td>
+          <td>image/webp</td>
+          <td>23.14</td>
+        </tr>
+
+        <tr>
+          <td>/images/hero/mobile-marketing-hero.webp</td>
+          <td class="status-fail">FAIL</td>
+          <td>200</td>
+          <td>739ms</td>
+          <td>text/html</td>
+          <td>81.49</td>
+        </tr>
+
+        <tr>
+          <td>/images/services/flyer-design-hero.webp</td>
+          <td class="status-fail">FAIL</td>
+          <td>200</td>
+          <td>695ms</td>
+          <td>text/html</td>
+          <td>81.49</td>
+        </tr>
+
+        <tr>
+          <td>/images/services/stock-photography-hero.webp</td>
+          <td class="status-fail">FAIL</td>
+          <td>200</td>
+          <td>453ms</td>
+          <td>text/html</td>
+          <td>81.49</td>
+        </tr>
+      </tbody>
     </table>
 
-    <div style="margin-top: 40px; padding: 20px; background: #f8f9fa; border-radius: 5px;">
-        <h3>Report Generated</h3>
-        <p><strong>Timestamp:</strong> 2025-10-09T16:47:57.677Z</p>
-        <p><strong>Duration:</strong> 3s</p>
+    <div
+      style="
+        margin-top: 40px;
+        padding: 20px;
+        background: #f8f9fa;
+        border-radius: 5px;
+      "
+    >
+      <h3>Report Generated</h3>
+      <p><strong>Timestamp:</strong> 2025-10-09T16:47:57.677Z</p>
+      <p><strong>Duration:</strong> 3s</p>
     </div>
-</body>
+  </body>
 </html>

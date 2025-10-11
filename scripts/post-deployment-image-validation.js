@@ -2,7 +2,7 @@
 
 /**
  * Post-Deployment Image Accessibility Validation
- * 
+ *
  * This script validates that images are accessible via CloudFront CDN endpoints
  * and generates comprehensive validation reports for debugging image loading issues.
  */
@@ -22,11 +22,11 @@ const CONFIG = {
     '/images/services/analytics-hero.webp',
     '/images/hero/mobile-marketing-hero.webp',
     '/images/services/flyer-design-hero.webp',
-    '/images/services/stock-photography-hero.webp'
+    '/images/services/stock-photography-hero.webp',
   ],
   timeout: 10000,
   maxRetries: 3,
-  outputDir: 'validation-reports'
+  outputDir: 'validation-reports',
 };
 
 class ImageAccessibilityValidator {
@@ -43,31 +43,36 @@ class ImageAccessibilityValidator {
       const protocol = url.startsWith('https:') ? https : http;
       const timeout = options.timeout || CONFIG.timeout;
 
-      const req = protocol.get(url, {
-        timeout: timeout,
-        headers: {
-          'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.124 Safari/537.36',
-          'Accept': 'image/webp,image/apng,image/*,*/*;q=0.8',
-          'Accept-Encoding': 'gzip, deflate, br',
-          'Cache-Control': 'no-cache',
-          'Pragma': 'no-cache'
-        }
-      }, (res) => {
-        let data = '';
-        
-        res.on('data', (chunk) => {
-          data += chunk;
-        });
+      const req = protocol.get(
+        url,
+        {
+          timeout: timeout,
+          headers: {
+            'User-Agent':
+              'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.124 Safari/537.36',
+            Accept: 'image/webp,image/apng,image/*,*/*;q=0.8',
+            'Accept-Encoding': 'gzip, deflate, br',
+            'Cache-Control': 'no-cache',
+            Pragma: 'no-cache',
+          },
+        },
+        res => {
+          let data = '';
 
-        res.on('end', () => {
-          resolve({
-            statusCode: res.statusCode,
-            headers: res.headers,
-            data: data,
-            responseTime: Date.now() - startTime
+          res.on('data', chunk => {
+            data += chunk;
           });
-        });
-      });
+
+          res.on('end', () => {
+            resolve({
+              statusCode: res.statusCode,
+              headers: res.headers,
+              data: data,
+              responseTime: Date.now() - startTime,
+            });
+          });
+        }
+      );
 
       const startTime = Date.now();
 
@@ -76,7 +81,7 @@ class ImageAccessibilityValidator {
         reject(new Error(`Request timeout after ${timeout}ms`));
       });
 
-      req.on('error', (error) => {
+      req.on('error', error => {
         reject(error);
       });
 
@@ -102,42 +107,45 @@ class ImageAccessibilityValidator {
       cacheStatus: null,
       errors: [],
       warnings: [],
-      details: {}
+      details: {},
     };
 
     try {
       console.log(`Testing image: ${imagePath} (attempt ${retryCount + 1})`);
-      
+
       const response = await this.makeRequest(url);
-      
+
       testResult.statusCode = response.statusCode;
       testResult.responseTime = response.responseTime;
       testResult.contentType = response.headers['content-type'];
       testResult.contentLength = response.headers['content-length'];
-      testResult.cacheStatus = response.headers['x-cache'] || response.headers['x-amz-cf-pop'];
-      
+      testResult.cacheStatus =
+        response.headers['x-cache'] || response.headers['x-amz-cf-pop'];
+
       // Store all relevant headers
       testResult.details.headers = {
         'content-type': response.headers['content-type'],
         'content-length': response.headers['content-length'],
         'cache-control': response.headers['cache-control'],
-        'expires': response.headers['expires'],
-        'etag': response.headers['etag'],
+        expires: response.headers['expires'],
+        etag: response.headers['etag'],
         'last-modified': response.headers['last-modified'],
         'x-cache': response.headers['x-cache'],
         'x-amz-cf-pop': response.headers['x-amz-cf-pop'],
-        'x-amz-cf-id': response.headers['x-amz-cf-id']
+        'x-amz-cf-id': response.headers['x-amz-cf-id'],
       };
 
       // Validate response
       if (response.statusCode === 200) {
         testResult.success = true;
-        
+
         // Validate content type
         if (!response.headers['content-type']) {
           testResult.warnings.push('Missing Content-Type header');
         } else if (!response.headers['content-type'].startsWith('image/')) {
-          testResult.errors.push(`Invalid Content-Type: ${response.headers['content-type']}`);
+          testResult.errors.push(
+            `Invalid Content-Type: ${response.headers['content-type']}`
+          );
           testResult.success = false;
         }
 
@@ -147,34 +155,44 @@ class ImageAccessibilityValidator {
         } else {
           const size = parseInt(response.headers['content-length']);
           if (size < 100) {
-            testResult.warnings.push(`Suspiciously small file size: ${size} bytes`);
+            testResult.warnings.push(
+              `Suspiciously small file size: ${size} bytes`
+            );
           }
           testResult.details.fileSizeBytes = size;
-          testResult.details.fileSizeKB = Math.round(size / 1024 * 100) / 100;
+          testResult.details.fileSizeKB = Math.round((size / 1024) * 100) / 100;
         }
 
         // Check cache headers
         if (response.headers['x-cache']) {
-          testResult.details.cacheHit = response.headers['x-cache'].includes('Hit');
+          testResult.details.cacheHit =
+            response.headers['x-cache'].includes('Hit');
         }
-
       } else if (response.statusCode === 404) {
         testResult.errors.push('Image not found (404)');
       } else if (response.statusCode === 403) {
-        testResult.errors.push('Access denied (403) - Check S3 permissions and OAC configuration');
+        testResult.errors.push(
+          'Access denied (403) - Check S3 permissions and OAC configuration'
+        );
       } else if (response.statusCode >= 500) {
         testResult.errors.push(`Server error (${response.statusCode})`);
       } else {
-        testResult.errors.push(`Unexpected status code: ${response.statusCode}`);
+        testResult.errors.push(
+          `Unexpected status code: ${response.statusCode}`
+        );
       }
-
     } catch (error) {
       testResult.errors.push(`Request failed: ${error.message}`);
-      
+
       // Retry logic for network errors
-      if (retryCount < CONFIG.maxRetries - 1 && 
-          (error.message.includes('timeout') || error.message.includes('ECONNRESET'))) {
-        console.log(`  Retrying in 2 seconds... (${retryCount + 1}/${CONFIG.maxRetries})`);
+      if (
+        retryCount < CONFIG.maxRetries - 1 &&
+        (error.message.includes('timeout') ||
+          error.message.includes('ECONNRESET'))
+      ) {
+        console.log(
+          `  Retrying in 2 seconds... (${retryCount + 1}/${CONFIG.maxRetries})`
+        );
         await new Promise(resolve => setTimeout(resolve, 2000));
         return this.validateImage(imagePath, retryCount + 1);
       }
@@ -188,21 +206,24 @@ class ImageAccessibilityValidator {
    */
   async testDirectS3Access(imagePath) {
     const s3Url = `https://mobile-marketing-site-prod-1759705011281-tyzuo9.s3.amazonaws.com${imagePath}`;
-    
+
     try {
       const response = await this.makeRequest(s3Url);
       return {
         url: s3Url,
         statusCode: response.statusCode,
         accessible: response.statusCode === 200,
-        warning: response.statusCode === 200 ? 'S3 bucket is publicly accessible - security risk!' : null
+        warning:
+          response.statusCode === 200
+            ? 'S3 bucket is publicly accessible - security risk!'
+            : null,
       };
     } catch (error) {
       return {
         url: s3Url,
         statusCode: null,
         accessible: false,
-        error: error.message
+        error: error.message,
       };
     }
   }
@@ -230,7 +251,7 @@ class ImageAccessibilityValidator {
       warnings: 0,
       startTime: new Date().toISOString(),
       endTime: null,
-      duration: null
+      duration: null,
     };
 
     // Test each image
@@ -249,7 +270,9 @@ class ImageAccessibilityValidator {
 
       if (result.warnings.length > 0) {
         summary.warnings += result.warnings.length;
-        result.warnings.forEach(warning => console.log(`     Warning: ${warning}`));
+        result.warnings.forEach(warning =>
+          console.log(`     Warning: ${warning}`)
+        );
       }
 
       // Test direct S3 access for security validation
@@ -257,7 +280,7 @@ class ImageAccessibilityValidator {
         console.log(`  🔒 Testing direct S3 access for security validation...`);
         const s3Test = await this.testDirectS3Access(imagePath);
         result.s3DirectAccess = s3Test;
-        
+
         if (s3Test.accessible) {
           console.log(`     ⚠️  WARNING: ${s3Test.warning}`);
         } else {
@@ -289,25 +312,34 @@ class ImageAccessibilityValidator {
         timestamp: this.timestamp,
         cloudfrontDomain: CONFIG.cloudfrontDomain,
         testConfiguration: CONFIG,
-        summary: summary
+        summary: summary,
       },
-      results: this.results
+      results: this.results,
     };
 
     // JSON Report
-    const jsonReport = path.join(CONFIG.outputDir, `image-accessibility-validation-${this.timestamp}.json`);
+    const jsonReport = path.join(
+      CONFIG.outputDir,
+      `image-accessibility-validation-${this.timestamp}.json`
+    );
     await fs.writeFile(jsonReport, JSON.stringify(reportData, null, 2));
     console.log(`📄 JSON report saved: ${jsonReport}`);
 
     // Markdown Report
     const markdownReport = await this.generateMarkdownReport(reportData);
-    const mdReport = path.join(CONFIG.outputDir, `image-accessibility-validation-${this.timestamp}.md`);
+    const mdReport = path.join(
+      CONFIG.outputDir,
+      `image-accessibility-validation-${this.timestamp}.md`
+    );
     await fs.writeFile(mdReport, markdownReport);
     console.log(`📄 Markdown report saved: ${mdReport}`);
 
     // HTML Report
     const htmlReport = await this.generateHtmlReport(reportData);
-    const htmlReportPath = path.join(CONFIG.outputDir, `image-accessibility-validation-${this.timestamp}.html`);
+    const htmlReportPath = path.join(
+      CONFIG.outputDir,
+      `image-accessibility-validation-${this.timestamp}.html`
+    );
     await fs.writeFile(htmlReportPath, htmlReport);
     console.log(`📄 HTML report saved: ${htmlReportPath}`);
   }
@@ -317,7 +349,7 @@ class ImageAccessibilityValidator {
    */
   async generateMarkdownReport(data) {
     const { metadata, results } = data;
-    
+
     let markdown = `# Image Accessibility Validation Report
 
 ## Summary
@@ -386,7 +418,9 @@ The following images failed to load and need attention:
       markdown += '\n';
     }
 
-    const s3AccessibleResults = results.filter(r => r.s3DirectAccess && r.s3DirectAccess.accessible);
+    const s3AccessibleResults = results.filter(
+      r => r.s3DirectAccess && r.s3DirectAccess.accessible
+    );
     if (s3AccessibleResults.length > 0) {
       markdown += `### Security Issues
 ⚠️ **CRITICAL**: S3 bucket is publicly accessible. This violates security standards.
@@ -419,7 +453,7 @@ The following images failed to load and need attention:
    */
   async generateHtmlReport(data) {
     const { metadata, results } = data;
-    
+
     return `<!DOCTYPE html>
 <html lang="en">
 <head>
@@ -477,7 +511,9 @@ The following images failed to load and need attention:
 
     <h2>Detailed Results</h2>
     
-    ${results.map((result, index) => `
+    ${results
+      .map(
+        (result, index) => `
     <div class="result-item">
         <div class="result-header ${result.success ? 'success' : 'error'}">
             ${index + 1}. ${result.imagePath} ${result.success ? '✅ PASS' : '❌ FAIL'}
@@ -505,28 +541,42 @@ The following images failed to load and need attention:
                 </div>
             </div>
             
-            ${result.errors.length > 0 ? `
+            ${
+              result.errors.length > 0
+                ? `
             <h4>Errors:</h4>
             <ul class="error-list">
                 ${result.errors.map(error => `<li>${error}</li>`).join('')}
             </ul>
-            ` : ''}
+            `
+                : ''
+            }
             
-            ${result.warnings.length > 0 ? `
+            ${
+              result.warnings.length > 0
+                ? `
             <h4>Warnings:</h4>
             <ul class="warning-list">
                 ${result.warnings.map(warning => `<li>${warning}</li>`).join('')}
             </ul>
-            ` : ''}
+            `
+                : ''
+            }
             
-            ${result.s3DirectAccess ? `
+            ${
+              result.s3DirectAccess
+                ? `
             <h4>S3 Direct Access Test:</h4>
             <p><strong>Status:</strong> ${result.s3DirectAccess.accessible ? '⚠️ Accessible (Security Risk)' : '✅ Blocked (Secure)'}</p>
             <p><strong>Status Code:</strong> ${result.s3DirectAccess.statusCode || 'N/A'}</p>
-            ` : ''}
+            `
+                : ''
+            }
         </div>
     </div>
-    `).join('')}
+    `
+      )
+      .join('')}
 
     <h2>Summary Table</h2>
     <table>
@@ -541,7 +591,9 @@ The following images failed to load and need attention:
             </tr>
         </thead>
         <tbody>
-            ${results.map(result => `
+            ${results
+              .map(
+                result => `
             <tr>
                 <td>${result.imagePath}</td>
                 <td class="${result.success ? 'status-pass' : 'status-fail'}">${result.success ? 'PASS' : 'FAIL'}</td>
@@ -550,7 +602,9 @@ The following images failed to load and need attention:
                 <td>${result.contentType || 'N/A'}</td>
                 <td>${result.details.fileSizeKB || 'N/A'}</td>
             </tr>
-            `).join('')}
+            `
+              )
+              .join('')}
         </tbody>
     </table>
 
@@ -574,20 +628,24 @@ The following images failed to load and need attention:
     console.log(`❌ Failed: ${summary.failed}/${summary.totalImages}`);
     console.log(`⚠️  Warnings: ${summary.warnings}`);
     console.log(`⏱️  Duration: ${Math.round(summary.duration / 1000)}s`);
-    
+
     if (summary.failed > 0) {
       console.log('\n❌ FAILED IMAGES:');
-      this.results.filter(r => !r.success).forEach(result => {
-        console.log(`   ${result.imagePath}: ${result.errors.join(', ')}`);
-      });
+      this.results
+        .filter(r => !r.success)
+        .forEach(result => {
+          console.log(`   ${result.imagePath}: ${result.errors.join(', ')}`);
+        });
     }
 
     if (summary.successful === summary.totalImages) {
       console.log('\n🎉 All images are accessible via CloudFront!');
     } else {
-      console.log('\n⚠️  Some images failed validation. Check the detailed reports for more information.');
+      console.log(
+        '\n⚠️  Some images failed validation. Check the detailed reports for more information.'
+      );
     }
-    
+
     console.log('='.repeat(60));
   }
 }
@@ -597,10 +655,9 @@ async function main() {
   try {
     const validator = new ImageAccessibilityValidator();
     const summary = await validator.runValidation();
-    
+
     // Exit with error code if any images failed
     process.exit(summary.failed > 0 ? 1 : 0);
-    
   } catch (error) {
     console.error('❌ Validation failed:', error.message);
     console.error(error.stack);

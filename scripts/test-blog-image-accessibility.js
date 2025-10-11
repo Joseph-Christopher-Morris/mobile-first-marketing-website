@@ -2,12 +2,14 @@
 
 /**
  * Blog Image Accessibility Test
- * 
+ *
  * Focused test for the specific blog image that was failing:
  * /images/hero/paid-ads-analytics-screenshot.webp
  */
 
-const { ImageAccessibilityValidator } = require('./post-deployment-image-validation.js');
+const {
+  ImageAccessibilityValidator,
+} = require('./post-deployment-image-validation.js');
 
 class BlogImageTester extends ImageAccessibilityValidator {
   constructor() {
@@ -29,18 +31,18 @@ class BlogImageTester extends ImageAccessibilityValidator {
     // Test the main image
     console.log('1. Testing CloudFront access...');
     const cloudfrontResult = await this.validateImage(this.blogImagePath);
-    
+
     // Test direct S3 access (should fail)
     console.log('2. Testing direct S3 access (security check)...');
     const s3Result = await this.testDirectS3Access(this.blogImagePath);
-    
+
     // Test alternative paths that might work
     console.log('3. Testing alternative image paths...');
     const alternativePaths = [
       '/images/services/analytics-hero.webp',
-      '/images/hero/mobile-marketing-hero.webp'
+      '/images/hero/mobile-marketing-hero.webp',
     ];
-    
+
     const alternativeResults = [];
     for (const altPath of alternativePaths) {
       const result = await this.validateImage(altPath);
@@ -54,7 +56,11 @@ class BlogImageTester extends ImageAccessibilityValidator {
       cloudfrontTest: cloudfrontResult,
       s3SecurityTest: s3Result,
       alternativeImages: alternativeResults,
-      analysis: this.analyzeResults(cloudfrontResult, s3Result, alternativeResults)
+      analysis: this.analyzeResults(
+        cloudfrontResult,
+        s3Result,
+        alternativeResults
+      ),
     };
 
     await this.generateBlogImageReport(report);
@@ -72,7 +78,7 @@ class BlogImageTester extends ImageAccessibilityValidator {
       securityStatus: s3Result.accessible ? 'INSECURE' : 'SECURE',
       recommendations: [],
       possibleCauses: [],
-      nextSteps: []
+      nextSteps: [],
     };
 
     // Analyze primary image failure
@@ -80,14 +86,20 @@ class BlogImageTester extends ImageAccessibilityValidator {
       if (cloudfrontResult.statusCode === 404) {
         analysis.possibleCauses.push('Image file does not exist in S3 bucket');
         analysis.possibleCauses.push('Image was not included in build output');
-        analysis.possibleCauses.push('Deployment script failed to upload image');
-        analysis.nextSteps.push('Check if image exists in public/images/hero/ directory');
+        analysis.possibleCauses.push(
+          'Deployment script failed to upload image'
+        );
+        analysis.nextSteps.push(
+          'Check if image exists in public/images/hero/ directory'
+        );
         analysis.nextSteps.push('Verify build process includes images');
         analysis.nextSteps.push('Check deployment logs for upload errors');
       } else if (cloudfrontResult.statusCode === 403) {
         analysis.possibleCauses.push('S3 bucket permissions issue');
         analysis.possibleCauses.push('CloudFront OAC configuration problem');
-        analysis.nextSteps.push('Verify S3 bucket policy allows CloudFront access');
+        analysis.nextSteps.push(
+          'Verify S3 bucket policy allows CloudFront access'
+        );
         analysis.nextSteps.push('Check CloudFront OAC configuration');
       } else if (cloudfrontResult.statusCode >= 500) {
         analysis.possibleCauses.push('Server-side error in CloudFront or S3');
@@ -100,9 +112,13 @@ class BlogImageTester extends ImageAccessibilityValidator {
 
     // Security analysis
     if (s3Result.accessible) {
-      analysis.recommendations.push('CRITICAL: Block public S3 access immediately');
+      analysis.recommendations.push(
+        'CRITICAL: Block public S3 access immediately'
+      );
       analysis.nextSteps.push('Configure S3 bucket to block all public access');
-      analysis.nextSteps.push('Ensure CloudFront OAC is the only access method');
+      analysis.nextSteps.push(
+        'Ensure CloudFront OAC is the only access method'
+      );
     } else {
       analysis.recommendations.push('S3 security is properly configured');
     }
@@ -110,7 +126,9 @@ class BlogImageTester extends ImageAccessibilityValidator {
     // Alternative images analysis
     const workingAlternatives = alternativeResults.filter(r => r.success);
     if (workingAlternatives.length > 0 && !cloudfrontResult.success) {
-      analysis.recommendations.push('Consider using working alternative images temporarily');
+      analysis.recommendations.push(
+        'Consider using working alternative images temporarily'
+      );
       analysis.nextSteps.push('Update blog post to use working image path');
     }
 
@@ -128,14 +146,20 @@ class BlogImageTester extends ImageAccessibilityValidator {
     await fs.mkdir('validation-reports', { recursive: true });
 
     const timestamp = report.timestamp.replace(/[:.]/g, '-');
-    
+
     // JSON Report
-    const jsonPath = path.join('validation-reports', `blog-image-test-${timestamp}.json`);
+    const jsonPath = path.join(
+      'validation-reports',
+      `blog-image-test-${timestamp}.json`
+    );
     await fs.writeFile(jsonPath, JSON.stringify(report, null, 2));
-    
+
     // Markdown Report
     const markdown = this.generateBlogImageMarkdown(report);
-    const mdPath = path.join('validation-reports', `blog-image-test-${timestamp}.md`);
+    const mdPath = path.join(
+      'validation-reports',
+      `blog-image-test-${timestamp}.md`
+    );
     await fs.writeFile(mdPath, markdown);
 
     console.log(`\n📄 Reports generated:`);
@@ -147,7 +171,8 @@ class BlogImageTester extends ImageAccessibilityValidator {
    * Generate markdown report for blog image test
    */
   generateBlogImageMarkdown(report) {
-    const { cloudfrontTest, s3SecurityTest, alternativeImages, analysis } = report;
+    const { cloudfrontTest, s3SecurityTest, alternativeImages, analysis } =
+      report;
 
     return `# Blog Image Accessibility Test Report
 
@@ -168,15 +193,23 @@ class BlogImageTester extends ImageAccessibilityValidator {
 - **Content Type**: ${cloudfrontTest.contentType || 'N/A'}
 - **Content Length**: ${cloudfrontTest.contentLength || 'N/A'} bytes
 
-${cloudfrontTest.errors.length > 0 ? `
+${
+  cloudfrontTest.errors.length > 0
+    ? `
 **Errors:**
 ${cloudfrontTest.errors.map(error => `- ${error}`).join('\n')}
-` : ''}
+`
+    : ''
+}
 
-${cloudfrontTest.warnings.length > 0 ? `
+${
+  cloudfrontTest.warnings.length > 0
+    ? `
 **Warnings:**
 ${cloudfrontTest.warnings.map(warning => `- ${warning}`).join('\n')}
-` : ''}
+`
+    : ''
+}
 
 ## S3 Security Test
 
@@ -185,12 +218,16 @@ ${cloudfrontTest.warnings.map(warning => `- ${warning}`).join('\n')}
 
 ## Alternative Images Test
 
-${alternativeImages.map((result, index) => `
+${alternativeImages
+  .map(
+    (result, index) => `
 ### ${index + 1}. ${result.imagePath}
 - **Status**: ${result.success ? '✅ WORKING' : '❌ FAILED'}
 - **HTTP Status**: ${result.statusCode || 'N/A'}
 - **Response Time**: ${result.responseTime || 'N/A'}ms
-`).join('')}
+`
+  )
+  .join('')}
 
 ## Analysis & Recommendations
 
@@ -212,10 +249,14 @@ ${analysis.nextSteps.map(step => `1. ${step}`).join('\n')}
 - Pragma: no-cache
 
 ### Response Headers (if successful)
-${cloudfrontTest.details.headers ? Object.entries(cloudfrontTest.details.headers)
-  .filter(([key, value]) => value)
-  .map(([key, value]) => `- **${key}**: ${value}`)
-  .join('\n') : 'N/A - Request failed'}
+${
+  cloudfrontTest.details.headers
+    ? Object.entries(cloudfrontTest.details.headers)
+        .filter(([key, value]) => value)
+        .map(([key, value]) => `- **${key}**: ${value}`)
+        .join('\n')
+    : 'N/A - Request failed'
+}
 
 ---
 *Report generated by Blog Image Accessibility Tester*
@@ -227,20 +268,20 @@ ${cloudfrontTest.details.headers ? Object.entries(cloudfrontTest.details.headers
    */
   printBlogImageSummary(report) {
     const { analysis } = report;
-    
+
     console.log('\n' + '='.repeat(50));
     console.log('📊 BLOG IMAGE TEST SUMMARY');
     console.log('='.repeat(50));
     console.log(`📷 Image: ${report.targetImage}`);
     console.log(`🔍 Status: ${analysis.primaryImageStatus}`);
     console.log(`🔒 Security: ${analysis.securityStatus}`);
-    
+
     if (analysis.primaryImageStatus === 'FAILED') {
       console.log('\n❌ PRIMARY IMAGE ISSUES:');
       analysis.possibleCauses.forEach(cause => {
         console.log(`   • ${cause}`);
       });
-      
+
       console.log('\n🔧 RECOMMENDED ACTIONS:');
       analysis.nextSteps.forEach((step, index) => {
         console.log(`   ${index + 1}. ${step}`);
@@ -251,9 +292,11 @@ ${cloudfrontTest.details.headers ? Object.entries(cloudfrontTest.details.headers
 
     if (analysis.securityStatus === 'INSECURE') {
       console.log('\n🚨 SECURITY ALERT: S3 bucket is publicly accessible!');
-      console.log('   This violates security standards and must be fixed immediately.');
+      console.log(
+        '   This violates security standards and must be fixed immediately.'
+      );
     }
-    
+
     console.log('='.repeat(50));
   }
 }
@@ -263,10 +306,9 @@ async function main() {
   try {
     const tester = new BlogImageTester();
     const report = await tester.testBlogImage();
-    
+
     // Exit with error if primary image failed
     process.exit(report.analysis.primaryImageStatus === 'FAILED' ? 1 : 0);
-    
   } catch (error) {
     console.error('❌ Blog image test failed:', error.message);
     process.exit(1);

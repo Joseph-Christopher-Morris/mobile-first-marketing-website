@@ -10,10 +10,11 @@ import {
 export const metadata: Metadata = {
   title: 'Contact Joe | Vivid Auto Photography & Digital Marketing',
   description:
-    "Get in touch about automotive photography, digital marketing analytics, or advertising campaigns. I usually reply within one business day (UK time).",
+    'Get in touch about automotive photography, digital marketing analytics, or advertising campaigns. I usually reply within one business day (UK time).',
   openGraph: {
     title: 'Contact Joe | Vivid Auto Photography & Digital Marketing',
-    description: 'Let\'s discuss your automotive photography or digital marketing project — professional results guaranteed.',
+    description:
+      "Let's discuss your automotive photography or digital marketing project — professional results guaranteed.",
     type: 'website',
   },
 };
@@ -30,7 +31,11 @@ export default function ContactPage() {
                 Let's Work Together
               </h1>
               <p className='text-base md:text-lg lg:text-xl text-gray-600 mb-6 md:mb-8'>
-                Need professional automotive or event photography, GA4 setup, ad campaigns or website hosting support? Share the details of your project and I will be in touch within <span className='font-semibold'>one business day</span> (UK time).
+                Need professional automotive or event photography, GA4 setup, ad
+                campaigns or website hosting support? Share the details of your
+                project and I will be in touch within{' '}
+                <span className='font-semibold'>one business day</span> (UK
+                time).
               </p>
 
               <ContactPageClient>
@@ -251,7 +256,8 @@ export default function ContactPage() {
                       Urgent project or same-day shoot?
                     </h4>
                     <p className='text-red-700 text-sm mb-3'>
-                      For live events, auction days, or time-sensitive campaigns, call me directly.
+                      For live events, auction days, or time-sensitive
+                      campaigns, call me directly.
                     </p>
                     <a
                       href='tel:+447586378502'
@@ -294,7 +300,9 @@ export default function ContactPage() {
                     How quickly do you respond to enquiries?
                   </h3>
                   <p className='text-gray-700'>
-                    I personally reply to all messages within one business day. If something is urgent, you are welcome to call so I can help sooner.
+                    I personally reply to all messages within one business day.
+                    If something is urgent, you are welcome to call so I can
+                    help sooner.
                   </p>
                 </div>
 
@@ -303,7 +311,8 @@ export default function ContactPage() {
                     Where do you work?
                   </h3>
                   <p className='text-gray-700'>
-                    I mainly work with small businesses in Nantwich and across Cheshire, but I am happy to support nearby areas as well.
+                    I mainly work with small businesses in Nantwich and across
+                    Cheshire, but I am happy to support nearby areas as well.
                   </p>
                 </div>
 
@@ -312,7 +321,10 @@ export default function ContactPage() {
                     What services do you offer?
                   </h3>
                   <p className='text-gray-700'>
-                    I provide automotive and event photography, Google Analytics and GA4 implementation, Google Ads, Meta Ads, paid advertising campaigns and website migration to AWS CloudFront.
+                    I provide automotive and event photography, Google Analytics
+                    and GA4 implementation, Google Ads, Meta Ads, paid
+                    advertising campaigns and website migration to AWS
+                    CloudFront.
                   </p>
                 </div>
 
@@ -321,7 +333,11 @@ export default function ContactPage() {
                     What information should I include in my message?
                   </h3>
                   <p className='text-gray-700'>
-                    Please share details about your project and goals, your timeline or launch date, budget or ad spend range, and access to tools like Google Analytics or ad accounts if available. The more context you give, the easier it is for me to recommend the right approach.
+                    Please share details about your project and goals, your
+                    timeline or launch date, budget or ad spend range, and
+                    access to tools like Google Analytics or ad accounts if
+                    available. The more context you give, the easier it is for
+                    me to recommend the right approach.
                   </p>
                 </div>
 
@@ -330,7 +346,9 @@ export default function ContactPage() {
                     Do you offer free consultations?
                   </h3>
                   <p className='text-gray-700'>
-                    Yes. I offer a free 30-minute consultation by phone, video meeting or email review to talk through your goals and explore how I can best support your business.
+                    Yes. I offer a free 30-minute consultation by phone, video
+                    meeting or email review to talk through your goals and
+                    explore how I can best support your business.
                   </p>
                 </div>
 
@@ -339,7 +357,9 @@ export default function ContactPage() {
                     Can you help if I am not sure what I need yet?
                   </h3>
                   <p className='text-gray-700'>
-                    Absolutely. If you are unsure where to start, we can look at your current marketing together and decide on the most helpful next steps during the free consultation.
+                    Absolutely. If you are unsure where to start, we can look at
+                    your current marketing together and decide on the most
+                    helpful next steps during the free consultation.
                   </p>
                 </div>
               </div>

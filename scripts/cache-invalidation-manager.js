@@ -2,10 +2,10 @@
 
 /**
  * Cache Invalidation Management Tool
- * 
+ *
  * Provides intelligent cache invalidation management for CloudFront distributions,
  * including batch processing, cost optimization, and invalidation tracking.
- * 
+ *
  * Requirements: 5.1, 6.4
  */
 
@@ -16,8 +16,18 @@ const path = require('path');
 class CacheInvalidationManager {
   constructor() {
     this.cloudfront = new AWS.CloudFront();
-    this.configPath = path.join(__dirname, '..', 'config', 'deployment-config.json');
-    this.invalidationLogPath = path.join(__dirname, '..', 'logs', 'invalidations.json');
+    this.configPath = path.join(
+      __dirname,
+      '..',
+      'config',
+      'deployment-config.json'
+    );
+    this.invalidationLogPath = path.join(
+      __dirname,
+      '..',
+      'logs',
+      'invalidations.json'
+    );
     this.maxPathsPerInvalidation = 3000; // AWS limit
   }
 
@@ -48,7 +58,7 @@ class CacheInvalidationManager {
         pathCount: paths.length,
         paths: paths.slice(0, 10), // Store first 10 paths for reference
         estimatedCost: cost,
-        status: 'InProgress'
+        status: 'InProgress',
       });
 
       // Keep only last 100 invalidations
@@ -56,7 +66,10 @@ class CacheInvalidationManager {
         invalidations = invalidations.slice(-100);
       }
 
-      await fs.writeFile(this.invalidationLogPath, JSON.stringify(invalidations, null, 2));
+      await fs.writeFile(
+        this.invalidationLogPath,
+        JSON.stringify(invalidations, null, 2)
+      );
     } catch (error) {
       console.warn('Failed to log invalidation:', error.message);
     }
@@ -65,14 +78,14 @@ class CacheInvalidationManager {
   optimizePaths(paths) {
     // Remove duplicates
     const uniquePaths = [...new Set(paths)];
-    
+
     // Sort paths to group similar ones
     uniquePaths.sort();
-    
+
     // Optimize by using wildcards where beneficial
     const optimized = [];
     const pathGroups = new Map();
-    
+
     // Group paths by directory
     uniquePaths.forEach(path => {
       const dir = path.substring(0, path.lastIndexOf('/') + 1);
@@ -81,7 +94,7 @@ class CacheInvalidationManager {
       }
       pathGroups.get(dir).push(path);
     });
-    
+
     // For directories with many files, use wildcard
     pathGroups.forEach((files, dir) => {
       if (files.length >= 5 && dir !== '/') {
@@ -90,7 +103,7 @@ class CacheInvalidationManager {
         optimized.push(...files);
       }
     });
-    
+
     return optimized.slice(0, this.maxPathsPerInvalidation);
   }
 
@@ -100,11 +113,11 @@ class CacheInvalidationManager {
     const freeTier = 1000;
     const firstTierRate = 0.005;
     const secondTierRate = 0.001;
-    
+
     if (pathCount <= freeTier) {
       return pathCount * firstTierRate;
     } else {
-      return (freeTier * firstTierRate) + ((pathCount - freeTier) * secondTierRate);
+      return freeTier * firstTierRate + (pathCount - freeTier) * secondTierRate;
     }
   }
 
@@ -112,86 +125,90 @@ class CacheInvalidationManager {
     try {
       const optimizedPaths = this.optimizePaths(paths);
       const estimatedCost = this.calculateCost(optimizedPaths.length);
-      
+
       console.log(`Creating invalidation for ${optimizedPaths.length} paths`);
       console.log(`Estimated cost: $${estimatedCost.toFixed(4)}`);
-      
+
       const params = {
         DistributionId: distributionId,
         InvalidationBatch: {
           Paths: {
             Quantity: optimizedPaths.length,
-            Items: optimizedPaths
+            Items: optimizedPaths,
           },
-          CallerReference: callerReference || `invalidation-${Date.now()}`
-        }
+          CallerReference: callerReference || `invalidation-${Date.now()}`,
+        },
       };
-      
+
       const result = await this.cloudfront.createInvalidation(params).promise();
-      
+
       await this.logInvalidation(
-        distributionId, 
-        optimizedPaths, 
-        result.Invalidation.Id, 
+        distributionId,
+        optimizedPaths,
+        result.Invalidation.Id,
         estimatedCost
       );
-      
+
       return {
         success: true,
         invalidationId: result.Invalidation.Id,
         pathCount: optimizedPaths.length,
         estimatedCost,
-        status: result.Invalidation.Status
+        status: result.Invalidation.Status,
       };
     } catch (error) {
       return {
         success: false,
-        error: error.message
+        error: error.message,
       };
     }
   }
 
   async getInvalidationStatus(distributionId, invalidationId) {
     try {
-      const result = await this.cloudfront.getInvalidation({
-        DistributionId: distributionId,
-        Id: invalidationId
-      }).promise();
-      
+      const result = await this.cloudfront
+        .getInvalidation({
+          DistributionId: distributionId,
+          Id: invalidationId,
+        })
+        .promise();
+
       return {
         success: true,
         status: result.Invalidation.Status,
         createTime: result.Invalidation.CreateTime,
-        paths: result.Invalidation.InvalidationBatch.Paths.Items
+        paths: result.Invalidation.InvalidationBatch.Paths.Items,
       };
     } catch (error) {
       return {
         success: false,
-        error: error.message
+        error: error.message,
       };
     }
   }
 
   async listInvalidations(distributionId, maxItems = 10) {
     try {
-      const result = await this.cloudfront.listInvalidations({
-        DistributionId: distributionId,
-        MaxItems: maxItems.toString()
-      }).promise();
-      
+      const result = await this.cloudfront
+        .listInvalidations({
+          DistributionId: distributionId,
+          MaxItems: maxItems.toString(),
+        })
+        .promise();
+
       return {
         success: true,
         invalidations: result.InvalidationList.Items.map(inv => ({
           id: inv.Id,
           status: inv.Status,
           createTime: inv.CreateTime,
-          pathCount: inv.InvalidationBatch.Paths.Quantity
-        }))
+          pathCount: inv.InvalidationBatch.Paths.Quantity,
+        })),
       };
     } catch (error) {
       return {
         success: false,
-        error: error.message
+        error: error.message,
       };
     }
   }
@@ -200,7 +217,7 @@ class CacheInvalidationManager {
     try {
       const logData = await fs.readFile(this.invalidationLogPath, 'utf8');
       const invalidations = JSON.parse(logData);
-      
+
       return invalidations
         .sort((a, b) => new Date(b.timestamp) - new Date(a.timestamp))
         .slice(0, 20);
@@ -211,8 +228,8 @@ class CacheInvalidationManager {
 
   async generateInvalidationReport() {
     console.log('📋 Cache Invalidation Management Report');
-    console.log('=' .repeat(50));
-    
+    console.log('='.repeat(50));
+
     const config = await this.loadConfig();
     if (!config) {
       console.log('❌ Unable to load deployment configuration');
@@ -222,14 +239,21 @@ class CacheInvalidationManager {
     // Current invalidations
     console.log('\n🔄 Active Invalidations');
     console.log('-'.repeat(25));
-    const activeInvalidations = await this.listInvalidations(config.distributionId, 5);
-    
+    const activeInvalidations = await this.listInvalidations(
+      config.distributionId,
+      5
+    );
+
     if (activeInvalidations.success) {
       if (activeInvalidations.invalidations.length > 0) {
         activeInvalidations.invalidations.forEach(inv => {
           const status = inv.status === 'Completed' ? '✅' : '⏳';
-          console.log(`   ${status} ${inv.id} - ${inv.pathCount} paths (${inv.status})`);
-          console.log(`      Created: ${new Date(inv.createTime).toLocaleString()}`);
+          console.log(
+            `   ${status} ${inv.id} - ${inv.pathCount} paths (${inv.status})`
+          );
+          console.log(
+            `      Created: ${new Date(inv.createTime).toLocaleString()}`
+          );
         });
       } else {
         console.log('   No active invalidations');
@@ -242,25 +266,29 @@ class CacheInvalidationManager {
     console.log('\n📊 Recent Invalidation History');
     console.log('-'.repeat(35));
     const history = await this.getInvalidationHistory();
-    
+
     if (history.length > 0) {
       let totalCost = 0;
       let totalPaths = 0;
-      
+
       history.slice(0, 10).forEach(inv => {
         totalCost += inv.estimatedCost || 0;
         totalPaths += inv.pathCount || 0;
-        
+
         console.log(`   📅 ${new Date(inv.timestamp).toLocaleDateString()}`);
-        console.log(`      Paths: ${inv.pathCount}, Cost: $${(inv.estimatedCost || 0).toFixed(4)}`);
+        console.log(
+          `      Paths: ${inv.pathCount}, Cost: $${(inv.estimatedCost || 0).toFixed(4)}`
+        );
         console.log(`      ID: ${inv.invalidationId}`);
       });
-      
+
       console.log('\n💰 Cost Summary (Recent History)');
       console.log('-'.repeat(30));
       console.log(`   Total Paths Invalidated: ${totalPaths.toLocaleString()}`);
       console.log(`   Estimated Total Cost: $${totalCost.toFixed(4)}`);
-      console.log(`   Average Cost per Invalidation: $${(totalCost / history.length).toFixed(4)}`);
+      console.log(
+        `   Average Cost per Invalidation: $${(totalCost / history.length).toFixed(4)}`
+      );
     } else {
       console.log('   No invalidation history found');
     }
@@ -268,32 +296,36 @@ class CacheInvalidationManager {
     // Optimization recommendations
     console.log('\n💡 Optimization Recommendations');
     console.log('-'.repeat(35));
-    
+
     if (history.length > 0) {
       const avgPathsPerInvalidation = totalPaths / history.length;
-      const recentInvalidations = history.filter(inv => 
-        new Date(inv.timestamp) > new Date(Date.now() - 7 * 24 * 60 * 60 * 1000)
+      const recentInvalidations = history.filter(
+        inv =>
+          new Date(inv.timestamp) >
+          new Date(Date.now() - 7 * 24 * 60 * 60 * 1000)
       );
-      
+
       if (avgPathsPerInvalidation > 100) {
         console.log('   ⚠️  High path count per invalidation detected');
         console.log('      Consider using wildcard patterns to reduce costs');
       }
-      
+
       if (recentInvalidations.length > 10) {
         console.log('   ⚠️  Frequent invalidations detected (>10 in 7 days)');
-        console.log('      Consider batching invalidations or adjusting cache TTL');
+        console.log(
+          '      Consider batching invalidations or adjusting cache TTL'
+        );
       }
-      
+
       if (totalCost > 5) {
         console.log('   ⚠️  High invalidation costs detected');
         console.log('      Review caching strategy and invalidation patterns');
       }
-      
+
       if (history.every(inv => inv.pathCount < 10)) {
         console.log('   ✅ Good: Small, targeted invalidations');
       }
-      
+
       if (recentInvalidations.length <= 5) {
         console.log('   ✅ Good: Reasonable invalidation frequency');
       }
@@ -314,7 +346,7 @@ class CacheInvalidationManager {
     }
 
     let paths = [];
-    
+
     switch (type) {
       case 'full':
         paths = ['/*'];
@@ -329,13 +361,15 @@ class CacheInvalidationManager {
         paths = ['/api/*'];
         break;
       default:
-        console.log('❌ Invalid invalidation type. Use: full, html, assets, or api');
+        console.log(
+          '❌ Invalid invalidation type. Use: full, html, assets, or api'
+        );
         return;
     }
 
     console.log(`🚀 Creating ${type} invalidation...`);
     const result = await this.createInvalidation(config.distributionId, paths);
-    
+
     if (result.success) {
       console.log(`✅ Invalidation created successfully`);
       console.log(`   ID: ${result.invalidationId}`);
@@ -365,29 +399,39 @@ if (require.main === module) {
       break;
     case 'status':
       if (!type) {
-        console.log('Usage: node cache-invalidation-manager.js status <invalidation-id>');
+        console.log(
+          'Usage: node cache-invalidation-manager.js status <invalidation-id>'
+        );
         process.exit(1);
       }
-      manager.loadConfig().then(config => {
-        if (config) {
-          return manager.getInvalidationStatus(config.distributionId, type);
-        }
-      }).then(result => {
-        if (result && result.success) {
-          console.log(`Status: ${result.status}`);
-          console.log(`Created: ${result.createTime}`);
-          console.log(`Paths: ${result.paths.length}`);
-        } else if (result) {
-          console.log(`Error: ${result.error}`);
-        }
-      }).catch(console.error);
+      manager
+        .loadConfig()
+        .then(config => {
+          if (config) {
+            return manager.getInvalidationStatus(config.distributionId, type);
+          }
+        })
+        .then(result => {
+          if (result && result.success) {
+            console.log(`Status: ${result.status}`);
+            console.log(`Created: ${result.createTime}`);
+            console.log(`Paths: ${result.paths.length}`);
+          } else if (result) {
+            console.log(`Error: ${result.error}`);
+          }
+        })
+        .catch(console.error);
       break;
     default:
       console.log('Cache Invalidation Manager');
       console.log('Usage:');
       console.log('  node cache-invalidation-manager.js report');
-      console.log('  node cache-invalidation-manager.js invalidate [full|html|assets|api]');
-      console.log('  node cache-invalidation-manager.js status <invalidation-id>');
+      console.log(
+        '  node cache-invalidation-manager.js invalidate [full|html|assets|api]'
+      );
+      console.log(
+        '  node cache-invalidation-manager.js status <invalidation-id>'
+      );
   }
 }
 

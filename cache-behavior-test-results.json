@@ -4,16 +4,7 @@
   "strategies": {
     "images": {
       "expected": {
-        "patterns": [
-          ".webp",
-          ".jpg",
-          ".jpeg",
-          ".png",
-          ".gif",
-          ".svg",
-          ".ico",
-          ".avif"
-        ],
+        "patterns": [".webp", ".jpg", ".jpeg", ".png", ".gif", ".svg", ".ico", ".avif"],
         "maxAge": 31536000,
         "cacheControl": "public, max-age=31536000, immutable",
         "description": "Long-term caching for images (1 year)",
@@ -278,9 +269,7 @@
     },
     "html": {
       "expected": {
-        "patterns": [
-          ".html"
-        ],
+        "patterns": [".html"],
         "maxAge": 300,
         "cacheControl": "public, max-age=300, must-revalidate",
         "description": "Short-term caching for HTML pages (5 minutes)",
@@ -391,14 +380,7 @@
     },
     "staticAssets": {
       "expected": {
-        "patterns": [
-          ".js",
-          ".css",
-          ".woff",
-          ".woff2",
-          ".ttf",
-          ".eot"
-        ],
+        "patterns": [".js", ".css", ".woff", ".woff2", ".ttf", ".eot"],
         "maxAge": 31536000,
         "cacheControl": "public, max-age=31536000, immutable",
         "description": "Long-term caching for static assets (1 year)",
@@ -684,9 +666,7 @@
     },
     "nextStatic": {
       "expected": {
-        "patterns": [
-          "/_next/static/"
-        ],
+        "patterns": ["/_next/static/"],
         "maxAge": 31536000,
         "cacheControl": "public, max-age=31536000, immutable",
         "description": "Long-term caching for Next.js static files (1 year)",
@@ -698,10 +678,7 @@
     },
     "serviceWorker": {
       "expected": {
-        "patterns": [
-          "/sw.js",
-          "/service-worker.js"
-        ],
+        "patterns": ["/sw.js", "/service-worker.js"],
         "maxAge": 0,
         "cacheControl": "no-cache, no-store, must-revalidate",
         "description": "No caching for service worker",
@@ -713,9 +690,7 @@
     },
     "json": {
       "expected": {
-        "patterns": [
-          ".json"
-        ],
+        "patterns": [".json"],
         "maxAge": 86400,
         "cacheControl": "public, max-age=86400",
         "description": "Medium-term caching for JSON files (1 day)",

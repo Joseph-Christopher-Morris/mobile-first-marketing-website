@@ -36,12 +36,17 @@ export function GeneralContactForm() {
       if (urlParams.get('success') === 'true') {
         setSubmissionResult({
           success: true,
-          message: "Thank you for your message! We'll get back to you within 24 hours.",
+          message:
+            "Thank you for your message! We'll get back to you within 24 hours.",
           submissionId: 'success_' + Date.now(),
         });
 
         // Clear the URL parameter
-        window.history.replaceState({}, document.title, window.location.pathname);
+        window.history.replaceState(
+          {},
+          document.title,
+          window.location.pathname
+        );
       }
     }
   }, []);
@@ -82,12 +87,18 @@ export function GeneralContactForm() {
     console.log('Form submission intercepted');
 
     // Basic validation
-    if (!formData.name || !formData.email || !formData.subject || !formData.message) {
+    if (
+      !formData.name ||
+      !formData.email ||
+      !formData.subject ||
+      !formData.message
+    ) {
       e.preventDefault();
       console.log('Validation failed - missing required fields');
       setSubmissionResult({
         success: false,
-        message: 'Please fill in all required fields (Name, Email, Subject, Message).',
+        message:
+          'Please fill in all required fields (Name, Email, Subject, Message).',
       });
       return;
     }
@@ -158,15 +169,23 @@ export function GeneralContactForm() {
 
       <form
         onSubmit={handleSubmit}
-        action="https://formspree.io/f/xovkngyr"
-        method="POST"
+        action='https://formspree.io/f/xovkngyr'
+        method='POST'
         className='space-y-6'
       >
         {/* Hidden inputs for Formspree */}
-        <input type="hidden" name="_subject" value="New Contact Form Submission from Website" />
-        <input type="hidden" name="_next" value="https://d15sc9fc739ev2.cloudfront.net/contact?success=true" />
-        <input type="hidden" name="_captcha" value="false" />
-        <input type="hidden" name="_template" value="table" />
+        <input
+          type='hidden'
+          name='_subject'
+          value='New Contact Form Submission from Website'
+        />
+        <input
+          type='hidden'
+          name='_next'
+          value='https://d15sc9fc739ev2.cloudfront.net/contact?success=true'
+        />
+        <input type='hidden' name='_captcha' value='false' />
+        <input type='hidden' name='_template' value='table' />
         {/* Personal Information */}
         <div className='grid grid-cols-1 md:grid-cols-2 gap-6'>
           <div>
@@ -182,8 +201,9 @@ export function GeneralContactForm() {
               name='name'
               value={formData.name}
               onChange={handleInputChange}
-              className={`w-full px-4 py-3 border rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition-colors text-gray-900 placeholder-gray-500 ${errors.name ? 'border-red-300' : 'border-gray-300'
-                }`}
+              className={`w-full px-4 py-3 border rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition-colors text-gray-900 placeholder-gray-500 ${
+                errors.name ? 'border-red-300' : 'border-gray-300'
+              }`}
               placeholder='Enter your full name'
               required
             />
@@ -205,8 +225,9 @@ export function GeneralContactForm() {
               name='email'
               value={formData.email}
               onChange={handleInputChange}
-              className={`w-full px-4 py-3 border rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition-colors text-gray-900 placeholder-gray-500 ${errors.email ? 'border-red-300' : 'border-gray-300'
-                }`}
+              className={`w-full px-4 py-3 border rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition-colors text-gray-900 placeholder-gray-500 ${
+                errors.email ? 'border-red-300' : 'border-gray-300'
+              }`}
               placeholder='Enter your email address'
               required
             />
@@ -292,8 +313,9 @@ export function GeneralContactForm() {
               name='subject'
               value={formData.subject}
               onChange={handleInputChange}
-              className={`w-full px-4 py-3 border rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition-colors text-gray-900 placeholder-gray-500 ${errors.subject ? 'border-red-300' : 'border-gray-300'
-                }`}
+              className={`w-full px-4 py-3 border rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition-colors text-gray-900 placeholder-gray-500 ${
+                errors.subject ? 'border-red-300' : 'border-gray-300'
+              }`}
               placeholder='Enter message subject'
               required
             />
@@ -316,8 +338,9 @@ export function GeneralContactForm() {
             rows={6}
             value={formData.message}
             onChange={handleInputChange}
-            className={`w-full px-4 py-3 border rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition-colors resize-vertical text-gray-900 placeholder-gray-500 ${errors.message ? 'border-red-300' : 'border-gray-300'
-              }`}
+            className={`w-full px-4 py-3 border rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition-colors resize-vertical text-gray-900 placeholder-gray-500 ${
+              errors.message ? 'border-red-300' : 'border-gray-300'
+            }`}
             placeholder='Tell us how we can help you...'
             required
           />
@@ -362,10 +385,11 @@ export function GeneralContactForm() {
           <button
             type='submit'
             disabled={isSubmitting}
-            className={`w-full px-6 py-4 bg-blue-600 text-white font-semibold rounded-lg transition-colors focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 min-h-[56px] ${isSubmitting
-              ? 'opacity-50 cursor-not-allowed'
-              : 'hover:bg-blue-700'
-              }`}
+            className={`w-full px-6 py-4 bg-blue-600 text-white font-semibold rounded-lg transition-colors focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 min-h-[56px] ${
+              isSubmitting
+                ? 'opacity-50 cursor-not-allowed'
+                : 'hover:bg-blue-700'
+            }`}
           >
             {isSubmitting ? (
               <span className='flex items-center justify-center'>

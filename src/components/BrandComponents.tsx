@@ -8,7 +8,13 @@ export const PrimaryButton: React.FC<{
   disabled?: boolean;
   type?: 'button' | 'submit' | 'reset';
   className?: string;
-}> = ({ children, onClick, disabled = false, type = 'button', className = '' }) => (
+}> = ({
+  children,
+  onClick,
+  disabled = false,
+  type = 'button',
+  className = '',
+}) => (
   <button
     type={type}
     onClick={onClick}
@@ -25,14 +31,15 @@ export const PrimaryButton: React.FC<{
       transition: 'all 0.2s ease-in-out',
       opacity: disabled ? 0.6 : 1,
     }}
-    onMouseEnter={(e) => {
+    onMouseEnter={e => {
       if (!disabled) {
         e.currentTarget.style.backgroundColor = '#C8094C';
         e.currentTarget.style.transform = 'translateY(-2px)';
-        e.currentTarget.style.boxShadow = '0 10px 15px -3px rgba(245, 39, 111, 0.3)';
+        e.currentTarget.style.boxShadow =
+          '0 10px 15px -3px rgba(245, 39, 111, 0.3)';
       }
     }}
-    onMouseLeave={(e) => {
+    onMouseLeave={e => {
       if (!disabled) {
         e.currentTarget.style.backgroundColor = '#F5276F';
         e.currentTarget.style.transform = 'translateY(0)';
@@ -50,7 +57,13 @@ export const SecondaryButton: React.FC<{
   disabled?: boolean;
   type?: 'button' | 'submit' | 'reset';
   className?: string;
-}> = ({ children, onClick, disabled = false, type = 'button', className = '' }) => (
+}> = ({
+  children,
+  onClick,
+  disabled = false,
+  type = 'button',
+  className = '',
+}) => (
   <button
     type={type}
     onClick={onClick}
@@ -67,14 +80,14 @@ export const SecondaryButton: React.FC<{
       transition: 'all 0.2s ease-in-out',
       opacity: disabled ? 0.6 : 1,
     }}
-    onMouseEnter={(e) => {
+    onMouseEnter={e => {
       if (!disabled) {
         e.currentTarget.style.backgroundColor = '#F5276F';
         e.currentTarget.style.color = '#FFFFFF';
         e.currentTarget.style.transform = 'translateY(-2px)';
       }
     }}
-    onMouseLeave={(e) => {
+    onMouseLeave={e => {
       if (!disabled) {
         e.currentTarget.style.backgroundColor = 'transparent';
         e.currentTarget.style.color = '#F5276F';
@@ -103,11 +116,11 @@ export const BrandLink: React.FC<{
       textDecoration: 'none',
       transition: 'color 0.2s ease-in-out',
     }}
-    onMouseEnter={(e) => {
+    onMouseEnter={e => {
       e.currentTarget.style.color = '#C8094C';
       e.currentTarget.style.textDecoration = 'underline';
     }}
-    onMouseLeave={(e) => {
+    onMouseLeave={e => {
       e.currentTarget.style.color = '#F5276F';
       e.currentTarget.style.textDecoration = 'none';
     }}
@@ -155,13 +168,13 @@ export const BrandCard: React.FC<{
       transition: hover ? 'all 0.2s ease-in-out' : 'none',
       cursor: hover ? 'pointer' : 'default',
     }}
-    onMouseEnter={(e) => {
+    onMouseEnter={e => {
       if (hover) {
         e.currentTarget.style.transform = 'translateY(-4px)';
         e.currentTarget.style.boxShadow = '0 20px 25px -5px rgba(0, 0, 0, 0.1)';
       }
     }}
-    onMouseLeave={(e) => {
+    onMouseLeave={e => {
       if (hover) {
         e.currentTarget.style.transform = 'translateY(0)';
         e.currentTarget.style.boxShadow = '0 4px 6px -1px rgba(0, 0, 0, 0.1)';
@@ -180,7 +193,14 @@ export const BrandInput: React.FC<{
   onChange?: (e: React.ChangeEvent<HTMLInputElement>) => void;
   className?: string;
   required?: boolean;
-}> = ({ type = 'text', placeholder, value, onChange, className = '', required = false }) => (
+}> = ({
+  type = 'text',
+  placeholder,
+  value,
+  onChange,
+  className = '',
+  required = false,
+}) => (
   <input
     type={type}
     placeholder={placeholder}
@@ -196,12 +216,12 @@ export const BrandInput: React.FC<{
       fontSize: '16px',
       transition: 'all 0.2s ease-in-out',
     }}
-    onFocus={(e) => {
+    onFocus={e => {
       e.currentTarget.style.borderColor = '#F5276F';
       e.currentTarget.style.boxShadow = '0 0 0 3px rgba(245, 39, 111, 0.1)';
       e.currentTarget.style.outline = 'none';
     }}
-    onBlur={(e) => {
+    onBlur={e => {
       e.currentTarget.style.borderColor = '#E5E7EB';
       e.currentTarget.style.boxShadow = 'none';
     }}
@@ -216,7 +236,14 @@ export const BrandTextarea: React.FC<{
   className?: string;
   rows?: number;
   required?: boolean;
-}> = ({ placeholder, value, onChange, className = '', rows = 4, required = false }) => (
+}> = ({
+  placeholder,
+  value,
+  onChange,
+  className = '',
+  rows = 4,
+  required = false,
+}) => (
   <textarea
     placeholder={placeholder}
     value={value}
@@ -233,12 +260,12 @@ export const BrandTextarea: React.FC<{
       transition: 'all 0.2s ease-in-out',
       resize: 'vertical',
     }}
-    onFocus={(e) => {
+    onFocus={e => {
       e.currentTarget.style.borderColor = '#F5276F';
       e.currentTarget.style.boxShadow = '0 0 0 3px rgba(245, 39, 111, 0.1)';
       e.currentTarget.style.outline = 'none';
     }}
-    onBlur={(e) => {
+    onBlur={e => {
       e.currentTarget.style.borderColor = '#E5E7EB';
       e.currentTarget.style.boxShadow = 'none';
     }}
@@ -365,11 +392,11 @@ export const BrandNavLink: React.FC<{
       transition: 'all 0.2s ease-in-out',
       backgroundColor: active ? 'rgba(245, 39, 111, 0.1)' : 'transparent',
     }}
-    onMouseEnter={(e) => {
+    onMouseEnter={e => {
       e.currentTarget.style.color = '#F5276F';
       e.currentTarget.style.backgroundColor = 'rgba(245, 39, 111, 0.1)';
     }}
-    onMouseLeave={(e) => {
+    onMouseLeave={e => {
       if (!active) {
         e.currentTarget.style.color = '#374151';
         e.currentTarget.style.backgroundColor = 'transparent';

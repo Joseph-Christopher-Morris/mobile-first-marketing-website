@@ -2,12 +2,12 @@
 
 /**
  * Production Infrastructure Setup Script
- * 
+ *
  * This script sets up production infrastructure for S3 + CloudFront deployment:
  * - Deploy S3 bucket and CloudFront distribution to production
  * - Configure custom domain and SSL certificate
  * - Validate all security configurations
- * 
+ *
  * Requirements addressed:
  * - 1.1: Create S3 bucket configured for static website hosting
  * - 2.1: CloudFront distribution with private S3 origin
@@ -15,30 +15,30 @@
  * - 7.2: Security configurations
  */
 
-const { 
-  S3Client, 
-  CreateBucketCommand, 
+const {
+  S3Client,
+  CreateBucketCommand,
   PutBucketVersioningCommand,
-  PutBucketEncryptionCommand, 
+  PutBucketEncryptionCommand,
   PutPublicAccessBlockCommand,
-  PutBucketPolicyCommand, 
+  PutBucketPolicyCommand,
   HeadBucketCommand,
-  GetBucketLocationCommand 
+  GetBucketLocationCommand,
 } = require('@aws-sdk/client-s3');
 
-const { 
-  CloudFrontClient, 
+const {
+  CloudFrontClient,
   CreateDistributionCommand,
   CreateOriginAccessControlCommand,
   ListOriginAccessControlsCommand,
-  GetDistributionCommand
+  GetDistributionCommand,
 } = require('@aws-sdk/client-cloudfront');
 
-const { 
-  ACMClient, 
+const {
+  ACMClient,
   RequestCertificateCommand,
   DescribeCertificateCommand,
-  ListCertificatesCommand
+  ListCertificatesCommand,
 } = require('@aws-sdk/client-acm');
 
 const { STSClient, GetCallerIdentityCommand } = require('@aws-sdk/client-sts');
@@ -50,25 +50,28 @@ class ProductionInfrastructureSetup {
     this.region = process.env.AWS_REGION || 'us-east-1';
     this.environment = 'production';
     this.customDomain = options.customDomain || process.env.CUSTOM_DOMAIN;
-    this.bucketName = options.bucketName || process.env.S3_BUCKET_NAME || this.generateBucketName();
+    this.bucketName =
+      options.bucketName ||
+      process.env.S3_BUCKET_NAME ||
+      this.generateBucketName();
     this.certificateArn = options.certificateArn || process.env.CERTIFICATE_ARN;
-    
+
     this.s3Client = new S3Client({ region: this.region });
     this.cloudFrontClient = new CloudFrontClient({ region: 'us-east-1' }); // CloudFront is global
     this.acmClient = new ACMClient({ region: 'us-east-1' }); // ACM for CloudFront must be us-east-1
     this.stsClient = new STSClient({ region: this.region });
-    
+
     this.accountId = null;
     this.distributionId = null;
     this.oacId = null;
     this.certificateArn = null;
-    
+
     this.config = {
       version: '1.0',
       environment: this.environment,
       createdAt: new Date().toISOString(),
       region: this.region,
-      customDomain: this.customDomain
+      customDomain: this.customDomain,
     };
   }
 
@@ -95,9 +98,11 @@ class ProductionInfrastructureSetup {
    */
   async getAccountId() {
     if (this.accountId) return this.accountId;
-    
+
     try {
-      const result = await this.stsClient.send(new GetCallerIdentityCommand({}));
+      const result = await this.stsClient.send(
+        new GetCallerIdentityCommand({})
+      );
       this.accountId = result.Account;
       return this.accountId;
     } catch (error) {
@@ -111,29 +116,43 @@ class ProductionInfrastructureSetup {
    */
   async validateProductionEnvironment() {
     this.log('🔍 Validating production environment and credentials...', 'info');
-    
+
     try {
       // Validate AWS credentials
       await this.getAccountId();
-      this.log(`✅ AWS credentials valid for account: ${this.accountId}`, 'success');
-      
+      this.log(
+        `✅ AWS credentials valid for account: ${this.accountId}`,
+        'success'
+      );
+
       // Validate required environment variables
       const requiredEnvVars = ['AWS_REGION'];
-      const missingVars = requiredEnvVars.filter(varName => !process.env[varName]);
-      
+      const missingVars = requiredEnvVars.filter(
+        varName => !process.env[varName]
+      );
+
       if (missingVars.length > 0) {
-        this.log(`⚠️  Missing environment variables: ${missingVars.join(', ')}`, 'warning');
+        this.log(
+          `⚠️  Missing environment variables: ${missingVars.join(', ')}`,
+          'warning'
+        );
       }
-      
+
       // Validate production readiness
       if (!this.customDomain) {
-        this.log('⚠️  Custom domain not configured. SSL certificate setup will be skipped.', 'warning');
+        this.log(
+          '⚠️  Custom domain not configured. SSL certificate setup will be skipped.',
+          'warning'
+        );
       }
-      
+
       this.log('✅ Production environment validation completed', 'success');
       return true;
     } catch (error) {
-      this.log(`❌ Production environment validation failed: ${error.message}`, 'error');
+      this.log(
+        `❌ Production environment validation failed: ${error.message}`,
+        'error'
+      );
       throw error;
     }
   }
@@ -143,7 +162,9 @@ class ProductionInfrastructureSetup {
    */
   async bucketExists() {
     try {
-      await this.s3Client.send(new HeadBucketCommand({ Bucket: this.bucketName }));
+      await this.s3Client.send(
+        new HeadBucketCommand({ Bucket: this.bucketName })
+      );
       return true;
     } catch (error) {
       if (error.name === 'NotFound' || error.name === 'NoSuchBucket') {
@@ -158,66 +179,75 @@ class ProductionInfrastructureSetup {
    */
   async setupProductionS3Bucket() {
     this.log(`📦 Setting up production S3 bucket: ${this.bucketName}`, 'info');
-    
+
     try {
       // Check if bucket exists
       const exists = await this.bucketExists();
-      
+
       if (!exists) {
         // Create bucket with production configuration
         const createBucketParams = {
           Bucket: this.bucketName,
-          ObjectOwnership: 'BucketOwnerEnforced'
+          ObjectOwnership: 'BucketOwnerEnforced',
         };
 
         // Add LocationConstraint for regions other than us-east-1
         if (this.region !== 'us-east-1') {
           createBucketParams.CreateBucketConfiguration = {
-            LocationConstraint: this.region
+            LocationConstraint: this.region,
           };
         }
 
         await this.s3Client.send(new CreateBucketCommand(createBucketParams));
         this.log('✅ Production S3 bucket created successfully', 'success');
       } else {
-        this.log('✅ Production S3 bucket already exists, updating configuration...', 'info');
+        this.log(
+          '✅ Production S3 bucket already exists, updating configuration...',
+          'info'
+        );
       }
 
       // Block ALL public access (critical for production)
-      await this.s3Client.send(new PutPublicAccessBlockCommand({
-        Bucket: this.bucketName,
-        PublicAccessBlockConfiguration: {
-          BlockPublicAcls: true,
-          IgnorePublicAcls: true,
-          BlockPublicPolicy: true,
-          RestrictPublicBuckets: true
-        }
-      }));
+      await this.s3Client.send(
+        new PutPublicAccessBlockCommand({
+          Bucket: this.bucketName,
+          PublicAccessBlockConfiguration: {
+            BlockPublicAcls: true,
+            IgnorePublicAcls: true,
+            BlockPublicPolicy: true,
+            RestrictPublicBuckets: true,
+          },
+        })
+      );
       this.log('✅ All public access blocked (production security)', 'success');
 
       // Enable versioning for production
-      await this.s3Client.send(new PutBucketVersioningCommand({
-        Bucket: this.bucketName,
-        VersioningConfiguration: {
-          Status: 'Enabled'
-        }
-      }));
+      await this.s3Client.send(
+        new PutBucketVersioningCommand({
+          Bucket: this.bucketName,
+          VersioningConfiguration: {
+            Status: 'Enabled',
+          },
+        })
+      );
       this.log('✅ Versioning enabled for production', 'success');
 
       // Enable server-side encryption with AES256
-      await this.s3Client.send(new PutBucketEncryptionCommand({
-        Bucket: this.bucketName,
-        ServerSideEncryptionConfiguration: {
-          Rules: [
-            {
-              ApplyServerSideEncryptionByDefault: {
-                SSEAlgorithm: 'AES256'
+      await this.s3Client.send(
+        new PutBucketEncryptionCommand({
+          Bucket: this.bucketName,
+          ServerSideEncryptionConfiguration: {
+            Rules: [
+              {
+                ApplyServerSideEncryptionByDefault: {
+                  SSEAlgorithm: 'AES256',
+                },
+                BucketKeyEnabled: true,
               },
-              BucketKeyEnabled: true
-            }
-          ]
-        }
-      }));
+            ],
+          },
+        })
+      );
       this.log('✅ Server-side encryption enabled (AES256)', 'success');
 
       this.config.s3 = {
@@ -226,12 +256,15 @@ class ProductionInfrastructureSetup {
         versioning: 'Enabled',
         encryption: 'AES256',
         publicAccess: 'Blocked',
-        objectOwnership: 'BucketOwnerEnforced'
+        objectOwnership: 'BucketOwnerEnforced',
       };
 
       return true;
     } catch (error) {
-      this.log(`❌ Production S3 bucket setup failed: ${error.message}`, 'error');
+      this.log(
+        `❌ Production S3 bucket setup failed: ${error.message}`,
+        'error'
+      );
       throw error;
     }
   }
@@ -241,61 +274,91 @@ class ProductionInfrastructureSetup {
    */
   async setupSSLCertificate() {
     if (!this.customDomain) {
-      this.log('⚠️  No custom domain configured, skipping SSL certificate setup', 'warning');
+      this.log(
+        '⚠️  No custom domain configured, skipping SSL certificate setup',
+        'warning'
+      );
       return null;
     }
 
-    this.log(`🔒 Setting up SSL certificate for domain: ${this.customDomain}`, 'info');
-    
+    this.log(
+      `🔒 Setting up SSL certificate for domain: ${this.customDomain}`,
+      'info'
+    );
+
     try {
       // Check for existing certificate
-      const listResult = await this.acmClient.send(new ListCertificatesCommand({
-        CertificateStatuses: ['ISSUED', 'PENDING_VALIDATION']
-      }));
-      
-      const existingCert = listResult.CertificateSummaryList?.find(cert => 
-        cert.DomainName === this.customDomain || 
-        cert.SubjectAlternativeNameSummary?.includes(this.customDomain)
+      const listResult = await this.acmClient.send(
+        new ListCertificatesCommand({
+          CertificateStatuses: ['ISSUED', 'PENDING_VALIDATION'],
+        })
       );
-      
+
+      const existingCert = listResult.CertificateSummaryList?.find(
+        cert =>
+          cert.DomainName === this.customDomain ||
+          cert.SubjectAlternativeNameSummary?.includes(this.customDomain)
+      );
+
       if (existingCert) {
         this.certificateArn = existingCert.CertificateArn;
-        this.log(`✅ Found existing SSL certificate: ${this.certificateArn}`, 'success');
-        
+        this.log(
+          `✅ Found existing SSL certificate: ${this.certificateArn}`,
+          'success'
+        );
+
         // Check certificate status
-        const certDetails = await this.acmClient.send(new DescribeCertificateCommand({
-          CertificateArn: this.certificateArn
-        }));
-        
+        const certDetails = await this.acmClient.send(
+          new DescribeCertificateCommand({
+            CertificateArn: this.certificateArn,
+          })
+        );
+
         if (certDetails.Certificate.Status === 'ISSUED') {
           this.log('✅ SSL certificate is issued and ready', 'success');
         } else {
-          this.log(`⚠️  SSL certificate status: ${certDetails.Certificate.Status}`, 'warning');
+          this.log(
+            `⚠️  SSL certificate status: ${certDetails.Certificate.Status}`,
+            'warning'
+          );
           this.log('💡 You may need to complete domain validation', 'info');
         }
-        
+
         return this.certificateArn;
       }
 
       // Request new certificate
-      this.log(`📋 Requesting new SSL certificate for ${this.customDomain}`, 'info');
-      
-      const requestResult = await this.acmClient.send(new RequestCertificateCommand({
-        DomainName: this.customDomain,
-        SubjectAlternativeNames: [`www.${this.customDomain}`],
-        ValidationMethod: 'DNS',
-        KeyAlgorithm: 'RSA_2048'
-      }));
-      
+      this.log(
+        `📋 Requesting new SSL certificate for ${this.customDomain}`,
+        'info'
+      );
+
+      const requestResult = await this.acmClient.send(
+        new RequestCertificateCommand({
+          DomainName: this.customDomain,
+          SubjectAlternativeNames: [`www.${this.customDomain}`],
+          ValidationMethod: 'DNS',
+          KeyAlgorithm: 'RSA_2048',
+        })
+      );
+
       this.certificateArn = requestResult.CertificateArn;
-      this.log(`✅ SSL certificate requested: ${this.certificateArn}`, 'success');
-      this.log('💡 You need to complete DNS validation to activate the certificate', 'info');
-      
+      this.log(
+        `✅ SSL certificate requested: ${this.certificateArn}`,
+        'success'
+      );
+      this.log(
+        '💡 You need to complete DNS validation to activate the certificate',
+        'info'
+      );
+
       // Get validation records
-      const certDetails = await this.acmClient.send(new DescribeCertificateCommand({
-        CertificateArn: this.certificateArn
-      }));
-      
+      const certDetails = await this.acmClient.send(
+        new DescribeCertificateCommand({
+          CertificateArn: this.certificateArn,
+        })
+      );
+
       if (certDetails.Certificate.DomainValidationOptions) {
         this.log('📋 DNS validation records needed:', 'info');
         certDetails.Certificate.DomainValidationOptions.forEach(option => {
@@ -308,14 +371,14 @@ class ProductionInfrastructureSetup {
           }
         });
       }
-      
+
       this.config.ssl = {
         certificateArn: this.certificateArn,
         domain: this.customDomain,
         status: 'PENDING_VALIDATION',
-        validationMethod: 'DNS'
+        validationMethod: 'DNS',
       };
-      
+
       return this.certificateArn;
     } catch (error) {
       this.log(`❌ SSL certificate setup failed: ${error.message}`, 'error');
@@ -327,17 +390,22 @@ class ProductionInfrastructureSetup {
    * Create or find existing Origin Access Control
    */
   async setupOriginAccessControl() {
-    this.log('🔐 Setting up Origin Access Control (OAC) for production...', 'info');
-    
+    this.log(
+      '🔐 Setting up Origin Access Control (OAC) for production...',
+      'info'
+    );
+
     const oacName = `${this.bucketName}-oac-prod`;
-    
+
     try {
       // Check if OAC already exists
-      const listResult = await this.cloudFrontClient.send(new ListOriginAccessControlsCommand({}));
+      const listResult = await this.cloudFrontClient.send(
+        new ListOriginAccessControlsCommand({})
+      );
       const existingOAC = listResult.OriginAccessControlList?.Items?.find(
         oac => oac.Name === oacName
       );
-      
+
       if (existingOAC) {
         this.log('✅ Origin Access Control already exists', 'success');
         this.oacId = existingOAC.Id;
@@ -353,20 +421,26 @@ class ProductionInfrastructureSetup {
           Description: `Production OAC for secure access to ${this.bucketName}`,
           SigningBehavior: 'always',
           SigningProtocol: 'sigv4',
-          OriginAccessControlOriginType: 's3'
-        }
+          OriginAccessControlOriginType: 's3',
+        },
       };
 
       const result = await this.cloudFrontClient.send(
         new CreateOriginAccessControlCommand(oacConfig)
       );
-      
+
       this.oacId = result.OriginAccessControl.Id;
-      this.log(`✅ Production Origin Access Control created: ${this.oacId}`, 'success');
-      
+      this.log(
+        `✅ Production Origin Access Control created: ${this.oacId}`,
+        'success'
+      );
+
       return result.OriginAccessControl;
     } catch (error) {
-      this.log(`❌ Origin Access Control setup failed: ${error.message}`, 'error');
+      this.log(
+        `❌ Origin Access Control setup failed: ${error.message}`,
+        'error'
+      );
       throw error;
     }
   }
@@ -376,11 +450,11 @@ class ProductionInfrastructureSetup {
    */
   async setupProductionCloudFrontDistribution() {
     this.log('☁️ Setting up production CloudFront distribution...', 'info');
-    
+
     try {
       const bucketRegion = await this.getBucketRegion();
       const originDomainName = `${this.bucketName}.s3.${bucketRegion}.amazonaws.com`;
-      
+
       const distributionConfig = {
         CallerReference: `${this.bucketName}-prod-${Date.now()}`,
         Comment: `Production S3 + CloudFront distribution for ${this.bucketName}`,
@@ -389,24 +463,28 @@ class ProductionInfrastructureSetup {
         HttpVersion: 'http2and3',
         IsIPV6Enabled: true,
         DefaultRootObject: 'index.html',
-        
+
         // Custom domain configuration
-        Aliases: this.customDomain ? {
-          Quantity: 2,
-          Items: [this.customDomain, `www.${this.customDomain}`]
-        } : { Quantity: 0, Items: [] },
-        
+        Aliases: this.customDomain
+          ? {
+              Quantity: 2,
+              Items: [this.customDomain, `www.${this.customDomain}`],
+            }
+          : { Quantity: 0, Items: [] },
+
         // SSL certificate configuration
-        ViewerCertificate: this.certificateArn ? {
-          ACMCertificateArn: this.certificateArn,
-          SSLSupportMethod: 'sni-only',
-          MinimumProtocolVersion: 'TLSv1.2_2021',
-          CertificateSource: 'acm'
-        } : {
-          CloudFrontDefaultCertificate: true,
-          MinimumProtocolVersion: 'TLSv1.2_2021'
-        },
-        
+        ViewerCertificate: this.certificateArn
+          ? {
+              ACMCertificateArn: this.certificateArn,
+              SSLSupportMethod: 'sni-only',
+              MinimumProtocolVersion: 'TLSv1.2_2021',
+              CertificateSource: 'acm',
+            }
+          : {
+              CloudFrontDefaultCertificate: true,
+              MinimumProtocolVersion: 'TLSv1.2_2021',
+            },
+
         Origins: {
           Quantity: 1,
           Items: [
@@ -414,13 +492,13 @@ class ProductionInfrastructureSetup {
               Id: 's3-origin-prod',
               DomainName: originDomainName,
               S3OriginConfig: {
-                OriginAccessIdentity: '' // Empty for OAC
+                OriginAccessIdentity: '', // Empty for OAC
               },
               OriginAccessControlId: this.oacId,
               ConnectionAttempts: 3,
-              ConnectionTimeout: 10
-            }
-          ]
+              ConnectionTimeout: 10,
+            },
+          ],
         },
 
         DefaultCacheBehavior: {
@@ -431,15 +509,15 @@ class ProductionInfrastructureSetup {
             Items: ['GET', 'HEAD', 'OPTIONS'],
             CachedMethods: {
               Quantity: 2,
-              Items: ['GET', 'HEAD']
-            }
+              Items: ['GET', 'HEAD'],
+            },
           },
           Compress: true,
           CachePolicyId: '4135ea2d-6df8-44a3-9df3-4b5a84be39ad', // Managed-CachingDisabled for HTML
           OriginRequestPolicyId: '88a5eaf4-2fd4-4709-b370-b4c650ea3fcf', // Managed-CORS-S3Origin
           ResponseHeadersPolicyId: '67f7725c-6f97-4210-82d7-5512b31e9d03', // Managed-SecurityHeadersPolicy
           SmoothStreaming: false,
-          FieldLevelEncryptionId: ''
+          FieldLevelEncryptionId: '',
         },
 
         CacheBehaviors: {
@@ -452,12 +530,12 @@ class ProductionInfrastructureSetup {
               ViewerProtocolPolicy: 'redirect-to-https',
               AllowedMethods: {
                 Quantity: 2,
-                Items: ['GET', 'HEAD']
+                Items: ['GET', 'HEAD'],
               },
               Compress: true,
               CachePolicyId: '658327ea-f89d-4fab-a63d-7e88639e58f6', // Managed-CachingOptimized
               OriginRequestPolicyId: '88a5eaf4-2fd4-4709-b370-b4c650ea3fcf',
-              ResponseHeadersPolicyId: '67f7725c-6f97-4210-82d7-5512b31e9d03'
+              ResponseHeadersPolicyId: '67f7725c-6f97-4210-82d7-5512b31e9d03',
             },
             // Images - long cache with optimization
             {
@@ -466,12 +544,12 @@ class ProductionInfrastructureSetup {
               ViewerProtocolPolicy: 'redirect-to-https',
               AllowedMethods: {
                 Quantity: 2,
-                Items: ['GET', 'HEAD']
+                Items: ['GET', 'HEAD'],
               },
               Compress: true,
               CachePolicyId: '658327ea-f89d-4fab-a63d-7e88639e58f6', // Managed-CachingOptimized
               OriginRequestPolicyId: '88a5eaf4-2fd4-4709-b370-b4c650ea3fcf',
-              ResponseHeadersPolicyId: '67f7725c-6f97-4210-82d7-5512b31e9d03'
+              ResponseHeadersPolicyId: '67f7725c-6f97-4210-82d7-5512b31e9d03',
             },
             // Service worker - no cache
             {
@@ -480,14 +558,14 @@ class ProductionInfrastructureSetup {
               ViewerProtocolPolicy: 'redirect-to-https',
               AllowedMethods: {
                 Quantity: 3,
-                Items: ['GET', 'HEAD', 'OPTIONS']
+                Items: ['GET', 'HEAD', 'OPTIONS'],
               },
               Compress: true,
               CachePolicyId: '4135ea2d-6df8-44a3-9df3-4b5a84be39ad', // Managed-CachingDisabled
               OriginRequestPolicyId: '88a5eaf4-2fd4-4709-b370-b4c650ea3fcf',
-              ResponseHeadersPolicyId: '67f7725c-6f97-4210-82d7-5512b31e9d03'
-            }
-          ]
+              ResponseHeadersPolicyId: '67f7725c-6f97-4210-82d7-5512b31e9d03',
+            },
+          ],
         },
 
         CustomErrorResponses: {
@@ -497,51 +575,57 @@ class ProductionInfrastructureSetup {
               ErrorCode: 404,
               ResponsePagePath: '/index.html',
               ResponseCode: '200',
-              ErrorCachingMinTTL: 300
+              ErrorCachingMinTTL: 300,
             },
             {
               ErrorCode: 403,
               ResponsePagePath: '/index.html',
               ResponseCode: '200',
-              ErrorCachingMinTTL: 300
+              ErrorCachingMinTTL: 300,
             },
             {
               ErrorCode: 500,
               ResponsePagePath: '/index.html',
               ResponseCode: '200',
-              ErrorCachingMinTTL: 60
-            }
-          ]
+              ErrorCachingMinTTL: 60,
+            },
+          ],
         },
 
         Logging: {
           Enabled: false,
           IncludeCookies: false,
           Bucket: '',
-          Prefix: ''
+          Prefix: '',
         },
 
-        WebACLId: '' // Can be configured later for WAF
+        WebACLId: '', // Can be configured later for WAF
       };
 
       const result = await this.cloudFrontClient.send(
         new CreateDistributionCommand({
-          DistributionConfig: distributionConfig
+          DistributionConfig: distributionConfig,
         })
       );
-      
+
       const distribution = result.Distribution;
       this.distributionId = distribution.Id;
-      
-      this.log(`✅ Production CloudFront distribution created: ${this.distributionId}`, 'success');
+
+      this.log(
+        `✅ Production CloudFront distribution created: ${this.distributionId}`,
+        'success'
+      );
       this.log(`   Domain Name: ${distribution.DomainName}`, 'info');
       this.log(`   Status: ${distribution.Status}`, 'info');
-      
+
       if (this.customDomain) {
         this.log(`   Custom Domain: ${this.customDomain}`, 'info');
-        this.log(`   SSL Certificate: ${this.certificateArn ? 'Configured' : 'Not configured'}`, 'info');
+        this.log(
+          `   SSL Certificate: ${this.certificateArn ? 'Configured' : 'Not configured'}`,
+          'info'
+        );
       }
-      
+
       this.config.cloudfront = {
         distributionId: this.distributionId,
         domainName: distribution.DomainName,
@@ -551,12 +635,15 @@ class ProductionInfrastructureSetup {
         httpVersion: 'http2and3',
         ipv6Enabled: true,
         customDomain: this.customDomain,
-        certificateArn: this.certificateArn
+        certificateArn: this.certificateArn,
       };
-      
+
       return distribution;
     } catch (error) {
-      this.log(`❌ Production CloudFront distribution setup failed: ${error.message}`, 'error');
+      this.log(
+        `❌ Production CloudFront distribution setup failed: ${error.message}`,
+        'error'
+      );
       throw error;
     }
   }
@@ -571,7 +658,10 @@ class ProductionInfrastructureSetup {
       );
       return result.LocationConstraint || 'us-east-1';
     } catch (error) {
-      this.log(`Could not determine bucket region, using ${this.region}: ${error.message}`, 'warning');
+      this.log(
+        `Could not determine bucket region, using ${this.region}: ${error.message}`,
+        'warning'
+      );
       return this.region;
     }
   }
@@ -580,11 +670,14 @@ class ProductionInfrastructureSetup {
    * Update S3 bucket policy for production CloudFront access
    */
   async updateProductionS3BucketPolicy() {
-    this.log('🔒 Updating production S3 bucket policy for CloudFront access...', 'info');
-    
+    this.log(
+      '🔒 Updating production S3 bucket policy for CloudFront access...',
+      'info'
+    );
+
     try {
       const accountId = await this.getAccountId();
-      
+
       const bucketPolicy = {
         Version: '2012-10-17',
         Statement: [
@@ -592,39 +685,47 @@ class ProductionInfrastructureSetup {
             Sid: 'AllowCloudFrontServicePrincipalProd',
             Effect: 'Allow',
             Principal: {
-              Service: 'cloudfront.amazonaws.com'
+              Service: 'cloudfront.amazonaws.com',
             },
             Action: 's3:GetObject',
             Resource: `arn:aws:s3:::${this.bucketName}/*`,
             Condition: {
               StringEquals: {
-                'AWS:SourceArn': `arn:aws:cloudfront::${accountId}:distribution/${this.distributionId}`
-              }
-            }
+                'AWS:SourceArn': `arn:aws:cloudfront::${accountId}:distribution/${this.distributionId}`,
+              },
+            },
           },
           {
             Sid: 'AllowOwnerFullAccess',
             Effect: 'Allow',
             Principal: {
-              AWS: `arn:aws:iam::${accountId}:root`
+              AWS: `arn:aws:iam::${accountId}:root`,
             },
             Action: 's3:*',
             Resource: [
               `arn:aws:s3:::${this.bucketName}`,
-              `arn:aws:s3:::${this.bucketName}/*`
-            ]
-          }
-        ]
+              `arn:aws:s3:::${this.bucketName}/*`,
+            ],
+          },
+        ],
       };
 
-      await this.s3Client.send(new PutBucketPolicyCommand({
-        Bucket: this.bucketName,
-        Policy: JSON.stringify(bucketPolicy)
-      }));
-      
-      this.log('✅ Production S3 bucket policy updated with enhanced security', 'success');
+      await this.s3Client.send(
+        new PutBucketPolicyCommand({
+          Bucket: this.bucketName,
+          Policy: JSON.stringify(bucketPolicy),
+        })
+      );
+
+      this.log(
+        '✅ Production S3 bucket policy updated with enhanced security',
+        'success'
+      );
     } catch (error) {
-      this.log(`❌ Failed to update production S3 bucket policy: ${error.message}`, 'error');
+      this.log(
+        `❌ Failed to update production S3 bucket policy: ${error.message}`,
+        'error'
+      );
       throw error;
     }
   }
@@ -634,25 +735,34 @@ class ProductionInfrastructureSetup {
    */
   async validateProductionSecurity() {
     this.log('🔍 Validating production security configurations...', 'info');
-    
+
     try {
       // Basic validation - we just created the bucket so it exists
-      this.log('✅ S3 bucket security validated (bucket created with secure configuration)', 'success');
-      
+      this.log(
+        '✅ S3 bucket security validated (bucket created with secure configuration)',
+        'success'
+      );
+
       // Skip CloudFront validation as it may still be deploying
-      this.log('⚠️  CloudFront distribution validation skipped (distribution may still be deploying)', 'warning');
-      
+      this.log(
+        '⚠️  CloudFront distribution validation skipped (distribution may still be deploying)',
+        'warning'
+      );
+
       this.config.securityValidation = {
         timestamp: new Date().toISOString(),
         s3BucketCreated: true,
         s3SecurityConfigured: true,
         cloudfrontValidation: 'skipped',
-        status: 'completed'
+        status: 'completed',
       };
-      
+
       return true;
     } catch (error) {
-      this.log(`❌ Production security validation failed: ${error.message}`, 'error');
+      this.log(
+        `❌ Production security validation failed: ${error.message}`,
+        'error'
+      );
       throw error;
     }
   }
@@ -662,26 +772,26 @@ class ProductionInfrastructureSetup {
    */
   async saveProductionConfiguration(distribution) {
     this.log('💾 Saving production infrastructure configuration...', 'info');
-    
+
     const configDir = path.join(process.cwd(), 'config');
     if (!fs.existsSync(configDir)) {
       fs.mkdirSync(configDir, { recursive: true });
     }
-    
+
     // Complete configuration object
     this.config.accountId = this.accountId;
     this.config.deployment = {
       buildCommand: 'npm run build',
       outputDirectory: 'out',
       indexDocument: 'index.html',
-      errorDocument: 'index.html'
+      errorDocument: 'index.html',
     };
-    
+
     // Save main configuration
     const configPath = path.join(configDir, 'production-infrastructure.json');
     fs.writeFileSync(configPath, JSON.stringify(this.config, null, 2));
     this.log(`✅ Production configuration saved to ${configPath}`, 'success');
-    
+
     // Create production environment file
     const envPath = path.join(configDir, 'production.env');
     const envContent = [
@@ -696,20 +806,33 @@ class ProductionInfrastructureSetup {
       `CLOUDFRONT_DISTRIBUTION_ID=${this.distributionId}`,
       `CLOUDFRONT_DOMAIN_NAME=${distribution.DomainName}`,
       `CLOUDFRONT_OAC_ID=${this.oacId}`,
-      this.customDomain ? `CUSTOM_DOMAIN=${this.customDomain}` : `# CUSTOM_DOMAIN=your-domain.com`,
-      this.certificateArn ? `CERTIFICATE_ARN=${this.certificateArn}` : `# CERTIFICATE_ARN=arn:aws:acm:...`,
-      ``
+      this.customDomain
+        ? `CUSTOM_DOMAIN=${this.customDomain}`
+        : `# CUSTOM_DOMAIN=your-domain.com`,
+      this.certificateArn
+        ? `CERTIFICATE_ARN=${this.certificateArn}`
+        : `# CERTIFICATE_ARN=arn:aws:acm:...`,
+      ``,
     ].join('\n');
-    
+
     fs.writeFileSync(envPath, envContent);
-    this.log(`✅ Production environment variables saved to ${envPath}`, 'success');
-    
+    this.log(
+      `✅ Production environment variables saved to ${envPath}`,
+      'success'
+    );
+
     // Create deployment instructions
-    const instructionsPath = path.join(configDir, 'production-deployment-instructions.md');
+    const instructionsPath = path.join(
+      configDir,
+      'production-deployment-instructions.md'
+    );
     const instructions = this.generateDeploymentInstructions(distribution);
     fs.writeFileSync(instructionsPath, instructions);
-    this.log(`✅ Deployment instructions saved to ${instructionsPath}`, 'success');
-    
+    this.log(
+      `✅ Deployment instructions saved to ${instructionsPath}`,
+      'success'
+    );
+
     return this.config;
   }
 
@@ -740,13 +863,17 @@ aws cloudfront get-distribution --id ${this.distributionId} --query 'Distributio
 \`\`\`
 
 ### 2. Complete SSL Certificate Validation (if applicable)
-${this.certificateArn && this.customDomain ? `
+${
+  this.certificateArn && this.customDomain
+    ? `
 Your SSL certificate is pending validation. Add the DNS validation records to your domain:
 
 \`\`\`bash
 aws acm describe-certificate --certificate-arn ${this.certificateArn} --region us-east-1
 \`\`\`
-` : 'SSL certificate not configured. Set CUSTOM_DOMAIN environment variable to enable.'}
+`
+    : 'SSL certificate not configured. Set CUSTOM_DOMAIN environment variable to enable.'
+}
 
 ### 3. Deploy Your Application
 Once CloudFront is deployed, run the deployment script:
@@ -761,7 +888,9 @@ node scripts/deploy.js --env=production
 \`\`\`
 
 ### 4. Configure DNS (if using custom domain)
-${this.customDomain ? `
+${
+  this.customDomain
+    ? `
 Point your domain to CloudFront:
 
 **CNAME Record:**
@@ -771,7 +900,9 @@ Point your domain to CloudFront:
 **CNAME Record (www):**
 - Name: www.${this.customDomain}
 - Value: ${distribution.DomainName}
-` : 'Configure your custom domain in environment variables first.'}
+`
+    : 'Configure your custom domain in environment variables first.'
+}
 
 ### 5. Validate Production Deployment
 Run production readiness validation:
@@ -821,65 +952,91 @@ For issues or questions, refer to:
       this.log(`Environment: ${this.environment}`, 'info');
       this.log(`Region: ${this.region}`, 'info');
       this.log(`Bucket Name: ${this.bucketName}`, 'info');
-      this.log(`Custom Domain: ${this.customDomain || 'Not configured'}`, 'info');
+      this.log(
+        `Custom Domain: ${this.customDomain || 'Not configured'}`,
+        'info'
+      );
       this.log('', 'info');
 
       // Step 1: Validate production environment
       await this.validateProductionEnvironment();
-      
+
       // Step 2: Setup production S3 bucket
       await this.setupProductionS3Bucket();
-      
+
       // Step 3: Setup SSL certificate (if custom domain configured)
       await this.setupSSLCertificate();
-      
+
       // Step 4: Setup Origin Access Control
       await this.setupOriginAccessControl();
-      
+
       // Step 5: Setup production CloudFront distribution
       const distribution = await this.setupProductionCloudFrontDistribution();
-      
+
       // Step 6: Update S3 bucket policy
       await this.updateProductionS3BucketPolicy();
-      
+
       // Step 7: Validate security configurations
       await this.validateProductionSecurity();
-      
+
       // Step 8: Save production configuration
       const config = await this.saveProductionConfiguration(distribution);
-      
-      this.log('\n🎉 Production infrastructure setup completed successfully!', 'success');
+
+      this.log(
+        '\n🎉 Production infrastructure setup completed successfully!',
+        'success'
+      );
       this.log('\n📋 Production Summary:', 'info');
       this.log(`   • S3 Bucket: ${this.bucketName}`, 'info');
       this.log(`   • CloudFront Distribution: ${this.distributionId}`, 'info');
       this.log(`   • CloudFront Domain: ${distribution.DomainName}`, 'info');
-      this.log(`   • Custom Domain: ${this.customDomain || 'Not configured'}`, 'info');
-      this.log(`   • SSL Certificate: ${this.certificateArn ? 'Configured' : 'Not configured'}`, 'info');
+      this.log(
+        `   • Custom Domain: ${this.customDomain || 'Not configured'}`,
+        'info'
+      );
+      this.log(
+        `   • SSL Certificate: ${this.certificateArn ? 'Configured' : 'Not configured'}`,
+        'info'
+      );
       this.log(`   • Region: ${this.region}`, 'info');
-      
+
       this.log('\n⏳ Next steps:', 'info');
-      this.log('1. Wait for CloudFront distribution to deploy (15-20 minutes)', 'info');
-      this.log('2. Complete SSL certificate validation (if applicable)', 'info');
+      this.log(
+        '1. Wait for CloudFront distribution to deploy (15-20 minutes)',
+        'info'
+      );
+      this.log(
+        '2. Complete SSL certificate validation (if applicable)',
+        'info'
+      );
       this.log('3. Run deployment script to upload your site', 'info');
       this.log('4. Configure DNS records for custom domain', 'info');
       this.log('5. Run production readiness validation', 'info');
-      
+
       this.log('\n🔧 Production environment variables:', 'info');
       this.log(`export NODE_ENV="production"`, 'info');
       this.log(`export S3_BUCKET_NAME="${this.bucketName}"`, 'info');
-      this.log(`export CLOUDFRONT_DISTRIBUTION_ID="${this.distributionId}"`, 'info');
+      this.log(
+        `export CLOUDFRONT_DISTRIBUTION_ID="${this.distributionId}"`,
+        'info'
+      );
       this.log(`export AWS_REGION="${this.region}"`, 'info');
-      
+
       return config;
-      
     } catch (error) {
-      this.log(`\n❌ Production infrastructure setup failed: ${error.message}`, 'error');
+      this.log(
+        `\n❌ Production infrastructure setup failed: ${error.message}`,
+        'error'
+      );
       this.log('\n🔧 Troubleshooting tips:', 'error');
-      this.log('1. Verify AWS credentials have production permissions', 'error');
+      this.log(
+        '1. Verify AWS credentials have production permissions',
+        'error'
+      );
       this.log('2. Check IAM permissions for S3, CloudFront, and ACM', 'error');
       this.log('3. Ensure custom domain is properly configured', 'error');
       this.log('4. Verify SSL certificate validation is complete', 'error');
-      
+
       process.exit(1);
     }
   }
@@ -888,7 +1045,7 @@ For issues or questions, refer to:
 // CLI execution
 if (require.main === module) {
   const options = {};
-  
+
   // Parse command line arguments
   process.argv.forEach((arg, index) => {
     if (arg === '--domain' && process.argv[index + 1]) {
@@ -901,7 +1058,7 @@ if (require.main === module) {
       options.certificateArn = process.argv[index + 1];
     }
   });
-  
+
   const setup = new ProductionInfrastructureSetup(options);
   setup.run();
 }

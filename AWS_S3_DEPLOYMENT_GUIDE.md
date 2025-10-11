@@ -1,11 +1,12 @@
 # AWS S3 Deployment Guide
 
-After 31 failed Amplify deployments, it's time to use the right tool for the job: **S3 + CloudFront for static sites**.
+After 31 failed Amplify deployments, it's time to use the right tool for the
+job: **S3 + CloudFront for static sites**.
 
 ## Why S3 + CloudFront is Better
 
 - ✅ **No framework detection issues** - Pure static hosting
-- ✅ **Better performance** - Global CDN with edge caching  
+- ✅ **Better performance** - Global CDN with edge caching
 - ✅ **Lower cost** - No compute charges, pay only for storage/bandwidth
 - ✅ **Simpler configuration** - No complex build processes
 - ✅ **More reliable** - No SSR detection problems
@@ -13,6 +14,7 @@ After 31 failed Amplify deployments, it's time to use the right tool for the job
 ## Quick Start (5 minutes)
 
 ### 1. Prerequisites
+
 ```bash
 # Install AWS CLI if not already installed
 # Windows: Download from https://aws.amazon.com/cli/
@@ -24,11 +26,13 @@ aws configure
 ```
 
 ### 2. Build Your Site
+
 ```bash
 npm run build
 ```
 
 ### 3. Deploy with Simple Script
+
 ```bash
 node scripts/deploy-simple.js
 ```
@@ -49,22 +53,27 @@ node scripts/deploy-to-aws-s3.js --cloudfront
 If you prefer manual control:
 
 ### 1. Create S3 Bucket
+
 ```bash
 aws s3 mb s3://your-unique-bucket-name --region us-east-1
 ```
 
 ### 2. Upload Files
+
 ```bash
 aws s3 sync out/ s3://your-unique-bucket-name --delete
 ```
 
 ### 3. Configure Static Hosting
+
 ```bash
 aws s3 website s3://your-unique-bucket-name --index-document index.html --error-document index.html
 ```
 
 ### 4. Set Public Access Policy
+
 Create `bucket-policy.json`:
+
 ```json
 {
   "Version": "2012-10-17",
@@ -81,11 +90,13 @@ Create `bucket-policy.json`:
 ```
 
 Apply policy:
+
 ```bash
 aws s3api put-bucket-policy --bucket your-unique-bucket-name --policy file://bucket-policy.json
 ```
 
 ### 5. Access Your Site
+
 Your site will be available at:
 `http://your-unique-bucket-name.s3-website-us-east-1.amazonaws.com`
 
@@ -127,8 +138,8 @@ jobs:
 
 ## Cost Comparison
 
-**Amplify**: $5-15/month + build minutes
-**S3 + CloudFront**: $1-5/month for most sites
+**Amplify**: $5-15/month + build minutes **S3 + CloudFront**: $1-5/month for
+most sites
 
 ## Next Steps
 
@@ -137,4 +148,5 @@ jobs:
 3. Set up custom domain if needed
 4. Configure GitHub Actions for auto-deployment
 
-This approach will give you a faster, more reliable, and cheaper deployment than fighting with Amplify's Next.js detection.
+This approach will give you a faster, more reliable, and cheaper deployment than
+fighting with Amplify's Next.js detection.

@@ -79,9 +79,7 @@
       "contentLength": 57180,
       "cacheStatus": "Miss from cloudfront",
       "errors": [],
-      "warnings": [
-        "Missing Cache-Control header"
-      ],
+      "warnings": ["Missing Cache-Control header"],
       "details": {
         "headers": {
           "content-type": "image/webp",
@@ -111,9 +109,7 @@
       "contentLength": 23692,
       "cacheStatus": "Miss from cloudfront",
       "errors": [],
-      "warnings": [
-        "Missing Cache-Control header"
-      ],
+      "warnings": ["Missing Cache-Control header"],
       "details": {
         "headers": {
           "content-type": "image/webp",
@@ -143,9 +139,7 @@
       "contentLength": 23692,
       "cacheStatus": "Miss from cloudfront",
       "errors": [],
-      "warnings": [
-        "Missing Cache-Control header"
-      ],
+      "warnings": ["Missing Cache-Control header"],
       "details": {
         "headers": {
           "content-type": "image/webp",
@@ -175,9 +169,7 @@
       "contentLength": 23692,
       "cacheStatus": "Hit from cloudfront",
       "errors": [],
-      "warnings": [
-        "Missing Cache-Control header"
-      ],
+      "warnings": ["Missing Cache-Control header"],
       "details": {
         "headers": {
           "content-type": "image/webp",
@@ -207,9 +199,7 @@
       "contentLength": 49522,
       "cacheStatus": "Hit from cloudfront",
       "errors": [],
-      "warnings": [
-        "Missing Cache-Control header"
-      ],
+      "warnings": ["Missing Cache-Control header"],
       "details": {
         "headers": {
           "content-type": "image/webp",
@@ -239,9 +229,7 @@
       "contentLength": 42274,
       "cacheStatus": "Miss from cloudfront",
       "errors": [],
-      "warnings": [
-        "Missing Cache-Control header"
-      ],
+      "warnings": ["Missing Cache-Control header"],
       "details": {
         "headers": {
           "content-type": "image/webp",
@@ -271,9 +259,7 @@
       "contentLength": 50868,
       "cacheStatus": "Miss from cloudfront",
       "errors": [],
-      "warnings": [
-        "Missing Cache-Control header"
-      ],
+      "warnings": ["Missing Cache-Control header"],
       "details": {
         "headers": {
           "content-type": "image/webp",
@@ -303,9 +289,7 @@
       "contentLength": 38464,
       "cacheStatus": "Miss from cloudfront",
       "errors": [],
-      "warnings": [
-        "Missing Cache-Control header"
-      ],
+      "warnings": ["Missing Cache-Control header"],
       "details": {
         "headers": {
           "content-type": "image/webp",
@@ -335,9 +319,7 @@
       "contentLength": 23692,
       "cacheStatus": "Hit from cloudfront",
       "errors": [],
-      "warnings": [
-        "Missing Cache-Control header"
-      ],
+      "warnings": ["Missing Cache-Control header"],
       "details": {
         "headers": {
           "content-type": "image/webp",
@@ -367,9 +349,7 @@
       "contentLength": 48688,
       "cacheStatus": "Miss from cloudfront",
       "errors": [],
-      "warnings": [
-        "Missing Cache-Control header"
-      ],
+      "warnings": ["Missing Cache-Control header"],
       "details": {
         "headers": {
           "content-type": "image/webp",
@@ -399,9 +379,7 @@
       "contentLength": 68510,
       "cacheStatus": "Miss from cloudfront",
       "errors": [],
-      "warnings": [
-        "Missing Cache-Control header"
-      ],
+      "warnings": ["Missing Cache-Control header"],
       "details": {
         "headers": {
           "content-type": "image/webp",
@@ -431,9 +409,7 @@
       "contentLength": 42274,
       "cacheStatus": "Miss from cloudfront",
       "errors": [],
-      "warnings": [
-        "Missing Cache-Control header"
-      ],
+      "warnings": ["Missing Cache-Control header"],
       "details": {
         "headers": {
           "content-type": "image/webp",
@@ -463,9 +439,7 @@
       "contentLength": 46984,
       "cacheStatus": "Miss from cloudfront",
       "errors": [],
-      "warnings": [
-        "Missing Cache-Control header"
-      ],
+      "warnings": ["Missing Cache-Control header"],
       "details": {
         "headers": {
           "content-type": "image/webp",
@@ -495,9 +469,7 @@
       "contentLength": 49972,
       "cacheStatus": "Miss from cloudfront",
       "errors": [],
-      "warnings": [
-        "Missing Cache-Control header"
-      ],
+      "warnings": ["Missing Cache-Control header"],
       "details": {
         "headers": {
           "content-type": "image/webp",
@@ -527,9 +499,7 @@
       "contentLength": 50126,
       "cacheStatus": "Miss from cloudfront",
       "errors": [],
-      "warnings": [
-        "Missing Cache-Control header"
-      ],
+      "warnings": ["Missing Cache-Control header"],
       "details": {
         "headers": {
           "content-type": "image/webp",
@@ -559,9 +529,7 @@
       "contentLength": 46204,
       "cacheStatus": "Miss from cloudfront",
       "errors": [],
-      "warnings": [
-        "Missing Cache-Control header"
-      ],
+      "warnings": ["Missing Cache-Control header"],
       "details": {
         "headers": {
           "content-type": "image/webp",
@@ -591,9 +559,7 @@
       "contentLength": 26170,
       "cacheStatus": "Miss from cloudfront",
       "errors": [],
-      "warnings": [
-        "Missing Cache-Control header"
-      ],
+      "warnings": ["Missing Cache-Control header"],
       "details": {
         "headers": {
           "content-type": "image/webp",
@@ -623,9 +589,7 @@
       "contentLength": 21610,
       "cacheStatus": "Miss from cloudfront",
       "errors": [],
-      "warnings": [
-        "Missing Cache-Control header"
-      ],
+      "warnings": ["Missing Cache-Control header"],
       "details": {
         "headers": {
           "content-type": "image/webp",
@@ -655,9 +619,7 @@
       "contentLength": 29688,
       "cacheStatus": "Miss from cloudfront",
       "errors": [],
-      "warnings": [
-        "Missing Cache-Control header"
-      ],
+      "warnings": ["Missing Cache-Control header"],
       "details": {
         "headers": {
           "content-type": "image/webp",
@@ -687,9 +649,7 @@
       "contentLength": 18422,
       "cacheStatus": "Miss from cloudfront",
       "errors": [],
-      "warnings": [
-        "Missing Cache-Control header"
-      ],
+      "warnings": ["Missing Cache-Control header"],
       "details": {
         "headers": {
           "content-type": "image/webp",
@@ -719,9 +679,7 @@
       "contentLength": 46204,
       "cacheStatus": "Hit from cloudfront",
       "errors": [],
-      "warnings": [
-        "Missing Cache-Control header"
-      ],
+      "warnings": ["Missing Cache-Control header"],
       "details": {
         "headers": {
           "content-type": "image/webp",
@@ -751,9 +709,7 @@
       "contentLength": 32354,
       "cacheStatus": "Miss from cloudfront",
       "errors": [],
-      "warnings": [
-        "Missing Cache-Control header"
-      ],
+      "warnings": ["Missing Cache-Control header"],
       "details": {
         "headers": {
           "content-type": "image/webp",

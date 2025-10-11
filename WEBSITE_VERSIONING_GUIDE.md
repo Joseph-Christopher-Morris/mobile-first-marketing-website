@@ -1,28 +1,36 @@
 # Website Versioning Guide
 
 ## 🎉 Current Status
-Your website has been successfully fixed and deployed! All image loading issues and desktop navigation problems have been resolved.
+
+Your website has been successfully fixed and deployed! All image loading issues
+and desktop navigation problems have been resolved.
 
 **Live Site:** https://d15sc9fc739ev2.cloudfront.net/
 
 ## 📋 What Was Fixed
-- ✅ **Desktop Hamburger Menu:** Removed from desktop (≥768px), kept functional on mobile
-- ✅ **Service Card Images:** All loading correctly on homepage and services page
+
+- ✅ **Desktop Hamburger Menu:** Removed from desktop (≥768px), kept functional
+  on mobile
+- ✅ **Service Card Images:** All loading correctly on homepage and services
+  page
 - ✅ **Blog Preview Images:** All 3 blog post images displaying properly
 - ✅ **About Page Hero:** A7302858.webp now loading correctly
 - ✅ **Service Sub-pages:** All hero and portfolio images functional
 - ✅ **MIME Types:** All images serve with correct `image/webp` content type
-- ✅ **Deployment:** Successfully deployed to S3 + CloudFront with cache invalidation
+- ✅ **Deployment:** Successfully deployed to S3 + CloudFront with cache
+  invalidation
 
 ## 🔧 Git Setup (Required for Versioning)
 
 ### Option 1: Install Git for Windows
+
 1. **Download Git:** https://git-scm.com/download/win
 2. **Install with default settings**
 3. **Restart your terminal/PowerShell**
 4. **Verify installation:** `git --version`
 
 ### Option 2: Use GitHub Desktop (Easier)
+
 1. **Download:** https://desktop.github.com/
 2. **Install and sign in to GitHub**
 3. **Clone or create repository through the GUI**
@@ -30,6 +38,7 @@ Your website has been successfully fixed and deployed! All image loading issues 
 ## 📦 Manual Versioning Steps
 
 ### Step 1: Initialize Git Repository
+
 ```bash
 # Open PowerShell in your project directory
 cd C:\Users\Joe\Projects\website-sync-20251003_133144
@@ -42,6 +51,7 @@ git remote add origin https://github.com/YOUR_USERNAME/YOUR_REPO_NAME.git
 ```
 
 ### Step 2: Add Files to Version Control
+
 ```bash
 # Add all important files
 git add src/
@@ -59,6 +69,7 @@ git add *-summary.md
 ```
 
 ### Step 3: Create Commit
+
 ```bash
 git commit -m "🎉 Website Image & Navigation Fixes - Production Ready
 
@@ -87,6 +98,7 @@ Deployment ID: deploy-1760182505009"
 ```
 
 ### Step 4: Push to GitHub
+
 ```bash
 # Push to main branch
 git push -u origin main
@@ -117,28 +129,33 @@ git push
 ## 📁 Important Files to Always Version
 
 ### Core Application Files
+
 - `src/` - All React components and pages
 - `content/` - Blog posts and service content
 - `public/` - Images and static assets
 - `package.json` - Dependencies and scripts
 
 ### Configuration Files
+
 - `next.config.js` - Next.js configuration
 - `tailwind.config.js` - Styling configuration
 - `tsconfig.json` - TypeScript configuration
 - `.gitignore` - Files to exclude from version control
 
 ### Deployment & Scripts
+
 - `scripts/` - Deployment and utility scripts
 - `.github/` - GitHub Actions workflows
 - `docs/` - Documentation and guides
 
 ### Kiro Specs
+
 - `.kiro/` - All specs and project configuration
 
 ## 🔄 Automated Deployment
 
-Your project already has GitHub Actions configured in `.github/workflows/s3-cloudfront-deploy.yml`. Once you push to GitHub:
+Your project already has GitHub Actions configured in
+`.github/workflows/s3-cloudfront-deploy.yml`. Once you push to GitHub:
 
 1. **Automatic builds** trigger on push to main branch
 2. **Automatic deployment** to S3 + CloudFront
@@ -148,16 +165,19 @@ Your project already has GitHub Actions configured in `.github/workflows/s3-clou
 ## 🛠️ Troubleshooting
 
 ### If Git Commands Don't Work
+
 - Install Git from https://git-scm.com/download/win
 - Restart your terminal after installation
 - Use GitHub Desktop as an alternative
 
 ### If You Don't Have a GitHub Repository Yet
+
 1. Go to https://github.com/new
 2. Create a new repository (e.g., "vivid-auto-website")
 3. Use the repository URL in the remote add command above
 
 ### If You Need Help with Git
+
 - GitHub Desktop provides a visual interface
 - VS Code has built-in Git support
 - GitHub has excellent documentation: https://docs.github.com/

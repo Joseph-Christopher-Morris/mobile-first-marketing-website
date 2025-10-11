@@ -211,12 +211,7 @@
     }
   },
   "testing": {
-    "securityScanners": [
-      "Mozilla Observatory",
-      "Security Headers",
-      "SSL Labs",
-      "Qualys SSL Test"
-    ],
+    "securityScanners": ["Mozilla Observatory", "Security Headers", "SSL Labs", "Qualys SSL Test"],
     "automatedTests": [
       "Security headers presence",
       "CSP directive validation",

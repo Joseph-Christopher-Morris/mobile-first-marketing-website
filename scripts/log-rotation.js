@@ -16,17 +16,17 @@ class LogRotation {
 
   rotateLog(logFile) {
     const logPath = path.join(this.logsDir, logFile);
-    
+
     if (!fs.existsSync(logPath)) return;
-    
+
     const stats = fs.statSync(logPath);
     if (stats.size < this.maxSize) return;
-    
+
     // Rotate existing files
     for (let i = this.maxFiles - 1; i > 0; i--) {
       const oldFile = logPath + '.' + i;
       const newFile = logPath + '.' + (i + 1);
-      
+
       if (fs.existsSync(oldFile)) {
         if (i === this.maxFiles - 1) {
           fs.unlinkSync(oldFile); // Delete oldest
@@ -35,10 +35,10 @@ class LogRotation {
         }
       }
     }
-    
+
     // Move current log to .1
     fs.renameSync(logPath, logPath + '.1');
-    
+
     console.log('📋 Rotated log file: ' + logFile);
   }
 

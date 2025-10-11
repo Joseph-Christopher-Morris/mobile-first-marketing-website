@@ -1,20 +1,23 @@
 # AWS Amplify Setup Guide
 
 ## Prerequisites Checklist
+
 ✅ Project builds successfully locally  
 ✅ Environment variables configured  
 ✅ amplify.yml file ready  
-✅ AWS account with Amplify access  
+✅ AWS account with Amplify access
 
 ## Step 2.1: Prepare for AWS Amplify
 
 ### 2.1.1 Verify AWS Account Access
 
 **What you need:**
+
 - AWS account with billing enabled
 - IAM permissions for AWS Amplify (or admin access)
 
 **To verify:**
+
 1. Go to [AWS Console](https://console.aws.amazon.com/)
 2. Sign in to your AWS account
 3. Search for "Amplify" in the services search
@@ -22,14 +25,17 @@
 
 ### 2.1.2 Create GitHub Repository
 
-Since we don't have git locally, we'll create the repository through GitHub's web interface:
+Since we don't have git locally, we'll create the repository through GitHub's
+web interface:
 
 **Steps:**
+
 1. Go to [GitHub.com](https://github.com)
 2. Click "New repository" (green button)
 3. Repository settings:
    - **Name**: `mobile-first-marketing-website` (or your preferred name)
-   - **Description**: `Mobile-first marketing website with Next.js and AWS Amplify`
+   - **Description**:
+     `Mobile-first marketing website with Next.js and AWS Amplify`
    - **Visibility**: Public (recommended) or Private
    - **Initialize**: ✅ Add a README file
    - **Add .gitignore**: Node
@@ -39,11 +45,13 @@ Since we don't have git locally, we'll create the repository through GitHub's we
 ### 2.1.3 Upload Code to GitHub
 
 **Option A: GitHub Web Interface (Recommended)**
+
 1. In your new repository, click "uploading an existing file"
 2. Drag and drop your entire project folder (excluding node_modules)
 3. Or use "choose your files" to select all project files
 
 **Important files to upload:**
+
 - `amplify.yml` ⭐ **CRITICAL**
 - `package.json` ⭐ **CRITICAL**
 - `next.config.js` ⭐ **CRITICAL**
@@ -56,6 +64,7 @@ Since we don't have git locally, we'll create the repository through GitHub's we
 - `postcss.config.js`
 
 **Files to EXCLUDE:**
+
 - `node_modules/` folder
 - `.next/` folder
 - `out/` folder
@@ -66,6 +75,7 @@ Since we don't have git locally, we'll create the repository through GitHub's we
 ### 2.1.4 Verify Repository Accessibility
 
 After uploading:
+
 1. Verify `amplify.yml` is visible in the root directory
 2. Check that `package.json` is present
 3. Ensure all source files are uploaded correctly
@@ -93,6 +103,7 @@ After uploading:
 ### 2.2.4 Verify Repository Connection
 
 Amplify should automatically detect:
+
 - ✅ Framework: Next.js
 - ✅ Build settings from `amplify.yml`
 
@@ -128,6 +139,7 @@ frontend:
 **CRITICAL**: Set these environment variables in Amplify Console:
 
 **Required Variables:**
+
 ```
 NEXT_PUBLIC_SITE_URL = https://your-amplify-url.amplifyapp.com
 NEXT_PUBLIC_SITE_NAME = Your Marketing Website
@@ -136,6 +148,7 @@ NODE_ENV = production
 ```
 
 **Optional but Recommended:**
+
 ```
 NEXT_PUBLIC_GA_ID = G-XXXXXXXXXX
 NEXT_PUBLIC_GTM_ID = GTM-XXXXXXX
@@ -146,6 +159,7 @@ NEXT_PUBLIC_INSTAGRAM_URL = https://instagram.com/yourhandle
 ```
 
 **How to add them:**
+
 1. In the build settings page, scroll to "Environment variables"
 2. Click "Add environment variable"
 3. Add each variable name and value
@@ -154,6 +168,7 @@ NEXT_PUBLIC_INSTAGRAM_URL = https://instagram.com/yourhandle
 ### 2.3.3 Set Up Build Settings
 
 **Verify these settings:**
+
 - **App name**: Choose a meaningful name
 - **Environment name**: `main` (or `production`)
 - **Build settings**: Should auto-populate from `amplify.yml`
@@ -161,6 +176,7 @@ NEXT_PUBLIC_INSTAGRAM_URL = https://instagram.com/yourhandle
 ### 2.3.4 Review Deployment Configuration
 
 **Final checklist before deployment:**
+
 - ✅ Repository connected
 - ✅ Branch selected (main)
 - ✅ Build settings detected
@@ -174,27 +190,35 @@ NEXT_PUBLIC_INSTAGRAM_URL = https://instagram.com/yourhandle
 3. Monitor the build logs for any issues
 
 **Build phases you'll see:**
+
 1. **Provision** - Setting up build environment
 2. **Build** - Running your build commands
 3. **Deploy** - Deploying to CDN
 4. **Verify** - Final verification
 
 ## Expected Build Time
+
 - **First build**: 5-10 minutes
 - **Subsequent builds**: 2-5 minutes
 
 ## Troubleshooting Common Issues
 
 ### Build Fails on Environment Variables
-**Solution**: Double-check all required environment variables are set in Amplify Console
+
+**Solution**: Double-check all required environment variables are set in Amplify
+Console
 
 ### Build Fails on Dependencies
+
 **Solution**: Ensure `package.json` and `package-lock.json` are both uploaded
 
 ### Build Fails on amplify.yml
-**Solution**: Verify `amplify.yml` is in the root directory and properly formatted
+
+**Solution**: Verify `amplify.yml` is in the root directory and properly
+formatted
 
 ### Static Export Issues
+
 **Expected**: Blog pages may fail (this is normal due to searchParams)
 **Impact**: Core pages (home, about, services, contact) should still work
 
@@ -208,6 +232,7 @@ NEXT_PUBLIC_INSTAGRAM_URL = https://instagram.com/yourhandle
 ## Quick Reference Commands
 
 If you need to test locally before deployment:
+
 ```bash
 npm run env:validate
 npm run build
@@ -216,6 +241,7 @@ npm run deploy:test-comprehensive
 
 ---
 
-**Need Help?** 
+**Need Help?**
+
 - Check the troubleshooting guide: `docs/troubleshooting-guide.md`
 - Review deployment runbook: `docs/deployment-runbook.md`

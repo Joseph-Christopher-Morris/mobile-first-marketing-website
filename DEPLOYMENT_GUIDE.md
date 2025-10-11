@@ -3,6 +3,7 @@
 ## Quick Deployment Steps
 
 ### 1. **Test Locally First**
+
 ```bash
 # Install dependencies (if needed)
 npm install
@@ -14,6 +15,7 @@ npm run dev
 ```
 
 ### 2. **Build and Test**
+
 ```bash
 # Build the project
 npm run build
@@ -27,6 +29,7 @@ npm run start
 Your project uses **S3 + CloudFront deployment**. Here are your options:
 
 #### **Option A: Automatic Deployment (Recommended)**
+
 ```bash
 # Simply push your changes to GitHub
 git add .
@@ -41,6 +44,7 @@ git push origin main
 ```
 
 #### **Option B: Manual Deployment**
+
 ```bash
 # Build the project
 npm run build
@@ -56,17 +60,20 @@ node scripts/deployment-status-dashboard.js
 ## What You Just Added
 
 ### ✅ **Brand Colors Applied**
+
 - Primary color: `#F5276F` (replaces all blue)
 - Hover color: `#C8094C`
 - Applied to buttons, links, forms, and all UI elements
 
 ### ✅ **New Testimonials Section**
+
 - Scott Beercroft testimonial
-- Lee Murfitt testimonial  
+- Lee Murfitt testimonial
 - No profile photos (as requested)
 - Professional card design with your brand colors
 
 ### ✅ **Global Theme Integration**
+
 - All existing components now use your brand colors
 - Consistent styling across the entire website
 - Responsive design for all devices
@@ -89,6 +96,7 @@ node scripts/validate-site-functionality.js
 ## Your Live Website
 
 Once deployed, your changes will be visible at:
+
 - **Production URL**: `https://d15sc9fc739ev2.cloudfront.net`
 
 ## Troubleshooting
@@ -114,6 +122,7 @@ node scripts/rollback.js emergency
 4. **Test on mobile** to ensure everything looks great
 
 Your website will now have:
+
 - ✅ Brand color `#F5276F` throughout
 - ✅ Professional testimonials section
 - ✅ Consistent styling across all pages

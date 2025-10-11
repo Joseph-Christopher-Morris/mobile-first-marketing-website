@@ -36,7 +36,9 @@ const ServicesPage: React.FC = () => {
       {/* Just Lee's testimonial */}
       <section style={{ padding: '64px 0', backgroundColor: '#f9fafb' }}>
         <div style={{ maxWidth: '800px', margin: '0 auto', padding: '0 16px' }}>
-          <h2 style={{ textAlign: 'center', marginBottom: '32px' }}>Client Success Story</h2>
+          <h2 style={{ textAlign: 'center', marginBottom: '32px' }}>
+            Client Success Story
+          </h2>
           <LeeTestimonial />
         </div>
       </section>
@@ -56,7 +58,9 @@ const AboutPage: React.FC = () => {
       {/* Just Scott's testimonial */}
       <section style={{ padding: '64px 0', backgroundColor: '#f9fafb' }}>
         <div style={{ maxWidth: '800px', margin: '0 auto', padding: '0 16px' }}>
-          <h2 style={{ textAlign: 'center', marginBottom: '32px' }}>What Clients Say</h2>
+          <h2 style={{ textAlign: 'center', marginBottom: '32px' }}>
+            What Clients Say
+          </h2>
           <ScottTestimonial />
         </div>
       </section>
@@ -72,24 +76,24 @@ const CustomTestimonialsSection: React.FC = () => {
         <h2 style={{ textAlign: 'center', marginBottom: '48px' }}>
           Client Testimonials
         </h2>
-        
+
         {/* Custom grid with individual testimonials */}
-        <div style={{ 
-          display: 'grid', 
-          gridTemplateColumns: '1fr', 
-          gap: '32px',
-          maxWidth: '800px',
-          margin: '0 auto'
-        }}>
+        <div
+          style={{
+            display: 'grid',
+            gridTemplateColumns: '1fr',
+            gap: '32px',
+            maxWidth: '800px',
+            margin: '0 auto',
+          }}
+        >
           <LeeTestimonial />
           <ScottTestimonial />
         </div>
-        
+
         {/* Custom CTA */}
         <div style={{ textAlign: 'center', marginTop: '48px' }}>
-          <button className="testimonials-cta-button">
-            Work With Us
-          </button>
+          <button className='testimonials-cta-button'>Work With Us</button>
         </div>
       </div>
     </section>
@@ -103,7 +107,7 @@ const TestimonialSidebar: React.FC = () => {
       <h3 style={{ marginBottom: '24px', textAlign: 'center' }}>
         Client Feedback
       </h3>
-      
+
       {/* Stack testimonials vertically for sidebar */}
       <div style={{ display: 'flex', flexDirection: 'column', gap: '24px' }}>
         <div style={{ transform: 'scale(0.9)' }}>
@@ -117,10 +121,10 @@ const TestimonialSidebar: React.FC = () => {
   );
 };
 
-export { 
-  HomePage, 
-  ServicesPage, 
-  AboutPage, 
-  CustomTestimonialsSection, 
-  TestimonialSidebar 
+export {
+  HomePage,
+  ServicesPage,
+  AboutPage,
+  CustomTestimonialsSection,
+  TestimonialSidebar,
 };

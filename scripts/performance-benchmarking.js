@@ -127,7 +127,7 @@ class PerformanceBenchmarking {
   async testDNSResolution() {
     const dns = require('dns').promises;
     const url = new URL(this.config.siteUrl);
-    
+
     try {
       const ips = await dns.resolve4(url.hostname);
       return { resolved: true, ips };
@@ -137,9 +137,9 @@ class PerformanceBenchmarking {
   }
 
   async testSSLCertificate() {
-    return new Promise((resolve) => {
+    return new Promise(resolve => {
       const url = new URL(this.config.siteUrl);
-      
+
       if (url.protocol !== 'https:') {
         resolve({ status: 'not_applicable', message: 'HTTP site' });
         return;
@@ -152,11 +152,13 @@ class PerformanceBenchmarking {
         timeout: 5000,
       };
 
-      const req = https.request(options, (res) => {
+      const req = https.request(options, res => {
         const cert = res.socket.getPeerCertificate();
         const now = new Date();
         const expiry = new Date(cert.valid_to);
-        const daysUntilExpiry = Math.ceil((expiry - now) / (1000 * 60 * 60 * 24));
+        const daysUntilExpiry = Math.ceil(
+          (expiry - now) / (1000 * 60 * 60 * 24)
+        );
 
         resolve({
           status: 'valid',
@@ -169,7 +171,7 @@ class PerformanceBenchmarking {
         });
       });
 
-      req.on('error', (error) => {
+      req.on('error', error => {
         resolve({ status: 'error', error: error.message });
       });
 
@@ -182,10 +184,10 @@ class PerformanceBenchmarking {
   }
 
   async testBasicConnectivity() {
-    return new Promise((resolve) => {
+    return new Promise(resolve => {
       const startTime = performance.now();
       const url = new URL(this.config.siteUrl);
-      
+
       const options = {
         hostname: url.hostname,
         port: url.protocol === 'https:' ? 443 : 80,
@@ -195,10 +197,10 @@ class PerformanceBenchmarking {
       };
 
       const client = url.protocol === 'https:' ? https : require('http');
-      
-      const req = client.request(options, (res) => {
+
+      const req = client.request(options, res => {
         const responseTime = performance.now() - startTime;
-        
+
         resolve({
           status: 'connected',
           responseTime,
@@ -211,7 +213,7 @@ class PerformanceBenchmarking {
         });
       });
 
-      req.on('error', (error) => {
+      req.on('error', error => {
         resolve({ status: 'error', error: error.message });
       });
 
@@ -230,15 +232,15 @@ class PerformanceBenchmarking {
 
     for (const page of this.config.testPages) {
       console.log(`   Testing ${page.name} (${page.path})`);
-      
+
       try {
         const pageResults = [];
-        
+
         // Run multiple rounds for accuracy
         for (let round = 0; round < this.config.benchmarkRounds; round++) {
           const result = await this.benchmarkPage(page);
           pageResults.push(result);
-          
+
           // Wait between rounds to avoid overwhelming the server
           await this.sleep(1000);
         }
@@ -250,11 +252,17 @@ class PerformanceBenchmarking {
           average: this.calculateAverageMetrics(pageResults),
           best: this.getBestMetrics(pageResults),
           worst: this.getWorstMetrics(pageResults),
-          grade: this.calculatePageGrade(this.calculateAverageMetrics(pageResults)),
+          grade: this.calculatePageGrade(
+            this.calculateAverageMetrics(pageResults)
+          ),
         };
 
-        console.log(`     Average Load Time: ${singleUserResults[page.path].average.loadTime.toFixed(0)}ms`);
-        console.log(`     Grade: ${singleUserResults[page.path].grade.toUpperCase()}`);
+        console.log(
+          `     Average Load Time: ${singleUserResults[page.path].average.loadTime.toFixed(0)}ms`
+        );
+        console.log(
+          `     Grade: ${singleUserResults[page.path].grade.toUpperCase()}`
+        );
       } catch (error) {
         console.warn(`⚠️  Failed to benchmark ${page.name}:`, error.message);
         singleUserResults[page.path] = { error: error.message };
@@ -267,7 +275,7 @@ class PerformanceBenchmarking {
 
   async benchmarkPage(page) {
     const url = `${this.config.siteUrl}${page.path}`;
-    
+
     // Simulate realistic page load metrics
     const baseMetrics = {
       '/': { ttfb: 200, fcp: 1200, lcp: 1800, loadTime: 2500 },
@@ -277,10 +285,10 @@ class PerformanceBenchmarking {
     };
 
     const base = baseMetrics[page.path] || baseMetrics['/'];
-    
+
     // Add realistic variance
     const variance = 0.2; // 20% variance
-    
+
     return {
       url,
       timestamp: new Date().toISOString(),
@@ -297,12 +305,27 @@ class PerformanceBenchmarking {
   }
 
   calculateAverageMetrics(results) {
-    const metrics = ['ttfb', 'fcp', 'lcp', 'cls', 'fid', 'tti', 'loadTime', 'transferSize', 'resourceCount'];
+    const metrics = [
+      'ttfb',
+      'fcp',
+      'lcp',
+      'cls',
+      'fid',
+      'tti',
+      'loadTime',
+      'transferSize',
+      'resourceCount',
+    ];
     const averages = {};
 
     metrics.forEach(metric => {
-      const values = results.map(r => r[metric]).filter(v => typeof v === 'number');
-      averages[metric] = values.length > 0 ? values.reduce((sum, v) => sum + v, 0) / values.length : 0;
+      const values = results
+        .map(r => r[metric])
+        .filter(v => typeof v === 'number');
+      averages[metric] =
+        values.length > 0
+          ? values.reduce((sum, v) => sum + v, 0) / values.length
+          : 0;
     });
 
     return averages;
@@ -313,7 +336,9 @@ class PerformanceBenchmarking {
     const best = {};
 
     metrics.forEach(metric => {
-      const values = results.map(r => r[metric]).filter(v => typeof v === 'number');
+      const values = results
+        .map(r => r[metric])
+        .filter(v => typeof v === 'number');
       best[metric] = values.length > 0 ? Math.min(...values) : 0;
     });
 
@@ -325,7 +350,9 @@ class PerformanceBenchmarking {
     const worst = {};
 
     metrics.forEach(metric => {
-      const values = results.map(r => r[metric]).filter(v => typeof v === 'number');
+      const values = results
+        .map(r => r[metric])
+        .filter(v => typeof v === 'number');
       worst[metric] = values.length > 0 ? Math.max(...values) : 0;
     });
 
@@ -368,18 +395,23 @@ class PerformanceBenchmarking {
 
     for (const userCount of this.config.concurrentUsers) {
       console.log(`   Testing with ${userCount} concurrent users`);
-      
+
       try {
         const testResult = await this.runConcurrentUserTest(userCount);
         loadTestResults[userCount] = testResult;
-        
-        console.log(`     Average Response Time: ${testResult.averageResponseTime.toFixed(0)}ms`);
+
+        console.log(
+          `     Average Response Time: ${testResult.averageResponseTime.toFixed(0)}ms`
+        );
         console.log(`     Success Rate: ${testResult.successRate.toFixed(1)}%`);
-        
+
         // Wait between load tests
         await this.sleep(2000);
       } catch (error) {
-        console.warn(`⚠️  Load test with ${userCount} users failed:`, error.message);
+        console.warn(
+          `⚠️  Load test with ${userCount} users failed:`,
+          error.message
+        );
         loadTestResults[userCount] = { error: error.message };
       }
     }
@@ -394,14 +426,19 @@ class PerformanceBenchmarking {
 
     // Create concurrent requests
     for (let i = 0; i < userCount; i++) {
-      const randomPage = this.config.testPages[Math.floor(Math.random() * this.config.testPages.length)];
+      const randomPage =
+        this.config.testPages[
+          Math.floor(Math.random() * this.config.testPages.length)
+        ];
       promises.push(this.simulateConcurrentUser(randomPage, i));
     }
 
     const results = await Promise.allSettled(promises);
     const endTime = performance.now();
 
-    const successful = results.filter(r => r.status === 'fulfilled').map(r => r.value);
+    const successful = results
+      .filter(r => r.status === 'fulfilled')
+      .map(r => r.value);
     const failed = results.filter(r => r.status === 'rejected');
 
     return {
@@ -410,11 +447,19 @@ class PerformanceBenchmarking {
       successful: successful.length,
       failed: failed.length,
       successRate: (successful.length / userCount) * 100,
-      averageResponseTime: successful.length > 0 
-        ? successful.reduce((sum, r) => sum + r.responseTime, 0) / successful.length 
-        : 0,
-      minResponseTime: successful.length > 0 ? Math.min(...successful.map(r => r.responseTime)) : 0,
-      maxResponseTime: successful.length > 0 ? Math.max(...successful.map(r => r.responseTime)) : 0,
+      averageResponseTime:
+        successful.length > 0
+          ? successful.reduce((sum, r) => sum + r.responseTime, 0) /
+            successful.length
+          : 0,
+      minResponseTime:
+        successful.length > 0
+          ? Math.min(...successful.map(r => r.responseTime))
+          : 0,
+      maxResponseTime:
+        successful.length > 0
+          ? Math.max(...successful.map(r => r.responseTime))
+          : 0,
       throughput: (successful.length / (endTime - startTime)) * 1000, // requests per second
       errors: failed.map(f => f.reason?.message || 'Unknown error'),
     };
@@ -422,18 +467,18 @@ class PerformanceBenchmarking {
 
   async simulateConcurrentUser(page, userId) {
     const startTime = performance.now();
-    
+
     // Simulate network latency and processing time
     const baseResponseTime = 200 + Math.random() * 300; // 200-500ms base
-    const userLoadFactor = 1 + (userId * 0.1); // Slight increase per user
+    const userLoadFactor = 1 + userId * 0.1; // Slight increase per user
     const responseTime = baseResponseTime * userLoadFactor;
-    
+
     await this.sleep(responseTime);
-    
+
     const endTime = performance.now();
-    
+
     // Simulate occasional failures under load
-    const failureRate = Math.min(0.05 + (userId * 0.001), 0.1); // 5-10% failure rate
+    const failureRate = Math.min(0.05 + userId * 0.001, 0.1); // 5-10% failure rate
     if (Math.random() < failureRate) {
       throw new Error(`Request failed for user ${userId}`);
     }
@@ -453,14 +498,19 @@ class PerformanceBenchmarking {
 
     for (const region of this.config.testRegions) {
       console.log(`   Testing from ${region.name} (${region.location})`);
-      
+
       try {
         const regionResult = await this.testRegionalLatency(region);
         latencyResults[region.code] = regionResult;
-        
-        console.log(`     Average Latency: ${regionResult.averageLatency.toFixed(0)}ms`);
+
+        console.log(
+          `     Average Latency: ${regionResult.averageLatency.toFixed(0)}ms`
+        );
       } catch (error) {
-        console.warn(`⚠️  Regional test for ${region.name} failed:`, error.message);
+        console.warn(
+          `⚠️  Regional test for ${region.name} failed:`,
+          error.message
+        );
         latencyResults[region.code] = { error: error.message };
       }
     }
@@ -472,9 +522,9 @@ class PerformanceBenchmarking {
   async testRegionalLatency(region) {
     // Simulate realistic regional latencies
     const baseLatencies = {
-      'us-east-1': 50,   // US East - closest to CloudFront edge
-      'us-west-1': 80,   // US West
-      'eu-west-1': 120,  // Europe
+      'us-east-1': 50, // US East - closest to CloudFront edge
+      'us-west-1': 80, // US West
+      'eu-west-1': 120, // Europe
       'ap-southeast-1': 180, // Asia Pacific
     };
 
@@ -489,7 +539,7 @@ class PerformanceBenchmarking {
         latency: Math.max(10, latency), // Minimum 10ms
         timestamp: new Date().toISOString(),
       });
-      
+
       await this.sleep(500); // Wait between tests
     }
 
@@ -498,10 +548,13 @@ class PerformanceBenchmarking {
       location: region.location,
       code: region.code,
       tests,
-      averageLatency: tests.reduce((sum, t) => sum + t.latency, 0) / tests.length,
+      averageLatency:
+        tests.reduce((sum, t) => sum + t.latency, 0) / tests.length,
       minLatency: Math.min(...tests.map(t => t.latency)),
       maxLatency: Math.max(...tests.map(t => t.latency)),
-      grade: this.calculateLatencyGrade(tests.reduce((sum, t) => sum + t.latency, 0) / tests.length),
+      grade: this.calculateLatencyGrade(
+        tests.reduce((sum, t) => sum + t.latency, 0) / tests.length
+      ),
     };
   }
 
@@ -534,11 +587,20 @@ class PerformanceBenchmarking {
       cacheResults.warmCache = warmCacheResult;
 
       // Calculate cache efficiency
-      cacheResults.cacheEfficiency = this.calculateCacheEfficiency(coldCacheResult, warmCacheResult);
+      cacheResults.cacheEfficiency = this.calculateCacheEfficiency(
+        coldCacheResult,
+        warmCacheResult
+      );
 
-      console.log(`     Cold Cache Avg: ${coldCacheResult.averageResponseTime.toFixed(0)}ms`);
-      console.log(`     Warm Cache Avg: ${warmCacheResult.averageResponseTime.toFixed(0)}ms`);
-      console.log(`     Cache Efficiency: ${cacheResults.cacheEfficiency.improvement.toFixed(1)}%`);
+      console.log(
+        `     Cold Cache Avg: ${coldCacheResult.averageResponseTime.toFixed(0)}ms`
+      );
+      console.log(
+        `     Warm Cache Avg: ${warmCacheResult.averageResponseTime.toFixed(0)}ms`
+      );
+      console.log(
+        `     Cache Efficiency: ${cacheResults.cacheEfficiency.improvement.toFixed(1)}%`
+      );
     } catch (error) {
       console.warn('⚠️  Cache performance tests failed:', error.message);
       cacheResults.error = error.message;
@@ -555,9 +617,9 @@ class PerformanceBenchmarking {
       // Simulate cache performance
       const baseColdTime = 800 + Math.random() * 400; // 800-1200ms for cold cache
       const baseWarmTime = 150 + Math.random() * 100; // 150-250ms for warm cache
-      
+
       const responseTime = cacheState === 'cold' ? baseColdTime : baseWarmTime;
-      
+
       results.push({
         page: page.path,
         responseTime,
@@ -571,20 +633,31 @@ class PerformanceBenchmarking {
     return {
       cacheState,
       tests: results,
-      averageResponseTime: results.reduce((sum, r) => sum + r.responseTime, 0) / results.length,
+      averageResponseTime:
+        results.reduce((sum, r) => sum + r.responseTime, 0) / results.length,
       minResponseTime: Math.min(...results.map(r => r.responseTime)),
       maxResponseTime: Math.max(...results.map(r => r.responseTime)),
     };
   }
 
   calculateCacheEfficiency(coldCache, warmCache) {
-    const improvement = ((coldCache.averageResponseTime - warmCache.averageResponseTime) / coldCache.averageResponseTime) * 100;
-    
+    const improvement =
+      ((coldCache.averageResponseTime - warmCache.averageResponseTime) /
+        coldCache.averageResponseTime) *
+      100;
+
     return {
       improvement,
       coldCacheTime: coldCache.averageResponseTime,
       warmCacheTime: warmCache.averageResponseTime,
-      grade: improvement > 70 ? 'excellent' : improvement > 50 ? 'good' : improvement > 30 ? 'fair' : 'poor',
+      grade:
+        improvement > 70
+          ? 'excellent'
+          : improvement > 50
+            ? 'good'
+            : improvement > 30
+              ? 'fair'
+              : 'poor',
     };
   }
 
@@ -595,16 +668,19 @@ class PerformanceBenchmarking {
 
     for (const page of this.config.testPages) {
       console.log(`   Benchmarking Core Web Vitals for ${page.name}`);
-      
+
       try {
         const pageVitals = await this.benchmarkCoreWebVitals(page);
         vitalsResults[page.path] = pageVitals;
-        
+
         console.log(`     LCP: ${pageVitals.average.lcp.toFixed(0)}ms`);
         console.log(`     CLS: ${pageVitals.average.cls.toFixed(3)}`);
         console.log(`     FID: ${pageVitals.average.fid.toFixed(0)}ms`);
       } catch (error) {
-        console.warn(`⚠️  Core Web Vitals benchmark for ${page.name} failed:`, error.message);
+        console.warn(
+          `⚠️  Core Web Vitals benchmark for ${page.name} failed:`,
+          error.message
+        );
         vitalsResults[page.path] = { error: error.message };
       }
     }
@@ -643,7 +719,7 @@ class PerformanceBenchmarking {
     };
 
     const base = baseVitals[page.path] || baseVitals['/'];
-    
+
     return {
       lcp: base.lcp + (Math.random() - 0.5) * 400,
       cls: Math.max(0, base.cls + (Math.random() - 0.5) * 0.04),
@@ -685,7 +761,10 @@ class PerformanceBenchmarking {
     };
 
     // Write detailed report
-    const reportPath = path.join(process.cwd(), 'performance-benchmark-report.json');
+    const reportPath = path.join(
+      process.cwd(),
+      'performance-benchmark-report.json'
+    );
     fs.writeFileSync(reportPath, JSON.stringify(report, null, 2));
 
     // Generate human-readable summary
@@ -708,7 +787,10 @@ class PerformanceBenchmarking {
 
     try {
       // Connectivity summary
-      if (this.results.benchmarks.connectivity?.connectivity?.status === 'connected') {
+      if (
+        this.results.benchmarks.connectivity?.connectivity?.status ===
+        'connected'
+      ) {
         summary.connectivity = 'good';
       }
 
@@ -725,8 +807,15 @@ class PerformanceBenchmarking {
         const successRates = Object.values(this.results.benchmarks.loadTests)
           .filter(r => r.successRate)
           .map(r => r.successRate);
-        const avgSuccessRate = successRates.reduce((sum, rate) => sum + rate, 0) / successRates.length;
-        summary.loadTestPerformance = avgSuccessRate > 95 ? 'excellent' : avgSuccessRate > 90 ? 'good' : 'fair';
+        const avgSuccessRate =
+          successRates.reduce((sum, rate) => sum + rate, 0) /
+          successRates.length;
+        summary.loadTestPerformance =
+          avgSuccessRate > 95
+            ? 'excellent'
+            : avgSuccessRate > 90
+              ? 'good'
+              : 'fair';
       }
 
       // Global latency summary
@@ -739,7 +828,8 @@ class PerformanceBenchmarking {
 
       // Cache efficiency summary
       if (this.results.benchmarks.cachePerformance?.cacheEfficiency?.grade) {
-        summary.cacheEfficiency = this.results.benchmarks.cachePerformance.cacheEfficiency.grade;
+        summary.cacheEfficiency =
+          this.results.benchmarks.cachePerformance.cacheEfficiency.grade;
       }
 
       // Core Web Vitals summary
@@ -777,7 +867,9 @@ class PerformanceBenchmarking {
       poor: 1,
     };
 
-    const avgValue = grades.reduce((sum, grade) => sum + (gradeValues[grade] || 0), 0) / grades.length;
+    const avgValue =
+      grades.reduce((sum, grade) => sum + (gradeValues[grade] || 0), 0) /
+      grades.length;
 
     if (avgValue >= 3.5) return 'excellent';
     if (avgValue >= 2.5) return 'good';
@@ -796,7 +888,9 @@ class PerformanceBenchmarking {
     }
 
     if (this.results.benchmarks.coreWebVitals) {
-      grades.coreWebVitals = Object.values(this.results.benchmarks.coreWebVitals)
+      grades.coreWebVitals = Object.values(
+        this.results.benchmarks.coreWebVitals
+      )
         .filter(r => r.grade)
         .map(r => ({ page: r.name, grade: r.grade }));
     }
@@ -808,7 +902,10 @@ class PerformanceBenchmarking {
     const recommendations = [];
     const summary = this.generateBenchmarkSummary();
 
-    if (summary.singleUserPerformance === 'poor' || summary.singleUserPerformance === 'fair') {
+    if (
+      summary.singleUserPerformance === 'poor' ||
+      summary.singleUserPerformance === 'fair'
+    ) {
       recommendations.push({
         category: 'performance',
         priority: 'high',
@@ -838,7 +935,10 @@ class PerformanceBenchmarking {
       });
     }
 
-    if (summary.cacheEfficiency === 'poor' || summary.cacheEfficiency === 'fair') {
+    if (
+      summary.cacheEfficiency === 'poor' ||
+      summary.cacheEfficiency === 'fair'
+    ) {
       recommendations.push({
         category: 'caching',
         priority: 'high',
@@ -872,7 +972,10 @@ class PerformanceBenchmarking {
   }
 
   generateHumanReadableBenchmarkReport(report) {
-    const summaryPath = path.join(process.cwd(), 'performance-benchmark-summary.md');
+    const summaryPath = path.join(
+      process.cwd(),
+      'performance-benchmark-summary.md'
+    );
 
     const markdown = `# Performance Benchmark Report
 
@@ -891,64 +994,92 @@ Site URL: ${this.config.siteUrl}
 ## Detailed Results
 
 ### Connectivity Tests
-${report.benchmarks.connectivity ? `
+${
+  report.benchmarks.connectivity
+    ? `
 - **DNS Resolution:** ${report.benchmarks.connectivity.dns?.resolutionTime?.toFixed(2) || 'N/A'}ms
 - **SSL Status:** ${report.benchmarks.connectivity.ssl?.status || 'N/A'}
 - **Basic Connectivity:** ${report.benchmarks.connectivity.connectivity?.status || 'N/A'}
-` : 'Not available'}
+`
+    : 'Not available'
+}
 
 ### Single User Performance
-${Object.entries(report.benchmarks.singleUser || {}).map(([path, result]) => `
+${Object.entries(report.benchmarks.singleUser || {})
+  .map(
+    ([path, result]) => `
 #### ${result.name} (${path})
 - **Grade:** ${result.grade?.toUpperCase() || 'N/A'} ${this.getGradeEmoji(result.grade)}
 - **Average Load Time:** ${result.average?.loadTime?.toFixed(0) || 'N/A'}ms
 - **Average LCP:** ${result.average?.lcp?.toFixed(0) || 'N/A'}ms
 - **Average CLS:** ${result.average?.cls?.toFixed(3) || 'N/A'}
-`).join('')}
+`
+  )
+  .join('')}
 
 ### Load Test Results
-${Object.entries(report.benchmarks.loadTests || {}).map(([users, result]) => `
+${Object.entries(report.benchmarks.loadTests || {})
+  .map(
+    ([users, result]) => `
 #### ${users} Concurrent Users
 - **Success Rate:** ${result.successRate?.toFixed(1) || 'N/A'}%
 - **Average Response Time:** ${result.averageResponseTime?.toFixed(0) || 'N/A'}ms
 - **Throughput:** ${result.throughput?.toFixed(1) || 'N/A'} req/sec
-`).join('')}
+`
+  )
+  .join('')}
 
 ### Global Latency Results
-${Object.entries(report.benchmarks.globalLatency || {}).map(([code, result]) => `
+${Object.entries(report.benchmarks.globalLatency || {})
+  .map(
+    ([code, result]) => `
 #### ${result.region} (${result.location})
 - **Grade:** ${result.grade?.toUpperCase() || 'N/A'} ${this.getGradeEmoji(result.grade)}
 - **Average Latency:** ${result.averageLatency?.toFixed(0) || 'N/A'}ms
 - **Min/Max:** ${result.minLatency?.toFixed(0) || 'N/A'}ms / ${result.maxLatency?.toFixed(0) || 'N/A'}ms
-`).join('')}
+`
+  )
+  .join('')}
 
 ### Cache Performance
-${report.benchmarks.cachePerformance ? `
+${
+  report.benchmarks.cachePerformance
+    ? `
 - **Cold Cache Average:** ${report.benchmarks.cachePerformance.coldCache?.averageResponseTime?.toFixed(0) || 'N/A'}ms
 - **Warm Cache Average:** ${report.benchmarks.cachePerformance.warmCache?.averageResponseTime?.toFixed(0) || 'N/A'}ms
 - **Cache Efficiency:** ${report.benchmarks.cachePerformance.cacheEfficiency?.improvement?.toFixed(1) || 'N/A'}% improvement
 - **Grade:** ${report.benchmarks.cachePerformance.cacheEfficiency?.grade?.toUpperCase() || 'N/A'} ${this.getGradeEmoji(report.benchmarks.cachePerformance.cacheEfficiency?.grade)}
-` : 'Not available'}
+`
+    : 'Not available'
+}
 
 ### Core Web Vitals Benchmarks
-${Object.entries(report.benchmarks.coreWebVitals || {}).map(([path, result]) => `
+${Object.entries(report.benchmarks.coreWebVitals || {})
+  .map(
+    ([path, result]) => `
 #### ${result.name} (${path})
 - **Grade:** ${result.grade?.toUpperCase() || 'N/A'} ${this.getGradeEmoji(result.grade)}
 - **Average LCP:** ${result.average?.lcp?.toFixed(0) || 'N/A'}ms
 - **Average CLS:** ${result.average?.cls?.toFixed(3) || 'N/A'}
 - **Average FID:** ${result.average?.fid?.toFixed(0) || 'N/A'}ms
-`).join('')}
+`
+  )
+  .join('')}
 
 ## Recommendations
 
-${report.recommendations.map(rec => `
+${report.recommendations
+  .map(
+    rec => `
 ### ${rec.title} (${rec.priority.toUpperCase()} Priority)
 
 ${rec.description}
 
 **Actions:**
 ${rec.actions.map(action => `- ${action}`).join('\n')}
-`).join('\n')}
+`
+  )
+  .join('\n')}
 
 ## Performance Thresholds
 
@@ -1006,14 +1137,26 @@ async function main() {
     const report = await benchmarking.runPerformanceBenchmarks();
 
     console.log('\n📊 Benchmark Summary:');
-    console.log(`   Overall Grade: ${report.summary.overallGrade.toUpperCase()}`);
-    console.log(`   Single User Performance: ${report.summary.singleUserPerformance.toUpperCase()}`);
-    console.log(`   Load Test Performance: ${report.summary.loadTestPerformance.toUpperCase()}`);
-    console.log(`   Cache Efficiency: ${report.summary.cacheEfficiency.toUpperCase()}`);
-    console.log(`   Core Web Vitals: ${report.summary.coreWebVitals.toUpperCase()}`);
+    console.log(
+      `   Overall Grade: ${report.summary.overallGrade.toUpperCase()}`
+    );
+    console.log(
+      `   Single User Performance: ${report.summary.singleUserPerformance.toUpperCase()}`
+    );
+    console.log(
+      `   Load Test Performance: ${report.summary.loadTestPerformance.toUpperCase()}`
+    );
+    console.log(
+      `   Cache Efficiency: ${report.summary.cacheEfficiency.toUpperCase()}`
+    );
+    console.log(
+      `   Core Web Vitals: ${report.summary.coreWebVitals.toUpperCase()}`
+    );
 
     if (report.recommendations.length > 0) {
-      console.log(`\n📋 Recommendations: ${report.recommendations.length} items`);
+      console.log(
+        `\n📋 Recommendations: ${report.recommendations.length} items`
+      );
     }
 
     console.log('✅ Performance benchmarking completed successfully');

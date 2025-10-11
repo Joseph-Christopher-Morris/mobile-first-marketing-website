@@ -1,6 +1,8 @@
 # Contact Form Setup for Static Site
 
-Since this is a static site deployed to S3 + CloudFront, the contact form requires a third-party service to handle form submissions. Here are the recommended options:
+Since this is a static site deployed to S3 + CloudFront, the contact form
+requires a third-party service to handle form submissions. Here are the
+recommended options:
 
 ## Option 1: Formspree (Recommended)
 
@@ -17,6 +19,7 @@ Formspree is a popular service for handling forms on static sites.
 4. Deploy your site - the form will now work!
 
 ### Features:
+
 - ✅ Free tier available (50 submissions/month)
 - ✅ Spam protection included
 - ✅ Email notifications
@@ -40,6 +43,7 @@ EmailJS allows you to send emails directly from client-side JavaScript.
    ```
 
 ### Features:
+
 - ✅ Free tier available (200 emails/month)
 - ✅ Direct email sending
 - ✅ Template customization
@@ -52,10 +56,12 @@ If you deploy to Netlify instead of S3, you can use Netlify Forms.
 ### Setup Steps:
 
 1. Add `netlify` attribute to your form element
-2. Add a hidden input: `<input type="hidden" name="form-name" value="contact" />`
+2. Add a hidden input:
+   `<input type="hidden" name="form-name" value="contact" />`
 3. Deploy to Netlify - forms are automatically detected
 
 ### Features:
+
 - ✅ Built into Netlify hosting
 - ✅ Spam protection
 - ✅ Form notifications
@@ -73,6 +79,7 @@ For more control, you can create a serverless function.
 4. Update the form handler to use your endpoint
 
 ### Features:
+
 - ✅ Full control over processing
 - ✅ Custom validation and logic
 - ✅ Integration with AWS services
@@ -81,6 +88,7 @@ For more control, you can create a serverless function.
 ## Current Implementation
 
 The current form implementation:
+
 - ✅ Validates all input client-side
 - ✅ Checks for spam content
 - ✅ Provides user feedback
@@ -109,17 +117,20 @@ Before going live:
 ## Troubleshooting
 
 ### Form shows "Network error"
+
 - Check if `NEXT_PUBLIC_FORMSPREE_ENDPOINT` is set correctly
 - Verify the Formspree endpoint URL is valid
 - Check browser console for detailed error messages
 
 ### Emails not being received
+
 - Check spam folder
 - Verify Formspree account is active
 - Test with different email addresses
 - Check Formspree dashboard for submission logs
 
 ### Form validation errors
+
 - Ensure all required fields are filled
 - Check email format is valid
 - Verify message is at least 10 characters long
@@ -127,6 +138,7 @@ Before going live:
 ## Support
 
 For issues with:
+
 - **Formspree**: Check their [documentation](https://help.formspree.io/)
 - **EmailJS**: Check their [documentation](https://www.emailjs.com/docs/)
 - **Form code**: Check the browser console for error messages

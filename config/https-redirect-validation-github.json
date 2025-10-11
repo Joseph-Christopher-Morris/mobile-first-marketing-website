@@ -90,9 +90,7 @@
         "secure": true,
         "httpOnly": false,
         "sameSite": "Lax",
-        "issues": [
-          "Missing HttpOnly flag"
-        ]
+        "issues": ["Missing HttpOnly flag"]
       }
     },
     {
@@ -270,10 +268,7 @@
       "timestamp": "2025-10-05T22:13:04.040Z",
       "details": {
         "header": "deny",
-        "expected": [
-          "DENY",
-          "SAMEORIGIN"
-        ],
+        "expected": ["DENY", "SAMEORIGIN"],
         "valid": true
       }
     },
@@ -293,11 +288,7 @@
       "timestamp": "2025-10-05T22:13:04.040Z",
       "details": {
         "header": "origin-when-cross-origin, strict-origin-when-cross-origin",
-        "expected": [
-          "strict-origin-when-cross-origin",
-          "no-referrer",
-          "same-origin"
-        ],
+        "expected": ["strict-origin-when-cross-origin", "no-referrer", "same-origin"],
         "valid": true
       }
     },

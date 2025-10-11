@@ -4,33 +4,33 @@
 
 :root {
   /* Primary Brand Colors */
-  --brand-primary: #F5276F;
-  --brand-primary-hover: #C8094C;
-  --brand-primary-light: #F8527A;
-  --brand-primary-dark: #B01E56;
-  
+  --brand-primary: #f5276f;
+  --brand-primary-hover: #c8094c;
+  --brand-primary-light: #f8527a;
+  --brand-primary-dark: #b01e56;
+
   /* Secondary Colors */
-  --brand-secondary: #6B7280;
-  --brand-secondary-light: #9CA3AF;
+  --brand-secondary: #6b7280;
+  --brand-secondary-light: #9ca3af;
   --brand-secondary-dark: #374151;
-  
+
   /* Neutral Colors */
-  --neutral-white: #FFFFFF;
-  --neutral-gray-50: #F9FAFB;
-  --neutral-gray-100: #F3F4F6;
-  --neutral-gray-200: #E5E7EB;
-  --neutral-gray-300: #D1D5DB;
-  --neutral-gray-400: #9CA3AF;
-  --neutral-gray-500: #6B7280;
-  --neutral-gray-600: #4B5563;
+  --neutral-white: #ffffff;
+  --neutral-gray-50: #f9fafb;
+  --neutral-gray-100: #f3f4f6;
+  --neutral-gray-200: #e5e7eb;
+  --neutral-gray-300: #d1d5db;
+  --neutral-gray-400: #9ca3af;
+  --neutral-gray-500: #6b7280;
+  --neutral-gray-600: #4b5563;
   --neutral-gray-700: #374151;
-  --neutral-gray-800: #1F2937;
+  --neutral-gray-800: #1f2937;
   --neutral-gray-900: #111827;
-  
+
   /* Status Colors */
-  --success: #10B981;
-  --warning: #F59E0B;
-  --error: #EF4444;
+  --success: #10b981;
+  --warning: #f59e0b;
+  --error: #ef4444;
   --info: var(--brand-primary);
 }
 
@@ -102,8 +102,8 @@ select:focus {
 }
 
 /* Checkbox and Radio Styles */
-input[type="checkbox"]:checked,
-input[type="radio"]:checked {
+input[type='checkbox']:checked,
+input[type='radio']:checked {
   background-color: var(--brand-primary);
   border-color: var(--brand-primary);
 }
@@ -195,19 +195,19 @@ input[type="radio"]:checked {
 .alert-success {
   background-color: rgba(16, 185, 129, 0.1);
   border: 1px solid rgba(16, 185, 129, 0.2);
-  color: #065F46;
+  color: #065f46;
 }
 
 .alert-warning {
   background-color: rgba(245, 158, 11, 0.1);
   border: 1px solid rgba(245, 158, 11, 0.2);
-  color: #92400E;
+  color: #92400e;
 }
 
 .alert-error {
   background-color: rgba(239, 68, 68, 0.1);
   border: 1px solid rgba(239, 68, 68, 0.2);
-  color: #991B1B;
+  color: #991b1b;
 }
 
 /* Loading Spinner */
@@ -221,8 +221,12 @@ input[type="radio"]:checked {
 }
 
 @keyframes spin {
-  0% { transform: rotate(0deg); }
-  100% { transform: rotate(360deg); }
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
 }
 
 /* Utility Classes */
@@ -253,11 +257,11 @@ input[type="radio"]:checked {
     padding: 10px 20px;
     font-size: 14px;
   }
-  
+
   .card {
     margin: 0 16px;
   }
-  
+
   .nav-link {
     padding: 12px 16px;
   }

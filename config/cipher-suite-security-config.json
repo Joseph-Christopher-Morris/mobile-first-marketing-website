@@ -3,7 +3,7 @@
     "version": "1.0",
     "lastUpdated": "2025-01-05",
     "description": "Cipher suite security configuration standards for CloudFront and HTTPS endpoints",
-    
+
     "strongCipherSuites": {
       "description": "Recommended strong cipher suites that should be supported",
       "required": [
@@ -25,40 +25,15 @@
         "ECDHE-ECDSA-AES128-SHA256"
       ]
     },
-    
+
     "weakCipherSuites": {
       "description": "Cipher suites and algorithms that should be disabled",
-      "prohibited": [
-        "RC4",
-        "DES",
-        "3DES",
-        "IDEA",
-        "SEED"
-      ],
-      "weakHashes": [
-        "MD5",
-        "SHA1"
-      ],
-      "weakKeyExchange": [
-        "NULL",
-        "EXPORT",
-        "ADH",
-        "AECDH",
-        "PSK",
-        "SRP",
-        "KRB5"
-      ],
-      "patterns": [
-        ".*-NULL-.*",
-        ".*-EXPORT-.*",
-        ".*-RC4-.*",
-        ".*-DES-.*",
-        ".*-3DES-.*",
-        ".*-MD5$",
-        ".*-SHA$"
-      ]
+      "prohibited": ["RC4", "DES", "3DES", "IDEA", "SEED"],
+      "weakHashes": ["MD5", "SHA1"],
+      "weakKeyExchange": ["NULL", "EXPORT", "ADH", "AECDH", "PSK", "SRP", "KRB5"],
+      "patterns": [".*-NULL-.*", ".*-EXPORT-.*", ".*-RC4-.*", ".*-DES-.*", ".*-3DES-.*", ".*-MD5$", ".*-SHA$"]
     },
-    
+
     "encryptionStrength": {
       "description": "Minimum encryption strength requirements",
       "symmetric": {
@@ -90,68 +65,37 @@
         }
       }
     },
-    
+
     "keyExchange": {
       "description": "Key exchange algorithm requirements",
       "perfectForwardSecrecy": {
         "required": true,
-        "algorithms": [
-          "ECDHE",
-          "DHE"
-        ]
+        "algorithms": ["ECDHE", "DHE"]
       },
       "ellipticCurves": {
-        "recommended": [
-          "P-256",
-          "P-384",
-          "P-521",
-          "X25519"
-        ],
-        "acceptable": [
-          "secp256r1",
-          "secp384r1",
-          "secp521r1"
-        ]
+        "recommended": ["P-256", "P-384", "P-521", "X25519"],
+        "acceptable": ["secp256r1", "secp384r1", "secp521r1"]
       }
     },
-    
+
     "messageAuthentication": {
       "description": "Message authentication code requirements",
       "aead": {
         "preferred": true,
-        "algorithms": [
-          "GCM",
-          "POLY1305",
-          "CCM"
-        ]
+        "algorithms": ["GCM", "POLY1305", "CCM"]
       },
       "hmac": {
-        "acceptable": [
-          "SHA256",
-          "SHA384",
-          "SHA512"
-        ],
-        "deprecated": [
-          "SHA1",
-          "MD5"
-        ]
+        "acceptable": ["SHA256", "SHA384", "SHA512"],
+        "deprecated": ["SHA1", "MD5"]
       }
     },
-    
+
     "protocolVersions": {
       "description": "Supported TLS protocol versions",
-      "supported": [
-        "TLSv1.2",
-        "TLSv1.3"
-      ],
-      "deprecated": [
-        "SSLv2",
-        "SSLv3",
-        "TLSv1.0",
-        "TLSv1.1"
-      ]
+      "supported": ["TLSv1.2", "TLSv1.3"],
+      "deprecated": ["SSLv2", "SSLv3", "TLSv1.0", "TLSv1.1"]
     },
-    
+
     "cloudFrontSpecific": {
       "description": "CloudFront-specific cipher suite considerations",
       "securityPolicy": {
@@ -169,7 +113,7 @@
         "Referrer-Policy": "strict-origin-when-cross-origin"
       }
     },
-    
+
     "validationCriteria": {
       "description": "Criteria for cipher suite validation scoring",
       "scoring": {
@@ -199,14 +143,10 @@
       },
       "minimumPassingScore": 80
     },
-    
+
     "testingGuidelines": {
       "description": "Guidelines for cipher suite testing",
-      "testDomains": [
-        "github.com",
-        "aws.amazon.com",
-        "cloudfront.net"
-      ],
+      "testDomains": ["github.com", "aws.amazon.com", "cloudfront.net"],
       "testScenarios": [
         "Strong cipher negotiation",
         "Weak cipher rejection",

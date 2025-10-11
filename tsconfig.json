@@ -1,12 +1,7 @@
 {
   "compilerOptions": {
     "target": "es2015",
-    "lib": [
-      "dom",
-      "dom.iterable",
-      "es6",
-      "es2015"
-    ],
+    "lib": ["dom", "dom.iterable", "es6", "es2015"],
     "downlevelIteration": true,
     "allowJs": true,
     "skipLibCheck": true,
@@ -29,21 +24,11 @@
     ],
     "baseUrl": ".",
     "paths": {
-      "@/*": [
-        "./src/*"
-      ],
-      "@/components/*": [
-        "./src/components/*"
-      ],
-      "@/lib/*": [
-        "./src/lib/*"
-      ],
-      "@/types/*": [
-        "./src/types/*"
-      ],
-      "@/content/*": [
-        "./content/*"
-      ]
+      "@/*": ["./src/*"],
+      "@/components/*": ["./src/components/*"],
+      "@/lib/*": ["./src/lib/*"],
+      "@/types/*": ["./src/types/*"],
+      "@/content/*": ["./content/*"]
     }
   },
   "include": [
@@ -58,10 +43,5 @@
     "src/test/types.d.ts",
     "build-1760027167401/types/**/*.ts"
   ],
-  "exclude": [
-    "node_modules",
-    "Zone_*/**/*",
-    "Zone_*",
-    "*.zip"
-  ]
+  "exclude": ["node_modules", "Zone_*/**/*", "Zone_*", "*.zip"]
 }

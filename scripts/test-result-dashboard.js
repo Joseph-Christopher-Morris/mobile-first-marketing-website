@@ -2,7 +2,7 @@
 
 /**
  * Test Result Dashboard and Monitoring System
- * 
+ *
  * This script creates a comprehensive dashboard for monitoring test results
  * across all test types: unit tests, e2e tests, performance tests, accessibility tests
  */
@@ -20,19 +20,19 @@ class TestResultDashboard {
         passed: 0,
         failed: 0,
         skipped: 0,
-        success_rate: 0
+        success_rate: 0,
       },
       categories: {
         unit: { status: 'pending', results: null, duration: 0 },
         e2e: { status: 'pending', results: null, duration: 0 },
         performance: { status: 'pending', results: null, duration: 0 },
         accessibility: { status: 'pending', results: null, duration: 0 },
-        functionality: { status: 'pending', results: null, duration: 0 }
+        functionality: { status: 'pending', results: null, duration: 0 },
       },
       alerts: [],
-      recommendations: []
+      recommendations: [],
     };
-    
+
     this.dashboardDir = '.kiro/test-results';
     this.ensureDashboardDirectory();
   }
@@ -45,34 +45,34 @@ class TestResultDashboard {
 
   async runAllTests() {
     console.log('🚀 Starting comprehensive test suite...\n');
-    
+
     // Run unit tests
     await this.runUnitTests();
-    
+
     // Run e2e tests
     await this.runE2ETests();
-    
+
     // Run performance tests
     await this.runPerformanceTests();
-    
+
     // Run accessibility tests
     await this.runAccessibilityTests();
-    
+
     // Run functionality tests
     await this.runFunctionalityTests();
-    
+
     // Calculate summary
     this.calculateSummary();
-    
+
     // Generate alerts and recommendations
     this.generateAlertsAndRecommendations();
-    
+
     // Save results
     this.saveResults();
-    
+
     // Generate HTML dashboard
     this.generateHTMLDashboard();
-    
+
     // Display summary
     this.displaySummary();
   }
@@ -80,20 +80,20 @@ class TestResultDashboard {
   async runUnitTests() {
     console.log('📋 Running unit tests...');
     const startTime = Date.now();
-    
+
     try {
-      const output = execSync('npm run test', { 
+      const output = execSync('npm run test', {
         encoding: 'utf8',
-        stdio: 'pipe'
+        stdio: 'pipe',
       });
-      
+
       this.results.categories.unit = {
         status: 'passed',
         results: this.parseVitestOutput(output),
         duration: Date.now() - startTime,
-        output: output
+        output: output,
       };
-      
+
       console.log('✅ Unit tests completed successfully');
     } catch (error) {
       this.results.categories.unit = {
@@ -101,9 +101,9 @@ class TestResultDashboard {
         results: this.parseVitestOutput(error.stdout || error.message),
         duration: Date.now() - startTime,
         output: error.stdout || error.message,
-        error: error.message
+        error: error.message,
       };
-      
+
       console.log('❌ Unit tests failed');
     }
   }
@@ -111,20 +111,20 @@ class TestResultDashboard {
   async runE2ETests() {
     console.log('🎭 Running end-to-end tests...');
     const startTime = Date.now();
-    
+
     try {
-      const output = execSync('npx playwright test --reporter=json', { 
+      const output = execSync('npx playwright test --reporter=json', {
         encoding: 'utf8',
-        stdio: 'pipe'
+        stdio: 'pipe',
       });
-      
+
       this.results.categories.e2e = {
         status: 'passed',
         results: this.parsePlaywrightOutput(output),
         duration: Date.now() - startTime,
-        output: output
+        output: output,
       };
-      
+
       console.log('✅ E2E tests completed successfully');
     } catch (error) {
       this.results.categories.e2e = {
@@ -132,9 +132,9 @@ class TestResultDashboard {
         results: this.parsePlaywrightOutput(error.stdout || error.message),
         duration: Date.now() - startTime,
         output: error.stdout || error.message,
-        error: error.message
+        error: error.message,
       };
-      
+
       console.log('❌ E2E tests failed');
     }
   }
@@ -142,20 +142,20 @@ class TestResultDashboard {
   async runPerformanceTests() {
     console.log('⚡ Running performance tests...');
     const startTime = Date.now();
-    
+
     try {
-      const output = execSync('npm run performance:validate', { 
+      const output = execSync('npm run performance:validate', {
         encoding: 'utf8',
-        stdio: 'pipe'
+        stdio: 'pipe',
       });
-      
+
       this.results.categories.performance = {
         status: 'passed',
         results: this.parsePerformanceOutput(output),
         duration: Date.now() - startTime,
-        output: output
+        output: output,
       };
-      
+
       console.log('✅ Performance tests completed successfully');
     } catch (error) {
       this.results.categories.performance = {
@@ -163,9 +163,9 @@ class TestResultDashboard {
         results: this.parsePerformanceOutput(error.stdout || error.message),
         duration: Date.now() - startTime,
         output: error.stdout || error.message,
-        error: error.message
+        error: error.message,
       };
-      
+
       console.log('❌ Performance tests failed');
     }
   }
@@ -173,20 +173,20 @@ class TestResultDashboard {
   async runAccessibilityTests() {
     console.log('♿ Running accessibility tests...');
     const startTime = Date.now();
-    
+
     try {
-      const output = execSync('npm run test:accessibility', { 
+      const output = execSync('npm run test:accessibility', {
         encoding: 'utf8',
-        stdio: 'pipe'
+        stdio: 'pipe',
       });
-      
+
       this.results.categories.accessibility = {
         status: 'passed',
         results: this.parseAccessibilityOutput(output),
         duration: Date.now() - startTime,
-        output: output
+        output: output,
       };
-      
+
       console.log('✅ Accessibility tests completed successfully');
     } catch (error) {
       this.results.categories.accessibility = {
@@ -194,9 +194,9 @@ class TestResultDashboard {
         results: this.parseAccessibilityOutput(error.stdout || error.message),
         duration: Date.now() - startTime,
         output: error.stdout || error.message,
-        error: error.message
+        error: error.message,
       };
-      
+
       console.log('❌ Accessibility tests failed');
     }
   }
@@ -204,20 +204,20 @@ class TestResultDashboard {
   async runFunctionalityTests() {
     console.log('🔧 Running functionality tests...');
     const startTime = Date.now();
-    
+
     try {
-      const output = execSync('npm run test:core-functionality', { 
+      const output = execSync('npm run test:core-functionality', {
         encoding: 'utf8',
-        stdio: 'pipe'
+        stdio: 'pipe',
       });
-      
+
       this.results.categories.functionality = {
         status: 'passed',
         results: this.parseFunctionalityOutput(output),
         duration: Date.now() - startTime,
-        output: output
+        output: output,
       };
-      
+
       console.log('✅ Functionality tests completed successfully');
     } catch (error) {
       this.results.categories.functionality = {
@@ -225,23 +225,25 @@ class TestResultDashboard {
         results: this.parseFunctionalityOutput(error.stdout || error.message),
         duration: Date.now() - startTime,
         output: error.stdout || error.message,
-        error: error.message
+        error: error.message,
       };
-      
+
       console.log('❌ Functionality tests failed');
     }
   }
 
   parseVitestOutput(output) {
     const lines = output.split('\n');
-    let passed = 0, failed = 0, skipped = 0;
-    
+    let passed = 0,
+      failed = 0,
+      skipped = 0;
+
     lines.forEach(line => {
       if (line.includes('✓') || line.includes('PASS')) passed++;
       if (line.includes('✗') || line.includes('FAIL')) failed++;
       if (line.includes('SKIP')) skipped++;
     });
-    
+
     return { passed, failed, skipped, total: passed + failed + skipped };
   }
 
@@ -253,7 +255,10 @@ class TestResultDashboard {
         passed: stats.expected || 0,
         failed: stats.unexpected || 0,
         skipped: stats.skipped || 0,
-        total: (stats.expected || 0) + (stats.unexpected || 0) + (stats.skipped || 0)
+        total:
+          (stats.expected || 0) +
+          (stats.unexpected || 0) +
+          (stats.skipped || 0),
       };
     } catch {
       return this.parseGenericOutput(output);
@@ -274,20 +279,40 @@ class TestResultDashboard {
 
   parseGenericOutput(output) {
     const lines = output.split('\n');
-    let passed = 0, failed = 0, skipped = 0;
-    
+    let passed = 0,
+      failed = 0,
+      skipped = 0;
+
     lines.forEach(line => {
-      if (line.includes('✅') || line.includes('PASS') || line.includes('SUCCESS')) passed++;
-      if (line.includes('❌') || line.includes('FAIL') || line.includes('ERROR')) failed++;
-      if (line.includes('⚠️') || line.includes('SKIP') || line.includes('WARNING')) skipped++;
+      if (
+        line.includes('✅') ||
+        line.includes('PASS') ||
+        line.includes('SUCCESS')
+      )
+        passed++;
+      if (
+        line.includes('❌') ||
+        line.includes('FAIL') ||
+        line.includes('ERROR')
+      )
+        failed++;
+      if (
+        line.includes('⚠️') ||
+        line.includes('SKIP') ||
+        line.includes('WARNING')
+      )
+        skipped++;
     });
-    
+
     return { passed, failed, skipped, total: passed + failed + skipped };
   }
 
   calculateSummary() {
-    let totalPassed = 0, totalFailed = 0, totalSkipped = 0, totalTests = 0;
-    
+    let totalPassed = 0,
+      totalFailed = 0,
+      totalSkipped = 0,
+      totalTests = 0;
+
     Object.values(this.results.categories).forEach(category => {
       if (category.results) {
         totalPassed += category.results.passed || 0;
@@ -296,19 +321,20 @@ class TestResultDashboard {
         totalTests += category.results.total || 0;
       }
     });
-    
+
     this.results.summary = {
       total: totalTests,
       passed: totalPassed,
       failed: totalFailed,
       skipped: totalSkipped,
-      success_rate: totalTests > 0 ? Math.round((totalPassed / totalTests) * 100) : 0
+      success_rate:
+        totalTests > 0 ? Math.round((totalPassed / totalTests) * 100) : 0,
     };
   }
 
   generateAlertsAndRecommendations() {
     const { summary, categories } = this.results;
-    
+
     // Generate alerts for failed tests
     Object.entries(categories).forEach(([category, data]) => {
       if (data.status === 'failed') {
@@ -316,33 +342,34 @@ class TestResultDashboard {
           type: 'error',
           category: category,
           message: `${category.toUpperCase()} tests failed`,
-          details: data.error || 'Check test output for details'
+          details: data.error || 'Check test output for details',
         });
       }
     });
-    
+
     // Generate recommendations based on success rate
     if (summary.success_rate < 80) {
       this.results.recommendations.push({
         type: 'critical',
         message: 'Test success rate is below 80%',
-        action: 'Review and fix failing tests before deployment'
+        action: 'Review and fix failing tests before deployment',
       });
     } else if (summary.success_rate < 95) {
       this.results.recommendations.push({
         type: 'warning',
         message: 'Test success rate could be improved',
-        action: 'Consider addressing failing tests for better reliability'
+        action: 'Consider addressing failing tests for better reliability',
       });
     }
-    
+
     // Check for long-running tests
     Object.entries(categories).forEach(([category, data]) => {
-      if (data.duration > 60000) { // 1 minute
+      if (data.duration > 60000) {
+        // 1 minute
         this.results.recommendations.push({
           type: 'performance',
           message: `${category.toUpperCase()} tests are taking too long`,
-          action: 'Consider optimizing test performance'
+          action: 'Consider optimizing test performance',
         });
       }
     });
@@ -351,10 +378,10 @@ class TestResultDashboard {
   saveResults() {
     const resultsFile = path.join(this.dashboardDir, 'latest-results.json');
     const historyFile = path.join(this.dashboardDir, 'test-history.json');
-    
+
     // Save latest results
     fs.writeFileSync(resultsFile, JSON.stringify(this.results, null, 2));
-    
+
     // Update history
     let history = [];
     if (fs.existsSync(historyFile)) {
@@ -364,18 +391,21 @@ class TestResultDashboard {
         console.warn('Could not read test history:', error.message);
       }
     }
-    
+
     history.push({
       timestamp: this.results.timestamp,
       summary: this.results.summary,
-      duration: Object.values(this.results.categories).reduce((sum, cat) => sum + cat.duration, 0)
+      duration: Object.values(this.results.categories).reduce(
+        (sum, cat) => sum + cat.duration,
+        0
+      ),
     });
-    
+
     // Keep only last 50 results
     if (history.length > 50) {
       history = history.slice(-50);
     }
-    
+
     fs.writeFileSync(historyFile, JSON.stringify(history, null, 2));
   }
 
@@ -447,60 +477,84 @@ class TestResultDashboard {
         </div>
         
         <div class="categories">
-            ${Object.entries(this.results.categories).map(([name, data]) => `
+            ${Object.entries(this.results.categories)
+              .map(
+                ([name, data]) => `
                 <div class="category">
                     <div class="category-header">
                         <div class="category-title">${name.toUpperCase()}</div>
                         <div class="status-badge status-${data.status}">${data.status.toUpperCase()}</div>
                     </div>
-                    ${data.results ? `
+                    ${
+                      data.results
+                        ? `
                         <div>Total: ${data.results.total}</div>
                         <div>Passed: <span class="success">${data.results.passed}</span></div>
                         <div>Failed: <span class="error">${data.results.failed}</span></div>
                         <div>Skipped: <span class="warning">${data.results.skipped}</span></div>
                         <div>Duration: ${Math.round(data.duration / 1000)}s</div>
-                    ` : '<div>No results available</div>'}
+                    `
+                        : '<div>No results available</div>'
+                    }
                 </div>
-            `).join('')}
+            `
+              )
+              .join('')}
         </div>
         
-        ${this.results.alerts.length > 0 ? `
+        ${
+          this.results.alerts.length > 0
+            ? `
             <div class="alerts">
                 <h2>Alerts</h2>
-                ${this.results.alerts.map(alert => `
+                ${this.results.alerts
+                  .map(
+                    alert => `
                     <div class="alert alert-${alert.type}">
                         <strong>${alert.message}</strong><br>
                         ${alert.details}
                     </div>
-                `).join('')}
+                `
+                  )
+                  .join('')}
             </div>
-        ` : ''}
+        `
+            : ''
+        }
         
-        ${this.results.recommendations.length > 0 ? `
+        ${
+          this.results.recommendations.length > 0
+            ? `
             <div class="recommendations">
                 <h2>Recommendations</h2>
-                ${this.results.recommendations.map(rec => `
+                ${this.results.recommendations
+                  .map(
+                    rec => `
                     <div class="alert alert-${rec.type === 'critical' ? 'error' : 'warning'}">
                         <strong>${rec.message}</strong><br>
                         ${rec.action}
                     </div>
-                `).join('')}
+                `
+                  )
+                  .join('')}
             </div>
-        ` : ''}
+        `
+            : ''
+        }
     </div>
 </body>
 </html>
     `;
-    
+
     const dashboardFile = path.join(this.dashboardDir, 'dashboard.html');
     fs.writeFileSync(dashboardFile, html);
-    
+
     console.log(`\n📊 HTML dashboard generated: ${dashboardFile}`);
   }
 
   displaySummary() {
     const { summary, alerts, recommendations } = this.results;
-    
+
     console.log('\n' + '='.repeat(60));
     console.log('📊 TEST RESULTS SUMMARY');
     console.log('='.repeat(60));
@@ -508,22 +562,24 @@ class TestResultDashboard {
     console.log(`Passed: ${summary.passed} ✅`);
     console.log(`Failed: ${summary.failed} ❌`);
     console.log(`Skipped: ${summary.skipped} ⚠️`);
-    console.log(`Success Rate: ${summary.success_rate}% ${summary.success_rate >= 95 ? '🎉' : summary.success_rate >= 80 ? '⚠️' : '🚨'}`);
-    
+    console.log(
+      `Success Rate: ${summary.success_rate}% ${summary.success_rate >= 95 ? '🎉' : summary.success_rate >= 80 ? '⚠️' : '🚨'}`
+    );
+
     if (alerts.length > 0) {
       console.log('\n🚨 ALERTS:');
       alerts.forEach(alert => {
         console.log(`  • ${alert.message}: ${alert.details}`);
       });
     }
-    
+
     if (recommendations.length > 0) {
       console.log('\n💡 RECOMMENDATIONS:');
       recommendations.forEach(rec => {
         console.log(`  • ${rec.message}: ${rec.action}`);
       });
     }
-    
+
     console.log('\n📁 Results saved to:', this.dashboardDir);
     console.log('='.repeat(60));
   }
@@ -532,12 +588,12 @@ class TestResultDashboard {
   static viewResults() {
     const dashboardDir = '.kiro/test-results';
     const resultsFile = path.join(dashboardDir, 'latest-results.json');
-    
+
     if (!fs.existsSync(resultsFile)) {
       console.log('❌ No test results found. Run tests first.');
       return;
     }
-    
+
     try {
       const results = JSON.parse(fs.readFileSync(resultsFile, 'utf8'));
       const dashboard = new TestResultDashboard();
@@ -549,18 +605,19 @@ class TestResultDashboard {
   }
 
   // Static method to start monitoring
-  static startMonitoring(interval = 300000) { // 5 minutes default
+  static startMonitoring(interval = 300000) {
+    // 5 minutes default
     console.log(`🔄 Starting test monitoring (interval: ${interval / 1000}s)`);
-    
+
     const runTests = async () => {
       console.log('\n⏰ Scheduled test run starting...');
       const dashboard = new TestResultDashboard();
       await dashboard.runAllTests();
     };
-    
+
     // Run immediately
     runTests();
-    
+
     // Schedule recurring runs
     setInterval(runTests, interval);
   }
@@ -569,31 +626,33 @@ class TestResultDashboard {
 // CLI interface
 if (require.main === module) {
   const command = process.argv[2];
-  
+
   switch (command) {
     case 'run':
       const dashboard = new TestResultDashboard();
       dashboard.runAllTests().catch(console.error);
       break;
-      
+
     case 'view':
       TestResultDashboard.viewResults();
       break;
-      
+
     case 'monitor':
       const interval = parseInt(process.argv[3]) || 300000;
       TestResultDashboard.startMonitoring(interval);
       break;
-      
+
     case 'html':
       const dashboardFile = path.join('.kiro/test-results', 'dashboard.html');
       if (fs.existsSync(dashboardFile)) {
-        console.log(`📊 Dashboard available at: file://${path.resolve(dashboardFile)}`);
+        console.log(
+          `📊 Dashboard available at: file://${path.resolve(dashboardFile)}`
+        );
       } else {
         console.log('❌ No dashboard found. Run tests first.');
       }
       break;
-      
+
     default:
       console.log(`
 📊 Test Result Dashboard and Monitoring System

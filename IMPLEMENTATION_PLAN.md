@@ -1,48 +1,58 @@
 # Site Update Implementation Plan
 
 ## Overview
-Comprehensive site update including content updates, UI/UX fixes, and deployment with proper cache rules.
+
+Comprehensive site update including content updates, UI/UX fixes, and deployment
+with proper cache rules.
 
 ## Objectives Checklist
 
 ### 1. Content Updates ✅
+
 - [x] Update Photography portfolio (6 specific images)
-- [x] Update Analytics portfolio (3 specific images) 
+- [x] Update Analytics portfolio (3 specific images)
 - [x] Update Ad Campaigns portfolio (3 specific images)
 - [x] Remove "View Full Portfolio" CTAs
 - [x] Add proper alt text for all images
 
 ### 2. Lazy Loading Policy ⏳
+
 - [ ] Implement eager loading for above-the-fold images
 - [ ] Keep lazy loading for below-the-fold images
 - [ ] Add fallback for non-IntersectionObserver browsers
 
 ### 3. Navigation - Hamburger Icon ⏳
+
 - [ ] Hide hamburger on ≥1024px viewport
 - [ ] Ensure desktop nav alignment
 - [ ] Maintain mobile functionality
 
 ### 4. Button Styling ⏳
+
 - [ ] Fix "Learn More" button colors (neutral)
 - [ ] Keep primary CTA pink with white text
 
 ### 5. "Explore Our Other Services" Images ⏳
+
 - [ ] Ensure images render as real img elements
 - [ ] Fix asset paths and casing
 - [ ] Add proper alt text and dimensions
 
 ### 6. Asset Hygiene ⏳
+
 - [ ] Verify file paths and casing
 - [ ] Set correct MIME types
 - [ ] Implement proper caching strategy
 
 ### 7. Build & Deploy ⏳
+
 - [ ] Build with TypeScript
 - [ ] Upload to S3 with correct headers
 - [ ] Create CloudFront invalidation
 - [ ] Verify deployment
 
 ### 8. QA Testing ⏳
+
 - [ ] Test all pages for above-the-fold loading
 - [ ] Verify navigation on desktop/mobile
 - [ ] Check button styling
@@ -60,11 +70,13 @@ Comprehensive site update including content updates, UI/UX fixes, and deployment
 ## Files to Modify
 
 ### Content Files
+
 - `content/services/photography.md`
-- `content/services/analytics.md` 
+- `content/services/analytics.md`
 - `content/services/ad-campaigns.md`
 
 ### Component Files
+
 - `src/components/sections/ServiceContent.tsx`
 - `src/components/sections/ServiceNavigation.tsx`
 - `src/components/layout/Header.tsx`
@@ -72,10 +84,12 @@ Comprehensive site update including content updates, UI/UX fixes, and deployment
 - `src/components/ui/OptimizedImage.tsx`
 
 ### Asset Files
+
 - Portfolio images in `public/images/services/`
 - Verify image paths and casing
 
 ### Build/Deploy Files
+
 - `scripts/deploy.js`
 - CloudFront invalidation scripts
 

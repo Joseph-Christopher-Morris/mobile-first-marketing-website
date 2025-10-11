@@ -269,7 +269,7 @@ class TestResultAggregator {
     let passedTests = 0;
     let failedTests = 0;
     let skippedTests = 0;
-    let totalSuites = this.aggregatedResults.testSuites.length;
+    const totalSuites = this.aggregatedResults.testSuites.length;
     let passedSuites = 0;
     let failedSuites = 0;
     let totalDuration = 0;

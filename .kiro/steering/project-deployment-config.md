@@ -6,9 +6,11 @@ inclusion: always
 
 ## Current Deployment Architecture
 
-This project uses **S3 + CloudFront deployment architecture** exclusively. AWS Amplify has been decommissioned and should not be used.
+This project uses **S3 + CloudFront deployment architecture** exclusively. AWS
+Amplify has been decommissioned and should not be used.
 
 ### Production Infrastructure
+
 - **S3 Bucket**: `mobile-marketing-site-prod-1759705011281-tyzuo9`
 - **CloudFront Distribution**: `E2IBMHQ3GCW6ZK`
 - **Domain**: `d15sc9fc739ev2.cloudfront.net`
@@ -18,11 +20,13 @@ This project uses **S3 + CloudFront deployment architecture** exclusively. AWS A
 ### Deployment Commands
 
 #### Infrastructure Setup (One-time)
+
 ```bash
 node scripts/setup-infrastructure.js
 ```
 
 #### Regular Deployment
+
 ```bash
 # Set environment variables
 export S3_BUCKET_NAME="mobile-marketing-site-prod-1759705011281-tyzuo9"
@@ -34,6 +38,7 @@ node scripts/deploy.js
 ```
 
 #### Rollback Operations
+
 ```bash
 # List available backups
 node scripts/rollback.js list
@@ -48,31 +53,33 @@ node scripts/rollback.js emergency
 ### GitHub Actions Automation
 
 The project has automated deployment via GitHub Actions:
+
 - **Workflow File**: `.github/workflows/s3-cloudfront-deploy.yml`
 - **Trigger**: Push to `main` branch
 - **Process**: Build → Deploy → Validate → Notify
 
 ### Key Scripts and Tools
 
-| Script | Purpose |
-|--------|---------|
-| `scripts/setup-infrastructure.js` | Initial AWS infrastructure setup |
-| `scripts/deploy.js` | Main deployment script |
-| `scripts/rollback.js` | Backup and rollback management |
-| `scripts/deployment-validator.js` | Post-deployment validation |
-| `scripts/setup-cloudwatch-monitoring.js` | Monitoring setup |
+| Script                                   | Purpose                          |
+| ---------------------------------------- | -------------------------------- |
+| `scripts/setup-infrastructure.js`        | Initial AWS infrastructure setup |
+| `scripts/deploy.js`                      | Main deployment script           |
+| `scripts/rollback.js`                    | Backup and rollback management   |
+| `scripts/deployment-validator.js`        | Post-deployment validation       |
+| `scripts/setup-cloudwatch-monitoring.js` | Monitoring setup                 |
 
 ### Configuration Files
 
-| File | Purpose |
-|------|---------|
-| `config/production-infrastructure.json` | Infrastructure configuration |
-| `config/cloudfront-s3-config.json` | CloudFront settings |
-| `.github/workflows/s3-cloudfront-deploy.yml` | CI/CD pipeline |
+| File                                         | Purpose                      |
+| -------------------------------------------- | ---------------------------- |
+| `config/production-infrastructure.json`      | Infrastructure configuration |
+| `config/cloudfront-s3-config.json`           | CloudFront settings          |
+| `.github/workflows/s3-cloudfront-deploy.yml` | CI/CD pipeline               |
 
 ## Migration Status
 
 ### ✅ Completed
+
 - AWS Amplify decommissioned
 - S3 + CloudFront infrastructure deployed
 - GitHub Actions pipeline configured
@@ -81,6 +88,7 @@ The project has automated deployment via GitHub Actions:
 - Rollback procedures tested
 
 ### 🚫 Deprecated/Prohibited
+
 - **AWS Amplify**: Completely decommissioned, do not use
 - **Direct S3 hosting**: Security risk, use CloudFront only
 - **Public S3 buckets**: Violates security standards
@@ -98,20 +106,23 @@ The project has automated deployment via GitHub Actions:
 ## Support and Troubleshooting
 
 ### Common Issues
+
 - **Blog menu not working**: Ensure `src/app/blog/page.tsx` exists
 - **Deployment failures**: Check AWS credentials and permissions
 - **Cache issues**: Use CloudFront invalidation via deployment script
 - **Security errors**: Verify OAC configuration and bucket policies
 
 ### Monitoring URLs
+
 - **Website**: `https://d15sc9fc739ev2.cloudfront.net`
 - **CloudWatch**: AWS Console → CloudWatch → us-east-1
-- **S3 Console**: AWS Console → S3 → mobile-marketing-site-prod-*
+- **S3 Console**: AWS Console → S3 → mobile-marketing-site-prod-\*
 - **CloudFront Console**: AWS Console → CloudFront → E2IBMHQ3GCW6ZK
 
 ## Security Compliance
 
 This deployment follows all security standards:
+
 - ✅ Private S3 buckets with OAC
 - ✅ HTTPS-only via CloudFront
 - ✅ Security headers enabled

@@ -1,21 +1,25 @@
 # Cipher Suite Validation Report
 
 ## Summary
+
 - **Domain**: github.com
 - **Validation Date**: 2025-10-05T21:40:11.105Z
 - **Overall Score**: 0/100
 - **Status**: ❌ FAILED
 
 ## Strong Cipher Suites Supported
+
 - ❌ No strong ciphers detected
 
 ## Encryption Strength Analysis
+
 - **AES-256 Ciphers**: 0
 - **AES-128 Ciphers**: 0
 - **ChaCha20 Ciphers**: 0
 - **Perfect Forward Secrecy**: 0
 
 ## Weak Ciphers Found
+
 - ❌ DHE-PSK-AES128-CBC-SHA (PSK)
 - ❌ DHE-PSK-AES128-CBC-SHA256 (PSK)
 - ❌ DHE-PSK-AES128-GCM-SHA256 (PSK)
@@ -48,6 +52,7 @@
 - ❌ SRP-RSA-AES-256-CBC-SHA (SRP)
 
 ## Recommendations
+
 - Add support for AES-256 encryption
 - Consider adding ChaCha20-Poly1305 cipher suites
 - Enable Perfect Forward Secrecy with ECDHE or DHE key exchange
@@ -56,4 +61,6 @@
 - Add modern AEAD cipher suites (GCM, ChaCha20-Poly1305)
 
 ## Detailed Results
-For complete technical details, see the JSON report: `config/cipher-suite-validation-report.json`
+
+For complete technical details, see the JSON report:
+`config/cipher-suite-validation-report.json`

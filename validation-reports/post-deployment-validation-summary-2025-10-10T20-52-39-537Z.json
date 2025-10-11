@@ -1,12 +1,7 @@
 {
   "timestamp": "2025-10-10T20-52-39-537Z",
   "validationType": "post-deployment-comprehensive",
-  "requirements": [
-    "5.5",
-    "7.1",
-    "7.2",
-    "7.5"
-  ],
+  "requirements": ["5.5", "7.1", "7.2", "7.5"],
   "tests": {
     "accessibility": {
       "executed": true,

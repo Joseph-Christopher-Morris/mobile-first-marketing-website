@@ -75,9 +75,7 @@
       "contentType": "text/html",
       "contentLength": "83449",
       "cacheStatus": "Error from cloudfront",
-      "errors": [
-        "Invalid Content-Type: text/html"
-      ],
+      "errors": ["Invalid Content-Type: text/html"],
       "warnings": [],
       "details": {
         "headers": {
@@ -98,10 +96,7 @@
   "analysis": {
     "primaryImageStatus": "WORKING",
     "securityStatus": "SECURE",
-    "recommendations": [
-      "Primary image is working correctly",
-      "S3 security is properly configured"
-    ],
+    "recommendations": ["Primary image is working correctly", "S3 security is properly configured"],
     "possibleCauses": [],
     "nextSteps": []
   }

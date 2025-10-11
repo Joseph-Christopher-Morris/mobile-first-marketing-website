@@ -10,10 +10,7 @@
     {
       "name": "Notification Channels",
       "status": "configured",
-      "channels": [
-        "console",
-        "file"
-      ],
+      "channels": ["console", "file"],
       "description": "Alert notification delivery channels"
     },
     {

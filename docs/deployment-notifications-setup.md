@@ -1,19 +1,25 @@
 # Deployment Notifications Setup Guide
 
-This guide explains how to configure deployment notifications for the S3/CloudFront deployment pipeline.
+This guide explains how to configure deployment notifications for the
+S3/CloudFront deployment pipeline.
 
 ## Overview
 
-The deployment pipeline includes comprehensive notification capabilities to keep your team informed about deployment status, failures, and important events. Notifications can be sent to multiple channels including Slack, Discord, email, and custom webhooks.
+The deployment pipeline includes comprehensive notification capabilities to keep
+your team informed about deployment status, failures, and important events.
+Notifications can be sent to multiple channels including Slack, Discord, email,
+and custom webhooks.
 
 ## Quick Setup
 
 1. **Initialize notification configuration:**
+
    ```bash
    npm run deploy:notifications:setup
    ```
 
 2. **Edit the configuration file:**
+
    ```bash
    # Edit .kiro/deployment-notifications/config.json
    ```
@@ -28,6 +34,7 @@ The deployment pipeline includes comprehensive notification capabilities to keep
 ### Configuration File Location
 
 The main configuration file is located at:
+
 ```
 .kiro/deployment-notifications/config.json
 ```
@@ -95,6 +102,7 @@ Configure Slack webhook for team notifications:
 ```
 
 **Setup Steps:**
+
 1. Go to your Slack workspace
 2. Create a new app or use existing one
 3. Enable Incoming Webhooks
@@ -118,6 +126,7 @@ Configure Discord webhook for team notifications:
 ```
 
 **Setup Steps:**
+
 1. Go to your Discord server
 2. Navigate to Server Settings → Integrations → Webhooks
 3. Create a new webhook
@@ -150,6 +159,7 @@ Configure SMTP for email notifications:
 **Common SMTP Providers:**
 
 **Gmail:**
+
 ```json
 {
   "host": "smtp.gmail.com",
@@ -159,6 +169,7 @@ Configure SMTP for email notifications:
 ```
 
 **Outlook/Hotmail:**
+
 ```json
 {
   "host": "smtp-mail.outlook.com",
@@ -168,6 +179,7 @@ Configure SMTP for email notifications:
 ```
 
 **SendGrid:**
+
 ```json
 {
   "host": "smtp.sendgrid.net",
@@ -201,7 +213,8 @@ Configure custom webhook for integration with other systems:
 
 ## Notification Templates
 
-Templates are located in `.kiro/deployment-notifications/templates/` and can be customized for each channel.
+Templates are located in `.kiro/deployment-notifications/templates/` and can be
+customized for each channel.
 
 ### Template Variables
 
@@ -218,18 +231,20 @@ The following variables are available in all templates:
 ### Customizing Templates
 
 1. **Edit template files:**
+
    ```bash
    # Slack template
    .kiro/deployment-notifications/templates/slack.json
-   
+
    # Discord template
    .kiro/deployment-notifications/templates/discord.json
-   
+
    # Email template
    .kiro/deployment-notifications/templates/email.json
    ```
 
 2. **Use template variables:**
+
    ```json
    {
      "text": "Deployment to {{environment}} completed by {{actor}}"
@@ -498,6 +513,7 @@ Keep documentation current:
 4. **Review security practices**
 
 For additional support, see:
+
 - [GitHub Actions AWS Setup Guide](github-actions-aws-setup.md)
 - [Deployment Runbook](deployment-runbook.md)
 - [Troubleshooting Guide](troubleshooting-guide.md)

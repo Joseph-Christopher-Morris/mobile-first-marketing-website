@@ -2,39 +2,39 @@
 
 /**
  * Access Control and Audit Logging Validation Script
- * 
+ *
  * This script validates that access control and audit logging are properly configured:
  * - Verifies least privilege IAM policies
  * - Tests S3 bucket policies for CloudFront-only access
  * - Validates comprehensive audit logging setup
  */
 
-const { 
+const {
   IAMClient,
   GetPolicyCommand,
   GetRoleCommand,
   ListAttachedRolePoliciesCommand,
-  SimulatePrincipalPolicyCommand
+  SimulatePrincipalPolicyCommand,
 } = require('@aws-sdk/client-iam');
 
-const { 
-  S3Client, 
+const {
+  S3Client,
   GetBucketPolicyCommand,
   GetBucketLoggingCommand,
   GetBucketPublicAccessBlockCommand,
-  HeadBucketCommand
+  HeadBucketCommand,
 } = require('@aws-sdk/client-s3');
 
-const { 
+const {
   CloudTrailClient,
   GetTrailStatusCommand,
   DescribeTrailsCommand,
-  GetEventSelectorsCommand
+  GetEventSelectorsCommand,
 } = require('@aws-sdk/client-cloudtrail');
 
-const { 
+const {
   CloudWatchLogsClient,
-  DescribeLogGroupsCommand
+  DescribeLogGroupsCommand,
 } = require('@aws-sdk/client-cloudwatch-logs');
 
 const { STSClient, GetCallerIdentityCommand } = require('@aws-sdk/client-sts');
@@ -45,20 +45,25 @@ class AccessControlAuditValidator {
   constructor() {
     this.region = process.env.AWS_REGION || 'us-east-1';
     this.environment = process.env.ENVIRONMENT || 'production';
-    
+
     this.iam = new IAMClient({ region: this.region });
     this.s3 = new S3Client({ region: this.region });
     this.cloudtrail = new CloudTrailClient({ region: this.region });
     this.cloudwatchLogs = new CloudWatchLogsClient({ region: this.region });
     this.sts = new STSClient({ region: this.region });
-    
+
     this.accountId = null;
     this.config = null;
   }
 
   async loadConfig() {
     try {
-      const configPath = path.join(__dirname, '..', 'config', 'cloudfront-s3-config.json');
+      const configPath = path.join(
+        __dirname,
+        '..',
+        'config',
+        'cloudfront-s3-config.json'
+      );
       const configData = await fs.readFile(configPath, 'utf8');
       this.config = JSON.parse(configData);
       console.log('✅ Loaded infrastructure configuration');
@@ -70,7 +75,7 @@ class AccessControlAuditValidator {
 
   async getAccountId() {
     if (this.accountId) return this.accountId;
-    
+
     try {
       const result = await this.sts.send(new GetCallerIdentityCommand({}));
       this.accountId = result.Account;
@@ -86,29 +91,31 @@ class AccessControlAuditValidator {
    */
   async validateIAMPolicies() {
     console.log('🔐 Validating IAM policies for least privilege...');
-    
+
     const results = {
       deploymentPolicy: false,
       monitoringPolicy: false,
-      policies: []
+      policies: [],
     };
 
     const policyNames = [
       `S3CloudFrontDeploymentPolicy-${this.environment}`,
-      `S3CloudFrontMonitoringPolicy-${this.environment}`
+      `S3CloudFrontMonitoringPolicy-${this.environment}`,
     ];
 
     for (const policyName of policyNames) {
       try {
         const policyArn = `arn:aws:iam::${await this.getAccountId()}:policy/${policyName}`;
-        const policy = await this.iam.send(new GetPolicyCommand({ PolicyArn: policyArn }));
-        
+        const policy = await this.iam.send(
+          new GetPolicyCommand({ PolicyArn: policyArn })
+        );
+
         console.log(`✅ Found IAM policy: ${policyName}`);
         results.policies.push({
           name: policyName,
           arn: policyArn,
           version: policy.Policy.DefaultVersionId,
-          created: policy.Policy.CreateDate
+          created: policy.Policy.CreateDate,
         });
 
         if (policyName.includes('Deployment')) {
@@ -116,12 +123,14 @@ class AccessControlAuditValidator {
         } else if (policyName.includes('Monitoring')) {
           results.monitoringPolicy = true;
         }
-
       } catch (error) {
         if (error.name === 'NoSuchEntity') {
           console.log(`❌ IAM policy not found: ${policyName}`);
         } else {
-          console.error(`❌ Error checking policy ${policyName}:`, error.message);
+          console.error(
+            `❌ Error checking policy ${policyName}:`,
+            error.message
+          );
         }
       }
     }
@@ -134,57 +143,67 @@ class AccessControlAuditValidator {
    */
   async validateS3Security() {
     console.log('🔒 Validating S3 bucket security configuration...');
-    
+
     const bucketName = this.config.bucketName;
     const results = {
       bucketPolicy: false,
       publicAccessBlocked: false,
       accessLogging: false,
-      cloudfrontOnlyAccess: false
+      cloudfrontOnlyAccess: false,
     };
 
     try {
       // Check bucket policy
-      const bucketPolicy = await this.s3.send(new GetBucketPolicyCommand({
-        Bucket: bucketName
-      }));
-      
+      const bucketPolicy = await this.s3.send(
+        new GetBucketPolicyCommand({
+          Bucket: bucketName,
+        })
+      );
+
       if (bucketPolicy.Policy) {
         const policy = JSON.parse(bucketPolicy.Policy);
         results.bucketPolicy = true;
-        
+
         // Check for CloudFront-only access
-        const cloudfrontStatement = policy.Statement.find(stmt => 
-          stmt.Principal && 
-          stmt.Principal.Service === 'cloudfront.amazonaws.com'
+        const cloudfrontStatement = policy.Statement.find(
+          stmt =>
+            stmt.Principal &&
+            stmt.Principal.Service === 'cloudfront.amazonaws.com'
         );
-        
-        const denyDirectAccess = policy.Statement.find(stmt => 
-          stmt.Effect === 'Deny' && 
-          stmt.Condition && 
-          stmt.Condition.StringNotEquals
+
+        const denyDirectAccess = policy.Statement.find(
+          stmt =>
+            stmt.Effect === 'Deny' &&
+            stmt.Condition &&
+            stmt.Condition.StringNotEquals
         );
-        
-        results.cloudfrontOnlyAccess = !!(cloudfrontStatement && denyDirectAccess);
-        
+
+        results.cloudfrontOnlyAccess = !!(
+          cloudfrontStatement && denyDirectAccess
+        );
+
         if (results.cloudfrontOnlyAccess) {
           console.log('✅ S3 bucket configured for CloudFront-only access');
         } else {
-          console.log('❌ S3 bucket policy does not enforce CloudFront-only access');
+          console.log(
+            '❌ S3 bucket policy does not enforce CloudFront-only access'
+          );
         }
       }
 
       // Check public access block
-      const publicAccessBlock = await this.s3.send(new GetBucketPublicAccessBlockCommand({
-        Bucket: bucketName
-      }));
-      
-      results.publicAccessBlocked = 
+      const publicAccessBlock = await this.s3.send(
+        new GetBucketPublicAccessBlockCommand({
+          Bucket: bucketName,
+        })
+      );
+
+      results.publicAccessBlocked =
         publicAccessBlock.PublicAccessBlockConfiguration.BlockPublicAcls &&
         publicAccessBlock.PublicAccessBlockConfiguration.BlockPublicPolicy &&
         publicAccessBlock.PublicAccessBlockConfiguration.IgnorePublicAcls &&
         publicAccessBlock.PublicAccessBlockConfiguration.RestrictPublicBuckets;
-      
+
       if (results.publicAccessBlocked) {
         console.log('✅ S3 bucket public access is properly blocked');
       } else {
@@ -192,18 +211,21 @@ class AccessControlAuditValidator {
       }
 
       // Check access logging
-      const loggingConfig = await this.s3.send(new GetBucketLoggingCommand({
-        Bucket: bucketName
-      }));
-      
+      const loggingConfig = await this.s3.send(
+        new GetBucketLoggingCommand({
+          Bucket: bucketName,
+        })
+      );
+
       results.accessLogging = !!loggingConfig.LoggingEnabled;
-      
+
       if (results.accessLogging) {
-        console.log(`✅ S3 access logging enabled: ${loggingConfig.LoggingEnabled.TargetBucket}/${loggingConfig.LoggingEnabled.TargetPrefix}`);
+        console.log(
+          `✅ S3 access logging enabled: ${loggingConfig.LoggingEnabled.TargetBucket}/${loggingConfig.LoggingEnabled.TargetPrefix}`
+        );
       } else {
         console.log('❌ S3 access logging is not enabled');
       }
-
     } catch (error) {
       console.error('❌ Error validating S3 security:', error.message);
     }
@@ -216,32 +238,36 @@ class AccessControlAuditValidator {
    */
   async validateCloudTrailAuditing() {
     console.log('📝 Validating CloudTrail audit logging...');
-    
+
     const trailName = `${this.environment}-s3-cloudfront-audit-trail`;
     const results = {
       trailExists: false,
       isLogging: false,
       eventSelectors: false,
-      s3DataEvents: false
+      s3DataEvents: false,
     };
 
     try {
       // Check if trail exists
-      const trails = await this.cloudtrail.send(new DescribeTrailsCommand({
-        trailNameList: [trailName]
-      }));
-      
+      const trails = await this.cloudtrail.send(
+        new DescribeTrailsCommand({
+          trailNameList: [trailName],
+        })
+      );
+
       if (trails.trailList && trails.trailList.length > 0) {
         results.trailExists = true;
         console.log(`✅ CloudTrail found: ${trailName}`);
-        
+
         // Check if logging is enabled
-        const status = await this.cloudtrail.send(new GetTrailStatusCommand({
-          Name: trailName
-        }));
-        
+        const status = await this.cloudtrail.send(
+          new GetTrailStatusCommand({
+            Name: trailName,
+          })
+        );
+
         results.isLogging = status.IsLogging;
-        
+
         if (results.isLogging) {
           console.log('✅ CloudTrail logging is enabled');
         } else {
@@ -250,22 +276,31 @@ class AccessControlAuditValidator {
 
         // Check event selectors
         try {
-          const eventSelectors = await this.cloudtrail.send(new GetEventSelectorsCommand({
-            TrailName: trailName
-          }));
-          
-          if (eventSelectors.EventSelectors && eventSelectors.EventSelectors.length > 0) {
+          const eventSelectors = await this.cloudtrail.send(
+            new GetEventSelectorsCommand({
+              TrailName: trailName,
+            })
+          );
+
+          if (
+            eventSelectors.EventSelectors &&
+            eventSelectors.EventSelectors.length > 0
+          ) {
             results.eventSelectors = true;
-            
+
             // Check for S3 data events
-            const s3DataEvents = eventSelectors.EventSelectors.some(selector =>
-              selector.DataResources && selector.DataResources.some(resource =>
-                resource.Type === 'AWS::S3::Object' || resource.Type === 'AWS::S3::Bucket'
-              )
+            const s3DataEvents = eventSelectors.EventSelectors.some(
+              selector =>
+                selector.DataResources &&
+                selector.DataResources.some(
+                  resource =>
+                    resource.Type === 'AWS::S3::Object' ||
+                    resource.Type === 'AWS::S3::Bucket'
+                )
             );
-            
+
             results.s3DataEvents = s3DataEvents;
-            
+
             if (s3DataEvents) {
               console.log('✅ CloudTrail configured for S3 data events');
             } else {
@@ -273,13 +308,14 @@ class AccessControlAuditValidator {
             }
           }
         } catch (error) {
-          console.log('⚠️ Could not check CloudTrail event selectors:', error.message);
+          console.log(
+            '⚠️ Could not check CloudTrail event selectors:',
+            error.message
+          );
         }
-        
       } else {
         console.log(`❌ CloudTrail not found: ${trailName}`);
       }
-
     } catch (error) {
       console.error('❌ Error validating CloudTrail:', error.message);
     }
@@ -292,46 +328,52 @@ class AccessControlAuditValidator {
    */
   async validateCloudWatchLogGroups() {
     console.log('📊 Validating CloudWatch log groups...');
-    
+
     const requiredLogGroups = [
       `/aws/s3/${this.config.bucketName}/access-logs`,
       `/aws/cloudfront/distribution/${this.config.distributionId}`,
       `/aws/deployment/${this.environment}/audit`,
-      `/aws/security/${this.environment}/access-control`
+      `/aws/security/${this.environment}/access-control`,
     ];
 
     const results = {
       totalRequired: requiredLogGroups.length,
       found: 0,
-      logGroups: []
+      logGroups: [],
     };
 
     try {
-      const logGroups = await this.cloudwatchLogs.send(new DescribeLogGroupsCommand({}));
-      
+      const logGroups = await this.cloudwatchLogs.send(
+        new DescribeLogGroupsCommand({})
+      );
+
       for (const required of requiredLogGroups) {
-        const found = logGroups.logGroups?.find(group => group.logGroupName === required);
-        
+        const found = logGroups.logGroups?.find(
+          group => group.logGroupName === required
+        );
+
         if (found) {
           results.found++;
           results.logGroups.push({
             name: required,
             exists: true,
             retentionInDays: found.retentionInDays,
-            creationTime: found.creationTime
+            creationTime: found.creationTime,
           });
           console.log(`✅ Log group found: ${required}`);
         } else {
           results.logGroups.push({
             name: required,
-            exists: false
+            exists: false,
           });
           console.log(`❌ Log group missing: ${required}`);
         }
       }
-
     } catch (error) {
-      console.error('❌ Error validating CloudWatch log groups:', error.message);
+      console.error(
+        '❌ Error validating CloudWatch log groups:',
+        error.message
+      );
     }
 
     return results;
@@ -342,17 +384,19 @@ class AccessControlAuditValidator {
    */
   async testAccessControl() {
     console.log('🧪 Testing access control restrictions...');
-    
+
     const results = {
       directS3Access: 'unknown',
       cloudfrontAccess: 'unknown',
-      unauthorizedActions: []
+      unauthorizedActions: [],
     };
 
     try {
       // Test direct S3 access (should be denied)
       try {
-        const response = await fetch(`https://${this.config.bucketName}.s3.amazonaws.com/index.html`);
+        const response = await fetch(
+          `https://${this.config.bucketName}.s3.amazonaws.com/index.html`
+        );
         if (response.status === 403) {
           results.directS3Access = 'properly_denied';
           console.log('✅ Direct S3 access properly denied');
@@ -368,7 +412,9 @@ class AccessControlAuditValidator {
       // Test CloudFront access (should be allowed)
       if (this.config.cloudfrontDomain) {
         try {
-          const response = await fetch(`https://${this.config.cloudfrontDomain}/`);
+          const response = await fetch(
+            `https://${this.config.cloudfrontDomain}/`
+          );
           if (response.status === 200) {
             results.cloudfrontAccess = 'allowed';
             console.log('✅ CloudFront access working properly');
@@ -381,7 +427,6 @@ class AccessControlAuditValidator {
           console.log('⚠️ Could not test CloudFront access:', error.message);
         }
       }
-
     } catch (error) {
       console.error('❌ Error testing access control:', error.message);
     }
@@ -394,13 +439,13 @@ class AccessControlAuditValidator {
    */
   async generateValidationReport() {
     console.log('📋 Generating comprehensive validation report...');
-    
+
     const iamValidation = await this.validateIAMPolicies();
     const s3Validation = await this.validateS3Security();
     const cloudtrailValidation = await this.validateCloudTrailAuditing();
     const logGroupsValidation = await this.validateCloudWatchLogGroups();
     const accessControlTest = await this.testAccessControl();
-    
+
     const report = {
       timestamp: new Date().toISOString(),
       environment: this.environment,
@@ -412,31 +457,36 @@ class AccessControlAuditValidator {
         s3Security: s3Validation,
         cloudtrail: cloudtrailValidation,
         logGroups: logGroupsValidation,
-        accessControl: accessControlTest
+        accessControl: accessControlTest,
       },
       overallScore: this.calculateOverallScore({
         iamValidation,
         s3Validation,
         cloudtrailValidation,
         logGroupsValidation,
-        accessControlTest
+        accessControlTest,
       }),
       recommendations: this.generateRecommendations({
         iamValidation,
         s3Validation,
         cloudtrailValidation,
         logGroupsValidation,
-        accessControlTest
-      })
+        accessControlTest,
+      }),
     };
 
     // Save report
-    const reportPath = path.join(__dirname, '..', 'config', `access-control-validation-report-${Date.now()}.json`);
+    const reportPath = path.join(
+      __dirname,
+      '..',
+      'config',
+      `access-control-validation-report-${Date.now()}.json`
+    );
     await fs.writeFile(reportPath, JSON.stringify(report, null, 2));
-    
+
     this.printValidationSummary(report);
     console.log(`\n📄 Validation report saved to: ${reportPath}`);
-    
+
     return report;
   }
 
@@ -464,19 +514,24 @@ class AccessControlAuditValidator {
 
     // Log groups check
     totalChecks += 1;
-    if (validations.logGroupsValidation.found === validations.logGroupsValidation.totalRequired) {
+    if (
+      validations.logGroupsValidation.found ===
+      validations.logGroupsValidation.totalRequired
+    ) {
       passedChecks++;
     }
 
     // Access control checks
     totalChecks += 2;
-    if (validations.accessControlTest.directS3Access === 'properly_denied') passedChecks++;
-    if (validations.accessControlTest.cloudfrontAccess === 'allowed') passedChecks++;
+    if (validations.accessControlTest.directS3Access === 'properly_denied')
+      passedChecks++;
+    if (validations.accessControlTest.cloudfrontAccess === 'allowed')
+      passedChecks++;
 
     return {
       score: Math.round((passedChecks / totalChecks) * 100),
       passed: passedChecks,
-      total: totalChecks
+      total: totalChecks,
     };
   }
 
@@ -492,7 +547,9 @@ class AccessControlAuditValidator {
     }
 
     if (!validations.s3Validation.cloudfrontOnlyAccess) {
-      recommendations.push('Configure S3 bucket policy to allow CloudFront-only access');
+      recommendations.push(
+        'Configure S3 bucket policy to allow CloudFront-only access'
+      );
     }
 
     if (!validations.s3Validation.publicAccessBlocked) {
@@ -508,15 +565,24 @@ class AccessControlAuditValidator {
     }
 
     if (!validations.cloudtrailValidation.s3DataEvents) {
-      recommendations.push('Configure CloudTrail event selectors for S3 data events');
+      recommendations.push(
+        'Configure CloudTrail event selectors for S3 data events'
+      );
     }
 
-    if (validations.logGroupsValidation.found < validations.logGroupsValidation.totalRequired) {
-      recommendations.push('Create missing CloudWatch log groups for comprehensive logging');
+    if (
+      validations.logGroupsValidation.found <
+      validations.logGroupsValidation.totalRequired
+    ) {
+      recommendations.push(
+        'Create missing CloudWatch log groups for comprehensive logging'
+      );
     }
 
     if (validations.accessControlTest.directS3Access === 'allowed') {
-      recommendations.push('CRITICAL: Block direct S3 access - security vulnerability detected');
+      recommendations.push(
+        'CRITICAL: Block direct S3 access - security vulnerability detected'
+      );
     }
 
     return recommendations;
@@ -525,19 +591,33 @@ class AccessControlAuditValidator {
   printValidationSummary(report) {
     console.log('\n🔍 Access Control and Audit Validation Summary');
     console.log('===============================================');
-    console.log(`Overall Score: ${report.overallScore.score}% (${report.overallScore.passed}/${report.overallScore.total} checks passed)`);
+    console.log(
+      `Overall Score: ${report.overallScore.score}% (${report.overallScore.passed}/${report.overallScore.total} checks passed)`
+    );
     console.log(`Environment: ${report.environment}`);
     console.log(`S3 Bucket: ${report.bucketName}`);
     console.log(`CloudFront Distribution: ${report.distributionId}`);
-    
+
     console.log('\n📊 Validation Results:');
-    console.log(`  IAM Policies: ${report.validation.iam.deploymentPolicy && report.validation.iam.monitoringPolicy ? '✅' : '❌'}`);
-    console.log(`  S3 Security: ${report.validation.s3Security.cloudfrontOnlyAccess && report.validation.s3Security.publicAccessBlocked ? '✅' : '❌'}`);
-    console.log(`  Access Logging: ${report.validation.s3Security.accessLogging ? '✅' : '❌'}`);
-    console.log(`  CloudTrail Auditing: ${report.validation.cloudtrail.isLogging ? '✅' : '❌'}`);
-    console.log(`  Log Groups: ${report.validation.logGroups.found}/${report.validation.logGroups.totalRequired} configured`);
-    console.log(`  Access Control: ${report.validation.accessControl.directS3Access === 'properly_denied' ? '✅' : '❌'}`);
-    
+    console.log(
+      `  IAM Policies: ${report.validation.iam.deploymentPolicy && report.validation.iam.monitoringPolicy ? '✅' : '❌'}`
+    );
+    console.log(
+      `  S3 Security: ${report.validation.s3Security.cloudfrontOnlyAccess && report.validation.s3Security.publicAccessBlocked ? '✅' : '❌'}`
+    );
+    console.log(
+      `  Access Logging: ${report.validation.s3Security.accessLogging ? '✅' : '❌'}`
+    );
+    console.log(
+      `  CloudTrail Auditing: ${report.validation.cloudtrail.isLogging ? '✅' : '❌'}`
+    );
+    console.log(
+      `  Log Groups: ${report.validation.logGroups.found}/${report.validation.logGroups.totalRequired} configured`
+    );
+    console.log(
+      `  Access Control: ${report.validation.accessControl.directS3Access === 'properly_denied' ? '✅' : '❌'}`
+    );
+
     if (report.recommendations.length > 0) {
       console.log('\n💡 Recommendations:');
       report.recommendations.forEach((rec, index) => {
@@ -551,20 +631,22 @@ class AccessControlAuditValidator {
   async run() {
     try {
       console.log('🚀 Validating access control and audit logging setup...');
-      
+
       await this.loadConfig();
       await this.getAccountId();
-      
+
       const report = await this.generateValidationReport();
-      
+
       console.log('\n✅ Validation completed successfully!');
-      
+
       // Exit with error code if critical issues found
       if (report.overallScore.score < 80) {
-        console.log('\n⚠️ Critical security issues detected. Please address recommendations.');
+        console.log(
+          '\n⚠️ Critical security issues detected. Please address recommendations.'
+        );
         process.exit(1);
       }
-      
+
       return report;
     } catch (error) {
       console.error('\n❌ Validation failed:', error.message);
@@ -576,7 +658,8 @@ class AccessControlAuditValidator {
 // Run if called directly
 if (require.main === module) {
   const validator = new AccessControlAuditValidator();
-  validator.run()
+  validator
+    .run()
     .then(report => {
       console.log('\nValidation completed successfully');
       process.exit(0);

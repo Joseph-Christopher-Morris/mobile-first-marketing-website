@@ -2,13 +2,17 @@
 
 ## Training Program Overview
 
-This comprehensive training program is designed to onboard new team members and provide ongoing education for the S3 + CloudFront deployment system. The program follows a structured approach with hands-on exercises, assessments, and continuous learning opportunities.
+This comprehensive training program is designed to onboard new team members and
+provide ongoing education for the S3 + CloudFront deployment system. The program
+follows a structured approach with hands-on exercises, assessments, and
+continuous learning opportunities.
 
 ## Training Objectives
 
 By the end of this training program, team members will be able to:
 
-1. **Understand System Architecture**: Comprehend the complete S3 + CloudFront deployment architecture
+1. **Understand System Architecture**: Comprehend the complete S3 + CloudFront
+   deployment architecture
 2. **Perform Daily Operations**: Execute routine operational tasks independently
 3. **Handle Deployments**: Manage both automated and manual deployment processes
 4. **Troubleshoot Issues**: Diagnose and resolve common system issues
@@ -20,24 +24,28 @@ By the end of this training program, team members will be able to:
 ## Training Structure
 
 ### Phase 1: Foundation (Week 1)
+
 - System architecture overview
 - Environment setup
 - Basic operations
 - Documentation familiarization
 
 ### Phase 2: Operations (Week 2)
+
 - Deployment procedures
 - Monitoring and alerting
 - Basic troubleshooting
 - Security fundamentals
 
 ### Phase 3: Advanced Skills (Week 3)
+
 - Performance optimization
 - Security management
 - Cost optimization
 - Incident response
 
 ### Phase 4: Mastery (Week 4)
+
 - Independent operations
 - Advanced troubleshooting
 - Process improvement
@@ -48,11 +56,13 @@ By the end of this training program, team members will be able to:
 ### Day 1: System Architecture and Setup
 
 #### Learning Objectives
+
 - Understand the overall system architecture
 - Set up development environment
 - Familiarize with key components
 
 #### Prerequisites
+
 - Basic AWS knowledge
 - Git proficiency
 - Command line familiarity
@@ -77,13 +87,13 @@ graph TB
 
 **Key Components Explanation**:
 
-| Component | Purpose | Key Features |
-|-----------|---------|--------------|
-| **S3 Bucket** | Static file storage | Private, versioned, encrypted |
-| **CloudFront** | Global CDN | OAC, caching, security headers |
-| **GitHub Actions** | CI/CD pipeline | Automated build and deploy |
-| **CloudWatch** | Monitoring | Metrics, logs, alarms |
-| **ACM** | SSL certificates | Auto-renewal, validation |
+| Component          | Purpose             | Key Features                   |
+| ------------------ | ------------------- | ------------------------------ |
+| **S3 Bucket**      | Static file storage | Private, versioned, encrypted  |
+| **CloudFront**     | Global CDN          | OAC, caching, security headers |
+| **GitHub Actions** | CI/CD pipeline      | Automated build and deploy     |
+| **CloudWatch**     | Monitoring          | Metrics, logs, alarms          |
+| **ACM**            | SSL certificates    | Auto-renewal, validation       |
 
 **2. Environment Setup Exercise**
 
@@ -134,6 +144,7 @@ node scripts/deployment-status-dashboard.js
 ### Day 2: Documentation and Tools Familiarization
 
 #### Learning Objectives
+
 - Navigate project documentation effectively
 - Understand available tools and scripts
 - Learn basic operational commands
@@ -154,17 +165,17 @@ docs/
 
 **2. Essential Scripts Overview**
 
-| Script Category | Key Scripts | Purpose |
-|----------------|-------------|---------|
-| **Status & Monitoring** | `deployment-status-dashboard.js` | System health overview |
-| | `performance-optimization-monitor.js` | Performance monitoring |
-| | `security-maintenance-monitor.js` | Security monitoring |
-| **Deployment** | `deploy.js` | Manual deployment |
-| | `rollback.js` | Deployment rollback |
-| | `deployment-validator.js` | Deployment validation |
-| **Validation** | `validate-site-functionality.js` | Site functionality check |
-| | `comprehensive-deployment-test.js` | Complete system test |
-| | `validate-production-env.js` | Environment validation |
+| Script Category         | Key Scripts                           | Purpose                  |
+| ----------------------- | ------------------------------------- | ------------------------ |
+| **Status & Monitoring** | `deployment-status-dashboard.js`      | System health overview   |
+|                         | `performance-optimization-monitor.js` | Performance monitoring   |
+|                         | `security-maintenance-monitor.js`     | Security monitoring      |
+| **Deployment**          | `deploy.js`                           | Manual deployment        |
+|                         | `rollback.js`                         | Deployment rollback      |
+|                         | `deployment-validator.js`             | Deployment validation    |
+| **Validation**          | `validate-site-functionality.js`      | Site functionality check |
+|                         | `comprehensive-deployment-test.js`    | Complete system test     |
+|                         | `validate-production-env.js`          | Environment validation   |
 
 **3. Hands-on Exercise: Tool Exploration**
 
@@ -196,29 +207,35 @@ node scripts/validate-production-env.js
 4. Create a summary report
 
 **Template**:
+
 ```markdown
 # System Status Report - [Date]
 
 ## Overall Status
+
 - System Health: [Green/Yellow/Red]
 - Performance Grade: [A-F]
 - Security Status: [Pass/Warning/Fail]
 
 ## Key Metrics
+
 - Response Time: [X]ms
 - Cache Hit Ratio: [X]%
 - Error Rate: [X]%
 
 ## Issues Identified
+
 - [List any issues found]
 
 ## Recommendations
+
 - [List any recommendations]
 ```
 
 ### Day 3: Basic Operations
 
 #### Learning Objectives
+
 - Perform daily operational tasks
 - Understand monitoring workflows
 - Execute basic maintenance procedures
@@ -254,12 +271,12 @@ echo "=== Health Check Complete ==="
 
 **2. Monitoring Thresholds**
 
-| Metric | Good | Warning | Critical |
-|--------|------|---------|----------|
-| **Response Time** | < 1.5s | 1.5-3s | > 3s |
-| **Cache Hit Ratio** | > 95% | 85-95% | < 85% |
-| **Error Rate** | < 0.5% | 0.5-2% | > 2% |
-| **Availability** | > 99.9% | 99-99.9% | < 99% |
+| Metric              | Good    | Warning  | Critical |
+| ------------------- | ------- | -------- | -------- |
+| **Response Time**   | < 1.5s  | 1.5-3s   | > 3s     |
+| **Cache Hit Ratio** | > 95%   | 85-95%   | < 85%    |
+| **Error Rate**      | < 0.5%  | 0.5-2%   | > 2%     |
+| **Availability**    | > 99.9% | 99-99.9% | < 99%    |
 
 **3. Hands-on Exercise: Daily Operations**
 
@@ -297,6 +314,7 @@ echo "Morning health check complete!"
 ### Day 4-5: Deployment Fundamentals
 
 #### Learning Objectives
+
 - Understand the deployment process
 - Monitor deployments effectively
 - Perform basic deployment validation
@@ -379,6 +397,7 @@ Monitor a real deployment (or simulate one) and create a comprehensive report:
 ### Day 6-7: Deployment Management
 
 #### Learning Objectives
+
 - Execute manual deployments
 - Understand rollback procedures
 - Manage deployment configurations
@@ -447,6 +466,7 @@ node scripts/validate-site-functionality.js
 ### Day 8-9: Monitoring and Troubleshooting
 
 #### Learning Objectives
+
 - Set up effective monitoring
 - Diagnose common issues
 - Use troubleshooting tools
@@ -464,12 +484,12 @@ node scripts/setup-performance-monitoring.js
 
 **2. Common Issues and Diagnostics**
 
-| Issue Type | Diagnostic Command | Common Causes |
-|------------|-------------------|---------------|
-| **Deployment Failure** | `gh run view --log` | Build errors, AWS permissions |
-| **Site Not Loading** | `curl -I [site-url]` | DNS, CloudFront, S3 issues |
-| **Performance Issues** | `node scripts/performance-benchmarking.js` | Cache misses, large assets |
-| **Security Warnings** | `node scripts/security-validation-suite.js` | Missing headers, SSL issues |
+| Issue Type             | Diagnostic Command                          | Common Causes                 |
+| ---------------------- | ------------------------------------------- | ----------------------------- |
+| **Deployment Failure** | `gh run view --log`                         | Build errors, AWS permissions |
+| **Site Not Loading**   | `curl -I [site-url]`                        | DNS, CloudFront, S3 issues    |
+| **Performance Issues** | `node scripts/performance-benchmarking.js`  | Cache misses, large assets    |
+| **Security Warnings**  | `node scripts/security-validation-suite.js` | Missing headers, SSL issues   |
 
 **3. Hands-on Exercise: Troubleshooting Scenarios**
 
@@ -502,6 +522,7 @@ node scripts/caching-cdn-optimizer.js
 ### Day 10: Security Fundamentals
 
 #### Learning Objectives
+
 - Understand security requirements
 - Perform security validations
 - Respond to security alerts
@@ -548,6 +569,7 @@ node scripts/cloudfront-security-validator.js
 ### Day 11-12: Performance Optimization
 
 #### Learning Objectives
+
 - Analyze performance metrics
 - Implement optimization strategies
 - Monitor performance improvements
@@ -572,12 +594,12 @@ node scripts/caching-cdn-optimizer.js
 
 **2. Optimization Strategies**
 
-| Performance Issue | Optimization Strategy | Implementation |
-|------------------|----------------------|----------------|
-| **High LCP** | Optimize images, preload resources | Image optimization, resource hints |
-| **High FID** | Reduce JavaScript execution | Code splitting, web workers |
-| **High CLS** | Set element dimensions | CSS improvements |
-| **Poor Cache Hit Ratio** | Optimize cache settings | CloudFront configuration |
+| Performance Issue        | Optimization Strategy              | Implementation                     |
+| ------------------------ | ---------------------------------- | ---------------------------------- |
+| **High LCP**             | Optimize images, preload resources | Image optimization, resource hints |
+| **High FID**             | Reduce JavaScript execution        | Code splitting, web workers        |
+| **High CLS**             | Set element dimensions             | CSS improvements                   |
+| **Poor Cache Hit Ratio** | Optimize cache settings            | CloudFront configuration           |
 
 **3. Hands-on Exercise: Performance Optimization**
 
@@ -605,6 +627,7 @@ node scripts/core-web-vitals-monitor.js
 ### Day 13-14: Security Management
 
 #### Learning Objectives
+
 - Implement security best practices
 - Manage SSL certificates
 - Respond to security incidents
@@ -652,6 +675,7 @@ node scripts/security-validation-suite.js
 ### Day 15: Cost Optimization
 
 #### Learning Objectives
+
 - Analyze infrastructure costs
 - Implement cost optimization strategies
 - Monitor cost trends
@@ -673,11 +697,11 @@ node scripts/cost-analysis-optimizer.js
 
 **2. Cost Optimization Strategies**
 
-| Cost Area | Optimization Strategy | Implementation |
-|-----------|----------------------|----------------|
-| **S3 Storage** | Lifecycle policies | Automated cleanup |
-| **CloudFront** | Cache optimization | Reduce origin requests |
-| **Data Transfer** | Compression | Enable gzip/brotli |
+| Cost Area         | Optimization Strategy  | Implementation              |
+| ----------------- | ---------------------- | --------------------------- |
+| **S3 Storage**    | Lifecycle policies     | Automated cleanup           |
+| **CloudFront**    | Cache optimization     | Reduce origin requests      |
+| **Data Transfer** | Compression            | Enable gzip/brotli          |
 | **Invalidations** | Selective invalidation | Optimize deployment process |
 
 ## Phase 4: Mastery Training
@@ -685,6 +709,7 @@ node scripts/cost-analysis-optimizer.js
 ### Day 16-18: Independent Operations
 
 #### Learning Objectives
+
 - Perform all operations independently
 - Make decisions under pressure
 - Mentor other team members
@@ -725,6 +750,7 @@ echo "=== Incident Decision Framework ==="
 ### Day 19-20: Advanced Troubleshooting
 
 #### Learning Objectives
+
 - Diagnose complex issues
 - Implement advanced solutions
 - Prevent future occurrences
@@ -753,6 +779,7 @@ node scripts/validate-s3-infrastructure.js
 **2. Complex Scenario Exercises**
 
 **Scenario 1: Intermittent Performance Issues**
+
 ```bash
 # Diagnosis approach for intermittent issues
 echo "Intermittent performance issue diagnosis:"
@@ -769,6 +796,7 @@ node scripts/cloudfront-analytics-integration.js
 ```
 
 **Scenario 2: Security Alert Investigation**
+
 ```bash
 # Security alert investigation process
 echo "Security alert investigation:"
@@ -838,39 +866,48 @@ node scripts/cloudfront-security-validator.js
 ### Certification Levels
 
 #### Level 1: Operations Associate
+
 **Requirements**:
+
 - Complete Phase 1-2 training
 - Pass written assessment (80% minimum)
 - Complete practical assessment
 - Demonstrate daily operations competency
 
 **Capabilities**:
+
 - Perform daily operations independently
 - Monitor deployments effectively
 - Execute basic troubleshooting
 - Follow incident response procedures
 
 #### Level 2: Operations Specialist
+
 **Requirements**:
+
 - Complete all training phases
 - Pass advanced written assessment (85% minimum)
 - Complete advanced practical assessment
 - Demonstrate mentoring capability
 
 **Capabilities**:
+
 - Handle complex troubleshooting scenarios
 - Optimize system performance
 - Lead incident response
 - Train new team members
 
 #### Level 3: Operations Expert
+
 **Requirements**:
+
 - 6+ months experience as Specialist
 - Contribute to process improvements
 - Lead major incident responses
 - Mentor multiple team members
 
 **Capabilities**:
+
 - Design system improvements
 - Lead architectural decisions
 - Develop new procedures
@@ -881,24 +918,28 @@ node scripts/cloudfront-security-validator.js
 ### Monthly Training Topics
 
 #### Month 1: Advanced AWS Services
+
 - CloudWatch advanced features
 - AWS Cost Explorer deep dive
 - CloudFront advanced configurations
 - S3 optimization techniques
 
 #### Month 2: Security Deep Dive
+
 - Advanced security monitoring
 - Threat detection and response
 - Compliance frameworks
 - Security automation
 
 #### Month 3: Performance Engineering
+
 - Advanced performance optimization
 - Load testing strategies
 - Capacity planning
 - Performance automation
 
 #### Month 4: DevOps Best Practices
+
 - Infrastructure as Code
 - Advanced CI/CD patterns
 - Monitoring and observability
@@ -907,24 +948,28 @@ node scripts/cloudfront-security-validator.js
 ### Quarterly Assessments
 
 #### Q1: Technical Skills Review
+
 - Hands-on technical assessment
 - New feature training
 - Process improvement feedback
 - Career development planning
 
 #### Q2: Security and Compliance
+
 - Security knowledge update
 - Compliance training
 - Incident response drill
 - Security tool training
 
 #### Q3: Performance and Optimization
+
 - Performance optimization workshop
 - Cost management training
 - Capacity planning exercise
 - Automation development
 
 #### Q4: Leadership and Mentoring
+
 - Leadership skills development
 - Mentoring training
 - Process improvement projects
@@ -933,18 +978,21 @@ node scripts/cloudfront-security-validator.js
 ### Annual Training Plan
 
 #### Year 1: Foundation and Mastery
+
 - Complete certification program
 - Gain operational experience
 - Develop specialization areas
 - Contribute to improvements
 
 #### Year 2: Leadership and Innovation
+
 - Lead training initiatives
 - Develop new procedures
 - Mentor junior team members
 - Drive innovation projects
 
 #### Year 3: Expertise and Strategy
+
 - Become subject matter expert
 - Influence architectural decisions
 - Lead strategic initiatives
@@ -955,18 +1003,21 @@ node scripts/cloudfront-security-validator.js
 ### Internal Resources
 
 #### Documentation
+
 - Comprehensive operational runbook
 - Troubleshooting procedures
 - Security guidelines
 - Performance optimization guides
 
 #### Tools and Scripts
+
 - All operational scripts
 - Monitoring dashboards
 - Diagnostic tools
 - Automation frameworks
 
 #### Knowledge Base
+
 - Incident history and resolutions
 - Best practices documentation
 - Lessons learned repository
@@ -975,18 +1026,21 @@ node scripts/cloudfront-security-validator.js
 ### External Resources
 
 #### AWS Training
+
 - AWS Certified Solutions Architect
 - AWS Certified DevOps Engineer
 - AWS Security Specialty
 - AWS Performance Efficiency
 
 #### Industry Training
+
 - DevOps Institute certifications
 - Security training programs
 - Performance engineering courses
 - Leadership development programs
 
 #### Community Resources
+
 - AWS user groups
 - DevOps meetups
 - Security conferences
@@ -997,6 +1051,7 @@ node scripts/cloudfront-security-validator.js
 ### Feedback Collection
 
 #### Training Feedback Form
+
 - Content quality and relevance
 - Instructor effectiveness
 - Training materials quality
@@ -1004,6 +1059,7 @@ node scripts/cloudfront-security-validator.js
 - Overall training experience
 
 #### Continuous Improvement Process
+
 - Monthly feedback review
 - Quarterly content updates
 - Annual program overhaul
@@ -1012,18 +1068,21 @@ node scripts/cloudfront-security-validator.js
 ### Success Metrics
 
 #### Individual Metrics
+
 - Certification completion rate
 - Assessment scores
 - Time to competency
 - Performance improvement
 
 #### Team Metrics
+
 - Incident response time
 - System reliability
 - Performance optimization
 - Cost reduction achievements
 
 #### Organizational Metrics
+
 - Team capability maturity
 - Knowledge retention
 - Process improvement rate
@@ -1032,6 +1091,7 @@ node scripts/cloudfront-security-validator.js
 ---
 
 **Document Information**:
+
 - **Version**: 1.0
 - **Last Updated**: [Current Date]
 - **Maintained By**: Training Team

@@ -18,7 +18,7 @@ module.exports = {
           800: '#B01E56',
           900: '#8B1A47',
         },
-        
+
         // Override default blue with brand colors
         blue: {
           50: '#FEF2F5',
@@ -32,7 +32,7 @@ module.exports = {
           800: '#B01E56',
           900: '#8B1A47',
         },
-        
+
         // Primary color alias
         primary: {
           50: '#FEF2F5',
@@ -46,7 +46,7 @@ module.exports = {
           800: '#B01E56',
           900: '#8B1A47',
         },
-        
+
         // Accent color alias
         accent: {
           50: '#FEF2F5',
@@ -59,43 +59,43 @@ module.exports = {
           700: '#C8094C',
           800: '#B01E56',
           900: '#8B1A47',
-        }
+        },
       },
-      
+
       // Custom button styles
       backgroundColor: {
         'btn-primary': '#F5276F',
         'btn-primary-hover': '#C8094C',
       },
-      
+
       // Custom border colors
       borderColor: {
-        'primary': '#F5276F',
+        primary: '#F5276F',
         'primary-hover': '#C8094C',
       },
-      
+
       // Custom text colors
       textColor: {
-        'primary': '#F5276F',
+        primary: '#F5276F',
         'primary-hover': '#C8094C',
       },
-      
+
       // Custom ring colors for focus states
       ringColor: {
-        'primary': 'rgba(245, 39, 111, 0.3)',
+        primary: 'rgba(245, 39, 111, 0.3)',
       },
-      
+
       // Custom box shadow colors
       boxShadow: {
-        'primary': '0 10px 15px -3px rgba(245, 39, 111, 0.3)',
+        primary: '0 10px 15px -3px rgba(245, 39, 111, 0.3)',
         'primary-lg': '0 20px 25px -5px rgba(245, 39, 111, 0.2)',
-      }
-    }
+      },
+    },
   },
-  
+
   // Custom utilities
   plugins: [
-    function({ addUtilities }) {
+    function ({ addUtilities }) {
       const newUtilities = {
         '.btn-brand': {
           backgroundColor: '#F5276F',
@@ -108,7 +108,7 @@ module.exports = {
             backgroundColor: '#C8094C',
             transform: 'translateY(-2px)',
             boxShadow: '0 10px 15px -3px rgba(245, 39, 111, 0.3)',
-          }
+          },
         },
         '.btn-brand-outline': {
           backgroundColor: 'transparent',
@@ -122,7 +122,7 @@ module.exports = {
             backgroundColor: '#F5276F',
             color: '#FFFFFF',
             transform: 'translateY(-2px)',
-          }
+          },
         },
         '.text-brand': {
           color: '#F5276F',
@@ -141,10 +141,10 @@ module.exports = {
         },
         '.ring-brand': {
           '--tw-ring-color': 'rgba(245, 39, 111, 0.3)',
-        }
-      }
-      
-      addUtilities(newUtilities)
-    }
-  ]
-}
+        },
+      };
+
+      addUtilities(newUtilities);
+    },
+  ],
+};

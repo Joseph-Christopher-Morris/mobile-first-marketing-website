@@ -11,9 +11,7 @@
       "contentType": "image/webp",
       "etag": "\"22189f8ddf74516911a294da9d05347d\"",
       "lastModified": "Tue, 07 Oct 2025 17:39:33 GMT",
-      "recommendations": [
-        "Missing cache headers - implement caching"
-      ]
+      "recommendations": ["Missing cache headers - implement caching"]
     },
     "/images/services/analytics-hero.webp": {
       "url": "https://d15sc9fc739ev2.cloudfront.net/images/services/analytics-hero.webp",
@@ -24,9 +22,7 @@
       "contentType": "image/webp",
       "etag": "\"22189f8ddf74516911a294da9d05347d\"",
       "lastModified": "Tue, 07 Oct 2025 18:24:23 GMT",
-      "recommendations": [
-        "Missing cache headers - implement caching"
-      ]
+      "recommendations": ["Missing cache headers - implement caching"]
     },
     "/images/blog/test-image.jpg": {
       "url": "https://d15sc9fc739ev2.cloudfront.net/images/blog/test-image.jpg",
@@ -37,10 +33,7 @@
       "contentType": "text/html",
       "etag": "\"cf26e3925e6b3082dc951c973d2c036c\"",
       "lastModified": "Thu, 09 Oct 2025 21:26:06 GMT",
-      "recommendations": [
-        "Missing cache headers - implement caching",
-        "Consider WebP format for better compression"
-      ]
+      "recommendations": ["Missing cache headers - implement caching", "Consider WebP format for better compression"]
     }
   },
   "performanceMetrics": {
@@ -69,9 +62,7 @@
           "optimalImageSize": "400px width",
           "currentImageSize": "Not implemented",
           "performanceImpact": "High - mobile users sensitive to load times",
-          "recommendations": [
-            "Use smaller images for mobile devices"
-          ]
+          "recommendations": ["Use smaller images for mobile devices"]
         },
         "Tablet": {
           "viewport": "Tablet",
@@ -87,9 +78,7 @@
           "optimalImageSize": "1200px width",
           "currentImageSize": "Not implemented",
           "performanceImpact": "Low - desktop users can handle larger images",
-          "recommendations": [
-            "Provide high-resolution images for large screens"
-          ]
+          "recommendations": ["Provide high-resolution images for large screens"]
         }
       },
       "recommendations": [
