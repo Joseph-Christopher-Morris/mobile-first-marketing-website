@@ -1,0 +1,118 @@
+{
+  "monitoring": {
+    "enabled": true,
+    "interval": 3600000,
+    "continuous": false,
+    "autoStart": false
+  },
+  "thresholds": {
+    "performance": {
+      "lcp": {
+        "good": 2500,
+        "poor": 4000
+      },
+      "fid": {
+        "good": 100,
+        "poor": 300
+      },
+      "cls": {
+        "good": 0.1,
+        "poor": 0.25
+      },
+      "lighthouse": {
+        "good": 90,
+        "poor": 70
+      }
+    },
+    "regression": {
+      "lcp": 20,
+      "fid": 50,
+      "cls": 100,
+      "lighthouse": 10
+    }
+  },
+  "alerts": {
+    "enabled": true,
+    "channels": [
+      "console",
+      "file"
+    ],
+    "cooldown": 1800000,
+    "escalation": {
+      "enabled": true,
+      "levels": [
+        "warning",
+        "critical",
+        "emergency"
+      ]
+    }
+  },
+  "baseline": {
+    "enabled": true,
+    "period": 7,
+    "minSamples": 5
+  },
+  "reporting": {
+    "enabled": true,
+    "formats": [
+      "json",
+      "html",
+      "markdown"
+    ],
+    "retention": 30
+  },
+  "targets": {
+    "lcp": {
+      "value": 2500,
+      "unit": "ms",
+      "description": "Largest Contentful Paint - measures loading performance"
+    },
+    "fid": {
+      "value": 100,
+      "unit": "ms",
+      "description": "First Input Delay - measures interactivity"
+    },
+    "cls": {
+      "value": 0.1,
+      "unit": "score",
+      "description": "Cumulative Layout Shift - measures visual stability"
+    },
+    "overallScore": {
+      "value": 90,
+      "unit": "score",
+      "description": "Overall performance score target"
+    }
+  },
+  "testUrls": [
+    {
+      "name": "Home",
+      "url": "https://d15sc9fc739ev2.cloudfront.net/",
+      "priority": "high",
+      "description": "Main landing page with hero section and testimonials"
+    },
+    {
+      "name": "Services",
+      "url": "https://d15sc9fc739ev2.cloudfront.net/services/",
+      "priority": "high",
+      "description": "Services overview page"
+    },
+    {
+      "name": "Photography Services",
+      "url": "https://d15sc9fc739ev2.cloudfront.net/services/photography/",
+      "priority": "high",
+      "description": "Photography services detail page with portfolio images"
+    },
+    {
+      "name": "Blog",
+      "url": "https://d15sc9fc739ev2.cloudfront.net/blog/",
+      "priority": "medium",
+      "description": "Blog listing page"
+    },
+    {
+      "name": "Contact",
+      "url": "https://d15sc9fc739ev2.cloudfront.net/contact/",
+      "priority": "medium",
+      "description": "Contact form page"
+    }
+  ]
+}

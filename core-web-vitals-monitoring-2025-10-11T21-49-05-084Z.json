@@ -1,0 +1,228 @@
+[
+  {
+    "page": "Home",
+    "timestamp": "2025-10-11T21:48:32.465Z",
+    "metrics": {
+      "lcp": {
+        "value": 2616,
+        "target": 2500,
+        "passed": false,
+        "rating": "needs-improvement",
+        "unit": "ms"
+      },
+      "fid": {
+        "value": null,
+        "target": 100,
+        "passed": true,
+        "rating": "good",
+        "unit": "ms",
+        "note": "No user interaction detected"
+      }
+    },
+    "performance": {
+      "loadTime": 1057,
+      "statusCode": 200,
+      "performanceMetrics": {
+        "domContentLoaded": 0.09999996423721313,
+        "loadComplete": 0,
+        "firstPaint": 240,
+        "firstContentfulPaint": 240,
+        "transferSize": 0,
+        "encodedBodySize": 43768,
+        "decodedBodySize": 43768
+      },
+      "resourceCoverage": {
+        "js": 25,
+        "css": 1
+      }
+    },
+    "passed": false,
+    "issues": [
+      "LCP (2616ms) exceeds target of 2500ms",
+      "CLS metric not captured"
+    ]
+  },
+  {
+    "page": "Services",
+    "timestamp": "2025-10-11T21:48:38.308Z",
+    "metrics": {
+      "lcp": {
+        "value": 984,
+        "target": 2500,
+        "passed": true,
+        "rating": "good",
+        "unit": "ms"
+      },
+      "fid": {
+        "value": null,
+        "target": 100,
+        "passed": true,
+        "rating": "good",
+        "unit": "ms",
+        "note": "No user interaction detected"
+      },
+      "cls": {
+        "value": 0.021908267550998263,
+        "target": 0.1,
+        "passed": true,
+        "rating": "good",
+        "unit": "score"
+      }
+    },
+    "performance": {
+      "loadTime": 1045,
+      "statusCode": 200,
+      "performanceMetrics": {
+        "domContentLoaded": 0.19999998807907104,
+        "loadComplete": 0.10000002384185791,
+        "firstPaint": 176,
+        "firstContentfulPaint": 176,
+        "transferSize": 0,
+        "encodedBodySize": 43768,
+        "decodedBodySize": 43768
+      },
+      "resourceCoverage": {
+        "js": 25,
+        "css": 1
+      }
+    },
+    "passed": true,
+    "issues": []
+  },
+  {
+    "page": "Photography Services",
+    "timestamp": "2025-10-11T21:48:53.193Z",
+    "metrics": {
+      "lcp": {
+        "value": 704,
+        "target": 2500,
+        "passed": true,
+        "rating": "good",
+        "unit": "ms"
+      },
+      "fid": {
+        "value": null,
+        "target": 100,
+        "passed": true,
+        "rating": "good",
+        "unit": "ms",
+        "note": "No user interaction detected"
+      }
+    },
+    "performance": {
+      "loadTime": 1016,
+      "statusCode": 200,
+      "performanceMetrics": {
+        "domContentLoaded": 0.09999996423721313,
+        "loadComplete": 0,
+        "firstPaint": 172,
+        "firstContentfulPaint": 172,
+        "transferSize": 0,
+        "encodedBodySize": 43768,
+        "decodedBodySize": 43768
+      },
+      "resourceCoverage": {
+        "js": 25,
+        "css": 1
+      }
+    },
+    "passed": false,
+    "issues": [
+      "CLS metric not captured"
+    ]
+  },
+  {
+    "page": "Blog",
+    "timestamp": "2025-10-11T21:48:58.510Z",
+    "metrics": {
+      "lcp": {
+        "value": 964,
+        "target": 2500,
+        "passed": true,
+        "rating": "good",
+        "unit": "ms"
+      },
+      "fid": {
+        "value": null,
+        "target": 100,
+        "passed": true,
+        "rating": "good",
+        "unit": "ms",
+        "note": "No user interaction detected"
+      },
+      "cls": {
+        "value": 0.021908267550998263,
+        "target": 0.1,
+        "passed": true,
+        "rating": "good",
+        "unit": "score"
+      }
+    },
+    "performance": {
+      "loadTime": 796,
+      "statusCode": 200,
+      "performanceMetrics": {
+        "domContentLoaded": 0.10000002384185791,
+        "loadComplete": 0,
+        "firstPaint": 176,
+        "firstContentfulPaint": 176,
+        "transferSize": 0,
+        "encodedBodySize": 43768,
+        "decodedBodySize": 43768
+      },
+      "resourceCoverage": {
+        "js": 24,
+        "css": 1
+      }
+    },
+    "passed": true,
+    "issues": []
+  },
+  {
+    "page": "Contact",
+    "timestamp": "2025-10-11T21:49:04.278Z",
+    "metrics": {
+      "lcp": {
+        "value": 892,
+        "target": 2500,
+        "passed": true,
+        "rating": "good",
+        "unit": "ms"
+      },
+      "fid": {
+        "value": null,
+        "target": 100,
+        "passed": true,
+        "rating": "good",
+        "unit": "ms",
+        "note": "No user interaction detected"
+      },
+      "cls": {
+        "value": 0.021908267550998263,
+        "target": 0.1,
+        "passed": true,
+        "rating": "good",
+        "unit": "score"
+      }
+    },
+    "performance": {
+      "loadTime": 1038,
+      "statusCode": 200,
+      "performanceMetrics": {
+        "domContentLoaded": 0.5,
+        "loadComplete": 0,
+        "firstPaint": 156,
+        "firstContentfulPaint": 156,
+        "transferSize": 0,
+        "encodedBodySize": 43768,
+        "decodedBodySize": 43768
+      },
+      "resourceCoverage": {
+        "js": 24,
+        "css": 1
+      }
+    },
+    "passed": true,
+    "issues": []
+  }
+]

@@ -1,0 +1,237 @@
+[
+  {
+    "page": "Home",
+    "timestamp": "2025-10-11T21:51:33.753Z",
+    "metrics": {
+      "lcp": {
+        "value": 1836,
+        "target": 2500,
+        "passed": true,
+        "rating": "good",
+        "unit": "ms"
+      },
+      "fid": {
+        "value": null,
+        "target": 100,
+        "passed": true,
+        "rating": "good",
+        "unit": "ms",
+        "note": "No user interaction detected"
+      },
+      "cls": {
+        "value": 0.021908267550998263,
+        "target": 0.1,
+        "passed": true,
+        "rating": "good",
+        "unit": "score"
+      }
+    },
+    "performance": {
+      "loadTime": 1021,
+      "statusCode": 200,
+      "performanceMetrics": {
+        "domContentLoaded": 0.19999998807907104,
+        "loadComplete": 0,
+        "firstPaint": 164,
+        "firstContentfulPaint": 164,
+        "transferSize": 0,
+        "encodedBodySize": 43768,
+        "decodedBodySize": 43768
+      },
+      "resourceCoverage": {
+        "js": 25,
+        "css": 1
+      }
+    },
+    "passed": true,
+    "issues": []
+  },
+  {
+    "page": "Services",
+    "timestamp": "2025-10-11T21:51:39.341Z",
+    "metrics": {
+      "lcp": {
+        "value": 884,
+        "target": 2500,
+        "passed": true,
+        "rating": "good",
+        "unit": "ms"
+      },
+      "fid": {
+        "value": null,
+        "target": 100,
+        "passed": true,
+        "rating": "good",
+        "unit": "ms",
+        "note": "No user interaction detected"
+      },
+      "cls": {
+        "value": 0.021908267550998263,
+        "target": 0.1,
+        "passed": true,
+        "rating": "good",
+        "unit": "score"
+      }
+    },
+    "performance": {
+      "loadTime": 1022,
+      "statusCode": 200,
+      "performanceMetrics": {
+        "domContentLoaded": 0.40000003576278687,
+        "loadComplete": 0,
+        "firstPaint": 156,
+        "firstContentfulPaint": 156,
+        "transferSize": 0,
+        "encodedBodySize": 43768,
+        "decodedBodySize": 43768
+      },
+      "resourceCoverage": {
+        "js": 25,
+        "css": 1
+      }
+    },
+    "passed": true,
+    "issues": []
+  },
+  {
+    "page": "Photography Services",
+    "timestamp": "2025-10-11T21:51:44.779Z",
+    "metrics": {
+      "lcp": {
+        "value": 936,
+        "target": 2500,
+        "passed": true,
+        "rating": "good",
+        "unit": "ms"
+      },
+      "fid": {
+        "value": null,
+        "target": 100,
+        "passed": true,
+        "rating": "good",
+        "unit": "ms",
+        "note": "No user interaction detected"
+      },
+      "cls": {
+        "value": 0.021908267550998263,
+        "target": 0.1,
+        "passed": true,
+        "rating": "good",
+        "unit": "score"
+      }
+    },
+    "performance": {
+      "loadTime": 791,
+      "statusCode": 200,
+      "performanceMetrics": {
+        "domContentLoaded": 0.19999998807907104,
+        "loadComplete": 0,
+        "firstPaint": 172,
+        "firstContentfulPaint": 172,
+        "transferSize": 0,
+        "encodedBodySize": 43768,
+        "decodedBodySize": 43768
+      },
+      "resourceCoverage": {
+        "js": 25,
+        "css": 1
+      }
+    },
+    "passed": true,
+    "issues": []
+  },
+  {
+    "page": "Blog",
+    "timestamp": "2025-10-11T21:51:50.240Z",
+    "metrics": {
+      "lcp": {
+        "value": 860,
+        "target": 2500,
+        "passed": true,
+        "rating": "good",
+        "unit": "ms"
+      },
+      "fid": {
+        "value": null,
+        "target": 100,
+        "passed": true,
+        "rating": "good",
+        "unit": "ms",
+        "note": "No user interaction detected"
+      },
+      "cls": {
+        "value": 0.021908267550998263,
+        "target": 0.1,
+        "passed": true,
+        "rating": "good",
+        "unit": "score"
+      }
+    },
+    "performance": {
+      "loadTime": 835,
+      "statusCode": 200,
+      "performanceMetrics": {
+        "domContentLoaded": 0.19999998807907104,
+        "loadComplete": 0,
+        "firstPaint": 104,
+        "firstContentfulPaint": 104,
+        "transferSize": 0,
+        "encodedBodySize": 43768,
+        "decodedBodySize": 43768
+      },
+      "resourceCoverage": {
+        "js": 24,
+        "css": 1
+      }
+    },
+    "passed": true,
+    "issues": []
+  },
+  {
+    "page": "Contact",
+    "timestamp": "2025-10-11T21:51:55.770Z",
+    "metrics": {
+      "lcp": {
+        "value": 872,
+        "target": 2500,
+        "passed": true,
+        "rating": "good",
+        "unit": "ms"
+      },
+      "fid": {
+        "value": null,
+        "target": 100,
+        "passed": true,
+        "rating": "good",
+        "unit": "ms",
+        "note": "No user interaction detected"
+      },
+      "cls": {
+        "value": 0.021908267550998263,
+        "target": 0.1,
+        "passed": true,
+        "rating": "good",
+        "unit": "score"
+      }
+    },
+    "performance": {
+      "loadTime": 1025,
+      "statusCode": 200,
+      "performanceMetrics": {
+        "domContentLoaded": 0.20000004768371582,
+        "loadComplete": 0,
+        "firstPaint": 128,
+        "firstContentfulPaint": 128,
+        "transferSize": 0,
+        "encodedBodySize": 43768,
+        "decodedBodySize": 43768
+      },
+      "resourceCoverage": {
+        "js": 24,
+        "css": 1
+      }
+    },
+    "passed": true,
+    "issues": []
+  }
+]

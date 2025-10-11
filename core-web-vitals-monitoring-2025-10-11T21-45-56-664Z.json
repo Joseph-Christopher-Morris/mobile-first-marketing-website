@@ -1,0 +1,8 @@
+[
+  {
+    "page": "Home",
+    "timestamp": "2025-10-11T21:45:55.427Z",
+    "error": "page.waitForTimeout is not a function",
+    "passed": false
+  }
+]

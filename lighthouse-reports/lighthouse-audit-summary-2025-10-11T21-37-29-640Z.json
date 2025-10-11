@@ -1,0 +1,381 @@
+{
+  "timestamp": "2025-10-11T21:39:50.572Z",
+  "totalPages": 7,
+  "passedPages": 0,
+  "failedPages": 7,
+  "averageScores": {
+    "performance": 98,
+    "accessibility": 96,
+    "best-practices": 100,
+    "seo": 83
+  },
+  "results": [
+    {
+      "page": "Home",
+      "url": "https://d15sc9fc739ev2.cloudfront.net/",
+      "scores": {
+        "performance": 93,
+        "accessibility": 96,
+        "best-practices": 100,
+        "seo": 83
+      },
+      "reportPath": "C:\\Users\\Joe\\Projects\\website-sync-20251003_133144\\lighthouse-reports\\home-2025-10-11T21-37-29-640Z.html",
+      "timestamp": "2025-10-11T21:37:53.879Z",
+      "passed": {
+        "passed": false,
+        "failedCategories": [
+          "seo: 83 < 90"
+        ]
+      },
+      "metrics": {
+        "lcp": {
+          "value": 583.3530000000001,
+          "displayValue": "0.6 s",
+          "score": 1
+        },
+        "cls": {
+          "value": 0.05206475917773116,
+          "displayValue": "0.052",
+          "score": 0.99
+        },
+        "fcp": {
+          "value": 450.353,
+          "displayValue": "0.5 s",
+          "score": 1
+        },
+        "speedIndex": {
+          "value": 2882.0103757028323,
+          "displayValue": "2.9 s",
+          "score": 0.3
+        }
+      },
+      "opportunities": [
+        {
+          "id": "server-response-time",
+          "title": "Initial server response time was short",
+          "description": "Keep the server response time for the main document short because all other requests depend on it. [Learn more about the Time to First Byte metric](https://developer.chrome.com/docs/lighthouse/performance/time-to-first-byte/).",
+          "savings": "Root document took 290 ms",
+          "numericValue": 291,
+          "score": 1
+        }
+      ],
+      "diagnostics": []
+    },
+    {
+      "page": "Services",
+      "url": "https://d15sc9fc739ev2.cloudfront.net/services/",
+      "scores": {
+        "performance": 98,
+        "accessibility": 96,
+        "best-practices": 100,
+        "seo": 83
+      },
+      "reportPath": "C:\\Users\\Joe\\Projects\\website-sync-20251003_133144\\lighthouse-reports\\services-2025-10-11T21-37-29-640Z.html",
+      "timestamp": "2025-10-11T21:38:14.377Z",
+      "passed": {
+        "passed": false,
+        "failedCategories": [
+          "seo: 83 < 90"
+        ]
+      },
+      "metrics": {
+        "lcp": {
+          "value": 994.0122499999999,
+          "displayValue": "1.0 s",
+          "score": 0.95
+        },
+        "cls": {
+          "value": 0.05206475917773116,
+          "displayValue": "0.052",
+          "score": 0.99
+        },
+        "fcp": {
+          "value": 503.2049,
+          "displayValue": "0.5 s",
+          "score": 1
+        },
+        "speedIndex": {
+          "value": 1075.5305626075453,
+          "displayValue": "1.1 s",
+          "score": 0.96
+        }
+      },
+      "opportunities": [
+        {
+          "id": "server-response-time",
+          "title": "Initial server response time was short",
+          "description": "Keep the server response time for the main document short because all other requests depend on it. [Learn more about the Time to First Byte metric](https://developer.chrome.com/docs/lighthouse/performance/time-to-first-byte/).",
+          "savings": "Root document took 520 ms",
+          "numericValue": 515,
+          "score": 1
+        }
+      ],
+      "diagnostics": []
+    },
+    {
+      "page": "Photography Services",
+      "url": "https://d15sc9fc739ev2.cloudfront.net/services/photography/",
+      "scores": {
+        "performance": 99,
+        "accessibility": 96,
+        "best-practices": 100,
+        "seo": 83
+      },
+      "reportPath": "C:\\Users\\Joe\\Projects\\website-sync-20251003_133144\\lighthouse-reports\\photography-services-2025-10-11T21-37-29-640Z.html",
+      "timestamp": "2025-10-11T21:38:33.367Z",
+      "passed": {
+        "passed": false,
+        "failedCategories": [
+          "seo: 83 < 90"
+        ]
+      },
+      "metrics": {
+        "lcp": {
+          "value": 845.2617499999999,
+          "displayValue": "0.8 s",
+          "score": 0.97
+        },
+        "cls": {
+          "value": 0.05206475917773116,
+          "displayValue": "0.052",
+          "score": 0.99
+        },
+        "fcp": {
+          "value": 455.17449999999997,
+          "displayValue": "0.5 s",
+          "score": 1
+        },
+        "speedIndex": {
+          "value": 918.8762601085289,
+          "displayValue": "0.9 s",
+          "score": 0.98
+        }
+      },
+      "opportunities": [
+        {
+          "id": "server-response-time",
+          "title": "Initial server response time was short",
+          "description": "Keep the server response time for the main document short because all other requests depend on it. [Learn more about the Time to First Byte metric](https://developer.chrome.com/docs/lighthouse/performance/time-to-first-byte/).",
+          "savings": "Root document took 530 ms",
+          "numericValue": 526,
+          "score": 1
+        }
+      ],
+      "diagnostics": []
+    },
+    {
+      "page": "Analytics Services",
+      "url": "https://d15sc9fc739ev2.cloudfront.net/services/analytics/",
+      "scores": {
+        "performance": 99,
+        "accessibility": 96,
+        "best-practices": 100,
+        "seo": 83
+      },
+      "reportPath": "C:\\Users\\Joe\\Projects\\website-sync-20251003_133144\\lighthouse-reports\\analytics-services-2025-10-11T21-37-29-640Z.html",
+      "timestamp": "2025-10-11T21:38:50.876Z",
+      "passed": {
+        "passed": false,
+        "failedCategories": [
+          "seo: 83 < 90"
+        ]
+      },
+      "metrics": {
+        "lcp": {
+          "value": 826.952,
+          "displayValue": "0.8 s",
+          "score": 0.97
+        },
+        "cls": {
+          "value": 0.05206475917773116,
+          "displayValue": "0.052",
+          "score": 0.99
+        },
+        "fcp": {
+          "value": 422.976,
+          "displayValue": "0.4 s",
+          "score": 1
+        },
+        "speedIndex": {
+          "value": 798.68924144262,
+          "displayValue": "0.8 s",
+          "score": 0.99
+        }
+      },
+      "opportunities": [
+        {
+          "id": "server-response-time",
+          "title": "Initial server response time was short",
+          "description": "Keep the server response time for the main document short because all other requests depend on it. [Learn more about the Time to First Byte metric](https://developer.chrome.com/docs/lighthouse/performance/time-to-first-byte/).",
+          "savings": "Root document took 550 ms",
+          "numericValue": 549,
+          "score": 1
+        }
+      ],
+      "diagnostics": []
+    },
+    {
+      "page": "Ad Campaigns Services",
+      "url": "https://d15sc9fc739ev2.cloudfront.net/services/ad-campaigns/",
+      "scores": {
+        "performance": 99,
+        "accessibility": 96,
+        "best-practices": 100,
+        "seo": 83
+      },
+      "reportPath": "C:\\Users\\Joe\\Projects\\website-sync-20251003_133144\\lighthouse-reports\\ad-campaigns-services-2025-10-11T21-37-29-640Z.html",
+      "timestamp": "2025-10-11T21:39:10.695Z",
+      "passed": {
+        "passed": false,
+        "failedCategories": [
+          "seo: 83 < 90"
+        ]
+      },
+      "metrics": {
+        "lcp": {
+          "value": 659.2158,
+          "displayValue": "0.7 s",
+          "score": 0.99
+        },
+        "cls": {
+          "value": 0.05206475917773116,
+          "displayValue": "0.052",
+          "score": 0.99
+        },
+        "fcp": {
+          "value": 481.2158,
+          "displayValue": "0.5 s",
+          "score": 1
+        },
+        "speedIndex": {
+          "value": 993.8928396214153,
+          "displayValue": "1.0 s",
+          "score": 0.97
+        }
+      },
+      "opportunities": [
+        {
+          "id": "server-response-time",
+          "title": "Initial server response time was short",
+          "description": "Keep the server response time for the main document short because all other requests depend on it. [Learn more about the Time to First Byte metric](https://developer.chrome.com/docs/lighthouse/performance/time-to-first-byte/).",
+          "savings": "Root document took 570 ms",
+          "numericValue": 574,
+          "score": 1
+        }
+      ],
+      "diagnostics": []
+    },
+    {
+      "page": "Blog",
+      "url": "https://d15sc9fc739ev2.cloudfront.net/blog/",
+      "scores": {
+        "performance": 98,
+        "accessibility": 96,
+        "best-practices": 100,
+        "seo": 83
+      },
+      "reportPath": "C:\\Users\\Joe\\Projects\\website-sync-20251003_133144\\lighthouse-reports\\blog-2025-10-11T21-37-29-640Z.html",
+      "timestamp": "2025-10-11T21:39:30.384Z",
+      "passed": {
+        "passed": false,
+        "failedCategories": [
+          "seo: 83 < 90"
+        ]
+      },
+      "metrics": {
+        "lcp": {
+          "value": 951.1826000000001,
+          "displayValue": "1.0 s",
+          "score": 0.95
+        },
+        "cls": {
+          "value": 0.05206475917773116,
+          "displayValue": "0.052",
+          "score": 0.99
+        },
+        "fcp": {
+          "value": 476.6826,
+          "displayValue": "0.5 s",
+          "score": 1
+        },
+        "speedIndex": {
+          "value": 1008.3889922444704,
+          "displayValue": "1.0 s",
+          "score": 0.97
+        }
+      },
+      "opportunities": [
+        {
+          "id": "server-response-time",
+          "title": "Reduce initial server response time",
+          "description": "Keep the server response time for the main document short because all other requests depend on it. [Learn more about the Time to First Byte metric](https://developer.chrome.com/docs/lighthouse/performance/time-to-first-byte/).",
+          "savings": "Root document took 620 ms",
+          "numericValue": 622,
+          "score": 0
+        }
+      ],
+      "diagnostics": []
+    },
+    {
+      "page": "Contact",
+      "url": "https://d15sc9fc739ev2.cloudfront.net/contact/",
+      "scores": {
+        "performance": 99,
+        "accessibility": 96,
+        "best-practices": 100,
+        "seo": 83
+      },
+      "reportPath": "C:\\Users\\Joe\\Projects\\website-sync-20251003_133144\\lighthouse-reports\\contact-2025-10-11T21-37-29-640Z.html",
+      "timestamp": "2025-10-11T21:39:48.568Z",
+      "passed": {
+        "passed": false,
+        "failedCategories": [
+          "seo: 83 < 90"
+        ]
+      },
+      "metrics": {
+        "lcp": {
+          "value": 876.6485,
+          "displayValue": "0.9 s",
+          "score": 0.97
+        },
+        "cls": {
+          "value": 0.05206475917773116,
+          "displayValue": "0.052",
+          "score": 0.99
+        },
+        "fcp": {
+          "value": 421.9782,
+          "displayValue": "0.4 s",
+          "score": 1
+        },
+        "speedIndex": {
+          "value": 706.9426040785968,
+          "displayValue": "0.7 s",
+          "score": 1
+        }
+      },
+      "opportunities": [
+        {
+          "id": "server-response-time",
+          "title": "Initial server response time was short",
+          "description": "Keep the server response time for the main document short because all other requests depend on it. [Learn more about the Time to First Byte metric](https://developer.chrome.com/docs/lighthouse/performance/time-to-first-byte/).",
+          "savings": "Root document took 360 ms",
+          "numericValue": 355,
+          "score": 1
+        }
+      ],
+      "diagnostics": []
+    }
+  ],
+  "recommendations": [
+    {
+      "type": "opportunity",
+      "id": "server-response-time",
+      "title": "Initial server response time was short",
+      "description": "Keep the server response time for the main document short because all other requests depend on it. [Learn more about the Time to First Byte metric](https://developer.chrome.com/docs/lighthouse/performance/time-to-first-byte/).",
+      "affectedPages": 7,
+      "priority": "high"
+    }
+  ]
+}

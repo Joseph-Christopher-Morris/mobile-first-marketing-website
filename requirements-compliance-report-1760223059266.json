@@ -1,0 +1,46 @@
+{
+  "timestamp": "2025-10-11T22:50:59.266Z",
+  "summary": {
+    "totalTests": 19,
+    "passed": 18,
+    "failed": 1,
+    "successRate": "94.7%"
+  },
+  "categories": {
+    "brandColors": {
+      "passed": 3,
+      "failed": 0,
+      "issues": []
+    },
+    "images": {
+      "passed": 2,
+      "failed": 1,
+      "issues": [
+        "Image validation error: Command failed: grep -r \"import.*Image.*from.*next/image\" src/ --include=\"*.tsx\" --include=\"*.ts\"\n'grep' is not recognized as an internal or external command,\r\noperable program or batch file.\r\n"
+      ]
+    },
+    "contactForm": {
+      "passed": 3,
+      "failed": 0,
+      "issues": []
+    },
+    "content": {
+      "passed": 3,
+      "failed": 0,
+      "issues": []
+    },
+    "testimonials": {
+      "passed": 4,
+      "failed": 0,
+      "issues": []
+    },
+    "performance": {
+      "passed": 3,
+      "failed": 0,
+      "issues": []
+    }
+  },
+  "recommendations": [
+    "- Ensure all critical images exist and follow kebab-case naming convention"
+  ]
+}

@@ -8,13 +8,25 @@ import { NewsletterSignup } from '@/components/sections/NewsletterSignup';
 import { ServicesShowcase } from '@/components/sections/ServicesShowcase';
 
 export const metadata: Metadata = {
-  title: 'Blog',
+  title: 'Automotive Photography Blog | Industry Insights & Success Stories',
   description:
-    'Latest insights, tips, and updates from our Vivid Auto Photography team. Stay informed about industry trends, best practices, and success stories.',
+    'Latest insights, tips, and success stories from Vivid Auto Photography. Learn about automotive photography techniques, industry trends, marketing strategies, and real-world case studies from our Nantwich & Cheshire team.',
+  keywords: [
+    'automotive photography blog',
+    'car photography tips',
+    'automotive marketing insights',
+    'photography industry trends',
+    'automotive advertising case studies',
+    'vehicle photography techniques',
+    'car dealership marketing',
+    'automotive photography success stories',
+    'photography business insights',
+    'automotive industry updates'
+  ],
   openGraph: {
-    title: 'Blog | Mobile-First Vivid Auto Photography',
+    title: 'Automotive Photography Blog | Industry Insights & Success Stories',
     description:
-      'Latest insights, tips, and updates from our Vivid Auto Photography team. Stay informed about industry trends, best practices, and success stories.',
+      'Latest insights, tips, and success stories from Vivid Auto Photography. Learn about automotive photography techniques, industry trends, and real-world case studies.',
   },
 };
 
@@ -53,7 +65,7 @@ export default async function BlogPage() {
                 <article className='md:col-span-2 lg:col-span-3 bg-white rounded-lg shadow-sm border border-gray-200 overflow-hidden'>
                   <div className='relative w-full h-48 md:h-64 bg-gray-200'>
                     <Image
-                      src={featuredPost.image || '/images/hero-bg.jpg'}
+                      src={featuredPost.image || '/images/hero-bg.webp'}
                       alt={featuredPost.title}
                       fill
                       className='object-cover'
@@ -85,7 +97,8 @@ export default async function BlogPage() {
                     </p>
                     <Link
                       href={`/blog/${featuredPost.slug}`}
-                      className='inline-flex items-center text-blue-600 hover:text-blue-700 font-medium'
+                      className='inline-flex items-center text-brand-pink hover:text-brand-pink2 font-medium'
+                      aria-label={`Read full article: ${featuredPost.title}`}
                     >
                       Read More
                       <svg
@@ -114,7 +127,7 @@ export default async function BlogPage() {
                 >
                   <div className='relative w-full h-48 bg-gray-200'>
                     <Image
-                      src={post.image || '/images/hero-bg.jpg'}
+                      src={post.image || '/images/hero-bg.webp'}
                       alt={post.title}
                       fill
                       className='object-cover'
@@ -142,7 +155,8 @@ export default async function BlogPage() {
                     <div className='flex items-center justify-between'>
                       <Link
                         href={`/blog/${post.slug}`}
-                        className='inline-flex items-center text-blue-600 hover:text-blue-700 font-medium'
+                        className='inline-flex items-center text-brand-pink hover:text-brand-pink2 font-medium'
+                        aria-label={`Read full article: ${post.title}`}
                       >
                         Read More
                         <svg

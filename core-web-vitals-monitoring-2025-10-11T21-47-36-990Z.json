@@ -1,0 +1,182 @@
+[
+  {
+    "page": "Home",
+    "timestamp": "2025-10-11T21:46:33.555Z",
+    "metrics": {
+      "fid": {
+        "value": null,
+        "target": 100,
+        "passed": true,
+        "rating": "good",
+        "unit": "ms",
+        "note": "No user interaction detected"
+      }
+    },
+    "performance": {
+      "loadTime": 1045,
+      "statusCode": 200,
+      "performanceMetrics": {
+        "domContentLoaded": 0.40000003576278687,
+        "loadComplete": 0.10000002384185791,
+        "firstPaint": 288,
+        "firstContentfulPaint": 288,
+        "transferSize": 0,
+        "encodedBodySize": 43768,
+        "decodedBodySize": 43768
+      },
+      "resourceCoverage": {
+        "js": 25,
+        "css": 1
+      }
+    },
+    "passed": false,
+    "issues": [
+      "LCP metric not captured",
+      "CLS metric not captured"
+    ]
+  },
+  {
+    "page": "Services",
+    "timestamp": "2025-10-11T21:46:49.277Z",
+    "metrics": {
+      "fid": {
+        "value": null,
+        "target": 100,
+        "passed": true,
+        "rating": "good",
+        "unit": "ms",
+        "note": "No user interaction detected"
+      }
+    },
+    "performance": {
+      "loadTime": 1033,
+      "statusCode": 200,
+      "performanceMetrics": {
+        "domContentLoaded": 0.19999998807907104,
+        "loadComplete": 0,
+        "firstPaint": 172,
+        "firstContentfulPaint": 172,
+        "transferSize": 0,
+        "encodedBodySize": 43768,
+        "decodedBodySize": 43768
+      },
+      "resourceCoverage": {
+        "js": 25,
+        "css": 1
+      }
+    },
+    "passed": false,
+    "issues": [
+      "LCP metric not captured",
+      "CLS metric not captured"
+    ]
+  },
+  {
+    "page": "Photography Services",
+    "timestamp": "2025-10-11T21:47:04.749Z",
+    "metrics": {
+      "fid": {
+        "value": null,
+        "target": 100,
+        "passed": true,
+        "rating": "good",
+        "unit": "ms",
+        "note": "No user interaction detected"
+      }
+    },
+    "performance": {
+      "loadTime": 1035,
+      "statusCode": 200,
+      "performanceMetrics": {
+        "domContentLoaded": 0.30000001192092896,
+        "loadComplete": 0,
+        "firstPaint": 168,
+        "firstContentfulPaint": 168,
+        "transferSize": 0,
+        "encodedBodySize": 43768,
+        "decodedBodySize": 43768
+      },
+      "resourceCoverage": {
+        "js": 25,
+        "css": 1
+      }
+    },
+    "passed": false,
+    "issues": [
+      "LCP metric not captured",
+      "CLS metric not captured"
+    ]
+  },
+  {
+    "page": "Blog",
+    "timestamp": "2025-10-11T21:47:20.503Z",
+    "metrics": {
+      "fid": {
+        "value": null,
+        "target": 100,
+        "passed": true,
+        "rating": "good",
+        "unit": "ms",
+        "note": "No user interaction detected"
+      }
+    },
+    "performance": {
+      "loadTime": 1066,
+      "statusCode": 200,
+      "performanceMetrics": {
+        "domContentLoaded": 0.3999999761581421,
+        "loadComplete": 0,
+        "firstPaint": 220,
+        "firstContentfulPaint": 220,
+        "transferSize": 0,
+        "encodedBodySize": 43768,
+        "decodedBodySize": 43768
+      },
+      "resourceCoverage": {
+        "js": 24,
+        "css": 1
+      }
+    },
+    "passed": false,
+    "issues": [
+      "LCP metric not captured",
+      "CLS metric not captured"
+    ]
+  },
+  {
+    "page": "Contact",
+    "timestamp": "2025-10-11T21:47:36.238Z",
+    "metrics": {
+      "fid": {
+        "value": null,
+        "target": 100,
+        "passed": true,
+        "rating": "good",
+        "unit": "ms",
+        "note": "No user interaction detected"
+      }
+    },
+    "performance": {
+      "loadTime": 849,
+      "statusCode": 200,
+      "performanceMetrics": {
+        "domContentLoaded": 0.19999998807907104,
+        "loadComplete": 0.10000002384185791,
+        "firstPaint": 132,
+        "firstContentfulPaint": 132,
+        "transferSize": 0,
+        "encodedBodySize": 43768,
+        "decodedBodySize": 43768
+      },
+      "resourceCoverage": {
+        "js": 24,
+        "css": 1
+      }
+    },
+    "passed": false,
+    "issues": [
+      "LCP metric not captured",
+      "CLS metric not captured"
+    ]
+  }
+]

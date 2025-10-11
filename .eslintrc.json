@@ -7,6 +7,11 @@
     "react/no-unescaped-entities": "off",
     "@next/next/no-img-element": "off"
   },
+  "settings": {
+    "react": {
+      "version": "detect"
+    }
+  },
   "overrides": [
     {
       "files": ["src/app/**", "src/pages/**", "src/components/**/*.tsx"],
@@ -15,8 +20,19 @@
         "@next/next/no-img-element": "error"
       }
     },
-    { "files": ["**/__tests__/**", "**/*.test.ts", "**/*.test.tsx"], "env": { "jest": true, "node": true } },
-    { "files": ["scripts/**", "*.config.*", "**/*.config.*"], "env": { "node": true } }
+    {
+      "files": ["**/__tests__/**", "**/*.test.ts", "**/*.test.tsx"],
+      "env": { "jest": true, "node": true },
+      "rules": {
+        "@next/next/no-img-element": "off",
+        "jsx-a11y/alt-text": "off",
+        "react/no-unescaped-entities": "off"
+      }
+    },
+    { 
+      "files": ["scripts/**", "*.config.*", "**/*.config.*"], 
+      "env": { "node": true } 
+    }
   ],
   "ignorePatterns": [
     "node_modules/",
