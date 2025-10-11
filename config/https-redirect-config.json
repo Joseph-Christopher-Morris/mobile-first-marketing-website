@@ -3,7 +3,7 @@
     "description": "Configuration for HTTPS redirect validation testing",
     "version": "1.0.0",
     "lastUpdated": "2025-10-05T22:00:00.000Z",
-    
+
     "defaultSettings": {
       "timeout": 10000,
       "maxRedirects": 5,
@@ -11,19 +11,14 @@
       "followRedirects": true,
       "validateCertificates": true
     },
-    
+
     "testConfiguration": {
       "httpToHttpsRedirect": {
         "enabled": true,
         "expectedStatusCodes": [301, 302, 307, 308],
-        "testUrls": [
-          "http://{domain}",
-          "http://{domain}/",
-          "http://{domain}/index.html",
-          "http://www.{domain}"
-        ]
+        "testUrls": ["http://{domain}", "http://{domain}/", "http://{domain}/index.html", "http://www.{domain}"]
       },
-      
+
       "hstsHeader": {
         "enabled": true,
         "requiredDirectives": ["max-age"],
@@ -31,21 +26,21 @@
         "minimumMaxAge": 31536000,
         "warningMaxAge": 86400
       },
-      
+
       "secureCookies": {
         "enabled": true,
         "requiredFlags": ["Secure"],
         "recommendedFlags": ["HttpOnly", "SameSite"],
         "allowedSameSiteValues": ["Strict", "Lax", "None"]
       },
-      
+
       "redirectChain": {
         "enabled": true,
         "maxAllowedRedirects": 5,
         "detectLoops": true,
         "validateFinalUrl": true
       },
-      
+
       "securityHeaders": {
         "enabled": true,
         "requiredHeaders": {
@@ -73,7 +68,7 @@
         }
       }
     },
-    
+
     "validationRules": {
       "redirectValidation": {
         "httpToHttps": {
@@ -92,7 +87,7 @@
           "description": "Prevents infinite redirect chains"
         }
       },
-      
+
       "hstsValidation": {
         "headerPresence": {
           "rule": "HSTS header must be present on HTTPS responses",
@@ -110,7 +105,7 @@
           "description": "Extends HTTPS enforcement to all subdomains"
         }
       },
-      
+
       "cookieValidation": {
         "secureFlag": {
           "rule": "All cookies must have Secure flag when served over HTTPS",
@@ -129,7 +124,7 @@
         }
       }
     },
-    
+
     "reportingConfiguration": {
       "outputFormats": ["json", "html", "markdown"],
       "includeDetails": true,
@@ -137,13 +132,9 @@
       "includeTechnicalDetails": true,
       "groupByCategory": true
     },
-    
+
     "testDomains": {
-      "knownGoodDomains": [
-        "github.com",
-        "google.com",
-        "cloudflare.com"
-      ],
+      "knownGoodDomains": ["github.com", "google.com", "cloudflare.com"],
       "testScenarios": [
         {
           "name": "Basic HTTPS Redirect",
@@ -167,7 +158,7 @@
         }
       ]
     },
-    
+
     "complianceStandards": {
       "owasp": {
         "name": "OWASP Security Guidelines",
@@ -195,7 +186,7 @@
         ]
       }
     },
-    
+
     "troubleshooting": {
       "commonIssues": [
         {

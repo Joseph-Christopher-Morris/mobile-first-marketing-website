@@ -1,6 +1,8 @@
 # SSL Certificate Validation Guide
 
-This guide explains how to use the SSL certificate validation tools to test certificate validity, configuration, and security for CloudFront distributions and custom domains.
+This guide explains how to use the SSL certificate validation tools to test
+certificate validity, configuration, and security for CloudFront distributions
+and custom domains.
 
 ## Overview
 
@@ -36,8 +38,10 @@ node scripts/ssl-certificate-validator.js --multiple config/ssl-certificate-conf
 
 #### Features
 
-- **Certificate Validity Dates**: Checks current validity and warns about upcoming expiration
-- **Subject/SAN Matching**: Verifies hostname matches certificate names (supports wildcards)
+- **Certificate Validity Dates**: Checks current validity and warns about
+  upcoming expiration
+- **Subject/SAN Matching**: Verifies hostname matches certificate names
+  (supports wildcards)
 - **Certificate Chain**: Validates complete certificate chain integrity
 - **CA Trust**: Verifies certificate is trusted by system CA store
 - **Signature Algorithms**: Checks for weak signature algorithms (MD5, SHA1)
@@ -93,10 +97,7 @@ node scripts/test-ssl-certificate-validation.js
 
 ```json
 {
-  "domains": [
-    "example.com",
-    "www.example.com"
-  ],
+  "domains": ["example.com", "www.example.com"],
   "validation": {
     "checkExpiry": true,
     "expiryWarningDays": 30,
@@ -139,13 +140,15 @@ node scripts/test-ssl-certificate-validation.js
 
 - **Current Validity**: Checks if certificate is currently valid
 - **Expiration Warning**: Warns if certificate expires within 30 days
-- **Lifetime Validation**: Ensures certificate lifetime is within recommended limits (≤825 days)
+- **Lifetime Validation**: Ensures certificate lifetime is within recommended
+  limits (≤825 days)
 
 ### 2. Subject and SAN Matching
 
 - **Hostname Matching**: Verifies hostname matches certificate CN or SAN entries
-- **Wildcard Support**: Properly handles wildcard certificates (*.example.com)
-- **Subject Completeness**: Checks for recommended subject fields (C, ST, L, O, CN)
+- **Wildcard Support**: Properly handles wildcard certificates (\*.example.com)
+- **Subject Completeness**: Checks for recommended subject fields (C, ST, L, O,
+  CN)
 
 ### 3. Certificate Chain Integrity
 
@@ -162,7 +165,8 @@ node scripts/test-ssl-certificate-validation.js
 
 ### 5. Security Configuration
 
-- **Key Usage Extensions**: Validates appropriate key usage for TLS server authentication
+- **Key Usage Extensions**: Validates appropriate key usage for TLS server
+  authentication
 - **Signature Algorithms**: Identifies weak signature algorithms (MD5, SHA1)
 - **Certificate Strength**: Validates overall certificate security configuration
 
@@ -209,7 +213,7 @@ Add to your workflow:
 - name: Validate SSL Certificates
   run: |
     node scripts/ssl-certificate-validator.js ${{ secrets.DOMAIN_NAME }} --output ssl-validation-report.json
-    
+
 - name: Upload SSL Validation Report
   uses: actions/upload-artifact@v3
   with:
@@ -236,7 +240,8 @@ Set up automated SSL certificate monitoring:
 ❌ ca-trust: Certificate is not trusted: SELF_SIGNED_CERT_IN_CHAIN
 ```
 
-**Solution**: Install intermediate certificates or use a certificate from a trusted CA.
+**Solution**: Install intermediate certificates or use a certificate from a
+trusted CA.
 
 #### Hostname Mismatch
 
@@ -271,6 +276,7 @@ Failed to retrieve certificate: TLS connection failed: connect ETIMEDOUT
 ```
 
 **Solutions**:
+
 - Check network connectivity
 - Verify domain name resolution
 - Increase timeout value with `--timeout` option
@@ -283,6 +289,7 @@ Failed to retrieve certificate: TLS connection failed: connect ECONNREFUSED
 ```
 
 **Solutions**:
+
 - Verify correct port (usually 443 for HTTPS)
 - Check if service is running on the specified port
 - Use `--port` option to specify custom port
@@ -298,7 +305,8 @@ Failed to retrieve certificate: TLS connection failed: connect ECONNREFUSED
 
 ### Certificate Management
 
-1. **Use Trusted CAs**: Always use certificates from trusted certificate authorities
+1. **Use Trusted CAs**: Always use certificates from trusted certificate
+   authorities
 2. **Proper SAN Configuration**: Include all necessary domain names in SAN
 3. **Appropriate Lifetime**: Use certificates with reasonable validity periods
 4. **Strong Algorithms**: Ensure SHA-256 or stronger signature algorithms
@@ -342,4 +350,6 @@ Failed to retrieve certificate: TLS connection failed: connect ECONNREFUSED
 - Maintain troubleshooting guides
 - Update integration procedures
 
-This SSL certificate validation system provides comprehensive testing to ensure your CloudFront distributions and custom domains maintain proper SSL/TLS security configuration.
+This SSL certificate validation system provides comprehensive testing to ensure
+your CloudFront distributions and custom domains maintain proper SSL/TLS
+security configuration.

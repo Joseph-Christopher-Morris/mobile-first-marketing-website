@@ -2,8 +2,10 @@ import { BlogPost } from '../../lib/blog-types';
 
 const post: BlogPost = {
   slug: 'flyers-roi-breakdown',
-  title: 'How I Turned £546 into £13.5K With Flyers: Year-by-Year ROI Breakdown (2021–2025)',
-  excerpt: 'A detailed breakdown of how strategic flyer campaigns generated massive ROI over 4 years. Real numbers, lessons learned, and actionable strategies for local marketing success.',
+  title:
+    'How I Turned £546 into £13.5K With Flyers: Year-by-Year ROI Breakdown (2021–2025)',
+  excerpt:
+    'A detailed breakdown of how strategic flyer campaigns generated massive ROI over 4 years. Real numbers, lessons learned, and actionable strategies for local marketing success.',
   content: `
 # How I Turned £546 into £13.5K With Flyers: Year-by-Year ROI Breakdown (2021–2025)
 
@@ -96,10 +98,16 @@ Ready to start your own flyer campaign? The key is starting small, measuring eve
   date: '2025-01-15',
   author: 'Joe from Vivid Auto',
   category: 'Marketing',
-  tags: ['flyers', 'roi', 'local-marketing', 'traditional-marketing', 'case-study'],
+  tags: [
+    'flyers',
+    'roi',
+    'local-marketing',
+    'traditional-marketing',
+    'case-study',
+  ],
   featured: true,
   image: '/images/hero/whatsapp-image-2025-07-11-flyers-roi.webp',
-  readTime: 6
+  readTime: 6,
 };
 
 export default post;

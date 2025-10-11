@@ -5,31 +5,31 @@
 .text-blue-500,
 .text-blue-600,
 .text-blue-700 {
-  color: #F5276F !important;
+  color: #f5276f !important;
 }
 
 .text-blue-500:hover,
 .text-blue-600:hover,
 .text-blue-700:hover {
-  color: #C8094C !important;
+  color: #c8094c !important;
 }
 
 .bg-blue-500,
 .bg-blue-600,
 .bg-blue-700 {
-  background-color: #F5276F !important;
+  background-color: #f5276f !important;
 }
 
 .bg-blue-500:hover,
 .bg-blue-600:hover,
 .bg-blue-700:hover {
-  background-color: #C8094C !important;
+  background-color: #c8094c !important;
 }
 
 .border-blue-500,
 .border-blue-600,
 .border-blue-700 {
-  border-color: #F5276F !important;
+  border-color: #f5276f !important;
 }
 
 .ring-blue-500,
@@ -39,190 +39,190 @@
 }
 
 /* Override common button styles that use blue */
-button[class*="blue"],
+button[class*='blue'],
 .btn-blue,
 .button-blue {
-  background-color: #F5276F !important;
-  border-color: #F5276F !important;
+  background-color: #f5276f !important;
+  border-color: #f5276f !important;
 }
 
-button[class*="blue"]:hover,
+button[class*='blue']:hover,
 .btn-blue:hover,
 .button-blue:hover {
-  background-color: #C8094C !important;
-  border-color: #C8094C !important;
+  background-color: #c8094c !important;
+  border-color: #c8094c !important;
 }
 
 /* Override link colors */
-a[class*="blue"] {
-  color: #F5276F !important;
+a[class*='blue'] {
+  color: #f5276f !important;
 }
 
-a[class*="blue"]:hover {
-  color: #C8094C !important;
+a[class*='blue']:hover {
+  color: #c8094c !important;
 }
 
 /* Override form focus colors */
-input:focus[class*="blue"],
-textarea:focus[class*="blue"],
-select:focus[class*="blue"] {
-  border-color: #F5276F !important;
+input:focus[class*='blue'],
+textarea:focus[class*='blue'],
+select:focus[class*='blue'] {
+  border-color: #f5276f !important;
   box-shadow: 0 0 0 3px rgba(245, 39, 111, 0.1) !important;
 }
 
 /* Override checkbox and radio colors */
-input[type="checkbox"][class*="blue"]:checked,
-input[type="radio"][class*="blue"]:checked {
-  background-color: #F5276F !important;
-  border-color: #F5276F !important;
+input[type='checkbox'][class*='blue']:checked,
+input[type='radio'][class*='blue']:checked {
+  background-color: #f5276f !important;
+  border-color: #f5276f !important;
 }
 
 /* Override progress bar colors */
-.progress[class*="blue"] .progress-bar,
+.progress[class*='blue'] .progress-bar,
 .progress-blue .progress-bar {
-  background-color: #F5276F !important;
+  background-color: #f5276f !important;
 }
 
 /* Override badge colors */
-.badge[class*="blue"],
+.badge[class*='blue'],
 .badge-blue {
-  background-color: #F5276F !important;
-  color: #FFFFFF !important;
+  background-color: #f5276f !important;
+  color: #ffffff !important;
 }
 
 /* Override alert colors */
-.alert[class*="blue"],
+.alert[class*='blue'],
 .alert-blue {
   background-color: rgba(245, 39, 111, 0.1) !important;
   border-color: rgba(245, 39, 111, 0.2) !important;
-  color: #B01E56 !important;
+  color: #b01e56 !important;
 }
 
 /* Override navigation colors */
-.nav-link[class*="blue"],
-.navbar-nav .nav-link[class*="blue"] {
-  color: #F5276F !important;
+.nav-link[class*='blue'],
+.navbar-nav .nav-link[class*='blue'] {
+  color: #f5276f !important;
 }
 
-.nav-link[class*="blue"]:hover,
-.navbar-nav .nav-link[class*="blue"]:hover {
-  color: #C8094C !important;
+.nav-link[class*='blue']:hover,
+.navbar-nav .nav-link[class*='blue']:hover {
+  color: #c8094c !important;
 }
 
 /* Override card accent colors */
-.card[class*="blue"] .card-header,
+.card[class*='blue'] .card-header,
 .card-blue .card-header {
-  border-color: #F5276F !important;
+  border-color: #f5276f !important;
 }
 
 /* Override table colors */
-.table[class*="blue"] thead th,
+.table[class*='blue'] thead th,
 .table-blue thead th {
-  background-color: #F5276F !important;
-  color: #FFFFFF !important;
+  background-color: #f5276f !important;
+  color: #ffffff !important;
 }
 
 /* Override dropdown colors */
-.dropdown-item[class*="blue"]:hover,
+.dropdown-item[class*='blue']:hover,
 .dropdown-item-blue:hover {
   background-color: rgba(245, 39, 111, 0.1) !important;
-  color: #F5276F !important;
+  color: #f5276f !important;
 }
 
 /* Override modal colors */
-.modal[class*="blue"] .modal-header,
+.modal[class*='blue'] .modal-header,
 .modal-blue .modal-header {
-  background-color: #F5276F !important;
-  color: #FFFFFF !important;
+  background-color: #f5276f !important;
+  color: #ffffff !important;
 }
 
 /* Override tooltip colors */
-.tooltip[class*="blue"] .tooltip-inner,
+.tooltip[class*='blue'] .tooltip-inner,
 .tooltip-blue .tooltip-inner {
-  background-color: #F5276F !important;
+  background-color: #f5276f !important;
 }
 
 /* Override popover colors */
-.popover[class*="blue"] .popover-header,
+.popover[class*='blue'] .popover-header,
 .popover-blue .popover-header {
-  background-color: #F5276F !important;
-  color: #FFFFFF !important;
+  background-color: #f5276f !important;
+  color: #ffffff !important;
 }
 
 /* Override pagination colors */
-.pagination .page-link[class*="blue"],
+.pagination .page-link[class*='blue'],
 .pagination .page-link.active {
-  background-color: #F5276F !important;
-  border-color: #F5276F !important;
-  color: #FFFFFF !important;
+  background-color: #f5276f !important;
+  border-color: #f5276f !important;
+  color: #ffffff !important;
 }
 
-.pagination .page-link[class*="blue"]:hover,
+.pagination .page-link[class*='blue']:hover,
 .pagination .page-link:hover {
-  background-color: #C8094C !important;
-  border-color: #C8094C !important;
-  color: #FFFFFF !important;
+  background-color: #c8094c !important;
+  border-color: #c8094c !important;
+  color: #ffffff !important;
 }
 
 /* Override spinner colors */
-.spinner-border[class*="blue"],
+.spinner-border[class*='blue'],
 .spinner-border-blue {
-  color: #F5276F !important;
+  color: #f5276f !important;
 }
 
 /* Override switch/toggle colors */
 .form-switch .form-check-input:checked {
-  background-color: #F5276F !important;
-  border-color: #F5276F !important;
+  background-color: #f5276f !important;
+  border-color: #f5276f !important;
 }
 
 /* Override range slider colors */
-input[type="range"]::-webkit-slider-thumb {
-  background-color: #F5276F !important;
+input[type='range']::-webkit-slider-thumb {
+  background-color: #f5276f !important;
 }
 
-input[type="range"]::-moz-range-thumb {
-  background-color: #F5276F !important;
+input[type='range']::-moz-range-thumb {
+  background-color: #f5276f !important;
 }
 
 /* Override accordion colors */
 .accordion-button:not(.collapsed) {
   background-color: rgba(245, 39, 111, 0.1) !important;
-  color: #F5276F !important;
+  color: #f5276f !important;
 }
 
 /* Override tab colors */
 .nav-tabs .nav-link.active {
-  color: #F5276F !important;
-  border-color: #F5276F !important;
+  color: #f5276f !important;
+  border-color: #f5276f !important;
 }
 
 .nav-pills .nav-link.active {
-  background-color: #F5276F !important;
+  background-color: #f5276f !important;
 }
 
 /* Override breadcrumb colors */
 .breadcrumb-item.active {
-  color: #F5276F !important;
+  color: #f5276f !important;
 }
 
 .breadcrumb-item a {
-  color: #F5276F !important;
+  color: #f5276f !important;
 }
 
 .breadcrumb-item a:hover {
-  color: #C8094C !important;
+  color: #c8094c !important;
 }
 
 /* Override list group colors */
 .list-group-item.active {
-  background-color: #F5276F !important;
-  border-color: #F5276F !important;
+  background-color: #f5276f !important;
+  border-color: #f5276f !important;
 }
 
 /* Override carousel indicators */
 .carousel-indicators [data-bs-target] {
-  background-color: #F5276F !important;
+  background-color: #f5276f !important;
 }
 
 /* Override offcanvas colors */
@@ -232,91 +232,91 @@ input[type="range"]::-moz-range-thumb {
 
 /* Override toast colors */
 .toast-header {
-  color: #F5276F !important;
+  color: #f5276f !important;
 }
 
 /* Common framework overrides */
 
 /* Bootstrap overrides */
 .btn-primary {
-  background-color: #F5276F !important;
-  border-color: #F5276F !important;
+  background-color: #f5276f !important;
+  border-color: #f5276f !important;
 }
 
 .btn-primary:hover,
 .btn-primary:focus,
 .btn-primary:active {
-  background-color: #C8094C !important;
-  border-color: #C8094C !important;
+  background-color: #c8094c !important;
+  border-color: #c8094c !important;
 }
 
 .btn-outline-primary {
-  color: #F5276F !important;
-  border-color: #F5276F !important;
+  color: #f5276f !important;
+  border-color: #f5276f !important;
 }
 
 .btn-outline-primary:hover,
 .btn-outline-primary:focus,
 .btn-outline-primary:active {
-  background-color: #F5276F !important;
-  border-color: #F5276F !important;
-  color: #FFFFFF !important;
+  background-color: #f5276f !important;
+  border-color: #f5276f !important;
+  color: #ffffff !important;
 }
 
 /* Material UI overrides */
 .MuiButton-containedPrimary {
-  background-color: #F5276F !important;
+  background-color: #f5276f !important;
 }
 
 .MuiButton-containedPrimary:hover {
-  background-color: #C8094C !important;
+  background-color: #c8094c !important;
 }
 
 .MuiButton-outlinedPrimary {
-  color: #F5276F !important;
-  border-color: #F5276F !important;
+  color: #f5276f !important;
+  border-color: #f5276f !important;
 }
 
 .MuiButton-textPrimary {
-  color: #F5276F !important;
+  color: #f5276f !important;
 }
 
 /* Ant Design overrides */
 .ant-btn-primary {
-  background-color: #F5276F !important;
-  border-color: #F5276F !important;
+  background-color: #f5276f !important;
+  border-color: #f5276f !important;
 }
 
 .ant-btn-primary:hover,
 .ant-btn-primary:focus {
-  background-color: #C8094C !important;
-  border-color: #C8094C !important;
+  background-color: #c8094c !important;
+  border-color: #c8094c !important;
 }
 
 /* Chakra UI overrides */
-.chakra-button[data-theme="blue"] {
-  background-color: #F5276F !important;
+.chakra-button[data-theme='blue'] {
+  background-color: #f5276f !important;
 }
 
 /* Custom utility classes for easy brand color application */
 .brand-primary {
-  color: #F5276F !important;
+  color: #f5276f !important;
 }
 
 .brand-primary-hover:hover {
-  color: #C8094C !important;
+  color: #c8094c !important;
 }
 
 .brand-bg-primary {
-  background-color: #F5276F !important;
+  background-color: #f5276f !important;
 }
 
 .brand-bg-primary-hover:hover {
-  background-color: #C8094C !important;
+  background-color: #c8094c !important;
 }
 
 .brand-border-primary {
-  border-color: #F5276F !important;
+  border-color: #f5276f !important;
 }
 
 .brand-shadow-primary {
@@ -331,9 +331,9 @@ input[type="range"]::-moz-range-thumb {
 
 /* Gradient utilities */
 .brand-gradient {
-  background: linear-gradient(135deg, #F5276F 0%, #C8094C 100%) !important;
+  background: linear-gradient(135deg, #f5276f 0%, #c8094c 100%) !important;
 }
 
 .brand-gradient-hover:hover {
-  background: linear-gradient(135deg, #C8094C 0%, #B01E56 100%) !important;
+  background: linear-gradient(135deg, #c8094c 0%, #b01e56 100%) !important;
 }

@@ -2,28 +2,34 @@
 
 ## Overview
 
-The Comprehensive TLS Validation Report system implements **Task 7.5.4** requirements by providing detailed TLS configuration analysis, security assessment, and automated testing capabilities for AWS CloudFront deployments.
+The Comprehensive TLS Validation Report system implements **Task 7.5.4**
+requirements by providing detailed TLS configuration analysis, security
+assessment, and automated testing capabilities for AWS CloudFront deployments.
 
 ## Features
 
 ### 1. Comprehensive TLS Analysis
+
 - **Protocol Support**: Tests TLS 1.0, 1.1, 1.2, and 1.3 support
 - **Cipher Suite Analysis**: Evaluates cipher strength and security
 - **Perfect Forward Secrecy**: Validates PFS implementation
 - **Security Scoring**: Provides numerical security assessment (0-100)
 
 ### 2. Multi-Format Reports
+
 - **JSON**: Machine-readable detailed data
 - **Markdown**: Human-readable technical report
 - **HTML**: Web-viewable formatted report
 - **Summary**: Quick status overview
 
 ### 3. Compliance Analysis
+
 - **PCI DSS**: Payment card industry requirements
 - **NIST**: National cybersecurity framework
 - **OWASP**: Web application security standards
 
 ### 4. Automated Testing
+
 - **Validation Tests**: Automated TLS configuration testing
 - **Error Handling**: Comprehensive error detection and reporting
 - **Continuous Monitoring**: Supports ongoing security assessment
@@ -31,6 +37,7 @@ The Comprehensive TLS Validation Report system implements **Task 7.5.4** require
 ## Usage
 
 ### Basic Usage
+
 ```bash
 # Generate report for CloudFront domain (auto-detected)
 node scripts/comprehensive-tls-validation-report.js
@@ -43,6 +50,7 @@ node scripts/comprehensive-tls-validation-report.js --domain example.com --outpu
 ```
 
 ### Command Line Options
+
 - `--domain <domain>`: Specify domain to validate
 - `--output-dir <dir>`: Set output directory (default: ./config)
 - `--no-tests`: Skip automated tests
@@ -52,30 +60,35 @@ node scripts/comprehensive-tls-validation-report.js --domain example.com --outpu
 ## Report Structure
 
 ### Executive Summary
+
 - Overall security rating (A-F grade)
 - Risk level assessment (LOW/MEDIUM/HIGH/CRITICAL)
 - Key findings and critical issues
 - Top recommendations
 
 ### TLS Configuration Analysis
+
 - Supported protocols (TLS versions)
 - Cipher suite evaluation
 - Security features status
 - CloudFront configuration details
 
 ### Security Assessment
+
 - Numerical security score (0-100)
 - Vulnerability identification
 - Strength analysis
 - Risk factor evaluation
 
 ### Compliance Analysis
+
 - Standards compliance status
 - Compliance gaps identification
 - Remediation recommendations
 - Detailed requirements mapping
 
 ### Recommendations
+
 - **Immediate**: Critical security issues requiring immediate attention
 - **Short-term**: Important improvements (1-4 weeks)
 - **Long-term**: Strategic enhancements (1-3 months)
@@ -83,24 +96,29 @@ node scripts/comprehensive-tls-validation-report.js --domain example.com --outpu
 
 ## Integration with Existing Tools
 
-The comprehensive report generator integrates with existing TLS validation tools:
+The comprehensive report generator integrates with existing TLS validation
+tools:
 
 ### 1. Comprehensive TLS Validator
+
 - **File**: `scripts/comprehensive-tls-validator.js`
 - **Purpose**: Core TLS protocol and cipher testing
 - **Integration**: Provides detailed technical validation data
 
 ### 2. TLS Version Cipher Validator
+
 - **File**: `scripts/tls-version-cipher-validator.js`
 - **Purpose**: Specific TLS version and cipher analysis
 - **Integration**: Contributes version-specific findings
 
 ### 3. Perfect Forward Secrecy Validator
+
 - **File**: `scripts/comprehensive-pfs-validator.js`
 - **Purpose**: PFS implementation validation
 - **Integration**: Provides PFS-specific security assessment
 
 ### 4. Cipher Suite Configuration Validator
+
 - **File**: `scripts/cipher-suite-configuration-validator.js`
 - **Purpose**: Cipher suite strength analysis
 - **Integration**: Contributes cipher security evaluation
@@ -136,6 +154,7 @@ The system uses `config/tls-security-config.json` for security standards:
 ## Output Files
 
 ### Generated Reports
+
 1. **comprehensive-tls-validation-report-{domain}-{timestamp}.json**
    - Complete technical data in JSON format
    - Machine-readable for automation
@@ -153,6 +172,7 @@ The system uses `config/tls-security-config.json` for security standards:
    - Executive summary format
 
 ### Supporting Data Files
+
 - `comprehensive-tls-validation.json`: Raw validation data
 - `tls-version-cipher-validation-report.json`: Version-specific data
 - `pfs-validation-report.json`: PFS analysis data
@@ -163,6 +183,7 @@ The system uses `config/tls-security-config.json` for security standards:
 The system uses a 100-point scoring system:
 
 ### Score Categories
+
 - **TLS Versions (40 points)**
   - TLS 1.2 support: +25 points
   - TLS 1.3 support: +15 points
@@ -181,6 +202,7 @@ The system uses a 100-point scoring system:
   - Standards compliance: +10 points
 
 ### Grade Scale
+
 - **A (90-100)**: Excellent security
 - **B (80-89)**: Good security
 - **C (70-79)**: Acceptable security
@@ -190,18 +212,21 @@ The system uses a 100-point scoring system:
 ## Compliance Standards
 
 ### PCI DSS Requirements
+
 - TLS 1.2 or higher required
 - Weak TLS versions disabled
 - Strong encryption algorithms
 - Regular security testing
 
 ### NIST Guidelines
+
 - Approved cryptographic algorithms
 - Perfect Forward Secrecy implementation
 - Certificate validation
 - Proper key management
 
 ### OWASP Recommendations
+
 - Secure TLS configurations
 - Weak protocol/cipher disabling
 - Security header implementation
@@ -227,6 +252,7 @@ The system uses a 100-point scoring system:
    - Verify Node.js dependencies
 
 ### Error Handling
+
 - Graceful degradation when tools are unavailable
 - Comprehensive error logging
 - Partial report generation on failures
@@ -234,16 +260,19 @@ The system uses a 100-point scoring system:
 ## Best Practices
 
 ### Regular Assessment
+
 - Run monthly TLS validation reports
 - Monitor security score trends
 - Track compliance status changes
 
 ### Automation Integration
+
 - Include in CI/CD pipelines
 - Set up scheduled assessments
 - Integrate with monitoring systems
 
 ### Response Procedures
+
 - Address critical issues immediately
 - Plan short-term improvements
 - Schedule long-term enhancements
@@ -251,6 +280,7 @@ The system uses a 100-point scoring system:
 ## Example Output
 
 ### Executive Summary Example
+
 ```
 Domain: example.cloudfront.net
 Security Rating: B
@@ -268,6 +298,7 @@ Immediate Actions: 0
 ```
 
 ### Compliance Example
+
 ```
 PCI DSS: ✅ Compliant
 NIST: ✅ Compliant
@@ -288,6 +319,7 @@ Compliance Gaps:
 ## Support
 
 For issues or questions:
+
 1. Check the troubleshooting section
 2. Review related documentation
 3. Examine generated error logs
@@ -295,4 +327,5 @@ For issues or questions:
 
 ---
 
-*This guide covers Task 7.5.4 implementation for comprehensive TLS validation reporting.*
+_This guide covers Task 7.5.4 implementation for comprehensive TLS validation
+reporting._

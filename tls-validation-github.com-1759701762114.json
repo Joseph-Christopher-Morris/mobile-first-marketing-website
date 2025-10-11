@@ -39,7 +39,5 @@
     "mac": "SHA256",
     "securityLevel": "HIGH"
   },
-  "recommendations": [
-    "TLS configuration appears secure"
-  ]
+  "recommendations": ["TLS configuration appears secure"]
 }

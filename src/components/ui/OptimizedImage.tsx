@@ -140,10 +140,12 @@ const OptimizedImage: React.FC<OptimizedImageProps> = ({
   };
 
   // Handle image error with retry logic
-  const handleError = (event?: React.SyntheticEvent<HTMLImageElement, Event>) => {
+  const handleError = (
+    event?: React.SyntheticEvent<HTMLImageElement, Event>
+  ) => {
     const errorMsg = `Failed to load image: ${currentSrc}`;
     console.error(`[OptimizedImage] ${errorMsg}`, event);
-    
+
     setErrorDetails(errorMsg);
     setIsLoading(false);
 
@@ -159,8 +161,10 @@ const OptimizedImage: React.FC<OptimizedImageProps> = ({
     // Retry logic for original image
     if (retryCount < maxRetries) {
       const nextRetryCount = retryCount + 1;
-      console.log(`[OptimizedImage] Retry attempt ${nextRetryCount}/${maxRetries} for: ${currentSrc}`);
-      
+      console.log(
+        `[OptimizedImage] Retry attempt ${nextRetryCount}/${maxRetries} for: ${currentSrc}`
+      );
+
       setTimeout(() => {
         setRetryCount(nextRetryCount);
         setIsLoading(true);
@@ -172,7 +176,9 @@ const OptimizedImage: React.FC<OptimizedImageProps> = ({
     }
 
     // All retries exhausted
-    console.error(`[OptimizedImage] All retry attempts exhausted for: ${currentSrc}`);
+    console.error(
+      `[OptimizedImage] All retry attempts exhausted for: ${currentSrc}`
+    );
     setHasError(true);
     onError?.();
   };
@@ -222,11 +228,13 @@ const OptimizedImage: React.FC<OptimizedImageProps> = ({
         className={`${className} bg-gray-100 flex items-center justify-center animate-pulse`}
         style={{ width: fill ? '100%' : width, height: fill ? '100%' : height }}
       >
-        <div className="flex flex-col items-center space-y-2">
-          <div className="w-8 h-8 border-2 border-gray-300 border-t-blue-500 rounded-full animate-spin"></div>
-          <span className="text-xs text-gray-500">Loading image...</span>
+        <div className='flex flex-col items-center space-y-2'>
+          <div className='w-8 h-8 border-2 border-gray-300 border-t-blue-500 rounded-full animate-spin'></div>
+          <span className='text-xs text-gray-500'>Loading image...</span>
           {retryCount > 0 && (
-            <span className="text-xs text-gray-400">Retry {retryCount}/{maxRetries}</span>
+            <span className='text-xs text-gray-400'>
+              Retry {retryCount}/{maxRetries}
+            </span>
           )}
         </div>
       </div>
@@ -243,36 +251,42 @@ const OptimizedImage: React.FC<OptimizedImageProps> = ({
       <div
         className={`${className} bg-red-50 border-2 border-red-200 flex flex-col items-center justify-center text-red-600 text-sm p-4`}
         style={{ width: fill ? '100%' : width, height: fill ? '100%' : height }}
-        role="img"
+        role='img'
         aria-label={`Failed to load image: ${alt}`}
       >
-        <div className="flex flex-col items-center space-y-2 text-center">
-          <svg 
-            className="w-8 h-8 text-red-400" 
-            fill="none" 
-            stroke="currentColor" 
-            viewBox="0 0 24 24"
-            aria-hidden="true"
+        <div className='flex flex-col items-center space-y-2 text-center'>
+          <svg
+            className='w-8 h-8 text-red-400'
+            fill='none'
+            stroke='currentColor'
+            viewBox='0 0 24 24'
+            aria-hidden='true'
           >
-            <path 
-              strokeLinecap="round" 
-              strokeLinejoin="round" 
-              strokeWidth={2} 
-              d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-2.5L13.732 4c-.77-.833-1.964-.833-2.732 0L4.082 16.5c-.77.833.192 2.5 1.732 2.5z" 
+            <path
+              strokeLinecap='round'
+              strokeLinejoin='round'
+              strokeWidth={2}
+              d='M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-2.5L13.732 4c-.77-.833-1.964-.833-2.732 0L4.082 16.5c-.77.833.192 2.5 1.732 2.5z'
             />
           </svg>
           {showErrorMessage && (
             <>
-              <span className="font-medium">{errorMessage}</span>
-              <span className="text-xs text-red-500 max-w-full break-words">
+              <span className='font-medium'>{errorMessage}</span>
+              <span className='text-xs text-red-500 max-w-full break-words'>
                 {alt}
               </span>
               {process.env.NODE_ENV === 'development' && errorDetails && (
-                <details className="text-xs text-red-400 mt-2">
-                  <summary className="cursor-pointer">Debug Info</summary>
-                  <p className="mt-1 font-mono text-xs break-all">{errorDetails}</p>
-                  <p className="mt-1">Retries: {retryCount}/{maxRetries}</p>
-                  {fallbackSrc && <p className="mt-1">Fallback: {fallbackSrc}</p>}
+                <details className='text-xs text-red-400 mt-2'>
+                  <summary className='cursor-pointer'>Debug Info</summary>
+                  <p className='mt-1 font-mono text-xs break-all'>
+                    {errorDetails}
+                  </p>
+                  <p className='mt-1'>
+                    Retries: {retryCount}/{maxRetries}
+                  </p>
+                  {fallbackSrc && (
+                    <p className='mt-1'>Fallback: {fallbackSrc}</p>
+                  )}
                 </details>
               )}
             </>

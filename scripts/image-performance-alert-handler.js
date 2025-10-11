@@ -10,7 +10,8 @@ const path = require('path');
 
 class AlertHandler {
   constructor() {
-    this.configPath = 'C:\Users\Joe\Projects\website-sync-20251003_133144\config\performance-alerts-config.json';
+    this.configPath =
+      'C:\Users\Joe\Projects\website-sync-20251003_133144\config\performance-alerts-config.json';
     this.logPath = './logs/performance-alerts.log';
     this.config = this.loadConfig();
   }
@@ -42,7 +43,7 @@ class AlertHandler {
       message: rule.message,
       metric: alert.metric,
       value: alert.value,
-      threshold: rule.condition.threshold
+      threshold: rule.condition.threshold,
     };
 
     // Execute actions based on rule configuration
@@ -79,15 +80,23 @@ class AlertHandler {
    */
   notifyAlert(alert) {
     const severityIcon = {
-      'ERROR': '🚨',
-      'WARNING': '⚠️',
-      'INFO': 'ℹ️'
+      ERROR: '🚨',
+      WARNING: '⚠️',
+      INFO: 'ℹ️',
     };
 
     console.log('\n' + severityIcon[alert.severity] + ' PERFORMANCE ALERT');
     console.log('Rule: ' + alert.rule);
     console.log('Message: ' + alert.message);
-    console.log('Metric: ' + alert.metric + ' = ' + alert.value + ' (threshold: ' + alert.threshold + ')');
+    console.log(
+      'Metric: ' +
+        alert.metric +
+        ' = ' +
+        alert.value +
+        ' (threshold: ' +
+        alert.threshold +
+        ')'
+    );
     console.log('Time: ' + alert.timestamp + '\n');
   }
 
@@ -98,14 +107,14 @@ class AlertHandler {
     // In a real implementation, this would integrate with
     // external systems like PagerDuty, Slack, etc.
     console.log('🔥 ESCALATING ALERT: ' + alert.rule);
-    
+
     // Log escalation
     const escalationLog = {
       ...alert,
       escalated: true,
-      escalationTime: new Date().toISOString()
+      escalationTime: new Date().toISOString(),
     };
-    
+
     this.logAlert(escalationLog);
   }
 }
@@ -113,14 +122,14 @@ class AlertHandler {
 // CLI execution
 if (require.main === module) {
   const handler = new AlertHandler();
-  
+
   // Example usage - in real implementation, this would be called by monitoring system
   if (process.argv[2] === 'test') {
     handler.processAlert({
       ruleId: 'image-loading-failure',
       metric: 'image_success_rate',
       value: 85,
-      timestamp: new Date().toISOString()
+      timestamp: new Date().toISOString(),
     });
   }
 }

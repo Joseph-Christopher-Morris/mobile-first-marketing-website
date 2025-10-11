@@ -19,7 +19,9 @@ describe('Header', () => {
     render(<Header />);
 
     expect(screen.getByLabelText('Go to homepage')).toBeInTheDocument();
-    expect(screen.getByAltText('Vivid Auto Photography Logo')).toBeInTheDocument();
+    expect(
+      screen.getByAltText('Vivid Auto Photography Logo')
+    ).toBeInTheDocument();
   });
 
   it('renders desktop navigation links', () => {

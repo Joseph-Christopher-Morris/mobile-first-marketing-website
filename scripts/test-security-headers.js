@@ -2,7 +2,7 @@
 
 /**
  * Security Headers Testing Script
- * 
+ *
  * Tests the comprehensive security headers implementation
  * Addresses requirement 7.3: Security headers in CloudFront responses
  */
@@ -19,7 +19,7 @@ class SecurityHeadersTester {
     this.results = {
       configuration: { passed: 0, failed: 0, tests: [] },
       validation: { passed: 0, failed: 0, tests: [] },
-      overall: { passed: 0, failed: 0 }
+      overall: { passed: 0, failed: 0 },
     };
   }
 
@@ -33,7 +33,7 @@ class SecurityHeadersTester {
       // Test CSP generation without AWS dependencies
       const testCSP = this.generateTestCSP();
       this.addTest('configuration', 'CSP generation', !!testCSP);
-      
+
       if (testCSP) {
         // Validate CSP contains required directives
         const requiredDirectives = [
@@ -46,41 +46,79 @@ class SecurityHeadersTester {
           'object-src',
           'base-uri',
           'form-action',
-          'frame-ancestors'
+          'frame-ancestors',
         ];
 
         requiredDirectives.forEach(directive => {
           const hasDirective = testCSP.includes(directive);
-          this.addTest('configuration', `CSP ${directive} directive`, hasDirective);
+          this.addTest(
+            'configuration',
+            `CSP ${directive} directive`,
+            hasDirective
+          );
         });
 
         // Test secure defaults
         const hasSecureDefault = testCSP.includes("default-src 'self'");
-        this.addTest('configuration', 'CSP secure default-src', hasSecureDefault);
+        this.addTest(
+          'configuration',
+          'CSP secure default-src',
+          hasSecureDefault
+        );
 
-        const hasFrameAncestorsNone = testCSP.includes("frame-ancestors 'none'");
-        this.addTest('configuration', 'CSP frame-ancestors protection', hasFrameAncestorsNone);
+        const hasFrameAncestorsNone = testCSP.includes(
+          "frame-ancestors 'none'"
+        );
+        this.addTest(
+          'configuration',
+          'CSP frame-ancestors protection',
+          hasFrameAncestorsNone
+        );
 
         const hasObjectSrcNone = testCSP.includes("object-src 'none'");
-        this.addTest('configuration', 'CSP object-src protection', hasObjectSrcNone);
+        this.addTest(
+          'configuration',
+          'CSP object-src protection',
+          hasObjectSrcNone
+        );
       }
 
       // Test error responses configuration
       const errorResponses = this.getTestErrorResponses();
-      this.addTest('configuration', 'Custom error responses configured', errorResponses.length > 0);
+      this.addTest(
+        'configuration',
+        'Custom error responses configured',
+        errorResponses.length > 0
+      );
 
       if (errorResponses.length > 0) {
-        const has404Handler = errorResponses.some(response => response.ErrorCode === 404);
-        this.addTest('configuration', '404 error handler for SPA routing', has404Handler);
+        const has404Handler = errorResponses.some(
+          response => response.ErrorCode === 404
+        );
+        this.addTest(
+          'configuration',
+          '404 error handler for SPA routing',
+          has404Handler
+        );
 
-        const has403Handler = errorResponses.some(response => response.ErrorCode === 403);
-        this.addTest('configuration', '403 error handler for S3 access', has403Handler);
+        const has403Handler = errorResponses.some(
+          response => response.ErrorCode === 403
+        );
+        this.addTest(
+          'configuration',
+          '403 error handler for S3 access',
+          has403Handler
+        );
       }
 
       console.log('✅ Security configuration testing completed');
-
     } catch (error) {
-      this.addTest('configuration', 'Security configuration testing', false, error.message);
+      this.addTest(
+        'configuration',
+        'Security configuration testing',
+        false,
+        error.message
+      );
     }
   }
 
@@ -105,10 +143,10 @@ class SecurityHeadersTester {
       "manifest-src 'self'",
       "child-src 'self'",
       "prefetch-src 'self'",
-      "upgrade-insecure-requests",
-      "block-all-mixed-content"
+      'upgrade-insecure-requests',
+      'block-all-mixed-content',
     ];
-    
+
     return cspDirectives.join('; ');
   }
 
@@ -121,38 +159,38 @@ class SecurityHeadersTester {
         ErrorCode: 404,
         ResponsePagePath: '/index.html',
         ResponseCode: '200',
-        ErrorCachingMinTTL: 300
+        ErrorCachingMinTTL: 300,
       },
       {
         ErrorCode: 403,
         ResponsePagePath: '/index.html',
         ResponseCode: '200',
-        ErrorCachingMinTTL: 300
+        ErrorCachingMinTTL: 300,
       },
       {
         ErrorCode: 500,
         ResponsePagePath: '/500.html',
         ResponseCode: '500',
-        ErrorCachingMinTTL: 0
+        ErrorCachingMinTTL: 0,
       },
       {
         ErrorCode: 502,
         ResponsePagePath: '/500.html',
         ResponseCode: '502',
-        ErrorCachingMinTTL: 0
+        ErrorCachingMinTTL: 0,
       },
       {
         ErrorCode: 503,
         ResponsePagePath: '/500.html',
         ResponseCode: '503',
-        ErrorCachingMinTTL: 0
+        ErrorCachingMinTTL: 0,
       },
       {
         ErrorCode: 504,
         ResponsePagePath: '/500.html',
         ResponseCode: '504',
-        ErrorCachingMinTTL: 0
-      }
+        ErrorCachingMinTTL: 0,
+      },
     ];
   }
 
@@ -164,20 +202,26 @@ class SecurityHeadersTester {
 
     try {
       // Test CSP validation without AWS dependencies
-      const testCSP = "default-src 'self'; script-src 'self' 'unsafe-inline'; object-src 'none'; frame-ancestors 'none'";
-      
+      const testCSP =
+        "default-src 'self'; script-src 'self' 'unsafe-inline'; object-src 'none'; frame-ancestors 'none'";
+
       // Test CSP directive parsing
       const directives = this.parseCSPDirectives(testCSP);
-      this.addTest('validation', 'CSP directive parsing', Object.keys(directives).length > 0);
+      this.addTest(
+        'validation',
+        'CSP directive parsing',
+        Object.keys(directives).length > 0
+      );
 
       // Test security header validation logic
       const securityHeaders = {
-        'strict-transport-security': 'max-age=63072000; includeSubDomains; preload',
+        'strict-transport-security':
+          'max-age=63072000; includeSubDomains; preload',
         'x-frame-options': 'DENY',
         'x-content-type-options': 'nosniff',
         'x-xss-protection': '1; mode=block',
         'referrer-policy': 'strict-origin-when-cross-origin',
-        'content-security-policy': testCSP
+        'content-security-policy': testCSP,
       };
 
       Object.entries(securityHeaders).forEach(([header, value]) => {
@@ -186,9 +230,13 @@ class SecurityHeadersTester {
       });
 
       console.log('✅ Security validation testing completed');
-
     } catch (error) {
-      this.addTest('validation', 'Security validation testing', false, error.message);
+      this.addTest(
+        'validation',
+        'Security validation testing',
+        false,
+        error.message
+      );
     }
   }
 
@@ -225,7 +273,9 @@ class SecurityHeadersTester {
   validateSecurityHeader(header, value) {
     switch (header) {
       case 'strict-transport-security':
-        return value.includes('max-age=') && value.includes('includeSubDomains');
+        return (
+          value.includes('max-age=') && value.includes('includeSubDomains')
+        );
       case 'x-frame-options':
         return ['DENY', 'SAMEORIGIN'].includes(value);
       case 'x-content-type-options':
@@ -233,9 +283,13 @@ class SecurityHeadersTester {
       case 'x-xss-protection':
         return value.includes('1') && value.includes('mode=block');
       case 'referrer-policy':
-        return ['strict-origin', 'strict-origin-when-cross-origin', 'no-referrer'].includes(value);
+        return [
+          'strict-origin',
+          'strict-origin-when-cross-origin',
+          'no-referrer',
+        ].includes(value);
       case 'content-security-policy':
-        return value.includes("default-src") && value.includes("'self'");
+        return value.includes('default-src') && value.includes("'self'");
       default:
         return true;
     }
@@ -249,7 +303,7 @@ class SecurityHeadersTester {
 
     const configFiles = [
       'config/security-headers-config.json',
-      'config/cloudfront-s3-config.json'
+      'config/cloudfront-s3-config.json',
     ];
 
     configFiles.forEach(filePath => {
@@ -265,8 +319,14 @@ class SecurityHeadersTester {
 
           // Test specific configurations
           if (filePath.includes('security-headers-config')) {
-            const hasSecurityHeaders = parsed.securityHeaders && Object.keys(parsed.securityHeaders).length > 0;
-            this.addTest('configuration', 'Security headers configuration present', hasSecurityHeaders);
+            const hasSecurityHeaders =
+              parsed.securityHeaders &&
+              Object.keys(parsed.securityHeaders).length > 0;
+            this.addTest(
+              'configuration',
+              'Security headers configuration present',
+              hasSecurityHeaders
+            );
 
             if (parsed.securityHeaders) {
               const requiredHeaders = [
@@ -276,18 +336,28 @@ class SecurityHeadersTester {
                 'xFrameOptions',
                 'xXSSProtection',
                 'referrerPolicy',
-                'permissionsPolicy'
+                'permissionsPolicy',
               ];
 
               requiredHeaders.forEach(header => {
-                const hasHeader = parsed.securityHeaders[header] && parsed.securityHeaders[header].enabled;
-                this.addTest('configuration', `${header} configured`, hasHeader);
+                const hasHeader =
+                  parsed.securityHeaders[header] &&
+                  parsed.securityHeaders[header].enabled;
+                this.addTest(
+                  'configuration',
+                  `${header} configured`,
+                  hasHeader
+                );
               });
             }
           }
-
         } catch (error) {
-          this.addTest('configuration', `${filePath} valid JSON`, false, error.message);
+          this.addTest(
+            'configuration',
+            `${filePath} valid JSON`,
+            false,
+            error.message
+          );
         }
       }
     });
@@ -303,7 +373,7 @@ class SecurityHeadersTester {
       'scripts/configure-cloudfront-security.js',
       'scripts/cloudfront-security-headers-validator.js',
       'scripts/security-headers-validator.js',
-      'scripts/csp-policy-tester.js'
+      'scripts/csp-policy-tester.js',
     ];
 
     securityScripts.forEach(scriptPath => {
@@ -314,19 +384,36 @@ class SecurityHeadersTester {
       if (exists) {
         try {
           const content = fs.readFileSync(fullPath, 'utf8');
-          
+
           // Test for required patterns
           const hasShebang = content.startsWith('#!/usr/bin/env node');
-          this.addTest('configuration', `${scriptPath} has shebang`, hasShebang);
+          this.addTest(
+            'configuration',
+            `${scriptPath} has shebang`,
+            hasShebang
+          );
 
           const hasModuleExports = content.includes('module.exports');
-          this.addTest('configuration', `${scriptPath} exports module`, hasModuleExports);
+          this.addTest(
+            'configuration',
+            `${scriptPath} exports module`,
+            hasModuleExports
+          );
 
-          const hasErrorHandling = content.includes('catch') || content.includes('error');
-          this.addTest('configuration', `${scriptPath} has error handling`, hasErrorHandling);
-
+          const hasErrorHandling =
+            content.includes('catch') || content.includes('error');
+          this.addTest(
+            'configuration',
+            `${scriptPath} has error handling`,
+            hasErrorHandling
+          );
         } catch (error) {
-          this.addTest('configuration', `${scriptPath} readable`, false, error.message);
+          this.addTest(
+            'configuration',
+            `${scriptPath} readable`,
+            false,
+            error.message
+          );
         }
       }
     });
@@ -345,19 +432,23 @@ class SecurityHeadersTester {
         cspImplementation: true,
         errorHandling: true,
         httpsEnforcement: true,
-        validationTools: true
+        validationTools: true,
       },
       compliance: {
         owasp: 'Addresses multiple OWASP Top 10 categories',
         nist: 'Implements NIST Cybersecurity Framework protections',
-        cis: 'Follows CIS security controls'
+        cis: 'Follows CIS security controls',
       },
-      recommendations: this.generateRecommendations()
+      recommendations: this.generateRecommendations(),
     };
 
-    const reportPath = path.join(process.cwd(), 'config', 'security-test-report.json');
+    const reportPath = path.join(
+      process.cwd(),
+      'config',
+      'security-test-report.json'
+    );
     fs.writeFileSync(reportPath, JSON.stringify(report, null, 2));
-    
+
     console.log(`\n📊 Security test report saved to ${reportPath}`);
     return report;
   }
@@ -371,23 +462,31 @@ class SecurityHeadersTester {
 
     Object.values(this.results).forEach(category => {
       if (category.tests) {
-        category.tests.filter(test => !test.passed).forEach(test => {
-          failedTests.push(test.name);
-        });
+        category.tests
+          .filter(test => !test.passed)
+          .forEach(test => {
+            failedTests.push(test.name);
+          });
       }
     });
 
     if (failedTests.length === 0) {
-      recommendations.push('Security headers implementation is comprehensive and well-configured');
+      recommendations.push(
+        'Security headers implementation is comprehensive and well-configured'
+      );
     } else {
       recommendations.push('Address failed tests to improve security posture');
-      
+
       if (failedTests.some(test => test.includes('CSP'))) {
-        recommendations.push('Review and enhance Content Security Policy configuration');
+        recommendations.push(
+          'Review and enhance Content Security Policy configuration'
+        );
       }
-      
+
       if (failedTests.some(test => test.includes('configuration'))) {
-        recommendations.push('Verify all security configuration files are present and valid');
+        recommendations.push(
+          'Verify all security configuration files are present and valid'
+        );
       }
     }
 
@@ -427,7 +526,8 @@ class SecurityHeadersTester {
         .replace(/([A-Z])/g, ' $1')
         .replace(/^./, str => str.toUpperCase());
       const total = result.passed + result.failed;
-      const percentage = total > 0 ? Math.round((result.passed / total) * 100) : 0;
+      const percentage =
+        total > 0 ? Math.round((result.passed / total) * 100) : 0;
 
       console.log(`\n📊 ${categoryName}:`);
       console.log(`   Passed: ${result.passed}/${total} (${percentage}%)`);
@@ -437,21 +537,33 @@ class SecurityHeadersTester {
         result.tests
           .filter(test => !test.passed)
           .forEach(test => {
-            console.log(`     • ${test.name}${test.details ? ` - ${test.details}` : ''}`);
+            console.log(
+              `     • ${test.name}${test.details ? ` - ${test.details}` : ''}`
+            );
           });
       }
     });
 
-    const overallTotal = this.results.overall.passed + this.results.overall.failed;
-    const overallPercentage = overallTotal > 0 ? Math.round((this.results.overall.passed / overallTotal) * 100) : 0;
+    const overallTotal =
+      this.results.overall.passed + this.results.overall.failed;
+    const overallPercentage =
+      overallTotal > 0
+        ? Math.round((this.results.overall.passed / overallTotal) * 100)
+        : 0;
 
     console.log('\n' + '='.repeat(70));
-    console.log(`📈 OVERALL TEST SCORE: ${this.results.overall.passed}/${overallTotal} (${overallPercentage}%)`);
+    console.log(
+      `📈 OVERALL TEST SCORE: ${this.results.overall.passed}/${overallTotal} (${overallPercentage}%)`
+    );
 
     if (overallPercentage >= 95) {
-      console.log('🎉 Excellent! Security headers implementation is comprehensive.');
+      console.log(
+        '🎉 Excellent! Security headers implementation is comprehensive.'
+      );
     } else if (overallPercentage >= 85) {
-      console.log('✅ Good security implementation with minor improvements possible.');
+      console.log(
+        '✅ Good security implementation with minor improvements possible.'
+      );
     } else if (overallPercentage >= 70) {
       console.log('⚠️  Security implementation needs attention.');
     } else {
@@ -468,7 +580,9 @@ class SecurityHeadersTester {
    */
   async run() {
     console.log('🔒 Starting Comprehensive Security Headers Testing...');
-    console.log('This will test all aspects of the security headers implementation.');
+    console.log(
+      'This will test all aspects of the security headers implementation.'
+    );
 
     // Run all tests
     await this.testSecurityConfiguration();
@@ -481,7 +595,9 @@ class SecurityHeadersTester {
     this.generateSecurityTestReport();
 
     if (!success) {
-      console.log('\n❌ Security testing failed. Please address the issues above.');
+      console.log(
+        '\n❌ Security testing failed. Please address the issues above.'
+      );
       process.exit(1);
     }
 

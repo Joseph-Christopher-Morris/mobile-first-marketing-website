@@ -1,13 +1,16 @@
 # Testing and Validation Guide
 
-This guide covers the comprehensive testing and validation framework for the S3 + CloudFront deployment solution.
+This guide covers the comprehensive testing and validation framework for the
+S3 + CloudFront deployment solution.
 
 ## Overview
 
 The testing framework provides multiple layers of validation:
 
-1. **Comprehensive Test Suite** - End-to-end deployment testing, performance validation, and security configuration validation
-2. **Production Readiness Validator** - Complete deployment pipeline testing in staging, rollback procedures validation, and security audit
+1. **Comprehensive Test Suite** - End-to-end deployment testing, performance
+   validation, and security configuration validation
+2. **Production Readiness Validator** - Complete deployment pipeline testing in
+   staging, rollback procedures validation, and security audit
 3. **Individual Test Scripts** - Focused testing for specific components
 4. **E2E Tests** - Browser-based testing using Playwright
 
@@ -54,6 +57,7 @@ node scripts/security-validation-suite.js
 **Purpose:** Validates the complete deployment pipeline functionality
 
 **Tests Include:**
+
 - Build process validation
 - Infrastructure setup validation
 - Deployment script validation
@@ -62,6 +66,7 @@ node scripts/security-validation-suite.js
 - Critical user journeys
 
 **Usage:**
+
 ```bash
 node scripts/comprehensive-test-suite.js --env=staging --verbose
 ```
@@ -75,6 +80,7 @@ node scripts/comprehensive-test-suite.js --env=staging --verbose
 **Purpose:** Ensures performance meets defined budgets and standards
 
 **Tests Include:**
+
 - Core Web Vitals validation (LCP, FID, CLS, FCP, TTI, TBT)
 - Performance budget compliance
 - Resource loading performance
@@ -83,6 +89,7 @@ node scripts/comprehensive-test-suite.js --env=staging --verbose
 - Resource optimization checks
 
 **Performance Budgets:**
+
 - LCP (Largest Contentful Paint): < 2.5s
 - FID (First Input Delay): < 100ms
 - CLS (Cumulative Layout Shift): < 0.1
@@ -97,6 +104,7 @@ node scripts/comprehensive-test-suite.js --env=staging --verbose
 **Purpose:** Comprehensive security audit and penetration testing
 
 **Tests Include:**
+
 - Security headers validation
 - SSL/TLS configuration testing
 - Access control audit
@@ -105,6 +113,7 @@ node scripts/comprehensive-test-suite.js --env=staging --verbose
 - Runtime security validation
 
 **Security Standards:**
+
 - HTTPS enforcement
 - Security headers (HSTS, CSP, X-Frame-Options, etc.)
 - TLS 1.2+ only
@@ -118,13 +127,20 @@ node scripts/comprehensive-test-suite.js --env=staging --verbose
 **Purpose:** Validates complete production readiness
 
 **Validation Categories:**
-- **Deployment (25% weight):** Staging deployment, production deployment test, rollback procedures, disaster recovery
-- **Security (30% weight):** Security headers, SSL/TLS, access control, penetration testing, vulnerability assessment
-- **Performance (20% weight):** Load testing, performance benchmarks, CDN optimization, resource optimization
-- **Monitoring (15% weight):** Monitoring setup, alerting configuration, logging validation, health checks
-- **Compliance (10% weight):** Accessibility compliance, SEO optimization, content validation, legal compliance
+
+- **Deployment (25% weight):** Staging deployment, production deployment test,
+  rollback procedures, disaster recovery
+- **Security (30% weight):** Security headers, SSL/TLS, access control,
+  penetration testing, vulnerability assessment
+- **Performance (20% weight):** Load testing, performance benchmarks, CDN
+  optimization, resource optimization
+- **Monitoring (15% weight):** Monitoring setup, alerting configuration, logging
+  validation, health checks
+- **Compliance (10% weight):** Accessibility compliance, SEO optimization,
+  content validation, legal compliance
 
 **Usage:**
+
 ```bash
 # Validate staging environment
 node scripts/production-readiness-validator.js --env=staging --staging=https://staging.example.com
@@ -142,6 +158,7 @@ node scripts/production-readiness-validator.js --env=production --production=htt
 **File:** `e2e/core-functionality.spec.ts`
 
 **Tests:**
+
 - Homepage loading and navigation
 - Contact form functionality
 - Mobile navigation
@@ -154,6 +171,7 @@ node scripts/production-readiness-validator.js --env=production --production=htt
 **File:** `e2e/accessibility.spec.ts`
 
 **Tests:**
+
 - WCAG 2.1 AA compliance
 - Keyboard navigation
 - Screen reader compatibility
@@ -166,6 +184,7 @@ node scripts/production-readiness-validator.js --env=production --production=htt
 **File:** `e2e/performance.spec.ts`
 
 **Tests:**
+
 - Core Web Vitals monitoring
 - Performance budget validation
 - Image optimization
@@ -233,7 +252,7 @@ The testing framework is designed to work in CI/CD environments:
   run: |
     npm run build
     npm run test:all -- --skip-server --env=ci
-    
+
 - name: Upload Test Reports
   uses: actions/upload-artifact@v3
   with:

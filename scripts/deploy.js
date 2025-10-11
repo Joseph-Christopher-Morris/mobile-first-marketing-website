@@ -2,12 +2,12 @@
 
 /**
  * Main Deployment Script for S3 + CloudFront
- * 
+ *
  * This script handles the complete deployment process:
  * 1. Build Next.js static export
  * 2. Upload files to S3 with appropriate cache headers
  * 3. Invalidate CloudFront cache for updated content
- * 
+ *
  * Requirements addressed:
  * - 3.2: Create script to build Next.js static export
  * - 3.3: Upload files to S3 with appropriate cache headers
@@ -15,16 +15,16 @@
  */
 
 const { execSync } = require('child_process');
-const { 
-  S3Client, 
-  PutObjectCommand, 
+const {
+  S3Client,
+  PutObjectCommand,
   ListObjectsV2Command,
   DeleteObjectCommand,
-  HeadObjectCommand 
+  HeadObjectCommand,
 } = require('@aws-sdk/client-s3');
-const { 
-  CloudFrontClient, 
-  CreateInvalidationCommand 
+const {
+  CloudFrontClient,
+  CreateInvalidationCommand,
 } = require('@aws-sdk/client-cloudfront');
 const fs = require('fs');
 const path = require('path');
@@ -37,14 +37,14 @@ class Deployment {
     this.region = process.env.AWS_REGION || 'us-east-1';
     this.buildDir = 'out';
     this.environment = process.env.ENVIRONMENT || 'production';
-    
+
     this.s3Client = new S3Client({ region: this.region });
     this.cloudFrontClient = new CloudFrontClient({ region: 'us-east-1' });
-    
+
     this.uploadedFiles = [];
     this.invalidationPaths = [];
     this.deploymentId = `deploy-${Date.now()}`;
-    
+
     this.validateConfiguration();
   }
 
@@ -55,15 +55,19 @@ class Deployment {
     if (!this.bucketName) {
       throw new Error('S3_BUCKET_NAME environment variable is required');
     }
-    
+
     if (!this.distributionId) {
-      console.warn('⚠️  CLOUDFRONT_DISTRIBUTION_ID not set, skipping cache invalidation');
+      console.warn(
+        '⚠️  CLOUDFRONT_DISTRIBUTION_ID not set, skipping cache invalidation'
+      );
     }
-    
+
     console.log('📋 Deployment Configuration:');
     console.log(`   Environment: ${this.environment}`);
     console.log(`   S3 Bucket: ${this.bucketName}`);
-    console.log(`   CloudFront Distribution: ${this.distributionId || 'Not configured'}`);
+    console.log(
+      `   CloudFront Distribution: ${this.distributionId || 'Not configured'}`
+    );
     console.log(`   Region: ${this.region}`);
     console.log(`   Build Directory: ${this.buildDir}`);
     console.log('');
@@ -74,17 +78,20 @@ class Deployment {
    */
   async buildProject() {
     console.log('🔨 Building Next.js static export...');
-    
+
     try {
       // Clean previous build with robust cleanup
       if (fs.existsSync(this.buildDir)) {
         console.log('🧹 Cleaning previous build...');
         try {
           // Try PowerShell first (more reliable on Windows)
-          execSync(`powershell -Command "Remove-Item -Recurse -Force '${this.buildDir}'"`, { 
-            stdio: 'pipe',
-            timeout: 30000 
-          });
+          execSync(
+            `powershell -Command "Remove-Item -Recurse -Force '${this.buildDir}'"`,
+            {
+              stdio: 'pipe',
+              timeout: 30000,
+            }
+          );
         } catch (error1) {
           try {
             // Fallback to CMD
@@ -93,43 +100,49 @@ class Deployment {
             // If cleanup fails, use timestamp-based directory
             const timestamp = Date.now();
             this.buildDir = `out-${timestamp}`;
-            console.log(`   ⚠️  Using temporary build directory: ${this.buildDir}`);
+            console.log(
+              `   ⚠️  Using temporary build directory: ${this.buildDir}`
+            );
           }
         }
       }
-      
+
       // Run Next.js build
       console.log('📦 Running Next.js build...');
       execSync('npm run build', { stdio: 'inherit' });
-      
+
       // Verify build output
       if (!fs.existsSync(this.buildDir)) {
         throw new Error(`Build directory '${this.buildDir}' was not created`);
       }
-      
+
       const buildStats = this.getBuildStats();
       console.log('✅ Build completed successfully');
       console.log(`   Files: ${buildStats.fileCount}`);
       console.log(`   Total Size: ${this.formatBytes(buildStats.totalSize)}`);
       console.log('');
-      
+
       // Run build verification for images
       console.log('🔍 Running build image verification...');
       try {
         const { verifyBuildImages } = require('./build-verification.js');
         const verificationResult = verifyBuildImages();
-        
+
         if (verificationResult.status !== 'success') {
-          throw new Error(`Build verification failed: ${verificationResult.failedImages.length} images missing`);
+          throw new Error(
+            `Build verification failed: ${verificationResult.failedImages.length} images missing`
+          );
         }
-        
-        console.log('✅ Build verification passed - all required images present');
+
+        console.log(
+          '✅ Build verification passed - all required images present'
+        );
         console.log('');
       } catch (error) {
         console.error('❌ Build verification failed:', error.message);
         throw error;
       }
-      
+
       return buildStats;
     } catch (error) {
       console.error('❌ Build failed:', error.message);
@@ -142,14 +155,14 @@ class Deployment {
    */
   getBuildStats() {
     const stats = { fileCount: 0, totalSize: 0 };
-    
-    const walkDir = (dir) => {
+
+    const walkDir = dir => {
       const files = fs.readdirSync(dir);
-      
+
       for (const file of files) {
         const filePath = path.join(dir, file);
         const stat = fs.statSync(filePath);
-        
+
         if (stat.isDirectory()) {
           walkDir(filePath);
         } else {
@@ -158,7 +171,7 @@ class Deployment {
         }
       }
     };
-    
+
     walkDir(this.buildDir);
     return stats;
   }
@@ -171,53 +184,64 @@ class Deployment {
     const ext = path.extname(filePath).toLowerCase();
     const fileName = path.basename(filePath);
     const fullPath = filePath.toLowerCase();
-    
+
     // Service worker - no cache
     if (fileName === 'sw.js' || fileName === 'service-worker.js') {
       return {
         'Cache-Control': 'no-cache, no-store, must-revalidate',
-        'Expires': '0'
+        Expires: '0',
       };
     }
-    
+
     // HTML files - short cache (5 minutes = 300 seconds) per requirement 4.5
     if (ext === '.html') {
       return {
-        'Cache-Control': 'public, max-age=300, must-revalidate'
+        'Cache-Control': 'public, max-age=300, must-revalidate',
       };
     }
-    
+
     // Images - long cache (1 year = 31536000 seconds) per requirement 4.4
-    if (['.webp', '.jpg', '.jpeg', '.png', '.gif', '.svg', '.ico', '.avif'].includes(ext)) {
+    if (
+      [
+        '.webp',
+        '.jpg',
+        '.jpeg',
+        '.png',
+        '.gif',
+        '.svg',
+        '.ico',
+        '.avif',
+      ].includes(ext)
+    ) {
       return {
-        'Cache-Control': 'public, max-age=31536000, immutable'
+        'Cache-Control': 'public, max-age=31536000, immutable',
       };
     }
-    
+
     // Next.js static assets - long cache (1 year)
     if (fullPath.includes('/_next/static/')) {
       return {
-        'Cache-Control': 'public, max-age=31536000, immutable'
+        'Cache-Control': 'public, max-age=31536000, immutable',
       };
     }
-    
+
     // Static assets (JS, CSS, fonts) - long cache (1 year)
     if (['.js', '.css', '.woff', '.woff2', '.ttf', '.eot'].includes(ext)) {
       return {
-        'Cache-Control': 'public, max-age=31536000, immutable'
+        'Cache-Control': 'public, max-age=31536000, immutable',
       };
     }
-    
+
     // JSON files (manifest, etc.) - medium cache (1 day)
     if (ext === '.json') {
       return {
-        'Cache-Control': 'public, max-age=86400'
+        'Cache-Control': 'public, max-age=86400',
       };
     }
-    
+
     // Default - short cache
     return {
-      'Cache-Control': 'public, max-age=3600'
+      'Cache-Control': 'public, max-age=3600',
     };
   }
 
@@ -226,7 +250,7 @@ class Deployment {
    */
   getContentType(filePath) {
     const ext = path.extname(filePath).toLowerCase();
-    
+
     const contentTypes = {
       '.html': 'text/html',
       '.css': 'text/css',
@@ -245,9 +269,9 @@ class Deployment {
       '.ttf': 'font/ttf',
       '.eot': 'application/vnd.ms-fontobject',
       '.xml': 'application/xml',
-      '.txt': 'text/plain'
+      '.txt': 'text/plain',
     };
-    
+
     return contentTypes[ext] || 'application/octet-stream';
   }
 
@@ -265,12 +289,14 @@ class Deployment {
   async hasFileChanged(s3Key, localFilePath) {
     try {
       const localHash = this.calculateFileHash(localFilePath);
-      
-      const headResult = await this.s3Client.send(new HeadObjectCommand({
-        Bucket: this.bucketName,
-        Key: s3Key
-      }));
-      
+
+      const headResult = await this.s3Client.send(
+        new HeadObjectCommand({
+          Bucket: this.bucketName,
+          Key: s3Key,
+        })
+      );
+
       const s3Hash = headResult.Metadata?.['file-hash'];
       return localHash !== s3Hash;
     } catch (error) {
@@ -287,7 +313,7 @@ class Deployment {
     const fileHash = this.calculateFileHash(localFilePath);
     const cacheHeaders = this.getCacheHeaders(s3Key);
     const contentType = this.getContentType(s3Key);
-    
+
     const uploadParams = {
       Bucket: this.bucketName,
       Key: s3Key,
@@ -296,25 +322,26 @@ class Deployment {
       Metadata: {
         'deployment-id': this.deploymentId,
         'file-hash': fileHash,
-        'uploaded-at': new Date().toISOString()
+        'uploaded-at': new Date().toISOString(),
       },
-      ...cacheHeaders
+      ...cacheHeaders,
     };
-    
+
     await this.s3Client.send(new PutObjectCommand(uploadParams));
-    
+
     this.uploadedFiles.push({
       key: s3Key,
       size: fileContent.length,
       contentType,
-      cacheControl: cacheHeaders['Cache-Control']
+      cacheControl: cacheHeaders['Cache-Control'],
     });
-    
+
     // Track files that need cache invalidation
     const isImageFile = /\.(webp|jpg|jpeg|png|gif|svg|ico|avif)$/i.test(s3Key);
-    const isShortCacheFile = cacheHeaders['Cache-Control'].includes('max-age=300') || 
-                            cacheHeaders['Cache-Control'].includes('no-cache');
-    
+    const isShortCacheFile =
+      cacheHeaders['Cache-Control'].includes('max-age=300') ||
+      cacheHeaders['Cache-Control'].includes('no-cache');
+
     // Always invalidate HTML files and files with short cache times
     // Also invalidate image files to ensure updated images are served immediately
     if (isShortCacheFile || isImageFile) {
@@ -327,18 +354,18 @@ class Deployment {
    */
   async uploadFiles() {
     console.log('📤 Uploading files to S3...');
-    
+
     const filesToUpload = [];
     const changedFiles = [];
-    
+
     // Collect all files to upload
     const walkDir = (dir, baseDir = '') => {
       const files = fs.readdirSync(dir);
-      
+
       for (const file of files) {
         const filePath = path.join(dir, file);
         const stat = fs.statSync(filePath);
-        
+
         if (stat.isDirectory()) {
           walkDir(filePath, path.join(baseDir, file));
         } else {
@@ -347,11 +374,11 @@ class Deployment {
         }
       }
     };
-    
+
     walkDir(this.buildDir);
-    
+
     console.log(`📋 Found ${filesToUpload.length} files to process`);
-    
+
     // Check which files have changed
     console.log('🔍 Checking for file changes...');
     for (const file of filesToUpload) {
@@ -360,23 +387,25 @@ class Deployment {
         changedFiles.push(file);
       }
     }
-    
-    console.log(`📝 ${changedFiles.length} files have changed and will be uploaded`);
-    
+
+    console.log(
+      `📝 ${changedFiles.length} files have changed and will be uploaded`
+    );
+
     if (changedFiles.length === 0) {
       console.log('✅ No files to upload, deployment is up to date');
       return;
     }
-    
+
     // Upload changed files
     let uploadedCount = 0;
     const totalFiles = changedFiles.length;
-    
+
     for (const file of changedFiles) {
       try {
         await this.uploadFile(file.localPath, file.s3Key);
         uploadedCount++;
-        
+
         if (uploadedCount % 10 === 0 || uploadedCount === totalFiles) {
           console.log(`   Uploaded ${uploadedCount}/${totalFiles} files`);
         }
@@ -385,10 +414,12 @@ class Deployment {
         throw error;
       }
     }
-    
+
     console.log('✅ File upload completed');
     console.log(`   Uploaded: ${this.uploadedFiles.length} files`);
-    console.log(`   Total Size: ${this.formatBytes(this.uploadedFiles.reduce((sum, f) => sum + f.size, 0))}`);
+    console.log(
+      `   Total Size: ${this.formatBytes(this.uploadedFiles.reduce((sum, f) => sum + f.size, 0))}`
+    );
     console.log('');
   }
 
@@ -397,27 +428,29 @@ class Deployment {
    */
   async cleanupOldFiles() {
     console.log('🧹 Cleaning up old files...');
-    
+
     try {
       // Get all objects in the bucket
-      const listResult = await this.s3Client.send(new ListObjectsV2Command({
-        Bucket: this.bucketName
-      }));
-      
+      const listResult = await this.s3Client.send(
+        new ListObjectsV2Command({
+          Bucket: this.bucketName,
+        })
+      );
+
       if (!listResult.Contents || listResult.Contents.length === 0) {
         console.log('   No files to clean up');
         return;
       }
-      
+
       // Get current build files
       const currentFiles = new Set();
       const walkDir = (dir, baseDir = '') => {
         const files = fs.readdirSync(dir);
-        
+
         for (const file of files) {
           const filePath = path.join(dir, file);
           const stat = fs.statSync(filePath);
-          
+
           if (stat.isDirectory()) {
             walkDir(filePath, path.join(baseDir, file));
           } else {
@@ -426,32 +459,34 @@ class Deployment {
           }
         }
       };
-      
+
       walkDir(this.buildDir);
-      
+
       // Find files to delete
-      const filesToDelete = listResult.Contents
-        .map(obj => obj.Key)
-        .filter(key => !currentFiles.has(key));
-      
+      const filesToDelete = listResult.Contents.map(obj => obj.Key).filter(
+        key => !currentFiles.has(key)
+      );
+
       if (filesToDelete.length === 0) {
         console.log('   No old files to clean up');
         return;
       }
-      
+
       console.log(`   Deleting ${filesToDelete.length} old files...`);
-      
+
       // Delete old files
       for (const key of filesToDelete) {
-        await this.s3Client.send(new DeleteObjectCommand({
-          Bucket: this.bucketName,
-          Key: key
-        }));
-        
+        await this.s3Client.send(
+          new DeleteObjectCommand({
+            Bucket: this.bucketName,
+            Key: key,
+          })
+        );
+
         // Add to invalidation paths
         this.invalidationPaths.push(`/${key}`);
       }
-      
+
       console.log('✅ Cleanup completed');
     } catch (error) {
       console.error('❌ Cleanup failed:', error.message);
@@ -464,36 +499,41 @@ class Deployment {
    */
   async invalidateCache() {
     if (!this.distributionId) {
-      console.log('⚠️  Skipping cache invalidation (no distribution ID configured)');
+      console.log(
+        '⚠️  Skipping cache invalidation (no distribution ID configured)'
+      );
       return;
     }
-    
+
     if (this.invalidationPaths.length === 0) {
       console.log('ℹ️  No cache invalidation needed');
       return;
     }
-    
+
     console.log('🔄 Invalidating CloudFront cache...');
-    
+
     try {
       // Remove duplicates and organize paths
       let pathsToInvalidate = [...new Set(this.invalidationPaths)];
-      
+
       // Check if we have many image files to invalidate
-      const imagePaths = pathsToInvalidate.filter(path => 
+      const imagePaths = pathsToInvalidate.filter(path =>
         /\/images\/.*\.(webp|jpg|jpeg|png|gif|svg|ico|avif)$/i.test(path)
       );
-      
+
       // If we have many image files, use wildcard pattern for efficiency
       if (imagePaths.length > 20) {
         // Remove individual image paths and add wildcard
-        pathsToInvalidate = pathsToInvalidate.filter(path => 
-          !/\/images\/.*\.(webp|jpg|jpeg|png|gif|svg|ico|avif)$/i.test(path)
+        pathsToInvalidate = pathsToInvalidate.filter(
+          path =>
+            !/\/images\/.*\.(webp|jpg|jpeg|png|gif|svg|ico|avif)$/i.test(path)
         );
         pathsToInvalidate.push('/images/*');
-        console.log(`   Optimized: Using /images/* wildcard for ${imagePaths.length} image files`);
+        console.log(
+          `   Optimized: Using /images/* wildcard for ${imagePaths.length} image files`
+        );
       }
-      
+
       // If still too many paths, invalidate everything
       if (pathsToInvalidate.length > 100) {
         pathsToInvalidate = ['/*'];
@@ -501,25 +541,27 @@ class Deployment {
       } else {
         console.log(`   Invalidating ${pathsToInvalidate.length} paths`);
         if (imagePaths.length > 0 && imagePaths.length <= 20) {
-          console.log(`   Including ${imagePaths.length} individual image files`);
+          console.log(
+            `   Including ${imagePaths.length} individual image files`
+          );
         }
       }
-      
+
       const invalidationParams = {
         DistributionId: this.distributionId,
         InvalidationBatch: {
           CallerReference: `${this.deploymentId}-${Date.now()}`,
           Paths: {
             Quantity: pathsToInvalidate.length,
-            Items: pathsToInvalidate
-          }
-        }
+            Items: pathsToInvalidate,
+          },
+        },
       };
-      
+
       const result = await this.cloudFrontClient.send(
         new CreateInvalidationCommand(invalidationParams)
       );
-      
+
       console.log('✅ Cache invalidation started');
       console.log(`   Invalidation ID: ${result.Invalidation.Id}`);
       console.log(`   Status: ${result.Invalidation.Status}`);
@@ -537,7 +579,7 @@ class Deployment {
   generateSummary(buildStats, startTime) {
     const endTime = Date.now();
     const duration = Math.round((endTime - startTime) / 1000);
-    
+
     console.log('📊 Deployment Summary:');
     console.log(`   Deployment ID: ${this.deploymentId}`);
     console.log(`   Environment: ${this.environment}`);
@@ -546,12 +588,14 @@ class Deployment {
     console.log(`   Build Size: ${this.formatBytes(buildStats.totalSize)}`);
     console.log(`   Uploaded Files: ${this.uploadedFiles.length}`);
     console.log(`   S3 Bucket: ${this.bucketName}`);
-    
+
     if (this.distributionId) {
       console.log(`   CloudFront Distribution: ${this.distributionId}`);
-      console.log(`   Cache Invalidation Paths: ${this.invalidationPaths.length}`);
+      console.log(
+        `   Cache Invalidation Paths: ${this.invalidationPaths.length}`
+      );
     }
-    
+
     console.log(`   Completed: ${new Date().toISOString()}`);
   }
 
@@ -560,11 +604,11 @@ class Deployment {
    */
   formatBytes(bytes) {
     if (bytes === 0) return '0 Bytes';
-    
+
     const k = 1024;
     const sizes = ['Bytes', 'KB', 'MB', 'GB'];
     const i = Math.floor(Math.log(bytes) / Math.log(k));
-    
+
     return parseFloat((bytes / Math.pow(k, i)).toFixed(2)) + ' ' + sizes[i];
   }
 
@@ -573,41 +617,44 @@ class Deployment {
    */
   async run() {
     const startTime = Date.now();
-    
+
     try {
       console.log('🚀 Starting deployment...');
       console.log(`Deployment ID: ${this.deploymentId}`);
       console.log('');
-      
+
       // Step 1: Build the project
       const buildStats = await this.buildProject();
-      
+
       // Step 2: Upload files to S3
       await this.uploadFiles();
-      
+
       // Step 3: Clean up old files
       await this.cleanupOldFiles();
-      
+
       // Step 4: Invalidate CloudFront cache
       await this.invalidateCache();
-      
+
       // Step 5: Generate summary
       this.generateSummary(buildStats, startTime);
-      
+
       console.log('\n🎉 Deployment completed successfully!');
-      
+
       if (this.distributionId) {
-        console.log('\n🌐 Your site will be available at the CloudFront distribution URL');
-        console.log('   Note: Changes may take 5-15 minutes to propagate globally');
+        console.log(
+          '\n🌐 Your site will be available at the CloudFront distribution URL'
+        );
+        console.log(
+          '   Note: Changes may take 5-15 minutes to propagate globally'
+        );
       }
-      
+
       return {
         success: true,
         deploymentId: this.deploymentId,
         uploadedFiles: this.uploadedFiles.length,
-        buildStats
+        buildStats,
       };
-      
     } catch (error) {
       console.error('\n❌ Deployment failed:', error.message);
       console.error('\n🔧 Troubleshooting tips:');
@@ -615,7 +662,7 @@ class Deployment {
       console.error('2. Check S3 bucket permissions');
       console.error('3. Ensure CloudFront distribution ID is correct');
       console.error('4. Verify the build completed successfully');
-      
+
       throw error;
     }
   }
@@ -624,13 +671,14 @@ class Deployment {
 // CLI execution
 if (require.main === module) {
   const deployment = new Deployment();
-  
-  deployment.run()
-    .then((result) => {
+
+  deployment
+    .run()
+    .then(result => {
       console.log('\n✅ Deployment process completed');
       process.exit(0);
     })
-    .catch((error) => {
+    .catch(error => {
       console.error('\n❌ Deployment process failed:', error.message);
       process.exit(1);
     });

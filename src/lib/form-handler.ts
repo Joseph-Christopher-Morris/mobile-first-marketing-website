@@ -371,7 +371,8 @@ export async function submitContactForm(
     if (FormHandler.checkForSpam(submissionData)) {
       return {
         success: false,
-        message: 'Your message appears to contain spam content. Please revise and try again.',
+        message:
+          'Your message appears to contain spam content. Please revise and try again.',
       };
     }
 
@@ -382,10 +383,10 @@ export async function submitContactForm(
     try {
       // Use hardcoded endpoint for now to test
       const formspreeEndpoint = 'https://formspree.io/f/xovkngyr';
-      
+
       console.log('DEBUG: Using endpoint =', formspreeEndpoint);
       console.log('DEBUG: Submitting form data to Formspree...');
-      
+
       const formData = {
         name: submissionData.name,
         email: submissionData.email,
@@ -397,52 +398,55 @@ export async function submitContactForm(
         _subject: `New Contact Form: ${submissionData.subject}`,
         _replyto: submissionData.email,
       };
-      
+
       console.log('DEBUG: Form data =', formData);
-      
+
       const response = await fetch(formspreeEndpoint, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
-          'Accept': 'application/json',
+          Accept: 'application/json',
         },
         body: JSON.stringify(formData),
       });
 
       console.log('DEBUG: Response status =', response.status);
-      
+
       if (response.ok) {
         const responseData = await response.json();
         console.log('SUCCESS: Form submitted via Formspree:', responseData);
         return {
           success: true,
-          message: "Thank you for your message! We'll get back to you within 24 hours.",
+          message:
+            "Thank you for your message! We'll get back to you within 24 hours.",
           submissionId,
         };
       } else {
         const errorData = await response.text();
         console.error('ERROR: Formspree response:', response.status, errorData);
-        
+
         // If it's a 422 error, it might be the first submission that needs confirmation
         if (response.status === 422) {
           return {
             success: true,
-            message: "Thank you for your message! Please check your email to confirm the form setup, then try again.",
+            message:
+              'Thank you for your message! Please check your email to confirm the form setup, then try again.',
             submissionId,
           };
         }
-        
+
         throw new Error(`Formspree error: ${response.status} - ${errorData}`);
       }
     } catch (formspreeError) {
       console.error('ERROR: Formspree submission failed:', formspreeError);
-      
+
       // For now, show success message even if Formspree fails
       // This ensures the user gets feedback while we debug
       console.log('FALLBACK: Showing success message despite error');
       return {
         success: true,
-        message: "Thank you for your message! We've received it and will get back to you soon.",
+        message:
+          "Thank you for your message! We've received it and will get back to you soon.",
         submissionId,
       };
     }

@@ -7,57 +7,63 @@ import { test, expect, devices } from '@playwright/test';
 
 const TEST_IMAGES = [
   '/images/hero/paid-ads-analytics-screenshot.webp',
-  '/images/services/analytics-hero.webp'
+  '/images/services/analytics-hero.webp',
 ];
 
 const MOBILE_DEVICES = [
   { name: 'iPhone 12', ...devices['iPhone 12'] },
   { name: 'Samsung Galaxy S21', ...devices['Galaxy S21'] },
-  { name: 'iPad Pro', ...devices['iPad Pro'] }
+  { name: 'iPad Pro', ...devices['iPad Pro'] },
 ];
 
 // Desktop browser tests
 test.describe('Desktop Browser Image Loading', () => {
   test('should load images correctly in Chrome', async ({ page }) => {
     await page.goto('/');
-    
+
     // Wait for blog preview section to load
-    await page.waitForSelector('[data-testid="blog-preview"]', { timeout: 10000 });
-    
+    await page.waitForSelector('[data-testid="blog-preview"]', {
+      timeout: 10000,
+    });
+
     // Check if blog images are loaded
     const blogImages = page.locator('[data-testid="blog-preview"] img');
     const imageCount = await blogImages.count();
-    
+
     expect(imageCount).toBeGreaterThan(0);
-    
+
     // Check each image loads successfully
     for (let i = 0; i < imageCount; i++) {
       const image = blogImages.nth(i);
       await expect(image).toBeVisible();
-      
+
       // Check if image has loaded (not broken)
-      const naturalWidth = await image.evaluate((img: HTMLImageElement) => img.naturalWidth);
+      const naturalWidth = await image.evaluate(
+        (img: HTMLImageElement) => img.naturalWidth
+      );
       expect(naturalWidth).toBeGreaterThan(0);
     }
   });
 
   test('should handle WebP format correctly', async ({ page }) => {
     await page.goto('/');
-    
+
     // Check if WebP images are supported and loaded
     const webpSupported = await page.evaluate(() => {
       const canvas = document.createElement('canvas');
       return canvas.toDataURL('image/webp').indexOf('data:image/webp') === 0;
     });
-    
+
     console.log('WebP Support:', webpSupported);
-    
+
     if (webpSupported) {
       // Test WebP image loading
       const webpImage = page.locator('img[src*=".webp"]').first();
-      if (await webpImage.count() > 0) {
+      if ((await webpImage.count()) > 0) {
         await expect(webpImage).toBeVisible();
-        const naturalWidth = await webpImage.evaluate((img: HTMLImageElement) => img.naturalWidth);
+        const naturalWidth = await webpImage.evaluate(
+          (img: HTMLImageElement) => img.naturalWidth
+        );
         expect(naturalWidth).toBeGreaterThan(0);
       }
     }
@@ -65,7 +71,7 @@ test.describe('Desktop Browser Image Loading', () => {
 
   test('should implement fallback mechanisms', async ({ page }) => {
     await page.goto('/');
-    
+
     // Test image error handling by breaking an image source
     await page.evaluate(() => {
       const images = document.querySelectorAll('img');
@@ -74,10 +80,10 @@ test.describe('Desktop Browser Image Loading', () => {
         firstImage.src = '/non-existent-image.jpg';
       }
     });
-    
+
     // Wait a bit for error handling to kick in
     await page.waitForTimeout(2000);
-    
+
     // Check if fallback or error handling is working
     const brokenImages = await page.evaluate(() => {
       const images = document.querySelectorAll('img');
@@ -89,7 +95,7 @@ test.describe('Desktop Browser Image Loading', () => {
       });
       return brokenCount;
     });
-    
+
     // Should have some mechanism to handle broken images
     console.log('Broken images detected:', brokenCount);
   });
@@ -97,25 +103,28 @@ test.describe('Desktop Browser Image Loading', () => {
   test('should load images within performance budget', async ({ page }) => {
     // Start measuring performance
     await page.goto('/', { waitUntil: 'networkidle' });
-    
+
     // Measure image loading performance
     const performanceMetrics = await page.evaluate(() => {
-      const entries = performance.getEntriesByType('resource') as PerformanceResourceTiming[];
-      const imageEntries = entries.filter(entry => 
-        entry.name.includes('.jpg') || 
-        entry.name.includes('.webp') || 
-        entry.name.includes('.png')
+      const entries = performance.getEntriesByType(
+        'resource'
+      ) as PerformanceResourceTiming[];
+      const imageEntries = entries.filter(
+        entry =>
+          entry.name.includes('.jpg') ||
+          entry.name.includes('.webp') ||
+          entry.name.includes('.png')
       );
-      
+
       return imageEntries.map(entry => ({
         name: entry.name,
         duration: entry.duration,
-        transferSize: (entry as any).transferSize || 0
+        transferSize: (entry as any).transferSize || 0,
       }));
     });
-    
+
     console.log('Image Performance Metrics:', performanceMetrics);
-    
+
     // Check that images load within reasonable time (3 seconds)
     performanceMetrics.forEach(metric => {
       expect(metric.duration).toBeLessThan(3000);
@@ -126,23 +135,27 @@ test.describe('Desktop Browser Image Loading', () => {
 // Mobile device tests
 test.describe('Mobile Device Image Loading', () => {
   MOBILE_DEVICES.forEach(device => {
-    test(`should load images correctly on ${device.name}`, async ({ browser }) => {
+    test(`should load images correctly on ${device.name}`, async ({
+      browser,
+    }) => {
       const context = await browser.newContext({
-        ...device
+        ...device,
       });
       const page = await context.newPage();
-      
+
       await page.goto('/');
-      await page.waitForSelector('[data-testid="blog-preview"]', { timeout: 10000 });
-      
+      await page.waitForSelector('[data-testid="blog-preview"]', {
+        timeout: 10000,
+      });
+
       // Check if images are visible and loaded on mobile
       const blogImages = page.locator('[data-testid="blog-preview"] img');
       const imageCount = await blogImages.count();
-      
+
       if (imageCount > 0) {
         const firstImage = blogImages.first();
         await expect(firstImage).toBeVisible();
-        
+
         // Check image dimensions are appropriate for mobile
         const boundingBox = await firstImage.boundingBox();
         if (boundingBox) {
@@ -150,34 +163,36 @@ test.describe('Mobile Device Image Loading', () => {
           expect(boundingBox.width).toBeGreaterThan(0);
         }
       }
-      
+
       await context.close();
     });
   });
 
   test('should handle touch interactions with images', async ({ browser }) => {
     const context = await browser.newContext({
-      ...devices['iPhone 12']
+      ...devices['iPhone 12'],
     });
     const page = await context.newPage();
-    
+
     await page.goto('/');
-    await page.waitForSelector('[data-testid="blog-preview"]', { timeout: 10000 });
-    
+    await page.waitForSelector('[data-testid="blog-preview"]', {
+      timeout: 10000,
+    });
+
     // Test touch interaction with blog preview images
     const blogPreview = page.locator('[data-testid="blog-preview"]').first();
-    if (await blogPreview.count() > 0) {
+    if ((await blogPreview.count()) > 0) {
       // Simulate touch tap
       await blogPreview.tap();
-      
+
       // Check if navigation or interaction occurred
       await page.waitForTimeout(1000);
-      
+
       // Verify the interaction worked (could navigate to blog post)
       const currentUrl = page.url();
       console.log('URL after tap:', currentUrl);
     }
-    
+
     await context.close();
   });
 });
@@ -188,28 +203,35 @@ test.describe('Responsive Image Behavior', () => {
     { name: 'Mobile', width: 375, height: 667 },
     { name: 'Tablet', width: 768, height: 1024 },
     { name: 'Desktop', width: 1920, height: 1080 },
-    { name: '4K', width: 3840, height: 2160 }
+    { name: '4K', width: 3840, height: 2160 },
   ];
 
   viewports.forEach(viewport => {
-    test(`should display images correctly at ${viewport.name} resolution`, async ({ page }) => {
-      await page.setViewportSize({ width: viewport.width, height: viewport.height });
+    test(`should display images correctly at ${viewport.name} resolution`, async ({
+      page,
+    }) => {
+      await page.setViewportSize({
+        width: viewport.width,
+        height: viewport.height,
+      });
       await page.goto('/');
-      await page.waitForSelector('[data-testid="blog-preview"]', { timeout: 10000 });
-      
+      await page.waitForSelector('[data-testid="blog-preview"]', {
+        timeout: 10000,
+      });
+
       // Check image scaling and aspect ratio
       const blogImages = page.locator('[data-testid="blog-preview"] img');
       const imageCount = await blogImages.count();
-      
+
       if (imageCount > 0) {
         const firstImage = blogImages.first();
         await expect(firstImage).toBeVisible();
-        
+
         const boundingBox = await firstImage.boundingBox();
         if (boundingBox) {
           // Image should not exceed viewport width
           expect(boundingBox.width).toBeLessThanOrEqual(viewport.width);
-          
+
           // Image should maintain reasonable aspect ratio
           const aspectRatio = boundingBox.width / boundingBox.height;
           expect(aspectRatio).toBeGreaterThan(0.5);
@@ -219,31 +241,34 @@ test.describe('Responsive Image Behavior', () => {
     });
   });
 
-  test('should use appropriate image sizes for different viewports', async ({ page }) => {
+  test('should use appropriate image sizes for different viewports', async ({
+    page,
+  }) => {
     const viewportSizes = [375, 768, 1920];
     const imageSizes: { [key: number]: number } = {};
-    
+
     for (const width of viewportSizes) {
       await page.setViewportSize({ width, height: 800 });
       await page.goto('/', { waitUntil: 'networkidle' });
-      
+
       // Measure image file sizes loaded
       const imageMetrics = await page.evaluate(() => {
-        const entries = performance.getEntriesByType('resource') as PerformanceResourceTiming[];
-        const imageEntries = entries.filter(entry => 
-          entry.name.includes('.jpg') || 
-          entry.name.includes('.webp')
+        const entries = performance.getEntriesByType(
+          'resource'
+        ) as PerformanceResourceTiming[];
+        const imageEntries = entries.filter(
+          entry => entry.name.includes('.jpg') || entry.name.includes('.webp')
         );
-        
+
         return imageEntries.reduce((total, entry) => {
           return total + ((entry as any).transferSize || 0);
         }, 0);
       });
-      
+
       imageSizes[width] = imageMetrics;
       console.log(`Images loaded at ${width}px: ${imageMetrics} bytes`);
     }
-    
+
     // Verify that larger viewports don't necessarily load much larger images
     // (good responsive image implementation)
     console.log('Image sizes by viewport:', imageSizes);
@@ -254,16 +279,18 @@ test.describe('Responsive Image Behavior', () => {
 test.describe('Image Accessibility', () => {
   test('should have proper alt text for all images', async ({ page }) => {
     await page.goto('/');
-    await page.waitForSelector('[data-testid="blog-preview"]', { timeout: 10000 });
-    
+    await page.waitForSelector('[data-testid="blog-preview"]', {
+      timeout: 10000,
+    });
+
     // Check all images have alt text
     const images = page.locator('img');
     const imageCount = await images.count();
-    
+
     for (let i = 0; i < imageCount; i++) {
       const image = images.nth(i);
       const altText = await image.getAttribute('alt');
-      
+
       // Alt text should exist and not be empty
       expect(altText).toBeTruthy();
       expect(altText?.length).toBeGreaterThan(0);
@@ -272,11 +299,13 @@ test.describe('Image Accessibility', () => {
 
   test('should be keyboard accessible', async ({ page }) => {
     await page.goto('/');
-    await page.waitForSelector('[data-testid="blog-preview"]', { timeout: 10000 });
-    
+    await page.waitForSelector('[data-testid="blog-preview"]', {
+      timeout: 10000,
+    });
+
     // Test keyboard navigation to images
     await page.keyboard.press('Tab');
-    
+
     // Check if focus is visible and functional
     const focusedElement = page.locator(':focus');
     await expect(focusedElement).toBeVisible();
@@ -287,25 +316,25 @@ test.describe('Image Accessibility', () => {
 test.describe('Image Performance Monitoring', () => {
   test('should track Core Web Vitals for image loading', async ({ page }) => {
     await page.goto('/');
-    
+
     // Wait for page to fully load
     await page.waitForLoadState('networkidle');
-    
+
     // Measure Core Web Vitals
     const webVitals = await page.evaluate(() => {
-      return new Promise((resolve) => {
+      return new Promise(resolve => {
         const vitals: { [key: string]: number } = {};
-        
+
         // Largest Contentful Paint
-        new PerformanceObserver((list) => {
+        new PerformanceObserver(list => {
           const entries = list.getEntries();
           const lastEntry = entries[entries.length - 1];
           vitals.LCP = lastEntry.startTime;
         }).observe({ entryTypes: ['largest-contentful-paint'] });
-        
+
         // First Input Delay would be measured on actual user interaction
         // Cumulative Layout Shift
-        new PerformanceObserver((list) => {
+        new PerformanceObserver(list => {
           let clsValue = 0;
           for (const entry of list.getEntries()) {
             if (!(entry as any).hadRecentInput) {
@@ -314,13 +343,13 @@ test.describe('Image Performance Monitoring', () => {
           }
           vitals.CLS = clsValue;
         }).observe({ entryTypes: ['layout-shift'] });
-        
+
         setTimeout(() => resolve(vitals), 3000);
       });
     });
-    
+
     console.log('Core Web Vitals:', webVitals);
-    
+
     // Assert reasonable performance metrics
     const vitals = webVitals as { [key: string]: number };
     if (vitals.LCP) {

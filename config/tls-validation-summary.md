@@ -21,4 +21,6 @@ None identified
 No immediate actions required
 
 ---
-*For detailed analysis, see the full report: comprehensive-tls-validation-report-invalid-domain-that-does-not-exist.com-*.json*
+
+_For detailed analysis, see the full report:
+comprehensive-tls-validation-report-invalid-domain-that-does-not-exist.com-_.json\*

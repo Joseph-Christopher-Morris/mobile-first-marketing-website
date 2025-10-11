@@ -11,7 +11,8 @@ const path = require('path');
 
 class MonitoringScheduler {
   constructor() {
-    this.configPath = 'C:\Users\Joe\Projects\website-sync-20251003_133144\config\performance-alerts-config.json';
+    this.configPath =
+      'C:\Users\Joe\Projects\website-sync-20251003_133144\config\performance-alerts-config.json';
     this.config = this.loadConfig();
     this.isRunning = false;
   }
@@ -36,7 +37,7 @@ class MonitoringScheduler {
 
     console.log('🚀 Starting image performance monitoring scheduler...');
     console.log('📊 Frequency: ' + this.config.monitoringSchedule.frequency);
-    
+
     this.isRunning = true;
     this.scheduleNextRun();
   }
@@ -47,8 +48,10 @@ class MonitoringScheduler {
   scheduleNextRun() {
     if (!this.isRunning) return;
 
-    const frequency = this.parseFrequency(this.config.monitoringSchedule.frequency);
-    
+    const frequency = this.parseFrequency(
+      this.config.monitoringSchedule.frequency
+    );
+
     setTimeout(() => {
       this.runMonitoring();
       this.scheduleNextRun();
@@ -66,10 +69,14 @@ class MonitoringScheduler {
     const unit = match[2];
 
     switch (unit) {
-      case 's': return value * 1000;
-      case 'm': return value * 60 * 1000;
-      case 'h': return value * 60 * 60 * 1000;
-      default: return 3600000;
+      case 's':
+        return value * 1000;
+      case 'm':
+        return value * 60 * 1000;
+      case 'h':
+        return value * 60 * 60 * 1000;
+      default:
+        return 3600000;
     }
   }
 
@@ -78,22 +85,26 @@ class MonitoringScheduler {
    */
   async runMonitoring() {
     try {
-      console.log('🔍 Running scheduled monitoring at ' + new Date().toISOString());
-      
+      console.log(
+        '🔍 Running scheduled monitoring at ' + new Date().toISOString()
+      );
+
       // Run integrated monitoring
-      const result = execSync('node scripts/integrated-image-performance-monitor.js', {
-        encoding: 'utf8',
-        timeout: 300000 // 5 minutes timeout
-      });
-      
+      const result = execSync(
+        'node scripts/integrated-image-performance-monitor.js',
+        {
+          encoding: 'utf8',
+          timeout: 300000, // 5 minutes timeout
+        }
+      );
+
       console.log('✅ Monitoring completed successfully');
-      
+
       // Check for alerts in the results
       this.checkForAlerts();
-      
     } catch (error) {
       console.error('❌ Monitoring failed:', error.message);
-      
+
       // Alert on monitoring failure
       this.handleMonitoringFailure(error);
     }
@@ -114,13 +125,13 @@ class MonitoringScheduler {
   handleMonitoringFailure(error) {
     const AlertHandler = require('./image-performance-alert-handler');
     const handler = new AlertHandler();
-    
+
     handler.processAlert({
       ruleId: 'monitoring-system-failure',
       metric: 'system_health',
       value: 0,
       error: error.message,
-      timestamp: new Date().toISOString()
+      timestamp: new Date().toISOString(),
     });
   }
 
@@ -136,18 +147,18 @@ class MonitoringScheduler {
 // CLI execution
 if (require.main === module) {
   const scheduler = new MonitoringScheduler();
-  
+
   // Handle process signals
   process.on('SIGINT', () => {
     scheduler.stop();
     process.exit(0);
   });
-  
+
   process.on('SIGTERM', () => {
     scheduler.stop();
     process.exit(0);
   });
-  
+
   scheduler.start();
 }
 

@@ -2,7 +2,9 @@
 
 ## Overview
 
-This comprehensive runbook provides complete operational procedures for the S3 + CloudFront deployment system. It serves as the definitive guide for day-to-day operations, maintenance, troubleshooting, and knowledge transfer.
+This comprehensive runbook provides complete operational procedures for the S3 +
+CloudFront deployment system. It serves as the definitive guide for day-to-day
+operations, maintenance, troubleshooting, and knowledge transfer.
 
 ## Table of Contents
 
@@ -38,13 +40,13 @@ graph TB
 
 ### Key Components
 
-| Component | Purpose | Configuration |
-|-----------|---------|---------------|
-| **S3 Bucket** | Static file storage | Private, versioned, encrypted |
-| **CloudFront** | Global CDN | OAC, security headers, caching |
-| **GitHub Actions** | CI/CD pipeline | Automated build and deploy |
-| **CloudWatch** | Monitoring | Metrics, logs, alarms |
-| **Certificate Manager** | SSL/TLS certificates | Auto-renewal enabled |
+| Component               | Purpose              | Configuration                  |
+| ----------------------- | -------------------- | ------------------------------ |
+| **S3 Bucket**           | Static file storage  | Private, versioned, encrypted  |
+| **CloudFront**          | Global CDN           | OAC, security headers, caching |
+| **GitHub Actions**      | CI/CD pipeline       | Automated build and deploy     |
+| **CloudWatch**          | Monitoring           | Metrics, logs, alarms          |
+| **Certificate Manager** | SSL/TLS certificates | Auto-renewal enabled           |
 
 ### Environment Configuration
 
@@ -60,8 +62,7 @@ export NEXT_PUBLIC_SITE_URL="https://d15sc9fc739ev2.cloudfront.net"
 
 ### Morning Health Check (15 minutes)
 
-**Schedule**: Every business day at 9:00 AM
-**Responsible**: On-call engineer
+**Schedule**: Every business day at 9:00 AM **Responsible**: On-call engineer
 
 ```bash
 #!/bin/bash
@@ -88,6 +89,7 @@ echo "=== Health Check Complete ===" | tee -a logs/daily-health.log
 ```
 
 **Health Check Checklist**:
+
 - [ ] All services operational
 - [ ] No critical alerts
 - [ ] Performance within thresholds
@@ -113,25 +115,27 @@ node scripts/validate-site-functionality.js
 **Post-Deployment Verification**:
 
 1. **Immediate Checks (< 5 minutes)**:
+
    ```bash
    # Verify deployment success
    node scripts/deployment-validator.js
-   
+
    # Check site accessibility
    curl -I https://d15sc9fc739ev2.cloudfront.net
-   
+
    # Validate core functionality
    node scripts/validate-core-functionality-quick.js
    ```
 
 2. **Extended Validation (< 15 minutes)**:
+
    ```bash
    # Comprehensive functionality test
    node scripts/comprehensive-deployment-test.js
-   
+
    # Performance validation
    node scripts/core-web-vitals-monitor.js
-   
+
    # Security validation
    node scripts/security-headers-validator.js
    ```
@@ -161,6 +165,7 @@ node scripts/test-deployment-readiness.js
 #### 2. Deployment Execution
 
 **Automated Deployment (Recommended)**:
+
 ```bash
 # Trigger via Git push
 git add .
@@ -172,6 +177,7 @@ node scripts/deployment-monitor.js
 ```
 
 **Manual Deployment (Emergency Only)**:
+
 ```bash
 # Build and deploy manually
 npm run build
@@ -242,6 +248,7 @@ node scripts/validate-site-functionality.js
 ### Monitoring Dashboard
 
 **Primary Monitoring Command**:
+
 ```bash
 # Launch comprehensive monitoring dashboard
 node scripts/deployment-status-dashboard.js
@@ -249,13 +256,13 @@ node scripts/deployment-status-dashboard.js
 
 **Key Metrics to Monitor**:
 
-| Metric | Threshold | Action |
-|--------|-----------|--------|
-| **Availability** | > 99.9% | Investigate if below |
-| **Response Time** | < 2 seconds | Optimize if above |
-| **Error Rate** | < 1% | Alert if above |
-| **Cache Hit Ratio** | > 90% | Optimize if below |
-| **Cost** | Within budget | Review if exceeded |
+| Metric              | Threshold     | Action               |
+| ------------------- | ------------- | -------------------- |
+| **Availability**    | > 99.9%       | Investigate if below |
+| **Response Time**   | < 2 seconds   | Optimize if above    |
+| **Error Rate**      | < 1%          | Alert if above       |
+| **Cache Hit Ratio** | > 90%         | Optimize if below    |
+| **Cost**            | Within budget | Review if exceeded   |
 
 ### Performance Monitoring
 
@@ -305,6 +312,7 @@ node scripts/budget-alert-monitor.js
 **Symptoms**: GitHub Actions failing, deployment not completing
 
 **Diagnosis**:
+
 ```bash
 # Check deployment status
 node scripts/deployment-status-dashboard.js
@@ -317,32 +325,36 @@ node scripts/validate-production-env.js
 ```
 
 **Solutions**:
+
 1. **Build Failures**:
+
    ```bash
    # Local build test
    npm run build
    npm run export
-   
+
    # Fix build issues and redeploy
    ```
 
 2. **AWS Permission Issues**:
+
    ```bash
    # Verify AWS credentials
    aws sts get-caller-identity
-   
+
    # Test S3 access
    aws s3 ls s3://$S3_BUCKET_NAME
-   
+
    # Test CloudFront access
    aws cloudfront get-distribution --id $CLOUDFRONT_DISTRIBUTION_ID
    ```
 
 3. **Network/Timeout Issues**:
+
    ```bash
    # Retry deployment
    node scripts/deploy.js --retry
-   
+
    # Check AWS service status
    curl -s https://status.aws.amazon.com/
    ```
@@ -352,6 +364,7 @@ node scripts/validate-production-env.js
 **Symptoms**: Slow loading times, poor Core Web Vitals
 
 **Diagnosis**:
+
 ```bash
 # Performance analysis
 node scripts/performance-benchmarking.js
@@ -364,20 +377,23 @@ node scripts/core-web-vitals-monitor.js
 ```
 
 **Solutions**:
+
 1. **Cache Optimization**:
+
    ```bash
    # Optimize cache settings
    node scripts/configure-cloudfront-caching.js
-   
+
    # Invalidate cache if needed
    node scripts/cache-invalidation-manager.js invalidate full
    ```
 
 2. **Content Optimization**:
+
    ```bash
    # Compress assets
    node scripts/compression-performance-tester.js
-   
+
    # Optimize images
    # (Manual process - optimize images before deployment)
    ```
@@ -387,6 +403,7 @@ node scripts/core-web-vitals-monitor.js
 **Symptoms**: Security warnings, SSL errors, missing headers
 
 **Diagnosis**:
+
 ```bash
 # Security validation
 node scripts/security-validation-suite.js
@@ -399,20 +416,23 @@ node scripts/security-headers-validator.js
 ```
 
 **Solutions**:
+
 1. **SSL Certificate Issues**:
+
    ```bash
    # Renew certificate
    node scripts/setup-ssl-certificate.js
-   
+
    # Update CloudFront configuration
    node scripts/configure-cloudfront-security.js
    ```
 
 2. **Security Headers**:
+
    ```bash
    # Update security headers
    node scripts/cloudfront-security-headers-validator.js
-   
+
    # Apply security configuration
    node scripts/configure-cloudfront-security.js
    ```
@@ -422,6 +442,7 @@ node scripts/security-headers-validator.js
 **Symptoms**: Unexpected cost increases, budget alerts
 
 **Diagnosis**:
+
 ```bash
 # Cost analysis
 node scripts/cost-analysis-optimizer.js
@@ -431,20 +452,23 @@ node scripts/cost-analysis-optimizer.js
 ```
 
 **Solutions**:
+
 1. **Cache Optimization**:
+
    ```bash
    # Improve cache hit ratio
    node scripts/caching-cdn-optimizer.js
-   
+
    # Reduce invalidations
    # Review deployment process
    ```
 
 2. **Storage Optimization**:
+
    ```bash
    # Analyze S3 usage
    aws s3api list-objects-v2 --bucket $S3_BUCKET_NAME --query 'sum(Contents[].Size)'
-   
+
    # Implement lifecycle policies
    # (Manual configuration in AWS Console)
    ```
@@ -525,19 +549,21 @@ node scripts/cloudfront-security-validator.js
 #### Immediate Response (< 15 minutes)
 
 1. **Assess Threat Level**:
+
    ```bash
    # Quick security check
    node scripts/security-validation-suite.js
-   
+
    # Check for active threats
    # Review CloudWatch logs
    ```
 
 2. **Contain Threat**:
+
    ```bash
    # Disable distribution if necessary
    aws cloudfront update-distribution --id $CLOUDFRONT_DISTRIBUTION_ID --distribution-config file://emergency-disable.json
-   
+
    # Block suspicious IPs (if applicable)
    # Update WAF rules (if configured)
    ```
@@ -550,10 +576,11 @@ node scripts/cloudfront-security-validator.js
 #### Investigation (< 2 hours)
 
 1. **Gather Evidence**:
+
    ```bash
    # Export logs
    aws logs export-task --log-group-name /aws/cloudfront/distribution/$CLOUDFRONT_DISTRIBUTION_ID
-   
+
    # Security analysis
    node scripts/security-validation-suite.js > security-incident-$(date +%Y%m%d-%H%M%S).log
    ```
@@ -566,14 +593,15 @@ node scripts/cloudfront-security-validator.js
 #### Recovery (< 4 hours)
 
 1. **Apply Fixes**:
+
    ```bash
    # Update security configurations
    node scripts/configure-cloudfront-security.js
-   
+
    # Apply security patches
    npm update
    npm audit fix
-   
+
    # Redeploy with fixes
    git add .
    git commit -m "Security fix: [description]"
@@ -581,10 +609,11 @@ node scripts/cloudfront-security-validator.js
    ```
 
 2. **Verify Security**:
+
    ```bash
    # Comprehensive security validation
    node scripts/security-validation-suite.js
-   
+
    # Penetration testing
    node scripts/penetration-testing-suite.js
    ```
@@ -594,6 +623,7 @@ node scripts/cloudfront-security-validator.js
 ### Performance Monitoring
 
 **Continuous Monitoring**:
+
 ```bash
 # Automated performance monitoring
 node scripts/performance-optimization-monitor.js
@@ -604,17 +634,18 @@ node scripts/core-web-vitals-monitor.js
 
 **Performance Thresholds**:
 
-| Metric | Target | Warning | Critical |
-|--------|--------|---------|----------|
-| **LCP** | < 2.5s | > 2.5s | > 4.0s |
-| **FID** | < 100ms | > 100ms | > 300ms |
-| **CLS** | < 0.1 | > 0.1 | > 0.25 |
-| **TTFB** | < 600ms | > 600ms | > 1200ms |
-| **Cache Hit Ratio** | > 95% | < 95% | < 85% |
+| Metric              | Target  | Warning | Critical |
+| ------------------- | ------- | ------- | -------- |
+| **LCP**             | < 2.5s  | > 2.5s  | > 4.0s   |
+| **FID**             | < 100ms | > 100ms | > 300ms  |
+| **CLS**             | < 0.1   | > 0.1   | > 0.25   |
+| **TTFB**            | < 600ms | > 600ms | > 1200ms |
+| **Cache Hit Ratio** | > 95%   | < 95%   | < 85%    |
 
 ### Performance Optimization
 
 **Weekly Optimization Tasks**:
+
 ```bash
 # Performance analysis
 node scripts/performance-benchmarking.js
@@ -627,6 +658,7 @@ node scripts/compression-performance-tester.js
 ```
 
 **Monthly Optimization Review**:
+
 ```bash
 # Comprehensive performance audit
 node scripts/performance-optimization-monitor.js
@@ -642,12 +674,12 @@ node scripts/performance-budget-validator.js
 
 ### Incident Classification
 
-| Severity | Description | Response Time | Escalation |
-|----------|-------------|---------------|------------|
-| **P1 - Critical** | Complete outage | 5 minutes | All hands |
-| **P2 - High** | Major degradation | 15 minutes | Senior team |
-| **P3 - Medium** | Minor issues | 1 hour | Team lead |
-| **P4 - Low** | Cosmetic issues | 4 hours | Standard |
+| Severity          | Description       | Response Time | Escalation  |
+| ----------------- | ----------------- | ------------- | ----------- |
+| **P1 - Critical** | Complete outage   | 5 minutes     | All hands   |
+| **P2 - High**     | Major degradation | 15 minutes    | Senior team |
+| **P3 - Medium**   | Minor issues      | 1 hour        | Team lead   |
+| **P4 - Low**      | Cosmetic issues   | 4 hours       | Standard    |
 
 ### Incident Response Process
 
@@ -713,18 +745,21 @@ watch -n 60 'node scripts/deployment-status-dashboard.js'
 ### Change Categories
 
 **Standard Changes** (Pre-approved):
+
 - Routine deployments
 - Content updates
 - Security patches
 - Performance optimizations
 
 **Normal Changes** (Approval required):
+
 - Infrastructure modifications
 - Configuration changes
 - Major feature deployments
 - Third-party integrations
 
 **Emergency Changes** (Post-approval):
+
 - Security incidents
 - Critical bug fixes
 - Service outages
@@ -777,6 +812,7 @@ echo "CHANGE COMPLETE: $(date) - $RESULTS" >> logs/changes.log
 #### Week 1: System Overview
 
 **Day 1-2: Environment Setup**
+
 ```bash
 # Clone repository
 git clone [repository-url]
@@ -797,6 +833,7 @@ node scripts/validate-env.js
 ```
 
 **Day 3-5: System Familiarization**
+
 ```bash
 # Run health checks
 node scripts/deployment-status-dashboard.js
@@ -812,6 +849,7 @@ node scripts/security-maintenance-monitor.js
 #### Week 2: Hands-on Operations
 
 **Day 1-3: Deployment Practice**
+
 ```bash
 # Practice deployment process
 # Make small test changes
@@ -825,6 +863,7 @@ node scripts/rollback.js --test-mode
 ```
 
 **Day 4-5: Troubleshooting Practice**
+
 ```bash
 # Practice diagnostic commands
 node scripts/comprehensive-deployment-test.js
@@ -839,6 +878,7 @@ cat logs/incidents.log
 #### Week 3: Advanced Operations
 
 **Day 1-2: Performance Optimization**
+
 ```bash
 # Performance analysis
 node scripts/performance-benchmarking.js
@@ -851,6 +891,7 @@ node scripts/cost-analysis-optimizer.js
 ```
 
 **Day 3-5: Security Operations**
+
 ```bash
 # Security validation
 node scripts/security-validation-suite.js
@@ -865,11 +906,13 @@ node scripts/ssl-certificate-validator.js
 #### Week 4: Independent Operations
 
 **Day 1-3: Shadow Operations**
+
 - Shadow experienced team member
 - Perform operations under supervision
 - Ask questions and clarify procedures
 
 **Day 4-5: Independent Practice**
+
 - Perform operations independently
 - Document any issues or questions
 - Receive feedback from team
@@ -877,6 +920,7 @@ node scripts/ssl-certificate-validator.js
 ### Knowledge Transfer Checklist
 
 #### Technical Knowledge
+
 - [ ] System architecture understanding
 - [ ] Deployment process mastery
 - [ ] Monitoring and alerting setup
@@ -886,6 +930,7 @@ node scripts/ssl-certificate-validator.js
 - [ ] Cost management
 
 #### Operational Knowledge
+
 - [ ] Daily operations routine
 - [ ] Incident response procedures
 - [ ] Change management process
@@ -894,6 +939,7 @@ node scripts/ssl-certificate-validator.js
 - [ ] Team communication protocols
 
 #### Tools and Scripts
+
 - [ ] All monitoring scripts
 - [ ] Deployment automation
 - [ ] Diagnostic tools
@@ -904,6 +950,7 @@ node scripts/ssl-certificate-validator.js
 ### Training Materials
 
 #### Documentation
+
 - System architecture diagrams
 - Operational procedures
 - Troubleshooting guides
@@ -911,6 +958,7 @@ node scripts/ssl-certificate-validator.js
 - Performance optimization guides
 
 #### Hands-on Exercises
+
 - Deployment practice scenarios
 - Incident response simulations
 - Performance optimization exercises
@@ -918,6 +966,7 @@ node scripts/ssl-certificate-validator.js
 - Cost optimization workshops
 
 #### Assessment Criteria
+
 - Can perform daily operations independently
 - Can respond to incidents effectively
 - Can troubleshoot common issues
@@ -927,6 +976,7 @@ node scripts/ssl-certificate-validator.js
 ### Continuous Learning
 
 #### Monthly Training Topics
+
 - New AWS features and services
 - Security best practices updates
 - Performance optimization techniques
@@ -934,6 +984,7 @@ node scripts/ssl-certificate-validator.js
 - Industry trends and innovations
 
 #### Quarterly Assessments
+
 - Technical knowledge review
 - Operational skills assessment
 - Incident response drill
@@ -941,6 +992,7 @@ node scripts/ssl-certificate-validator.js
 - Process improvement suggestions
 
 #### Annual Training Plan
+
 - Advanced AWS certifications
 - Security training and certifications
 - Performance optimization workshops
@@ -952,6 +1004,7 @@ node scripts/ssl-certificate-validator.js
 ### Documentation Standards
 
 **Required Documentation**:
+
 - Operational procedures (this document)
 - Troubleshooting guides
 - Security procedures
@@ -960,6 +1013,7 @@ node scripts/ssl-certificate-validator.js
 - Change management procedures
 
 **Documentation Format**:
+
 - Markdown format for readability
 - Version controlled in Git
 - Regular review and updates
@@ -969,18 +1023,21 @@ node scripts/ssl-certificate-validator.js
 ### Review Schedule
 
 **Weekly Reviews**:
+
 - Update operational logs
 - Review recent incidents
 - Update troubleshooting guides
 - Check for outdated information
 
 **Monthly Reviews**:
+
 - Comprehensive documentation review
 - Update procedures based on changes
 - Add new troubleshooting scenarios
 - Review and update training materials
 
 **Quarterly Reviews**:
+
 - Major documentation overhaul
 - Process improvement integration
 - Training material updates
@@ -1002,6 +1059,7 @@ git push origin docs-v2.0
 ---
 
 **Document Information**:
+
 - **Version**: 2.0
 - **Last Updated**: [Current Date]
 - **Maintained By**: DevOps Team
@@ -1010,5 +1068,6 @@ git push origin docs-v2.0
 - **Approval**: [Team Lead]
 
 **Change Log**:
+
 - v2.0: Complete rewrite for S3/CloudFront architecture
 - v1.0: Initial version for Amplify architecture (deprecated)

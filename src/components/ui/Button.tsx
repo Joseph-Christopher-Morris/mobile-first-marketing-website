@@ -48,17 +48,18 @@ const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
     };
 
     // Add brand classes for primary and outline variants
-    const brandClass = variant === 'primary' ? 'brand-button-primary' : 
-                      variant === 'outline' ? 'brand-button-outline' : '';
-    
+    const brandClass =
+      variant === 'primary'
+        ? 'brand-button-primary'
+        : variant === 'outline'
+          ? 'brand-button-outline'
+          : '';
+
     const classes = `${baseClasses} ${variantClasses[variant]} ${sizeClasses[size]} ${brandClass} ${className}`;
 
     if (href) {
       return (
-        <Link 
-          href={href} 
-          className={classes}
-        >
+        <Link href={href} className={classes}>
           {children}
         </Link>
       );

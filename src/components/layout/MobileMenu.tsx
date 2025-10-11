@@ -98,11 +98,15 @@ export function MobileMenu({
                   ? 'border-l-4'
                   : 'text-gray-700 hover:bg-gray-50 hover:text-gray-900'
               }`}
-              style={currentPath === item.href ? {
-                backgroundColor: 'rgba(245, 39, 111, 0.1)',
-                color: '#F5276F',
-                borderLeftColor: '#F5276F'
-              } : {}}
+              style={
+                currentPath === item.href
+                  ? {
+                      backgroundColor: 'rgba(245, 39, 111, 0.1)',
+                      color: '#F5276F',
+                      borderLeftColor: '#F5276F',
+                    }
+                  : {}
+              }
               aria-current={currentPath === item.href ? 'page' : undefined}
             >
               {item.label}
@@ -118,12 +122,12 @@ export function MobileMenu({
             style={{
               backgroundColor: '#F5276F',
               color: 'white',
-              boxShadow: '0 0 0 2px rgba(245, 39, 111, 0.5)'
+              boxShadow: '0 0 0 2px rgba(245, 39, 111, 0.5)',
             }}
-            onMouseEnter={(e) => {
+            onMouseEnter={e => {
               e.currentTarget.style.backgroundColor = '#C8094C';
             }}
-            onMouseLeave={(e) => {
+            onMouseLeave={e => {
               e.currentTarget.style.backgroundColor = '#F5276F';
             }}
           >

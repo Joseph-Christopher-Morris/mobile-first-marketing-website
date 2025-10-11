@@ -11,24 +11,45 @@ const { execSync } = require('child_process');
 
 class CoreWebVitalsImageMonitor {
   constructor() {
-    this.baseUrl = process.env.SITE_URL || 'https://d15sc9fc739ev2.cloudfront.net';
+    this.baseUrl =
+      process.env.SITE_URL || 'https://d15sc9fc739ev2.cloudfront.net';
     this.results = {
       timestamp: new Date().toISOString(),
       baseUrl: this.baseUrl,
       vitalsMetrics: {},
       imageImpact: {},
       alerts: [],
-      recommendations: []
+      recommendations: [],
     };
-    
+
     // Pages to monitor for Core Web Vitals
     this.monitoredPages = [
-      { path: '/', name: 'Homepage', criticalImages: ['services', 'blog-preview'] },
-      { path: '/services/photography', name: 'Photography Services', criticalImages: ['hero', 'portfolio'] },
-      { path: '/services/analytics', name: 'Data Analytics', criticalImages: ['hero', 'portfolio'] },
-      { path: '/services/ad-campaigns', name: 'Ad Campaigns', criticalImages: ['hero', 'portfolio'] },
+      {
+        path: '/',
+        name: 'Homepage',
+        criticalImages: ['services', 'blog-preview'],
+      },
+      {
+        path: '/services/photography',
+        name: 'Photography Services',
+        criticalImages: ['hero', 'portfolio'],
+      },
+      {
+        path: '/services/analytics',
+        name: 'Data Analytics',
+        criticalImages: ['hero', 'portfolio'],
+      },
+      {
+        path: '/services/ad-campaigns',
+        name: 'Ad Campaigns',
+        criticalImages: ['hero', 'portfolio'],
+      },
       { path: '/about', name: 'About Page', criticalImages: ['hero'] },
-      { path: '/blog', name: 'Blog Page', criticalImages: ['services', 'blog-preview'] }
+      {
+        path: '/blog',
+        name: 'Blog Page',
+        criticalImages: ['services', 'blog-preview'],
+      },
     ];
   }
 
@@ -41,37 +62,37 @@ class CoreWebVitalsImageMonitor {
       fcp: 1200, // First Contentful Paint
       lcp: 2400, // Largest Contentful Paint
       cls: 0.05, // Cumulative Layout Shift
-      fid: 50,   // First Input Delay
-      tbt: 150   // Total Blocking Time
+      fid: 50, // First Input Delay
+      tbt: 150, // Total Blocking Time
     };
-    
+
     // Adjust metrics based on page type and image count
-    let adjustedMetrics = { ...baseMetrics };
-    
+    const adjustedMetrics = { ...baseMetrics };
+
     if (pageInfo.criticalImages.includes('hero')) {
       // Hero images significantly impact LCP
       adjustedMetrics.lcp += 800;
       adjustedMetrics.fcp += 200;
     }
-    
+
     if (pageInfo.criticalImages.includes('portfolio')) {
       // Multiple portfolio images can impact CLS and LCP
       adjustedMetrics.cls += 0.03;
       adjustedMetrics.lcp += 400;
     }
-    
+
     if (pageInfo.criticalImages.includes('services')) {
       // Service card images impact LCP and CLS
       adjustedMetrics.lcp += 300;
       adjustedMetrics.cls += 0.02;
     }
-    
+
     if (pageInfo.criticalImages.includes('blog-preview')) {
       // Blog preview images can cause layout shifts
       adjustedMetrics.cls += 0.02;
       adjustedMetrics.lcp += 200;
     }
-    
+
     return adjustedMetrics;
   }
 
@@ -80,17 +101,17 @@ class CoreWebVitalsImageMonitor {
    */
   assessImageImpact() {
     const pageMetrics = {};
-    
+
     for (const page of this.monitoredPages) {
       const metrics = this.simulateLighthouseImageAudit(page);
-      
+
       // Calculate performance scores (0-100)
       const lcpScore = this.calculateLCPScore(metrics.lcp);
       const clsScore = this.calculateCLSScore(metrics.cls);
       const fidScore = this.calculateFIDScore(metrics.fid);
-      
+
       const overallScore = Math.round((lcpScore + clsScore + fidScore) / 3);
-      
+
       pageMetrics[page.path] = {
         name: page.name,
         metrics,
@@ -98,12 +119,12 @@ class CoreWebVitalsImageMonitor {
           lcp: lcpScore,
           cls: clsScore,
           fid: fidScore,
-          overall: overallScore
+          overall: overallScore,
         },
         status: this.getPerformanceStatus(overallScore),
-        imageTypes: page.criticalImages
+        imageTypes: page.criticalImages,
       };
-      
+
       // Generate alerts for poor performance
       if (metrics.lcp > 2500) {
         this.results.alerts.push({
@@ -112,10 +133,10 @@ class CoreWebVitalsImageMonitor {
           page: page.name,
           message: `LCP of ${metrics.lcp}ms exceeds 2.5s threshold`,
           impact: 'HIGH',
-          recommendation: 'Optimize hero images and critical image loading'
+          recommendation: 'Optimize hero images and critical image loading',
         });
       }
-      
+
       if (metrics.cls > 0.1) {
         this.results.alerts.push({
           type: 'CLS_POOR',
@@ -123,11 +144,12 @@ class CoreWebVitalsImageMonitor {
           page: page.name,
           message: `CLS of ${metrics.cls} exceeds 0.1 threshold`,
           impact: 'MEDIUM',
-          recommendation: 'Ensure images have proper dimensions to prevent layout shifts'
+          recommendation:
+            'Ensure images have proper dimensions to prevent layout shifts',
         });
       }
     }
-    
+
     this.results.vitalsMetrics = pageMetrics;
   }
 
@@ -172,11 +194,14 @@ class CoreWebVitalsImageMonitor {
    */
   generateRecommendations() {
     const recommendations = [];
-    
+
     // Analyze overall performance
-    const allScores = Object.values(this.results.vitalsMetrics).map(p => p.scores.overall);
-    const avgScore = allScores.reduce((sum, score) => sum + score, 0) / allScores.length;
-    
+    const allScores = Object.values(this.results.vitalsMetrics).map(
+      p => p.scores.overall
+    );
+    const avgScore =
+      allScores.reduce((sum, score) => sum + score, 0) / allScores.length;
+
     if (avgScore < 50) {
       recommendations.push({
         priority: 'HIGH',
@@ -187,15 +212,16 @@ class CoreWebVitalsImageMonitor {
           'Convert images to WebP format with fallbacks',
           'Implement lazy loading for non-critical images',
           'Optimize image compression and sizing',
-          'Use responsive images with srcset'
-        ]
+          'Use responsive images with srcset',
+        ],
       });
     }
-    
+
     // LCP-specific recommendations
-    const poorLCPPages = Object.values(this.results.vitalsMetrics)
-      .filter(p => p.scores.lcp < 50);
-    
+    const poorLCPPages = Object.values(this.results.vitalsMetrics).filter(
+      p => p.scores.lcp < 50
+    );
+
     if (poorLCPPages.length > 0) {
       recommendations.push({
         priority: 'HIGH',
@@ -206,15 +232,16 @@ class CoreWebVitalsImageMonitor {
           'Preload hero images with <link rel="preload">',
           'Optimize hero image file sizes',
           'Use CDN for faster image delivery',
-          'Consider image sprites for small icons'
-        ]
+          'Consider image sprites for small icons',
+        ],
       });
     }
-    
+
     // CLS-specific recommendations
-    const poorCLSPages = Object.values(this.results.vitalsMetrics)
-      .filter(p => p.scores.cls < 50);
-    
+    const poorCLSPages = Object.values(this.results.vitalsMetrics).filter(
+      p => p.scores.cls < 50
+    );
+
     if (poorCLSPages.length > 0) {
       recommendations.push({
         priority: 'MEDIUM',
@@ -225,11 +252,11 @@ class CoreWebVitalsImageMonitor {
           'Set explicit width and height attributes on images',
           'Use aspect-ratio CSS property',
           'Reserve space for images during loading',
-          'Implement proper image placeholders'
-        ]
+          'Implement proper image placeholders',
+        ],
       });
     }
-    
+
     // Performance monitoring recommendations
     recommendations.push({
       priority: 'LOW',
@@ -240,10 +267,10 @@ class CoreWebVitalsImageMonitor {
         'Implement Real User Monitoring (RUM)',
         'Set up performance budgets',
         'Create alerts for performance regressions',
-        'Monitor image loading metrics continuously'
-      ]
+        'Monitor image loading metrics continuously',
+      ],
     });
-    
+
     this.results.recommendations = recommendations;
   }
 
@@ -256,18 +283,18 @@ class CoreWebVitalsImageMonitor {
         lcp: {
           good: 1200,
           needsImprovement: 2500,
-          poor: 4000
+          poor: 4000,
         },
         cls: {
           good: 0.1,
           needsImprovement: 0.25,
-          poor: 0.5
+          poor: 0.5,
         },
         fid: {
           good: 100,
           needsImprovement: 300,
-          poor: 500
-        }
+          poor: 500,
+        },
       },
       alertRules: [
         {
@@ -275,28 +302,28 @@ class CoreWebVitalsImageMonitor {
           condition: 'greater_than',
           threshold: 2500,
           severity: 'ERROR',
-          message: 'LCP exceeds 2.5s threshold - critical performance issue'
+          message: 'LCP exceeds 2.5s threshold - critical performance issue',
         },
         {
           metric: 'cls',
           condition: 'greater_than',
           threshold: 0.1,
           severity: 'WARNING',
-          message: 'CLS exceeds 0.1 threshold - layout stability issue'
+          message: 'CLS exceeds 0.1 threshold - layout stability issue',
         },
         {
           metric: 'fid',
           condition: 'greater_than',
           threshold: 300,
           severity: 'WARNING',
-          message: 'FID exceeds 300ms threshold - interactivity issue'
-        }
+          message: 'FID exceeds 300ms threshold - interactivity issue',
+        },
       ],
       monitoringFrequency: '1h',
       notificationChannels: ['console', 'file'],
-      retentionDays: 30
+      retentionDays: 30,
     };
-    
+
     return alertsConfig;
   }
 
@@ -305,35 +332,35 @@ class CoreWebVitalsImageMonitor {
    */
   saveResults() {
     const timestamp = new Date().toISOString().replace(/[:.]/g, '-');
-    
+
     // Save detailed results
     const resultsFile = `core-web-vitals-image-monitoring-${timestamp}.json`;
     const resultsPath = path.join(process.cwd(), resultsFile);
     fs.writeFileSync(resultsPath, JSON.stringify(this.results, null, 2));
-    
+
     // Save alerts configuration
     const alertsConfig = this.generateAlertsConfig();
     const alertsFile = `core-web-vitals-alerts-config.json`;
     const alertsPath = path.join(process.cwd(), 'config', alertsFile);
-    
+
     // Ensure config directory exists
     const configDir = path.dirname(alertsPath);
     if (!fs.existsSync(configDir)) {
       fs.mkdirSync(configDir, { recursive: true });
     }
-    
+
     fs.writeFileSync(alertsPath, JSON.stringify(alertsConfig, null, 2));
-    
+
     // Generate summary report
     const summaryFile = `core-web-vitals-summary-${timestamp}.md`;
     const summaryPath = path.join(process.cwd(), summaryFile);
     const summaryReport = this.generateSummaryReport();
     fs.writeFileSync(summaryPath, summaryReport);
-    
+
     return {
       results: resultsPath,
       alertsConfig: alertsPath,
-      summary: summaryPath
+      summary: summaryPath,
     };
   }
 
@@ -341,11 +368,19 @@ class CoreWebVitalsImageMonitor {
    * Generate markdown summary report
    */
   generateSummaryReport() {
-    const allScores = Object.values(this.results.vitalsMetrics).map(p => p.scores.overall);
-    const avgScore = Math.round(allScores.reduce((sum, score) => sum + score, 0) / allScores.length);
-    const goodPages = Object.values(this.results.vitalsMetrics).filter(p => p.status === 'GOOD').length;
-    const poorPages = Object.values(this.results.vitalsMetrics).filter(p => p.status === 'POOR').length;
-    
+    const allScores = Object.values(this.results.vitalsMetrics).map(
+      p => p.scores.overall
+    );
+    const avgScore = Math.round(
+      allScores.reduce((sum, score) => sum + score, 0) / allScores.length
+    );
+    const goodPages = Object.values(this.results.vitalsMetrics).filter(
+      p => p.status === 'GOOD'
+    ).length;
+    const poorPages = Object.values(this.results.vitalsMetrics).filter(
+      p => p.status === 'POOR'
+    ).length;
+
     return `# Core Web Vitals Image Impact Report
 
 **Generated:** ${this.results.timestamp}
@@ -360,34 +395,46 @@ class CoreWebVitalsImageMonitor {
 
 ## Page Performance Breakdown
 
-${Object.entries(this.results.vitalsMetrics).map(([path, data]) => `
+${Object.entries(this.results.vitalsMetrics)
+  .map(
+    ([path, data]) => `
 ### ${data.name} (${path})
 - **Overall Score:** ${data.scores.overall}/100 (${data.status})
 - **LCP:** ${data.metrics.lcp}ms (Score: ${data.scores.lcp}/100)
 - **CLS:** ${data.metrics.cls} (Score: ${data.scores.cls}/100)
 - **FID:** ${data.metrics.fid}ms (Score: ${data.scores.fid}/100)
 - **Critical Images:** ${data.imageTypes.join(', ')}
-`).join('\n')}
+`
+  )
+  .join('\n')}
 
 ## Performance Alerts
 
 ${this.results.alerts.length === 0 ? 'No performance alerts - all metrics within acceptable ranges!' : ''}
-${this.results.alerts.map(alert => `
+${this.results.alerts
+  .map(
+    alert => `
 ### ${alert.severity}: ${alert.type}
 **Page:** ${alert.page}
 **Issue:** ${alert.message}
 **Impact:** ${alert.impact}
 **Recommendation:** ${alert.recommendation}
-`).join('\n')}
+`
+  )
+  .join('\n')}
 
 ## Optimization Recommendations
 
-${this.results.recommendations.map(rec => `
+${this.results.recommendations
+  .map(
+    rec => `
 ### ${rec.priority} Priority - ${rec.category}
 **Issue:** ${rec.issue}
 **Action:** ${rec.action}
 ${rec.details ? rec.details.map(detail => `- ${detail}`).join('\n') : ''}
-`).join('\n')}
+`
+  )
+  .join('\n')}
 
 ## Core Web Vitals Thresholds
 
@@ -426,46 +473,58 @@ ${rec.details ? rec.details.map(detail => `- ${detail}`).join('\n') : ''}
     console.log('📊 Starting Core Web Vitals Image Impact Monitoring...');
     console.log(`🌐 Base URL: ${this.baseUrl}`);
     console.log(`📄 Monitoring ${this.monitoredPages.length} pages\n`);
-    
+
     // Assess image impact on Core Web Vitals
     console.log('🔍 Assessing image impact on Core Web Vitals...');
     this.assessImageImpact();
-    
+
     // Generate recommendations
     console.log('💡 Generating optimization recommendations...');
     this.generateRecommendations();
-    
+
     // Save results
     console.log('💾 Saving monitoring results...');
     const files = this.saveResults();
-    
+
     // Display summary
     console.log('\n' + '='.repeat(60));
     console.log('📊 CORE WEB VITALS MONITORING SUMMARY');
     console.log('='.repeat(60));
-    
-    const allScores = Object.values(this.results.vitalsMetrics).map(p => p.scores.overall);
-    const avgScore = Math.round(allScores.reduce((sum, score) => sum + score, 0) / allScores.length);
-    const goodPages = Object.values(this.results.vitalsMetrics).filter(p => p.status === 'GOOD').length;
-    const poorPages = Object.values(this.results.vitalsMetrics).filter(p => p.status === 'POOR').length;
-    
+
+    const allScores = Object.values(this.results.vitalsMetrics).map(
+      p => p.scores.overall
+    );
+    const avgScore = Math.round(
+      allScores.reduce((sum, score) => sum + score, 0) / allScores.length
+    );
+    const goodPages = Object.values(this.results.vitalsMetrics).filter(
+      p => p.status === 'GOOD'
+    ).length;
+    const poorPages = Object.values(this.results.vitalsMetrics).filter(
+      p => p.status === 'POOR'
+    ).length;
+
     console.log(`Average Performance Score: ${avgScore}/100`);
-    console.log(`Pages with Good Performance: ${goodPages}/${this.monitoredPages.length}`);
-    console.log(`Pages with Poor Performance: ${poorPages}/${this.monitoredPages.length}`);
+    console.log(
+      `Pages with Good Performance: ${goodPages}/${this.monitoredPages.length}`
+    );
+    console.log(
+      `Pages with Poor Performance: ${poorPages}/${this.monitoredPages.length}`
+    );
     console.log(`Total Alerts: ${this.results.alerts.length}`);
-    
+
     if (this.results.alerts.length > 0) {
       console.log('\n🚨 PERFORMANCE ALERTS:');
       this.results.alerts.forEach(alert => {
         console.log(`  ${alert.severity}: ${alert.message} (${alert.page})`);
       });
     }
-    
+
     console.log('\n📄 Files generated:');
     console.log(`  Results: ${files.results}`);
     console.log(`  Alerts Config: ${files.alertsConfig}`);
     console.log(`  Summary: ${files.summary}`);
-    
+
     return this.results;
   }
 }
@@ -473,14 +532,17 @@ ${rec.details ? rec.details.map(detail => `- ${detail}`).join('\n') : ''}
 // CLI execution
 if (require.main === module) {
   const monitor = new CoreWebVitalsImageMonitor();
-  
-  monitor.runMonitoring()
-    .then((results) => {
-      const criticalAlerts = results.alerts.filter(a => a.severity === 'ERROR').length;
+
+  monitor
+    .runMonitoring()
+    .then(results => {
+      const criticalAlerts = results.alerts.filter(
+        a => a.severity === 'ERROR'
+      ).length;
       const exitCode = criticalAlerts > 0 ? 1 : 0;
       process.exit(exitCode);
     })
-    .catch((error) => {
+    .catch(error => {
       console.error('❌ Core Web Vitals monitoring failed:', error);
       process.exit(1);
     });

@@ -18,10 +18,7 @@
         "overall": 81
       },
       "status": "NEEDS_IMPROVEMENT",
-      "imageTypes": [
-        "services",
-        "blog-preview"
-      ]
+      "imageTypes": ["services", "blog-preview"]
     },
     "/services/photography": {
       "name": "Photography Services",
@@ -39,10 +36,7 @@
         "overall": 76
       },
       "status": "NEEDS_IMPROVEMENT",
-      "imageTypes": [
-        "hero",
-        "portfolio"
-      ]
+      "imageTypes": ["hero", "portfolio"]
     },
     "/services/analytics": {
       "name": "Data Analytics",
@@ -60,10 +54,7 @@
         "overall": 76
       },
       "status": "NEEDS_IMPROVEMENT",
-      "imageTypes": [
-        "hero",
-        "portfolio"
-      ]
+      "imageTypes": ["hero", "portfolio"]
     },
     "/services/ad-campaigns": {
       "name": "Ad Campaigns",
@@ -81,10 +72,7 @@
         "overall": 76
       },
       "status": "NEEDS_IMPROVEMENT",
-      "imageTypes": [
-        "hero",
-        "portfolio"
-      ]
+      "imageTypes": ["hero", "portfolio"]
     },
     "/about": {
       "name": "About Page",
@@ -102,9 +90,7 @@
         "overall": 79
       },
       "status": "NEEDS_IMPROVEMENT",
-      "imageTypes": [
-        "hero"
-      ]
+      "imageTypes": ["hero"]
     },
     "/blog": {
       "name": "Blog Page",
@@ -122,10 +108,7 @@
         "overall": 81
       },
       "status": "NEEDS_IMPROVEMENT",
-      "imageTypes": [
-        "services",
-        "blog-preview"
-      ]
+      "imageTypes": ["services", "blog-preview"]
     }
   },
   "imageImpact": {},

@@ -59,7 +59,5 @@
       "action": "Set Security Policy to TLSv1.2_2021 or newer in CloudFront distribution settings"
     }
   ],
-  "errors": [
-    "Cipher analysis failed: "
-  ]
+  "errors": ["Cipher analysis failed: "]
 }

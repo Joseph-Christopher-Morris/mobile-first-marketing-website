@@ -1,6 +1,7 @@
 # Image Performance Test Report
 
 ## Executive Summary
+
 - **Performance Grade**: A
 - **Total Images Tested**: 3
 - **Average Load Time**: 283ms
@@ -12,23 +13,25 @@
 ### Load Time Analysis
 
 **/images/hero/paid-ads-analytics-screenshot.webp**
+
 - Load Time: 175ms
 - File Size: 23.1KB
 - Status: ✅ Success
 - Content Type: image/webp
 
 **/images/services/analytics-hero.webp**
+
 - Load Time: 12ms
 - File Size: 23.1KB
 - Status: ✅ Success
 - Content Type: image/webp
 
 **/images/blog/test-image.jpg**
+
 - Load Time: 663ms
 - File Size: 82.0KB
 - Status: ✅ Success
 - Content Type: text/html
-
 
 ### Performance Recommendations
 
@@ -57,5 +60,6 @@
    - Regular performance audits
 
 ---
-*Generated on 10/10/2025, 22:11:14*
-*Base URL: https://d15sc9fc739ev2.cloudfront.net*
+
+_Generated on 10/10/2025, 22:11:14_ _Base URL:
+https://d15sc9fc739ev2.cloudfront.net_

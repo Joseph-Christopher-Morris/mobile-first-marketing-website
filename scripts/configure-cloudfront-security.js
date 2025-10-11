@@ -3,19 +3,19 @@
 /**
  * CloudFront Security Configuration Script
  * Configures security headers and error handling for CloudFront distribution
- * 
+ *
  * Requirements addressed:
  * - 2.4: Custom error pages for SPA routing (404 -> index.html)
  * - 7.3: Security headers in CloudFront responses
  */
 
-const { 
-  CloudFrontClient, 
+const {
+  CloudFrontClient,
   CreateResponseHeadersPolicyCommand,
   GetResponseHeadersPolicyCommand,
   UpdateDistributionCommand,
   GetDistributionCommand,
-  GetDistributionConfigCommand
+  GetDistributionConfigCommand,
 } = require('@aws-sdk/client-cloudfront');
 
 const fs = require('fs');
@@ -23,14 +23,16 @@ const path = require('path');
 
 class CloudFrontSecurityConfig {
   constructor() {
-    this.cloudFrontClient = new CloudFrontClient({ 
-      region: 'us-east-1' // CloudFront is global but API calls go to us-east-1
+    this.cloudFrontClient = new CloudFrontClient({
+      region: 'us-east-1', // CloudFront is global but API calls go to us-east-1
     });
     this.distributionId = process.env.CLOUDFRONT_DISTRIBUTION_ID;
     this.environment = process.env.ENVIRONMENT || 'production';
-    
+
     if (!this.distributionId) {
-      console.warn('⚠️  CLOUDFRONT_DISTRIBUTION_ID not provided, will create policies only');
+      console.warn(
+        '⚠️  CLOUDFRONT_DISTRIBUTION_ID not provided, will create policies only'
+      );
     }
   }
 
@@ -39,108 +41,111 @@ class CloudFrontSecurityConfig {
    */
   async createSecurityHeadersPolicy() {
     console.log('Creating security headers policy...');
-    
+
     const policyConfig = {
       Name: `mobile-marketing-security-headers-${this.environment}`,
       Comment: 'Comprehensive security headers for mobile marketing website',
       ResponseHeadersPolicyConfig: {
         Name: `mobile-marketing-security-headers-${this.environment}`,
         Comment: 'Security headers including HSTS, CSP, and other protections',
-        
+
         SecurityHeadersConfig: {
           StrictTransportSecurity: {
             AccessControlMaxAgeSec: 63072000, // 2 years for better security
             IncludeSubdomains: true,
             Preload: true,
-            Override: true
+            Override: true,
           },
           ContentTypeOptions: {
-            Override: true
+            Override: true,
           },
           FrameOptions: {
             FrameOption: 'DENY',
-            Override: true
+            Override: true,
           },
           XSSProtection: {
             ModeBlock: true,
             Protection: true,
-            Override: true
+            Override: true,
           },
           ReferrerPolicy: {
             ReferrerPolicy: 'strict-origin-when-cross-origin',
-            Override: true
+            Override: true,
           },
           ContentSecurityPolicy: {
             ContentSecurityPolicy: this.generateCSP(),
-            Override: true
-          }
+            Override: true,
+          },
         },
-        
+
         CustomHeadersConfig: {
           Items: [
             {
               Header: 'Permissions-Policy',
-              Value: 'camera=(), microphone=(), geolocation=(), payment=(), usb=(), bluetooth=(), magnetometer=(), gyroscope=(), accelerometer=(), ambient-light-sensor=(), autoplay=(), encrypted-media=(), fullscreen=(), picture-in-picture=()',
-              Override: true
+              Value:
+                'camera=(), microphone=(), geolocation=(), payment=(), usb=(), bluetooth=(), magnetometer=(), gyroscope=(), accelerometer=(), ambient-light-sensor=(), autoplay=(), encrypted-media=(), fullscreen=(), picture-in-picture=()',
+              Override: true,
             },
             {
               Header: 'X-Robots-Tag',
               Value: 'index, follow',
-              Override: false
+              Override: false,
             },
             {
               Header: 'Cache-Control',
               Value: 'public, max-age=300', // 5 minutes for HTML
-              Override: false
+              Override: false,
             },
             {
               Header: 'Cross-Origin-Embedder-Policy',
               Value: 'unsafe-none',
-              Override: true
+              Override: true,
             },
             {
               Header: 'Cross-Origin-Opener-Policy',
               Value: 'same-origin-allow-popups',
-              Override: true
+              Override: true,
             },
             {
               Header: 'Cross-Origin-Resource-Policy',
               Value: 'cross-origin',
-              Override: true
+              Override: true,
             },
             {
               Header: 'X-DNS-Prefetch-Control',
               Value: 'on',
-              Override: true
-            }
-          ]
+              Override: true,
+            },
+          ],
         },
-        
+
         RemoveHeadersConfig: {
           Items: [
             {
-              Header: 'Server'
+              Header: 'Server',
             },
             {
-              Header: 'X-Powered-By'
-            }
-          ]
-        }
-      }
+              Header: 'X-Powered-By',
+            },
+          ],
+        },
+      },
     };
 
     try {
       const result = await this.cloudFrontClient.send(
         new CreateResponseHeadersPolicyCommand(policyConfig)
       );
-      
+
       console.log('✅ Security headers policy created successfully');
       console.log(`Policy ID: ${result.ResponseHeadersPolicy.Id}`);
-      
+
       return result.ResponseHeadersPolicy;
     } catch (error) {
       if (error.name === 'ResponseHeadersPolicyAlreadyExists') {
-        console.log('⚠️  Security headers policy already exists, continuing...');
+        console.log(
+          '⚠️  Security headers policy already exists, continuing...'
+        );
         return null;
       }
       throw error;
@@ -168,10 +173,10 @@ class CloudFrontSecurityConfig {
       "manifest-src 'self'",
       "child-src 'self'",
       "prefetch-src 'self'",
-      "upgrade-insecure-requests",
-      "block-all-mixed-content"
+      'upgrade-insecure-requests',
+      'block-all-mixed-content',
     ];
-    
+
     return cspDirectives.join('; ');
   }
 
@@ -180,14 +185,14 @@ class CloudFrontSecurityConfig {
    */
   async createCORSHeadersPolicy() {
     console.log('Creating CORS headers policy...');
-    
+
     const corsConfig = {
       Name: `mobile-marketing-cors-${this.environment}`,
       Comment: 'CORS headers for API endpoints',
       ResponseHeadersPolicyConfig: {
         Name: `mobile-marketing-cors-${this.environment}`,
         Comment: 'CORS configuration for API endpoints',
-        
+
         CorsConfig: {
           AccessControlAllowCredentials: false,
           AccessControlAllowHeaders: {
@@ -198,32 +203,32 @@ class CloudFrontSecurityConfig {
               'Accept',
               'Origin',
               'Cache-Control',
-              'X-File-Name'
-            ]
+              'X-File-Name',
+            ],
           },
           AccessControlAllowMethods: {
-            Items: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS', 'HEAD']
+            Items: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS', 'HEAD'],
           },
           AccessControlAllowOrigins: {
-            Items: ['*'] // Should be restricted to specific domains in production
+            Items: ['*'], // Should be restricted to specific domains in production
           },
           AccessControlExposeHeaders: {
-            Items: ['Content-Length', 'Date', 'Server', 'ETag']
+            Items: ['Content-Length', 'Date', 'Server', 'ETag'],
           },
           AccessControlMaxAgeSec: 86400, // 24 hours
-          OriginOverride: true
-        }
-      }
+          OriginOverride: true,
+        },
+      },
     };
 
     try {
       const result = await this.cloudFrontClient.send(
         new CreateResponseHeadersPolicyCommand(corsConfig)
       );
-      
+
       console.log('✅ CORS headers policy created successfully');
       console.log(`Policy ID: ${result.ResponseHeadersPolicy.Id}`);
-      
+
       return result.ResponseHeadersPolicy;
     } catch (error) {
       if (error.name === 'ResponseHeadersPolicyAlreadyExists') {
@@ -243,38 +248,38 @@ class CloudFrontSecurityConfig {
         ErrorCode: 404,
         ResponsePagePath: '/index.html',
         ResponseCode: '200',
-        ErrorCachingMinTTL: 300 // 5 minutes
+        ErrorCachingMinTTL: 300, // 5 minutes
       },
       {
         ErrorCode: 403,
         ResponsePagePath: '/index.html',
         ResponseCode: '200',
-        ErrorCachingMinTTL: 300 // 5 minutes
+        ErrorCachingMinTTL: 300, // 5 minutes
       },
       {
         ErrorCode: 500,
         ResponsePagePath: '/500.html',
         ResponseCode: '500',
-        ErrorCachingMinTTL: 0 // Don't cache server errors
+        ErrorCachingMinTTL: 0, // Don't cache server errors
       },
       {
         ErrorCode: 502,
         ResponsePagePath: '/500.html',
         ResponseCode: '502',
-        ErrorCachingMinTTL: 0
+        ErrorCachingMinTTL: 0,
       },
       {
         ErrorCode: 503,
         ResponsePagePath: '/500.html',
         ResponseCode: '503',
-        ErrorCachingMinTTL: 0
+        ErrorCachingMinTTL: 0,
       },
       {
         ErrorCode: 504,
         ResponsePagePath: '/500.html',
         ResponseCode: '504',
-        ErrorCachingMinTTL: 0
-      }
+        ErrorCachingMinTTL: 0,
+      },
     ];
   }
 
@@ -283,25 +288,29 @@ class CloudFrontSecurityConfig {
    */
   async updateDistributionSecurity(securityPolicyId, corsPolicyId) {
     if (!this.distributionId) {
-      console.log('⚠️  No distribution ID provided, skipping distribution update');
+      console.log(
+        '⚠️  No distribution ID provided, skipping distribution update'
+      );
       return;
     }
 
-    console.log('Updating CloudFront distribution with security configuration...');
-    
+    console.log(
+      'Updating CloudFront distribution with security configuration...'
+    );
+
     try {
       // Get current distribution configuration
       const getConfigResult = await this.cloudFrontClient.send(
         new GetDistributionConfigCommand({ Id: this.distributionId })
       );
-      
+
       const config = getConfigResult.DistributionConfig;
       const etag = getConfigResult.ETag;
-      
+
       // Update security headers policy
       if (securityPolicyId) {
         config.DefaultCacheBehavior.ResponseHeadersPolicyId = securityPolicyId;
-        
+
         // Update cache behaviors with security headers
         if (config.CacheBehaviors && config.CacheBehaviors.Items) {
           config.CacheBehaviors.Items.forEach(behavior => {
@@ -313,27 +322,28 @@ class CloudFrontSecurityConfig {
           });
         }
       }
-      
+
       // Update custom error responses
       config.CustomErrorResponses = {
         Quantity: this.getCustomErrorResponses().length,
-        Items: this.getCustomErrorResponses()
+        Items: this.getCustomErrorResponses(),
       };
-      
+
       // Update the distribution
       const updateResult = await this.cloudFrontClient.send(
         new UpdateDistributionCommand({
           Id: this.distributionId,
           DistributionConfig: config,
-          IfMatch: etag
+          IfMatch: etag,
         })
       );
-      
-      console.log('✅ CloudFront distribution updated with security configuration');
+
+      console.log(
+        '✅ CloudFront distribution updated with security configuration'
+      );
       console.log(`Distribution Status: ${updateResult.Distribution.Status}`);
-      
+
       return updateResult.Distribution;
-      
     } catch (error) {
       console.error('❌ Failed to update distribution:', error.message);
       throw error;
@@ -345,12 +355,12 @@ class CloudFrontSecurityConfig {
    */
   async createErrorPages() {
     console.log('Creating error page templates...');
-    
+
     const errorPagesDir = path.join(process.cwd(), 'public', 'error-pages');
     if (!fs.existsSync(errorPagesDir)) {
       fs.mkdirSync(errorPagesDir, { recursive: true });
     }
-    
+
     // Create 500 error page
     const error500Html = `<!DOCTYPE html>
 <html lang="en">
@@ -417,9 +427,9 @@ class CloudFrontSecurityConfig {
     </div>
 </body>
 </html>`;
-    
+
     fs.writeFileSync(path.join(errorPagesDir, '500.html'), error500Html);
-    
+
     console.log('✅ Error pages created successfully');
   }
 
@@ -431,20 +441,24 @@ class CloudFrontSecurityConfig {
     if (!fs.existsSync(configDir)) {
       fs.mkdirSync(configDir, { recursive: true });
     }
-    
+
     const securityConfig = {
       environment: this.environment,
       distributionId: this.distributionId,
       createdAt: new Date().toISOString(),
       policies: {
-        securityHeaders: securityPolicy ? {
-          id: securityPolicy.Id,
-          name: securityPolicy.ResponseHeadersPolicyConfig.Name
-        } : null,
-        corsHeaders: corsPolicy ? {
-          id: corsPolicy.Id,
-          name: corsPolicy.ResponseHeadersPolicyConfig.Name
-        } : null
+        securityHeaders: securityPolicy
+          ? {
+              id: securityPolicy.Id,
+              name: securityPolicy.ResponseHeadersPolicyConfig.Name,
+            }
+          : null,
+        corsHeaders: corsPolicy
+          ? {
+              id: corsPolicy.Id,
+              name: corsPolicy.ResponseHeadersPolicyConfig.Name,
+            }
+          : null,
       },
       customErrorResponses: this.getCustomErrorResponses(),
       securityFeatures: {
@@ -454,13 +468,13 @@ class CloudFrontSecurityConfig {
         contentTypeOptions: true,
         frameOptions: true,
         referrerPolicy: true,
-        permissionsPolicy: true
-      }
+        permissionsPolicy: true,
+      },
     };
-    
+
     const configPath = path.join(configDir, 'cloudfront-security.json');
     fs.writeFileSync(configPath, JSON.stringify(securityConfig, null, 2));
-    
+
     console.log(`✅ Security configuration saved to ${configPath}`);
   }
 
@@ -472,23 +486,28 @@ class CloudFrontSecurityConfig {
       console.log('🔒 Starting CloudFront security configuration...');
       console.log(`Environment: ${this.environment}`);
       console.log(`Distribution ID: ${this.distributionId || 'Not provided'}`);
-      
+
       // Create security policies
       const securityPolicy = await this.createSecurityHeadersPolicy();
       const corsPolicy = await this.createCORSHeadersPolicy();
-      
+
       // Update distribution if ID is provided
       if (this.distributionId && securityPolicy) {
-        await this.updateDistributionSecurity(securityPolicy.Id, corsPolicy?.Id);
+        await this.updateDistributionSecurity(
+          securityPolicy.Id,
+          corsPolicy?.Id
+        );
       }
-      
+
       // Create error pages
       await this.createErrorPages();
-      
+
       // Save configuration
       await this.saveSecurityConfig(securityPolicy, corsPolicy);
-      
-      console.log('\n🎉 CloudFront security configuration completed successfully!');
+
+      console.log(
+        '\n🎉 CloudFront security configuration completed successfully!'
+      );
       console.log('\n📋 Security features configured:');
       console.log('✅ Strict Transport Security (HSTS)');
       console.log('✅ Content Security Policy (CSP)');
@@ -498,18 +517,20 @@ class CloudFrontSecurityConfig {
       console.log('✅ Referrer Policy');
       console.log('✅ Permissions Policy');
       console.log('✅ Custom Error Pages for SPA routing');
-      
+
       if (securityPolicy) {
         console.log(`\n🔑 Security Headers Policy ID: ${securityPolicy.Id}`);
       }
       if (corsPolicy) {
         console.log(`🔑 CORS Headers Policy ID: ${corsPolicy.Id}`);
       }
-      
+
       return { securityPolicy, corsPolicy };
-      
     } catch (error) {
-      console.error('\n❌ CloudFront security configuration failed:', error.message);
+      console.error(
+        '\n❌ CloudFront security configuration failed:',
+        error.message
+      );
       process.exit(1);
     }
   }

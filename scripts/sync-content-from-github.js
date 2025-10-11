@@ -11,7 +11,8 @@ const path = require('path');
 
 // GitHub repository details
 const GITHUB_REPO = 'mobile-first-marketing-website';
-const GITHUB_USER = process.argv[2] || process.env.GITHUB_USER || 'your-username'; // Pass as argument
+const GITHUB_USER =
+  process.argv[2] || process.env.GITHUB_USER || 'your-username'; // Pass as argument
 const GITHUB_BRANCH = 'main';
 
 // File paths
@@ -27,23 +28,27 @@ console.log(`🌿 Branch: ${GITHUB_BRANCH}`);
  */
 function fetchFromGitHub(url) {
   return new Promise((resolve, reject) => {
-    https.get(url, (response) => {
-      let data = '';
-      
-      response.on('data', (chunk) => {
-        data += chunk;
+    https
+      .get(url, response => {
+        let data = '';
+
+        response.on('data', chunk => {
+          data += chunk;
+        });
+
+        response.on('end', () => {
+          if (response.statusCode === 200) {
+            resolve(data);
+          } else {
+            reject(
+              new Error(`GitHub API returned status ${response.statusCode}`)
+            );
+          }
+        });
+      })
+      .on('error', error => {
+        reject(error);
       });
-      
-      response.on('end', () => {
-        if (response.statusCode === 200) {
-          resolve(data);
-        } else {
-          reject(new Error(`GitHub API returned status ${response.statusCode}`));
-        }
-      });
-    }).on('error', (error) => {
-      reject(error);
-    });
   });
 }
 
@@ -57,7 +62,7 @@ function updateLocalFile(filePath, content) {
     if (!fs.existsSync(dir)) {
       fs.mkdirSync(dir, { recursive: true });
     }
-    
+
     // Write the file
     fs.writeFileSync(filePath, content, 'utf8');
     console.log(`✅ Updated: ${filePath}`);
@@ -75,12 +80,12 @@ async function syncContent() {
   try {
     console.log(`📥 Fetching about.md from GitHub...`);
     const aboutContent = await fetchFromGitHub(GITHUB_ABOUT_URL);
-    
+
     console.log(`📝 Content length: ${aboutContent.length} characters`);
-    
+
     // Update local file
     const success = updateLocalFile(LOCAL_ABOUT_PATH, aboutContent);
-    
+
     if (success) {
       console.log('🎉 Content sync completed successfully!');
       console.log('📋 Next steps:');
@@ -90,7 +95,6 @@ async function syncContent() {
       console.error('❌ Content sync failed');
       process.exit(1);
     }
-    
   } catch (error) {
     console.error('❌ Error syncing content:', error.message);
     console.log('💡 Troubleshooting:');

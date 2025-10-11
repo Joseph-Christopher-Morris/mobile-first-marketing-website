@@ -3,7 +3,8 @@ import { BlogPost } from '../../lib/blog-types';
 const post: BlogPost = {
   slug: 'stock-photography-lessons',
   title: 'Stock Photography Lessons and Applications',
-  excerpt: 'Essential insights from the world of stock photography and how to apply professional techniques to automotive and commercial photography projects.',
+  excerpt:
+    'Essential insights from the world of stock photography and how to apply professional techniques to automotive and commercial photography projects.',
   content: `
 # Stock Photography Lessons and Applications
 
@@ -211,10 +212,16 @@ Success in commercial photography comes from understanding that every image shou
   date: '2025-01-10',
   author: 'Joe from Vivid Auto',
   category: 'Photography',
-  tags: ['stock-photography', 'commercial-photography', 'automotive', 'professional-techniques', 'business'],
+  tags: [
+    'stock-photography',
+    'commercial-photography',
+    'automotive',
+    'professional-techniques',
+    'business',
+  ],
   featured: false,
   image: '/images/hero/240619-london-19.webp',
-  readTime: 8
+  readTime: 8,
 };
 
 export default post;

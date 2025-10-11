@@ -24,10 +24,7 @@
     {
       "policyName": "TLSv1.2_2021",
       "description": "Latest CloudFront security policy (recommended)",
-      "supportedProtocols": [
-        "TLSv1.2",
-        "TLSv1.3"
-      ],
+      "supportedProtocols": ["TLSv1.2", "TLSv1.3"],
       "requiredCiphers": [
         "ECDHE-RSA-AES256-GCM-SHA384",
         "ECDHE-RSA-AES128-GCM-SHA256",
@@ -38,14 +35,8 @@
       ],
       "testResults": {
         "protocolSupport": {
-          "supportedProtocols": [
-            "TLSv1.2",
-            "TLSv1.3"
-          ],
-          "modernProtocols": [
-            "TLSv1.2",
-            "TLSv1.3"
-          ],
+          "supportedProtocols": ["TLSv1.2", "TLSv1.3"],
+          "modernProtocols": ["TLSv1.2", "TLSv1.3"],
           "legacyProtocols": [],
           "score": 90
         },
@@ -64,10 +55,7 @@
             "ECDHE-ECDSA-AES256-GCM-SHA384",
             "ECDHE-ECDSA-AES128-GCM-SHA256"
           ],
-          "modernCiphers": [
-            "ECDHE-RSA-CHACHA20-POLY1305",
-            "ECDHE-ECDSA-CHACHA20-POLY1305"
-          ],
+          "modernCiphers": ["ECDHE-RSA-CHACHA20-POLY1305", "ECDHE-ECDSA-CHACHA20-POLY1305"],
           "score": 100
         },
         "securityScore": 95,
@@ -77,9 +65,7 @@
     {
       "policyName": "TLSv1.2_2019",
       "description": "CloudFront security policy from 2019",
-      "supportedProtocols": [
-        "TLSv1.2"
-      ],
+      "supportedProtocols": ["TLSv1.2"],
       "requiredCiphers": [
         "ECDHE-RSA-AES256-GCM-SHA384",
         "ECDHE-RSA-AES128-GCM-SHA256",
@@ -88,12 +74,8 @@
       ],
       "testResults": {
         "protocolSupport": {
-          "supportedProtocols": [
-            "TLSv1.2"
-          ],
-          "modernProtocols": [
-            "TLSv1.2"
-          ],
+          "supportedProtocols": ["TLSv1.2"],
+          "modernProtocols": ["TLSv1.2"],
           "legacyProtocols": [],
           "score": 40
         },
@@ -120,33 +102,18 @@
     {
       "policyName": "TLSv1.2_2017",
       "description": "Legacy CloudFront security policy (minimum)",
-      "supportedProtocols": [
-        "TLSv1.2"
-      ],
-      "requiredCiphers": [
-        "ECDHE-RSA-AES256-GCM-SHA384",
-        "ECDHE-RSA-AES128-GCM-SHA256"
-      ],
+      "supportedProtocols": ["TLSv1.2"],
+      "requiredCiphers": ["ECDHE-RSA-AES256-GCM-SHA384", "ECDHE-RSA-AES128-GCM-SHA256"],
       "testResults": {
         "protocolSupport": {
-          "supportedProtocols": [
-            "TLSv1.2"
-          ],
-          "modernProtocols": [
-            "TLSv1.2"
-          ],
+          "supportedProtocols": ["TLSv1.2"],
+          "modernProtocols": ["TLSv1.2"],
           "legacyProtocols": [],
           "score": 40
         },
         "cipherSupport": {
-          "requiredCiphers": [
-            "ECDHE-RSA-AES256-GCM-SHA384",
-            "ECDHE-RSA-AES128-GCM-SHA256"
-          ],
-          "strongCiphers": [
-            "ECDHE-RSA-AES256-GCM-SHA384",
-            "ECDHE-RSA-AES128-GCM-SHA256"
-          ],
+          "requiredCiphers": ["ECDHE-RSA-AES256-GCM-SHA384", "ECDHE-RSA-AES128-GCM-SHA256"],
+          "strongCiphers": ["ECDHE-RSA-AES256-GCM-SHA384", "ECDHE-RSA-AES128-GCM-SHA256"],
           "modernCiphers": [],
           "score": 30
         },
@@ -222,10 +189,7 @@
       "result": {
         "passed": true,
         "details": "Supports 2 modern TLS protocols",
-        "modernProtocols": [
-          "TLSv1.2",
-          "TLSv1.3"
-        ]
+        "modernProtocols": ["TLSv1.2", "TLSv1.3"]
       }
     }
   ],

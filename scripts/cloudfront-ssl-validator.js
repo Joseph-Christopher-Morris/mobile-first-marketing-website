@@ -2,7 +2,7 @@
 
 /**
  * CloudFront SSL Certificate Validator
- * 
+ *
  * Validates SSL certificates for CloudFront distributions
  * Checks custom domain certificates and CloudFront default certificates
  */
@@ -16,7 +16,7 @@ class CloudFrontSSLValidator {
     this.options = {
       timeout: 15000,
       verbose: false,
-      ...options
+      ...options,
     };
     this.results = {
       timestamp: new Date().toISOString(),
@@ -25,8 +25,8 @@ class CloudFrontSSLValidator {
         total: 0,
         passed: 0,
         failed: 0,
-        warnings: 0
-      }
+        warnings: 0,
+      },
     };
   }
 
@@ -38,9 +38,10 @@ class CloudFrontSSLValidator {
 
     try {
       // Load distribution configuration
-      const config = typeof distributionConfig === 'string' 
-        ? await this.loadDistributionConfig(distributionConfig)
-        : distributionConfig;
+      const config =
+        typeof distributionConfig === 'string'
+          ? await this.loadDistributionConfig(distributionConfig)
+          : distributionConfig;
 
       // Validate each distribution
       for (const distribution of config.distributions || []) {
@@ -49,9 +50,8 @@ class CloudFrontSSLValidator {
 
       // Generate summary
       this.generateSummary();
-      
-      return this.results;
 
+      return this.results;
     } catch (error) {
       console.error(`CloudFront SSL validation failed: ${error.message}`);
       throw error;
@@ -74,30 +74,34 @@ class CloudFrontSSLValidator {
    * Validate SSL certificate for a single distribution
    */
   async validateDistribution(distribution) {
-    console.log(`🔍 Validating distribution: ${distribution.id || distribution.domainName}`);
-    
+    console.log(
+      `🔍 Validating distribution: ${distribution.id || distribution.domainName}`
+    );
+
     const distributionResult = {
       id: distribution.id,
       domainName: distribution.domainName,
       customDomains: distribution.customDomains || [],
       tests: [],
-      status: 'UNKNOWN'
+      status: 'UNKNOWN',
     };
 
     try {
       const validator = new SSLCertificateValidator({
         timeout: this.options.timeout,
-        verbose: this.options.verbose
+        verbose: this.options.verbose,
       });
 
       // Validate CloudFront default domain
       if (distribution.domainName) {
         console.log(`  Testing CloudFront domain: ${distribution.domainName}`);
-        const result = await validator.validateCertificate(distribution.domainName);
+        const result = await validator.validateCertificate(
+          distribution.domainName
+        );
         distributionResult.tests.push({
           domain: distribution.domainName,
           type: 'cloudfront-default',
-          result: result
+          result: result,
         });
       }
 
@@ -109,23 +113,24 @@ class CloudFrontSSLValidator {
           distributionResult.tests.push({
             domain: customDomain,
             type: 'custom-domain',
-            result: result
+            result: result,
           });
         } catch (error) {
           distributionResult.tests.push({
             domain: customDomain,
             type: 'custom-domain',
-            error: error.message
+            error: error.message,
           });
         }
       }
 
       // Determine overall status for this distribution
-      distributionResult.status = this.determineDistributionStatus(distributionResult.tests);
-      
+      distributionResult.status = this.determineDistributionStatus(
+        distributionResult.tests
+      );
+
       this.results.distributions.push(distributionResult);
       this.updateSummary(distributionResult.status);
-
     } catch (error) {
       distributionResult.error = error.message;
       distributionResult.status = 'FAILED';
@@ -163,7 +168,7 @@ class CloudFrontSSLValidator {
    */
   updateSummary(status) {
     this.results.summary.total++;
-    
+
     switch (status) {
       case 'PASSED':
         this.results.summary.passed++;
@@ -182,17 +187,19 @@ class CloudFrontSSLValidator {
    */
   generateSummary() {
     const { total, passed, failed, warnings } = this.results.summary;
-    
+
     console.log('\n📊 CloudFront SSL Validation Summary:');
     console.log(`Total distributions: ${total}`);
     console.log(`Passed: ${passed}`);
     console.log(`Failed: ${failed}`);
     console.log(`Warnings: ${warnings}`);
-    
+
     if (failed === 0 && warnings === 0) {
       console.log('🎉 All CloudFront SSL certificates are valid!');
     } else if (failed === 0) {
-      console.log('✅ CloudFront SSL certificates are valid with some warnings');
+      console.log(
+        '✅ CloudFront SSL certificates are valid with some warnings'
+      );
     } else {
       console.log('❌ Some CloudFront SSL certificates have issues');
     }
@@ -204,7 +211,9 @@ class CloudFrontSSLValidator {
   async saveResults(outputPath) {
     try {
       await fs.writeFile(outputPath, JSON.stringify(this.results, null, 2));
-      console.log(`\n📄 CloudFront SSL validation results saved to: ${outputPath}`);
+      console.log(
+        `\n📄 CloudFront SSL validation results saved to: ${outputPath}`
+      );
     } catch (error) {
       console.error(`Failed to save results: ${error.message}`);
     }
@@ -223,8 +232,8 @@ class CloudFrontSSLValidator {
         status: dist.status,
         customDomains: dist.customDomains,
         issues: this.extractIssues(dist.tests),
-        recommendations: this.generateRecommendations(dist.tests)
-      }))
+        recommendations: this.generateRecommendations(dist.tests),
+      })),
     };
 
     return report;
@@ -241,25 +250,33 @@ class CloudFrontSSLValidator {
         issues.push({
           domain: test.domain,
           type: 'connection-error',
-          message: test.error
+          message: test.error,
         });
       } else if (test.result) {
-        const failedTests = test.result.tests.filter(t => t.status === 'FAILED');
-        const warningTests = test.result.tests.filter(t => t.status === 'WARNING');
-        
-        failedTests.forEach(t => issues.push({
-          domain: test.domain,
-          type: 'validation-failure',
-          test: t.test,
-          message: t.message
-        }));
-        
-        warningTests.forEach(t => issues.push({
-          domain: test.domain,
-          type: 'validation-warning',
-          test: t.test,
-          message: t.message
-        }));
+        const failedTests = test.result.tests.filter(
+          t => t.status === 'FAILED'
+        );
+        const warningTests = test.result.tests.filter(
+          t => t.status === 'WARNING'
+        );
+
+        failedTests.forEach(t =>
+          issues.push({
+            domain: test.domain,
+            type: 'validation-failure',
+            test: t.test,
+            message: t.message,
+          })
+        );
+
+        warningTests.forEach(t =>
+          issues.push({
+            domain: test.domain,
+            type: 'validation-warning',
+            test: t.test,
+            message: t.message,
+          })
+        );
       }
     }
 
@@ -274,25 +291,37 @@ class CloudFrontSSLValidator {
 
     for (const test of tests) {
       if (test.result) {
-        const failedTests = test.result.tests.filter(t => t.status === 'FAILED');
-        
+        const failedTests = test.result.tests.filter(
+          t => t.status === 'FAILED'
+        );
+
         failedTests.forEach(t => {
           switch (t.test) {
             case 'validity-dates':
               if (t.message.includes('expired')) {
-                recommendations.push(`Renew SSL certificate for ${test.domain} immediately`);
+                recommendations.push(
+                  `Renew SSL certificate for ${test.domain} immediately`
+                );
               } else if (t.message.includes('not yet valid')) {
-                recommendations.push(`Check certificate installation date for ${test.domain}`);
+                recommendations.push(
+                  `Check certificate installation date for ${test.domain}`
+                );
               }
               break;
             case 'subject-san-match':
-              recommendations.push(`Update SSL certificate for ${test.domain} to include correct domain names`);
+              recommendations.push(
+                `Update SSL certificate for ${test.domain} to include correct domain names`
+              );
               break;
             case 'ca-trust':
-              recommendations.push(`Install certificate from trusted CA for ${test.domain}`);
+              recommendations.push(
+                `Install certificate from trusted CA for ${test.domain}`
+              );
               break;
             case 'certificate-chain':
-              recommendations.push(`Fix certificate chain configuration for ${test.domain}`);
+              recommendations.push(
+                `Fix certificate chain configuration for ${test.domain}`
+              );
               break;
           }
         });
@@ -306,22 +335,30 @@ class CloudFrontSSLValidator {
 // CLI functionality
 async function main() {
   const args = process.argv.slice(2);
-  
+
   if (args.length === 0) {
-    console.log('Usage: node cloudfront-ssl-validator.js <config-file> [options]');
+    console.log(
+      'Usage: node cloudfront-ssl-validator.js <config-file> [options]'
+    );
     console.log('Options:');
     console.log('  --output <file>     Save results to JSON file');
     console.log('  --verbose          Enable verbose output');
     console.log('\nExample config file format:');
-    console.log(JSON.stringify({
-      distributions: [
+    console.log(
+      JSON.stringify(
         {
-          id: "E1234567890123",
-          domainName: "d1234567890123.cloudfront.net",
-          customDomains: ["example.com", "www.example.com"]
-        }
-      ]
-    }, null, 2));
+          distributions: [
+            {
+              id: 'E1234567890123',
+              domainName: 'd1234567890123.cloudfront.net',
+              customDomains: ['example.com', 'www.example.com'],
+            },
+          ],
+        },
+        null,
+        2
+      )
+    );
     process.exit(1);
   }
 
@@ -345,7 +382,7 @@ async function main() {
 
   try {
     const results = await validator.validateCloudFrontSSL(configFile);
-    
+
     if (outputFile) {
       await validator.saveResults(outputFile);
     }

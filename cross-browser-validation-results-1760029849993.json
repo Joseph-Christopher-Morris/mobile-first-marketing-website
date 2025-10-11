@@ -8,12 +8,8 @@
       "hasProperAltText": true,
       "usesWebPFormat": false,
       "hasErrorHandling": true,
-      "issues": [
-        "Missing lazy loading implementation"
-      ],
-      "recommendations": [
-        "Add loading=\"lazy\" for images below the fold"
-      ]
+      "issues": ["Missing lazy loading implementation"],
+      "recommendations": ["Add loading=\"lazy\" for images below the fold"]
     },
     "optimizedImage": {
       "hasErrorHandling": true,
@@ -33,10 +29,7 @@
       "usesPictureElement": false,
       "hasBreakpointDefinitions": false,
       "implementsArtDirection": false,
-      "issues": [
-        "Missing srcset implementation for responsive images",
-        "Not using picture element for WebP fallback"
-      ],
+      "issues": ["Missing srcset implementation for responsive images", "Not using picture element for WebP fallback"],
       "recommendations": [
         "Implement srcset attribute with multiple image sizes",
         "Use <picture> element for WebP with JPEG fallback"
@@ -48,10 +41,7 @@
       "usesPictureElement": false,
       "hasFormatDetection": false,
       "implementsGracefulDegradation": false,
-      "issues": [
-        "WebP images found but no JPEG fallback",
-        "WebP images without picture element fallback"
-      ],
+      "issues": ["WebP images found but no JPEG fallback", "WebP images without picture element fallback"],
       "recommendations": [
         "Provide JPEG fallback images for WebP format",
         "Use <picture> element for proper WebP fallback"
@@ -72,12 +62,8 @@
       "usesCaching": false,
       "implementsPreloading": true,
       "hasPerformanceMonitoring": false,
-      "issues": [
-        "No image optimization detected"
-      ],
-      "recommendations": [
-        "Implement image optimization pipeline"
-      ]
+      "issues": ["No image optimization detected"],
+      "recommendations": ["Implement image optimization pipeline"]
     }
   },
   "recommendations": [

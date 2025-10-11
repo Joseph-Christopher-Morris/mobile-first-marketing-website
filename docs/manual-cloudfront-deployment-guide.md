@@ -1,6 +1,7 @@
 # Manual CloudFront Deployment Guide
 
-This guide provides step-by-step instructions for manually deploying content updates to your CloudFront distribution without using Kiro.
+This guide provides step-by-step instructions for manually deploying content
+updates to your CloudFront distribution without using Kiro.
 
 ## Prerequisites
 
@@ -57,6 +58,7 @@ node scripts/deploy.js
 ```
 
 This script will:
+
 - Upload all files from the `out/` directory to S3
 - Set proper content types and cache headers
 - Create a CloudFront invalidation
@@ -146,6 +148,7 @@ npm run build
 ## Troubleshooting
 
 ### Build Fails
+
 ```bash
 # Clear npm cache and reinstall
 npm cache clean --force
@@ -155,6 +158,7 @@ npm run build
 ```
 
 ### S3 Upload Issues
+
 ```bash
 # Check AWS credentials
 aws sts get-caller-identity
@@ -164,12 +168,14 @@ aws s3 ls s3://mobile-marketing-site-prod-1759705011281-tyzuo9/ --region us-east
 ```
 
 ### CloudFront Issues
+
 ```bash
 # Check distribution status
 aws cloudfront get-distribution --id E2IBMHQ3GCW6ZK --region us-east-1
 ```
 
 ### Cache Not Clearing
+
 - Wait 5-10 minutes for invalidation to complete
 - Check invalidation status in AWS Console
 - Try hard refresh in browser (Ctrl+F5 or Cmd+Shift+R)
@@ -205,6 +211,7 @@ node scripts/rollback.js rollback <backup-id>
 ## Support
 
 For issues with this deployment process:
+
 1. Check the troubleshooting section above
 2. Review AWS CloudWatch logs
 3. Consult the comprehensive operational runbook

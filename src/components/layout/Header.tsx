@@ -27,8 +27,6 @@ export function Header({ pageTitle: _pageTitle }: HeaderProps) {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const pathname = usePathname();
 
-
-
   const toggleMobileMenu = () => {
     setIsMobileMenuOpen(!isMobileMenuOpen);
   };
@@ -67,14 +65,16 @@ export function Header({ pageTitle: _pageTitle }: HeaderProps) {
                   key={item.href}
                   href={item.href}
                   className={`text-sm font-medium transition-colors nav-link-brand ${
-                    pathname === item.href
-                      ? 'border-b-2 pb-1'
-                      : 'text-gray-700'
+                    pathname === item.href ? 'border-b-2 pb-1' : 'text-gray-700'
                   }`}
-                  style={pathname === item.href ? {
-                    color: '#F5276F',
-                    borderBottomColor: '#F5276F'
-                  } : {}}
+                  style={
+                    pathname === item.href
+                      ? {
+                          color: '#F5276F',
+                          borderBottomColor: '#F5276F',
+                        }
+                      : {}
+                  }
                   aria-current={pathname === item.href ? 'page' : undefined}
                 >
                   {item.label}
@@ -89,12 +89,12 @@ export function Header({ pageTitle: _pageTitle }: HeaderProps) {
                 className='bg-brand-primary text-white px-4 py-2 rounded-lg text-sm font-medium hover:bg-brand-primary-dark transition-colors focus:outline-none focus:ring-2 focus:ring-brand-primary focus:ring-offset-2'
                 style={{
                   backgroundColor: '#F5276F',
-                  color: 'white'
+                  color: 'white',
                 }}
-                onMouseEnter={(e) => {
+                onMouseEnter={e => {
                   e.currentTarget.style.backgroundColor = '#C8094C';
                 }}
-                onMouseLeave={(e) => {
+                onMouseLeave={e => {
                   e.currentTarget.style.backgroundColor = '#F5276F';
                 }}
               >

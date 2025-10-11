@@ -52,7 +52,7 @@ if (fs.existsSync('next.config.js')) {
 // Environment variables check
 const envVars = {
   NODE_ENV: process.env.NODE_ENV || 'production',
-  NEXT_TELEMETRY_DISABLED: process.env.NEXT_TELEMETRY_DISABLED || '1'
+  NEXT_TELEMETRY_DISABLED: process.env.NEXT_TELEMETRY_DISABLED || '1',
 };
 
 console.log('🌍 Environment variables:');

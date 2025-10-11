@@ -2,9 +2,11 @@
 
 ## 🚀 Migration Complete: AWS Amplify → S3/CloudFront
 
-This project has been successfully migrated from AWS Amplify to S3 + CloudFront deployment.
+This project has been successfully migrated from AWS Amplify to S3 + CloudFront
+deployment.
 
 ### New Deployment Process
+
 ```bash
 # Deploy to production
 npm run deploy:production
@@ -14,14 +16,15 @@ npm run infrastructure:setup:production
 ```
 
 ### Live Site
+
 - **Production URL**: https://d15sc9fc739ev2.cloudfront.net
 - **Infrastructure**: S3 + CloudFront
 - **Deployment**: Automated via GitHub Actions
 
-For detailed deployment instructions, see `config/production-deployment-instructions.md`.
+For detailed deployment instructions, see
+`config/production-deployment-instructions.md`.
 
 ---
-
 
 A modern, mobile-first marketing website built with Next.js, Tailwind CSS, and
 the Zone UI kit. Optimized for mobile devices and hosted on AWS Amplify.
@@ -90,21 +93,25 @@ Content is managed through Markdown files in the `content/` directory:
 ## Deployment
 
 ### Production Deployment
+
 ```bash
 # Deploy to production S3/CloudFront
 npm run deploy:production
 ```
 
 ### Infrastructure Setup (One-time)
+
 ```bash
 # Set up production infrastructure
 npm run infrastructure:setup:production
 ```
 
 ### Environment Configuration
+
 Production environment variables are stored in `config/production.env`.
 
 For detailed deployment instructions and troubleshooting, see:
+
 - `config/production-deployment-instructions.md`
 - `docs/s3-cloudfront-deployment-runbook.md`
 

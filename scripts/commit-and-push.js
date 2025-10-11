@@ -39,7 +39,7 @@ function initGitRepo() {
 // Add all files
 function addFiles() {
   console.log('📋 Adding files to Git...');
-  
+
   // Add all source files
   execSync('git add src/', { stdio: 'inherit' });
   execSync('git add content/', { stdio: 'inherit' });
@@ -48,16 +48,22 @@ function addFiles() {
   execSync('git add docs/', { stdio: 'inherit' });
   execSync('git add .kiro/', { stdio: 'inherit' });
   execSync('git add .github/', { stdio: 'inherit' });
-  
+
   // Add config files
   execSync('git add package.json package-lock.json', { stdio: 'inherit' });
-  execSync('git add next.config.js tailwind.config.js tsconfig.json', { stdio: 'inherit' });
-  execSync('git add .gitignore .eslintrc.json prettier.config.js', { stdio: 'inherit' });
+  execSync('git add next.config.js tailwind.config.js tsconfig.json', {
+    stdio: 'inherit',
+  });
+  execSync('git add .gitignore .eslintrc.json prettier.config.js', {
+    stdio: 'inherit',
+  });
   execSync('git add README.md', { stdio: 'inherit' });
-  
+
   // Add deployment summaries
-  execSync('git add *-summary.md *-deployment-summary.md', { stdio: 'inherit' });
-  
+  execSync('git add *-summary.md *-deployment-summary.md', {
+    stdio: 'inherit',
+  });
+
   console.log('✅ Files added to Git\n');
 }
 
@@ -124,7 +130,9 @@ function main() {
   console.log('');
   console.log('📋 Next Steps:');
   console.log('1. Set up GitHub remote (if not already done):');
-  console.log('   git remote add origin https://github.com/yourusername/your-repo.git');
+  console.log(
+    '   git remote add origin https://github.com/yourusername/your-repo.git'
+  );
   console.log('');
   console.log('2. Push to GitHub:');
   console.log('   git push -u origin main');
@@ -134,7 +142,9 @@ function main() {
   console.log('   git commit -m "Your change description"');
   console.log('   git push');
   console.log('');
-  console.log('🌐 Your website is now properly versioned and ready for future updates!');
+  console.log(
+    '🌐 Your website is now properly versioned and ready for future updates!'
+  );
 }
 
 main();

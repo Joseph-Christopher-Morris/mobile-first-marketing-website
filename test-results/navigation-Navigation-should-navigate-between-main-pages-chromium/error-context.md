@@ -2,261 +2,325 @@
 
 ```yaml
 - generic [ref=e1]:
-  - generic [ref=e2]:
-    - banner [ref=e3]:
-      - generic [ref=e5]:
-        - link "Go to homepage" [ref=e6] [cursor=pointer]:
-          - /url: /
-          - img "Vivid Auto Photography Logo" [ref=e7] [cursor=pointer]
-        - navigation [ref=e8]:
-          - link "Home" [ref=e9] [cursor=pointer]:
-            - /url: /
-          - link "Services" [active] [ref=e10] [cursor=pointer]:
-            - /url: /services/
-          - link "Blog" [ref=e11] [cursor=pointer]:
-            - /url: /blog/
-          - link "About" [ref=e12] [cursor=pointer]:
-            - /url: /about/
-          - link "Contact" [ref=e13] [cursor=pointer]:
-            - /url: /contact/
-        - link "Get Started" [ref=e15] [cursor=pointer]:
-          - /url: /contact/
-        - button "Toggle mobile menu" [ref=e16] [cursor=pointer]:
-          - img [ref=e17] [cursor=pointer]
-    - main "Home" [ref=e19]:
-      - generic [ref=e20]:
-        - img "More than Photography. Data-Driven Vivid Auto Photography that Delivers! - Mobile-first Vivid Auto Photography services background" [ref=e23]
-        - generic [ref=e26]:
-          - heading "More than Photography. Data-Driven Vivid Auto Photography that Delivers!" [level=1] [ref=e27]:
-            - text: More than Photography.
-            - text: Data-Driven Vivid Auto Photography that Delivers!
-          - paragraph [ref=e28]: Helping businesses across Nantwich & Cheshire grow with a unique mix of professional photography, analytics, and ad campaign optimisation. Designed to work on any device
-      - generic [ref=e33]:
-        - generic [ref=e34]:
-          - heading "Our Services" [level=2] [ref=e35]
-          - paragraph [ref=e36]: Comprehensive solutions to grow your business
-        - generic [ref=e37]:
-          - generic [ref=e38]:
-            - generic [ref=e39]:
-              - generic [ref=e43]: Loading image...
-              - generic [ref=e44]: 📷
-            - generic [ref=e45]:
-              - heading "Photography Services" [level=3] [ref=e46]
-              - paragraph [ref=e47]: Capture your most important moments with our professional photography services.
-              - generic [ref=e48]:
-                - heading "Key Features:" [level=4] [ref=e49]
-                - list [ref=e50]:
-                  - listitem [ref=e51]: Event Photography
-                  - listitem [ref=e53]: Portrait Sessions
-                  - listitem [ref=e55]: Commercial Photography
-                  - listitem [ref=e57]: +1 more features
-              - generic [ref=e58]:
-                - link "Learn More" [ref=e59] [cursor=pointer]:
-                  - /url: /services/photography/
-                - link "Get Started" [ref=e60] [cursor=pointer]:
-                  - /url: /contact/
-          - generic [ref=e61]:
-            - generic [ref=e62]:
-              - generic [ref=e66]: Loading image...
-              - generic [ref=e67]: 📊
-            - generic [ref=e68]:
-              - heading "Data Analytics & Insights" [level=3] [ref=e69]
-              - paragraph [ref=e70]: Transform your data into actionable insights that drive business growth.
-              - generic [ref=e71]:
-                - heading "Key Features:" [level=4] [ref=e72]
-                - list [ref=e73]:
-                  - listitem [ref=e74]: Web Analytics Setup
-                  - listitem [ref=e76]: Custom Dashboard Creation
-                  - listitem [ref=e78]: Performance Reporting
-                  - listitem [ref=e80]: +1 more features
-              - generic [ref=e81]:
-                - link "Learn More" [ref=e82] [cursor=pointer]:
-                  - /url: /services/analytics/
-                - link "Get Started" [ref=e83] [cursor=pointer]:
-                  - /url: /contact/
-          - generic [ref=e84]:
-            - generic [ref=e85]:
-              - generic [ref=e89]: Loading image...
-              - generic [ref=e90]: 📢
-            - generic [ref=e91]:
-              - heading "Strategic Ad Campaigns" [level=3] [ref=e92]
-              - paragraph [ref=e93]: Drive results with targeted advertising campaigns across multiple platforms.
-              - generic [ref=e94]:
-                - heading "Key Features:" [level=4] [ref=e95]
-                - list [ref=e96]:
-                  - listitem [ref=e97]: Google Ads Management
-                  - listitem [ref=e99]: Social Media Advertising
-                  - listitem [ref=e101]: Campaign Strategy Development
-                  - listitem [ref=e103]: +1 more features
-              - generic [ref=e104]:
-                - link "Learn More" [ref=e105] [cursor=pointer]:
-                  - /url: /services/ad-campaigns/
-                - link "Get Started" [ref=e106] [cursor=pointer]:
-                  - /url: /contact/
-        - link "View All Services" [ref=e108] [cursor=pointer]:
-          - /url: /services/
-      - generic [ref=e110]:
-        - generic [ref=e111]:
-          - heading "What Our Clients Say" [level=2] [ref=e112]
-          - paragraph [ref=e113]: Trusted by businesses across Cheshire
-        - generic [ref=e114]:
-          - button "Previous testimonial" [ref=e115] [cursor=pointer]:
-            - img [ref=e116] [cursor=pointer]
-          - generic [ref=e118]:
-            - generic [ref=e119]:
-              - img [ref=e120]
-              - img [ref=e122]
-              - img [ref=e124]
-              - img [ref=e126]
-              - img [ref=e128]
-            - blockquote [ref=e130]: "\"A huge thank you! Joe Morris is a fantastic photographer from Cheshire who has been providing us with amazing images of our cars for over 18 months at LSH Auto UK!\""
-            - generic [ref=e131]:
-              - heading "Lee Murfitt" [level=4] [ref=e132]
-              - paragraph [ref=e133]: Lead Strategist for Digital Growth & SEO
-              - paragraph [ref=e134]: SciMed
-          - button "Next testimonial" [ref=e135] [cursor=pointer]:
-            - img [ref=e136] [cursor=pointer]
-        - generic [ref=e138]:
-          - button "Go to testimonial 1" [ref=e139] [cursor=pointer]
-          - button "Go to testimonial 2" [ref=e140] [cursor=pointer]
-        - generic [ref=e141]:
-          - paragraph [ref=e142]: Ready to work with us?
-          - button "Get In Touch" [ref=e143] [cursor=pointer]
-      - generic [ref=e145]:
-        - generic [ref=e146]:
-          - heading "Latest Insights" [level=2] [ref=e147]
-          - paragraph [ref=e148]: Stay updated with our latest thoughts and industry insights
-        - generic [ref=e149]:
-          - article [ref=e150]:
-            - generic [ref=e151]:
-              - generic [ref=e153]:
-                - generic [ref=e155]: Loading image...
-                - generic [ref=e159]: Loading image...
-              - generic [ref=e160]: 3 min read
-            - generic [ref=e161]:
-              - heading "What I Learned From My Paid Ads Campaign" [level=3] [ref=e162]:
-                - link "What I Learned From My Paid Ads Campaign" [ref=e163] [cursor=pointer]:
-                  - /url: /blog/paid-ads-campaign-learnings/
-              - paragraph [ref=e164]: Discover how I used Meta Ads, Google Ads, and UX insights to drive qualified traffic, grow my newsletter, and improve future marketing campaigns.
-              - generic [ref=e165]:
-                - heading "Key Topics:" [level=4] [ref=e166]
-                - generic [ref=e167]:
-                  - generic [ref=e170]: meta ads
-                  - generic [ref=e173]: google ads
-                  - generic [ref=e176]: hotjar
-                  - generic [ref=e179]: +2 more insights
-              - generic [ref=e180]:
-                - link "Read Article" [ref=e181] [cursor=pointer]:
-                  - /url: /blog/paid-ads-campaign-learnings/
-                - generic [ref=e182]:
-                  - generic [ref=e183]: By Joe from Vivid Auto
-                  - time [ref=e184]: August 11, 2025
-          - article [ref=e185]:
-            - generic [ref=e186]:
-              - generic [ref=e188]:
-                - generic [ref=e190]: Loading image...
-                - generic [ref=e194]: Loading image...
-              - generic [ref=e195]: 6 min read
-            - generic [ref=e196]:
-              - 'heading "How I Turned £546 into £13.5K With Flyers: Year-by-Year ROI Breakdown (2021–2025)" [level=3] [ref=e197]':
-                - 'link "How I Turned £546 into £13.5K With Flyers: Year-by-Year ROI Breakdown (2021–2025)" [ref=e198] [cursor=pointer]':
-                  - /url: /blog/flyers-roi-breakdown/
-              - paragraph [ref=e199]: A detailed breakdown of how strategic flyer campaigns generated massive ROI over 4 years. Real numbers, lessons learned, and actionable strategies for local marketing success.
-              - generic [ref=e200]:
-                - heading "Key Topics:" [level=4] [ref=e201]
-                - generic [ref=e202]:
-                  - generic [ref=e205]: flyers
-                  - generic [ref=e208]: roi
-                  - generic [ref=e211]: local marketing
-                  - generic [ref=e214]: +2 more insights
-              - generic [ref=e215]:
-                - link "Read Article" [ref=e216] [cursor=pointer]:
-                  - /url: /blog/flyers-roi-breakdown/
-                - generic [ref=e217]:
-                  - generic [ref=e218]: By Joe from Vivid Auto
-                  - time [ref=e219]: January 15, 2025
-          - article [ref=e220]:
-            - generic [ref=e221]:
-              - generic [ref=e223]:
-                - generic [ref=e225]: Loading image...
-                - generic [ref=e229]: Loading image...
-              - generic [ref=e230]: 8 min read
-            - generic [ref=e231]:
-              - heading "Stock Photography Lessons and Applications" [level=3] [ref=e232]:
-                - link "Stock Photography Lessons and Applications" [ref=e233] [cursor=pointer]:
-                  - /url: /blog/stock-photography-lessons/
-              - paragraph [ref=e234]: Essential insights from the world of stock photography and how to apply professional techniques to automotive and commercial photography projects.
-              - generic [ref=e235]:
-                - heading "Key Topics:" [level=4] [ref=e236]
-                - generic [ref=e237]:
-                  - generic [ref=e240]: stock photography
-                  - generic [ref=e243]: commercial photography
-                  - generic [ref=e246]: automotive
-                  - generic [ref=e249]: +2 more insights
-              - generic [ref=e250]:
-                - link "Read Article" [ref=e251] [cursor=pointer]:
-                  - /url: /blog/stock-photography-lessons/
-                - generic [ref=e252]:
-                  - generic [ref=e253]: By Joe from Vivid Auto
-                  - time [ref=e254]: January 10, 2025
-        - link "View All Posts" [ref=e256] [cursor=pointer]:
-          - /url: /blog/
-    - contentinfo [ref=e257]:
-      - generic [ref=e258]:
-        - generic [ref=e259]:
-          - generic [ref=e260]:
-            - link "Vivid Auto Photography Logo Vivid Auto Photography" [ref=e261] [cursor=pointer]:
-              - /url: /
-              - img "Vivid Auto Photography Logo" [ref=e262] [cursor=pointer]
-              - generic [ref=e263] [cursor=pointer]: Vivid Auto Photography
-            - paragraph [ref=e264]: Professional Vivid Auto Photography services with mobile-first design approach.
-            - generic [ref=e265]:
-              - link "Facebook" [ref=e266] [cursor=pointer]:
-                - /url: "#"
-                - img [ref=e267] [cursor=pointer]
-              - link "Twitter" [ref=e269] [cursor=pointer]:
-                - /url: "#"
-                - img [ref=e270] [cursor=pointer]
-              - link "LinkedIn" [ref=e272] [cursor=pointer]:
-                - /url: "#"
-                - img [ref=e273] [cursor=pointer]
-          - generic [ref=e275]:
-            - heading "Services" [level=3] [ref=e276]
-            - list [ref=e277]:
-              - listitem [ref=e278]:
-                - link "Photography" [ref=e279] [cursor=pointer]:
-                  - /url: /services/photography/
-              - listitem [ref=e280]:
-                - link "Analytics" [ref=e281] [cursor=pointer]:
-                  - /url: /services/analytics/
-              - listitem [ref=e282]:
-                - link "Ad Campaigns" [ref=e283] [cursor=pointer]:
-                  - /url: /services/ad-campaigns/
-          - generic [ref=e284]:
-            - heading "Company" [level=3] [ref=e285]
-            - list [ref=e286]:
-              - listitem [ref=e287]:
-                - link "About" [ref=e288] [cursor=pointer]:
-                  - /url: /about/
-              - listitem [ref=e289]:
-                - link "Blog" [ref=e290] [cursor=pointer]:
-                  - /url: /blog/
-              - listitem [ref=e291]:
-                - link "Contact" [ref=e292] [cursor=pointer]:
-                  - /url: /contact/
-          - generic [ref=e293]:
-            - heading "Legal" [level=3] [ref=e294]
-            - list [ref=e295]:
-              - listitem [ref=e296]:
-                - link "Privacy Policy" [ref=e297] [cursor=pointer]:
-                  - /url: /privacy/
-              - listitem [ref=e298]:
-                - link "Terms of Service" [ref=e299] [cursor=pointer]:
-                  - /url: /terms/
-        - generic [ref=e301]:
-          - paragraph [ref=e302]: © 2025 Vivid Auto Photography Website. All rights reserved.
-          - paragraph [ref=e303]: Built with mobile-first design principles
-  - button "Open Next.js Dev Tools" [ref=e309] [cursor=pointer]:
-    - img [ref=e310] [cursor=pointer]
-  - alert [ref=e313]
+    - generic [ref=e2]:
+        - banner [ref=e3]:
+            - generic [ref=e5]:
+                - link "Go to homepage" [ref=e6] [cursor=pointer]:
+                    - /url: /
+                    - img "Vivid Auto Photography Logo" [ref=e7]
+                      [cursor=pointer]
+                - navigation [ref=e8]:
+                    - link "Home" [ref=e9] [cursor=pointer]:
+                        - /url: /
+                    - link "Services" [active] [ref=e10] [cursor=pointer]:
+                        - /url: /services/
+                    - link "Blog" [ref=e11] [cursor=pointer]:
+                        - /url: /blog/
+                    - link "About" [ref=e12] [cursor=pointer]:
+                        - /url: /about/
+                    - link "Contact" [ref=e13] [cursor=pointer]:
+                        - /url: /contact/
+                - link "Get Started" [ref=e15] [cursor=pointer]:
+                    - /url: /contact/
+                - button "Toggle mobile menu" [ref=e16] [cursor=pointer]:
+                    - img [ref=e17] [cursor=pointer]
+        - main "Home" [ref=e19]:
+            - generic [ref=e20]:
+                - img "More than Photography. Data-Driven Vivid Auto Photography
+                  that Delivers! - Mobile-first Vivid Auto Photography services
+                  background" [ref=e23]
+                - generic [ref=e26]:
+                    - ? heading "More than Photography. Data-Driven Vivid Auto
+                        Photography that Delivers!" [level=1] [ref=e27]
+                      : - text: More than Photography.
+                        - text:
+                            Data-Driven Vivid Auto Photography that Delivers!
+                    - paragraph [ref=e28]:
+                        Helping businesses across Nantwich & Cheshire grow with
+                        a unique mix of professional photography, analytics, and
+                        ad campaign optimisation. Designed to work on any device
+            - generic [ref=e33]:
+                - generic [ref=e34]:
+                    - heading "Our Services" [level=2] [ref=e35]
+                    - paragraph [ref=e36]:
+                        Comprehensive solutions to grow your business
+                - generic [ref=e37]:
+                    - generic [ref=e38]:
+                        - generic [ref=e39]:
+                            - generic [ref=e43]: Loading image...
+                            - generic [ref=e44]: 📷
+                        - generic [ref=e45]:
+                            - heading "Photography Services" [level=3] [ref=e46]
+                            - paragraph [ref=e47]:
+                                Capture your most important moments with our
+                                professional photography services.
+                            - generic [ref=e48]:
+                                - heading "Key Features:" [level=4] [ref=e49]
+                                - list [ref=e50]:
+                                    - listitem [ref=e51]: Event Photography
+                                    - listitem [ref=e53]: Portrait Sessions
+                                    - listitem [ref=e55]: Commercial Photography
+                                    - listitem [ref=e57]: +1 more features
+                            - generic [ref=e58]:
+                                - link "Learn More" [ref=e59] [cursor=pointer]:
+                                    - /url: /services/photography/
+                                - link "Get Started" [ref=e60] [cursor=pointer]:
+                                    - /url: /contact/
+                    - generic [ref=e61]:
+                        - generic [ref=e62]:
+                            - generic [ref=e66]: Loading image...
+                            - generic [ref=e67]: 📊
+                        - generic [ref=e68]:
+                            - heading "Data Analytics & Insights" [level=3]
+                              [ref=e69]
+                            - paragraph [ref=e70]:
+                                Transform your data into actionable insights
+                                that drive business growth.
+                            - generic [ref=e71]:
+                                - heading "Key Features:" [level=4] [ref=e72]
+                                - list [ref=e73]:
+                                    - listitem [ref=e74]: Web Analytics Setup
+                                    - listitem [ref=e76]:
+                                        Custom Dashboard Creation
+                                    - listitem [ref=e78]: Performance Reporting
+                                    - listitem [ref=e80]: +1 more features
+                            - generic [ref=e81]:
+                                - link "Learn More" [ref=e82] [cursor=pointer]:
+                                    - /url: /services/analytics/
+                                - link "Get Started" [ref=e83] [cursor=pointer]:
+                                    - /url: /contact/
+                    - generic [ref=e84]:
+                        - generic [ref=e85]:
+                            - generic [ref=e89]: Loading image...
+                            - generic [ref=e90]: 📢
+                        - generic [ref=e91]:
+                            - heading "Strategic Ad Campaigns" [level=3]
+                              [ref=e92]
+                            - paragraph [ref=e93]:
+                                Drive results with targeted advertising
+                                campaigns across multiple platforms.
+                            - generic [ref=e94]:
+                                - heading "Key Features:" [level=4] [ref=e95]
+                                - list [ref=e96]:
+                                    - listitem [ref=e97]: Google Ads Management
+                                    - listitem [ref=e99]:
+                                        Social Media Advertising
+                                    - listitem [ref=e101]:
+                                        Campaign Strategy Development
+                                    - listitem [ref=e103]: +1 more features
+                            - generic [ref=e104]:
+                                - link "Learn More" [ref=e105] [cursor=pointer]:
+                                    - /url: /services/ad-campaigns/
+                                - ? link "Get Started" [ref=e106]
+                                    [cursor=pointer]
+                                  : - /url: /contact/
+                - link "View All Services" [ref=e108] [cursor=pointer]:
+                    - /url: /services/
+            - generic [ref=e110]:
+                - generic [ref=e111]:
+                    - heading "What Our Clients Say" [level=2] [ref=e112]
+                    - paragraph [ref=e113]:
+                        Trusted by businesses across Cheshire
+                - generic [ref=e114]:
+                    - button "Previous testimonial" [ref=e115] [cursor=pointer]:
+                        - img [ref=e116] [cursor=pointer]
+                    - generic [ref=e118]:
+                        - generic [ref=e119]:
+                            - img [ref=e120]
+                            - img [ref=e122]
+                            - img [ref=e124]
+                            - img [ref=e126]
+                            - img [ref=e128]
+                        - blockquote [ref=e130]:
+                            '"A huge thank you! Joe Morris is a fantastic
+                            photographer from Cheshire who has been providing us
+                            with amazing images of our cars for over 18 months
+                            at LSH Auto UK!"'
+                        - generic [ref=e131]:
+                            - heading "Lee Murfitt" [level=4] [ref=e132]
+                            - paragraph [ref=e133]:
+                                Lead Strategist for Digital Growth & SEO
+                            - paragraph [ref=e134]: SciMed
+                    - button "Next testimonial" [ref=e135] [cursor=pointer]:
+                        - img [ref=e136] [cursor=pointer]
+                - generic [ref=e138]:
+                    - button "Go to testimonial 1" [ref=e139] [cursor=pointer]
+                    - button "Go to testimonial 2" [ref=e140] [cursor=pointer]
+                - generic [ref=e141]:
+                    - paragraph [ref=e142]: Ready to work with us?
+                    - button "Get In Touch" [ref=e143] [cursor=pointer]
+            - generic [ref=e145]:
+                - generic [ref=e146]:
+                    - heading "Latest Insights" [level=2] [ref=e147]
+                    - paragraph [ref=e148]:
+                        Stay updated with our latest thoughts and industry
+                        insights
+                - generic [ref=e149]:
+                    - article [ref=e150]:
+                        - generic [ref=e151]:
+                            - generic [ref=e153]:
+                                - generic [ref=e155]: Loading image...
+                                - generic [ref=e159]: Loading image...
+                            - generic [ref=e160]: 3 min read
+                        - generic [ref=e161]:
+                            - ? heading "What I Learned From My Paid Ads
+                                Campaign" [level=3] [ref=e162]
+                              : - ? link "What I Learned From My Paid Ads
+                                    Campaign" [ref=e163] [cursor=pointer]
+                                  : - /url: /blog/paid-ads-campaign-learnings/
+                            - paragraph [ref=e164]:
+                                Discover how I used Meta Ads, Google Ads, and UX
+                                insights to drive qualified traffic, grow my
+                                newsletter, and improve future marketing
+                                campaigns.
+                            - generic [ref=e165]:
+                                - heading "Key Topics:" [level=4] [ref=e166]
+                                - generic [ref=e167]:
+                                    - generic [ref=e170]: meta ads
+                                    - generic [ref=e173]: google ads
+                                    - generic [ref=e176]: hotjar
+                                    - generic [ref=e179]: +2 more insights
+                            - generic [ref=e180]:
+                                - ? link "Read Article" [ref=e181]
+                                    [cursor=pointer]
+                                  : - /url: /blog/paid-ads-campaign-learnings/
+                                - generic [ref=e182]:
+                                    - generic [ref=e183]: By Joe from Vivid Auto
+                                    - time [ref=e184]: August 11, 2025
+                    - article [ref=e185]:
+                        - generic [ref=e186]:
+                            - generic [ref=e188]:
+                                - generic [ref=e190]: Loading image...
+                                - generic [ref=e194]: Loading image...
+                            - generic [ref=e195]: 6 min read
+                        - generic [ref=e196]:
+                            - ? 'heading "How I Turned £546 into £13.5K With
+                                Flyers: Year-by-Year ROI Breakdown (2021–2025)"
+                                [level=3] [ref=e197]'
+                              : - ? 'link "How I Turned £546 into £13.5K With
+                                    Flyers: Year-by-Year ROI Breakdown
+                                    (2021–2025)" [ref=e198] [cursor=pointer]'
+                                  : - /url: /blog/flyers-roi-breakdown/
+                            - paragraph [ref=e199]:
+                                A detailed breakdown of how strategic flyer
+                                campaigns generated massive ROI over 4 years.
+                                Real numbers, lessons learned, and actionable
+                                strategies for local marketing success.
+                            - generic [ref=e200]:
+                                - heading "Key Topics:" [level=4] [ref=e201]
+                                - generic [ref=e202]:
+                                    - generic [ref=e205]: flyers
+                                    - generic [ref=e208]: roi
+                                    - generic [ref=e211]: local marketing
+                                    - generic [ref=e214]: +2 more insights
+                            - generic [ref=e215]:
+                                - ? link "Read Article" [ref=e216]
+                                    [cursor=pointer]
+                                  : - /url: /blog/flyers-roi-breakdown/
+                                - generic [ref=e217]:
+                                    - generic [ref=e218]: By Joe from Vivid Auto
+                                    - time [ref=e219]: January 15, 2025
+                    - article [ref=e220]:
+                        - generic [ref=e221]:
+                            - generic [ref=e223]:
+                                - generic [ref=e225]: Loading image...
+                                - generic [ref=e229]: Loading image...
+                            - generic [ref=e230]: 8 min read
+                        - generic [ref=e231]:
+                            - ? heading "Stock Photography Lessons and
+                                Applications" [level=3] [ref=e232]
+                              : - ? link "Stock Photography Lessons and
+                                    Applications" [ref=e233] [cursor=pointer]
+                                  : - /url: /blog/stock-photography-lessons/
+                            - paragraph [ref=e234]:
+                                Essential insights from the world of stock
+                                photography and how to apply professional
+                                techniques to automotive and commercial
+                                photography projects.
+                            - generic [ref=e235]:
+                                - heading "Key Topics:" [level=4] [ref=e236]
+                                - generic [ref=e237]:
+                                    - generic [ref=e240]: stock photography
+                                    - generic [ref=e243]: commercial photography
+                                    - generic [ref=e246]: automotive
+                                    - generic [ref=e249]: +2 more insights
+                            - generic [ref=e250]:
+                                - ? link "Read Article" [ref=e251]
+                                    [cursor=pointer]
+                                  : - /url: /blog/stock-photography-lessons/
+                                - generic [ref=e252]:
+                                    - generic [ref=e253]: By Joe from Vivid Auto
+                                    - time [ref=e254]: January 10, 2025
+                - link "View All Posts" [ref=e256] [cursor=pointer]:
+                    - /url: /blog/
+        - contentinfo [ref=e257]:
+            - generic [ref=e258]:
+                - generic [ref=e259]:
+                    - generic [ref=e260]:
+                        - ? link "Vivid Auto Photography Logo Vivid Auto
+                            Photography" [ref=e261] [cursor=pointer]
+                          : - /url: /
+                            - img "Vivid Auto Photography Logo" [ref=e262]
+                              [cursor=pointer]
+                            - generic [ref=e263] [cursor=pointer]:
+                                Vivid Auto Photography
+                        - paragraph [ref=e264]:
+                            Professional Vivid Auto Photography services with
+                            mobile-first design approach.
+                        - generic [ref=e265]:
+                            - link "Facebook" [ref=e266] [cursor=pointer]:
+                                - /url: '#'
+                                - img [ref=e267] [cursor=pointer]
+                            - link "Twitter" [ref=e269] [cursor=pointer]:
+                                - /url: '#'
+                                - img [ref=e270] [cursor=pointer]
+                            - link "LinkedIn" [ref=e272] [cursor=pointer]:
+                                - /url: '#'
+                                - img [ref=e273] [cursor=pointer]
+                    - generic [ref=e275]:
+                        - heading "Services" [level=3] [ref=e276]
+                        - list [ref=e277]:
+                            - listitem [ref=e278]:
+                                - ? link "Photography" [ref=e279]
+                                    [cursor=pointer]
+                                  : - /url: /services/photography/
+                            - listitem [ref=e280]:
+                                - link "Analytics" [ref=e281] [cursor=pointer]:
+                                    - /url: /services/analytics/
+                            - listitem [ref=e282]:
+                                - ? link "Ad Campaigns" [ref=e283]
+                                    [cursor=pointer]
+                                  : - /url: /services/ad-campaigns/
+                    - generic [ref=e284]:
+                        - heading "Company" [level=3] [ref=e285]
+                        - list [ref=e286]:
+                            - listitem [ref=e287]:
+                                - link "About" [ref=e288] [cursor=pointer]:
+                                    - /url: /about/
+                            - listitem [ref=e289]:
+                                - link "Blog" [ref=e290] [cursor=pointer]:
+                                    - /url: /blog/
+                            - listitem [ref=e291]:
+                                - link "Contact" [ref=e292] [cursor=pointer]:
+                                    - /url: /contact/
+                    - generic [ref=e293]:
+                        - heading "Legal" [level=3] [ref=e294]
+                        - list [ref=e295]:
+                            - listitem [ref=e296]:
+                                - ? link "Privacy Policy" [ref=e297]
+                                    [cursor=pointer]
+                                  : - /url: /privacy/
+                            - listitem [ref=e298]:
+                                - ? link "Terms of Service" [ref=e299]
+                                    [cursor=pointer]
+                                  : - /url: /terms/
+                - generic [ref=e301]:
+                    - paragraph [ref=e302]:
+                        © 2025 Vivid Auto Photography Website. All rights
+                        reserved.
+                    - paragraph [ref=e303]:
+                        Built with mobile-first design principles
+    - button "Open Next.js Dev Tools" [ref=e309] [cursor=pointer]:
+        - img [ref=e310] [cursor=pointer]
+    - alert [ref=e313]
 ```

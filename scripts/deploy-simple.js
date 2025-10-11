@@ -2,7 +2,7 @@
 
 /**
  * Simple S3 Deployment Script
- * 
+ *
  * Quick deployment to S3 without CloudFront complexity
  */
 
@@ -29,43 +29,51 @@ function runCommand(command) {
 
 function main() {
   log('Starting simple S3 deployment...');
-  
+
   // Check if build exists
   if (!fs.existsSync('out')) {
-    console.error('❌ Build directory "out" not found. Run "npm run build" first.');
+    console.error(
+      '❌ Build directory "out" not found. Run "npm run build" first.'
+    );
     process.exit(1);
   }
-  
+
   // Create bucket
   log(`Creating bucket: ${BUCKET_NAME}`);
   runCommand(`aws s3 mb s3://${BUCKET_NAME} --region ${REGION}`);
-  
+
   // Upload files
   log('Uploading files...');
   runCommand(`aws s3 sync out/ s3://${BUCKET_NAME} --delete`);
-  
+
   // Configure for static hosting
   log('Configuring static website hosting...');
-  runCommand(`aws s3 website s3://${BUCKET_NAME} --index-document index.html --error-document index.html`);
-  
+  runCommand(
+    `aws s3 website s3://${BUCKET_NAME} --index-document index.html --error-document index.html`
+  );
+
   // Make public
   const policy = {
-    "Version": "2012-10-17",
-    "Statement": [{
-      "Sid": "PublicReadGetObject",
-      "Effect": "Allow",
-      "Principal": "*",
-      "Action": "s3:GetObject",
-      "Resource": `arn:aws:s3:::${BUCKET_NAME}/*`
-    }]
+    Version: '2012-10-17',
+    Statement: [
+      {
+        Sid: 'PublicReadGetObject',
+        Effect: 'Allow',
+        Principal: '*',
+        Action: 's3:GetObject',
+        Resource: `arn:aws:s3:::${BUCKET_NAME}/*`,
+      },
+    ],
   };
-  
+
   fs.writeFileSync('policy.json', JSON.stringify(policy));
-  runCommand(`aws s3api put-bucket-policy --bucket ${BUCKET_NAME} --policy file://policy.json`);
+  runCommand(
+    `aws s3api put-bucket-policy --bucket ${BUCKET_NAME} --policy file://policy.json`
+  );
   fs.unlinkSync('policy.json');
-  
+
   const url = `http://${BUCKET_NAME}.s3-website-${REGION}.amazonaws.com`;
-  
+
   log('✅ Deployment complete!');
   log(`🌐 Your site is live at: ${url}`);
   log(`📝 Bucket name: ${BUCKET_NAME}`);

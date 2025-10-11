@@ -39,6 +39,7 @@ Generated: 05/10/2025, 16:51:31
 **Metric:** LCP
 
 **Actions:**
+
 - Optimize and compress hero images
 - Implement critical CSS inlining
 - Preload key resources
@@ -49,6 +50,7 @@ Generated: 05/10/2025, 16:51:31
 **Metric:** CLS
 
 **Actions:**
+
 - Add size attributes to images and videos
 - Reserve space for dynamic content
 - Use CSS aspect-ratio for responsive media
@@ -59,6 +61,7 @@ Generated: 05/10/2025, 16:51:31
 **Metric:** JavaScript Bundle
 
 **Actions:**
+
 - Implement code splitting
 - Remove unused dependencies
 - Use dynamic imports for non-critical code
@@ -66,14 +69,14 @@ Generated: 05/10/2025, 16:51:31
 
 ## Performance Budgets
 
-| Metric | Budget | Description |
-|--------|--------|-------------|
-| LCP | 2500ms | Largest Contentful Paint |
-| FID | 100ms | First Input Delay |
-| CLS | 0.1 | Cumulative Layout Shift |
-| FCP | 1800ms | First Contentful Paint |
-| TTI | 3800ms | Time to Interactive |
-| TBT | 200ms | Total Blocking Time |
-| JS Bundle | 500 KB | JavaScript Bundle Size |
-| CSS Bundle | 100 KB | CSS Bundle Size |
-| Performance Score | 85 | Lighthouse Performance Score |
+| Metric            | Budget | Description                  |
+| ----------------- | ------ | ---------------------------- |
+| LCP               | 2500ms | Largest Contentful Paint     |
+| FID               | 100ms  | First Input Delay            |
+| CLS               | 0.1    | Cumulative Layout Shift      |
+| FCP               | 1800ms | First Contentful Paint       |
+| TTI               | 3800ms | Time to Interactive          |
+| TBT               | 200ms  | Total Blocking Time          |
+| JS Bundle         | 500 KB | JavaScript Bundle Size       |
+| CSS Bundle        | 100 KB | CSS Bundle Size              |
+| Performance Score | 85     | Lighthouse Performance Score |

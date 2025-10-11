@@ -190,10 +190,7 @@
           "overall": 81
         },
         "status": "NEEDS_IMPROVEMENT",
-        "imageTypes": [
-          "services",
-          "blog-preview"
-        ]
+        "imageTypes": ["services", "blog-preview"]
       },
       "/services/photography": {
         "name": "Photography Services",
@@ -211,10 +208,7 @@
           "overall": 76
         },
         "status": "NEEDS_IMPROVEMENT",
-        "imageTypes": [
-          "hero",
-          "portfolio"
-        ]
+        "imageTypes": ["hero", "portfolio"]
       },
       "/services/analytics": {
         "name": "Data Analytics",
@@ -232,10 +226,7 @@
           "overall": 76
         },
         "status": "NEEDS_IMPROVEMENT",
-        "imageTypes": [
-          "hero",
-          "portfolio"
-        ]
+        "imageTypes": ["hero", "portfolio"]
       },
       "/services/ad-campaigns": {
         "name": "Ad Campaigns",
@@ -253,10 +244,7 @@
           "overall": 76
         },
         "status": "NEEDS_IMPROVEMENT",
-        "imageTypes": [
-          "hero",
-          "portfolio"
-        ]
+        "imageTypes": ["hero", "portfolio"]
       },
       "/about": {
         "name": "About Page",
@@ -274,9 +262,7 @@
           "overall": 79
         },
         "status": "NEEDS_IMPROVEMENT",
-        "imageTypes": [
-          "hero"
-        ]
+        "imageTypes": ["hero"]
       },
       "/blog": {
         "name": "Blog Page",
@@ -294,10 +280,7 @@
           "overall": 81
         },
         "status": "NEEDS_IMPROVEMENT",
-        "imageTypes": [
-          "services",
-          "blog-preview"
-        ]
+        "imageTypes": ["services", "blog-preview"]
       }
     },
     "imageImpact": {},
@@ -419,27 +402,15 @@
       "technicalImpact": {
         "performance": {
           "severity": "HIGH",
-          "areas": [
-            "LCP",
-            "CLS",
-            "Image Loading Speed"
-          ]
+          "areas": ["LCP", "CLS", "Image Loading Speed"]
         },
         "reliability": {
           "severity": "LOW",
-          "areas": [
-            "Image Availability",
-            "CDN Performance",
-            "Cache Configuration"
-          ]
+          "areas": ["Image Availability", "CDN Performance", "Cache Configuration"]
         },
         "scalability": {
           "severity": "MEDIUM",
-          "areas": [
-            "Image Optimization",
-            "Bandwidth Usage",
-            "Server Load"
-          ]
+          "areas": ["Image Optimization", "Bandwidth Usage", "Server Load"]
         }
       }
     },
@@ -579,9 +550,7 @@
       "timeframe": "24 hours",
       "title": "Resolve Critical Performance Issues",
       "description": "Address all critical image loading and Core Web Vitals issues immediately",
-      "actions": [
-        "Address critical Core Web Vitals issues affecting SEO"
-      ]
+      "actions": ["Address critical Core Web Vitals issues affecting SEO"]
     },
     {
       "category": "SHORT_TERM_OPTIMIZATION",

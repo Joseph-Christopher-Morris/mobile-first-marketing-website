@@ -1,14 +1,17 @@
 # Access Control and Audit Logging Setup Guide
 
-This guide covers the implementation of comprehensive access control and audit logging for the S3/CloudFront deployment infrastructure.
+This guide covers the implementation of comprehensive access control and audit
+logging for the S3/CloudFront deployment infrastructure.
 
 ## Overview
 
 The access control and audit logging system implements:
 
-- **Least Privilege IAM Policies**: Minimal permissions for deployment and monitoring operations
+- **Least Privilege IAM Policies**: Minimal permissions for deployment and
+  monitoring operations
 - **S3 Bucket Policies**: CloudFront-only access with direct access denial
-- **Comprehensive Audit Logging**: S3 access logs, CloudTrail API auditing, and CloudWatch log aggregation
+- **Comprehensive Audit Logging**: S3 access logs, CloudTrail API auditing, and
+  CloudWatch log aggregation
 
 ## Security Architecture
 
@@ -109,20 +112,14 @@ The monitoring policy provides read-only access for audit and monitoring:
       "Resource": "*",
       "Condition": {
         "StringLike": {
-          "cloudwatch:namespace": [
-            "AWS/S3",
-            "AWS/CloudFront"
-          ]
+          "cloudwatch:namespace": ["AWS/S3", "AWS/CloudFront"]
         }
       }
     },
     {
       "Sid": "CloudTrailReadAccess",
       "Effect": "Allow",
-      "Action": [
-        "cloudtrail:LookupEvents",
-        "cloudtrail:GetTrailStatus"
-      ],
+      "Action": ["cloudtrail:LookupEvents", "cloudtrail:GetTrailStatus"],
       "Resource": "*"
     }
   ]
@@ -156,10 +153,7 @@ The S3 bucket policy enforces CloudFront-only access:
       "Effect": "Deny",
       "Principal": "*",
       "Action": "s3:*",
-      "Resource": [
-        "arn:aws:s3:::bucket-name",
-        "arn:aws:s3:::bucket-name/*"
-      ],
+      "Resource": ["arn:aws:s3:::bucket-name", "arn:aws:s3:::bucket-name/*"],
       "Condition": {
         "StringNotEquals": {
           "AWS:SourceArn": "arn:aws:cloudfront::account-id:distribution/distribution-id"
@@ -174,10 +168,7 @@ The S3 bucket policy enforces CloudFront-only access:
       "Effect": "Deny",
       "Principal": "*",
       "Action": "s3:*",
-      "Resource": [
-        "arn:aws:s3:::bucket-name",
-        "arn:aws:s3:::bucket-name/*"
-      ],
+      "Resource": ["arn:aws:s3:::bucket-name", "arn:aws:s3:::bucket-name/*"],
       "Condition": {
         "Bool": {
           "aws:SecureTransport": "false"
@@ -274,24 +265,28 @@ aws logs describe-log-groups --log-group-name-prefix "/aws/s3/"
 Use this checklist to verify proper setup:
 
 ### IAM Policies
+
 - [ ] Deployment policy created with least privilege
 - [ ] Monitoring policy created for audit access
 - [ ] Policies attached to appropriate roles
 - [ ] No overly permissive policies
 
 ### S3 Security
+
 - [ ] Bucket policy allows CloudFront-only access
 - [ ] Public access block enabled on bucket
 - [ ] SSL-only access enforced
 - [ ] Access logging enabled
 
 ### Audit Logging
+
 - [ ] CloudTrail created and logging enabled
 - [ ] S3 data events configured in CloudTrail
 - [ ] CloudWatch log groups created
 - [ ] Log retention policies set
 
 ### Access Control Testing
+
 - [ ] Direct S3 access properly denied
 - [ ] CloudFront access working correctly
 - [ ] HTTPS redirect functioning

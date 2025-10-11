@@ -111,10 +111,7 @@
           "Client supports wide range (TLS 1.0-1.3)": {
             "success": true,
             "negotiatedProtocol": "TLSv1.3",
-            "expectedProtocol": [
-              "TLSv1.2",
-              "TLSv1.3"
-            ],
+            "expectedProtocol": ["TLSv1.2", "TLSv1.3"],
             "status": "✅ CORRECT",
             "note": "Expected one of: TLSv1.2, TLSv1.3, Got: TLSv1.3",
             "details": {
@@ -144,10 +141,7 @@
       }
     }
   ],
-  "testDomains": [
-    "github.com",
-    "cloudflare.com"
-  ],
+  "testDomains": ["github.com", "cloudflare.com"],
   "overallStatus": "FULLY_COMPLIANT",
   "complianceScore": 100,
   "recommendations": [],

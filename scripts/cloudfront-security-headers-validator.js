@@ -2,15 +2,15 @@
 
 /**
  * CloudFront Security Headers Validator
- * 
+ *
  * Validates comprehensive security headers implementation for CloudFront distribution
  * Addresses requirement 7.3: Security headers in CloudFront responses
  */
 
-const { 
-  CloudFrontClient, 
+const {
+  CloudFrontClient,
   GetResponseHeadersPolicyCommand,
-  GetDistributionCommand 
+  GetDistributionCommand,
 } = require('@aws-sdk/client-cloudfront');
 const https = require('https');
 const fs = require('fs');
@@ -18,8 +18,8 @@ const path = require('path');
 
 class CloudFrontSecurityHeadersValidator {
   constructor() {
-    this.cloudFrontClient = new CloudFrontClient({ 
-      region: 'us-east-1' 
+    this.cloudFrontClient = new CloudFrontClient({
+      region: 'us-east-1',
     });
     this.distributionId = process.env.CLOUDFRONT_DISTRIBUTION_ID;
     this.testUrl = process.env.TEST_URL || process.env.CLOUDFRONT_URL;
@@ -28,7 +28,7 @@ class CloudFrontSecurityHeadersValidator {
       headerValidation: { passed: 0, failed: 0, tests: [] },
       cspValidation: { passed: 0, failed: 0, tests: [] },
       securityCompliance: { passed: 0, failed: 0, tests: [] },
-      overall: { passed: 0, failed: 0 }
+      overall: { passed: 0, failed: 0 },
     };
   }
 
@@ -39,7 +39,12 @@ class CloudFrontSecurityHeadersValidator {
     console.log('\n🔍 Validating Security Headers Policy Configuration...');
 
     if (!this.distributionId) {
-      this.addTest('policyValidation', 'Distribution ID available', false, 'CLOUDFRONT_DISTRIBUTION_ID not set');
+      this.addTest(
+        'policyValidation',
+        'Distribution ID available',
+        false,
+        'CLOUDFRONT_DISTRIBUTION_ID not set'
+      );
       return null;
     }
 
@@ -53,14 +58,25 @@ class CloudFrontSecurityHeadersValidator {
       this.addTest('policyValidation', 'Distribution found', true);
 
       // Check if response headers policy is attached
-      const responseHeadersPolicyId = distribution.DistributionConfig.DefaultCacheBehavior.ResponseHeadersPolicyId;
-      
+      const responseHeadersPolicyId =
+        distribution.DistributionConfig.DefaultCacheBehavior
+          .ResponseHeadersPolicyId;
+
       if (!responseHeadersPolicyId) {
-        this.addTest('policyValidation', 'Response headers policy attached', false, 'No policy attached to default cache behavior');
+        this.addTest(
+          'policyValidation',
+          'Response headers policy attached',
+          false,
+          'No policy attached to default cache behavior'
+        );
         return null;
       }
 
-      this.addTest('policyValidation', 'Response headers policy attached', true);
+      this.addTest(
+        'policyValidation',
+        'Response headers policy attached',
+        true
+      );
 
       // Get the response headers policy details
       const policyResult = await this.cloudFrontClient.send(
@@ -68,12 +84,20 @@ class CloudFrontSecurityHeadersValidator {
       );
 
       const policy = policyResult.ResponseHeadersPolicy;
-      this.addTest('policyValidation', 'Response headers policy retrieved', true);
+      this.addTest(
+        'policyValidation',
+        'Response headers policy retrieved',
+        true
+      );
 
       return policy;
-
     } catch (error) {
-      this.addTest('policyValidation', 'Policy validation', false, error.message);
+      this.addTest(
+        'policyValidation',
+        'Policy validation',
+        false,
+        error.message
+      );
       return null;
     }
   }
@@ -85,22 +109,37 @@ class CloudFrontSecurityHeadersValidator {
     console.log('\n🛡️ Validating Security Headers in Policy...');
 
     if (!policy) {
-      this.addTest('headerValidation', 'Policy available for validation', false);
+      this.addTest(
+        'headerValidation',
+        'Policy available for validation',
+        false
+      );
       return;
     }
 
-    const securityConfig = policy.ResponseHeadersPolicyConfig.SecurityHeadersConfig;
-    const customHeaders = policy.ResponseHeadersPolicyConfig.CustomHeadersConfig?.Items || [];
+    const securityConfig =
+      policy.ResponseHeadersPolicyConfig.SecurityHeadersConfig;
+    const customHeaders =
+      policy.ResponseHeadersPolicyConfig.CustomHeadersConfig?.Items || [];
 
     // Validate HSTS
     if (securityConfig?.StrictTransportSecurity) {
       const hsts = securityConfig.StrictTransportSecurity;
       this.addTest('headerValidation', 'HSTS configured', true);
-      
+
       const hasLongMaxAge = hsts.AccessControlMaxAgeSec >= 31536000; // At least 1 year
-      this.addTest('headerValidation', 'HSTS max-age >= 1 year', hasLongMaxAge, `max-age: ${hsts.AccessControlMaxAgeSec}`);
-      
-      this.addTest('headerValidation', 'HSTS includeSubDomains enabled', hsts.IncludeSubdomains);
+      this.addTest(
+        'headerValidation',
+        'HSTS max-age >= 1 year',
+        hasLongMaxAge,
+        `max-age: ${hsts.AccessControlMaxAgeSec}`
+      );
+
+      this.addTest(
+        'headerValidation',
+        'HSTS includeSubDomains enabled',
+        hsts.IncludeSubdomains
+      );
       this.addTest('headerValidation', 'HSTS preload enabled', hsts.Preload);
     } else {
       this.addTest('headerValidation', 'HSTS configured', false);
@@ -108,18 +147,31 @@ class CloudFrontSecurityHeadersValidator {
 
     // Validate Content Type Options
     if (securityConfig?.ContentTypeOptions) {
-      this.addTest('headerValidation', 'X-Content-Type-Options configured', true);
+      this.addTest(
+        'headerValidation',
+        'X-Content-Type-Options configured',
+        true
+      );
     } else {
-      this.addTest('headerValidation', 'X-Content-Type-Options configured', false);
+      this.addTest(
+        'headerValidation',
+        'X-Content-Type-Options configured',
+        false
+      );
     }
 
     // Validate Frame Options
     if (securityConfig?.FrameOptions) {
       const frameOption = securityConfig.FrameOptions.FrameOption;
       this.addTest('headerValidation', 'X-Frame-Options configured', true);
-      
+
       const isSecure = frameOption === 'DENY' || frameOption === 'SAMEORIGIN';
-      this.addTest('headerValidation', 'X-Frame-Options secure value', isSecure, `Value: ${frameOption}`);
+      this.addTest(
+        'headerValidation',
+        'X-Frame-Options secure value',
+        isSecure,
+        `Value: ${frameOption}`
+      );
     } else {
       this.addTest('headerValidation', 'X-Frame-Options configured', false);
     }
@@ -128,8 +180,16 @@ class CloudFrontSecurityHeadersValidator {
     if (securityConfig?.XSSProtection) {
       const xss = securityConfig.XSSProtection;
       this.addTest('headerValidation', 'X-XSS-Protection configured', true);
-      this.addTest('headerValidation', 'X-XSS-Protection enabled', xss.Protection);
-      this.addTest('headerValidation', 'X-XSS-Protection mode=block', xss.ModeBlock);
+      this.addTest(
+        'headerValidation',
+        'X-XSS-Protection enabled',
+        xss.Protection
+      );
+      this.addTest(
+        'headerValidation',
+        'X-XSS-Protection mode=block',
+        xss.ModeBlock
+      );
     } else {
       this.addTest('headerValidation', 'X-XSS-Protection configured', false);
     }
@@ -138,15 +198,20 @@ class CloudFrontSecurityHeadersValidator {
     if (securityConfig?.ReferrerPolicy) {
       const referrerPolicy = securityConfig.ReferrerPolicy.ReferrerPolicy;
       this.addTest('headerValidation', 'Referrer-Policy configured', true);
-      
+
       const secureValues = [
         'strict-origin',
         'strict-origin-when-cross-origin',
         'no-referrer',
-        'same-origin'
+        'same-origin',
       ];
       const isSecure = secureValues.includes(referrerPolicy);
-      this.addTest('headerValidation', 'Referrer-Policy secure value', isSecure, `Value: ${referrerPolicy}`);
+      this.addTest(
+        'headerValidation',
+        'Referrer-Policy secure value',
+        isSecure,
+        `Value: ${referrerPolicy}`
+      );
     } else {
       this.addTest('headerValidation', 'Referrer-Policy configured', false);
     }
@@ -154,10 +219,18 @@ class CloudFrontSecurityHeadersValidator {
     // Validate CSP
     if (securityConfig?.ContentSecurityPolicy) {
       const csp = securityConfig.ContentSecurityPolicy.ContentSecurityPolicy;
-      this.addTest('headerValidation', 'Content-Security-Policy configured', true);
+      this.addTest(
+        'headerValidation',
+        'Content-Security-Policy configured',
+        true
+      );
       this.validateCSPDirectives(csp);
     } else {
-      this.addTest('headerValidation', 'Content-Security-Policy configured', false);
+      this.addTest(
+        'headerValidation',
+        'Content-Security-Policy configured',
+        false
+      );
     }
 
     // Validate custom headers
@@ -180,29 +253,55 @@ class CloudFrontSecurityHeadersValidator {
       'object-src',
       'base-uri',
       'form-action',
-      'frame-ancestors'
+      'frame-ancestors',
     ];
 
     requiredDirectives.forEach(directive => {
       const hasDirective = csp.includes(directive);
-      this.addTest('cspValidation', `${directive} directive present`, hasDirective);
+      this.addTest(
+        'cspValidation',
+        `${directive} directive present`,
+        hasDirective
+      );
     });
 
     // Validate secure defaults
     const hasSecureDefault = csp.includes("default-src 'self'");
-    this.addTest('cspValidation', "Secure default-src 'self'", hasSecureDefault);
+    this.addTest(
+      'cspValidation',
+      "Secure default-src 'self'",
+      hasSecureDefault
+    );
 
     const hasFrameAncestorsNone = csp.includes("frame-ancestors 'none'");
-    this.addTest('cspValidation', 'Frame ancestors protection', hasFrameAncestorsNone);
+    this.addTest(
+      'cspValidation',
+      'Frame ancestors protection',
+      hasFrameAncestorsNone
+    );
 
     const hasObjectSrcNone = csp.includes("object-src 'none'");
-    this.addTest('cspValidation', 'Object-src none protection', hasObjectSrcNone);
+    this.addTest(
+      'cspValidation',
+      'Object-src none protection',
+      hasObjectSrcNone
+    );
 
-    const hasUpgradeInsecureRequests = csp.includes('upgrade-insecure-requests');
-    this.addTest('cspValidation', 'Upgrade insecure requests', hasUpgradeInsecureRequests);
+    const hasUpgradeInsecureRequests = csp.includes(
+      'upgrade-insecure-requests'
+    );
+    this.addTest(
+      'cspValidation',
+      'Upgrade insecure requests',
+      hasUpgradeInsecureRequests
+    );
 
     const hasBlockAllMixedContent = csp.includes('block-all-mixed-content');
-    this.addTest('cspValidation', 'Block all mixed content', hasBlockAllMixedContent);
+    this.addTest(
+      'cspValidation',
+      'Block all mixed content',
+      hasBlockAllMixedContent
+    );
   }
 
   /**
@@ -214,29 +313,29 @@ class CloudFrontSecurityHeadersValidator {
     const expectedCustomHeaders = {
       'Permissions-Policy': {
         required: true,
-        description: 'Feature policy for browser APIs'
+        description: 'Feature policy for browser APIs',
       },
       'Cross-Origin-Embedder-Policy': {
         required: true,
-        description: 'COEP for cross-origin isolation'
+        description: 'COEP for cross-origin isolation',
       },
       'Cross-Origin-Opener-Policy': {
         required: true,
-        description: 'COOP for cross-origin isolation'
+        description: 'COOP for cross-origin isolation',
       },
       'Cross-Origin-Resource-Policy': {
         required: true,
-        description: 'CORP for cross-origin resource sharing'
+        description: 'CORP for cross-origin resource sharing',
       },
       'X-DNS-Prefetch-Control': {
         required: false,
-        description: 'DNS prefetch control'
-      }
+        description: 'DNS prefetch control',
+      },
     };
 
     Object.entries(expectedCustomHeaders).forEach(([headerName, config]) => {
       const header = customHeaders.find(h => h.Header === headerName);
-      
+
       if (header) {
         this.addTest('headerValidation', `${headerName} configured`, true);
         console.log(`    ${headerName}: ${header.Value}`);
@@ -253,7 +352,12 @@ class CloudFrontSecurityHeadersValidator {
     console.log('\n🌐 Testing Live Security Headers...');
 
     if (!this.testUrl) {
-      this.addTest('securityCompliance', 'Test URL available', false, 'TEST_URL or CLOUDFRONT_URL not set');
+      this.addTest(
+        'securityCompliance',
+        'Test URL available',
+        false,
+        'TEST_URL or CLOUDFRONT_URL not set'
+      );
       return;
     }
 
@@ -269,14 +373,14 @@ class CloudFrontSecurityHeadersValidator {
         'x-xss-protection': 'XSS protection',
         'referrer-policy': 'Referrer policy',
         'content-security-policy': 'Content Security Policy',
-        'permissions-policy': 'Permissions policy'
+        'permissions-policy': 'Permissions policy',
       };
 
       Object.entries(criticalHeaders).forEach(([headerName, description]) => {
         const headerValue = headers[headerName];
         const hasHeader = !!headerValue;
         this.addTest('securityCompliance', `${description} present`, hasHeader);
-        
+
         if (hasHeader) {
           console.log(`    ${headerName}: ${headerValue}`);
         }
@@ -287,16 +391,29 @@ class CloudFrontSecurityHeadersValidator {
         const httpUrl = this.testUrl.replace('https://', 'http://');
         try {
           const httpHeaders = await this.fetchHeaders(httpUrl);
-          const hasRedirect = httpHeaders.location && httpHeaders.location.startsWith('https://');
-          this.addTest('securityCompliance', 'HTTP to HTTPS redirect', hasRedirect);
+          const hasRedirect =
+            httpHeaders.location && httpHeaders.location.startsWith('https://');
+          this.addTest(
+            'securityCompliance',
+            'HTTP to HTTPS redirect',
+            hasRedirect
+          );
         } catch (error) {
           // HTTP might be blocked, which is good
-          this.addTest('securityCompliance', 'HTTP access blocked/redirected', true);
+          this.addTest(
+            'securityCompliance',
+            'HTTP access blocked/redirected',
+            true
+          );
         }
       }
-
     } catch (error) {
-      this.addTest('securityCompliance', 'Live header testing', false, error.message);
+      this.addTest(
+        'securityCompliance',
+        'Live header testing',
+        false,
+        error.message
+      );
     }
   }
 
@@ -305,7 +422,7 @@ class CloudFrontSecurityHeadersValidator {
    */
   fetchHeaders(url) {
     return new Promise((resolve, reject) => {
-      const request = https.get(url, { timeout: 10000 }, (response) => {
+      const request = https.get(url, { timeout: 10000 }, response => {
         const headers = {};
         Object.keys(response.headers).forEach(key => {
           headers[key.toLowerCase()] = response.headers[key];
@@ -330,25 +447,35 @@ class CloudFrontSecurityHeadersValidator {
     const recommendations = [];
 
     // Check overall compliance
-    const overallTotal = this.results.overall.passed + this.results.overall.failed;
-    const overallPercentage = overallTotal > 0 ? Math.round((this.results.overall.passed / overallTotal) * 100) : 0;
+    const overallTotal =
+      this.results.overall.passed + this.results.overall.failed;
+    const overallPercentage =
+      overallTotal > 0
+        ? Math.round((this.results.overall.passed / overallTotal) * 100)
+        : 0;
 
     if (overallPercentage < 90) {
-      recommendations.push('Consider addressing failed security header tests for better protection');
+      recommendations.push(
+        'Consider addressing failed security header tests for better protection'
+      );
     }
 
     // Specific recommendations based on failed tests
     const failedTests = [];
     Object.values(this.results).forEach(category => {
       if (category.tests) {
-        category.tests.filter(test => !test.passed).forEach(test => {
-          failedTests.push(test.name);
-        });
+        category.tests
+          .filter(test => !test.passed)
+          .forEach(test => {
+            failedTests.push(test.name);
+          });
       }
     });
 
     if (failedTests.includes('HSTS max-age >= 1 year')) {
-      recommendations.push('Increase HSTS max-age to at least 1 year (31536000 seconds)');
+      recommendations.push(
+        'Increase HSTS max-age to at least 1 year (31536000 seconds)'
+      );
     }
 
     if (failedTests.includes('Content-Security-Policy configured')) {
@@ -356,11 +483,15 @@ class CloudFrontSecurityHeadersValidator {
     }
 
     if (failedTests.includes('Permissions-Policy configured')) {
-      recommendations.push('Add Permissions-Policy header to control browser features');
+      recommendations.push(
+        'Add Permissions-Policy header to control browser features'
+      );
     }
 
     if (recommendations.length === 0) {
-      console.log('  ✅ Security configuration looks excellent! No major recommendations.');
+      console.log(
+        '  ✅ Security configuration looks excellent! No major recommendations.'
+      );
     } else {
       recommendations.forEach(rec => console.log(`  • ${rec}`));
     }
@@ -383,13 +514,20 @@ class CloudFrontSecurityHeadersValidator {
       overallScore: {
         passed: this.results.overall.passed,
         failed: this.results.overall.failed,
-        percentage: Math.round((this.results.overall.passed / (this.results.overall.passed + this.results.overall.failed)) * 100)
-      }
+        percentage: Math.round(
+          (this.results.overall.passed /
+            (this.results.overall.passed + this.results.overall.failed)) *
+            100
+        ),
+      },
     };
 
-    const resultsPath = path.join(configDir, 'security-headers-validation.json');
+    const resultsPath = path.join(
+      configDir,
+      'security-headers-validation.json'
+    );
     fs.writeFileSync(resultsPath, JSON.stringify(results, null, 2));
-    
+
     console.log(`\n📊 Validation results saved to ${resultsPath}`);
   }
 
@@ -426,7 +564,8 @@ class CloudFrontSecurityHeadersValidator {
         .replace(/([A-Z])/g, ' $1')
         .replace(/^./, str => str.toUpperCase());
       const total = result.passed + result.failed;
-      const percentage = total > 0 ? Math.round((result.passed / total) * 100) : 0;
+      const percentage =
+        total > 0 ? Math.round((result.passed / total) * 100) : 0;
 
       console.log(`\n📊 ${categoryName}:`);
       console.log(`   Passed: ${result.passed}/${total} (${percentage}%)`);
@@ -436,23 +575,35 @@ class CloudFrontSecurityHeadersValidator {
         result.tests
           .filter(test => !test.passed)
           .forEach(test => {
-            console.log(`     • ${test.name}${test.details ? ` - ${test.details}` : ''}`);
+            console.log(
+              `     • ${test.name}${test.details ? ` - ${test.details}` : ''}`
+            );
           });
       }
     });
 
     this.generateRecommendations();
 
-    const overallTotal = this.results.overall.passed + this.results.overall.failed;
-    const overallPercentage = overallTotal > 0 ? Math.round((this.results.overall.passed / overallTotal) * 100) : 0;
+    const overallTotal =
+      this.results.overall.passed + this.results.overall.failed;
+    const overallPercentage =
+      overallTotal > 0
+        ? Math.round((this.results.overall.passed / overallTotal) * 100)
+        : 0;
 
     console.log('\n' + '='.repeat(70));
-    console.log(`📈 OVERALL SECURITY SCORE: ${this.results.overall.passed}/${overallTotal} (${overallPercentage}%)`);
+    console.log(
+      `📈 OVERALL SECURITY SCORE: ${this.results.overall.passed}/${overallTotal} (${overallPercentage}%)`
+    );
 
     if (overallPercentage >= 95) {
-      console.log('🎉 Excellent! Security headers are comprehensively configured.');
+      console.log(
+        '🎉 Excellent! Security headers are comprehensively configured.'
+      );
     } else if (overallPercentage >= 85) {
-      console.log('✅ Good security configuration with minor improvements possible.');
+      console.log(
+        '✅ Good security configuration with minor improvements possible.'
+      );
     } else if (overallPercentage >= 70) {
       console.log('⚠️  Security configuration needs attention.');
     } else {
@@ -469,11 +620,13 @@ class CloudFrontSecurityHeadersValidator {
    */
   async run() {
     console.log('🔒 Starting CloudFront Security Headers Validation...');
-    console.log('This will validate comprehensive security headers configuration.');
+    console.log(
+      'This will validate comprehensive security headers configuration.'
+    );
 
     // Validate policy configuration
     const policy = await this.validateSecurityHeadersPolicy();
-    
+
     if (policy) {
       this.validatePolicyHeaders(policy);
     }
@@ -486,11 +639,15 @@ class CloudFrontSecurityHeadersValidator {
     this.saveResults();
 
     if (!success) {
-      console.log('\n❌ Security validation failed. Please address the issues above.');
+      console.log(
+        '\n❌ Security validation failed. Please address the issues above.'
+      );
       process.exit(1);
     }
 
-    console.log('\n✅ CloudFront security headers validation completed successfully!');
+    console.log(
+      '\n✅ CloudFront security headers validation completed successfully!'
+    );
     return success;
   }
 }

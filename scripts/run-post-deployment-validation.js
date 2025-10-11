@@ -2,10 +2,10 @@
 
 /**
  * Post-Deployment Image Validation Runner
- * 
+ *
  * Executes both image accessibility validation and automated image loading verification
  * to provide comprehensive post-deployment validation as required by task 12.
- * 
+ *
  * Requirements: 5.5, 7.1, 7.2, 7.5
  */
 
@@ -19,7 +19,7 @@ class PostDeploymentValidationRunner {
     this.results = {
       accessibility: null,
       loading: null,
-      summary: null
+      summary: null,
     };
   }
 
@@ -31,18 +31,18 @@ class PostDeploymentValidationRunner {
       console.log(`\n${'='.repeat(70)}`);
       console.log(`🚀 Running ${scriptName}`);
       console.log(`${'='.repeat(70)}`);
-      
+
       const child = spawn('node', [scriptPath], {
         stdio: 'inherit',
-        shell: true
+        shell: true,
       });
 
-      child.on('close', (code) => {
+      child.on('close', code => {
         console.log(`\n✅ ${scriptName} completed with exit code: ${code}`);
         resolve({ exitCode: code, success: code === 0 });
       });
 
-      child.on('error', (error) => {
+      child.on('error', error => {
         console.error(`❌ ${scriptName} failed to start:`, error.message);
         reject(error);
       });
@@ -54,18 +54,25 @@ class PostDeploymentValidationRunner {
    */
   async generateCombinedSummary() {
     const outputDir = 'validation-reports';
-    
+
     try {
       // Find the most recent reports
       const files = await fs.readdir(outputDir);
-      
+
       const accessibilityReports = files
-        .filter(f => f.startsWith('image-accessibility-validation-') && f.endsWith('.json'))
+        .filter(
+          f =>
+            f.startsWith('image-accessibility-validation-') &&
+            f.endsWith('.json')
+        )
         .sort()
         .reverse();
-      
+
       const loadingReports = files
-        .filter(f => f.startsWith('image-loading-verification-') && f.endsWith('.json'))
+        .filter(
+          f =>
+            f.startsWith('image-loading-verification-') && f.endsWith('.json')
+        )
         .sort()
         .reverse();
 
@@ -74,7 +81,7 @@ class PostDeploymentValidationRunner {
 
       if (accessibilityReports.length > 0) {
         const accessibilityContent = await fs.readFile(
-          path.join(outputDir, accessibilityReports[0]), 
+          path.join(outputDir, accessibilityReports[0]),
           'utf8'
         );
         accessibilityData = JSON.parse(accessibilityContent);
@@ -82,7 +89,7 @@ class PostDeploymentValidationRunner {
 
       if (loadingReports.length > 0) {
         const loadingContent = await fs.readFile(
-          path.join(outputDir, loadingReports[0]), 
+          path.join(outputDir, loadingReports[0]),
           'utf8'
         );
         loadingData = JSON.parse(loadingContent);
@@ -99,38 +106,57 @@ class PostDeploymentValidationRunner {
             successful: accessibilityData?.metadata?.summary?.successful || 0,
             failed: accessibilityData?.metadata?.summary?.failed || 0,
             warnings: accessibilityData?.metadata?.summary?.warnings || 0,
-            securityStatus: accessibilityData?.metadata?.summary?.securityTest?.secure ? 'SECURE' : 'INSECURE'
+            securityStatus: accessibilityData?.metadata?.summary?.securityTest
+              ?.secure
+              ? 'SECURE'
+              : 'INSECURE',
           },
           loading: {
             executed: loadingData !== null,
             totalPages: loadingData?.metadata?.summary?.totalPages || 0,
-            successfulPages: loadingData?.metadata?.summary?.successfulPages || 0,
+            successfulPages:
+              loadingData?.metadata?.summary?.successfulPages || 0,
             failedPages: loadingData?.metadata?.summary?.failedPages || 0,
             totalImages: loadingData?.metadata?.summary?.totalImages || 0,
             loadedImages: loadingData?.metadata?.summary?.loadedImages || 0,
             failedImages: loadingData?.metadata?.summary?.failedImages || 0,
-            placeholdersFound: loadingData?.metadata?.summary?.placeholdersFound || 0
-          }
+            placeholdersFound:
+              loadingData?.metadata?.summary?.placeholdersFound || 0,
+          },
         },
-        overallStatus: this.calculateOverallStatus(accessibilityData, loadingData),
-        criticalIssues: this.identifyCriticalIssues(accessibilityData, loadingData),
-        recommendations: this.generateRecommendations(accessibilityData, loadingData)
+        overallStatus: this.calculateOverallStatus(
+          accessibilityData,
+          loadingData
+        ),
+        criticalIssues: this.identifyCriticalIssues(
+          accessibilityData,
+          loadingData
+        ),
+        recommendations: this.generateRecommendations(
+          accessibilityData,
+          loadingData
+        ),
       };
 
       // Save combined summary
-      const summaryPath = path.join(outputDir, `post-deployment-validation-summary-${this.timestamp}.json`);
+      const summaryPath = path.join(
+        outputDir,
+        `post-deployment-validation-summary-${this.timestamp}.json`
+      );
       await fs.writeFile(summaryPath, JSON.stringify(combinedSummary, null, 2));
 
       // Generate executive summary
       const execSummary = this.generateExecutiveSummary(combinedSummary);
-      const execPath = path.join(outputDir, `post-deployment-executive-summary-${this.timestamp}.md`);
+      const execPath = path.join(
+        outputDir,
+        `post-deployment-executive-summary-${this.timestamp}.md`
+      );
       await fs.writeFile(execPath, execSummary);
 
       console.log(`\n📄 Combined summary saved: ${summaryPath}`);
       console.log(`📄 Executive summary saved: ${execPath}`);
 
       return combinedSummary;
-
     } catch (error) {
       console.error('Failed to generate combined summary:', error.message);
       return null;
@@ -141,10 +167,13 @@ class PostDeploymentValidationRunner {
    * Calculate overall validation status
    */
   calculateOverallStatus(accessibilityData, loadingData) {
-    const accessibilitySuccess = accessibilityData?.metadata?.summary?.failed === 0;
-    const loadingSuccess = loadingData?.metadata?.summary?.failedPages === 0 && 
-                          loadingData?.metadata?.summary?.placeholdersFound === 0;
-    const securityOk = accessibilityData?.metadata?.summary?.securityTest?.secure !== false;
+    const accessibilitySuccess =
+      accessibilityData?.metadata?.summary?.failed === 0;
+    const loadingSuccess =
+      loadingData?.metadata?.summary?.failedPages === 0 &&
+      loadingData?.metadata?.summary?.placeholdersFound === 0;
+    const securityOk =
+      accessibilityData?.metadata?.summary?.securityTest?.secure !== false;
 
     if (accessibilitySuccess && loadingSuccess && securityOk) {
       return 'EXCELLENT';
@@ -170,19 +199,20 @@ class PostDeploymentValidationRunner {
         severity: 'CRITICAL',
         description: 'S3 bucket is publicly accessible',
         impact: 'Security vulnerability - violates AWS security standards',
-        action: 'Block all public S3 access immediately'
+        action: 'Block all public S3 access immediately',
       });
     }
 
     // Accessibility failures
-    const accessibilityFailed = accessibilityData?.metadata?.summary?.failed || 0;
+    const accessibilityFailed =
+      accessibilityData?.metadata?.summary?.failed || 0;
     if (accessibilityFailed > 0) {
       issues.push({
         type: 'ACCESSIBILITY',
         severity: 'HIGH',
         description: `${accessibilityFailed} images not accessible via CloudFront`,
         impact: 'Images not loading on website - poor user experience',
-        action: 'Fix image paths, deployment process, or S3 configuration'
+        action: 'Fix image paths, deployment process, or S3 configuration',
       });
     }
 
@@ -194,7 +224,7 @@ class PostDeploymentValidationRunner {
         severity: 'HIGH',
         description: `${placeholders} loading placeholders found on pages`,
         impact: 'Users see "Loading image..." text instead of actual images',
-        action: 'Fix image loading implementation and error handling'
+        action: 'Fix image loading implementation and error handling',
       });
     }
 
@@ -206,7 +236,7 @@ class PostDeploymentValidationRunner {
         severity: 'MEDIUM',
         description: `${failedPages} pages failed image loading tests`,
         impact: 'Images may not display correctly on some pages',
-        action: 'Review page-specific image loading issues'
+        action: 'Review page-specific image loading issues',
       });
     }
 
@@ -220,34 +250,53 @@ class PostDeploymentValidationRunner {
     const recommendations = [];
 
     // Based on accessibility results
-    const accessibilityFailed = accessibilityData?.metadata?.summary?.failed || 0;
+    const accessibilityFailed =
+      accessibilityData?.metadata?.summary?.failed || 0;
     if (accessibilityFailed > 0) {
-      recommendations.push('Fix failed image accessibility by checking deployment pipeline and S3 upload process');
-      recommendations.push('Verify all required images exist in source repository and build output');
+      recommendations.push(
+        'Fix failed image accessibility by checking deployment pipeline and S3 upload process'
+      );
+      recommendations.push(
+        'Verify all required images exist in source repository and build output'
+      );
     }
 
     // Based on loading results
     const placeholders = loadingData?.metadata?.summary?.placeholdersFound || 0;
     if (placeholders > 0) {
-      recommendations.push('Remove all "Loading image..." placeholders by fixing image loading implementation');
-      recommendations.push('Review OptimizedImage component error handling and fallback mechanisms');
+      recommendations.push(
+        'Remove all "Loading image..." placeholders by fixing image loading implementation'
+      );
+      recommendations.push(
+        'Review OptimizedImage component error handling and fallback mechanisms'
+      );
     }
 
     // Security recommendations
     if (accessibilityData?.metadata?.summary?.securityTest?.secure === false) {
-      recommendations.push('URGENT: Secure S3 bucket by blocking all public access');
-      recommendations.push('Verify CloudFront Origin Access Control (OAC) configuration');
+      recommendations.push(
+        'URGENT: Secure S3 bucket by blocking all public access'
+      );
+      recommendations.push(
+        'Verify CloudFront Origin Access Control (OAC) configuration'
+      );
     }
 
     // Performance recommendations
     const warnings = accessibilityData?.metadata?.summary?.warnings || 0;
     if (warnings > 0) {
-      recommendations.push('Configure proper caching headers for images (max-age=31536000, immutable)');
-      recommendations.push('Ensure correct Content-Type headers for WebP files');
+      recommendations.push(
+        'Configure proper caching headers for images (max-age=31536000, immutable)'
+      );
+      recommendations.push(
+        'Ensure correct Content-Type headers for WebP files'
+      );
     }
 
     // General recommendations
-    recommendations.push('Set up automated monitoring for ongoing image validation');
+    recommendations.push(
+      'Set up automated monitoring for ongoing image validation'
+    );
     recommendations.push('Implement image validation in CI/CD pipeline');
     recommendations.push('Document image deployment best practices');
 
@@ -259,10 +308,10 @@ class PostDeploymentValidationRunner {
    */
   generateExecutiveSummary(summary) {
     const statusEmoji = {
-      'EXCELLENT': '🟢',
-      'GOOD': '🟡',
-      'NEEDS_ATTENTION': '🟠',
-      'CRITICAL': '🔴'
+      EXCELLENT: '🟢',
+      GOOD: '🟡',
+      NEEDS_ATTENTION: '🟠',
+      CRITICAL: '🔴',
     };
 
     return `# Post-Deployment Image Validation - Executive Summary
@@ -290,25 +339,36 @@ class PostDeploymentValidationRunner {
 
 ## Critical Issues
 
-${summary.criticalIssues.length > 0 ? 
-  summary.criticalIssues.map(issue => `
+${
+  summary.criticalIssues.length > 0
+    ? summary.criticalIssues
+        .map(
+          issue => `
 ### ${issue.type} - ${issue.severity}
 - **Issue**: ${issue.description}
 - **Impact**: ${issue.impact}
 - **Action Required**: ${issue.action}
-`).join('') : 
-  '✅ No critical issues identified'}
+`
+        )
+        .join('')
+    : '✅ No critical issues identified'
+}
 
 ## Key Recommendations
 
-${summary.recommendations.slice(0, 5).map((rec, index) => `${index + 1}. ${rec}`).join('\n')}
+${summary.recommendations
+  .slice(0, 5)
+  .map((rec, index) => `${index + 1}. ${rec}`)
+  .join('\n')}
 
 ## Next Steps
 
 ### Immediate Actions (Priority 1)
-${summary.criticalIssues.filter(i => i.severity === 'CRITICAL').length > 0 ? 
-  '- Address critical security issues immediately' : 
-  '- Fix failed image accessibility issues'}
+${
+  summary.criticalIssues.filter(i => i.severity === 'CRITICAL').length > 0
+    ? '- Address critical security issues immediately'
+    : '- Fix failed image accessibility issues'
+}
 
 ### Short Term (Priority 2)
 - Remove loading placeholders from user interface
@@ -352,29 +412,39 @@ For complete technical details, refer to the individual validation reports:
     console.log('\n' + '='.repeat(70));
     console.log('🏁 POST-DEPLOYMENT VALIDATION SUMMARY');
     console.log('='.repeat(70));
-    
+
     const statusEmoji = {
-      'EXCELLENT': '🟢',
-      'GOOD': '🟡',
-      'NEEDS_ATTENTION': '🟠',
-      'CRITICAL': '🔴'
+      EXCELLENT: '🟢',
+      GOOD: '🟡',
+      NEEDS_ATTENTION: '🟠',
+      CRITICAL: '🔴',
     };
-    
-    console.log(`📊 Overall Status: ${statusEmoji[summary.overallStatus]} ${summary.overallStatus}`);
+
+    console.log(
+      `📊 Overall Status: ${statusEmoji[summary.overallStatus]} ${summary.overallStatus}`
+    );
     console.log(`📅 Validation Date: ${new Date().toLocaleString()}`);
     console.log('');
-    
+
     console.log('📈 Test Results:');
-    console.log(`   Accessibility: ${summary.tests.accessibility.successful}/${summary.tests.accessibility.totalImages} images accessible`);
-    console.log(`   Loading: ${summary.tests.loading.successfulPages}/${summary.tests.loading.totalPages} pages working`);
+    console.log(
+      `   Accessibility: ${summary.tests.accessibility.successful}/${summary.tests.accessibility.totalImages} images accessible`
+    );
+    console.log(
+      `   Loading: ${summary.tests.loading.successfulPages}/${summary.tests.loading.totalPages} pages working`
+    );
     console.log(`   Security: ${summary.tests.accessibility.securityStatus}`);
-    console.log(`   Placeholders: ${summary.tests.loading.placeholdersFound} found`);
+    console.log(
+      `   Placeholders: ${summary.tests.loading.placeholdersFound} found`
+    );
     console.log('');
 
     if (summary.criticalIssues.length > 0) {
       console.log('🚨 CRITICAL ISSUES:');
       summary.criticalIssues.forEach((issue, index) => {
-        console.log(`   ${index + 1}. ${issue.description} (${issue.severity})`);
+        console.log(
+          `   ${index + 1}. ${issue.description} (${issue.severity})`
+        );
       });
       console.log('');
     }
@@ -406,7 +476,7 @@ For complete technical details, refer to the individual validation reports:
         'scripts/image-accessibility-validation.js',
         'Image Accessibility Validation'
       );
-      
+
       if (!accessibilityResult.success) {
         overallSuccess = false;
       }
@@ -416,7 +486,7 @@ For complete technical details, refer to the individual validation reports:
         'scripts/automated-image-loading-verification.js',
         'Automated Image Loading Verification'
       );
-      
+
       if (!loadingResult.success) {
         overallSuccess = false;
       }
@@ -425,9 +495,9 @@ For complete technical details, refer to the individual validation reports:
       console.log(`\n${'='.repeat(70)}`);
       console.log('📊 Generating Combined Summary');
       console.log(`${'='.repeat(70)}`);
-      
+
       const summary = await this.generateCombinedSummary();
-      
+
       if (summary) {
         this.printFinalSummary(summary);
       }
@@ -436,11 +506,14 @@ For complete technical details, refer to the individual validation reports:
       console.log(`\n⏱️  Total validation duration: ${duration}s`);
 
       // Exit with appropriate code
-      const exitCode = summary?.overallStatus === 'CRITICAL' ? 2 : 
-                      summary?.overallStatus === 'NEEDS_ATTENTION' ? 1 : 0;
-      
-      process.exit(exitCode);
+      const exitCode =
+        summary?.overallStatus === 'CRITICAL'
+          ? 2
+          : summary?.overallStatus === 'NEEDS_ATTENTION'
+            ? 1
+            : 0;
 
+      process.exit(exitCode);
     } catch (error) {
       console.error('❌ Post-deployment validation failed:', error.message);
       console.error(error.stack);

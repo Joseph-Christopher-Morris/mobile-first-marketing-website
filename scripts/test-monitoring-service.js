@@ -2,7 +2,7 @@
 
 /**
  * Test Monitoring Service
- * 
+ *
  * A lightweight service that continuously monitors test results
  * and provides real-time alerts and notifications
  */
@@ -26,18 +26,21 @@ class TestMonitoringService {
         return JSON.parse(fs.readFileSync(this.configPath, 'utf8'));
       }
     } catch (error) {
-      console.warn('Could not load monitoring config, using defaults:', error.message);
+      console.warn(
+        'Could not load monitoring config, using defaults:',
+        error.message
+      );
     }
-    
+
     return {
       monitoring: {
         enabled: true,
         interval: 300000, // 5 minutes
         alerts: {
           success_rate_threshold: 80,
-          critical_threshold: 50
-        }
-      }
+          critical_threshold: 50,
+        },
+      },
     };
   }
 
@@ -53,14 +56,18 @@ class TestMonitoringService {
     }
 
     console.log('🚀 Starting test monitoring service...');
-    console.log(`📊 Monitoring interval: ${this.config.monitoring.interval / 1000}s`);
-    console.log(`🎯 Success rate threshold: ${this.config.monitoring.alerts.success_rate_threshold}%`);
-    
+    console.log(
+      `📊 Monitoring interval: ${this.config.monitoring.interval / 1000}s`
+    );
+    console.log(
+      `🎯 Success rate threshold: ${this.config.monitoring.alerts.success_rate_threshold}%`
+    );
+
     this.isRunning = true;
-    
+
     // Run initial test
     this.runMonitoringCycle();
-    
+
     // Schedule recurring runs
     this.intervalId = setInterval(() => {
       this.runMonitoringCycle();
@@ -98,11 +105,10 @@ class TestMonitoringService {
     try {
       const dashboard = new TestResultDashboard();
       await dashboard.runAllTests();
-      
+
       const results = dashboard.results;
       this.analyzeResults(results);
       this.lastResults = results;
-      
     } catch (error) {
       console.error('❌ Error during monitoring cycle:', error.message);
       this.sendAlert('error', 'Monitoring cycle failed', error.message);
@@ -116,13 +122,15 @@ class TestMonitoringService {
 
     // Check success rate
     if (summary.success_rate < criticalThreshold) {
-      this.sendAlert('critical', 
-        `Critical: Test success rate is ${summary.success_rate}%`, 
+      this.sendAlert(
+        'critical',
+        `Critical: Test success rate is ${summary.success_rate}%`,
         `This is below the critical threshold of ${criticalThreshold}%`
       );
     } else if (summary.success_rate < threshold) {
-      this.sendAlert('warning', 
-        `Warning: Test success rate is ${summary.success_rate}%`, 
+      this.sendAlert(
+        'warning',
+        `Warning: Test success rate is ${summary.success_rate}%`,
         `This is below the threshold of ${threshold}%`
       );
     }
@@ -130,8 +138,9 @@ class TestMonitoringService {
     // Check for new failures
     if (this.lastResults && summary.failed > this.lastResults.summary.failed) {
       const newFailures = summary.failed - this.lastResults.summary.failed;
-      this.sendAlert('warning', 
-        `New test failures detected: ${newFailures}`, 
+      this.sendAlert(
+        'warning',
+        `New test failures detected: ${newFailures}`,
         'Check the dashboard for details'
       );
     }
@@ -145,16 +154,25 @@ class TestMonitoringService {
 
     // Success notification for good results
     if (summary.success_rate >= 95 && summary.total > 0) {
-      console.log(`✅ All tests passing! Success rate: ${summary.success_rate}%`);
+      console.log(
+        `✅ All tests passing! Success rate: ${summary.success_rate}%`
+      );
     }
   }
 
   sendAlert(type, message, details) {
     const timestamp = new Date().toISOString();
     const alertMessage = `[${timestamp}] ${type.toUpperCase()}: ${message}`;
-    
+
     // Console notification
-    const icon = type === 'critical' ? '🚨' : type === 'error' ? '❌' : type === 'warning' ? '⚠️' : 'ℹ️';
+    const icon =
+      type === 'critical'
+        ? '🚨'
+        : type === 'error'
+          ? '❌'
+          : type === 'warning'
+            ? '⚠️'
+            : 'ℹ️';
     console.log(`${icon} ${alertMessage}`);
     if (details) {
       console.log(`   Details: ${details}`);
@@ -170,7 +188,7 @@ class TestMonitoringService {
     const alertsFile = path.join('.kiro/test-results', 'alerts.log');
     const timestamp = new Date().toISOString();
     const logEntry = `${timestamp} [${type.toUpperCase()}] ${message}${details ? ` - ${details}` : ''}\n`;
-    
+
     try {
       fs.appendFileSync(alertsFile, logEntry);
     } catch (error) {
@@ -182,10 +200,12 @@ class TestMonitoringService {
     return {
       running: this.isRunning,
       config: this.config,
-      lastResults: this.lastResults ? {
-        timestamp: this.lastResults.timestamp,
-        summary: this.lastResults.summary
-      } : null
+      lastResults: this.lastResults
+        ? {
+            timestamp: this.lastResults.timestamp,
+            summary: this.lastResults.summary,
+          }
+        : null,
     };
   }
 
@@ -198,15 +218,19 @@ class TestMonitoringService {
   static status() {
     const service = new TestMonitoringService();
     const status = service.getStatus();
-    
+
     console.log('📊 Test Monitoring Service Status');
     console.log('================================');
     console.log(`Running: ${status.running ? '✅ Yes' : '❌ No'}`);
-    console.log(`Monitoring enabled: ${status.config.monitoring.enabled ? '✅ Yes' : '❌ No'}`);
+    console.log(
+      `Monitoring enabled: ${status.config.monitoring.enabled ? '✅ Yes' : '❌ No'}`
+    );
     console.log(`Interval: ${status.config.monitoring.interval / 1000}s`);
-    
+
     if (status.lastResults) {
-      console.log(`Last run: ${new Date(status.lastResults.timestamp).toLocaleString()}`);
+      console.log(
+        `Last run: ${new Date(status.lastResults.timestamp).toLocaleString()}`
+      );
       console.log(`Success rate: ${status.lastResults.summary.success_rate}%`);
       console.log(`Total tests: ${status.lastResults.summary.total}`);
     } else {
@@ -218,16 +242,16 @@ class TestMonitoringService {
 // CLI interface
 if (require.main === module) {
   const command = process.argv[2];
-  
+
   switch (command) {
     case 'start':
       TestMonitoringService.start();
       break;
-      
+
     case 'status':
       TestMonitoringService.status();
       break;
-      
+
     default:
       console.log(`
 🔄 Test Monitoring Service

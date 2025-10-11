@@ -2,12 +2,14 @@
 
 /**
  * Image Accessibility Validation Test Runner
- * 
+ *
  * Comprehensive test suite for validating image accessibility
  * after deployment to CloudFront CDN.
  */
 
-const { ImageAccessibilityValidator } = require('./post-deployment-image-validation.js');
+const {
+  ImageAccessibilityValidator,
+} = require('./post-deployment-image-validation.js');
 const { BlogImageTester } = require('./test-blog-image-accessibility.js');
 const fs = require('fs').promises;
 const path = require('path');
@@ -18,7 +20,7 @@ class ValidationTestRunner {
     this.results = {
       comprehensive: null,
       blogSpecific: null,
-      summary: null
+      summary: null,
     };
   }
 
@@ -57,7 +59,6 @@ class ValidationTestRunner {
       this.printFinalSummary();
 
       return this.results;
-
     } catch (error) {
       console.error('❌ Validation test runner failed:', error.message);
       throw error;
@@ -76,31 +77,38 @@ class ValidationTestRunner {
           successful: this.results.comprehensive.successful,
           failed: this.results.comprehensive.failed,
           warnings: this.results.comprehensive.warnings,
-          duration: this.results.comprehensive.duration
+          duration: this.results.comprehensive.duration,
         },
         blogSpecific: {
           targetImage: '/images/hero/paid-ads-analytics-screenshot.webp',
           status: this.results.blogSpecific.analysis.primaryImageStatus,
           securityStatus: this.results.blogSpecific.analysis.securityStatus,
-          recommendations: this.results.blogSpecific.analysis.recommendations.length,
-          nextSteps: this.results.blogSpecific.analysis.nextSteps.length
-        }
+          recommendations:
+            this.results.blogSpecific.analysis.recommendations.length,
+          nextSteps: this.results.blogSpecific.analysis.nextSteps.length,
+        },
       },
       overallStatus: this.calculateOverallStatus(),
       criticalIssues: this.identifyCriticalIssues(),
-      recommendations: this.generateOverallRecommendations()
+      recommendations: this.generateOverallRecommendations(),
     };
 
     this.results.summary = summary;
 
     // Save combined summary
     await fs.mkdir('validation-reports', { recursive: true });
-    const summaryPath = path.join('validation-reports', `validation-summary-${this.timestamp}.json`);
+    const summaryPath = path.join(
+      'validation-reports',
+      `validation-summary-${this.timestamp}.json`
+    );
     await fs.writeFile(summaryPath, JSON.stringify(summary, null, 2));
 
     // Generate executive summary markdown
     const execSummary = this.generateExecutiveSummary(summary);
-    const execPath = path.join('validation-reports', `executive-summary-${this.timestamp}.md`);
+    const execPath = path.join(
+      'validation-reports',
+      `executive-summary-${this.timestamp}.md`
+    );
     await fs.writeFile(execPath, execSummary);
 
     console.log(`📄 Combined summary saved: ${summaryPath}`);
@@ -112,14 +120,19 @@ class ValidationTestRunner {
    */
   calculateOverallStatus() {
     const comprehensiveSuccess = this.results.comprehensive.failed === 0;
-    const blogImageSuccess = this.results.blogSpecific.analysis.primaryImageStatus === 'WORKING';
-    const securityOk = this.results.blogSpecific.analysis.securityStatus === 'SECURE';
+    const blogImageSuccess =
+      this.results.blogSpecific.analysis.primaryImageStatus === 'WORKING';
+    const securityOk =
+      this.results.blogSpecific.analysis.securityStatus === 'SECURE';
 
     if (comprehensiveSuccess && blogImageSuccess && securityOk) {
       return 'EXCELLENT';
     } else if (blogImageSuccess && securityOk) {
       return 'GOOD';
-    } else if (blogImageSuccess || (this.results.comprehensive.successful > this.results.comprehensive.failed)) {
+    } else if (
+      blogImageSuccess ||
+      this.results.comprehensive.successful > this.results.comprehensive.failed
+    ) {
       return 'NEEDS_ATTENTION';
     } else {
       return 'CRITICAL';
@@ -139,7 +152,7 @@ class ValidationTestRunner {
         severity: 'CRITICAL',
         description: 'S3 bucket is publicly accessible',
         impact: 'Security vulnerability - violates AWS security standards',
-        action: 'Block all public S3 access immediately'
+        action: 'Block all public S3 access immediately',
       });
     }
 
@@ -150,18 +163,20 @@ class ValidationTestRunner {
         severity: 'HIGH',
         description: 'Primary blog image not accessible',
         impact: 'Poor user experience on homepage blog preview',
-        action: 'Fix image path or deployment process'
+        action: 'Fix image path or deployment process',
       });
     }
 
     // Multiple image failures
-    if (this.results.comprehensive.failed > this.results.comprehensive.successful) {
+    if (
+      this.results.comprehensive.failed > this.results.comprehensive.successful
+    ) {
       issues.push({
         type: 'DEPLOYMENT',
         severity: 'HIGH',
         description: 'Majority of images failing to load',
         impact: 'Widespread image loading issues across site',
-        action: 'Review deployment pipeline and S3 upload process'
+        action: 'Review deployment pipeline and S3 upload process',
       });
     }
 
@@ -176,19 +191,29 @@ class ValidationTestRunner {
 
     // Based on comprehensive results
     if (this.results.comprehensive.failed > 0) {
-      recommendations.push('Fix failed image loads by checking deployment pipeline');
-      recommendations.push('Verify all images exist in source and are included in build');
+      recommendations.push(
+        'Fix failed image loads by checking deployment pipeline'
+      );
+      recommendations.push(
+        'Verify all images exist in source and are included in build'
+      );
     }
 
     // Based on blog-specific results
     if (this.results.blogSpecific.analysis.nextSteps.length > 0) {
-      recommendations.push('Address blog image specific issues as outlined in detailed report');
+      recommendations.push(
+        'Address blog image specific issues as outlined in detailed report'
+      );
     }
 
     // Security recommendations
     if (this.results.blogSpecific.analysis.securityStatus === 'INSECURE') {
-      recommendations.push('URGENT: Secure S3 bucket by blocking public access');
-      recommendations.push('Verify CloudFront OAC configuration is working correctly');
+      recommendations.push(
+        'URGENT: Secure S3 bucket by blocking public access'
+      );
+      recommendations.push(
+        'Verify CloudFront OAC configuration is working correctly'
+      );
     }
 
     // Performance recommendations
@@ -210,10 +235,10 @@ class ValidationTestRunner {
    */
   generateExecutiveSummary(summary) {
     const statusEmoji = {
-      'EXCELLENT': '🟢',
-      'GOOD': '🟡',
-      'NEEDS_ATTENTION': '🟠',
-      'CRITICAL': '🔴'
+      EXCELLENT: '🟢',
+      GOOD: '🟡',
+      NEEDS_ATTENTION: '🟠',
+      CRITICAL: '🔴',
     };
 
     return `# Image Accessibility Validation - Executive Summary
@@ -238,14 +263,20 @@ class ValidationTestRunner {
 
 ## Critical Issues
 
-${summary.criticalIssues.length > 0 ? 
-  summary.criticalIssues.map(issue => `
+${
+  summary.criticalIssues.length > 0
+    ? summary.criticalIssues
+        .map(
+          issue => `
 ### ${issue.type} - ${issue.severity}
 - **Issue**: ${issue.description}
 - **Impact**: ${issue.impact}
 - **Action Required**: ${issue.action}
-`).join('') : 
-  '✅ No critical issues identified'}
+`
+        )
+        .join('')
+    : '✅ No critical issues identified'
+}
 
 ## Recommendations
 
@@ -277,32 +308,40 @@ For complete technical details, refer to the following reports generated during 
    */
   printFinalSummary() {
     const { summary } = this.results;
-    
+
     console.log('\n' + '='.repeat(70));
     console.log('🏁 FINAL VALIDATION SUMMARY');
     console.log('='.repeat(70));
-    
+
     const statusEmoji = {
-      'EXCELLENT': '🟢',
-      'GOOD': '🟡', 
-      'NEEDS_ATTENTION': '🟠',
-      'CRITICAL': '🔴'
+      EXCELLENT: '🟢',
+      GOOD: '🟡',
+      NEEDS_ATTENTION: '🟠',
+      CRITICAL: '🔴',
     };
-    
-    console.log(`📊 Overall Status: ${statusEmoji[summary.overallStatus]} ${summary.overallStatus}`);
+
+    console.log(
+      `📊 Overall Status: ${statusEmoji[summary.overallStatus]} ${summary.overallStatus}`
+    );
     console.log(`📅 Validation Date: ${new Date().toLocaleString()}`);
     console.log('');
-    
+
     console.log('📈 Test Results:');
-    console.log(`   Comprehensive: ${summary.testPhases.comprehensive.successful}/${summary.testPhases.comprehensive.totalImages} images working`);
+    console.log(
+      `   Comprehensive: ${summary.testPhases.comprehensive.successful}/${summary.testPhases.comprehensive.totalImages} images working`
+    );
     console.log(`   Blog Image: ${summary.testPhases.blogSpecific.status}`);
-    console.log(`   Security: ${summary.testPhases.blogSpecific.securityStatus}`);
+    console.log(
+      `   Security: ${summary.testPhases.blogSpecific.securityStatus}`
+    );
     console.log('');
 
     if (summary.criticalIssues.length > 0) {
       console.log('🚨 CRITICAL ISSUES:');
       summary.criticalIssues.forEach((issue, index) => {
-        console.log(`   ${index + 1}. ${issue.description} (${issue.severity})`);
+        console.log(
+          `   ${index + 1}. ${issue.description} (${issue.severity})`
+        );
       });
       console.log('');
     }
@@ -323,13 +362,16 @@ async function main() {
   try {
     const runner = new ValidationTestRunner();
     const results = await runner.runAllTests();
-    
+
     // Exit with appropriate code based on overall status
-    const exitCode = results.summary.overallStatus === 'CRITICAL' ? 2 : 
-                    results.summary.overallStatus === 'NEEDS_ATTENTION' ? 1 : 0;
-    
+    const exitCode =
+      results.summary.overallStatus === 'CRITICAL'
+        ? 2
+        : results.summary.overallStatus === 'NEEDS_ATTENTION'
+          ? 1
+          : 0;
+
     process.exit(exitCode);
-    
   } catch (error) {
     console.error('❌ Validation test runner failed:', error.message);
     console.error(error.stack);

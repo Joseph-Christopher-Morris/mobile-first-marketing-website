@@ -2,11 +2,11 @@
 
 /**
  * Automated Image Loading Verification Script
- * 
+ *
  * Creates a test suite to verify images load correctly on each page,
  * tests image loading performance and error handling, and validates
  * no "Loading image..." placeholders remain visible.
- * 
+ *
  * Requirements: 7.1, 7.5
  */
 
@@ -23,10 +23,10 @@ const CONFIG = {
   viewport: { width: 1280, height: 720 },
   mobileViewport: { width: 375, height: 667 },
   slowNetworkThrottle: {
-    downloadThroughput: 1.5 * 1024 * 1024 / 8, // 1.5 Mbps
-    uploadThroughput: 750 * 1024 / 8, // 750 Kbps
-    latency: 40 // 40ms
-  }
+    downloadThroughput: (1.5 * 1024 * 1024) / 8, // 1.5 Mbps
+    uploadThroughput: (750 * 1024) / 8, // 750 Kbps
+    latency: 40, // 40ms
+  },
 };
 
 // Pages to test with their expected images
@@ -36,59 +36,115 @@ const TEST_PAGES = {
     name: 'Homepage',
     expectedImages: [
       // Service cards
-      { selector: '[data-testid="service-card-photography"] img', category: 'service-card', name: 'Photography Service Card' },
-      { selector: '[data-testid="service-card-analytics"] img', category: 'service-card', name: 'Analytics Service Card' },
-      { selector: '[data-testid="service-card-ad-campaigns"] img', category: 'service-card', name: 'Ad Campaigns Service Card' },
+      {
+        selector: '[data-testid="service-card-photography"] img',
+        category: 'service-card',
+        name: 'Photography Service Card',
+      },
+      {
+        selector: '[data-testid="service-card-analytics"] img',
+        category: 'service-card',
+        name: 'Analytics Service Card',
+      },
+      {
+        selector: '[data-testid="service-card-ad-campaigns"] img',
+        category: 'service-card',
+        name: 'Ad Campaigns Service Card',
+      },
       // Blog previews
-      { selector: '[data-testid="blog-preview"] img', category: 'blog-preview', name: 'Blog Preview Images' },
+      {
+        selector: '[data-testid="blog-preview"] img',
+        category: 'blog-preview',
+        name: 'Blog Preview Images',
+      },
       // Hero image
-      { selector: '[data-testid="hero-section"] img', category: 'hero', name: 'Hero Image' }
-    ]
+      {
+        selector: '[data-testid="hero-section"] img',
+        category: 'hero',
+        name: 'Hero Image',
+      },
+    ],
   },
-  
+
   photographyService: {
     url: '/services/photography',
     name: 'Photography Service Page',
     expectedImages: [
-      { selector: '[data-testid="service-hero"] img', category: 'service-hero', name: 'Photography Hero Image' },
-      { selector: '[data-testid="portfolio-gallery"] img', category: 'portfolio', name: 'Photography Portfolio Images' }
-    ]
+      {
+        selector: '[data-testid="service-hero"] img',
+        category: 'service-hero',
+        name: 'Photography Hero Image',
+      },
+      {
+        selector: '[data-testid="portfolio-gallery"] img',
+        category: 'portfolio',
+        name: 'Photography Portfolio Images',
+      },
+    ],
   },
-  
+
   analyticsService: {
     url: '/services/analytics',
-    name: 'Analytics Service Page', 
+    name: 'Analytics Service Page',
     expectedImages: [
-      { selector: '[data-testid="service-hero"] img', category: 'service-hero', name: 'Analytics Hero Image' },
-      { selector: '[data-testid="portfolio-gallery"] img', category: 'portfolio', name: 'Analytics Portfolio Images' }
-    ]
+      {
+        selector: '[data-testid="service-hero"] img',
+        category: 'service-hero',
+        name: 'Analytics Hero Image',
+      },
+      {
+        selector: '[data-testid="portfolio-gallery"] img',
+        category: 'portfolio',
+        name: 'Analytics Portfolio Images',
+      },
+    ],
   },
-  
+
   adCampaignsService: {
     url: '/services/ad-campaigns',
     name: 'Ad Campaigns Service Page',
     expectedImages: [
-      { selector: '[data-testid="service-hero"] img', category: 'service-hero', name: 'Ad Campaigns Hero Image' },
-      { selector: '[data-testid="portfolio-gallery"] img', category: 'portfolio', name: 'Ad Campaigns Portfolio Images' }
-    ]
+      {
+        selector: '[data-testid="service-hero"] img',
+        category: 'service-hero',
+        name: 'Ad Campaigns Hero Image',
+      },
+      {
+        selector: '[data-testid="portfolio-gallery"] img',
+        category: 'portfolio',
+        name: 'Ad Campaigns Portfolio Images',
+      },
+    ],
   },
-  
+
   about: {
     url: '/about',
     name: 'About Page',
     expectedImages: [
-      { selector: '[data-testid="about-hero"] img', category: 'about-hero', name: 'About Hero Image' }
-    ]
+      {
+        selector: '[data-testid="about-hero"] img',
+        category: 'about-hero',
+        name: 'About Hero Image',
+      },
+    ],
   },
-  
+
   blog: {
     url: '/blog',
     name: 'Blog Page',
     expectedImages: [
-      { selector: '[data-testid="service-card"] img', category: 'service-card', name: 'Service Card Images' },
-      { selector: '[data-testid="blog-preview"] img', category: 'blog-preview', name: 'Blog Preview Images' }
-    ]
-  }
+      {
+        selector: '[data-testid="service-card"] img',
+        category: 'service-card',
+        name: 'Service Card Images',
+      },
+      {
+        selector: '[data-testid="blog-preview"] img',
+        category: 'blog-preview',
+        name: 'Blog Preview Images',
+      },
+    ],
+  },
 };
 
 class ImageLoadingVerifier {
@@ -104,7 +160,7 @@ class ImageLoadingVerifier {
   async initBrowser() {
     this.browser = await chromium.launch({
       headless: true,
-      args: ['--no-sandbox', '--disable-setuid-sandbox']
+      args: ['--no-sandbox', '--disable-setuid-sandbox'],
     });
   }
 
@@ -122,14 +178,16 @@ class ImageLoadingVerifier {
    */
   async testPageImages(pageConfig, deviceType = 'desktop') {
     const context = await this.browser.newContext({
-      viewport: deviceType === 'mobile' ? CONFIG.mobileViewport : CONFIG.viewport,
-      userAgent: deviceType === 'mobile' 
-        ? 'Mozilla/5.0 (iPhone; CPU iPhone OS 14_7_1 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/14.1.2 Mobile/15E148 Safari/604.1'
-        : 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.124 Safari/537.36'
+      viewport:
+        deviceType === 'mobile' ? CONFIG.mobileViewport : CONFIG.viewport,
+      userAgent:
+        deviceType === 'mobile'
+          ? 'Mozilla/5.0 (iPhone; CPU iPhone OS 14_7_1 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/14.1.2 Mobile/15E148 Safari/604.1'
+          : 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.124 Safari/537.36',
     });
 
     const page = await context.newPage();
-    
+
     const pageResult = {
       page: pageConfig.name,
       url: pageConfig.url,
@@ -146,33 +204,33 @@ class ImageLoadingVerifier {
         loadedImages: 0,
         failedImages: 0,
         averageLoadTime: 0,
-        slowImages: []
-      }
+        slowImages: [],
+      },
     };
 
     try {
       console.log(`Testing ${pageConfig.name} (${deviceType})...`);
-      
+
       // Navigate to page
       const startTime = Date.now();
       const response = await page.goto(`${CONFIG.baseUrl}${pageConfig.url}`, {
         waitUntil: 'networkidle',
-        timeout: CONFIG.timeout
+        timeout: CONFIG.timeout,
       });
-      
+
       if (!response.ok()) {
         pageResult.errors.push(`Page failed to load: ${response.status()}`);
         return pageResult;
       }
-      
+
       pageResult.loadTime = Date.now() - startTime;
 
       // Wait for page to be fully loaded
       await page.waitForLoadState('networkidle');
-      
+
       // Check for loading placeholders
       await this.checkForPlaceholders(page, pageResult);
-      
+
       // Test each expected image
       for (const imageConfig of pageConfig.expectedImages) {
         const imageResults = await this.testImageElements(page, imageConfig);
@@ -181,14 +239,15 @@ class ImageLoadingVerifier {
 
       // Calculate performance metrics
       this.calculatePerformanceMetrics(pageResult);
-      
+
       // Test with slow network (only for desktop to avoid timeout)
       if (deviceType === 'desktop') {
         await this.testSlowNetworkLoading(page, pageConfig, pageResult);
       }
 
-      pageResult.success = pageResult.errors.length === 0 && pageResult.performance.failedImages === 0;
-
+      pageResult.success =
+        pageResult.errors.length === 0 &&
+        pageResult.performance.failedImages === 0;
     } catch (error) {
       pageResult.errors.push(`Page test failed: ${error.message}`);
     } finally {
@@ -209,18 +268,19 @@ class ImageLoadingVerifier {
         pageResult.placeholders.push({
           type: 'loading-text',
           count: loadingTexts.length,
-          message: `Found ${loadingTexts.length} "Loading image..." placeholders`
+          message: `Found ${loadingTexts.length} "Loading image..." placeholders`,
         });
       }
 
       // Check for gradient overlays that might indicate loading states
       const gradientOverlays = await page.locator('.bg-gradient-to-br').all();
       for (const overlay of gradientOverlays) {
-        const hasImage = await overlay.locator('img').count() > 0;
+        const hasImage = (await overlay.locator('img').count()) > 0;
         if (!hasImage) {
           pageResult.placeholders.push({
             type: 'gradient-overlay',
-            message: 'Found gradient overlay without image - possible loading state'
+            message:
+              'Found gradient overlay without image - possible loading state',
           });
         }
       }
@@ -228,17 +288,17 @@ class ImageLoadingVerifier {
       // Check for broken image icons
       const brokenImages = await page.evaluate(() => {
         const images = Array.from(document.querySelectorAll('img'));
-        return images.filter(img => !img.complete || img.naturalWidth === 0).length;
+        return images.filter(img => !img.complete || img.naturalWidth === 0)
+          .length;
       });
 
       if (brokenImages > 0) {
         pageResult.placeholders.push({
           type: 'broken-images',
           count: brokenImages,
-          message: `Found ${brokenImages} broken or unloaded images`
+          message: `Found ${brokenImages} broken or unloaded images`,
         });
       }
-
     } catch (error) {
       pageResult.warnings.push(`Placeholder check failed: ${error.message}`);
     }
@@ -249,10 +309,10 @@ class ImageLoadingVerifier {
    */
   async testImageElements(page, imageConfig) {
     const results = [];
-    
+
     try {
       const elements = await page.locator(imageConfig.selector).all();
-      
+
       if (elements.length === 0) {
         results.push({
           selector: imageConfig.selector,
@@ -262,7 +322,7 @@ class ImageLoadingVerifier {
           error: 'Image element not found',
           loadTime: null,
           src: null,
-          dimensions: null
+          dimensions: null,
         });
         return results;
       }
@@ -279,16 +339,16 @@ class ImageLoadingVerifier {
           src: null,
           dimensions: null,
           naturalDimensions: null,
-          visible: false
+          visible: false,
         };
 
         try {
           // Check if element is visible
           imageResult.visible = await element.isVisible();
-          
+
           // Get image source
           imageResult.src = await element.getAttribute('src');
-          
+
           // Get dimensions
           const box = await element.boundingBox();
           if (box) {
@@ -297,23 +357,28 @@ class ImageLoadingVerifier {
 
           // Test image loading
           const loadStartTime = Date.now();
-          
+
           // Wait for image to load or timeout
-          await element.waitFor({ state: 'visible', timeout: CONFIG.imageLoadTimeout });
-          
+          await element.waitFor({
+            state: 'visible',
+            timeout: CONFIG.imageLoadTimeout,
+          });
+
           // Check if image actually loaded
-          const imageLoaded = await element.evaluate((img) => {
-            return img.complete && img.naturalWidth > 0 && img.naturalHeight > 0;
+          const imageLoaded = await element.evaluate(img => {
+            return (
+              img.complete && img.naturalWidth > 0 && img.naturalHeight > 0
+            );
           });
 
           if (imageLoaded) {
             imageResult.loadTime = Date.now() - loadStartTime;
             imageResult.success = true;
-            
+
             // Get natural dimensions
-            const naturalDims = await element.evaluate((img) => ({
+            const naturalDims = await element.evaluate(img => ({
               width: img.naturalWidth,
-              height: img.naturalHeight
+              height: img.naturalHeight,
             }));
             imageResult.naturalDimensions = naturalDims;
 
@@ -321,18 +386,15 @@ class ImageLoadingVerifier {
             if (imageResult.loadTime > 3000) {
               imageResult.warning = `Slow loading image: ${imageResult.loadTime}ms`;
             }
-            
           } else {
             imageResult.error = 'Image failed to load completely';
           }
-
         } catch (error) {
           imageResult.error = `Image test failed: ${error.message}`;
         }
 
         results.push(imageResult);
       }
-
     } catch (error) {
       results.push({
         selector: imageConfig.selector,
@@ -342,7 +404,7 @@ class ImageLoadingVerifier {
         error: `Selector test failed: ${error.message}`,
         loadTime: null,
         src: null,
-        dimensions: null
+        dimensions: null,
       });
     }
 
@@ -355,14 +417,14 @@ class ImageLoadingVerifier {
   async testSlowNetworkLoading(page, pageConfig, pageResult) {
     try {
       console.log(`  Testing slow network performance...`);
-      
+
       // Enable network throttling
       const client = await page.context().newCDPSession(page);
       await client.send('Network.emulateNetworkConditions', {
         offline: false,
         downloadThroughput: CONFIG.slowNetworkThrottle.downloadThroughput,
         uploadThroughput: CONFIG.slowNetworkThrottle.uploadThroughput,
-        latency: CONFIG.slowNetworkThrottle.latency
+        latency: CONFIG.slowNetworkThrottle.latency,
       });
 
       // Reload page with throttling
@@ -371,9 +433,11 @@ class ImageLoadingVerifier {
       const slowLoadTime = Date.now() - slowStartTime;
 
       pageResult.performance.slowNetworkLoadTime = slowLoadTime;
-      
+
       if (slowLoadTime > 10000) {
-        pageResult.warnings.push(`Slow network load time: ${slowLoadTime}ms (>10s)`);
+        pageResult.warnings.push(
+          `Slow network load time: ${slowLoadTime}ms (>10s)`
+        );
       }
 
       // Disable throttling
@@ -381,9 +445,8 @@ class ImageLoadingVerifier {
         offline: false,
         downloadThroughput: -1,
         uploadThroughput: -1,
-        latency: 0
+        latency: 0,
       });
-
     } catch (error) {
       pageResult.warnings.push(`Slow network test failed: ${error.message}`);
     }
@@ -395,17 +458,23 @@ class ImageLoadingVerifier {
   calculatePerformanceMetrics(pageResult) {
     const { images } = pageResult;
     const performance = pageResult.performance;
-    
+
     performance.totalImages = images.length;
     performance.loadedImages = images.filter(img => img.success).length;
     performance.failedImages = images.filter(img => !img.success).length;
-    
-    const loadTimes = images.filter(img => img.loadTime).map(img => img.loadTime);
+
+    const loadTimes = images
+      .filter(img => img.loadTime)
+      .map(img => img.loadTime);
     if (loadTimes.length > 0) {
-      performance.averageLoadTime = Math.round(loadTimes.reduce((a, b) => a + b, 0) / loadTimes.length);
+      performance.averageLoadTime = Math.round(
+        loadTimes.reduce((a, b) => a + b, 0) / loadTimes.length
+      );
     }
-    
-    performance.slowImages = images.filter(img => img.loadTime && img.loadTime > 2000);
+
+    performance.slowImages = images.filter(
+      img => img.loadTime && img.loadTime > 2000
+    );
   }
 
   /**
@@ -415,7 +484,9 @@ class ImageLoadingVerifier {
     console.log('🔍 Starting Automated Image Loading Verification');
     console.log(`📅 Timestamp: ${this.timestamp}`);
     console.log(`🌐 Base URL: ${CONFIG.baseUrl}`);
-    console.log(`📋 Testing ${Object.keys(TEST_PAGES).length} pages on desktop and mobile\n`);
+    console.log(
+      `📋 Testing ${Object.keys(TEST_PAGES).length} pages on desktop and mobile\n`
+    );
 
     // Ensure output directory exists
     try {
@@ -436,7 +507,7 @@ class ImageLoadingVerifier {
       placeholdersFound: 0,
       startTime: new Date().toISOString(),
       endTime: null,
-      duration: null
+      duration: null,
     };
 
     try {
@@ -445,7 +516,7 @@ class ImageLoadingVerifier {
         // Desktop test
         const desktopResult = await this.testPageImages(pageConfig, 'desktop');
         this.results.push(desktopResult);
-        
+
         // Mobile test
         const mobileResult = await this.testPageImages(pageConfig, 'mobile');
         this.results.push(mobileResult);
@@ -457,14 +528,16 @@ class ImageLoadingVerifier {
           } else {
             summary.failedPages++;
           }
-          
+
           summary.totalImages += result.performance.totalImages;
           summary.loadedImages += result.performance.loadedImages;
           summary.failedImages += result.performance.failedImages;
           summary.placeholdersFound += result.placeholders.length;
         });
 
-        console.log(`  ✅ ${pageConfig.name} - Desktop: ${desktopResult.success ? 'PASS' : 'FAIL'}, Mobile: ${mobileResult.success ? 'PASS' : 'FAIL'}`);
+        console.log(
+          `  ✅ ${pageConfig.name} - Desktop: ${desktopResult.success ? 'PASS' : 'FAIL'}, Mobile: ${mobileResult.success ? 'PASS' : 'FAIL'}`
+        );
       }
 
       summary.endTime = new Date().toISOString();
@@ -477,7 +550,6 @@ class ImageLoadingVerifier {
       this.printSummary(summary);
 
       return summary;
-
     } finally {
       await this.closeBrowser();
     }
@@ -492,26 +564,35 @@ class ImageLoadingVerifier {
         timestamp: this.timestamp,
         baseUrl: CONFIG.baseUrl,
         testConfiguration: CONFIG,
-        summary: summary
+        summary: summary,
       },
       results: this.results,
-      testPages: TEST_PAGES
+      testPages: TEST_PAGES,
     };
 
     // JSON Report
-    const jsonReport = path.join(CONFIG.outputDir, `image-loading-verification-${this.timestamp}.json`);
+    const jsonReport = path.join(
+      CONFIG.outputDir,
+      `image-loading-verification-${this.timestamp}.json`
+    );
     await fs.writeFile(jsonReport, JSON.stringify(reportData, null, 2));
     console.log(`📄 JSON report saved: ${jsonReport}`);
 
     // Markdown Report
     const markdownReport = await this.generateMarkdownReport(reportData);
-    const mdReport = path.join(CONFIG.outputDir, `image-loading-verification-${this.timestamp}.md`);
+    const mdReport = path.join(
+      CONFIG.outputDir,
+      `image-loading-verification-${this.timestamp}.md`
+    );
     await fs.writeFile(mdReport, markdownReport);
     console.log(`📄 Markdown report saved: ${mdReport}`);
 
     // HTML Report
     const htmlReport = await this.generateHtmlReport(reportData);
-    const htmlReportPath = path.join(CONFIG.outputDir, `image-loading-verification-${this.timestamp}.html`);
+    const htmlReportPath = path.join(
+      CONFIG.outputDir,
+      `image-loading-verification-${this.timestamp}.html`
+    );
     await fs.writeFile(htmlReportPath, htmlReport);
     console.log(`📄 HTML report saved: ${htmlReportPath}`);
   }
@@ -521,7 +602,7 @@ class ImageLoadingVerifier {
    */
   async generateMarkdownReport(data) {
     const { metadata, results } = data;
-    
+
     let markdown = `# Image Loading Verification Report
 
 ## Summary
@@ -555,11 +636,11 @@ class ImageLoadingVerifier {
       markdown += `### ${pageName}
 
 `;
-      
+
       ['desktop', 'mobile'].forEach(deviceType => {
         const result = devices[deviceType];
         if (!result) return;
-        
+
         const status = result.success ? '✅ PASS' : '❌ FAIL';
         markdown += `#### ${deviceType.toUpperCase()} ${status}
 
@@ -733,7 +814,7 @@ ${slowImages.length} images are loading slowly (>2 seconds):
    */
   async generateHtmlReport(data) {
     const { metadata, results } = data;
-    
+
     return `<!DOCTYPE html>
 <html lang="en">
 <head>
@@ -821,19 +902,24 @@ ${slowImages.length} images are loading slowly (>2 seconds):
 
             <h2>Page Results</h2>
             
-            ${Object.entries(results.reduce((acc, result) => {
-              if (!acc[result.page]) acc[result.page] = {};
-              acc[result.page][result.deviceType] = result;
-              return acc;
-            }, {})).map(([pageName, devices]) => `
+            ${Object.entries(
+              results.reduce((acc, result) => {
+                if (!acc[result.page]) acc[result.page] = {};
+                acc[result.page][result.deviceType] = result;
+                return acc;
+              }, {})
+            )
+              .map(
+                ([pageName, devices]) => `
               <div class="page-section">
                 <div class="page-header">${pageName}</div>
                 
-                ${['desktop', 'mobile'].map(deviceType => {
-                  const result = devices[deviceType];
-                  if (!result) return '';
-                  
-                  return `
+                ${['desktop', 'mobile']
+                  .map(deviceType => {
+                    const result = devices[deviceType];
+                    if (!result) return '';
+
+                    return `
                   <div class="device-section">
                     <div class="device-header">
                       <div class="device-title">${deviceType.toUpperCase()}</div>
@@ -869,7 +955,9 @@ ${slowImages.length} images are loading slowly (>2 seconds):
                       </div>
                     </div>
 
-                    ${result.errors.length > 0 ? `
+                    ${
+                      result.errors.length > 0
+                        ? `
                     <div class="issues-section">
                       <h4>Errors</h4>
                       <div class="issue-list error">
@@ -878,9 +966,13 @@ ${slowImages.length} images are loading slowly (>2 seconds):
                         </ul>
                       </div>
                     </div>
-                    ` : ''}
+                    `
+                        : ''
+                    }
 
-                    ${result.warnings.length > 0 ? `
+                    ${
+                      result.warnings.length > 0
+                        ? `
                     <div class="issues-section">
                       <h4>Warnings</h4>
                       <div class="issue-list">
@@ -889,9 +981,13 @@ ${slowImages.length} images are loading slowly (>2 seconds):
                         </ul>
                       </div>
                     </div>
-                    ` : ''}
+                    `
+                        : ''
+                    }
 
-                    ${result.placeholders.length > 0 ? `
+                    ${
+                      result.placeholders.length > 0
+                        ? `
                     <div class="issues-section">
                       <h4>Loading Placeholders Found</h4>
                       <div class="issue-list">
@@ -900,12 +996,18 @@ ${slowImages.length} images are loading slowly (>2 seconds):
                         </ul>
                       </div>
                     </div>
-                    ` : ''}
+                    `
+                        : ''
+                    }
 
-                    ${result.images.length > 0 ? `
+                    ${
+                      result.images.length > 0
+                        ? `
                     <div class="image-details">
                       <h4>Image Details</h4>
-                      ${result.images.map(img => `
+                      ${result.images
+                        .map(
+                          img => `
                         <div class="image-item ${!img.success ? 'failed' : img.loadTime > 2000 ? 'slow' : ''}">
                           <strong>${img.name}</strong>
                           <br>Status: ${img.success ? '✅ Loaded' : '❌ Failed'}
@@ -914,14 +1016,21 @@ ${slowImages.length} images are loading slowly (>2 seconds):
                           ${img.error ? `<br><span style="color: #dc3545;">Error: ${img.error}</span>` : ''}
                           ${img.warning ? `<br><span style="color: #856404;">Warning: ${img.warning}</span>` : ''}
                         </div>
-                      `).join('')}
+                      `
+                        )
+                        .join('')}
                     </div>
-                    ` : ''}
+                    `
+                        : ''
+                    }
                   </div>
                   `;
-                }).join('')}
+                  })
+                  .join('')}
               </div>
-            `).join('')}
+            `
+              )
+              .join('')}
 
             <div class="issues-section">
                 <h3>💡 Recommendations</h3>
@@ -955,33 +1064,48 @@ ${slowImages.length} images are loading slowly (>2 seconds):
     console.log('\n' + '='.repeat(70));
     console.log('📊 IMAGE LOADING VERIFICATION SUMMARY');
     console.log('='.repeat(70));
-    console.log(`📄 Pages Tested: ${summary.successfulPages}/${summary.totalPages} successful`);
-    console.log(`🖼️  Images Tested: ${summary.loadedImages}/${summary.totalImages} loaded`);
+    console.log(
+      `📄 Pages Tested: ${summary.successfulPages}/${summary.totalPages} successful`
+    );
+    console.log(
+      `🖼️  Images Tested: ${summary.loadedImages}/${summary.totalImages} loaded`
+    );
     console.log(`⚠️  Placeholders Found: ${summary.placeholdersFound}`);
     console.log(`⏱️  Duration: ${Math.round(summary.duration / 1000)}s`);
-    
+
     if (summary.failedPages > 0) {
       console.log('\n❌ FAILED PAGES:');
-      this.results.filter(r => !r.success).forEach(result => {
-        console.log(`   ${result.page} (${result.deviceType}): ${result.errors.join(', ')}`);
-      });
+      this.results
+        .filter(r => !r.success)
+        .forEach(result => {
+          console.log(
+            `   ${result.page} (${result.deviceType}): ${result.errors.join(', ')}`
+          );
+        });
     }
 
     if (summary.placeholdersFound > 0) {
       console.log('\n⚠️  LOADING PLACEHOLDERS FOUND:');
       this.results.forEach(result => {
         if (result.placeholders.length > 0) {
-          console.log(`   ${result.page} (${result.deviceType}): ${result.placeholders.length} placeholders`);
+          console.log(
+            `   ${result.page} (${result.deviceType}): ${result.placeholders.length} placeholders`
+          );
         }
       });
     }
 
-    if (summary.successfulPages === summary.totalPages && summary.placeholdersFound === 0) {
+    if (
+      summary.successfulPages === summary.totalPages &&
+      summary.placeholdersFound === 0
+    ) {
       console.log('\n🎉 All pages and images are loading correctly!');
     } else {
-      console.log('\n⚠️  Some issues found. Check detailed reports for more information.');
+      console.log(
+        '\n⚠️  Some issues found. Check detailed reports for more information.'
+      );
     }
-    
+
     console.log('='.repeat(70));
   }
 }
@@ -991,11 +1115,11 @@ async function main() {
   try {
     const verifier = new ImageLoadingVerifier();
     const summary = await verifier.runVerification();
-    
+
     // Exit with error code if any pages failed or placeholders found
-    const exitCode = (summary.failedPages > 0 || summary.placeholdersFound > 0) ? 1 : 0;
+    const exitCode =
+      summary.failedPages > 0 || summary.placeholdersFound > 0 ? 1 : 0;
     process.exit(exitCode);
-    
   } catch (error) {
     console.error('❌ Image loading verification failed:', error.message);
     console.error(error.stack);

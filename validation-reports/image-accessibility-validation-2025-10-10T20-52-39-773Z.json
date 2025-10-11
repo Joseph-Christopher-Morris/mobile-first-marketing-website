@@ -79,9 +79,7 @@
       "contentLength": 57180,
       "cacheStatus": "Hit from cloudfront",
       "errors": [],
-      "warnings": [
-        "Missing Cache-Control header"
-      ],
+      "warnings": ["Missing Cache-Control header"],
       "details": {
         "headers": {
           "content-type": "image/webp",
@@ -111,9 +109,7 @@
       "contentLength": 23692,
       "cacheStatus": "Hit from cloudfront",
       "errors": [],
-      "warnings": [
-        "Missing Cache-Control header"
-      ],
+      "warnings": ["Missing Cache-Control header"],
       "details": {
         "headers": {
           "content-type": "image/webp",
@@ -143,9 +139,7 @@
       "contentLength": 23692,
       "cacheStatus": "Hit from cloudfront",
       "errors": [],
-      "warnings": [
-        "Missing Cache-Control header"
-      ],
+      "warnings": ["Missing Cache-Control header"],
       "details": {
         "headers": {
           "content-type": "image/webp",
@@ -175,9 +169,7 @@
       "contentLength": 23692,
       "cacheStatus": "Hit from cloudfront",
       "errors": [],
-      "warnings": [
-        "Missing Cache-Control header"
-      ],
+      "warnings": ["Missing Cache-Control header"],
       "details": {
         "headers": {
           "content-type": "image/webp",
@@ -206,12 +198,8 @@
       "contentType": "text/html",
       "contentLength": 83941,
       "cacheStatus": "Error from cloudfront",
-      "errors": [
-        "Invalid Content-Type: text/html (expected image/*)"
-      ],
-      "warnings": [
-        "Missing Cache-Control header"
-      ],
+      "errors": ["Invalid Content-Type: text/html (expected image/*)"],
+      "warnings": ["Missing Cache-Control header"],
       "details": {
         "headers": {
           "content-type": "text/html",
@@ -240,12 +228,8 @@
       "contentType": "text/html",
       "contentLength": 83941,
       "cacheStatus": "Error from cloudfront",
-      "errors": [
-        "Invalid Content-Type: text/html (expected image/*)"
-      ],
-      "warnings": [
-        "Missing Cache-Control header"
-      ],
+      "errors": ["Invalid Content-Type: text/html (expected image/*)"],
+      "warnings": ["Missing Cache-Control header"],
       "details": {
         "headers": {
           "content-type": "text/html",
@@ -274,12 +258,8 @@
       "contentType": "text/html",
       "contentLength": 83941,
       "cacheStatus": "Error from cloudfront",
-      "errors": [
-        "Invalid Content-Type: text/html (expected image/*)"
-      ],
-      "warnings": [
-        "Missing Cache-Control header"
-      ],
+      "errors": ["Invalid Content-Type: text/html (expected image/*)"],
+      "warnings": ["Missing Cache-Control header"],
       "details": {
         "headers": {
           "content-type": "text/html",
@@ -308,12 +288,8 @@
       "contentType": "text/html",
       "contentLength": 83941,
       "cacheStatus": "Error from cloudfront",
-      "errors": [
-        "Invalid Content-Type: text/html (expected image/*)"
-      ],
-      "warnings": [
-        "Missing Cache-Control header"
-      ],
+      "errors": ["Invalid Content-Type: text/html (expected image/*)"],
+      "warnings": ["Missing Cache-Control header"],
       "details": {
         "headers": {
           "content-type": "text/html",
@@ -343,9 +319,7 @@
       "contentLength": 23692,
       "cacheStatus": "Hit from cloudfront",
       "errors": [],
-      "warnings": [
-        "Missing Cache-Control header"
-      ],
+      "warnings": ["Missing Cache-Control header"],
       "details": {
         "headers": {
           "content-type": "image/webp",
@@ -374,12 +348,8 @@
       "contentType": "text/html",
       "contentLength": 83941,
       "cacheStatus": "Error from cloudfront",
-      "errors": [
-        "Invalid Content-Type: text/html (expected image/*)"
-      ],
-      "warnings": [
-        "Missing Cache-Control header"
-      ],
+      "errors": ["Invalid Content-Type: text/html (expected image/*)"],
+      "warnings": ["Missing Cache-Control header"],
       "details": {
         "headers": {
           "content-type": "text/html",
@@ -408,12 +378,8 @@
       "contentType": "text/html",
       "contentLength": 83941,
       "cacheStatus": "Error from cloudfront",
-      "errors": [
-        "Invalid Content-Type: text/html (expected image/*)"
-      ],
-      "warnings": [
-        "Missing Cache-Control header"
-      ],
+      "errors": ["Invalid Content-Type: text/html (expected image/*)"],
+      "warnings": ["Missing Cache-Control header"],
       "details": {
         "headers": {
           "content-type": "text/html",
@@ -442,12 +408,8 @@
       "contentType": "text/html",
       "contentLength": 83941,
       "cacheStatus": "Error from cloudfront",
-      "errors": [
-        "Invalid Content-Type: text/html (expected image/*)"
-      ],
-      "warnings": [
-        "Missing Cache-Control header"
-      ],
+      "errors": ["Invalid Content-Type: text/html (expected image/*)"],
+      "warnings": ["Missing Cache-Control header"],
       "details": {
         "headers": {
           "content-type": "text/html",
@@ -476,12 +438,8 @@
       "contentType": "text/html",
       "contentLength": 83941,
       "cacheStatus": "Error from cloudfront",
-      "errors": [
-        "Invalid Content-Type: text/html (expected image/*)"
-      ],
-      "warnings": [
-        "Missing Cache-Control header"
-      ],
+      "errors": ["Invalid Content-Type: text/html (expected image/*)"],
+      "warnings": ["Missing Cache-Control header"],
       "details": {
         "headers": {
           "content-type": "text/html",
@@ -510,12 +468,8 @@
       "contentType": "text/html",
       "contentLength": 83941,
       "cacheStatus": "Error from cloudfront",
-      "errors": [
-        "Invalid Content-Type: text/html (expected image/*)"
-      ],
-      "warnings": [
-        "Missing Cache-Control header"
-      ],
+      "errors": ["Invalid Content-Type: text/html (expected image/*)"],
+      "warnings": ["Missing Cache-Control header"],
       "details": {
         "headers": {
           "content-type": "text/html",
@@ -544,12 +498,8 @@
       "contentType": "text/html",
       "contentLength": 83941,
       "cacheStatus": "Error from cloudfront",
-      "errors": [
-        "Invalid Content-Type: text/html (expected image/*)"
-      ],
-      "warnings": [
-        "Missing Cache-Control header"
-      ],
+      "errors": ["Invalid Content-Type: text/html (expected image/*)"],
+      "warnings": ["Missing Cache-Control header"],
       "details": {
         "headers": {
           "content-type": "text/html",
@@ -578,12 +528,8 @@
       "contentType": "text/html",
       "contentLength": 83941,
       "cacheStatus": "Error from cloudfront",
-      "errors": [
-        "Invalid Content-Type: text/html (expected image/*)"
-      ],
-      "warnings": [
-        "Missing Cache-Control header"
-      ],
+      "errors": ["Invalid Content-Type: text/html (expected image/*)"],
+      "warnings": ["Missing Cache-Control header"],
       "details": {
         "headers": {
           "content-type": "text/html",
@@ -612,12 +558,8 @@
       "contentType": "text/html",
       "contentLength": 83941,
       "cacheStatus": "Error from cloudfront",
-      "errors": [
-        "Invalid Content-Type: text/html (expected image/*)"
-      ],
-      "warnings": [
-        "Missing Cache-Control header"
-      ],
+      "errors": ["Invalid Content-Type: text/html (expected image/*)"],
+      "warnings": ["Missing Cache-Control header"],
       "details": {
         "headers": {
           "content-type": "text/html",
@@ -646,12 +588,8 @@
       "contentType": "text/html",
       "contentLength": 83941,
       "cacheStatus": "Error from cloudfront",
-      "errors": [
-        "Invalid Content-Type: text/html (expected image/*)"
-      ],
-      "warnings": [
-        "Missing Cache-Control header"
-      ],
+      "errors": ["Invalid Content-Type: text/html (expected image/*)"],
+      "warnings": ["Missing Cache-Control header"],
       "details": {
         "headers": {
           "content-type": "text/html",
@@ -680,12 +618,8 @@
       "contentType": "text/html",
       "contentLength": 83941,
       "cacheStatus": "Error from cloudfront",
-      "errors": [
-        "Invalid Content-Type: text/html (expected image/*)"
-      ],
-      "warnings": [
-        "Missing Cache-Control header"
-      ],
+      "errors": ["Invalid Content-Type: text/html (expected image/*)"],
+      "warnings": ["Missing Cache-Control header"],
       "details": {
         "headers": {
           "content-type": "text/html",
@@ -714,12 +648,8 @@
       "contentType": "text/html",
       "contentLength": 83941,
       "cacheStatus": "Error from cloudfront",
-      "errors": [
-        "Invalid Content-Type: text/html (expected image/*)"
-      ],
-      "warnings": [
-        "Missing Cache-Control header"
-      ],
+      "errors": ["Invalid Content-Type: text/html (expected image/*)"],
+      "warnings": ["Missing Cache-Control header"],
       "details": {
         "headers": {
           "content-type": "text/html",
@@ -748,12 +678,8 @@
       "contentType": "text/html",
       "contentLength": 83941,
       "cacheStatus": "Error from cloudfront",
-      "errors": [
-        "Invalid Content-Type: text/html (expected image/*)"
-      ],
-      "warnings": [
-        "Missing Cache-Control header"
-      ],
+      "errors": ["Invalid Content-Type: text/html (expected image/*)"],
+      "warnings": ["Missing Cache-Control header"],
       "details": {
         "headers": {
           "content-type": "text/html",
@@ -782,12 +708,8 @@
       "contentType": "text/html",
       "contentLength": 83941,
       "cacheStatus": "Error from cloudfront",
-      "errors": [
-        "Invalid Content-Type: text/html (expected image/*)"
-      ],
-      "warnings": [
-        "Missing Cache-Control header"
-      ],
+      "errors": ["Invalid Content-Type: text/html (expected image/*)"],
+      "warnings": ["Missing Cache-Control header"],
       "details": {
         "headers": {
           "content-type": "text/html",

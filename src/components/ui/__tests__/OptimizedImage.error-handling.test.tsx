@@ -22,15 +22,8 @@ vi.mock('next/image', () => ({
       return () => clearTimeout(timer);
     }, [src, onLoad, onError]);
 
-    return (
-      <img
-        src={src}
-        alt={alt}
-        {...props}
-        data-testid="next-image"
-      />
-    );
-  }
+    return <img src={src} alt={alt} {...props} data-testid='next-image' />;
+  },
 }));
 
 describe('OptimizedImage Error Handling', () => {
@@ -49,8 +42,8 @@ describe('OptimizedImage Error Handling', () => {
     it('should show loading indicator by default', async () => {
       render(
         <OptimizedImage
-          src="/images/slow-loading.jpg"
-          alt="Slow loading image"
+          src='/images/slow-loading.jpg'
+          alt='Slow loading image'
           width={400}
           height={300}
         />
@@ -62,8 +55,8 @@ describe('OptimizedImage Error Handling', () => {
     it('should hide loading indicator when showLoadingIndicator is false', () => {
       render(
         <OptimizedImage
-          src="/images/test.jpg"
-          alt="Test image"
+          src='/images/test.jpg'
+          alt='Test image'
           width={400}
           height={300}
           showLoadingIndicator={false}
@@ -75,11 +68,11 @@ describe('OptimizedImage Error Handling', () => {
 
     it('should show custom loading component when provided', () => {
       const CustomLoader = () => <div>Custom loading...</div>;
-      
+
       render(
         <OptimizedImage
-          src="/images/slow-loading.jpg"
-          alt="Test image"
+          src='/images/slow-loading.jpg'
+          alt='Test image'
           width={400}
           height={300}
           loadingComponent={<CustomLoader />}
@@ -94,8 +87,8 @@ describe('OptimizedImage Error Handling', () => {
     it('should show error message when image fails to load', async () => {
       render(
         <OptimizedImage
-          src="/images/broken-image.jpg"
-          alt="Broken image"
+          src='/images/broken-image.jpg'
+          alt='Broken image'
           width={400}
           height={300}
         />
@@ -111,11 +104,11 @@ describe('OptimizedImage Error Handling', () => {
     it('should show custom error message', async () => {
       render(
         <OptimizedImage
-          src="/images/broken-image.jpg"
-          alt="Broken image"
+          src='/images/broken-image.jpg'
+          alt='Broken image'
           width={400}
           height={300}
-          errorMessage="Custom error occurred"
+          errorMessage='Custom error occurred'
         />
       );
 
@@ -127,8 +120,8 @@ describe('OptimizedImage Error Handling', () => {
     it('should hide error message when showErrorMessage is false', async () => {
       render(
         <OptimizedImage
-          src="/images/broken-image.jpg"
-          alt="Broken image"
+          src='/images/broken-image.jpg'
+          alt='Broken image'
           width={400}
           height={300}
           showErrorMessage={false}
@@ -136,17 +129,19 @@ describe('OptimizedImage Error Handling', () => {
       );
 
       await waitFor(() => {
-        expect(screen.queryByText('Image failed to load')).not.toBeInTheDocument();
+        expect(
+          screen.queryByText('Image failed to load')
+        ).not.toBeInTheDocument();
       });
     });
 
     it('should show custom error component when provided', async () => {
       const CustomError = () => <div>Custom error component</div>;
-      
+
       render(
         <OptimizedImage
-          src="/images/broken-image.jpg"
-          alt="Broken image"
+          src='/images/broken-image.jpg'
+          alt='Broken image'
           width={400}
           height={300}
           errorComponent={<CustomError />}
@@ -163,11 +158,11 @@ describe('OptimizedImage Error Handling', () => {
     it('should try fallback image when main image fails', async () => {
       render(
         <OptimizedImage
-          src="/images/broken-image.jpg"
-          alt="Test image"
+          src='/images/broken-image.jpg'
+          alt='Test image'
           width={400}
           height={300}
-          fallbackSrc="/images/fallback.jpg"
+          fallbackSrc='/images/fallback.jpg'
         />
       );
 
@@ -181,11 +176,11 @@ describe('OptimizedImage Error Handling', () => {
     it('should show error if both main and fallback images fail', async () => {
       render(
         <OptimizedImage
-          src="/images/broken-image.jpg"
-          alt="Test image"
+          src='/images/broken-image.jpg'
+          alt='Test image'
           width={400}
           height={300}
-          fallbackSrc="/images/broken-fallback.jpg"
+          fallbackSrc='/images/broken-fallback.jpg'
         />
       );
 
@@ -199,8 +194,8 @@ describe('OptimizedImage Error Handling', () => {
     it('should show retry count during retry attempts', async () => {
       render(
         <OptimizedImage
-          src="/images/broken-image.jpg"
-          alt="Test image"
+          src='/images/broken-image.jpg'
+          alt='Test image'
           width={400}
           height={300}
           maxRetries={2}
@@ -209,18 +204,21 @@ describe('OptimizedImage Error Handling', () => {
       );
 
       // Should show retry indicator
-      await waitFor(() => {
-        expect(screen.getByText('Retry 1/2')).toBeInTheDocument();
-      }, { timeout: 2000 });
+      await waitFor(
+        () => {
+          expect(screen.getByText('Retry 1/2')).toBeInTheDocument();
+        },
+        { timeout: 2000 }
+      );
     });
 
     it('should respect maxRetries setting', async () => {
       const onError = vi.fn();
-      
+
       render(
         <OptimizedImage
-          src="/images/broken-image.jpg"
-          alt="Test image"
+          src='/images/broken-image.jpg'
+          alt='Test image'
           width={400}
           height={300}
           maxRetries={1}
@@ -230,9 +228,12 @@ describe('OptimizedImage Error Handling', () => {
       );
 
       // Wait for all retries to complete
-      await waitFor(() => {
-        expect(screen.getByText('Image failed to load')).toBeInTheDocument();
-      }, { timeout: 3000 });
+      await waitFor(
+        () => {
+          expect(screen.getByText('Image failed to load')).toBeInTheDocument();
+        },
+        { timeout: 3000 }
+      );
 
       expect(onError).toHaveBeenCalledTimes(1);
     });
@@ -252,8 +253,8 @@ describe('OptimizedImage Error Handling', () => {
     it('should show debug info in development mode', async () => {
       render(
         <OptimizedImage
-          src="/images/broken-image.jpg"
-          alt="Test image"
+          src='/images/broken-image.jpg'
+          alt='Test image'
           width={400}
           height={300}
         />
@@ -269,8 +270,8 @@ describe('OptimizedImage Error Handling', () => {
     it('should have proper ARIA attributes for error state', async () => {
       render(
         <OptimizedImage
-          src="/images/broken-image.jpg"
-          alt="Test image"
+          src='/images/broken-image.jpg'
+          alt='Test image'
           width={400}
           height={300}
         />
@@ -278,15 +279,18 @@ describe('OptimizedImage Error Handling', () => {
 
       await waitFor(() => {
         const errorContainer = screen.getByRole('img');
-        expect(errorContainer).toHaveAttribute('aria-label', 'Failed to load image: Test image');
+        expect(errorContainer).toHaveAttribute(
+          'aria-label',
+          'Failed to load image: Test image'
+        );
       });
     });
 
     it('should maintain alt text in error state', async () => {
       render(
         <OptimizedImage
-          src="/images/broken-image.jpg"
-          alt="Important test image"
+          src='/images/broken-image.jpg'
+          alt='Important test image'
           width={400}
           height={300}
         />
@@ -301,11 +305,11 @@ describe('OptimizedImage Error Handling', () => {
   describe('Callback Functions', () => {
     it('should call onLoad when image loads successfully', async () => {
       const onLoad = vi.fn();
-      
+
       render(
         <OptimizedImage
-          src="/images/success.jpg"
-          alt="Test image"
+          src='/images/success.jpg'
+          alt='Test image'
           width={400}
           height={300}
           onLoad={onLoad}
@@ -319,11 +323,11 @@ describe('OptimizedImage Error Handling', () => {
 
     it('should call onError when all retries are exhausted', async () => {
       const onError = vi.fn();
-      
+
       render(
         <OptimizedImage
-          src="/images/broken-image.jpg"
-          alt="Test image"
+          src='/images/broken-image.jpg'
+          alt='Test image'
           width={400}
           height={300}
           maxRetries={1}
@@ -332,9 +336,12 @@ describe('OptimizedImage Error Handling', () => {
         />
       );
 
-      await waitFor(() => {
-        expect(onError).toHaveBeenCalledTimes(1);
-      }, { timeout: 2000 });
+      await waitFor(
+        () => {
+          expect(onError).toHaveBeenCalledTimes(1);
+        },
+        { timeout: 2000 }
+      );
     });
   });
 });

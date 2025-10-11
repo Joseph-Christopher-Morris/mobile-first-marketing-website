@@ -1,8 +1,5 @@
 {
-  "domains": [
-    "example.com",
-    "www.example.com"
-  ],
+  "domains": ["example.com", "www.example.com"],
   "validation": {
     "checkExpiry": true,
     "expiryWarningDays": 30,
@@ -19,10 +16,7 @@
       "ecdsa-with-SHA384",
       "ecdsa-with-SHA512"
     ],
-    "blockedSignatureAlgorithms": [
-      "md5WithRSAEncryption",
-      "sha1WithRSAEncryption"
-    ]
+    "blockedSignatureAlgorithms": ["md5WithRSAEncryption", "sha1WithRSAEncryption"]
   },
   "reporting": {
     "outputFormat": "json",

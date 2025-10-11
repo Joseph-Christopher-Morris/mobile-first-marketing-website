@@ -109,10 +109,7 @@
         }
       ],
       "strongCiphers": [],
-      "weakCiphers": [
-        "TLS_AES_128_GCM_SHA256",
-        "ECDHE-ECDSA-AES128-GCM-SHA256"
-      ],
+      "weakCiphers": ["TLS_AES_128_GCM_SHA256", "ECDHE-ECDSA-AES128-GCM-SHA256"],
       "pfsSupported": true,
       "strongEncryption": false,
       "securityLevel": "MEDIUM"
@@ -153,11 +150,7 @@
       }
     },
     "vulnerabilities": [],
-    "strengths": [
-      "TLS 1.2 support enabled",
-      "TLS 1.3 support enabled",
-      "Perfect Forward Secrecy implemented"
-    ],
+    "strengths": ["TLS 1.2 support enabled", "TLS 1.3 support enabled", "Perfect Forward Secrecy implemented"],
     "riskFactors": []
   },
   "complianceAnalysis": {
@@ -167,26 +160,15 @@
       "OWASP": true,
       "details": {
         "PCI DSS": {
-          "required": [
-            "TLS 1.2+",
-            "No weak TLS",
-            "Strong encryption"
-          ],
+          "required": ["TLS 1.2+", "No weak TLS", "Strong encryption"],
           "status": "NON-COMPLIANT"
         },
         "NIST": {
-          "required": [
-            "TLS 1.2+",
-            "Perfect Forward Secrecy"
-          ],
+          "required": ["TLS 1.2+", "Perfect Forward Secrecy"],
           "status": "COMPLIANT"
         },
         "OWASP": {
-          "required": [
-            "TLS 1.2+",
-            "No weak TLS",
-            "Strong ciphers"
-          ],
+          "required": ["TLS 1.2+", "No weak TLS", "Strong ciphers"],
           "status": "COMPLIANT"
         }
       }
@@ -379,10 +361,7 @@
           }
         ],
         "strongCiphers": [],
-        "weakCiphers": [
-          "TLS_AES_128_GCM_SHA256",
-          "ECDHE-ECDSA-AES128-GCM-SHA256"
-        ],
+        "weakCiphers": ["TLS_AES_128_GCM_SHA256", "ECDHE-ECDSA-AES128-GCM-SHA256"],
         "pfsSupported": true,
         "strongEncryption": false,
         "securityLevel": "MEDIUM"
@@ -440,33 +419,20 @@
         "OWASP": true,
         "details": {
           "PCI DSS": {
-            "required": [
-              "TLS 1.2+",
-              "No weak TLS",
-              "Strong encryption"
-            ],
+            "required": ["TLS 1.2+", "No weak TLS", "Strong encryption"],
             "status": "NON-COMPLIANT"
           },
           "NIST": {
-            "required": [
-              "TLS 1.2+",
-              "Perfect Forward Secrecy"
-            ],
+            "required": ["TLS 1.2+", "Perfect Forward Secrecy"],
             "status": "COMPLIANT"
           },
           "OWASP": {
-            "required": [
-              "TLS 1.2+",
-              "No weak TLS",
-              "Strong ciphers"
-            ],
+            "required": ["TLS 1.2+", "No weak TLS", "Strong ciphers"],
             "status": "COMPLIANT"
           }
         }
       },
-      "recommendations": [
-        "Use stronger encryption algorithms (AES-256, ChaCha20)"
-      ],
+      "recommendations": ["Use stronger encryption algorithms (AES-256, ChaCha20)"],
       "testDetails": {
         "totalTests": 8,
         "passedTests": 7,
@@ -637,16 +603,8 @@
     ],
     "configuration": {
       "tlsValidation": {
-        "requiredVersions": [
-          "TLS 1.2",
-          "TLS 1.3"
-        ],
-        "prohibitedVersions": [
-          "SSL 2.0",
-          "SSL 3.0",
-          "TLS 1.0",
-          "TLS 1.1"
-        ],
+        "requiredVersions": ["TLS 1.2", "TLS 1.3"],
+        "prohibitedVersions": ["SSL 2.0", "SSL 3.0", "TLS 1.0", "TLS 1.1"],
         "minimumSecurityLevel": "MEDIUM",
         "requirePFS": true,
         "strongEncryptionRequired": true
@@ -659,19 +617,8 @@
           "ECDHE-RSA-AES128-SHA256",
           "ECDHE-RSA-CHACHA20-POLY1305"
         ],
-        "acceptable": [
-          "AES256-GCM-SHA384",
-          "AES128-GCM-SHA256",
-          "AES256-SHA256",
-          "AES128-SHA256"
-        ],
-        "prohibited": [
-          "RC4",
-          "DES",
-          "3DES",
-          "MD5",
-          "SHA1-only"
-        ]
+        "acceptable": ["AES256-GCM-SHA384", "AES128-GCM-SHA256", "AES256-SHA256", "AES128-SHA256"],
+        "prohibited": ["RC4", "DES", "3DES", "MD5", "SHA1-only"]
       },
       "securityHeaders": {
         "strictTransportSecurity": {
@@ -702,17 +649,10 @@
       "validation": {
         "timeout": 10000,
         "retries": 3,
-        "endpoints": [
-          "https://www.ssllabs.com/ssltest/",
-          "https://testssl.sh/"
-        ]
+        "endpoints": ["https://www.ssllabs.com/ssltest/", "https://testssl.sh/"]
       },
       "compliance": {
-        "standards": [
-          "PCI DSS",
-          "NIST",
-          "OWASP"
-        ],
+        "standards": ["PCI DSS", "NIST", "OWASP"],
         "requirements": {
           "pciDss": {
             "tlsVersion": "1.2+",

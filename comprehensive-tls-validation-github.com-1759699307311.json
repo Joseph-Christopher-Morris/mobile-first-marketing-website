@@ -84,10 +84,7 @@
       }
     ],
     "strongCiphers": [],
-    "weakCiphers": [
-      "TLS_AES_128_GCM_SHA256",
-      "ECDHE-ECDSA-AES128-GCM-SHA256"
-    ],
+    "weakCiphers": ["TLS_AES_128_GCM_SHA256", "ECDHE-ECDSA-AES128-GCM-SHA256"],
     "pfsSupported": true,
     "strongEncryption": false,
     "securityLevel": "MEDIUM"
@@ -145,33 +142,20 @@
     "OWASP": true,
     "details": {
       "PCI DSS": {
-        "required": [
-          "TLS 1.2+",
-          "No weak TLS",
-          "Strong encryption"
-        ],
+        "required": ["TLS 1.2+", "No weak TLS", "Strong encryption"],
         "status": "NON-COMPLIANT"
       },
       "NIST": {
-        "required": [
-          "TLS 1.2+",
-          "Perfect Forward Secrecy"
-        ],
+        "required": ["TLS 1.2+", "Perfect Forward Secrecy"],
         "status": "COMPLIANT"
       },
       "OWASP": {
-        "required": [
-          "TLS 1.2+",
-          "No weak TLS",
-          "Strong ciphers"
-        ],
+        "required": ["TLS 1.2+", "No weak TLS", "Strong ciphers"],
         "status": "COMPLIANT"
       }
     }
   },
-  "recommendations": [
-    "Use stronger encryption algorithms (AES-256, ChaCha20)"
-  ],
+  "recommendations": ["Use stronger encryption algorithms (AES-256, ChaCha20)"],
   "testDetails": {
     "totalTests": 8,
     "passedTests": 7,

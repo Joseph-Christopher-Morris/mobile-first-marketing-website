@@ -5,21 +5,26 @@
  * Validates that the S3 bucket is properly configured for secure static hosting
  */
 
-const { S3Client, GetBucketVersioningCommand, GetBucketEncryptionCommand,
-        GetBucketPublicAccessBlockCommand, GetBucketPolicyCommand,
-        HeadBucketCommand } = require('@aws-sdk/client-s3');
+const {
+  S3Client,
+  GetBucketVersioningCommand,
+  GetBucketEncryptionCommand,
+  GetBucketPublicAccessBlockCommand,
+  GetBucketPolicyCommand,
+  HeadBucketCommand,
+} = require('@aws-sdk/client-s3');
 const { fromEnv } = require('@aws-sdk/credential-providers');
 
 class S3InfrastructureValidator {
   constructor() {
     this.s3Client = new S3Client({
       region: process.env.AWS_REGION || 'us-east-1',
-      credentials: fromEnv()
+      credentials: fromEnv(),
     });
-    
+
     this.bucketName = process.env.S3_BUCKET_NAME;
     this.region = process.env.AWS_REGION || 'us-east-1';
-    
+
     if (!this.bucketName) {
       throw new Error('S3_BUCKET_NAME environment variable is required');
     }
@@ -30,9 +35,11 @@ class S3InfrastructureValidator {
    */
   async validateBucketExists() {
     console.log('🔍 Checking if bucket exists...');
-    
+
     try {
-      await this.s3Client.send(new HeadBucketCommand({ Bucket: this.bucketName }));
+      await this.s3Client.send(
+        new HeadBucketCommand({ Bucket: this.bucketName })
+      );
       console.log('✅ Bucket exists and is accessible');
       return true;
     } catch (error) {
@@ -46,18 +53,19 @@ class S3InfrastructureValidator {
    */
   async validatePublicAccessBlocked() {
     console.log('🔍 Checking public access block configuration...');
-    
+
     try {
       const response = await this.s3Client.send(
         new GetBucketPublicAccessBlockCommand({ Bucket: this.bucketName })
       );
-      
+
       const config = response.PublicAccessBlockConfiguration;
-      const isFullyBlocked = config.BlockPublicAcls && 
-                            config.IgnorePublicAcls && 
-                            config.BlockPublicPolicy && 
-                            config.RestrictPublicBuckets;
-      
+      const isFullyBlocked =
+        config.BlockPublicAcls &&
+        config.IgnorePublicAcls &&
+        config.BlockPublicPolicy &&
+        config.RestrictPublicBuckets;
+
       if (isFullyBlocked) {
         console.log('✅ Public access is properly blocked');
         return true;
@@ -77,18 +85,21 @@ class S3InfrastructureValidator {
    */
   async validateVersioning() {
     console.log('🔍 Checking versioning configuration...');
-    
+
     try {
       const response = await this.s3Client.send(
         new GetBucketVersioningCommand({ Bucket: this.bucketName })
       );
-      
+
       if (response.Status === 'Enabled') {
         console.log('✅ Versioning is enabled');
         return true;
       } else {
         console.error('❌ Versioning is not enabled');
-        console.error('   Current status:', response.Status || 'Not configured');
+        console.error(
+          '   Current status:',
+          response.Status || 'Not configured'
+        );
         return false;
       }
     } catch (error) {
@@ -102,17 +113,18 @@ class S3InfrastructureValidator {
    */
   async validateEncryption() {
     console.log('🔍 Checking encryption configuration...');
-    
+
     try {
       const response = await this.s3Client.send(
         new GetBucketEncryptionCommand({ Bucket: this.bucketName })
       );
-      
+
       const rules = response.ServerSideEncryptionConfiguration?.Rules || [];
-      const hasAES256 = rules.some(rule => 
-        rule.ApplyServerSideEncryptionByDefault?.SSEAlgorithm === 'AES256'
+      const hasAES256 = rules.some(
+        rule =>
+          rule.ApplyServerSideEncryptionByDefault?.SSEAlgorithm === 'AES256'
       );
-      
+
       if (hasAES256) {
         console.log('✅ AES256 encryption is enabled');
         return true;
@@ -132,18 +144,18 @@ class S3InfrastructureValidator {
    */
   async validateBucketPolicy() {
     console.log('🔍 Checking bucket policy...');
-    
+
     try {
       const response = await this.s3Client.send(
         new GetBucketPolicyCommand({ Bucket: this.bucketName })
       );
-      
+
       const policy = JSON.parse(response.Policy);
-      const hasDenyStatement = policy.Statement?.some(statement => 
-        statement.Effect === 'Deny' && 
-        statement.Action === 's3:GetObject'
+      const hasDenyStatement = policy.Statement?.some(
+        statement =>
+          statement.Effect === 'Deny' && statement.Action === 's3:GetObject'
       );
-      
+
       if (hasDenyStatement) {
         console.log('✅ Restrictive bucket policy is in place');
         return true;
@@ -168,31 +180,44 @@ class S3InfrastructureValidator {
     console.log('🚀 Starting S3 infrastructure validation...');
     console.log(`Bucket: ${this.bucketName}`);
     console.log(`Region: ${this.region}\n`);
-    
+
     const validations = [
       { name: 'Bucket Exists', fn: () => this.validateBucketExists() },
-      { name: 'Public Access Blocked', fn: () => this.validatePublicAccessBlocked() },
+      {
+        name: 'Public Access Blocked',
+        fn: () => this.validatePublicAccessBlocked(),
+      },
       { name: 'Versioning Enabled', fn: () => this.validateVersioning() },
       { name: 'Encryption Enabled', fn: () => this.validateEncryption() },
-      { name: 'Bucket Policy Configured', fn: () => this.validateBucketPolicy() }
+      {
+        name: 'Bucket Policy Configured',
+        fn: () => this.validateBucketPolicy(),
+      },
     ];
-    
+
     let allPassed = true;
     const results = [];
-    
+
     for (const validation of validations) {
       try {
         const passed = await validation.fn();
         results.push({ name: validation.name, passed });
         if (!passed) allPassed = false;
       } catch (error) {
-        console.error(`❌ ${validation.name} validation failed:`, error.message);
-        results.push({ name: validation.name, passed: false, error: error.message });
+        console.error(
+          `❌ ${validation.name} validation failed:`,
+          error.message
+        );
+        results.push({
+          name: validation.name,
+          passed: false,
+          error: error.message,
+        });
         allPassed = false;
       }
       console.log(''); // Add spacing between validations
     }
-    
+
     // Summary
     console.log('📋 Validation Summary:');
     results.forEach(result => {
@@ -202,13 +227,17 @@ class S3InfrastructureValidator {
         console.log(`      Error: ${result.error}`);
       }
     });
-    
+
     if (allPassed) {
-      console.log('\n🎉 All validations passed! S3 infrastructure is properly configured.');
+      console.log(
+        '\n🎉 All validations passed! S3 infrastructure is properly configured.'
+      );
     } else {
-      console.log('\n⚠️  Some validations failed. Please review the configuration.');
+      console.log(
+        '\n⚠️  Some validations failed. Please review the configuration.'
+      );
     }
-    
+
     return allPassed;
   }
 }
@@ -216,12 +245,13 @@ class S3InfrastructureValidator {
 // CLI execution
 if (require.main === module) {
   const validator = new S3InfrastructureValidator();
-  
-  validator.validate()
-    .then((success) => {
+
+  validator
+    .validate()
+    .then(success => {
       process.exit(success ? 0 : 1);
     })
-    .catch((error) => {
+    .catch(error => {
       console.error('Validation failed:', error.message);
       process.exit(1);
     });

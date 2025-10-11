@@ -2,7 +2,7 @@
 
 /**
  * GitHub Actions IAM Setup Script
- * 
+ *
  * This script creates the necessary IAM role and policies for GitHub Actions
  * to deploy to S3 and CloudFront using OIDC authentication.
  */
@@ -25,22 +25,24 @@ class GitHubActionsIAMSetup {
       info: '📋',
       success: '✅',
       warning: '⚠️',
-      error: '❌'
+      error: '❌',
     }[type];
-    
+
     console.log(`${prefix} [${timestamp}] ${message}`);
   }
 
   detectGitHubRepo() {
     try {
-      const remoteUrl = execSync('git remote get-url origin', { encoding: 'utf8' }).trim();
-      
+      const remoteUrl = execSync('git remote get-url origin', {
+        encoding: 'utf8',
+      }).trim();
+
       // Parse GitHub repo from various URL formats
-      let match = remoteUrl.match(/github\.com[:/]([^/]+)\/([^/.]+)/);
+      const match = remoteUrl.match(/github\.com[:/]([^/]+)\/([^/.]+)/);
       if (match) {
         return `${match[1]}/${match[2]}`;
       }
-      
+
       throw new Error('Could not parse GitHub repository');
     } catch (error) {
       this.log('Could not detect GitHub repository automatically', 'warning');
@@ -51,11 +53,11 @@ class GitHubActionsIAMSetup {
 
   async getAccountId() {
     try {
-      const identity = execSync('aws sts get-caller-identity --output json', { 
+      const identity = execSync('aws sts get-caller-identity --output json', {
         encoding: 'utf8',
-        stdio: 'pipe'
+        stdio: 'pipe',
       });
-      
+
       const identityData = JSON.parse(identity);
       this.accountId = identityData.Account;
       this.log(`AWS Account ID: ${this.accountId}`, 'success');
@@ -79,12 +81,12 @@ class GitHubActionsIAMSetup {
             's3:DeleteObject',
             's3:ListBucket',
             's3:GetBucketLocation',
-            's3:PutObjectAcl'
+            's3:PutObjectAcl',
           ],
           Resource: [
             'arn:aws:s3:::mobile-marketing-site-*',
-            'arn:aws:s3:::mobile-marketing-site-*/*'
-          ]
+            'arn:aws:s3:::mobile-marketing-site-*/*',
+          ],
         },
         {
           Sid: 'CloudFrontAccess',
@@ -94,9 +96,9 @@ class GitHubActionsIAMSetup {
             'cloudfront:GetInvalidation',
             'cloudfront:ListInvalidations',
             'cloudfront:GetDistribution',
-            'cloudfront:GetDistributionConfig'
+            'cloudfront:GetDistributionConfig',
           ],
-          Resource: '*'
+          Resource: '*',
         },
         {
           Sid: 'CloudWatchLogs',
@@ -106,11 +108,11 @@ class GitHubActionsIAMSetup {
             'logs:CreateLogStream',
             'logs:PutLogEvents',
             'logs:DescribeLogGroups',
-            'logs:DescribeLogStreams'
+            'logs:DescribeLogStreams',
           ],
-          Resource: `arn:aws:logs:*:${this.accountId}:log-group:/aws/github-actions/*`
-        }
-      ]
+          Resource: `arn:aws:logs:*:${this.accountId}:log-group:/aws/github-actions/*`,
+        },
+      ],
     };
   }
 
@@ -125,52 +127,55 @@ class GitHubActionsIAMSetup {
         {
           Effect: 'Allow',
           Principal: {
-            Federated: `arn:aws:iam::${this.accountId}:oidc-provider/token.actions.githubusercontent.com`
+            Federated: `arn:aws:iam::${this.accountId}:oidc-provider/token.actions.githubusercontent.com`,
           },
           Action: 'sts:AssumeRoleWithWebIdentity',
           Condition: {
             StringEquals: {
-              'token.actions.githubusercontent.com:aud': 'sts.amazonaws.com'
+              'token.actions.githubusercontent.com:aud': 'sts.amazonaws.com',
             },
             StringLike: {
-              'token.actions.githubusercontent.com:sub': `repo:${this.githubRepo}:ref:refs/heads/main`
-            }
-          }
-        }
-      ]
+              'token.actions.githubusercontent.com:sub': `repo:${this.githubRepo}:ref:refs/heads/main`,
+            },
+          },
+        },
+      ],
     };
   }
 
   async createOIDCProvider() {
     this.log('Creating GitHub OIDC identity provider...', 'info');
-    
+
     try {
       // Check if provider already exists
-      const providers = execSync('aws iam list-open-id-connect-providers --output json', {
-        encoding: 'utf8',
-        stdio: 'pipe'
-      });
-      
+      const providers = execSync(
+        'aws iam list-open-id-connect-providers --output json',
+        {
+          encoding: 'utf8',
+          stdio: 'pipe',
+        }
+      );
+
       const providersData = JSON.parse(providers);
       const existingProvider = providersData.OpenIDConnectProviderList.find(
         provider => provider.Arn.includes('token.actions.githubusercontent.com')
       );
-      
+
       if (existingProvider) {
         this.log('GitHub OIDC provider already exists', 'success');
         return existingProvider.Arn;
       }
-      
+
       // Create new provider
       const createCommand = `aws iam create-open-id-connect-provider \
         --url https://token.actions.githubusercontent.com \
         --thumbprint-list 6938fd4d98bab03faadb97b34396831e3780aea1 \
         --client-id-list sts.amazonaws.com \
         --output json`;
-      
+
       const result = execSync(createCommand, { encoding: 'utf8' });
       const providerData = JSON.parse(result);
-      
+
       this.log('GitHub OIDC provider created successfully', 'success');
       return providerData.OpenIDConnectProviderArn;
     } catch (error) {
@@ -184,24 +189,24 @@ class GitHubActionsIAMSetup {
 
   async createDeploymentPolicy() {
     this.log('Creating deployment policy...', 'info');
-    
+
     const policy = this.generateDeploymentPolicy();
     const policyDocument = JSON.stringify(policy, null, 2);
-    
+
     // Write policy to temporary file
     const tempPolicyFile = path.join(__dirname, 'temp-deployment-policy.json');
     fs.writeFileSync(tempPolicyFile, policyDocument);
-    
+
     try {
       const createCommand = `aws iam create-policy \
         --policy-name ${this.policyName} \
         --policy-document file://${tempPolicyFile} \
         --description "Policy for GitHub Actions S3/CloudFront deployment" \
         --output json`;
-      
+
       const result = execSync(createCommand, { encoding: 'utf8' });
       const policyData = JSON.parse(result);
-      
+
       this.log('Deployment policy created successfully', 'success');
       return policyData.Policy.Arn;
     } catch (error) {
@@ -220,24 +225,24 @@ class GitHubActionsIAMSetup {
 
   async createDeploymentRole() {
     this.log('Creating deployment role...', 'info');
-    
+
     const trustPolicy = this.generateTrustPolicy();
     const trustPolicyDocument = JSON.stringify(trustPolicy, null, 2);
-    
+
     // Write trust policy to temporary file
     const tempTrustFile = path.join(__dirname, 'temp-trust-policy.json');
     fs.writeFileSync(tempTrustFile, trustPolicyDocument);
-    
+
     try {
       const createCommand = `aws iam create-role \
         --role-name ${this.roleName} \
         --assume-role-policy-document file://${tempTrustFile} \
         --description "Role for GitHub Actions S3/CloudFront deployment" \
         --output json`;
-      
+
       const result = execSync(createCommand, { encoding: 'utf8' });
       const roleData = JSON.parse(result);
-      
+
       this.log('Deployment role created successfully', 'success');
       return roleData.Role.Arn;
     } catch (error) {
@@ -256,12 +261,12 @@ class GitHubActionsIAMSetup {
 
   async attachPolicyToRole(policyArn, roleArn) {
     this.log('Attaching policy to role...', 'info');
-    
+
     try {
       const attachCommand = `aws iam attach-role-policy \
         --role-name ${this.roleName} \
         --policy-arn ${policyArn}`;
-      
+
       execSync(attachCommand, { stdio: 'pipe' });
       this.log('Policy attached to role successfully', 'success');
     } catch (error) {
@@ -316,42 +321,47 @@ After adding the secrets, you can test the setup by:
 
 For detailed setup instructions, see: docs/github-actions-aws-setup.md
 `;
-    
+
     console.log(instructions);
   }
 
   async run() {
     console.log('🚀 GitHub Actions IAM Setup\n');
-    
+
     if (!this.githubRepo) {
       this.log('GitHub repository is required', 'error');
-      this.log('Usage: node scripts/setup-github-actions-iam.js --github-repo owner/repo-name', 'info');
+      this.log(
+        'Usage: node scripts/setup-github-actions-iam.js --github-repo owner/repo-name',
+        'info'
+      );
       process.exit(1);
     }
-    
-    this.log(`Setting up IAM for GitHub repository: ${this.githubRepo}`, 'info');
-    
+
+    this.log(
+      `Setting up IAM for GitHub repository: ${this.githubRepo}`,
+      'info'
+    );
+
     try {
       // Get AWS account ID
       await this.getAccountId();
-      
+
       // Create OIDC provider
       await this.createOIDCProvider();
-      
+
       // Create deployment policy
       const policyArn = await this.createDeploymentPolicy();
-      
+
       // Create deployment role
       const roleArn = await this.createDeploymentRole();
-      
+
       // Attach policy to role
       await this.attachPolicyToRole(policyArn, roleArn);
-      
+
       this.log('IAM setup completed successfully!', 'success');
-      
+
       // Generate GitHub Secrets instructions
       this.generateGitHubSecretsInstructions(roleArn);
-      
     } catch (error) {
       this.log(`Setup failed: ${error.message}`, 'error');
       process.exit(1);

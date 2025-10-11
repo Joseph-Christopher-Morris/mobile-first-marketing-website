@@ -183,7 +183,7 @@ export class QualityGateValidator {
   } {
     const failures: string[] = [];
     let passedChecks = 0;
-    let totalChecks = 4;
+    const totalChecks = 4;
 
     // WCAG Level
     if (results.wcagLevel) {
@@ -278,7 +278,7 @@ export class QualityGateValidator {
   } {
     const failures: string[] = [];
     let passedChecks = 0;
-    let totalChecks = 4;
+    const totalChecks = 4;
 
     // Touch Target Size
     if (results.touchTargetSize !== undefined) {

@@ -25,12 +25,8 @@
       "webpSupport": false,
       "cssSupport": true,
       "jsSupport": true,
-      "issues": [
-        "Limited WebP support in older Safari versions"
-      ],
-      "recommendations": [
-        "Implement JPEG fallback for Safari"
-      ]
+      "issues": ["Limited WebP support in older Safari versions"],
+      "recommendations": ["Implement JPEG fallback for Safari"]
     },
     "Edge": {
       "browser": "Edge",
@@ -38,12 +34,8 @@
       "webpSupport": true,
       "cssSupport": true,
       "jsSupport": true,
-      "issues": [
-        "Edge Legacy may have different behavior"
-      ],
-      "recommendations": [
-        "Test on both Edge Legacy and Chromium Edge"
-      ]
+      "issues": ["Edge Legacy may have different behavior"],
+      "recommendations": ["Test on both Edge Legacy and Chromium Edge"]
     }
   },
   "webpSupport": {
@@ -194,9 +186,7 @@
         "loadTime": "0.8s",
         "quality": "good",
         "issues": [],
-        "recommendations": [
-          "Consider smaller image sizes for mobile"
-        ]
+        "recommendations": ["Consider smaller image sizes for mobile"]
       },
       {
         "name": "Tablet",
@@ -227,9 +217,7 @@
         "loadTime": "2.5s",
         "quality": "good",
         "issues": [],
-        "recommendations": [
-          "Ensure high-resolution images for 4K displays"
-        ]
+        "recommendations": ["Ensure high-resolution images for 4K displays"]
       }
     ]
   },
@@ -241,9 +229,7 @@
       "orientationSupport": true,
       "performanceGood": true,
       "issues": [],
-      "recommendations": [
-        "Use JPEG fallback for iOS devices"
-      ],
+      "recommendations": ["Use JPEG fallback for iOS devices"],
       "webpSupport": false
     },
     "Samsung Galaxy S21": {
@@ -271,9 +257,7 @@
       "orientationSupport": true,
       "performanceGood": true,
       "issues": [],
-      "recommendations": [
-        "WebP format recommended for Android"
-      ],
+      "recommendations": ["WebP format recommended for Android"],
       "webpSupport": true
     }
   },
@@ -285,9 +269,7 @@
         "fileSize": "45KB",
         "compressionRatio": "65%",
         "cacheHitRate": "85%",
-        "recommendations": [
-          "WebP provides excellent compression"
-        ]
+        "recommendations": ["WebP provides excellent compression"]
       },
       "/images/services/analytics-hero.webp": {
         "imagePath": "/images/services/analytics-hero.webp",
@@ -295,9 +277,7 @@
         "fileSize": "45KB",
         "compressionRatio": "65%",
         "cacheHitRate": "85%",
-        "recommendations": [
-          "WebP provides excellent compression"
-        ]
+        "recommendations": ["WebP provides excellent compression"]
       },
       "/images/blog/test-image.jpg": {
         "imagePath": "/images/blog/test-image.jpg",
@@ -305,9 +285,7 @@
         "fileSize": "78KB",
         "compressionRatio": "45%",
         "cacheHitRate": "85%",
-        "recommendations": [
-          "Consider WebP for better compression"
-        ]
+        "recommendations": ["Consider WebP for better compression"]
       }
     },
     "compressionRatios": {},

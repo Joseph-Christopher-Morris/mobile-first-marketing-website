@@ -1,22 +1,27 @@
-
-> **Migration Notice**: This project has been migrated from AWS Amplify to S3/CloudFront.
-> For migration details, see `docs/amplify-to-s3-migration-summary.md`.
+> **Migration Notice**: This project has been migrated from AWS Amplify to
+> S3/CloudFront. For migration details, see
+> `docs/amplify-to-s3-migration-summary.md`.
 
 # S3 + CloudFront Deployment Runbook
 
 ## Overview
 
-This runbook provides step-by-step procedures for deploying, managing, and troubleshooting the S3 + CloudFront static site deployment infrastructure. This deployment solution replaces AWS Amplify to resolve persistent Next.js SSR detection issues.
+This runbook provides step-by-step procedures for deploying, managing, and
+troubleshooting the S3 + CloudFront static site deployment infrastructure. This
+deployment solution replaces AWS Amplify to resolve persistent Next.js SSR
+detection issues.
 
 ## Prerequisites
 
 ### Required Tools
+
 - AWS CLI v2.x configured with appropriate credentials
 - Node.js v18+ and npm
 - Git access to the repository
 - Access to AWS Console (for monitoring and troubleshooting)
 
 ### Required AWS Permissions
+
 - S3: Full access to deployment buckets
 - CloudFront: Full access to distributions
 - CloudWatch: Read access for monitoring
@@ -24,6 +29,7 @@ This runbook provides step-by-step procedures for deploying, managing, and troub
 - IAM: Read access for role validation
 
 ### Environment Setup
+
 ```bash
 # Verify AWS CLI configuration
 aws sts get-caller-identity
@@ -40,10 +46,11 @@ npm install
 ### Initial Infrastructure Setup
 
 1. **Configure Deployment Settings**
+
    ```bash
    # Edit deployment configuration
    nano config/deployment-config.json
-   
+
    # Update the following values:
    # - bucketName: Your S3 bucket name
    # - distributionId: Your CloudFront distribution ID
@@ -52,10 +59,11 @@ npm install
    ```
 
 2. **Create AWS Infrastructure**
+
    ```bash
    # Run infrastructure setup script
    node scripts/setup-infrastructure.js
-   
+
    # Verify infrastructure creation
    node scripts/deployment-status-dashboard.js
    ```
@@ -73,38 +81,41 @@ npm install
 ### Standard Deployment Process
 
 1. **Pre-Deployment Checks**
+
    ```bash
    # Validate environment configuration
    node scripts/validate-env.js
-   
+
    # Check deployment readiness
    node scripts/test-deployment-readiness.js
-   
+
    # Verify site functionality
    node scripts/validate-site-functionality.js
    ```
 
 2. **Build and Deploy**
+
    ```bash
    # Build Next.js static export
    npm run build
    npm run export
-   
+
    # Deploy to S3 + CloudFront
    node scripts/deploy.js
-   
+
    # Monitor deployment status
    node scripts/deployment-status-dashboard.js
    ```
 
 3. **Post-Deployment Verification**
+
    ```bash
    # Validate deployment
    node scripts/comprehensive-deployment-test.js
-   
+
    # Check security configuration
    node scripts/security-validation-suite.js
-   
+
    # Verify performance
    node scripts/performance-benchmarking.js
    ```
@@ -112,10 +123,12 @@ npm install
 ### Automated Deployment (GitHub Actions)
 
 The deployment automatically triggers on:
+
 - Push to `main` branch
 - Manual workflow dispatch
 
 **Monitoring Automated Deployments:**
+
 1. Check GitHub Actions tab for build status
 2. Monitor deployment logs in GitHub Actions
 3. Verify deployment success with dashboard:
@@ -128,27 +141,30 @@ The deployment automatically triggers on:
 ### Cache Invalidation
 
 1. **Full Site Invalidation**
+
    ```bash
    node scripts/cache-invalidation-manager.js invalidate full
    ```
 
 2. **Selective Invalidation**
+
    ```bash
    # HTML files only
    node scripts/cache-invalidation-manager.js invalidate html
-   
+
    # Static assets only
    node scripts/cache-invalidation-manager.js invalidate assets
-   
+
    # API routes only
    node scripts/cache-invalidation-manager.js invalidate api
    ```
 
 3. **Monitor Invalidation Status**
+
    ```bash
    # View invalidation report
    node scripts/cache-invalidation-manager.js report
-   
+
    # Check specific invalidation status
    node scripts/cache-invalidation-manager.js status <invalidation-id>
    ```
@@ -156,6 +172,7 @@ The deployment automatically triggers on:
 ### Cache Optimization
 
 1. **Review Cache Performance**
+
    ```bash
    node scripts/caching-cdn-optimizer.js
    ```
@@ -173,25 +190,28 @@ The deployment automatically triggers on:
 ### Health Monitoring
 
 1. **Deployment Status Dashboard**
+
    ```bash
    # Generate comprehensive status report
    node scripts/deployment-status-dashboard.js
    ```
 
 2. **Performance Monitoring**
+
    ```bash
    # Core Web Vitals monitoring
    node scripts/core-web-vitals-monitor.js
-   
+
    # Performance benchmarking
    node scripts/performance-benchmarking.js
    ```
 
 3. **Security Monitoring**
+
    ```bash
    # Security headers validation
    node scripts/security-headers-validator.js
-   
+
    # SSL/TLS configuration check
    node scripts/ssl-certificate-validator.js
    ```
@@ -199,6 +219,7 @@ The deployment automatically triggers on:
 ### Cost Monitoring
 
 1. **Cost Analysis**
+
    ```bash
    # Generate cost analysis report
    node scripts/cost-analysis-optimizer.js
@@ -212,6 +233,7 @@ The deployment automatically triggers on:
 ### Alerting Setup
 
 1. **Configure CloudWatch Alarms**
+
    ```bash
    node scripts/setup-cloudwatch-monitoring.js
    ```
@@ -226,19 +248,21 @@ The deployment automatically triggers on:
 ### Emergency Rollback
 
 1. **Immediate Rollback**
+
    ```bash
    # Rollback to previous version
    node scripts/rollback.js
-   
+
    # Verify rollback success
    node scripts/deployment-status-dashboard.js
    ```
 
 2. **Rollback to Specific Version**
+
    ```bash
    # List available versions
    node scripts/rollback.js --list
-   
+
    # Rollback to specific version
    node scripts/rollback.js --version <version-number>
    ```
@@ -246,13 +270,14 @@ The deployment automatically triggers on:
 ### Rollback Verification
 
 1. **Post-Rollback Checks**
+
    ```bash
    # Verify site functionality
    node scripts/validate-site-functionality.js
-   
+
    # Check performance
    node scripts/performance-benchmarking.js
-   
+
    # Validate security
    node scripts/security-validation-suite.js
    ```
@@ -282,19 +307,21 @@ The deployment automatically triggers on:
 ### SSL Certificate Management
 
 1. **Certificate Renewal**
+
    ```bash
    # Check certificate status
    node scripts/ssl-certificate-validator.js
-   
+
    # Renew certificate (if needed)
    node scripts/setup-ssl-certificate.js
    ```
 
 2. **Custom Domain Configuration**
+
    ```bash
    # Configure custom domain
    node scripts/setup-custom-domain.js
-   
+
    # Validate domain configuration
    node scripts/ssl-custom-domain-setup.js
    ```
@@ -304,18 +331,20 @@ The deployment automatically triggers on:
 ### Security Validation
 
 1. **Comprehensive Security Check**
+
    ```bash
    node scripts/security-validation-suite.js
    ```
 
 2. **Specific Security Tests**
+
    ```bash
    # TLS/SSL validation
    node scripts/comprehensive-tls-validator.js
-   
+
    # Security headers check
    node scripts/security-headers-validator.js
-   
+
    # Penetration testing
    node scripts/penetration-testing-suite.js
    ```
@@ -328,10 +357,11 @@ The deployment automatically triggers on:
    - Review access logs for anomalies
 
 2. **Investigation**
+
    ```bash
    # Analyze access logs
    node scripts/setup-logging-audit.js
-   
+
    # Review security configurations
    node scripts/cloudfront-security-validator.js
    ```
@@ -346,6 +376,7 @@ The deployment automatically triggers on:
 ### Performance Analysis
 
 1. **Core Web Vitals**
+
    ```bash
    node scripts/core-web-vitals-monitor.js
    ```
@@ -358,11 +389,13 @@ The deployment automatically triggers on:
 ### Optimization Actions
 
 1. **Cache Optimization**
+
    ```bash
    node scripts/caching-cdn-optimizer.js
    ```
 
 2. **Compression Optimization**
+
    ```bash
    node scripts/compression-performance-tester.js
    ```
@@ -442,11 +475,11 @@ node scripts/validate-env.js
 ## Documentation Updates
 
 This runbook should be updated:
+
 - After any infrastructure changes
 - When new procedures are added
 - After incident resolution
 - During quarterly reviews
 
-**Last Updated**: [Insert date]
-**Version**: 1.0
-**Maintained By**: [Insert team/person]
+**Last Updated**: [Insert date] **Version**: 1.0 **Maintained By**: [Insert
+team/person]

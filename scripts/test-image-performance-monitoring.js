@@ -18,8 +18,8 @@ class MonitoringSystemTest {
         total: 0,
         passed: 0,
         failed: 0,
-        warnings: 0
-      }
+        warnings: 0,
+      },
     };
   }
 
@@ -28,14 +28,14 @@ class MonitoringSystemTest {
    */
   runTest(testName, testFunction) {
     console.log(`🧪 Testing: ${testName}`);
-    
+
     try {
       const result = testFunction();
       this.results.tests.push({
         name: testName,
         status: 'PASSED',
         result,
-        timestamp: new Date().toISOString()
+        timestamp: new Date().toISOString(),
       });
       this.results.summary.passed++;
       console.log(`  ✅ ${testName} - PASSED`);
@@ -45,7 +45,7 @@ class MonitoringSystemTest {
         name: testName,
         status: 'FAILED',
         error: error.message,
-        timestamp: new Date().toISOString()
+        timestamp: new Date().toISOString(),
       });
       this.results.summary.failed++;
       console.log(`  ❌ ${testName} - FAILED: ${error.message}`);
@@ -60,18 +60,22 @@ class MonitoringSystemTest {
     const requiredConfigs = [
       'config/image-performance-monitoring-config.json',
       'config/performance-alerts-config.json',
-      'config/core-web-vitals-alerts-config.json'
+      'config/core-web-vitals-alerts-config.json',
     ];
 
-    const missingConfigs = requiredConfigs.filter(config => !fs.existsSync(config));
-    
+    const missingConfigs = requiredConfigs.filter(
+      config => !fs.existsSync(config)
+    );
+
     if (missingConfigs.length > 0) {
-      throw new Error(`Missing configuration files: ${missingConfigs.join(', ')}`);
+      throw new Error(
+        `Missing configuration files: ${missingConfigs.join(', ')}`
+      );
     }
 
     return {
       configFiles: requiredConfigs.length,
-      allPresent: true
+      allPresent: true,
     };
   }
 
@@ -83,18 +87,22 @@ class MonitoringSystemTest {
       'scripts/image-performance-monitor.js',
       'scripts/core-web-vitals-image-monitor.js',
       'scripts/integrated-image-performance-monitor.js',
-      'scripts/setup-image-performance-alerts.js'
+      'scripts/setup-image-performance-alerts.js',
     ];
 
-    const missingScripts = requiredScripts.filter(script => !fs.existsSync(script));
-    
+    const missingScripts = requiredScripts.filter(
+      script => !fs.existsSync(script)
+    );
+
     if (missingScripts.length > 0) {
-      throw new Error(`Missing monitoring scripts: ${missingScripts.join(', ')}`);
+      throw new Error(
+        `Missing monitoring scripts: ${missingScripts.join(', ')}`
+      );
     }
 
     return {
       scriptFiles: requiredScripts.length,
-      allPresent: true
+      allPresent: true,
     };
   }
 
@@ -107,13 +115,13 @@ class MonitoringSystemTest {
       const output = execSync('node scripts/image-performance-monitor.js', {
         encoding: 'utf8',
         timeout: 60000, // 1 minute timeout
-        stdio: 'pipe'
+        stdio: 'pipe',
       });
 
       // Check if monitoring completed successfully
       const hasResults = output.includes('MONITORING RESULTS SUMMARY');
       const hasMetrics = output.includes('Success Rate:');
-      
+
       if (!hasResults || !hasMetrics) {
         throw new Error('Monitoring output missing expected results');
       }
@@ -121,7 +129,7 @@ class MonitoringSystemTest {
       return {
         completed: true,
         hasResults: true,
-        outputLength: output.length
+        outputLength: output.length,
       };
     } catch (error) {
       if (error.status === 1) {
@@ -129,7 +137,7 @@ class MonitoringSystemTest {
         return {
           completed: true,
           hasAlerts: true,
-          alertsDetected: true
+          alertsDetected: true,
         };
       }
       throw error;
@@ -144,20 +152,22 @@ class MonitoringSystemTest {
       const output = execSync('node scripts/core-web-vitals-image-monitor.js', {
         encoding: 'utf8',
         timeout: 30000, // 30 seconds timeout
-        stdio: 'pipe'
+        stdio: 'pipe',
       });
 
       const hasResults = output.includes('CORE WEB VITALS MONITORING SUMMARY');
       const hasMetrics = output.includes('Average Performance Score:');
-      
+
       if (!hasResults || !hasMetrics) {
-        throw new Error('Core Web Vitals monitoring output missing expected results');
+        throw new Error(
+          'Core Web Vitals monitoring output missing expected results'
+        );
       }
 
       return {
         completed: true,
         hasResults: true,
-        outputLength: output.length
+        outputLength: output.length,
       };
     } catch (error) {
       if (error.status === 1) {
@@ -165,7 +175,7 @@ class MonitoringSystemTest {
         return {
           completed: true,
           hasPerformanceIssues: true,
-          issuesDetected: true
+          issuesDetected: true,
         };
       }
       throw error;
@@ -178,18 +188,27 @@ class MonitoringSystemTest {
   testConfigurationLoading() {
     const configPath = 'config/image-performance-monitoring-config.json';
     const config = JSON.parse(fs.readFileSync(configPath, 'utf8'));
-    
-    const requiredSections = ['monitoring', 'thresholds', 'alerts', 'criticalImages'];
-    const missingSections = requiredSections.filter(section => !config[section]);
-    
+
+    const requiredSections = [
+      'monitoring',
+      'thresholds',
+      'alerts',
+      'criticalImages',
+    ];
+    const missingSections = requiredSections.filter(
+      section => !config[section]
+    );
+
     if (missingSections.length > 0) {
-      throw new Error(`Missing configuration sections: ${missingSections.join(', ')}`);
+      throw new Error(
+        `Missing configuration sections: ${missingSections.join(', ')}`
+      );
     }
 
     return {
       configValid: true,
       sections: requiredSections.length,
-      criticalImages: config.criticalImages.length
+      criticalImages: config.criticalImages.length,
     };
   }
 
@@ -199,10 +218,11 @@ class MonitoringSystemTest {
   testReportGeneration() {
     // Check for recent monitoring reports
     const files = fs.readdirSync('.');
-    const recentReports = files.filter(file => 
-      file.includes('image-performance-monitoring-') && 
-      file.endsWith('.json') &&
-      this.isRecentFile(file)
+    const recentReports = files.filter(
+      file =>
+        file.includes('image-performance-monitoring-') &&
+        file.endsWith('.json') &&
+        this.isRecentFile(file)
     );
 
     if (recentReports.length === 0) {
@@ -212,18 +232,25 @@ class MonitoringSystemTest {
     // Validate report structure
     const reportPath = recentReports[0];
     const report = JSON.parse(fs.readFileSync(reportPath, 'utf8'));
-    
-    const requiredFields = ['timestamp', 'imageMetrics', 'coreWebVitals', 'summary'];
+
+    const requiredFields = [
+      'timestamp',
+      'imageMetrics',
+      'coreWebVitals',
+      'summary',
+    ];
     const missingFields = requiredFields.filter(field => !report[field]);
-    
+
     if (missingFields.length > 0) {
-      throw new Error(`Report missing required fields: ${missingFields.join(', ')}`);
+      throw new Error(
+        `Report missing required fields: ${missingFields.join(', ')}`
+      );
     }
 
     return {
       reportsFound: recentReports.length,
       reportValid: true,
-      reportSize: fs.statSync(reportPath).size
+      reportSize: fs.statSync(reportPath).size,
     };
   }
 
@@ -247,13 +274,13 @@ class MonitoringSystemTest {
    */
   testAlertSystem() {
     const alertsConfigPath = 'config/performance-alerts-config.json';
-    
+
     if (!fs.existsSync(alertsConfigPath)) {
       throw new Error('Alerts configuration file not found');
     }
 
     const alertsConfig = JSON.parse(fs.readFileSync(alertsConfigPath, 'utf8'));
-    
+
     if (!alertsConfig.alertRules || alertsConfig.alertRules.length === 0) {
       throw new Error('No alert rules configured');
     }
@@ -261,7 +288,9 @@ class MonitoringSystemTest {
     return {
       alertsConfigured: true,
       alertRules: alertsConfig.alertRules.length,
-      escalationPolicies: alertsConfig.escalationPolicies ? alertsConfig.escalationPolicies.levels.length : 0
+      escalationPolicies: alertsConfig.escalationPolicies
+        ? alertsConfig.escalationPolicies.levels.length
+        : 0,
     };
   }
 
@@ -270,22 +299,28 @@ class MonitoringSystemTest {
    */
   async runAllTests() {
     console.log('🚀 Starting Image Performance Monitoring System Tests');
-    console.log('=' .repeat(60));
+    console.log('='.repeat(60));
 
     this.results.summary.total = 7; // Total number of tests
 
     // Run individual tests
     this.runTest('Configuration Files', () => this.testConfigurationFiles());
     this.runTest('Monitoring Scripts', () => this.testMonitoringScripts());
-    this.runTest('Configuration Loading', () => this.testConfigurationLoading());
-    this.runTest('Image Performance Monitoring', () => this.testImagePerformanceMonitoring());
-    this.runTest('Core Web Vitals Monitoring', () => this.testCoreWebVitalsMonitoring());
+    this.runTest('Configuration Loading', () =>
+      this.testConfigurationLoading()
+    );
+    this.runTest('Image Performance Monitoring', () =>
+      this.testImagePerformanceMonitoring()
+    );
+    this.runTest('Core Web Vitals Monitoring', () =>
+      this.testCoreWebVitalsMonitoring()
+    );
     this.runTest('Report Generation', () => this.testReportGeneration());
     this.runTest('Alert System', () => this.testAlertSystem());
 
     // Generate test summary
     this.generateTestSummary();
-    
+
     return this.results;
   }
 
@@ -296,21 +331,27 @@ class MonitoringSystemTest {
     console.log('\n' + '='.repeat(60));
     console.log('📊 MONITORING SYSTEM TEST SUMMARY');
     console.log('='.repeat(60));
-    
+
     console.log(`Total Tests: ${this.results.summary.total}`);
     console.log(`Passed: ${this.results.summary.passed}`);
     console.log(`Failed: ${this.results.summary.failed}`);
-    console.log(`Success Rate: ${Math.round((this.results.summary.passed / this.results.summary.total) * 100)}%`);
-    
+    console.log(
+      `Success Rate: ${Math.round((this.results.summary.passed / this.results.summary.total) * 100)}%`
+    );
+
     if (this.results.summary.failed > 0) {
       console.log('\n❌ FAILED TESTS:');
-      this.results.tests.filter(test => test.status === 'FAILED').forEach(test => {
-        console.log(`  - ${test.name}: ${test.error}`);
-      });
+      this.results.tests
+        .filter(test => test.status === 'FAILED')
+        .forEach(test => {
+          console.log(`  - ${test.name}: ${test.error}`);
+        });
     }
-    
+
     if (this.results.summary.passed === this.results.summary.total) {
-      console.log('\n🎉 All tests passed! Image performance monitoring system is fully operational.');
+      console.log(
+        '\n🎉 All tests passed! Image performance monitoring system is fully operational.'
+      );
     } else {
       console.log('\n⚠️  Some tests failed. Please review the issues above.');
     }
@@ -325,13 +366,14 @@ class MonitoringSystemTest {
 // CLI execution
 if (require.main === module) {
   const tester = new MonitoringSystemTest();
-  
-  tester.runAllTests()
-    .then((results) => {
+
+  tester
+    .runAllTests()
+    .then(results => {
       const exitCode = results.summary.failed > 0 ? 1 : 0;
       process.exit(exitCode);
     })
-    .catch((error) => {
+    .catch(error => {
       console.error('❌ Test execution failed:', error);
       process.exit(1);
     });

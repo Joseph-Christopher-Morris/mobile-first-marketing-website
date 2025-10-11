@@ -22,34 +22,29 @@ class CrossBrowserImageTester {
         totalTests: 0,
         passedTests: 0,
         failedTests: 0,
-        warnings: []
-      }
+        warnings: [],
+      },
     };
-    
+
     this.testImagePaths = [
       '/images/hero/paid-ads-analytics-screenshot.webp',
       '/images/services/analytics-hero.webp',
-      '/images/blog/test-image.jpg'
+      '/images/blog/test-image.jpg',
     ];
-    
-    this.browsers = [
-      'Chrome',
-      'Firefox', 
-      'Safari',
-      'Edge'
-    ];
-    
+
+    this.browsers = ['Chrome', 'Firefox', 'Safari', 'Edge'];
+
     this.mobileDevices = [
       'iPhone 12',
       'Samsung Galaxy S21',
       'iPad Pro',
-      'Android Tablet'
+      'Android Tablet',
     ];
   }
 
   async runAllTests() {
     console.log('🚀 Starting Cross-Browser Image Loading Tests...\n');
-    
+
     try {
       await this.testBrowserCompatibility();
       await this.testWebPSupport();
@@ -57,13 +52,14 @@ class CrossBrowserImageTester {
       await this.testResponsiveImageSizing();
       await this.testMobileDeviceCompatibility();
       await this.testPerformanceMetrics();
-      
+
       this.generateSummary();
       await this.saveResults();
-      
+
       console.log('\n✅ Cross-browser testing completed successfully!');
-      console.log(`📊 Results saved to: cross-browser-test-results-${Date.now()}.json`);
-      
+      console.log(
+        `📊 Results saved to: cross-browser-test-results-${Date.now()}.json`
+      );
     } catch (error) {
       console.error('❌ Cross-browser testing failed:', error.message);
       this.testResults.summary.failedTests++;
@@ -73,10 +69,10 @@ class CrossBrowserImageTester {
 
   async testBrowserCompatibility() {
     console.log('🌐 Testing Browser Compatibility...');
-    
+
     for (const browser of this.browsers) {
       console.log(`  Testing ${browser}...`);
-      
+
       const browserTest = {
         browser,
         imageLoadingSupport: true,
@@ -84,78 +80,88 @@ class CrossBrowserImageTester {
         cssSupport: true,
         jsSupport: true,
         issues: [],
-        recommendations: []
+        recommendations: [],
       };
-      
+
       // Simulate browser-specific tests
       if (browser === 'Safari') {
         browserTest.webpSupport = false;
-        browserTest.issues.push('Limited WebP support in older Safari versions');
+        browserTest.issues.push(
+          'Limited WebP support in older Safari versions'
+        );
         browserTest.recommendations.push('Implement JPEG fallback for Safari');
       }
-      
+
       if (browser === 'Edge') {
         browserTest.webpSupport = true;
         browserTest.issues.push('Edge Legacy may have different behavior');
-        browserTest.recommendations.push('Test on both Edge Legacy and Chromium Edge');
+        browserTest.recommendations.push(
+          'Test on both Edge Legacy and Chromium Edge'
+        );
       }
-      
+
       this.testResults.browsers[browser] = browserTest;
       this.testResults.summary.totalTests++;
-      
+
       if (browserTest.issues.length === 0) {
         this.testResults.summary.passedTests++;
         console.log(`    ✅ ${browser} - All tests passed`);
       } else {
-        this.testResults.summary.warnings.push(`${browser}: ${browserTest.issues.join(', ')}`);
-        console.log(`    ⚠️  ${browser} - ${browserTest.issues.length} issues found`);
+        this.testResults.summary.warnings.push(
+          `${browser}: ${browserTest.issues.join(', ')}`
+        );
+        console.log(
+          `    ⚠️  ${browser} - ${browserTest.issues.length} issues found`
+        );
       }
     }
   }
 
   checkWebPSupport(browser) {
     const webpSupportMatrix = {
-      'Chrome': true,
-      'Firefox': true,
-      'Safari': false, // Partial support, depends on version
-      'Edge': true
+      Chrome: true,
+      Firefox: true,
+      Safari: false, // Partial support, depends on version
+      Edge: true,
     };
-    
+
     return webpSupportMatrix[browser] || false;
   }
 
   async testWebPSupport() {
     console.log('🖼️  Testing WebP Format Support...');
-    
+
     for (const browser of this.browsers) {
       const webpTest = {
         browser,
         nativeSupport: this.checkWebPSupport(browser),
         fallbackRequired: !this.checkWebPSupport(browser),
-        testResults: []
+        testResults: [],
       };
-      
+
       for (const imagePath of this.testImagePaths) {
         if (imagePath.endsWith('.webp')) {
           const testResult = {
             imagePath,
             supported: webpTest.nativeSupport,
             fallbackNeeded: !webpTest.nativeSupport,
-            alternativeFormat: imagePath.replace('.webp', '.jpg')
+            alternativeFormat: imagePath.replace('.webp', '.jpg'),
           };
-          
+
           webpTest.testResults.push(testResult);
         }
       }
-      
+
       this.testResults.webpSupport[browser] = webpTest;
       this.testResults.summary.totalTests++;
-      
+
       if (webpTest.nativeSupport) {
         this.testResults.summary.passedTests++;
         console.log(`    ✅ ${browser} - WebP fully supported`);
       } else {
-        this.testResults.summary.warnings.push(`${browser}: WebP fallback required`);
+        this.testResults.summary.warnings.push(
+          `${browser}: WebP fallback required`
+        );
         console.log(`    ⚠️  ${browser} - WebP fallback required`);
       }
     }
@@ -163,75 +169,75 @@ class CrossBrowserImageTester {
 
   async testFallbackMechanisms() {
     console.log('🔄 Testing Fallback Mechanisms...');
-    
+
     const fallbackTest = {
       pictureElementSupport: true,
       srcsetSupport: true,
       jsBasedFallback: true,
       cssBasedFallback: true,
-      testScenarios: []
+      testScenarios: [],
     };
-    
+
     // Test different fallback scenarios
     const scenarios = [
       {
         name: 'WebP to JPEG fallback',
         primary: '/images/hero/paid-ads-analytics-screenshot.webp',
         fallback: '/images/hero/paid-ads-analytics-screenshot.jpg',
-        mechanism: 'picture element'
+        mechanism: 'picture element',
       },
       {
         name: 'Network failure fallback',
         primary: '/images/services/analytics-hero.webp',
         fallback: '/images/placeholder.jpg',
-        mechanism: 'onerror handler'
+        mechanism: 'onerror handler',
       },
       {
         name: 'Responsive image fallback',
         primary: '/images/hero/paid-ads-analytics-screenshot.webp',
         fallback: '/images/hero/paid-ads-analytics-screenshot-mobile.webp',
-        mechanism: 'srcset attribute'
-      }
+        mechanism: 'srcset attribute',
+      },
     ];
-    
+
     for (const scenario of scenarios) {
       const testResult = {
         ...scenario,
         tested: true,
         working: true,
-        issues: []
+        issues: [],
       };
-      
+
       // Simulate testing logic
       if (scenario.mechanism === 'picture element') {
         testResult.browserSupport = 'All modern browsers';
       } else if (scenario.mechanism === 'onerror handler') {
         testResult.browserSupport = 'Universal JavaScript support';
       }
-      
+
       fallbackTest.testScenarios.push(testResult);
     }
-    
+
     this.testResults.fallbackMechanisms = fallbackTest;
     this.testResults.summary.totalTests++;
     this.testResults.summary.passedTests++;
-    
+
     console.log('    ✅ All fallback mechanisms tested successfully');
   }
 
   async testResponsiveImageSizing() {
     console.log('📱 Testing Responsive Image Sizing...');
-    
+
     const responsiveTest = {
       breakpoints: [
         { name: 'Mobile', width: 375, height: 667 },
         { name: 'Tablet', width: 768, height: 1024 },
         { name: 'Desktop', width: 1920, height: 1080 },
-        { name: '4K', width: 3840, height: 2160 }
+        { name: '4K', width: 3840, height: 2160 },
       ],
-      testResults: []
+      testResults: [],
     };
-    
+
     for (const breakpoint of responsiveTest.breakpoints) {
       const test = {
         ...breakpoint,
@@ -239,23 +245,25 @@ class CrossBrowserImageTester {
         aspectRatio: 'maintained',
         loadTime: this.simulateLoadTime(breakpoint.width),
         quality: 'good',
-        issues: []
+        issues: [],
       };
-      
+
       // Simulate responsive testing
       if (breakpoint.width <= 375) {
         test.recommendations = ['Consider smaller image sizes for mobile'];
       } else if (breakpoint.width >= 3840) {
-        test.recommendations = ['Ensure high-resolution images for 4K displays'];
+        test.recommendations = [
+          'Ensure high-resolution images for 4K displays',
+        ];
       }
-      
+
       responsiveTest.testResults.push(test);
     }
-    
+
     this.testResults.responsiveImageSizing = responsiveTest;
     this.testResults.summary.totalTests++;
     this.testResults.summary.passedTests++;
-    
+
     console.log('    ✅ Responsive image sizing tests completed');
   }
 
@@ -269,10 +277,10 @@ class CrossBrowserImageTester {
 
   async testMobileDeviceCompatibility() {
     console.log('📱 Testing Mobile Device Compatibility...');
-    
+
     for (const device of this.mobileDevices) {
       console.log(`  Testing ${device}...`);
-      
+
       const deviceTest = {
         device,
         imageLoading: true,
@@ -280,9 +288,9 @@ class CrossBrowserImageTester {
         orientationSupport: true,
         performanceGood: true,
         issues: [],
-        recommendations: []
+        recommendations: [],
       };
-      
+
       // Simulate device-specific tests
       if (device.includes('iPhone')) {
         deviceTest.webpSupport = false;
@@ -291,26 +299,26 @@ class CrossBrowserImageTester {
         deviceTest.webpSupport = true;
         deviceTest.recommendations.push('WebP format recommended for Android');
       }
-      
+
       this.testResults.mobileDeviceTests[device] = deviceTest;
       this.testResults.summary.totalTests++;
       this.testResults.summary.passedTests++;
-      
+
       console.log(`    ✅ ${device} - Compatible`);
     }
   }
 
   async testPerformanceMetrics() {
     console.log('⚡ Testing Performance Metrics...');
-    
+
     const performanceTest = {
       imageLoadTimes: {},
       compressionRatios: {},
       cacheEfficiency: {},
       bandwidthUsage: {},
-      recommendations: []
+      recommendations: [],
     };
-    
+
     for (const imagePath of this.testImagePaths) {
       const metrics = {
         imagePath,
@@ -318,9 +326,9 @@ class CrossBrowserImageTester {
         fileSize: this.simulateFileSize(imagePath),
         compressionRatio: this.simulateCompressionRatio(imagePath),
         cacheHitRate: '85%',
-        recommendations: []
+        recommendations: [],
       };
-      
+
       if (imagePath.endsWith('.webp')) {
         metrics.compressionRatio = '65%';
         metrics.recommendations.push('WebP provides excellent compression');
@@ -328,21 +336,21 @@ class CrossBrowserImageTester {
         metrics.compressionRatio = '45%';
         metrics.recommendations.push('Consider WebP for better compression');
       }
-      
+
       performanceTest.imageLoadTimes[imagePath] = metrics;
     }
-    
+
     performanceTest.recommendations = [
       'Implement lazy loading for images below the fold',
       'Use responsive images with srcset',
       'Enable browser caching with proper headers',
-      'Consider using a CDN for global performance'
+      'Consider using a CDN for global performance',
     ];
-    
+
     this.testResults.performanceMetrics = performanceTest;
     this.testResults.summary.totalTests++;
     this.testResults.summary.passedTests++;
-    
+
     console.log('    ✅ Performance metrics analysis completed');
   }
 
@@ -360,19 +368,20 @@ class CrossBrowserImageTester {
 
   generateSummary() {
     const { summary } = this.testResults;
-    
-    summary.successRate = summary.totalTests > 0 
-      ? Math.round((summary.passedTests / summary.totalTests) * 100) 
-      : 0;
-    
+
+    summary.successRate =
+      summary.totalTests > 0
+        ? Math.round((summary.passedTests / summary.totalTests) * 100)
+        : 0;
+
     summary.recommendations = [
       'Implement WebP with JPEG fallback for maximum compatibility',
       'Use responsive images with appropriate breakpoints',
       'Test on actual devices for accurate results',
       'Monitor performance metrics in production',
-      'Implement lazy loading for better performance'
+      'Implement lazy loading for better performance',
     ];
-    
+
     console.log('\n📊 Test Summary:');
     console.log(`   Total Tests: ${summary.totalTests}`);
     console.log(`   Passed: ${summary.passedTests}`);
@@ -384,25 +393,26 @@ class CrossBrowserImageTester {
   async saveResults() {
     const filename = `cross-browser-test-results-${Date.now()}.json`;
     const filepath = path.join(process.cwd(), filename);
-    
+
     await fs.promises.writeFile(
-      filepath, 
+      filepath,
       JSON.stringify(this.testResults, null, 2)
     );
-    
+
     // Also save a markdown summary
     const markdownSummary = this.generateMarkdownSummary();
     const markdownFilename = `cross-browser-test-summary-${Date.now()}.md`;
     const markdownFilepath = path.join(process.cwd(), markdownFilename);
-    
+
     await fs.promises.writeFile(markdownFilepath, markdownSummary);
-    
+
     console.log(`📄 Summary saved to: ${markdownFilename}`);
   }
 
   generateMarkdownSummary() {
-    const { summary, browsers, webpSupport, performanceMetrics } = this.testResults;
-    
+    const { summary, browsers, webpSupport, performanceMetrics } =
+      this.testResults;
+
     return `# Cross-Browser Image Loading Test Results
 
 ## Test Summary
@@ -414,18 +424,26 @@ class CrossBrowserImageTester {
 
 ## Browser Compatibility Results
 
-${Object.entries(browsers).map(([browser, result]) => `
+${Object.entries(browsers)
+  .map(
+    ([browser, result]) => `
 ### ${browser}
 - **WebP Support**: ${result.webpSupport ? '✅ Yes' : '❌ No'}
 - **Issues**: ${result.issues.length > 0 ? result.issues.join(', ') : 'None'}
 - **Recommendations**: ${result.recommendations.join(', ')}
-`).join('')}
+`
+  )
+  .join('')}
 
 ## WebP Format Support
 
-${Object.entries(webpSupport).map(([browser, result]) => `
+${Object.entries(webpSupport)
+  .map(
+    ([browser, result]) => `
 - **${browser}**: ${result.nativeSupport ? '✅ Native Support' : '⚠️ Fallback Required'}
-`).join('')}
+`
+  )
+  .join('')}
 
 ## Performance Recommendations
 

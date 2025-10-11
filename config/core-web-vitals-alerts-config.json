@@ -40,9 +40,6 @@
     }
   ],
   "monitoringFrequency": "1h",
-  "notificationChannels": [
-    "console",
-    "file"
-  ],
+  "notificationChannels": ["console", "file"],
   "retentionDays": 30
 }

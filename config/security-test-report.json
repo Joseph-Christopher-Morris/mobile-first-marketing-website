@@ -291,7 +291,5 @@
     "nist": "Implements NIST Cybersecurity Framework protections",
     "cis": "Follows CIS security controls"
   },
-  "recommendations": [
-    "Security headers implementation is comprehensive and well-configured"
-  ]
+  "recommendations": ["Security headers implementation is comprehensive and well-configured"]
 }

@@ -1,10 +1,13 @@
 # S3 Infrastructure Setup Guide
 
-This guide covers setting up the AWS S3 infrastructure for secure static website hosting as part of the migration from AWS Amplify to S3 + CloudFront.
+This guide covers setting up the AWS S3 infrastructure for secure static website
+hosting as part of the migration from AWS Amplify to S3 + CloudFront.
 
 ## Overview
 
-The S3 infrastructure setup creates a private S3 bucket with the following security configurations:
+The S3 infrastructure setup creates a private S3 bucket with the following
+security configurations:
+
 - **Private bucket** with all public access blocked
 - **Versioning enabled** for rollback capabilities
 - **AES256 encryption** for data at rest
@@ -13,7 +16,9 @@ The S3 infrastructure setup creates a private S3 bucket with the following secur
 ## Prerequisites
 
 ### AWS Credentials
+
 Ensure you have AWS credentials configured with the following permissions:
+
 - `s3:CreateBucket`
 - `s3:PutBucketVersioning`
 - `s3:PutBucketEncryption`
@@ -23,7 +28,9 @@ Ensure you have AWS credentials configured with the following permissions:
 - `s3:GetBucket*` (for validation)
 
 ### Environment Variables
+
 Set the following environment variables:
+
 ```bash
 export AWS_REGION="us-east-1"
 export S3_BUCKET_NAME="your-bucket-name"
@@ -34,6 +41,7 @@ export AWS_SECRET_ACCESS_KEY="your-secret-key"
 ## Installation
 
 Install the required AWS SDK dependencies:
+
 ```bash
 npm install
 ```
@@ -41,23 +49,29 @@ npm install
 ## Usage
 
 ### 1. Setup S3 Infrastructure
+
 Run the setup script to create and configure the S3 bucket:
+
 ```bash
 npm run s3:setup
 ```
 
 Or run directly:
+
 ```bash
 node scripts/setup-s3-infrastructure.js
 ```
 
 ### 2. Validate Configuration
+
 Verify the S3 infrastructure is properly configured:
+
 ```bash
 npm run s3:validate
 ```
 
 Or run the validation script directly:
+
 ```bash
 node scripts/validate-s3-infrastructure.js
 ```
@@ -65,7 +79,9 @@ node scripts/validate-s3-infrastructure.js
 ## Configuration
 
 ### Environment-Specific Settings
-The configuration supports multiple environments. Edit `config/s3-infrastructure.json` to customize:
+
+The configuration supports multiple environments. Edit
+`config/s3-infrastructure.json` to customize:
 
 ```json
 {
@@ -83,7 +99,9 @@ The configuration supports multiple environments. Edit `config/s3-infrastructure
 ```
 
 ### Security Settings
+
 All security settings are enforced by default:
+
 - **Public Access**: Completely blocked
 - **Versioning**: Enabled for rollback capability
 - **Encryption**: AES256 server-side encryption
@@ -92,21 +110,25 @@ All security settings are enforced by default:
 ## Security Features
 
 ### 1. Private Bucket Configuration
+
 - All public access is blocked at the bucket level
 - No direct public access to S3 objects
 - Access only through CloudFront distribution
 
 ### 2. Encryption at Rest
+
 - AES256 server-side encryption enabled
 - Bucket key enabled for cost optimization
 - All objects encrypted automatically
 
 ### 3. Versioning
+
 - Object versioning enabled for rollback capabilities
 - Previous versions maintained for disaster recovery
 - Lifecycle policies can be added for cost management
 
 ### 4. Restrictive Bucket Policy
+
 - Denies direct public access to objects
 - Will be updated to allow CloudFront Origin Access Control
 - Follows principle of least privilege
@@ -116,35 +138,48 @@ All security settings are enforced by default:
 ### Common Issues
 
 #### 1. Credentials Not Found
+
 ```
 Error: CredentialsProviderError
 ```
+
 **Solution**: Ensure AWS credentials are properly configured:
+
 - Set environment variables: `AWS_ACCESS_KEY_ID`, `AWS_SECRET_ACCESS_KEY`
 - Or configure AWS CLI: `aws configure`
 - Or use IAM roles if running on AWS infrastructure
 
 #### 2. Insufficient Permissions
+
 ```
 Error: AccessDenied
 ```
-**Solution**: Ensure your AWS user/role has the required S3 permissions listed above.
+
+**Solution**: Ensure your AWS user/role has the required S3 permissions listed
+above.
 
 #### 3. Bucket Already Exists
+
 ```
 Error: BucketAlreadyOwnedByYou
 ```
-**Solution**: This is normal. The script will update the existing bucket configuration.
+
+**Solution**: This is normal. The script will update the existing bucket
+configuration.
 
 #### 4. Region Mismatch
+
 ```
 Error: IllegalLocationConstraintException
 ```
-**Solution**: Ensure the `AWS_REGION` environment variable matches your intended region.
+
+**Solution**: Ensure the `AWS_REGION` environment variable matches your intended
+region.
 
 ### Validation Failures
 
 If validation fails, check:
+
 1. **Bucket exists**: Verify the bucket was created successfully
 2. **Public access blocked**: Ensure all public access settings are enabled
 3. **Versioning enabled**: Check versioning status in AWS Console
@@ -154,6 +189,7 @@ If validation fails, check:
 ## Next Steps
 
 After successful S3 infrastructure setup:
+
 1. **Configure CloudFront distribution** (Task 2)
 2. **Update bucket policy** to allow CloudFront Origin Access Control
 3. **Set up deployment automation** (Task 3)
@@ -162,6 +198,7 @@ After successful S3 infrastructure setup:
 ## Security Compliance
 
 This setup follows AWS security best practices:
+
 - ✅ No public S3 access (AWS Security Standard)
 - ✅ Encryption at rest enabled
 - ✅ Versioning for data protection

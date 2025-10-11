@@ -2,7 +2,10 @@
 
 ## Overview
 
-This guide covers the implementation and usage of HTTPS redirect validation for CloudFront distributions. The validation ensures that all HTTP traffic is properly redirected to HTTPS and that appropriate security headers are implemented.
+This guide covers the implementation and usage of HTTPS redirect validation for
+CloudFront distributions. The validation ensures that all HTTP traffic is
+properly redirected to HTTPS and that appropriate security headers are
+implemented.
 
 ## Features
 
@@ -63,14 +66,14 @@ const HttpsRedirectValidator = require('./scripts/https-redirect-validator');
 
 const validator = new HttpsRedirectValidator({
   timeout: 10000,
-  maxRedirects: 5
+  maxRedirects: 5,
 });
 
 const results = await validator.validateHttpsRedirect('example.com', {
   testHttpRedirect: true,
   testHstsHeader: true,
   testSecureCookies: true,
-  testRedirectChain: true
+  testRedirectChain: true,
 });
 
 console.log('Validation Results:', results);
@@ -96,10 +99,10 @@ The validator can be configured to enable/disable specific tests:
 
 ```javascript
 const testConfig = {
-  testHttpRedirect: true,    // Test HTTP to HTTPS redirects
-  testHstsHeader: true,      // Validate HSTS header
-  testSecureCookies: true,   // Check cookie security
-  testRedirectChain: true    // Analyze redirect chains
+  testHttpRedirect: true, // Test HTTP to HTTPS redirects
+  testHstsHeader: true, // Validate HSTS header
+  testSecureCookies: true, // Check cookie security
+  testRedirectChain: true, // Analyze redirect chains
 };
 ```
 
@@ -108,6 +111,7 @@ const testConfig = {
 ### Required CloudFront Settings
 
 1. **Viewer Protocol Policy**
+
    ```json
    {
      "ViewerProtocolPolicy": "redirect-to-https"
@@ -172,6 +176,7 @@ const testConfig = {
 ### Common Test Results
 
 1. **HTTP to HTTPS Redirect - PASSED**
+
    ```json
    {
      "statusCode": 301,
@@ -181,6 +186,7 @@ const testConfig = {
    ```
 
 2. **HSTS Header - PASSED**
+
    ```json
    {
      "header": "max-age=31536000; includeSubDomains; preload",
@@ -207,14 +213,17 @@ const testConfig = {
 #### 1. HTTP Requests Not Redirecting to HTTPS
 
 **Symptoms:**
+
 - HTTP requests return 200 status instead of redirect
 - No Location header in HTTP responses
 
 **Causes:**
+
 - CloudFront viewer protocol policy not set to "redirect-to-https"
 - Origin server handling HTTP requests directly
 
 **Solutions:**
+
 ```bash
 # Check CloudFront distribution configuration
 aws cloudfront get-distribution-config --id YOUR_DISTRIBUTION_ID
@@ -227,14 +236,17 @@ aws cloudfront update-distribution --id YOUR_DISTRIBUTION_ID \
 #### 2. HSTS Header Not Present
 
 **Symptoms:**
+
 - HTTPS responses missing Strict-Transport-Security header
 - Browser not enforcing HTTPS for subsequent requests
 
 **Causes:**
+
 - No response headers policy configured
 - Origin server not sending HSTS header
 
 **Solutions:**
+
 ```bash
 # Create response headers policy with HSTS
 aws cloudfront create-response-headers-policy \
@@ -248,14 +260,17 @@ aws cloudfront update-distribution --id YOUR_DISTRIBUTION_ID \
 #### 3. Insecure Cookies Detected
 
 **Symptoms:**
+
 - Cookies transmitted without Secure flag
 - Session cookies accessible via JavaScript
 
 **Causes:**
+
 - Application not setting security flags
 - Third-party cookies without proper configuration
 
 **Solutions:**
+
 - Update application cookie configuration
 - Review third-party integrations
 - Implement cookie security middleware
@@ -263,14 +278,17 @@ aws cloudfront update-distribution --id YOUR_DISTRIBUTION_ID \
 #### 4. Redirect Loops
 
 **Symptoms:**
+
 - Infinite redirect chains
 - Browser showing "too many redirects" error
 
 **Causes:**
+
 - Conflicting redirect rules
 - Origin server and CloudFront both handling redirects
 
 **Solutions:**
+
 - Review all redirect configurations
 - Ensure only one layer handles redirects
 - Test redirect chains thoroughly
@@ -302,28 +320,28 @@ on:
   push:
     branches: [main]
   schedule:
-    - cron: '0 6 * * *'  # Daily at 6 AM
+    - cron: '0 6 * * *' # Daily at 6 AM
 
 jobs:
   validate-https:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
-      
+
       - name: Setup Node.js
         uses: actions/setup-node@v3
         with:
           node-version: '18'
-          
+
       - name: Install dependencies
         run: npm install
-        
+
       - name: Validate HTTPS redirects
         run: |
           node scripts/https-redirect-validator.js ${{ secrets.DOMAIN_NAME }} \
             --output https-validation-results.json \
             --html https-validation-report.html
-            
+
       - name: Upload validation results
         uses: actions/upload-artifact@v3
         with:
@@ -341,14 +359,16 @@ const validator = new HttpsRedirectValidator();
 
 setInterval(async () => {
   try {
-    const results = await validator.validateHttpsRedirect(process.env.DOMAIN_NAME);
-    
+    const results = await validator.validateHttpsRedirect(
+      process.env.DOMAIN_NAME
+    );
+
     if (results.summary.failed > 0) {
       // Send alert to monitoring system
       await sendAlert({
         severity: 'HIGH',
         message: `HTTPS redirect validation failed: ${results.summary.failed} tests failed`,
-        details: results
+        details: results,
       });
     }
   } catch (error) {
@@ -432,6 +452,7 @@ setInterval(async () => {
 ### Metrics Tracking
 
 Track these key metrics over time:
+
 - HTTPS redirect success rate
 - HSTS header compliance
 - Cookie security score
@@ -440,6 +461,10 @@ Track these key metrics over time:
 
 ## Conclusion
 
-The HTTPS redirect validation system provides comprehensive testing of HTTPS enforcement and security header implementation. Regular validation ensures that your CloudFront distribution maintains proper security posture and complies with industry standards.
+The HTTPS redirect validation system provides comprehensive testing of HTTPS
+enforcement and security header implementation. Regular validation ensures that
+your CloudFront distribution maintains proper security posture and complies with
+industry standards.
 
-For additional support or questions, refer to the troubleshooting section or consult the AWS CloudFront documentation for specific configuration details.
+For additional support or questions, refer to the troubleshooting section or
+consult the AWS CloudFront documentation for specific configuration details.

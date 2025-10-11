@@ -1,13 +1,16 @@
 # SSL Certificate and Custom Domain Setup Guide
 
-This guide covers the complete setup of SSL certificates and custom domain configuration for your S3 + CloudFront deployment.
+This guide covers the complete setup of SSL certificates and custom domain
+configuration for your S3 + CloudFront deployment.
 
 ## Overview
 
 The SSL and custom domain setup process includes:
 
-1. **SSL Certificate Management**: Request and validate SSL certificates through AWS Certificate Manager (ACM)
-2. **Custom Domain Configuration**: Configure CloudFront to use your custom domain with HTTPS redirect
+1. **SSL Certificate Management**: Request and validate SSL certificates through
+   AWS Certificate Manager (ACM)
+2. **Custom Domain Configuration**: Configure CloudFront to use your custom
+   domain with HTTPS redirect
 3. **DNS Configuration**: Set up DNS records to point your domain to CloudFront
 4. **Automatic Renewal**: Enable automatic SSL certificate renewal
 
@@ -30,17 +33,20 @@ export AWS_REGION="us-east-1"
 Your AWS credentials need the following permissions:
 
 #### ACM (Certificate Manager)
+
 - `acm:RequestCertificate`
 - `acm:DescribeCertificate`
 - `acm:ListCertificates`
 - `acm:GetCertificate`
 
 #### CloudFront
+
 - `cloudfront:GetDistribution`
 - `cloudfront:UpdateDistribution`
 - `cloudfront:GetDistributionConfig`
 
 #### Route 53 (for automatic DNS validation)
+
 - `route53:ListHostedZones`
 - `route53:ChangeResourceRecordSets`
 - `route53:GetChange`
@@ -50,7 +56,8 @@ Your AWS credentials need the following permissions:
 
 ### Method 1: Complete Automated Setup
 
-Run the complete setup script that handles both SSL certificate and custom domain configuration:
+Run the complete setup script that handles both SSL certificate and custom
+domain configuration:
 
 ```bash
 # Set environment variables
@@ -135,6 +142,7 @@ export CUSTOM_DOMAIN="example.com"
 ```
 
 This will configure:
+
 - `example.com` (primary)
 - `www.example.com` (redirect to primary)
 
@@ -145,6 +153,7 @@ export CUSTOM_DOMAIN="www.example.com"
 ```
 
 This will configure:
+
 - `www.example.com` (primary)
 - `example.com` (redirect to primary)
 
@@ -225,15 +234,19 @@ dig example.com
 After successful setup, the following configuration files are created:
 
 ### `config/ssl-certificate.json`
+
 Contains SSL certificate configuration and validation details.
 
 ### `config/custom-domain.json`
+
 Contains custom domain and DNS configuration details.
 
 ### `config/ssl-domain-complete.json`
+
 Contains complete setup summary and configuration.
 
 ### `config/production.env`
+
 Environment variables for production deployment.
 
 ## Troubleshooting
@@ -245,6 +258,7 @@ Environment variables for production deployment.
 **Problem**: DNS validation takes too long or fails.
 
 **Solution**:
+
 - Verify DNS records are correctly configured
 - Check DNS propagation with online tools
 - Wait up to 48 hours for DNS propagation
@@ -255,6 +269,7 @@ Environment variables for production deployment.
 **Problem**: Cannot update CloudFront distribution with custom domain.
 
 **Solution**:
+
 - Verify SSL certificate is in `ISSUED` status
 - Check CloudFront distribution is in `Deployed` status
 - Ensure no conflicting aliases exist on other distributions
@@ -265,6 +280,7 @@ Environment variables for production deployment.
 **Problem**: Route 53 automatic configuration fails.
 
 **Solution**:
+
 - Verify Route 53 hosted zone exists for your domain
 - Check AWS permissions for Route 53 operations
 - Manually configure DNS records as shown in script output
@@ -275,6 +291,7 @@ Environment variables for production deployment.
 **Problem**: Custom domain doesn't respond or shows certificate errors.
 
 **Solution**:
+
 - Wait for CloudFront distribution deployment (15-20 minutes)
 - Verify DNS records point to correct CloudFront distribution
 - Check SSL certificate covers your domain
@@ -300,15 +317,18 @@ curl -v https://example.com
 ## Cost Considerations
 
 ### SSL Certificates
+
 - **ACM Certificates**: Free for use with AWS services
 - **Automatic Renewal**: No additional cost
 
 ### CloudFront
+
 - **Custom Domain**: No additional cost for aliases
 - **HTTPS Requests**: Same pricing as HTTP requests
 - **Data Transfer**: Standard CloudFront pricing applies
 
 ### Route 53 (if used)
+
 - **Hosted Zone**: $0.50 per month
 - **DNS Queries**: $0.40 per million queries
 

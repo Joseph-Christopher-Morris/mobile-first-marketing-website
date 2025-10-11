@@ -2,20 +2,25 @@
 
 ## Overview
 
-This guide covers the automated image accessibility validation tools created to test image loading via CloudFront CDN endpoints. These tools help identify and debug image loading issues in the deployment pipeline.
+This guide covers the automated image accessibility validation tools created to
+test image loading via CloudFront CDN endpoints. These tools help identify and
+debug image loading issues in the deployment pipeline.
 
 ## Validation Tools
 
 ### 1. Comprehensive Image Validation (`post-deployment-image-validation.js`)
 
-**Purpose**: Tests multiple images across the site for accessibility via CloudFront.
+**Purpose**: Tests multiple images across the site for accessibility via
+CloudFront.
 
 **Usage**:
+
 ```bash
 node scripts/post-deployment-image-validation.js
 ```
 
 **Features**:
+
 - Tests multiple image paths simultaneously
 - Validates HTTP status codes, content types, and response times
 - Checks security configuration (S3 direct access blocking)
@@ -23,7 +28,8 @@ node scripts/post-deployment-image-validation.js
 - Includes retry logic for network failures
 - Provides detailed error analysis
 
-**Output**: 
+**Output**:
+
 - `validation-reports/image-accessibility-validation-{timestamp}.json`
 - `validation-reports/image-accessibility-validation-{timestamp}.md`
 - `validation-reports/image-accessibility-validation-{timestamp}.html`
@@ -33,31 +39,38 @@ node scripts/post-deployment-image-validation.js
 **Purpose**: Focused test for the specific blog image that was failing.
 
 **Usage**:
+
 ```bash
 node scripts/test-blog-image-accessibility.js
 ```
 
 **Features**:
-- Tests the specific failing blog image: `/images/hero/paid-ads-analytics-screenshot.webp`
+
+- Tests the specific failing blog image:
+  `/images/hero/paid-ads-analytics-screenshot.webp`
 - Validates security configuration
 - Tests alternative image paths
 - Provides detailed analysis and recommendations
 - Generates focused reports
 
 **Output**:
+
 - `validation-reports/blog-image-test-{timestamp}.json`
 - `validation-reports/blog-image-test-{timestamp}.md`
 
 ### 3. Complete Validation Suite (`run-image-accessibility-validation.js`)
 
-**Purpose**: Runs both comprehensive and blog-specific tests, generating combined analysis.
+**Purpose**: Runs both comprehensive and blog-specific tests, generating
+combined analysis.
 
 **Usage**:
+
 ```bash
 node scripts/run-image-accessibility-validation.js
 ```
 
 **Features**:
+
 - Executes all validation tests in sequence
 - Generates combined summary and executive report
 - Provides overall status assessment
@@ -65,6 +78,7 @@ node scripts/run-image-accessibility-validation.js
 - Offers prioritized recommendations
 
 **Output**:
+
 - All individual test reports
 - `validation-reports/validation-summary-{timestamp}.json`
 - `validation-reports/executive-summary-{timestamp}.md`
@@ -74,11 +88,13 @@ node scripts/run-image-accessibility-validation.js
 **Purpose**: Fast validation for the specific blog image during development.
 
 **Usage**:
+
 ```bash
 node scripts/quick-blog-image-test.js
 ```
 
 **Features**:
+
 - Lightweight, fast test (5-second timeout)
 - Console-only output for quick feedback
 - Perfect for development and debugging
@@ -96,17 +112,18 @@ const CONFIG = {
     '/images/services/analytics-hero.webp',
     '/images/hero/mobile-marketing-hero.webp',
     '/images/services/flyer-design-hero.webp',
-    '/images/services/stock-photography-hero.webp'
+    '/images/services/stock-photography-hero.webp',
   ],
   timeout: 10000,
   maxRetries: 3,
-  outputDir: 'validation-reports'
+  outputDir: 'validation-reports',
 };
 ```
 
 ### Customization
 
-To test different images or domains, modify the configuration in the respective scripts or create environment variables:
+To test different images or domains, modify the configuration in the respective
+scripts or create environment variables:
 
 ```bash
 export CLOUDFRONT_DOMAIN="your-domain.cloudfront.net"
@@ -141,6 +158,7 @@ export TEST_IMAGE_PATH="/your/image/path.webp"
 **Cause**: CloudFront is serving a 404 error page instead of the image.
 
 **Solutions**:
+
 1. Verify image exists in S3 bucket
 2. Check deployment script uploaded the image
 3. Verify image path matches exactly
@@ -151,6 +169,7 @@ export TEST_IMAGE_PATH="/your/image/path.webp"
 **Cause**: S3 permissions or OAC configuration issue.
 
 **Solutions**:
+
 1. Verify S3 bucket policy allows CloudFront access
 2. Check CloudFront OAC configuration
 3. Ensure S3 bucket blocks public access
@@ -161,6 +180,7 @@ export TEST_IMAGE_PATH="/your/image/path.webp"
 **Cause**: Images not cached or large file sizes.
 
 **Solutions**:
+
 1. Optimize image file sizes
 2. Verify CloudFront caching configuration
 3. Check cache hit rates in CloudFront metrics
@@ -199,6 +219,7 @@ Set up regular validation runs:
 ### Alert Conditions
 
 Monitor for:
+
 - Failed image loads (404, 403 errors)
 - Security issues (S3 public access)
 - Performance degradation (slow response times)
@@ -209,6 +230,7 @@ Monitor for:
 ### Executive Summary
 
 The executive summary provides:
+
 - Overall status assessment (EXCELLENT, GOOD, NEEDS_ATTENTION, CRITICAL)
 - Key metrics and test results
 - Critical issues requiring immediate attention
@@ -218,6 +240,7 @@ The executive summary provides:
 ### Detailed Reports
 
 Technical reports include:
+
 - Individual image test results
 - HTTP response headers and timing
 - Error messages and warnings
@@ -274,6 +297,7 @@ curl -I https://bucket-name.s3.amazonaws.com/images/hero/paid-ads-analytics-scre
 ### Log Analysis
 
 Check relevant logs:
+
 - CloudFront access logs
 - S3 server access logs
 - CloudWatch metrics
@@ -291,4 +315,4 @@ For issues with the validation tools:
 
 ---
 
-*Last updated: October 2025*
+_Last updated: October 2025_

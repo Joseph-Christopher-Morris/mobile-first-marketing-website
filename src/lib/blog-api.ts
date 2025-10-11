@@ -12,9 +12,11 @@ export async function getAllBlogPosts(): Promise<BlogPost[]> {
   ]);
 
   const posts = postModules.map(module => module.default);
-  
+
   // Sort by date (newest first)
-  return posts.sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime());
+  return posts.sort(
+    (a, b) => new Date(b.date).getTime() - new Date(a.date).getTime()
+  );
 }
 
 export async function getBlogPost(slug: string): Promise<BlogPost | null> {
@@ -31,16 +33,18 @@ export async function getFeaturedPosts(): Promise<BlogPost[]> {
   return allPosts.filter(post => post.featured);
 }
 
-export async function getPostsByCategory(category: string): Promise<BlogPost[]> {
+export async function getPostsByCategory(
+  category: string
+): Promise<BlogPost[]> {
   const allPosts = await getAllBlogPosts();
-  return allPosts.filter(post => 
-    post.category.toLowerCase() === category.toLowerCase()
+  return allPosts.filter(
+    post => post.category.toLowerCase() === category.toLowerCase()
   );
 }
 
 export async function getPostsByTag(tag: string): Promise<BlogPost[]> {
   const allPosts = await getAllBlogPosts();
-  return allPosts.filter(post => 
+  return allPosts.filter(post =>
     post.tags.some(t => t.toLowerCase() === tag.toLowerCase())
   );
 }
