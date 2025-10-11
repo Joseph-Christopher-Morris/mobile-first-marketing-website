@@ -1,0 +1,67 @@
+{
+  "targets": {
+    "lcp": {
+      "value": 2500,
+      "unit": "ms",
+      "description": "Largest Contentful Paint - measures loading performance"
+    },
+    "fid": {
+      "value": 100,
+      "unit": "ms", 
+      "description": "First Input Delay - measures interactivity"
+    },
+    "cls": {
+      "value": 0.1,
+      "unit": "score",
+      "description": "Cumulative Layout Shift - measures visual stability"
+    }
+  },
+  "testUrls": [
+    {
+      "name": "Home",
+      "url": "https://d15sc9fc739ev2.cloudfront.net/",
+      "priority": "high",
+      "description": "Main landing page"
+    },
+    {
+      "name": "Services",
+      "url": "https://d15sc9fc739ev2.cloudfront.net/services/",
+      "priority": "high",
+      "description": "Services overview page"
+    },
+    {
+      "name": "Photography Services",
+      "url": "https://d15sc9fc739ev2.cloudfront.net/services/photography/",
+      "priority": "high",
+      "description": "Photography services detail page"
+    },
+    {
+      "name": "Blog",
+      "url": "https://d15sc9fc739ev2.cloudfront.net/blog/",
+      "priority": "medium",
+      "description": "Blog listing page"
+    },
+    {
+      "name": "Contact",
+      "url": "https://d15sc9fc739ev2.cloudfront.net/contact/",
+      "priority": "medium",
+      "description": "Contact form page"
+    }
+  ],
+  "monitoring": {
+    "frequency": "daily",
+    "alertThresholds": {
+      "lcp": 3000,
+      "fid": 150,
+      "cls": 0.15
+    },
+    "retryAttempts": 3,
+    "timeout": 30000
+  },
+  "reporting": {
+    "generateSummary": true,
+    "saveDetailedResults": true,
+    "includePerformanceMetrics": true,
+    "includeRecommendations": true
+  }
+}

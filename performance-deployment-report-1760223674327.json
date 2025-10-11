@@ -1,0 +1,33 @@
+{
+  "timestamp": "2025-10-11T23:01:14.327Z",
+  "summary": {
+    "totalTests": 14,
+    "passed": 11,
+    "failed": 3,
+    "successRate": "78.6%"
+  },
+  "categories": {
+    "performance": {
+      "passed": 1,
+      "failed": 3,
+      "issues": [
+        "Images missing proper cache headers",
+        "HTML missing appropriate cache headers",
+        "Performance validation error: cwvData.pages is not iterable"
+      ]
+    },
+    "seo": {
+      "passed": 5,
+      "failed": 0,
+      "issues": []
+    },
+    "deployment": {
+      "passed": 5,
+      "failed": 0,
+      "issues": []
+    }
+  },
+  "recommendations": [
+    "- Optimize performance: ensure next/image usage, proper cache headers, and Core Web Vitals targets"
+  ]
+}

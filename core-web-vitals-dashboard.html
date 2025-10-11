@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Core Web Vitals Dashboard</title>
+    <style>
+        body { font-family: Arial, sans-serif; margin: 20px; background: #f5f5f5; }
+        .container { max-width: 1200px; margin: 0 auto; }
+        .header { background: white; padding: 20px; border-radius: 8px; margin-bottom: 20px; box-shadow: 0 2px 4px rgba(0,0,0,0.1); }
+        .status { display: inline-block; padding: 8px 16px; border-radius: 4px; color: white; font-weight: bold; }
+        .status.passed { background: #22c55e; }
+        .status.failed { background: #ef4444; }
+        .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 20px; }
+        .card { background: white; padding: 20px; border-radius: 8px; box-shadow: 0 2px 4px rgba(0,0,0,0.1); }
+        .metric { display: flex; justify-content: space-between; align-items: center; margin: 10px 0; }
+        .metric-value { font-size: 24px; font-weight: bold; }
+        .metric-good { color: #22c55e; }
+        .metric-warning { color: #f59e0b; }
+        .metric-poor { color: #ef4444; }
+        .trend { height: 200px; background: #f8f9fa; border-radius: 4px; margin: 10px 0; display: flex; align-items: center; justify-content: center; }
+        .alert { background: #fef2f2; border: 1px solid #fecaca; padding: 10px; border-radius: 4px; margin: 5px 0; }
+        .timestamp { color: #6b7280; font-size: 14px; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>Core Web Vitals Dashboard</h1>
+            <p class="timestamp">Last Updated: 2025-10-11T21:51:56.506Z</p>
+            <span class="status passed">PASSED</span>
+        </div>
+        
+        <div class="grid">
+            <div class="card">
+                <h3>Summary</h3>
+                <div class="metric">
+                    <span>Total Pages:</span>
+                    <span class="metric-value">5</span>
+                </div>
+                <div class="metric">
+                    <span>Passed:</span>
+                    <span class="metric-value metric-good">5</span>
+                </div>
+                <div class="metric">
+                    <span>Failed:</span>
+                    <span class="metric-value metric-poor">0</span>
+                </div>
+            </div>
+            
+            <div class="card">
+                <h3>LCP (Largest Contentful Paint)</h3>
+                <div class="metric">
+                    <span>Average:</span>
+                    <span class="metric-value metric-good">1078ms</span>
+                </div>
+                <div class="metric">
+                    <span>Target:</span>
+                    <span>&lt; 2500ms</span>
+                </div>
+                <div class="metric">
+                    <span>Range:</span>
+                    <span>860ms - 1836ms</span>
+                </div>
+            </div>
+            
+            <div class="card">
+                <h3>FID (First Input Delay)</h3>
+                <div class="metric">
+                    <span>Average:</span>
+                    <span class="metric-value metric-good">0ms</span>
+                </div>
+                <div class="metric">
+                    <span>Target:</span>
+                    <span>&lt; 100ms</span>
+                </div>
+                <div class="metric">
+                    <span>Range:</span>
+                    <span>0ms - 0ms</span>
+                </div>
+            </div>
+            
+            <div class="card">
+                <h3>CLS (Cumulative Layout Shift)</h3>
+                <div class="metric">
+                    <span>Average:</span>
+                    <span class="metric-value metric-good">0.022</span>
+                </div>
+                <div class="metric">
+                    <span>Target:</span>
+                    <span>&lt; 0.1</span>
+                </div>
+                <div class="metric">
+                    <span>Range:</span>
+                    <span>0.022 - 0.022</span>
+                </div>
+            </div>
+            
+            
+        </div>
+    </div>
+</body>
+</html>

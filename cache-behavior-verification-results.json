@@ -1,5 +1,5 @@
 {
-  "timestamp": "2025-10-10T21:57:48.057Z",
+  "timestamp": "2025-10-11T22:59:02.009Z",
   "baseUrl": "https://d15sc9fc739ev2.cloudfront.net",
   "tests": [
     {
@@ -7,18 +7,18 @@
       "requests": [
         {
           "requestNumber": 1,
-          "responseTime": 862,
+          "responseTime": 693,
           "statusCode": 200,
           "cacheHit": false,
           "cloudFrontPop": "MAN51-P6",
-          "contentLength": 30697,
+          "contentLength": 30696,
           "etag": "\"2099943e4607c4a8b1b1e9faf2085969\"",
           "lastModified": "Wed, 08 Oct 2025 14:53:57 GMT",
           "xCache": "Miss from cloudfront"
         },
         {
           "requestNumber": 2,
-          "responseTime": 30,
+          "responseTime": 26,
           "statusCode": 200,
           "cacheHit": true,
           "cloudFrontPop": "MAN51-P6",
@@ -29,7 +29,7 @@
         },
         {
           "requestNumber": 3,
-          "responseTime": 12,
+          "responseTime": 16,
           "statusCode": 200,
           "cacheHit": true,
           "cloudFrontPop": "MAN51-P6",
@@ -40,7 +40,7 @@
         }
       ],
       "cacheEffective": true,
-      "averageResponseTime": 301,
+      "averageResponseTime": 245,
       "cacheHitRate": "66.7"
     },
     {
@@ -48,40 +48,40 @@
       "requests": [
         {
           "requestNumber": 1,
-          "responseTime": 422,
+          "responseTime": 340,
           "statusCode": 200,
           "cacheHit": false,
           "cloudFrontPop": "MAN51-P6",
-          "contentLength": 83896,
-          "etag": "\"79dfe82a3331ba8da3e590936b9866b3\"",
-          "lastModified": "Fri, 10 Oct 2025 21:49:03 GMT",
+          "contentLength": 51224,
+          "etag": "\"efe036c0fd1ca7a022b87ba9a3c530e0\"",
+          "lastModified": "Sat, 11 Oct 2025 22:27:10 GMT",
           "xCache": "Miss from cloudfront"
         },
         {
           "requestNumber": 2,
-          "responseTime": 409,
+          "responseTime": 338,
           "statusCode": 200,
           "cacheHit": false,
           "cloudFrontPop": "MAN51-P6",
-          "contentLength": 83896,
-          "etag": "\"79dfe82a3331ba8da3e590936b9866b3\"",
-          "lastModified": "Fri, 10 Oct 2025 21:49:03 GMT",
+          "contentLength": 51224,
+          "etag": "\"efe036c0fd1ca7a022b87ba9a3c530e0\"",
+          "lastModified": "Sat, 11 Oct 2025 22:27:10 GMT",
           "xCache": "Miss from cloudfront"
         },
         {
           "requestNumber": 3,
-          "responseTime": 175,
+          "responseTime": 174,
           "statusCode": 200,
           "cacheHit": false,
           "cloudFrontPop": "MAN51-P6",
-          "contentLength": 83896,
-          "etag": "\"79dfe82a3331ba8da3e590936b9866b3\"",
-          "lastModified": "Fri, 10 Oct 2025 21:49:03 GMT",
+          "contentLength": 51224,
+          "etag": "\"efe036c0fd1ca7a022b87ba9a3c530e0\"",
+          "lastModified": "Sat, 11 Oct 2025 22:27:10 GMT",
           "xCache": "Miss from cloudfront"
         }
       ],
       "cacheEffective": true,
-      "averageResponseTime": 335,
+      "averageResponseTime": 284,
       "cacheHitRate": "0.0"
     },
     {
@@ -89,40 +89,40 @@
       "requests": [
         {
           "requestNumber": 1,
-          "responseTime": 468,
+          "responseTime": 446,
           "statusCode": 200,
           "cacheHit": false,
           "cloudFrontPop": "MAN51-P6",
           "contentLength": 171824,
           "etag": "\"8e1de0162b76c5fb02b35f2758b173b7\"",
-          "lastModified": "Mon, 06 Oct 2025 08:09:09 GMT",
+          "lastModified": "Sat, 11 Oct 2025 18:12:58 GMT",
           "xCache": "Miss from cloudfront"
         },
         {
           "requestNumber": 2,
-          "responseTime": 31,
+          "responseTime": 28,
           "statusCode": 200,
           "cacheHit": true,
           "cloudFrontPop": "MAN51-P6",
           "contentLength": 171824,
           "etag": "\"8e1de0162b76c5fb02b35f2758b173b7\"",
-          "lastModified": "Mon, 06 Oct 2025 08:09:09 GMT",
+          "lastModified": "Sat, 11 Oct 2025 18:12:58 GMT",
           "xCache": "Hit from cloudfront"
         },
         {
           "requestNumber": 3,
-          "responseTime": 13,
+          "responseTime": 19,
           "statusCode": 200,
           "cacheHit": true,
           "cloudFrontPop": "MAN51-P6",
           "contentLength": 171824,
           "etag": "\"8e1de0162b76c5fb02b35f2758b173b7\"",
-          "lastModified": "Mon, 06 Oct 2025 08:09:09 GMT",
+          "lastModified": "Sat, 11 Oct 2025 18:12:58 GMT",
           "xCache": "Hit from cloudfront"
         }
       ],
       "cacheEffective": true,
-      "averageResponseTime": 171,
+      "averageResponseTime": 164,
       "cacheHitRate": "66.7"
     }
   ],

@@ -1,0 +1,301 @@
+[
+  {
+    "timestamp": "2025-10-11T22:21:41.103Z",
+    "coreWebVitals": {
+      "lcp": {
+        "values": [
+          4208,
+          1068,
+          948,
+          1040,
+          1208
+        ],
+        "average": 1694.4,
+        "passed": 4,
+        "total": 5
+      },
+      "fid": {
+        "values": [],
+        "average": 0,
+        "passed": 0,
+        "total": 0
+      },
+      "cls": {
+        "values": [
+          0.021908267550998263,
+          0.021908267550998263,
+          0.021908267550998263,
+          0.021908267550998263
+        ],
+        "average": 0.021908267550998263,
+        "passed": 4,
+        "total": 4
+      },
+      "overallPassed": false,
+      "pageResults": [
+        {
+          "page": "Home",
+          "timestamp": "2025-10-11T22:21:50.133Z",
+          "metrics": {
+            "lcp": {
+              "value": 4208,
+              "target": 2500,
+              "passed": false,
+              "rating": "poor",
+              "unit": "ms"
+            },
+            "fid": {
+              "value": null,
+              "target": 100,
+              "passed": true,
+              "rating": "good",
+              "unit": "ms",
+              "note": "No user interaction detected"
+            },
+            "cls": {
+              "value": 0.021908267550998263,
+              "target": 0.1,
+              "passed": true,
+              "rating": "good",
+              "unit": "score"
+            }
+          },
+          "performance": {
+            "loadTime": 1025,
+            "statusCode": 200,
+            "performanceMetrics": {
+              "domContentLoaded": 0.19999998807907104,
+              "loadComplete": 0.10000002384185791,
+              "firstPaint": 168,
+              "firstContentfulPaint": 168,
+              "transferSize": 0,
+              "encodedBodySize": 43768,
+              "decodedBodySize": 43768
+            },
+            "resourceCoverage": {
+              "js": 25,
+              "css": 1
+            }
+          },
+          "passed": false,
+          "issues": [
+            "LCP (4208ms) exceeds target of 2500ms"
+          ]
+        },
+        {
+          "page": "Services",
+          "timestamp": "2025-10-11T22:21:55.764Z",
+          "metrics": {
+            "lcp": {
+              "value": 1068,
+              "target": 2500,
+              "passed": true,
+              "rating": "good",
+              "unit": "ms"
+            },
+            "fid": {
+              "value": null,
+              "target": 100,
+              "passed": true,
+              "rating": "good",
+              "unit": "ms",
+              "note": "No user interaction detected"
+            },
+            "cls": {
+              "value": 0.021908267550998263,
+              "target": 0.1,
+              "passed": true,
+              "rating": "good",
+              "unit": "score"
+            }
+          },
+          "performance": {
+            "loadTime": 766,
+            "statusCode": 200,
+            "performanceMetrics": {
+              "domContentLoaded": 0.5,
+              "loadComplete": 0.09999996423721313,
+              "firstPaint": 188,
+              "firstContentfulPaint": 188,
+              "transferSize": 0,
+              "encodedBodySize": 43768,
+              "decodedBodySize": 43768
+            },
+            "resourceCoverage": {
+              "js": 25,
+              "css": 1
+            }
+          },
+          "passed": true,
+          "issues": []
+        },
+        {
+          "page": "Photography Services",
+          "timestamp": "2025-10-11T22:22:11.442Z",
+          "metrics": {
+            "lcp": {
+              "value": 948,
+              "target": 2500,
+              "passed": true,
+              "rating": "good",
+              "unit": "ms"
+            },
+            "fid": {
+              "value": null,
+              "target": 100,
+              "passed": true,
+              "rating": "good",
+              "unit": "ms",
+              "note": "No user interaction detected"
+            }
+          },
+          "performance": {
+            "loadTime": 1042,
+            "statusCode": 200,
+            "performanceMetrics": {
+              "domContentLoaded": 0.699999988079071,
+              "loadComplete": 0.10000002384185791,
+              "firstPaint": 372,
+              "firstContentfulPaint": 372,
+              "transferSize": 0,
+              "encodedBodySize": 43768,
+              "decodedBodySize": 43768
+            },
+            "resourceCoverage": {
+              "js": 25,
+              "css": 1
+            }
+          },
+          "passed": false,
+          "issues": [
+            "CLS metric not captured"
+          ]
+        },
+        {
+          "page": "Blog",
+          "timestamp": "2025-10-11T22:22:17.110Z",
+          "metrics": {
+            "lcp": {
+              "value": 1040,
+              "target": 2500,
+              "passed": true,
+              "rating": "good",
+              "unit": "ms"
+            },
+            "fid": {
+              "value": null,
+              "target": 100,
+              "passed": true,
+              "rating": "good",
+              "unit": "ms",
+              "note": "No user interaction detected"
+            },
+            "cls": {
+              "value": 0.021908267550998263,
+              "target": 0.1,
+              "passed": true,
+              "rating": "good",
+              "unit": "score"
+            }
+          },
+          "performance": {
+            "loadTime": 1033,
+            "statusCode": 200,
+            "performanceMetrics": {
+              "domContentLoaded": 1,
+              "loadComplete": 0.09999996423721313,
+              "firstPaint": 216,
+              "firstContentfulPaint": 216,
+              "transferSize": 0,
+              "encodedBodySize": 43768,
+              "decodedBodySize": 43768
+            },
+            "resourceCoverage": {
+              "js": 24,
+              "css": 1
+            }
+          },
+          "passed": true,
+          "issues": []
+        },
+        {
+          "page": "Contact",
+          "timestamp": "2025-10-11T22:22:22.847Z",
+          "metrics": {
+            "lcp": {
+              "value": 1208,
+              "target": 2500,
+              "passed": true,
+              "rating": "good",
+              "unit": "ms"
+            },
+            "fid": {
+              "value": null,
+              "target": 100,
+              "passed": true,
+              "rating": "good",
+              "unit": "ms",
+              "note": "No user interaction detected"
+            },
+            "cls": {
+              "value": 0.021908267550998263,
+              "target": 0.1,
+              "passed": true,
+              "rating": "good",
+              "unit": "score"
+            }
+          },
+          "performance": {
+            "loadTime": 1037,
+            "statusCode": 200,
+            "performanceMetrics": {
+              "domContentLoaded": 0.800000011920929,
+              "loadComplete": 0,
+              "firstPaint": 224,
+              "firstContentfulPaint": 224,
+              "transferSize": 0,
+              "encodedBodySize": 43768,
+              "decodedBodySize": 43768
+            },
+            "resourceCoverage": {
+              "js": 24,
+              "css": 1
+            }
+          },
+          "passed": true,
+          "issues": []
+        }
+      ]
+    },
+    "lighthouse": null,
+    "optimization": {
+      "performanceGrade": "A",
+      "regressionsDetected": 0,
+      "optimizationsIdentified": 1,
+      "costAlertsGenerated": 0,
+      "automatedActionsExecuted": 0,
+      "currentMetrics": {
+        "performance": {
+          "globalLatency": 1800
+        },
+        "cloudfront": {
+          "cacheHitRatio": 92,
+          "totalErrorRate": 0.1
+        }
+      },
+      "regressions": [],
+      "recommendations": [
+        {
+          "priority": "medium",
+          "title": "Optimize Image Compression",
+          "description": "Some images could be further compressed",
+          "actions": [
+            "Review image optimization settings"
+          ]
+        }
+      ]
+    },
+    "errors": [],
+    "overallScore": 96
+  }
+]

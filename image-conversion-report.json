@@ -1,0 +1,50 @@
+{
+  "summary": {
+    "totalConverted": 0,
+    "totalErrors": 9,
+    "originalSize": 0,
+    "convertedSize": 0,
+    "savings": 0,
+    "savingsPercent": 0
+  },
+  "conversions": [],
+  "errors": [
+    {
+      "file": "C:\\Users\\Joe\\Projects\\website-sync-20251003_133144\\public\\images\\blog\\mobile-first-design.jpg",
+      "error": "ENOENT: no such file or directory, stat 'C:\\Users\\Joe\\Projects\\website-sync-20251003_133144\\public\\images\\blog\\mobile-first-design.webp'"
+    },
+    {
+      "file": "C:\\Users\\Joe\\Projects\\website-sync-20251003_133144\\public\\images\\blog\\welcome-hero.jpg",
+      "error": "ENOENT: no such file or directory, stat 'C:\\Users\\Joe\\Projects\\website-sync-20251003_133144\\public\\images\\blog\\welcome-hero.webp'"
+    },
+    {
+      "file": "C:\\Users\\Joe\\Projects\\website-sync-20251003_133144\\public\\images\\hero\\hero-bg.jpg",
+      "error": "ENOENT: no such file or directory, stat 'C:\\Users\\Joe\\Projects\\website-sync-20251003_133144\\public\\images\\hero\\hero-bg.webp'"
+    },
+    {
+      "file": "C:\\Users\\Joe\\Projects\\website-sync-20251003_133144\\public\\images\\icons\\vivid-auto-photography-logo-alt.png",
+      "error": "ENOENT: no such file or directory, stat 'C:\\Users\\Joe\\Projects\\website-sync-20251003_133144\\public\\images\\icons\\vivid-auto-photography-logo-alt.webp'"
+    },
+    {
+      "file": "C:\\Users\\Joe\\Projects\\website-sync-20251003_133144\\public\\images\\icons\\vivid-auto-photography-logo.png",
+      "error": "ENOENT: no such file or directory, stat 'C:\\Users\\Joe\\Projects\\website-sync-20251003_133144\\public\\images\\icons\\vivid-auto-photography-logo.webp'"
+    },
+    {
+      "file": "C:\\Users\\Joe\\Projects\\website-sync-20251003_133144\\public\\images\\testimonials\\david-kim.jpg",
+      "error": "ENOENT: no such file or directory, stat 'C:\\Users\\Joe\\Projects\\website-sync-20251003_133144\\public\\images\\testimonials\\david-kim.webp'"
+    },
+    {
+      "file": "C:\\Users\\Joe\\Projects\\website-sync-20251003_133144\\public\\images\\testimonials\\lisa-rodriguez.jpg",
+      "error": "ENOENT: no such file or directory, stat 'C:\\Users\\Joe\\Projects\\website-sync-20251003_133144\\public\\images\\testimonials\\lisa-rodriguez.webp'"
+    },
+    {
+      "file": "C:\\Users\\Joe\\Projects\\website-sync-20251003_133144\\public\\images\\testimonials\\michael-chen.jpg",
+      "error": "ENOENT: no such file or directory, stat 'C:\\Users\\Joe\\Projects\\website-sync-20251003_133144\\public\\images\\testimonials\\michael-chen.webp'"
+    },
+    {
+      "file": "C:\\Users\\Joe\\Projects\\website-sync-20251003_133144\\public\\images\\testimonials\\sarah-johnson.jpg",
+      "error": "ENOENT: no such file or directory, stat 'C:\\Users\\Joe\\Projects\\website-sync-20251003_133144\\public\\images\\testimonials\\sarah-johnson.webp'"
+    }
+  ],
+  "timestamp": "2025-10-11T21:16:59.254Z"
+}

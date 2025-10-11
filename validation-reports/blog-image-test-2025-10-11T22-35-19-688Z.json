@@ -1,0 +1,108 @@
+{
+  "timestamp": "2025-10-11T22:35:19.688Z",
+  "targetImage": "/images/hero/paid-ads-analytics-screenshot.webp",
+  "cloudfrontTest": {
+    "imagePath": "/images/hero/paid-ads-analytics-screenshot.webp",
+    "url": "https://d15sc9fc739ev2.cloudfront.net/images/hero/paid-ads-analytics-screenshot.webp",
+    "timestamp": "2025-10-11T22:35:18.936Z",
+    "attempt": 1,
+    "success": true,
+    "statusCode": 200,
+    "responseTime": 25,
+    "contentType": "image/webp",
+    "contentLength": "23692",
+    "cacheStatus": "Hit from cloudfront",
+    "errors": [],
+    "warnings": [],
+    "details": {
+      "headers": {
+        "content-type": "image/webp",
+        "content-length": "23692",
+        "etag": "\"22189f8ddf74516911a294da9d05347d\"",
+        "last-modified": "Tue, 07 Oct 2025 17:39:33 GMT",
+        "x-cache": "Hit from cloudfront",
+        "x-amz-cf-pop": "MAN51-P6",
+        "x-amz-cf-id": "zJXxzQqF6-08LS5GRY3NZWK_gztMfTEjSD_8zrHUymaINrgqUKmEjw=="
+      },
+      "fileSizeBytes": 23692,
+      "fileSizeKB": 23.14,
+      "cacheHit": true
+    }
+  },
+  "s3SecurityTest": {
+    "url": "https://mobile-marketing-site-prod-1759705011281-tyzuo9.s3.amazonaws.com/images/hero/paid-ads-analytics-screenshot.webp",
+    "statusCode": 403,
+    "accessible": false,
+    "warning": null
+  },
+  "alternativeImages": [
+    {
+      "imagePath": "/images/services/analytics-hero.webp",
+      "url": "https://d15sc9fc739ev2.cloudfront.net/images/services/analytics-hero.webp",
+      "timestamp": "2025-10-11T22:35:19.059Z",
+      "attempt": 1,
+      "success": true,
+      "statusCode": 200,
+      "responseTime": 27,
+      "contentType": "image/webp",
+      "contentLength": "23692",
+      "cacheStatus": "Hit from cloudfront",
+      "errors": [],
+      "warnings": [],
+      "details": {
+        "headers": {
+          "content-type": "image/webp",
+          "content-length": "23692",
+          "etag": "\"22189f8ddf74516911a294da9d05347d\"",
+          "last-modified": "Sat, 11 Oct 2025 18:12:56 GMT",
+          "x-cache": "Hit from cloudfront",
+          "x-amz-cf-pop": "MAN51-P6",
+          "x-amz-cf-id": "tCo9jdoMmqTpug5XsosNC2DVxv7xFTXfjgSXP6aexlkPnhlhXWfAxA=="
+        },
+        "fileSizeBytes": 23692,
+        "fileSizeKB": 23.14,
+        "cacheHit": true
+      }
+    },
+    {
+      "imagePath": "/images/hero/mobile-marketing-hero.webp",
+      "url": "https://d15sc9fc739ev2.cloudfront.net/images/hero/mobile-marketing-hero.webp",
+      "timestamp": "2025-10-11T22:35:19.088Z",
+      "attempt": 1,
+      "success": false,
+      "statusCode": 200,
+      "responseTime": 594,
+      "contentType": "text/html",
+      "contentLength": "51267",
+      "cacheStatus": "Error from cloudfront",
+      "errors": [
+        "Invalid Content-Type: text/html"
+      ],
+      "warnings": [],
+      "details": {
+        "headers": {
+          "content-type": "text/html",
+          "content-length": "51267",
+          "etag": "\"efe036c0fd1ca7a022b87ba9a3c530e0\"",
+          "last-modified": "Sat, 11 Oct 2025 22:27:10 GMT",
+          "x-cache": "Error from cloudfront",
+          "x-amz-cf-pop": "MAN51-P6",
+          "x-amz-cf-id": "L-AQbQTjOlND_KTQCotvUS4oXCuAUYsWVCfUwToyOni6M7TGllXEdA=="
+        },
+        "fileSizeBytes": 51267,
+        "fileSizeKB": 50.07,
+        "cacheHit": false
+      }
+    }
+  ],
+  "analysis": {
+    "primaryImageStatus": "WORKING",
+    "securityStatus": "SECURE",
+    "recommendations": [
+      "Primary image is working correctly",
+      "S3 security is properly configured"
+    ],
+    "possibleCauses": [],
+    "nextSteps": []
+  }
+}

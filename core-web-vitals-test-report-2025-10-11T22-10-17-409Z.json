@@ -1,0 +1,72 @@
+{
+  "timestamp": "2025-10-11T22:10:17.409Z",
+  "testSuite": "Core Web Vitals Monitoring",
+  "totalTests": 9,
+  "passed": 9,
+  "failed": 0,
+  "results": [
+    {
+      "name": "LCP Target Validation",
+      "expected": 2500,
+      "actual": 2500,
+      "passed": true
+    },
+    {
+      "name": "FID Target Validation",
+      "expected": 100,
+      "actual": 100,
+      "passed": true
+    },
+    {
+      "name": "CLS Target Validation",
+      "expected": 0.1,
+      "actual": 0.1,
+      "passed": true
+    },
+    {
+      "name": "Configuration File Exists",
+      "passed": true,
+      "details": "Config file found"
+    },
+    {
+      "name": "Configuration Structure",
+      "passed": {
+        "frequency": "daily",
+        "alertThresholds": {
+          "lcp": 3000,
+          "fid": 150,
+          "cls": 0.15
+        },
+        "retryAttempts": 3,
+        "timeout": 30000
+      },
+      "details": "Required sections present"
+    },
+    {
+      "name": "Sample Monitoring Execution",
+      "passed": true,
+      "details": "Monitored 1 pages"
+    },
+    {
+      "name": "Metrics Capture",
+      "passed": {
+        "value": 3844,
+        "target": 2500,
+        "passed": false,
+        "rating": "needs-improvement",
+        "unit": "ms"
+      },
+      "details": "Captured: lcp, fid, cls"
+    },
+    {
+      "name": "Output File Generation",
+      "passed": true,
+      "details": "Found 7 monitoring files"
+    },
+    {
+      "name": "Summary File Generation",
+      "passed": true,
+      "details": "Found 10 summary files"
+    }
+  ]
+}
