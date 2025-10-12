@@ -1,6 +1,6 @@
 import { Layout } from '@/components/layout';
 
-export default function Custom404() {
+export default function NotFound() {
   return (
     <Layout pageTitle='Page Not Found'>
       <div className='min-h-screen bg-white flex items-center justify-center'>

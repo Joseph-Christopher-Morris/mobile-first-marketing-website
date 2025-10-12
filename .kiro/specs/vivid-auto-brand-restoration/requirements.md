@@ -110,3 +110,121 @@ This specification addresses the comprehensive restoration of the Vivid Auto Pho
 4. WHEN the deployment completes THEN the system SHALL verify all critical images and pages load correctly
 5. WHEN security headers are configured THEN the system SHALL maintain existing CloudFront security settings
 6. WHEN the build process runs THEN the system SHALL generate a static export compatible with S3 hosting
+
+## Requirement 9: Reintroduce the Testimonial components to the home page
+User Story: As a site visitor, I want to read authentic testimonials from Lee and Scott on the Home page so I can quickly trust the quality of services without leaving the page.
+
+Acceptance Criteria
+
+Placement & Visibility
+
+WHEN the Home page (/) loads
+
+THEN a testimonial carousel SHALL render below “What’s Included” and above the final CTA section
+
+AND it SHALL render only once on the page.
+
+Scope & Exclusivity
+
+WHEN navigating other routes (e.g., /services, /blog, /contact)
+
+THEN the testimonial carousel SHALL NOT render on those pages (Home page only).
+
+Content Source & Integrity
+
+WHEN the component loads
+
+THEN it SHALL display exactly two testimonials: Lee and Scott
+
+AND the text SHALL be loaded verbatim from the existing source content (e.g., src/components/LeeTestimonial.tsx, src/components/ScottTestimonial.tsx) without paraphrasing or AI modification
+
+AND any typographic apostrophes in JSX SHALL be properly escaped to satisfy ESLint (e.g., Joe&apos;s).
+
+No Images / Avatars
+
+WHEN rendering testimonials
+
+THEN the carousel SHALL NOT display any images, avatars, or icons—text only.
+
+Branding & Visual Design
+
+WHEN the carousel is displayed
+
+THEN it SHALL use the established brand palette only: white background, black text, hot pink (#ff2d7a) and dark hot pink (#d81b60) for accents/buttons
+
+AND it SHALL NOT use gradients or the following colors: blue, purple, yellow
+
+AND it SHALL adhere to existing typography scale and spacing so the section does not look cramped and is visually consistent with the site.
+
+Interaction & Controls
+
+WHEN a user interacts with the carousel
+
+THEN Prev/Next buttons and dot indicators SHALL work to navigate slides
+
+AND controls SHALL be keyboard accessible (Tab, Enter/Space) with visible focus outlines
+
+AND all controls SHALL include descriptive aria-labels (e.g., “Next testimonial”, “Go to testimonial 2”).
+
+Auto-advance & Accessibility
+
+WHEN no interaction occurs
+
+THEN slides MAY auto-advance every 7 seconds
+
+AND auto-advance SHALL pause on user focus/hover to respect user control
+
+AND auto-advance SHALL be disabled if the user has prefers-reduced-motion: reduce.
+
+Responsive Behavior
+
+WHEN viewport width is < 640px
+
+THEN testimonial typography and spacing SHALL scale for readability (no text clipping, no overflow)
+
+AND layout SHALL stay centered and legible across breakpoints (mobile → desktop).
+
+Performance & Quality Gates
+
+WHEN building the project
+
+THEN the carousel implementation SHALL introduce no new images and no heavy libraries
+
+AND it SHALL pass npm run lint and npm run type-check
+
+AND it SHALL not regress Lighthouse CLS (0.00) and keeps performance scores within current tolerances.
+
+Structure & Semantics
+
+WHEN the section is rendered
+
+THEN it SHALL be wrapped in a semantic <section> with a programmatically associated heading (e.g., aria-labelledby)
+
+AND quotes SHALL be inside <blockquote> with <figcaption> for author details.
+
+No Content Duplication
+
+WHEN testimonials are updated in their source files
+
+THEN the carousel SHALL reflect the updated text automatically without duplicating copy in multiple locations.
+
+Implementation Notes (for Kiro.AI)
+
+Files
+
+Component: src/components/sections/TestimonialsCarousel.tsx (client component)
+
+Integration: src/app/page.tsx (Home page only; insert between “What’s Included” and final CTA)
+
+Props & Data
+
+Import the existing testimonial copy from Lee/Scott components or a shared content file; do not rewrite.
+
+Escape ' as &apos; in JSX to satisfy react/no-unescaped-entities.
+Styling
+Tailwind only; no gradients; use white/black/pink palette; generous vertical padding (py-12–py-20), max-w-5xl, centered.
+Accessibility
+Buttons with aria-label
+prefers-reduced-motion respected
+Pause on focus/hover
+Keyboard navigation supported

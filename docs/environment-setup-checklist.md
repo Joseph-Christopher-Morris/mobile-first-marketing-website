@@ -1,5 +1,29 @@
 # Environment Setup Checklist for AWS Amplify
 
+## 🔧 Prerequisites
+
+### Node.js Version Requirements
+- [ ] **Node.js 22.19.0**: Required for lighthouse@13 and vite@7.1.7 compatibility
+- [ ] **npm 10.8.0+**: Required for package management
+
+**Verification Steps:**
+```bash
+# Quick check
+node --version  # Should show v22.19.0
+npm --version   # Should show 10.8.0 or higher
+
+# Comprehensive check
+npm run node:check
+
+# Windows convenience scripts
+check-node-setup.bat        # Command Prompt
+.\check-node-setup.ps1      # PowerShell
+```
+
+**Need to upgrade?** See:
+- [Complete Node.js Upgrade Guide](node-22-upgrade-guide.md)
+- [Quick Reference](node-upgrade-quick-reference.md)
+
 ## 🔧 Required Updates Before Deployment
 
 Your environment validation is passing, but you need to update placeholder
