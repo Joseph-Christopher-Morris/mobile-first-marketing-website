@@ -7,6 +7,7 @@
     "npm": ">=10.8.0"
   },
   "scripts": {
+    "preinstall": "node -e \"const v=process.versions.node.split('.')[0];if(+v<22) {console.error('Node 22+ required.');process.exit(1)}\"",
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
@@ -178,7 +179,5 @@
     "typescript": "^5.9.3",
     "vitest": "^0.34.6"
   },
-  "overrides": {
-    "@types/node": "22.13.0"
-  }
+
 }
