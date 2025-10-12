@@ -4,7 +4,7 @@ const withBundleAnalyzer = require('@next/bundle-analyzer')({
 
 /** @type {import('next').NextConfig} */
 const nextConfig = {
-  // output: 'export', // disable in dev; only needed for static export builds
+  output: 'export', // Enable static export for S3 deployment
   trailingSlash: true,
   distDir: '.next',
   generateBuildId: () => 'static-build',
