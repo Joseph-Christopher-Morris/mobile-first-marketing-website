@@ -1,47 +1,36 @@
 {
   "root": true,
-  "extends": ["next", "next/core-web-vitals", "plugin:@typescript-eslint/recommended", "prettier"],
-  "plugins": ["@typescript-eslint", "prettier"],
-  "rules": {
-    "prettier/prettier": ["error", { "endOfLine": "auto" }],
-    "react/no-unescaped-entities": "off",
-    "@next/next/no-img-element": "off"
-  },
-  "settings": {
-    "react": {
-      "version": "detect"
-    }
-  },
+  "extends": [
+    "next/core-web-vitals",
+    "plugin:@typescript-eslint/recommended",
+    "plugin:prettier/recommended"
+  ],
+  "parserOptions": { "project": false },
   "overrides": [
     {
-      "files": ["src/app/**", "src/pages/**", "src/components/**/*.tsx"],
-      "excludedFiles": ["src/components/test-image-error-handling/**", "src/components/**/__tests__/**"],
+      "files": ["e2e/**/*.ts", "e2e/**/*.tsx"],
+      "env": { "node": true, "jest": false },
       "rules": {
-        "@next/next/no-img-element": "error"
+        "@typescript-eslint/no-explicit-any": "off",
+        "@typescript-eslint/no-unused-vars": "off",
+        "@typescript-eslint/ban-ts-comment": "off"
       }
     },
     {
-      "files": ["**/__tests__/**", "**/*.test.ts", "**/*.test.tsx"],
-      "env": { "jest": true, "node": true },
+      "files": ["scripts/**/*.js"],
+      "env": { "node": true },
+      "parser": "espree",
       "rules": {
-        "@next/next/no-img-element": "off",
-        "jsx-a11y/alt-text": "off",
-        "react/no-unescaped-entities": "off"
+        "@typescript-eslint/no-var-requires": "off",
+        "no-unused-vars": "off",
+        "prettier/prettier": "off"
       }
     },
-    { 
-      "files": ["scripts/**", "*.config.*", "**/*.config.*"], 
-      "env": { "node": true } 
+    {
+      "files": ["next-env.d.ts"],
+      "rules": {
+        "@typescript-eslint/triple-slash-reference": "off"
+      }
     }
-  ],
-  "ignorePatterns": [
-    "node_modules/",
-    ".next/",
-    "out/",
-    "public/",
-    "coverage/",
-    "test-results/",
-    "validation-reports/",
-    "dist/"
   ]
 }
