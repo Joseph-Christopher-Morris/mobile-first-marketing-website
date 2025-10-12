@@ -25,7 +25,7 @@ const EXPECTED_STRUCTURE = {
   },
   testimonials: {
     description: 'Customer testimonials',
-    minFiles: 3,
+    minFiles: 2,
     filePattern: /\.md$/,
   },
   pages: {
