@@ -1,7 +1,11 @@
 {
   "compilerOptions": {
     "target": "ES2022",
-    "lib": ["dom", "dom.iterable", "esnext"],
+    "lib": [
+      "dom",
+      "dom.iterable",
+      "esnext"
+    ],
     "module": "esnext",
     "moduleResolution": "bundler",
     "allowJs": true,
@@ -14,7 +18,9 @@
     "jsx": "preserve",
     "baseUrl": ".",
     "paths": {
-      "@/*": ["src/*"]
+      "@/*": [
+        "src/*"
+      ]
     },
     "plugins": [
       {
@@ -25,15 +31,15 @@
     "forceConsistentCasingInFileNames": true,
     "esModuleInterop": true,
     "allowSyntheticDefaultImports": true
-
     /* IMPORTANT: do NOT force "types": ["react", "react-dom", "node"]
        with React 19. React ships its own types now. */
   },
   "include": [
     "next-env.d.ts",
-    "src/**/*",
     "next.config.js",
-    "next.config.ts"
+    "next.config.ts",
+    "src/**/*",
+    ".next/types/**/*.ts"
   ],
   "exclude": [
     "node_modules",
