@@ -141,6 +141,9 @@ export function Footer() {
           <p className='text-gray-400 text-sm'>
             © 2025 Vivid Auto Photography. All rights reserved.
           </p>
+          <p className='text-gray-500 text-xs mt-2'>
+            🔄 Deployment: {new Date().toISOString().slice(0, 16).replace('T', ' ')} UTC
+          </p>
         </div>
       </div>
     </footer>
