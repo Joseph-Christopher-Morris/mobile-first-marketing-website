@@ -39,28 +39,44 @@ export default async function HomePage() {
   const blogPosts = await getAllBlogPosts();
   const latestPosts = blogPosts.slice(0, 3);
 
+  // Map each blog slug to its hero image path
+const cardCovers: Record<string, string> = {
+  'paid-ads-campaign-learnings': '/images/hero/google-ads-analytics-dashboard.webp',
+  'flyers-roi-breakdown': '/images/hero/whatsapp-image-2025-07-11-flyers-roi.webp',
+  'stock-photography-lessons': '/images/hero/240619-london-19.webp',
+};
+
   return (
     <Layout>
       <div className='min-h-screen bg-white'>
         {/* Hero Section */}
-        <section className='relative bg-brand-black text-white py-28 md:py-40'>
-          <div className='absolute inset-0 bg-black/20'></div>
-          <div className='relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8'>
-            <div className='grid grid-cols-1 lg:grid-cols-2 gap-12 items-center'>
-              <div>
-                <h1 className='text-4xl md:text-5xl lg:text-6xl font-bold leading-tight mb-6'>
+        <section className="relative bg-brand-black text-white py-28 md:py-40 overflow-hidden">
+  {/* Background image + dark gradient overlay */}
+  <div className="absolute inset-0">
+    <Image
+      src="/images/hero/aston-martin-db6-website.webp"
+      alt="Professional automotive photography showcase - Aston Martin DB6 captured with expert lighting and composition in Nantwich, Cheshire"
+      fill
+      className="object-cover"
+      priority
+      sizes="100vw"
+    />
+    <div className="absolute inset-0 bg-gradient-to-b from-black/60 via-black/45 to-black/25" />
+  </div>
+          <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div className="relative z-10 grid grid-cols-1 place-items-center text-center gap-6 min-h-[70vh]">
+              <div className="text-center">
+                <h1 className="text-4xl md:text-5xl lg:text-6xl font-extrabold leading-tight mb-6 text-white">
                   More than Photography.{' '}
-                  <span className='text-brand-pink'>
-                    Data-Driven Vivid Auto Photography that Delivers!
-                  </span>
+                  <span className="">Data-Driven Vivid Auto Photography that Delivers!</span>
                 </h1>
-                <p className='text-xl md:text-2xl text-brand-grey mb-8 leading-relaxed'>
+                <p className="text-lg md:text-2xl mb-8 leading-relaxed text-white/90 font-normal">
                   Helping businesses in Nantwich & Cheshire grow through
                   professional automotive photography, comprehensive analytics,
                   and strategic advertising campaigns that deliver measurable
                   results.
                 </p>
-                <div className='flex flex-col sm:flex-row gap-4'>
+                <div className="flex flex-col sm:flex-row gap-4 justify-center">
                   <Link
                     href='/contact/'
                     className='bg-brand-pink text-white px-8 py-4 rounded-lg text-lg font-semibold hover:bg-brand-pink2 transition-colors text-center'
@@ -75,18 +91,6 @@ export default async function HomePage() {
                   </Link>
                 </div>
               </div>
-              <div className='relative'>
-                <div className='relative h-96 lg:h-[500px] rounded-lg overflow-hidden shadow-2xl'>
-                  <Image
-                    src='/images/hero/aston-martin-db6-website.webp'
-                    alt='Professional automotive photography showcase - Aston Martin DB6 captured with expert lighting and composition in Nantwich, Cheshire'
-                    fill
-                    className='object-cover'
-                    priority
-                    sizes='(max-width: 768px) 100vw, 50vw'
-                  />
-                </div>
-              </div>
             </div>
           </div>
         </section>
@@ -96,7 +100,7 @@ export default async function HomePage() {
           <div className='max-w-7xl mx-auto px-4 sm:px-6 lg:px-8'>
             <div className='text-center mb-16'>
               <h2 className='text-3xl md:text-4xl font-bold text-gray-900 mb-4'>
-                Our Services
+                My Services
               </h2>
               <p className='text-xl text-gray-600 max-w-3xl mx-auto'>
                 Comprehensive solutions designed to elevate your business with
@@ -252,7 +256,7 @@ export default async function HomePage() {
                 Latest Insights
               </h2>
               <p className='text-xl text-gray-600 max-w-3xl mx-auto'>
-                Stay updated with our latest insights, tips, and industry
+                Stay updated with my latest insights, tips, and industry
                 knowledge to help grow your business.
               </p>
             </div>
@@ -265,7 +269,7 @@ export default async function HomePage() {
                 >
                   <div className='relative h-48 sm:h-52 bg-gray-50 overflow-hidden'>
                     <Image
-                      src={post.image}
+                      src={cardCovers[post.slug] || post.image || '/images/hero/aston-martin-db6-website.webp'}
                       alt={`${post.title} - Blog post cover image`}
                       fill
                       className='object-cover group-hover:scale-105 transition-transform duration-300'

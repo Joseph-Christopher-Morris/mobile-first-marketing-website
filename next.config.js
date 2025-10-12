@@ -4,9 +4,9 @@ const withBundleAnalyzer = require('@next/bundle-analyzer')({
 
 /** @type {import('next').NextConfig} */
 const nextConfig = {
-  output: 'export',
+  // output: 'export', // disable in dev; only needed for static export builds
   trailingSlash: true,
-  distDir: 'out',
+  distDir: '.next',
   generateBuildId: () => 'static-build',
   outputFileTracingRoot: __dirname, // Fix workspace root warning
   eslint: {

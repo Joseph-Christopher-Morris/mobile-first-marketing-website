@@ -10,7 +10,7 @@ import { ServicesShowcase } from '@/components/sections/ServicesShowcase';
 export const metadata: Metadata = {
   title: 'Automotive Photography Blog | Industry Insights & Success Stories',
   description:
-    'Latest insights, tips, and success stories from Vivid Auto Photography. Learn about automotive photography techniques, industry trends, marketing strategies, and real-world case studies from our Nantwich & Cheshire team.',
+    'Latest insights, tips, and success stories from Vivid Auto Photography. Learn about automotive photography techniques, industry trends, marketing strategies, and real-world case studies from my Nantwich & Cheshire team.',
   keywords: [
     'automotive photography blog',
     'car photography tips',
@@ -36,6 +36,16 @@ export default async function BlogPage() {
   const featuredPost = featuredPosts[0];
   const regularPosts = allPosts.filter(post => !post.featured);
   const services = getAllServices();
+  // Map each blog slug to its hero image path
+const cardCovers: Record<string, string> = {
+  'paid-ads-campaign-learnings': '/images/hero/google-ads-analytics-dashboard.webp',
+  'flyers-roi-breakdown': '/images/hero/whatsapp-image-2025-07-11-flyers-roi.webp',
+  'stock-photography-lessons': '/images/hero/240619-london-19.webp',
+};
+
+// Prefer our mapped cover, then frontmatter image, then a safe default
+  const coverFor = (slug: string, img?: string) =>
+    cardCovers[slug] || img || '/images/hero/aston-martin-db6-website.webp';
 
   return (
     <Layout>
@@ -45,10 +55,10 @@ export default async function BlogPage() {
           <div className='max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 md:py-16'>
             <div className='text-center'>
               <h1 className='text-3xl md:text-4xl lg:text-5xl font-bold text-gray-900 mb-4'>
-                Our Blog
+                My Blog
               </h1>
               <p className='text-lg md:text-xl text-gray-600 max-w-3xl mx-auto'>
-                Latest insights, tips, and updates from our Vivid Auto
+                Latest insights, tips, and updates from my Vivid Auto
                 Photography team. Stay informed about industry trends, best
                 practices, and success stories.
               </p>
@@ -65,12 +75,13 @@ export default async function BlogPage() {
                 <article className='md:col-span-2 lg:col-span-3 bg-white rounded-lg shadow-sm border border-gray-200 overflow-hidden'>
                   <div className='relative w-full h-48 md:h-64 bg-gray-200'>
                     <Image
-                      src={featuredPost.image || '/images/hero-bg.webp'}
-                      alt={featuredPost.title}
-                      fill
-                      className='object-cover'
-                      priority
-                    />
+                    src={coverFor(featuredPost.slug, featuredPost.image)}
+                    alt={featuredPost.title}
+                    fill
+                    className='object-cover'
+                    priority
+                  />
+
                   </div>
                   <div className='p-6 md:p-8'>
                     <div className='flex items-center text-sm text-gray-500 mb-3'>
@@ -127,12 +138,13 @@ export default async function BlogPage() {
                 >
                   <div className='relative w-full h-48 bg-gray-200'>
                     <Image
-                      src={post.image || '/images/hero-bg.webp'}
+                      src={cardCovers[post.slug] ?? post.image ?? '/images/hero/aston-martin-db6-website.webp'}
                       alt={post.title}
                       fill
                       className='object-cover'
                       priority={index < 6}
                     />
+
                   </div>
                   <div className='p-6'>
                     <div className='flex items-center text-sm text-gray-500 mb-3'>
