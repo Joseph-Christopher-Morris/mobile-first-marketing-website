@@ -21,7 +21,7 @@ export const metadata: Metadata = {
     'car dealership marketing',
     'automotive photography success stories',
     'photography business insights',
-    'automotive industry updates'
+    'automotive industry updates',
   ],
   openGraph: {
     title: 'Automotive Photography Blog | Industry Insights & Success Stories',
@@ -37,13 +37,15 @@ export default async function BlogPage() {
   const regularPosts = allPosts.filter(post => !post.featured);
   const services = getAllServices();
   // Map each blog slug to its hero image path
-const cardCovers: Record<string, string> = {
-  'paid-ads-campaign-learnings': '/images/hero/google-ads-analytics-dashboard.webp',
-  'flyers-roi-breakdown': '/images/hero/whatsapp-image-2025-07-11-flyers-roi.webp',
-  'stock-photography-lessons': '/images/hero/240619-london-19.webp',
-};
+  const cardCovers: Record<string, string> = {
+    'paid-ads-campaign-learnings':
+      '/images/hero/google-ads-analytics-dashboard.webp',
+    'flyers-roi-breakdown':
+      '/images/hero/whatsapp-image-2025-07-11-flyers-roi.webp',
+    'stock-photography-lessons': '/images/hero/240619-london-19.webp',
+  };
 
-// Prefer our mapped cover, then frontmatter image, then a safe default
+  // Prefer our mapped cover, then frontmatter image, then a safe default
   const coverFor = (slug: string, img?: string) =>
     cardCovers[slug] || img || '/images/hero/aston-martin-db6-website.webp';
 
@@ -75,13 +77,12 @@ const cardCovers: Record<string, string> = {
                 <article className='md:col-span-2 lg:col-span-3 bg-white rounded-lg shadow-sm border border-gray-200 overflow-hidden'>
                   <div className='relative w-full h-48 md:h-64 bg-gray-200'>
                     <Image
-                    src={coverFor(featuredPost.slug, featuredPost.image)}
-                    alt={featuredPost.title}
-                    fill
-                    className='object-cover'
-                    priority
-                  />
-
+                      src={coverFor(featuredPost.slug, featuredPost.image)}
+                      alt={featuredPost.title}
+                      fill
+                      className='object-cover'
+                      priority
+                    />
                   </div>
                   <div className='p-6 md:p-8'>
                     <div className='flex items-center text-sm text-gray-500 mb-3'>
@@ -138,13 +139,16 @@ const cardCovers: Record<string, string> = {
                 >
                   <div className='relative w-full h-48 bg-gray-200'>
                     <Image
-                      src={cardCovers[post.slug] ?? post.image ?? '/images/hero/aston-martin-db6-website.webp'}
+                      src={
+                        cardCovers[post.slug] ??
+                        post.image ??
+                        '/images/hero/aston-martin-db6-website.webp'
+                      }
                       alt={post.title}
                       fill
                       className='object-cover'
                       priority={index < 6}
                     />
-
                   </div>
                   <div className='p-6'>
                     <div className='flex items-center text-sm text-gray-500 mb-3'>

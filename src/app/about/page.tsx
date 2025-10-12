@@ -26,7 +26,7 @@ export default function AboutPage() {
                 About Me
               </h1>
               <p className='text-lg md:text-xl text-gray-600 mb-8'>
-                I&apos;m a digital marketer and photographer helping small
+                I&rsquo;m a digital marketer and photographer helping small
                 businesses grow through smart strategy, creative visuals, and
                 data-led decisions.
               </p>
@@ -59,7 +59,7 @@ export default function AboutPage() {
                     <p>
                       My work has been featured in{' '}
                       <strong>Business Insider</strong> and the{' '}
-                      <strong>Daily Mail</strong>, and I&apos;m certified in{' '}
+                      <strong>Daily Mail</strong>, and I&rsquo;m certified in{' '}
                       <strong>Adobe Experience Cloud</strong> and{' '}
                       <strong>Google Marketing Platform</strong>.
                     </p>
