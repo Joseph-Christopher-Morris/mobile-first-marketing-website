@@ -77,14 +77,7 @@ const cardCovers: Record<string, string> = {
                   results.
                 </p>
                 <div className="text-sm text-white/70 mb-4">
-                  🚀 Live deployment test - Updated: {new Date().toLocaleString('en-GB', { 
-                    timeZone: 'Europe/London',
-                    day: '2-digit',
-                    month: '2-digit', 
-                    year: 'numeric',
-                    hour: '2-digit',
-                    minute: '2-digit'
-                  })}
+                  🚀 Live deployment test - Updated: 12/10/2025 22:10
                 </div>
                 <div className="flex flex-col sm:flex-row gap-4 justify-center">
                   <Link

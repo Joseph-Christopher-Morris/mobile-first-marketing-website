@@ -23,7 +23,7 @@ export const metadata: Metadata = {
     'commercial automotive photography',
     'professional car photography',
     'automotive advertising',
-    'vehicle marketing photography'
+    'vehicle marketing photography',
   ],
   authors: [{ name: 'Vivid Auto Photography', url: 'https://d15sc9fc739ev2.cloudfront.net' }],
   creator: 'Vivid Auto Photography',
