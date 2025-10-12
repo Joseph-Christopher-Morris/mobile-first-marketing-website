@@ -22,7 +22,7 @@ on:
         options: [production, staging]
 
 env:
-  NODE_VERSION: "20.19.0"  # vite@7 needs ^20.19 or >=22.12
+  NODE_VERSION: "22.19.0"  # Updated to match package.json engines requirement
   AWS_REGION: "us-east-1"
 
 jobs:
@@ -70,7 +70,7 @@ jobs:
         run: npm run type-check
 
       - name: Run tests
-        run: npm run test --run
+        run: npm run test
 
       - name: Build Next.js static export
         run: npm run build
@@ -92,6 +92,9 @@ jobs:
       - name: Deploy to S3 and invalidate CloudFront
         run: node scripts/deploy.js
         env:
+          S3_BUCKET_NAME: "mobile-marketing-site-prod-1759705011281-tyzuo9"
+          CLOUDFRONT_DISTRIBUTION_ID: "E2IBMHQ3GCW6ZK"
+          AWS_REGION: ${{ env.AWS_REGION }}
           DEPLOYMENT_ENVIRONMENT: ${{ github.event.inputs.environment || 'production' }}
           GITHUB_SHA: ${{ github.sha }}
           GITHUB_REF: ${{ github.ref }}
@@ -100,7 +103,10 @@ jobs:
       - name: Run comprehensive post-deployment validation
         run: node scripts/deployment-validator.js
         env:
-          SITE_URL: ${{ secrets.SITE_URL }}
+          SITE_URL: "https://d15sc9fc739ev2.cloudfront.net"
+          S3_BUCKET_NAME: "mobile-marketing-site-prod-1759705011281-tyzuo9"
+          CLOUDFRONT_DISTRIBUTION_ID: "E2IBMHQ3GCW6ZK"
+          AWS_REGION: ${{ env.AWS_REGION }}
           DEPLOYMENT_ENVIRONMENT: ${{ github.event.inputs.environment || 'production' }}
           GITHUB_SHA: ${{ github.sha }}
           GITHUB_REF: ${{ github.ref }}
@@ -113,7 +119,7 @@ jobs:
           echo "- **Commit**: ${{ github.sha }}" >> $GITHUB_STEP_SUMMARY
           echo "- **Branch**: ${{ github.ref_name }}" >> $GITHUB_STEP_SUMMARY
           echo "- **Deployed by**: ${{ github.actor }}" >> $GITHUB_STEP_SUMMARY
-          echo "- **Site URL**: ${{ secrets.SITE_URL }}" >> $GITHUB_STEP_SUMMARY
+          echo "- **Site URL**: https://d15sc9fc739ev2.cloudfront.net" >> $GITHUB_STEP_SUMMARY
           echo "- **Deployment Time**: $(date -u)" >> $GITHUB_STEP_SUMMARY
 
   notify-deployment:
@@ -126,7 +132,7 @@ jobs:
         if: needs.build-and-deploy.result == 'success'
         run: |
           echo "✅ Deployment successful to ${{ github.event.inputs.environment || 'production' }}"
-          echo "Site URL: ${{ secrets.SITE_URL }}"
+          echo "Site URL: https://d15sc9fc739ev2.cloudfront.net"
 
       - name: Notify deployment failure
         if: needs.build-and-deploy.result == 'failure'
