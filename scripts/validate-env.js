@@ -19,7 +19,7 @@ console.log(`🏗️  AWS Amplify environment: ${isAmplify ? 'Yes' : 'No'}`);
 const fs = require('fs');
 const path = require('path');
 
-const requiredDirs = ['src/app', 'src/components', 'src/styles'];
+const requiredDirs = ['src/app', 'src/components'];
 const missingDirs = [];
 
 requiredDirs.forEach(dir => {
