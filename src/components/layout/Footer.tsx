@@ -141,9 +141,7 @@ export function Footer() {
           <p className='text-gray-400 text-sm'>
             © 2025 Vivid Auto Photography. All rights reserved.
           </p>
-          <p className='text-gray-500 text-xs mt-2'>
-            🔄 Deployment: 2025-10-12 22:10 UTC
-          </p>
+
         </div>
       </div>
     </footer>

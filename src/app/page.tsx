@@ -76,9 +76,7 @@ const cardCovers: Record<string, string> = {
                   and strategic advertising campaigns that deliver measurable
                   results.
                 </p>
-                <div className="text-sm text-white/70 mb-4">
-                  🚀 Live deployment test - Updated: 12/10/2025 22:10
-                </div>
+
                 <div className="flex flex-col sm:flex-row gap-4 justify-center">
                   <Link
                     href='/contact/'
