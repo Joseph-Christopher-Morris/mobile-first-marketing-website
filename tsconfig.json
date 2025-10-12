@@ -1,47 +1,45 @@
 {
   "compilerOptions": {
-    "target": "es2015",
-    "lib": ["dom", "dom.iterable", "es6", "es2015"],
-    "downlevelIteration": true,
-    "allowJs": true,
-    "skipLibCheck": true,
-    "strict": true,
-    "forceConsistentCasingInFileNames": true,
-    "noEmit": true,
-    "esModuleInterop": true,
-    "allowSyntheticDefaultImports": true,
-    "allowImportingTsExtensions": false,
+    "target": "ES2022",
+    "lib": ["dom", "dom.iterable", "esnext"],
     "module": "esnext",
     "moduleResolution": "bundler",
+    "allowJs": true,
+    "checkJs": false,
     "resolveJsonModule": true,
     "isolatedModules": true,
+    "noEmit": true,
+    "strict": true,
+    "skipLibCheck": true,
     "jsx": "preserve",
-    "incremental": true,
+    "baseUrl": ".",
+    "paths": {
+      "@/*": ["src/*"]
+    },
     "plugins": [
       {
         "name": "next"
       }
     ],
-    "baseUrl": ".",
-    "paths": {
-      "@/*": ["./src/*"],
-      "@/components/*": ["./src/components/*"],
-      "@/lib/*": ["./src/lib/*"],
-      "@/types/*": ["./src/types/*"],
-      "@/content/*": ["./content/*"]
-    }
+    "incremental": true,
+    "forceConsistentCasingInFileNames": true,
+    "esModuleInterop": true,
+    "allowSyntheticDefaultImports": true
+
+    /* IMPORTANT: do NOT force "types": ["react", "react-dom", "node"]
+       with React 19. React ships its own types now. */
   },
   "include": [
-    ".next/types/**/*.ts",
-    "build-output/types/**/*.ts",
-    "build/types/**/*.ts",
-    "fresh-build/types/**/*.ts",
     "next-env.d.ts",
-    "out/types/**/*.ts",
-    "src/**/*.ts",
-    "src/**/*.tsx",
-    "src/test/types.d.ts",
-    "build-1760027167401/types/**/*.ts"
+    "src/**/*",
+    "next.config.js",
+    "next.config.ts"
   ],
-  "exclude": ["node_modules", "Zone_*/**/*", "Zone_*", "*.zip"]
+  "exclude": [
+    "node_modules",
+    ".next",
+    "out",
+    "scripts/**"
+    // ← keep TS away from those JS utilities for now
+  ]
 }
