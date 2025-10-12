@@ -114,7 +114,6 @@
     "build:verify-integration": "node scripts/test-build-verification-integration.js",
     "ci:validate": "node scripts/validate-ci-fixes.js",
     "ci:validate-node": "node scripts/check-node-version-consistency.js",
-    "ci:test-workflow": "node scripts/test-commit-workflow.js",
     "ci:validate-suite": "node scripts/run-ci-validation-suite.js",
     "ci:validate-suite:full": "node scripts/run-ci-validation-suite.js --test-commit",
     "ci:test-validation": "node scripts/run-ci-validation-tests.js",
