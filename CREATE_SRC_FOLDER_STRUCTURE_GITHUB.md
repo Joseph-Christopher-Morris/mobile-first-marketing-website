@@ -346,7 +346,7 @@ export default function Header() {
     "react-dom": "^18.0.0"
   },
   "devDependencies": {
-    "@types/node": "^20.0.0",
+    "@types/node": "^22.0.0",
     "@types/react": "^18.0.0",
     "@types/react-dom": "^18.0.0",
     "autoprefixer": "^10.0.0",

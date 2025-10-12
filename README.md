@@ -48,19 +48,33 @@ the Zone UI kit. Optimized for mobile devices and hosted on AWS Amplify.
 
 ### Prerequisites
 
-- Node.js 18+
-- npm or yarn
+- Node.js 22.19.0 (required for lighthouse@13 and vite@7.1.7 compatibility)
+- npm 10.8.0 or higher
+
+> **Important**: This project requires Node.js 22.19.0 exactly. See [Node.js Upgrade Guide](docs/node-22-upgrade-guide.md) for installation instructions.
 
 ### Installation
 
-1. Clone the repository
+1. **Upgrade Node.js** (if needed)
+   
+   Ensure you have Node.js 22.19.0 installed:
+   ```bash
+   node --version
+   # Should output: v22.19.0
+   ```
+   
+   If you need to upgrade, see:
+   - [Complete Node.js Upgrade Guide](docs/node-22-upgrade-guide.md)
+   - [Quick Reference](docs/node-upgrade-quick-reference.md)
+
+2. Clone the repository
 
 ```bash
 git clone <repository-url>
 cd mobile-first-marketing-website
 ```
 
-2. Install dependencies
+3. Install dependencies
 
 ```bash
 npm install

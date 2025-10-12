@@ -2,6 +2,10 @@
   "name": "mobile-first-marketing-website",
   "version": "0.1.0",
   "private": true,
+  "engines": {
+    "node": ">=22.19.0",
+    "npm": ">=10.8.0"
+  },
   "scripts": {
     "dev": "next dev",
     "build": "next build",
@@ -17,6 +21,11 @@
     "content:test": "node scripts/test-content.js",
     "env:validate": "node scripts/validate-env.js",
     "env:test": "node scripts/test-environment.js",
+    "node:check": "node scripts/check-node-version.js",
+    "consistency:test": "node scripts/test-local-ci-consistency.js",
+    "consistency:fix-lockfile": "node scripts/fix-lockfile-consistency.js",
+    "consistency:validate-build": "node scripts/validate-build-consistency.js",
+    "consistency:summary": "node scripts/generate-consistency-summary.js",
     "build:optimize": "node scripts/build-optimization.js",
     "deploy:monitor": "node scripts/deployment-monitor.js",
     "cache:optimize": "node scripts/cache-optimization.js",
@@ -102,7 +111,18 @@
     "deploy:production": "node scripts/production-deployment.js",
     "infrastructure:setup:production": "node scripts/production-infrastructure-setup.js",
     "build:verify": "node scripts/build-verification.js",
-    "build:verify-integration": "node scripts/test-build-verification-integration.js"
+    "build:verify-integration": "node scripts/test-build-verification-integration.js",
+    "ci:validate": "node scripts/validate-ci-fixes.js",
+    "ci:validate-node": "node scripts/check-node-version-consistency.js",
+    "ci:test-workflow": "node scripts/test-commit-workflow.js",
+    "ci:validate-suite": "node scripts/run-ci-validation-suite.js",
+    "ci:validate-suite:full": "node scripts/run-ci-validation-suite.js --test-commit",
+    "ci:test-validation": "node scripts/run-ci-validation-tests.js",
+    "ci:test-validation:full": "node scripts/ci-validation-test-suite.js",
+    "ci:test-workflow": "node scripts/test-workflow-validation.js",
+    "ci:test-git": "node scripts/test-git-workflow-consistency.js",
+    "ci:test-performance": "node scripts/test-build-performance-benchmarks.js",
+    "ci:test-integration": "node scripts/run-ci-integration-tests.js"
   },
   "dependencies": {
     "@aws-sdk/client-acm": "^3.901.0",
@@ -136,7 +156,7 @@
     "@testing-library/jest-dom": "^6.1.4",
     "@testing-library/react": "^13.4.0",
     "@testing-library/user-event": "^14.5.1",
-    "@types/node": "^20.8.0",
+    "@types/node": "^22.0.0",
     "@types/react": "^18.2.0",
     "@types/react-dom": "^18.2.0",
     "@typescript-eslint/eslint-plugin": "^6.7.0",
