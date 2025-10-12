@@ -5,7 +5,8 @@ import { siteConfig } from '@/config/site';
 import { ContactLink } from '@/components/sections/ContactPageClient';
 
 export const metadata: Metadata = {
-  title: 'Contact Vivid Auto Photography | Professional Automotive Photography Services',
+  title:
+    'Contact Vivid Auto Photography | Professional Automotive Photography Services',
   description:
     'Get in touch about professional automotive photography, data analytics, or strategic advertising campaigns in Nantwich & Cheshire. Free consultation available. Response within one business day (UK time).',
   keywords: [
@@ -18,10 +19,11 @@ export const metadata: Metadata = {
     'vehicle photography enquiry',
     'automotive advertising consultation',
     'car dealership photography contact',
-    'automotive photography quote'
+    'automotive photography quote',
   ],
   openGraph: {
-    title: 'Contact Vivid Auto Photography | Professional Automotive Photography Services',
+    title:
+      'Contact Vivid Auto Photography | Professional Automotive Photography Services',
     description:
       'Get in touch about professional automotive photography, data analytics, or strategic advertising campaigns in Nantwich & Cheshire. Free consultation available.',
     type: 'website',

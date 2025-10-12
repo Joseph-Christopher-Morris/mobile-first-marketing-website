@@ -6,8 +6,9 @@ const inter = Inter({ subsets: ['latin'] });
 
 export const metadata: Metadata = {
   title: {
-    default: 'Vivid Auto Photography - Data-Driven Automotive Photography | Nantwich & Cheshire',
-    template: '%s | Vivid Auto Photography'
+    default:
+      'Vivid Auto Photography - Data-Driven Automotive Photography | Nantwich & Cheshire',
+    template: '%s | Vivid Auto Photography',
   },
   description:
     'Professional data-driven automotive photography services in Nantwich & Cheshire. Specializing in automotive photography, analytics, and strategic advertising campaigns that deliver measurable results.',
@@ -25,7 +26,12 @@ export const metadata: Metadata = {
     'automotive advertising',
     'vehicle marketing photography',
   ],
-  authors: [{ name: 'Vivid Auto Photography', url: 'https://d15sc9fc739ev2.cloudfront.net' }],
+  authors: [
+    {
+      name: 'Vivid Auto Photography',
+      url: 'https://d15sc9fc739ev2.cloudfront.net',
+    },
+  ],
   creator: 'Vivid Auto Photography',
   publisher: 'Vivid Auto Photography',
   formatDetection: {
@@ -42,7 +48,8 @@ export const metadata: Metadata = {
     locale: 'en_GB',
     url: 'https://d15sc9fc739ev2.cloudfront.net',
     siteName: 'Vivid Auto Photography',
-    title: 'Vivid Auto Photography - Data-Driven Automotive Photography | Nantwich & Cheshire',
+    title:
+      'Vivid Auto Photography - Data-Driven Automotive Photography | Nantwich & Cheshire',
     description:
       'Professional data-driven automotive photography services in Nantwich & Cheshire. Specializing in automotive photography, analytics, and strategic advertising campaigns that deliver measurable results.',
     images: [
@@ -57,7 +64,8 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Vivid Auto Photography - Data-Driven Automotive Photography | Nantwich & Cheshire',
+    title:
+      'Vivid Auto Photography - Data-Driven Automotive Photography | Nantwich & Cheshire',
     description:
       'Professional data-driven automotive photography services in Nantwich & Cheshire. Specializing in automotive photography, analytics, and strategic advertising campaigns.',
     images: ['/images/hero/aston-martin-db6-website.webp'],
