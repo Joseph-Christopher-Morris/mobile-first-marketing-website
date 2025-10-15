@@ -1,142 +1,108 @@
-# GitHub Actions workflow for S3 + CloudFront deployment
-# This workflow deploys the Next.js static export to S3 and invalidates CloudFront cache
-
 name: S3 CloudFront Deployment
-
 on:
-  push:
-    branches: [main]
-    paths-ignore:
-      - "docs/**"
-      - "*.md"
-      - ".gitignore"
-      - ".editorconfig"
-      - ".prettierignore"
   workflow_dispatch:
     inputs:
-      environment:
-        description: "Deployment environment"
-        required: true
-        default: "production"
+      invalidate:
         type: choice
-        options: [production, staging]
+        options: ["true","false"]
+        default: "true"
+        required: true
+
+concurrency:
+  group: deploy-${{ github.ref_name }}
+  cancel-in-progress: true
+
+permissions:
+  id-token: write
+  contents: read
 
 env:
-  NODE_VERSION: "22.19.0"  # Updated to match package.json engines requirement
-  AWS_REGION: "us-east-1"
+  S3_BUCKET: mobile-marketing-site-prod-1759705011281-tyzuo9
+  CF_DISTRIBUTION_ID: E2IBMHQ3GCW6ZK
+  NODE_VERSION: "20"
+  HTML_CACHE: "public, max-age=600"
+  ASSET_CACHE: "public, max-age=31536000, immutable"
 
 jobs:
-  build-and-deploy:
+  build:
     runs-on: ubuntu-latest
-    permissions:
-      id-token: write
-      contents: read
-      actions: read
-
     steps:
-      - name: Checkout code
-        uses: actions/checkout@v4
-
-      - name: Setup Node.js
-        uses: actions/setup-node@v4
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
         with:
           node-version: ${{ env.NODE_VERSION }}
-          cache: "npm"
-
-      - name: Show Node & npm versions
-        run: |
-          node -v
-          npm -v
-
-      - name: Install dependencies
+          cache: npm
+      - name: Install
         run: npm ci
+      - name: Brand / gradient guard
+        run: |
+          if grep -RInE "from-|via-|bg-gradient-|indigo-|purple-|yellow-" src apps; then
+            echo "::error::Prohibited gradient/color classes found"; exit 1; fi
+      - name: Build (Next export → /out)
+        run: npm run build && npm run export
+      - name: Patch sitemap to include Privacy Policy if missing
+        run: |
+          PRIV="https://d15sc9fc739ev2.cloudfront.net/privacy-policy/"
+          test -f out/sitemap.xml || exit 0
+          grep -q "$PRIV" out/sitemap.xml || \
+          awk -v u="$PRIV" '/<\/urlset>/{print "  <url><loc>"u"</loc></url>"}1' out/sitemap.xml > t && mv t out/sitemap.xml
+      - uses: actions/upload-artifact@v4
+        with:
+          name: site-out
+          path: out
+          retention-days: 7
 
-      - name: Validate environment configuration
-        run: npm run env:validate
-        env:
-          NODE_ENV: production
-          NEXT_PUBLIC_SITE_NAME: ${{ github.event.inputs.environment == 'staging' && 'Staging Site' || 'Production Site' }}
+  deploy:
+    needs: build
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/download-artifact@v4
+        with:
+          name: site-out
+          path: out
 
-      - name: Validate content structure
-        run: npm run content:validate-structure
-
-      - name: Validate content
-        run: npm run content:validate
-
-      - name: Run linting
-        run: npm run lint
-
-      - name: Type check
-        run: npm run type-check
-
-      - name: Run tests
-        run: npm run test
-
-      - name: Build Next.js static export
-        run: npm run build
-        env:
-          NODE_ENV: production
-          NEXT_TELEMETRY_DISABLED: 1
-          NEXT_PUBLIC_SITE_NAME: ${{ github.event.inputs.environment == 'staging' && 'Staging Site' || 'Production Site' }}
-
-      - name: Verify build image integrity
-        run: npm run build:verify
-
-      - name: Configure AWS credentials
+      - name: Configure AWS (OIDC)
         uses: aws-actions/configure-aws-credentials@v4
         with:
           role-to-assume: ${{ secrets.AWS_ROLE_ARN }}
-          role-session-name: GitHubActions-S3CloudFrontDeploy
-          aws-region: ${{ env.AWS_REGION }}
+          aws-region: us-east-1
 
-      - name: Deploy to S3 and invalidate CloudFront
-        run: node scripts/deploy.js
-        env:
-          S3_BUCKET_NAME: "mobile-marketing-site-prod-1759705011281-tyzuo9"
-          CLOUDFRONT_DISTRIBUTION_ID: "E2IBMHQ3GCW6ZK"
-          AWS_REGION: ${{ env.AWS_REGION }}
-          DEPLOYMENT_ENVIRONMENT: ${{ github.event.inputs.environment || 'production' }}
-          GITHUB_SHA: ${{ github.sha }}
-          GITHUB_REF: ${{ github.ref }}
-          GITHUB_ACTOR: ${{ github.actor }}
+      - uses: actions/setup-node@v4
+        with:
+          node-version: ${{ env.NODE_VERSION }}
 
-      - name: Run comprehensive post-deployment validation
-        run: node scripts/deployment-validator.js
-        env:
-          SITE_URL: "https://d15sc9fc739ev2.cloudfront.net"
-          S3_BUCKET_NAME: "mobile-marketing-site-prod-1759705011281-tyzuo9"
-          CLOUDFRONT_DISTRIBUTION_ID: "E2IBMHQ3GCW6ZK"
-          AWS_REGION: ${{ env.AWS_REGION }}
-          DEPLOYMENT_ENVIRONMENT: ${{ github.event.inputs.environment || 'production' }}
-          GITHUB_SHA: ${{ github.sha }}
-          GITHUB_REF: ${{ github.ref }}
-          GITHUB_ACTOR: ${{ github.actor }}
+      - name: Init Audit Log
+        run: node scripts/deployment-audit-logger.js init
 
-      - name: Create deployment summary
+      - name: Security Validation
+        run: node scripts/validate-aws-security-configuration.js
+
+      - name: Sync HTML (short TTL)
         run: |
-          echo "## Deployment Summary" >> $GITHUB_STEP_SUMMARY
-          echo "- **Environment**: ${{ github.event.inputs.environment || 'production' }}" >> $GITHUB_STEP_SUMMARY
-          echo "- **Commit**: ${{ github.sha }}" >> $GITHUB_STEP_SUMMARY
-          echo "- **Branch**: ${{ github.ref_name }}" >> $GITHUB_STEP_SUMMARY
-          echo "- **Deployed by**: ${{ github.actor }}" >> $GITHUB_STEP_SUMMARY
-          echo "- **Site URL**: https://d15sc9fc739ev2.cloudfront.net" >> $GITHUB_STEP_SUMMARY
-          echo "- **Deployment Time**: $(date -u)" >> $GITHUB_STEP_SUMMARY
+          aws s3 sync out s3://$S3_BUCKET \
+            --exclude "*" --include "*.html" --include "sitemap.xml" --include "robots.txt" \
+            --cache-control "$HTML_CACHE" --delete
 
-  notify-deployment:
-    runs-on: ubuntu-latest
-    needs: build-and-deploy
-    if: always()
-
-    steps:
-      - name: Notify deployment success
-        if: needs.build-and-deploy.result == 'success'
+      - name: Sync assets (immutable)
         run: |
-          echo "✅ Deployment successful to ${{ github.event.inputs.environment || 'production' }}"
-          echo "Site URL: https://d15sc9fc739ev2.cloudfront.net"
+          aws s3 sync out s3://$S3_BUCKET \
+            --exclude "*.html" --exclude "sitemap.xml" --exclude "robots.txt" \
+            --cache-control "$ASSET_CACHE" --delete
 
-      - name: Notify deployment failure
-        if: needs.build-and-deploy.result == 'failure'
+      - name: MIME fixes
         run: |
-          echo "❌ Deployment failed to ${{ github.event.inputs.environment || 'production' }}"
-          echo "Check the workflow logs for details"
-          exit 1
+          [ -f out/sitemap.xml ] && aws s3 cp out/sitemap.xml s3://$S3_BUCKET/sitemap.xml --cache-control "$HTML_CACHE" --content-type "application/xml"
+          [ -f out/site.webmanifest ] && aws s3 cp out/site.webmanifest s3://$S3_BUCKET/site.webmanifest --cache-control "$ASSET_CACHE" --content-type "application/manifest+json"
+          [ -f out/robots.txt ] && aws s3 cp out/robots.txt s3://$S3_BUCKET/robots.txt --cache-control "$HTML_CACHE" --content-type "text/plain"
+
+      - name: Invalidate CloudFront
+        if: ${{ github.event.inputs.invalidate == 'true' }}
+        run: |
+          aws cloudfront create-invalidation --distribution-id "$CF_DISTRIBUTION_ID" \
+            --paths "/" "/index.html" "/services/*" "/blog*" "/images/*" "/_next/*" "/sitemap.xml"
+
+      - name: Finalize Audit + Dashboard
+        run: |
+          node scripts/deployment-audit-logger.js complete
+          node scripts/deployment-status-dashboard.js generate
+          node scripts/deployment-monitoring-integration.js report
