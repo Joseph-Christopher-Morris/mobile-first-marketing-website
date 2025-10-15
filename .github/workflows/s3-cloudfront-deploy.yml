@@ -53,9 +53,16 @@ jobs:
           retention-days: 7
 
   deploy:
+    if: ${{ github.ref == 'refs/heads/main' }}
     needs: build
     runs-on: ubuntu-latest
     steps:
+      # we need the repo to read the scripts/*
+      - name: Checkout repo (for scripts)
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 1
+
       - uses: actions/download-artifact@v4
         with:
           name: site-out
@@ -69,7 +76,9 @@ jobs:
 
       - uses: actions/setup-node@v4
         with:
-          node-version: 22.19.0
+          node-version: ${{ env.NODE_VERSION }}
+          cache: npm
+
 
       - name: Init Audit Log
         run: node scripts/deployment-audit-logger.js init
@@ -104,5 +113,4 @@ jobs:
       - name: Finalize Audit + Dashboard
         run: |
           node scripts/deployment-audit-logger.js complete
-          node scripts/deployment-status-dashboard.js generate
-          node scripts/deployment-monitoring-integration.js report
+          node scripts/deployment-monitoring-integration.js
