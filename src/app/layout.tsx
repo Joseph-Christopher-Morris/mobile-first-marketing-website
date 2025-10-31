@@ -1,39 +1,43 @@
 import type { Metadata } from 'next';
 import { Inter } from 'next/font/google';
+import Script from 'next/script';
 import './globals.css';
 
-const inter = Inter({ subsets: ['latin'] });
+const inter = Inter({ 
+  subsets: ['latin'],
+  display: 'swap',
+  preload: true,
+  variable: '--font-inter',
+});
 
 export const metadata: Metadata = {
   title: {
     default:
-      'Vivid Auto Photography - Data-Driven Automotive Photography | Nantwich & Cheshire',
-    template: '%s | Vivid Auto Photography',
+      'Vivid Media Cheshire - AWS CloudFront Hosting, Web Design & Google Ads | Nantwich & Cheshire',
+    template: '%s | Vivid Media Cheshire',
   },
   description:
-    'Professional data-driven automotive photography services in Nantwich & Cheshire. Specializing in automotive photography, analytics, and strategic advertising campaigns that deliver measurable results.',
+    'Vivid Media Cheshire helps local businesses grow with cheaper, faster AWS CloudFront hosting and migration, mobile-first web design, and Google Ads campaigns that deliver measurable results.',
   keywords: [
-    'automotive photography',
-    'car photography',
-    'vehicle photography',
-    'Nantwich photography',
-    'Cheshire photography',
-    'data-driven photography',
-    'automotive analytics',
-    'car dealership photography',
-    'commercial automotive photography',
-    'professional car photography',
-    'automotive advertising',
-    'vehicle marketing photography',
+    'AWS website hosting Cheshire',
+    'AWS CloudFront migration',
+    'mobile-first web design',
+    'Google Ads campaigns Cheshire',
+    'digital marketing Nantwich',
+    'website performance optimisation',
+    'cheaper website hosting UK',
+    'data-driven marketing Cheshire',
+    'creative web design Cheshire',
+    'Vivid Media Cheshire',
   ],
   authors: [
     {
-      name: 'Vivid Auto Photography',
+      name: 'Vivid Media Cheshire',
       url: 'https://d15sc9fc739ev2.cloudfront.net',
     },
   ],
-  creator: 'Vivid Auto Photography',
-  publisher: 'Vivid Auto Photography',
+  creator: 'Vivid Media Cheshire',
+  publisher: 'Vivid Media Cheshire',
   formatDetection: {
     email: false,
     address: false,
@@ -47,17 +51,17 @@ export const metadata: Metadata = {
     type: 'website',
     locale: 'en_GB',
     url: 'https://d15sc9fc739ev2.cloudfront.net',
-    siteName: 'Vivid Auto Photography',
+    siteName: 'Vivid Media Cheshire',
     title:
-      'Vivid Auto Photography - Data-Driven Automotive Photography | Nantwich & Cheshire',
+      'Vivid Media Cheshire - AWS CloudFront Hosting, Web Design & Google Ads | Nantwich & Cheshire',
     description:
-      'Professional data-driven automotive photography services in Nantwich & Cheshire. Specializing in automotive photography, analytics, and strategic advertising campaigns that deliver measurable results.',
+      'Vivid Media Cheshire helps local businesses grow with cheaper, faster AWS CloudFront hosting and migration, mobile-first web design, and Google Ads campaigns that deliver measurable results.',
     images: [
       {
         url: '/images/hero/aston-martin-db6-website.webp',
         width: 1200,
         height: 630,
-        alt: 'Professional automotive photography showcase - Aston Martin DB6 captured with expert lighting and composition in Nantwich, Cheshire',
+        alt: 'Vivid Media Cheshire – AWS CloudFront hosting, mobile-first design, and data-driven marketing based in Nantwich.',
         type: 'image/webp',
       },
     ],
@@ -65,9 +69,9 @@ export const metadata: Metadata = {
   twitter: {
     card: 'summary_large_image',
     title:
-      'Vivid Auto Photography - Data-Driven Automotive Photography | Nantwich & Cheshire',
+      'Vivid Media Cheshire - AWS CloudFront Hosting, Web Design & Google Ads | Nantwich & Cheshire',
     description:
-      'Professional data-driven automotive photography services in Nantwich & Cheshire. Specializing in automotive photography, analytics, and strategic advertising campaigns.',
+      'Vivid Media Cheshire helps local businesses grow with cheaper, faster AWS CloudFront hosting and migration, mobile-first web design, and Google Ads campaigns.',
     images: ['/images/hero/aston-martin-db6-website.webp'],
   },
   robots: {
@@ -93,8 +97,32 @@ export default function RootLayout({
 }: {
   children: React.ReactNode;
 }) {
+  const GA_ID = process.env.NEXT_PUBLIC_GA_ID || 'G-QJXSCJ0L43';
+  
   return (
     <html lang='en'>
+      <head>
+        <link rel="icon" href="/favicon.png" sizes="any" />
+        <link rel="apple-touch-icon" href="/favicon.png" />
+        <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
+        <link rel="dns-prefetch" href="https://d15sc9fc739ev2.cloudfront.net" />
+        
+        {/* Google Tag (GA4) */}
+        <Script
+          src={`https://www.googletagmanager.com/gtag/js?id=${GA_ID}`}
+          strategy="afterInteractive"
+        />
+        <Script id="ga4-init" strategy="afterInteractive">
+          {`
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+            gtag('config', '${GA_ID}');
+          `}
+        </Script>
+      </head>
       <body className={inter.className}>{children}</body>
     </html>
   );
