@@ -15,12 +15,10 @@ export function ServicesShowcase({ services }: ServicesShowcaseProps) {
       <div className='max-w-7xl mx-auto px-4 sm:px-6 lg:px-8'>
         <div className='text-center mb-16'>
           <h2 className='text-3xl md:text-4xl font-bold text-gray-900 mb-4'>
-            Our Services
+            My Services
           </h2>
           <p className='text-xl text-gray-600 max-w-3xl mx-auto'>
-            Comprehensive solutions designed to elevate your business with
-            professional photography, data-driven insights, and strategic
-            advertising campaigns.
+            Vivid Media Cheshire helps local businesses grow with fast, secure websites, smart advertising, and visuals that tell your story. Each project combines enterprise-level hosting, data-driven design, and photography that delivers real results.
           </p>
         </div>
 
@@ -50,7 +48,7 @@ export function ServicesShowcase({ services }: ServicesShowcaseProps) {
                   className='inline-flex items-center text-brand-pink hover:text-brand-pink2 font-medium'
                   aria-label={`Learn more about ${service.title.toLowerCase()}`}
                 >
-                  Learn More
+                  View Service Details
                   <svg
                     className='ml-2 w-4 h-4'
                     fill='none'

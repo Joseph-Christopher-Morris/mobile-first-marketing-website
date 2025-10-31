@@ -30,6 +30,8 @@
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
+
+
   <url>
     <loc>https://d15sc9fc739ev2.cloudfront.net/blog/</loc>
     <lastmod>2025-01-11</lastmod>
@@ -65,5 +67,11 @@
     <lastmod>2025-01-11</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://d15sc9fc739ev2.cloudfront.net/privacy-policy/</loc>
+    <lastmod>2025-01-15</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.3</priority>
   </url>
 </urlset>

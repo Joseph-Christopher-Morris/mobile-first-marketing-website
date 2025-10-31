@@ -33,7 +33,7 @@ export function MobileMenu({
       />
 
       {/* Menu Panel */}
-      <div className='fixed top-0 right-0 h-full w-64 bg-white shadow-xl z-50 md:hidden transform transition-transform duration-300 ease-in-out'>
+      <div className='fixed top-0 right-0 h-full w-64 bg-white shadow-xl z-50 md:hidden transform transition-transform duration-200 ease-out will-change-transform'>
         <div className='flex flex-col h-full'>
           {/* Header */}
           <div className='flex items-center justify-between p-4 border-b border-gray-200'>

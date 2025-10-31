@@ -1,7 +1,3 @@
-const withBundleAnalyzer = require('@next/bundle-analyzer')({
-  enabled: process.env.ANALYZE === 'true',
-});
-
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   output: 'export', // Enable static export for S3 deployment
@@ -9,6 +5,10 @@ const nextConfig = {
   distDir: '.next',
   generateBuildId: () => 'static-build',
   outputFileTracingRoot: __dirname, // Fix workspace root warning
+  experimental: {
+    optimizePackageImports: ['lucide-react', '@heroicons/react'],
+    scrollRestoration: true,
+  },
   eslint: {
     // Warning: This allows production builds to successfully complete even if
     // your project has ESLint errors.
@@ -24,15 +24,11 @@ const nextConfig = {
   images: {
     unoptimized: true, // Required for static export
     formats: ['image/webp', 'image/avif'], // Modern formats for better compression
-    deviceSizes: [640, 750, 828, 1080, 1200, 1920, 2048, 3840], // Mobile-first device sizes
-    imageSizes: [16, 32, 48, 64, 96, 128, 256, 384], // Common image sizes
+    deviceSizes: [640, 750, 828, 1080, 1200, 1920], // Mobile-first optimized sizes
+    imageSizes: [16, 32, 48, 64, 96, 128, 256], // Reduced for mobile performance
     minimumCacheTTL: 31536000, // 1 year cache for static images
     dangerouslyAllowSVG: true,
     contentSecurityPolicy: "default-src 'self'; script-src 'none'; sandbox;",
-  },
-  experimental: {
-    // optimizeCss: true, // Disabled due to critters dependency issue
-    optimizePackageImports: ['lucide-react', '@heroicons/react'],
   },
   compiler: {
     removeConsole: process.env.NODE_ENV === 'production',
@@ -49,4 +45,4 @@ const nextConfig = {
   },
 };
 
-module.exports = withBundleAnalyzer(nextConfig);
+module.exports = nextConfig;

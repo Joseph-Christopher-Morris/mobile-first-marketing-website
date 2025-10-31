@@ -2,353 +2,365 @@
 
 /**
  * Deployment Status Dashboard
- *
- * Provides a comprehensive view of deployment status, health metrics,
- * and operational information for the S3 + CloudFront deployment.
- *
- * Requirements: 5.1, 6.4
+ * 
+ * Provides real-time deployment status tracking and monitoring
+ * Requirements: 10.5
  */
 
-const AWS = require('aws-sdk');
-const fs = require('fs').promises;
+const fs = require('fs');
 const path = require('path');
+const DeploymentAuditLogger = require('./deployment-audit-logger');
 
 class DeploymentStatusDashboard {
   constructor() {
-    this.cloudfront = new AWS.CloudFront();
-    this.s3 = new AWS.S3();
-    this.cloudwatch = new AWS.CloudWatch();
-    this.configPath = path.join(
-      __dirname,
-      '..',
-      'config',
-      'deployment-config.json'
-    );
+    this.dashboardDir = '.kiro/dashboard';
+    this.ensureDirectories();
   }
 
-  async loadConfig() {
-    try {
-      const configData = await fs.readFile(this.configPath, 'utf8');
-      return JSON.parse(configData);
-    } catch (error) {
-      console.error('Error loading deployment config:', error.message);
-      return null;
+  ensureDirectories() {
+    if (!fs.existsSync(this.dashboardDir)) {
+      fs.mkdirSync(this.dashboardDir, { recursive: true });
     }
   }
 
-  async getS3BucketStatus(bucketName) {
-    try {
-      // Check bucket existence and configuration
-      const bucketLocation = await this.s3
-        .getBucketLocation({ Bucket: bucketName })
-        .promise();
-      const bucketVersioning = await this.s3
-        .getBucketVersioning({ Bucket: bucketName })
-        .promise();
-      const bucketEncryption = await this.s3
-        .getBucketEncryption({ Bucket: bucketName })
-        .promise();
-
-      // Get bucket size and object count
-      const objects = await this.s3
-        .listObjectsV2({ Bucket: bucketName })
-        .promise();
-
-      return {
-        status: 'healthy',
-        region: bucketLocation.LocationConstraint || 'us-east-1',
-        versioning: bucketVersioning.Status || 'Disabled',
-        encryption: bucketEncryption.ServerSideEncryptionConfiguration
-          ? 'Enabled'
-          : 'Disabled',
-        objectCount: objects.KeyCount,
-        lastModified:
-          objects.Contents.length > 0
-            ? Math.max(
-                ...objects.Contents.map(obj =>
-                  new Date(obj.LastModified).getTime()
-                )
-              )
-            : null,
-      };
-    } catch (error) {
-      return {
-        status: 'error',
-        error: error.message,
-      };
-    }
+  generateDashboard() {
+    const history = DeploymentAuditLogger.getDeploymentHistory(20);
+    const stats = this.calculateStats(history);
+    const html = this.generateHTML(history, stats);
+    
+    const dashboardPath = path.join(this.dashboardDir, 'deployment-dashboard.html');
+    fs.writeFileSync(dashboardPath, html);
+    
+    // Also generate JSON for API consumption
+    const jsonData = {
+      timestamp: new Date().toISOString(),
+      stats,
+      history,
+      status: this.getOverallStatus(history)
+    };
+    
+    const jsonPath = path.join(this.dashboardDir, 'deployment-status.json');
+    fs.writeFileSync(jsonPath, JSON.stringify(jsonData, null, 2));
+    
+    console.log(`📊 Dashboard generated: ${dashboardPath}`);
+    console.log(`📊 Status JSON: ${jsonPath}`);
+    
+    return { dashboardPath, jsonPath, stats };
   }
 
-  async getCloudFrontStatus(distributionId) {
-    try {
-      const distribution = await this.cloudfront
-        .getDistribution({ Id: distributionId })
-        .promise();
-      const config = distribution.Distribution;
-
+  calculateStats(history) {
+    if (history.length === 0) {
       return {
-        status: config.Status,
-        domainName: config.DomainName,
-        enabled: config.DistributionConfig.Enabled,
-        priceClass: config.DistributionConfig.PriceClass,
-        lastModified: config.LastModifiedTime,
-        origins: config.DistributionConfig.Origins.Items.map(origin => ({
-          id: origin.Id,
-          domainName: origin.DomainName,
-          originAccessControl:
-            origin.S3OriginConfig?.OriginAccessIdentity || 'OAC',
-        })),
-      };
-    } catch (error) {
-      return {
-        status: 'error',
-        error: error.message,
+        totalDeployments: 0,
+        successRate: 0,
+        averageDuration: 0,
+        lastDeployment: null,
+        deploymentsLast24h: 0,
+        deploymentsLast7d: 0
       };
     }
+
+    const now = Date.now();
+    const last24h = now - (24 * 60 * 60 * 1000);
+    const last7d = now - (7 * 24 * 60 * 60 * 1000);
+
+    const successful = history.filter(d => d.status === 'success').length;
+    const totalDuration = history.reduce((sum, d) => sum + (d.duration || 0), 0);
+    const deploymentsLast24h = history.filter(d => new Date(d.timestamp).getTime() > last24h).length;
+    const deploymentsLast7d = history.filter(d => new Date(d.timestamp).getTime() > last7d).length;
+
+    return {
+      totalDeployments: history.length,
+      successRate: Math.round((successful / history.length) * 100),
+      averageDuration: Math.round(totalDuration / history.length / 1000), // seconds
+      lastDeployment: history[0],
+      deploymentsLast24h,
+      deploymentsLast7d
+    };
   }
 
-  async getDeploymentMetrics(distributionId, bucketName) {
-    const endTime = new Date();
-    const startTime = new Date(endTime.getTime() - 24 * 60 * 60 * 1000); // Last 24 hours
+  getOverallStatus(history) {
+    if (history.length === 0) return 'unknown';
+    
+    const recent = history.slice(0, 5);
+    const failures = recent.filter(d => d.status === 'failed').length;
+    
+    if (failures === 0) return 'healthy';
+    if (failures <= 2) return 'warning';
+    return 'critical';
+  }
 
-    try {
-      // CloudFront metrics
-      const cfMetrics = await this.cloudwatch
-        .getMetricStatistics({
-          Namespace: 'AWS/CloudFront',
-          MetricName: 'Requests',
-          Dimensions: [{ Name: 'DistributionId', Value: distributionId }],
-          StartTime: startTime,
-          EndTime: endTime,
-          Period: 3600,
-          Statistics: ['Sum'],
-        })
-        .promise();
+  generateHTML(history, stats) {
+    const statusColor = {
+      healthy: '#10b981',
+      warning: '#f59e0b',
+      critical: '#ef4444',
+      unknown: '#6b7280'
+    };
 
-      // S3 metrics
-      const s3Metrics = await this.cloudwatch
-        .getMetricStatistics({
-          Namespace: 'AWS/S3',
-          MetricName: 'NumberOfObjects',
-          Dimensions: [
-            { Name: 'BucketName', Value: bucketName },
-            { Name: 'StorageType', Value: 'AllStorageTypes' },
-          ],
-          StartTime: startTime,
-          EndTime: endTime,
-          Period: 86400,
-          Statistics: ['Average'],
-        })
-        .promise();
+    const overallStatus = this.getOverallStatus(history);
 
-      return {
-        cloudfront: {
-          requests24h: cfMetrics.Datapoints.reduce(
-            (sum, point) => sum + point.Sum,
-            0
-          ),
-          datapoints: cfMetrics.Datapoints.length,
-        },
-        s3: {
-          objectCount:
-            s3Metrics.Datapoints.length > 0
-              ? s3Metrics.Datapoints[s3Metrics.Datapoints.length - 1].Average
-              : 0,
-        },
-      };
-    } catch (error) {
-      return {
-        error: error.message,
-      };
+    return `<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SCRAM Deployment Dashboard</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            background: #f8fafc;
+            color: #1e293b;
+            line-height: 1.6;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 2rem;
+        }
+        
+        .header {
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+        
+        .header h1 {
+            font-size: 2.5rem;
+            font-weight: 700;
+            margin-bottom: 0.5rem;
+        }
+        
+        .status-badge {
+            display: inline-block;
+            padding: 0.5rem 1rem;
+            border-radius: 9999px;
+            color: white;
+            font-weight: 600;
+            text-transform: uppercase;
+            font-size: 0.875rem;
+            background: ${statusColor[overallStatus]};
+        }
+        
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1.5rem;
+            margin-bottom: 3rem;
+        }
+        
+        .stat-card {
+            background: white;
+            padding: 1.5rem;
+            border-radius: 0.75rem;
+            box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+            border: 1px solid #e2e8f0;
+        }
+        
+        .stat-value {
+            font-size: 2rem;
+            font-weight: 700;
+            color: #1e293b;
+        }
+        
+        .stat-label {
+            color: #64748b;
+            font-size: 0.875rem;
+            margin-top: 0.25rem;
+        }
+        
+        .deployments-table {
+            background: white;
+            border-radius: 0.75rem;
+            overflow: hidden;
+            box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+            border: 1px solid #e2e8f0;
+        }
+        
+        .table-header {
+            background: #f1f5f9;
+            padding: 1rem 1.5rem;
+            border-bottom: 1px solid #e2e8f0;
+        }
+        
+        .table-header h2 {
+            font-size: 1.25rem;
+            font-weight: 600;
+        }
+        
+        table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+        
+        th, td {
+            padding: 0.75rem 1.5rem;
+            text-align: left;
+            border-bottom: 1px solid #e2e8f0;
+        }
+        
+        th {
+            background: #f8fafc;
+            font-weight: 600;
+            color: #475569;
+            font-size: 0.875rem;
+        }
+        
+        .status-success { color: #10b981; }
+        .status-failed { color: #ef4444; }
+        .status-in_progress { color: #f59e0b; }
+        
+        .deployment-id {
+            font-family: 'Monaco', 'Menlo', monospace;
+            font-size: 0.75rem;
+            background: #f1f5f9;
+            padding: 0.25rem 0.5rem;
+            border-radius: 0.25rem;
+        }
+        
+        .timestamp {
+            color: #64748b;
+            font-size: 0.875rem;
+        }
+        
+        .duration {
+            font-weight: 500;
+        }
+        
+        .refresh-info {
+            text-align: center;
+            margin-top: 2rem;
+            color: #64748b;
+            font-size: 0.875rem;
+        }
+        
+        .no-data {
+            text-align: center;
+            padding: 3rem;
+            color: #64748b;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>SCRAM Deployment Dashboard</h1>
+            <div class="status-badge">${overallStatus}</div>
+        </div>
+        
+        <div class="stats-grid">
+            <div class="stat-card">
+                <div class="stat-value">${stats.totalDeployments}</div>
+                <div class="stat-label">Total Deployments</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-value">${stats.successRate}%</div>
+                <div class="stat-label">Success Rate</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-value">${stats.averageDuration}s</div>
+                <div class="stat-label">Average Duration</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-value">${stats.deploymentsLast24h}</div>
+                <div class="stat-label">Last 24 Hours</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-value">${stats.deploymentsLast7d}</div>
+                <div class="stat-label">Last 7 Days</div>
+            </div>
+        </div>
+        
+        <div class="deployments-table">
+            <div class="table-header">
+                <h2>Recent Deployments</h2>
+            </div>
+            ${history.length > 0 ? `
+            <table>
+                <thead>
+                    <tr>
+                        <th>Deployment ID</th>
+                        <th>Status</th>
+                        <th>Environment</th>
+                        <th>Branch</th>
+                        <th>Duration</th>
+                        <th>Timestamp</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    ${history.map(deployment => `
+                    <tr>
+                        <td><span class="deployment-id">${deployment.deploymentId}</span></td>
+                        <td><span class="status-${deployment.status}">${deployment.status.toUpperCase()}</span></td>
+                        <td>${deployment.environment}</td>
+                        <td>${deployment.gitBranch}</td>
+                        <td class="duration">${deployment.duration ? Math.round(deployment.duration / 1000) + 's' : 'N/A'}</td>
+                        <td class="timestamp">${new Date(deployment.timestamp).toLocaleString()}</td>
+                    </tr>
+                    `).join('')}
+                </tbody>
+            </table>
+            ` : `
+            <div class="no-data">
+                <p>No deployment history available</p>
+            </div>
+            `}
+        </div>
+        
+        <div class="refresh-info">
+            Last updated: ${new Date().toLocaleString()}
+        </div>
+    </div>
+</body>
+</html>`;
+  }
+
+  watchDeployments() {
+    console.log('👀 Watching for deployment changes...');
+    
+    const auditDir = '.kiro/audit-logs';
+    if (!fs.existsSync(auditDir)) {
+      fs.mkdirSync(auditDir, { recursive: true });
     }
-  }
 
-  async getRecentDeployments() {
-    try {
-      const deploymentsPath = path.join(
-        __dirname,
-        '..',
-        'logs',
-        'deployments.json'
-      );
-      const deploymentsData = await fs.readFile(deploymentsPath, 'utf8');
-      const deployments = JSON.parse(deploymentsData);
-
-      return deployments
-        .sort((a, b) => new Date(b.timestamp) - new Date(a.timestamp))
-        .slice(0, 10);
-    } catch (error) {
-      return [];
-    }
-  }
-
-  formatUptime(timestamp) {
-    const now = new Date();
-    const deployTime = new Date(timestamp);
-    const diffMs = now - deployTime;
-
-    const days = Math.floor(diffMs / (1000 * 60 * 60 * 24));
-    const hours = Math.floor(
-      (diffMs % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60)
-    );
-    const minutes = Math.floor((diffMs % (1000 * 60 * 60)) / (1000 * 60));
-
-    if (days > 0) return `${days}d ${hours}h`;
-    if (hours > 0) return `${hours}h ${minutes}m`;
-    return `${minutes}m`;
-  }
-
-  async generateDashboard() {
-    console.log('🚀 S3 + CloudFront Deployment Status Dashboard');
-    console.log('='.repeat(60));
-
-    const config = await this.loadConfig();
-    if (!config) {
-      console.log('❌ Unable to load deployment configuration');
-      return;
-    }
-
-    // S3 Status
-    console.log('\n📦 S3 Bucket Status');
-    console.log('-'.repeat(30));
-    const s3Status = await this.getS3BucketStatus(config.bucketName);
-    if (s3Status.status === 'healthy') {
-      console.log(`✅ Bucket: ${config.bucketName}`);
-      console.log(`   Region: ${s3Status.region}`);
-      console.log(`   Versioning: ${s3Status.versioning}`);
-      console.log(`   Encryption: ${s3Status.encryption}`);
-      console.log(`   Objects: ${s3Status.objectCount}`);
-      if (s3Status.lastModified) {
-        console.log(
-          `   Last Updated: ${new Date(s3Status.lastModified).toLocaleString()}`
-        );
+    // Watch for changes in audit logs
+    fs.watch(auditDir, (eventType, filename) => {
+      if (eventType === 'change' && filename && filename.endsWith('.json')) {
+        console.log(`📊 Deployment update detected: ${filename}`);
+        this.generateDashboard();
       }
-    } else {
-      console.log(`❌ Bucket Error: ${s3Status.error}`);
-    }
+    });
 
-    // CloudFront Status
-    console.log('\n🌐 CloudFront Distribution Status');
-    console.log('-'.repeat(35));
-    const cfStatus = await this.getCloudFrontStatus(config.distributionId);
-    if (cfStatus.status !== 'error') {
-      console.log(`✅ Distribution: ${config.distributionId}`);
-      console.log(`   Status: ${cfStatus.status}`);
-      console.log(`   Domain: ${cfStatus.domainName}`);
-      console.log(`   Enabled: ${cfStatus.enabled ? 'Yes' : 'No'}`);
-      console.log(`   Price Class: ${cfStatus.priceClass}`);
-      console.log(
-        `   Last Modified: ${cfStatus.lastModified.toLocaleString()}`
-      );
-      console.log(`   Origins: ${cfStatus.origins.length}`);
-    } else {
-      console.log(`❌ CloudFront Error: ${cfStatus.error}`);
-    }
-
-    // Metrics
-    console.log('\n📊 Performance Metrics (24h)');
-    console.log('-'.repeat(30));
-    const metrics = await this.getDeploymentMetrics(
-      config.distributionId,
-      config.bucketName
-    );
-    if (!metrics.error) {
-      console.log(
-        `   CloudFront Requests: ${metrics.cloudfront.requests24h.toLocaleString()}`
-      );
-      console.log(`   S3 Objects: ${metrics.s3.objectCount}`);
-    } else {
-      console.log(`❌ Metrics Error: ${metrics.error}`);
-    }
-
-    // Recent Deployments
-    console.log('\n🔄 Recent Deployments');
-    console.log('-'.repeat(25));
-    const deployments = await this.getRecentDeployments();
-    if (deployments.length > 0) {
-      deployments.slice(0, 5).forEach(deployment => {
-        const status = deployment.status === 'success' ? '✅' : '❌';
-        const uptime = this.formatUptime(deployment.timestamp);
-        console.log(
-          `   ${status} ${deployment.version || 'Unknown'} - ${uptime} ago`
-        );
-      });
-    } else {
-      console.log('   No deployment history found');
-    }
-
-    // Health Summary
-    console.log('\n🏥 Health Summary');
-    console.log('-'.repeat(20));
-    const healthScore = this.calculateHealthScore(s3Status, cfStatus, metrics);
-    console.log(`   Overall Health: ${healthScore.score}/100`);
-    console.log(`   Status: ${healthScore.status}`);
-
-    if (healthScore.issues.length > 0) {
-      console.log('\n⚠️  Issues Detected:');
-      healthScore.issues.forEach(issue => {
-        console.log(`   • ${issue}`);
-      });
-    }
-
-    console.log('\n' + '='.repeat(60));
-    console.log(`Dashboard generated at: ${new Date().toLocaleString()}`);
-  }
-
-  calculateHealthScore(s3Status, cfStatus, metrics) {
-    let score = 100;
-    const issues = [];
-
-    // S3 health checks
-    if (s3Status.status !== 'healthy') {
-      score -= 30;
-      issues.push('S3 bucket is not accessible');
-    }
-    if (s3Status.versioning !== 'Enabled') {
-      score -= 10;
-      issues.push('S3 versioning is not enabled');
-    }
-    if (s3Status.encryption !== 'Enabled') {
-      score -= 10;
-      issues.push('S3 encryption is not enabled');
-    }
-
-    // CloudFront health checks
-    if (cfStatus.status === 'error') {
-      score -= 40;
-      issues.push('CloudFront distribution is not accessible');
-    } else if (cfStatus.status !== 'Deployed') {
-      score -= 20;
-      issues.push('CloudFront distribution is not fully deployed');
-    }
-    if (!cfStatus.enabled) {
-      score -= 20;
-      issues.push('CloudFront distribution is disabled');
-    }
-
-    // Metrics health checks
-    if (metrics.error) {
-      score -= 10;
-      issues.push('Unable to retrieve performance metrics');
-    }
-
-    const status =
-      score >= 90
-        ? '🟢 Excellent'
-        : score >= 70
-          ? '🟡 Good'
-          : score >= 50
-            ? '🟠 Fair'
-            : '🔴 Poor';
-
-    return { score, status, issues };
+    // Generate initial dashboard
+    this.generateDashboard();
   }
 }
 
-// CLI execution
+// CLI usage
 if (require.main === module) {
+  const command = process.argv[2];
   const dashboard = new DeploymentStatusDashboard();
-  dashboard.generateDashboard().catch(console.error);
+  
+  switch (command) {
+    case 'generate':
+      dashboard.generateDashboard();
+      break;
+      
+    case 'watch':
+      dashboard.watchDeployments();
+      break;
+      
+    default:
+      console.log('Usage:');
+      console.log('  node deployment-status-dashboard.js generate');
+      console.log('  node deployment-status-dashboard.js watch');
+  }
 }
 
 module.exports = DeploymentStatusDashboard;

@@ -18,63 +18,133 @@ export default function AboutPage() {
   return (
     <Layout pageTitle='About'>
       <div className='min-h-screen bg-white'>
-        {/* Hero Section */}
+        {/* Hero Section - Two Column Layout */}
         <section className='bg-brand-white py-16 md:py-24'>
-          <div className='container mx-auto px-4'>
-            <div className='max-w-4xl mx-auto text-center'>
-              <h1 className='text-3xl md:text-5xl font-bold text-gray-900 mb-6'>
-                About Me
-              </h1>
-              <p className='text-lg md:text-xl text-gray-600 mb-8'>
-                I&rsquo;m a digital marketer and photographer helping small
-                businesses grow through smart strategy, creative visuals, and
-                data-led decisions.
-              </p>
-            </div>
-          </div>
-        </section>
-
-        {/* My Journey Section */}
-        <section className='py-16 md:py-24'>
           <div className='container mx-auto px-4'>
             <div className='max-w-6xl mx-auto'>
               <div className='grid grid-cols-1 lg:grid-cols-2 gap-12 items-center'>
+                {/* Content Column */}
                 <div>
-                  <h2 className='text-2xl md:text-3xl font-bold text-gray-900 mb-6'>
-                    My Journey
-                  </h2>
-                  <div className='space-y-4 text-gray-600'>
+                  <h1 className='text-3xl md:text-5xl font-bold text-gray-900 mb-6'>
+                    About Joe
+                  </h1>
+                  <div className='space-y-4 text-lg text-gray-600'>
                     <p>
-                      I began with photography, capturing classic cars,
-                      auctions, and events, and built a thriving business from
-                      scratch. Along the way, I discovered the power of{' '}
-                      <strong>analytics and marketing technology</strong>.
+                      I&rsquo;m a digital marketer and photographer helping small
+                      businesses grow through smart strategy, creative visuals, and
+                      data-led decisions.
                     </p>
                     <p>
-                      Now, I combine creative storytelling with tools like{' '}
-                      <strong>Adobe Analytics</strong>,{' '}
-                      <strong>Meta Ads</strong>, and <strong>Google Ads</strong>{' '}
-                      to help brands stand out and reach their target audience.
+                      My approach combines creative storytelling with analytical precision,
+                      ensuring every campaign delivers measurable results while maintaining
+                      authentic brand voice and visual appeal.
                     </p>
-                    <p>
-                      My work has been featured in{' '}
-                      <strong>Business Insider</strong> and the{' '}
-                      <strong>Daily Mail</strong>, and I&rsquo;m certified in{' '}
-                      <strong>Adobe Experience Cloud</strong> and{' '}
-                      <strong>Google Marketing Platform</strong>.
+                    <p className='text-brand-pink font-semibold'>
+                      I curate experiences that connect brands with their ideal customers
+                      through strategic content and targeted campaigns.
                     </p>
                   </div>
                 </div>
+                
+                {/* Portrait Column */}
                 <div className='relative'>
-                  <div className='relative h-96 w-full'>
+                  <div className='relative h-96 w-full lg:h-[500px]'>
                     <Image
-                      src='/images/about/A7302858.webp'
-                      alt='Professional headshot'
+                      src='/images/about/Portrait_fc67d980-837c-4932-a705-24b4b76b2402-68.webp'
+                      alt='Professional portrait of Joe, digital marketing and photography expert'
                       fill
                       className='object-cover rounded-lg shadow-lg'
                       priority
                     />
                   </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        {/* Work Context Section */}
+        <section className='py-16 md:py-24'>
+          <div className='container mx-auto px-4'>
+            <div className='max-w-6xl mx-auto'>
+              <div className='text-center mb-12'>
+                <h2 className='text-2xl md:text-3xl font-bold text-gray-900 mb-4'>
+                  My Journey
+                </h2>
+                <p className='text-lg text-gray-600 max-w-3xl mx-auto'>
+                  From professional photography to data-driven digital marketing,
+                  I bring together creative expertise and analytical precision.
+                </p>
+              </div>
+              
+              <div className='grid grid-cols-1 md:grid-cols-3 gap-8 mb-12'>
+                {/* Car Photography Work */}
+                <div className='relative'>
+                  <div className='relative h-64 w-full'>
+                    <Image
+                      src='/images/about/IMG_20190405_102621.webp'
+                      alt='Professional automotive photography session showing attention to detail and creative composition'
+                      fill
+                      className='object-cover rounded-lg shadow-lg'
+                    />
+                  </div>
+                  <div className='mt-4 text-center'>
+                    <h3 className='text-lg font-semibold text-gray-900'>Creative Photography</h3>
+                    <p className='text-gray-600'>Capturing compelling visuals that tell your brand story</p>
+                  </div>
+                </div>
+
+                {/* Desk Work Context */}
+                <div className='relative'>
+                  <div className='relative h-64 w-full'>
+                    <Image
+                      src='/images/about/PXL_20240220_085641747.webp'
+                      alt='Digital marketing workspace showing data analysis and campaign optimization tools'
+                      fill
+                      className='object-cover rounded-lg shadow-lg'
+                    />
+                  </div>
+                  <div className='mt-4 text-center'>
+                    <h3 className='text-lg font-semibold text-gray-900'>Data-Driven Strategy</h3>
+                    <p className='text-gray-600'>Analytics and insights that drive measurable results</p>
+                  </div>
+                </div>
+
+                {/* Collaboration Context */}
+                <div className='relative'>
+                  <div className='relative h-64 w-full'>
+                    <Image
+                      src='/images/about/PXL_20240222_004124044~2.webp'
+                      alt='Professional collaboration and client consultation environment'
+                      fill
+                      className='object-cover rounded-lg shadow-lg'
+                    />
+                  </div>
+                  <div className='mt-4 text-center'>
+                    <h3 className='text-lg font-semibold text-gray-900'>Client Partnership</h3>
+                    <p className='text-gray-600'>Collaborative approach tailored to your business goals</p>
+                  </div>
+                </div>
+              </div>
+
+              <div className='text-center'>
+                <div className='max-w-4xl mx-auto space-y-4 text-gray-600'>
+                  <p>
+                    I began with photography, capturing classic cars, auctions, and events, 
+                    and built a thriving business from scratch. Along the way, I discovered 
+                    the power of <strong>analytics and marketing technology</strong>.
+                  </p>
+                  <p>
+                    Now, I combine creative storytelling with tools like{' '}
+                    <strong>Adobe Analytics</strong>, <strong>Meta Ads</strong>, and{' '}
+                    <strong>Google Ads</strong> to help brands stand out and reach their target audience.
+                  </p>
+                  <p>
+                    My work has been featured in <strong>Business Insider</strong> and the{' '}
+                    <strong>Daily Mail</strong>, and I&rsquo;m certified in{' '}
+                    <strong>Adobe Experience Cloud</strong> and{' '}
+                    <strong>Google Marketing Platform</strong>.
+                  </p>
                 </div>
               </div>
             </div>

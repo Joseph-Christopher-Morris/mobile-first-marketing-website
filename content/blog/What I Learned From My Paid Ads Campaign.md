@@ -6,7 +6,7 @@ author: 'Joe from Vivid Auto'
 excerpt:
   'Discover how I used Meta Ads, Google Ads, and UX insights to drive qualified
   traffic, grow my newsletter, and improve future marketing campaigns.'
-featuredImage: '/images/blog/paid-ads-campaign.jpg'
+featuredImage: '/images/blog/Screenshot 2025-08-11 143853.webp'
 categories: ['marketing', 'ads', 'case study']
 tags: ['meta-ads', 'google-ads', 'hotjar', 'paid-traffic', 'newsletter-growth']
 featured: false
@@ -34,7 +34,7 @@ sharpen my marketing skills.
 
 ## How I Prepared My Paid Ads Campaign
 
-![Minichamps Ford Escort RS Cosworth model car in studio](/images/blog/model-car-studio.webp)
+![Minichamps Ford Escort RS Cosworth model car in studio](/images/blog/240616-Model_Car_Collection-3.webp)
 
 Before launch, I:
 
@@ -55,7 +55,7 @@ Before launch, I:
 
 ### Article Campaign (Meta Ads)
 
-![Meta Ads results graph showing 15,220 impressions and 446 clicks](/images/blog/meta-ads-results.webp)
+![Meta Ads results graph showing 15,220 impressions and 446 clicks](/images/blog/screenshot-2025-08-11-analytics-data.webp)
 
 - **Spend:** £127.50 ad credit
 - **Impressions:** 15,220
@@ -64,7 +64,7 @@ Before launch, I:
 
 ### Leads Campaign (Google Ads)
 
-![Google Ads results graph showing 121,242 impressions and 1,544 clicks](/images/blog/google-ads-results.webp)
+![Google Ads results graph showing 121,242 impressions and 1,544 clicks](/images/blog/Screenshot 2025-08-11 143943.webp)
 
 - **Spend:** £256.91
 - **Impressions:** 121,242

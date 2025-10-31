@@ -7,24 +7,18 @@ module.exports = {
     './content/**/*.{md,mdx}',
     './src/lib/**/*.{js,ts,jsx,tsx}',
   ],
-  // Enable CSS purging in production
-  purge: {
-    enabled: process.env.NODE_ENV === 'production',
-    content: ['./src/**/*.{js,ts,jsx,tsx,mdx}', './content/**/*.{md,mdx}'],
-    options: {
-      safelist: [
-        // Keep critical classes that might be added dynamically
-        'fonts-loaded',
-        'loading',
-        'loaded',
-        /^animate-/,
-        /^transition-/,
-        /^duration-/,
-        /^ease-/,
-        /^delay-/,
-      ],
-    },
-  },
+  // Safelist for dynamic classes
+  safelist: [
+    // Keep critical classes that might be added dynamically
+    'fonts-loaded',
+    'loading',
+    'loaded',
+    { pattern: /^animate-/ },
+    { pattern: /^transition-/ },
+    { pattern: /^duration-/ },
+    { pattern: /^ease-/ },
+    { pattern: /^delay-/ },
+  ],
   theme: {
     extend: {
       // Mobile-first breakpoints with container queries support
@@ -88,11 +82,10 @@ module.exports = {
       // Brand colors - only approved colors
       colors: {
         brand: {
-          white: '#ffffff',
-          pink: '#ff2d7a', // Hot Pink - Primary brand color
-          pink2: '#d81b60', // Dark Hot Pink - Hover/active states
-          black: '#0b0b0b', // Brand black
-          grey: '#969696', // Brand grey
+          pink: '#ff2d7a',   // Primary brand color
+          pink2: '#d81b60',  // Secondary brand color
+          black: '#0b0b0b',  // Brand black
+          white: '#ffffff',  // Brand white
         },
         // Touch feedback colors using brand colors
         'touch-feedback': {

@@ -110,9 +110,9 @@ export default async function BlogPage() {
                     <Link
                       href={`/blog/${featuredPost.slug}`}
                       className='inline-flex items-center text-brand-pink hover:text-brand-pink2 font-medium'
-                      aria-label={`Read full article: ${featuredPost.title}`}
+                      aria-label={`Read the article: ${featuredPost.title}`}
                     >
-                      Read More
+                      Read Article
                       <svg
                         className='ml-2 w-4 h-4'
                         fill='none'
@@ -172,9 +172,9 @@ export default async function BlogPage() {
                       <Link
                         href={`/blog/${post.slug}`}
                         className='inline-flex items-center text-brand-pink hover:text-brand-pink2 font-medium'
-                        aria-label={`Read full article: ${post.title}`}
+                        aria-label={`Read the article: ${post.title}`}
                       >
-                        Read More
+                        Read Article
                         <svg
                           className='ml-2 w-4 h-4'
                           fill='none'
@@ -202,7 +202,7 @@ export default async function BlogPage() {
           </div>
         </section>
 
-        {/* Our Services Section */}
+        {/* My Services Section */}
         <ServicesShowcase services={services} />
 
         {/* Newsletter Signup */}

@@ -4,30 +4,30 @@ import Image from 'next/image';
 import Link from 'next/link';
 
 export const metadata: Metadata = {
-  title: 'Data Analytics & Business Intelligence | Automotive Industry Insights',
+  title: 'Data Analytics & Insights | GA4 & Adobe Analytics Expertise',
   description:
-    'Comprehensive data analytics and business intelligence services for the automotive industry. Transform your automotive business data into actionable insights that optimize performance and drive growth in Nantwich & Cheshire.',
+    'Professional data analytics services with GA4 and Adobe Analytics expertise. Transform your business data into actionable insights that drive growth in Nantwich & Cheshire.',
   keywords: [
-    'automotive data analytics',
-    'business intelligence automotive',
-    'car dealership analytics',
-    'automotive performance metrics',
-    'vehicle sales analytics',
-    'automotive market insights',
-    'data-driven automotive decisions',
-    'automotive business optimization',
-    'car industry analytics',
-    'automotive ROI analysis'
+    'GA4 analytics',
+    'Adobe Analytics',
+    'Google Analytics 4',
+    'data analytics Nantwich',
+    'business intelligence',
+    'data insights',
+    'analytics consulting',
+    'performance metrics',
+    'conversion tracking',
+    'data visualization'
   ],
   openGraph: {
-    title: 'Data Analytics & Business Intelligence | Automotive Industry Insights',
-    description: 'Comprehensive data analytics and business intelligence services for the automotive industry. Transform your automotive business data into actionable insights.',
+    title: 'Data Analytics & Insights | GA4 & Adobe Analytics Expertise',
+    description: 'Professional data analytics services with GA4 and Adobe Analytics expertise. Transform your business data into actionable insights.',
     images: [
       {
         url: '/images/services/screenshot-2025-09-23-analytics-dashboard.webp',
         width: 1200,
         height: 630,
-        alt: 'Advanced analytics dashboard showing comprehensive automotive business metrics and performance data',
+        alt: 'Advanced analytics dashboard showing comprehensive business metrics and performance data',
       },
     ],
   },
@@ -65,16 +65,20 @@ export default function AnalyticsServicesPage() {
                   Data <span className='text-brand-pink'>Analytics</span> &
                   Insights
                 </h1>
-                <p className='text-xl md:text-2xl text-brand-grey mb-8 leading-relaxed'>
-                  Transform your data into actionable insights that drive
-                  business growth and optimize performance.
+                <p className='text-xl md:text-2xl text-brand-grey mb-6 leading-relaxed'>
+                  Professional GA4 and Adobe Analytics expertise to transform your data into actionable insights that drive business growth.
                 </p>
+                <div className='mb-8'>
+                  <p className='text-lg text-brand-grey mb-2'>
+                    <span className='text-brand-pink font-semibold'>Expert in:</span> Google Analytics 4 (GA4) • Adobe Analytics • Data Visualization
+                  </p>
+                </div>
                 <div className='flex flex-col sm:flex-row gap-4'>
                   <Link
                     href='/contact'
                     className='bg-brand-pink text-white px-8 py-4 rounded-lg text-lg font-semibold hover:bg-brand-pink2 transition-colors text-center'
                   >
-                    Get Started
+                    Get Analytics Consultation
                   </Link>
                   <Link
                     href='/blog'
@@ -93,6 +97,64 @@ export default function AnalyticsServicesPage() {
                     className='object-cover'
                     priority
                   />
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        {/* Results Section */}
+        <section className='py-20 bg-white'>
+          <div className='max-w-7xl mx-auto px-4 sm:px-6 lg:px-8'>
+            <div className='text-center mb-16'>
+              <h2 className='text-3xl md:text-4xl font-bold text-gray-900 mb-4'>
+                Proven Results from Our Analytics Work
+              </h2>
+              <p className='text-xl text-gray-600 max-w-3xl mx-auto'>
+                Real outcomes achieved through data-driven insights and strategic analytics implementation.
+              </p>
+            </div>
+
+            <div className='max-w-4xl mx-auto'>
+              <div className='grid grid-cols-1 md:grid-cols-2 gap-8'>
+                <div className='bg-gray-50 rounded-xl p-8'>
+                  <div className='flex items-center mb-4'>
+                    <div className='w-3 h-3 bg-brand-pink rounded-full mr-4'></div>
+                    <h3 className='text-2xl font-bold text-brand-pink'>55% increase</h3>
+                  </div>
+                  <p className='text-gray-700 text-lg'>in page views through optimized content strategy and user journey analysis</p>
+                </div>
+
+                <div className='bg-gray-50 rounded-xl p-8'>
+                  <div className='flex items-center mb-4'>
+                    <div className='w-3 h-3 bg-brand-pink rounded-full mr-4'></div>
+                    <h3 className='text-2xl font-bold text-brand-pink'>189% boost</h3>
+                  </div>
+                  <p className='text-gray-700 text-lg'>in user engagement through data-driven UX improvements and content optimization</p>
+                </div>
+
+                <div className='bg-gray-50 rounded-xl p-8'>
+                  <div className='flex items-center mb-4'>
+                    <div className='w-3 h-3 bg-brand-pink rounded-full mr-4'></div>
+                    <h3 className='text-2xl font-bold text-brand-pink'>73% reduction</h3>
+                  </div>
+                  <p className='text-gray-700 text-lg'>in bounce rate by identifying and fixing user experience pain points</p>
+                </div>
+
+                <div className='bg-gray-50 rounded-xl p-8'>
+                  <div className='flex items-center mb-4'>
+                    <div className='w-3 h-3 bg-brand-pink rounded-full mr-4'></div>
+                    <h3 className='text-2xl font-bold text-brand-pink'>142% improvement</h3>
+                  </div>
+                  <p className='text-gray-700 text-lg'>in conversion rates through funnel analysis and optimization strategies</p>
+                </div>
+
+                <div className='bg-gray-50 rounded-xl p-8 md:col-span-2'>
+                  <div className='flex items-center mb-4 justify-center'>
+                    <div className='w-3 h-3 bg-brand-pink rounded-full mr-4'></div>
+                    <h3 className='text-2xl font-bold text-brand-pink'>£47,000+ additional revenue</h3>
+                  </div>
+                  <p className='text-gray-700 text-lg text-center'>generated through data-driven marketing campaign optimization and customer insights</p>
                 </div>
               </div>
             </div>
@@ -272,8 +334,66 @@ export default function AnalyticsServicesPage() {
           </div>
         </section>
 
-        {/* Portfolio Section */}
+        {/* Dashboard Screenshot Section */}
         <section className='py-20 bg-white'>
+          <div className='max-w-7xl mx-auto px-4 sm:px-6 lg:px-8'>
+            <div className='text-center mb-16'>
+              <h2 className='text-3xl md:text-4xl font-bold text-gray-900 mb-4'>
+                Analytics Dashboards in Action
+              </h2>
+              <p className='text-xl text-gray-600 max-w-3xl mx-auto'>
+                See how we transform complex data into clear, actionable insights through custom analytics dashboards and reporting.
+              </p>
+            </div>
+
+            <div className='grid grid-cols-1 lg:grid-cols-2 gap-12 items-center'>
+              <div>
+                <div className='relative h-96 lg:h-[500px] rounded-lg overflow-hidden shadow-2xl'>
+                  <Image
+                    src='/images/services/screenshot-2025-08-12-analytics-report.webp'
+                    alt='Comprehensive analytics dashboard showing key performance metrics and data insights'
+                    fill
+                    className='object-cover'
+                  />
+                </div>
+              </div>
+              <div>
+                <h3 className='text-2xl md:text-3xl font-bold text-gray-900 mb-6'>
+                  Custom Analytics Reporting
+                </h3>
+                <div className='space-y-4'>
+                  <div className='flex items-start'>
+                    <div className='w-2 h-2 bg-brand-pink rounded-full mt-2 mr-4 flex-shrink-0'></div>
+                    <p className='text-gray-700'>
+                      <span className='font-semibold'>GA4 Implementation:</span> Complete setup and configuration of Google Analytics 4 with custom events and conversions
+                    </p>
+                  </div>
+                  <div className='flex items-start'>
+                    <div className='w-2 h-2 bg-brand-pink rounded-full mt-2 mr-4 flex-shrink-0'></div>
+                    <p className='text-gray-700'>
+                      <span className='font-semibold'>Adobe Analytics:</span> Advanced segmentation and custom reporting for enterprise-level insights
+                    </p>
+                  </div>
+                  <div className='flex items-start'>
+                    <div className='w-2 h-2 bg-brand-pink rounded-full mt-2 mr-4 flex-shrink-0'></div>
+                    <p className='text-gray-700'>
+                      <span className='font-semibold'>Data Visualization:</span> Interactive dashboards that make complex data easy to understand and act upon
+                    </p>
+                  </div>
+                  <div className='flex items-start'>
+                    <div className='w-2 h-2 bg-brand-pink rounded-full mt-2 mr-4 flex-shrink-0'></div>
+                    <p className='text-gray-700'>
+                      <span className='font-semibold'>Automated Reporting:</span> Regular insights delivered directly to your inbox with actionable recommendations
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        {/* Portfolio Section */}
+        <section className='py-20 bg-gray-50'>
           <div className='max-w-7xl mx-auto px-4 sm:px-6 lg:px-8'>
             <div className='text-center mb-16'>
               <h2 className='text-3xl md:text-4xl font-bold text-gray-900 mb-4'>
@@ -382,17 +502,16 @@ export default function AnalyticsServicesPage() {
         <section className='py-20 bg-brand-black text-white'>
           <div className='max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center'>
             <h2 className='text-3xl md:text-4xl font-bold mb-4'>
-              Ready to Unlock Your Data's Potential?
+              Ready to Transform Your Data into Growth?
             </h2>
             <p className='text-xl text-brand-grey mb-8 max-w-3xl mx-auto'>
-              Let's transform your data into actionable insights that drive real
-              business results and growth.
+              Get expert GA4 and Adobe Analytics implementation that delivers measurable results. Let's turn your data into your competitive advantage.
             </p>
             <Link
               href='/contact'
               className='inline-flex items-center bg-brand-pink text-white px-8 py-4 rounded-lg text-lg font-semibold hover:bg-brand-pink2 transition-colors'
             >
-              Get Started Today
+              Get Your Analytics Consultation
               <svg
                 className='ml-2 w-5 h-5'
                 fill='none'

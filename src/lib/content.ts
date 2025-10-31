@@ -10,6 +10,20 @@ export interface Service {
 export function getAllServices(): Service[] {
   return [
     {
+      id: 'hosting',
+      title: 'Website Hosting & Migration',
+      description:
+        'AWS S3 + CloudFront hosting with 80% cost reduction and 82% faster load times. Professional website migration with zero downtime.',
+      image: '/images/services/hosting-migration-card.webp',
+      href: '/services/hosting',
+      features: [
+        'AWS CloudFront Migration',
+        '80% Cost Reduction',
+        '82% Faster Load Times',
+        'Zero Downtime Migration',
+      ],
+    },
+    {
       id: 'photography',
       title: 'Photography Services',
       description:
