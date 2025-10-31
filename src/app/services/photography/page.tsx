@@ -35,76 +35,88 @@ export const metadata: Metadata = {
 };
 
 export default function PhotographyServicesPage() {
-  // Gallery images with proper categorization
+  // Gallery images with balanced mixed aspect ratios
   const galleryImages = [
-    // Local Nantwich photography samples
-    {
-      src: '/images/services/Photography/240427-_Nantwich_Stock_Photography-19.webp',
-      alt: 'Professional Nantwich market photography showcasing local commerce and community',
-      type: 'local' as const,
-      caption: 'Nantwich Market - Local commercial photography'
-    },
-    {
-      src: '/images/services/Photography/240427-_Nantwich_Stock_Photography-23.webp',
-      alt: 'Nantwich town center photography capturing local business and architecture',
-      type: 'local' as const,
-      caption: 'Nantwich Town Center - Architectural and commercial photography'
-    },
-    {
-      src: '/images/services/Photography/240421-Nantwich_Stock_Photography-49.webp',
-      alt: 'Local Nantwich street photography showing community and daily life',
-      type: 'local' as const,
-      caption: 'Nantwich Street Photography - Community documentation'
-    },
-    {
-      src: '/images/services/Photography/250331-Nantwich-4.webp',
-      alt: 'Contemporary Nantwich photography showcasing modern local business',
-      type: 'local' as const,
-      caption: 'Modern Nantwich - Contemporary local business photography'
-    },
-    {
-      src: '/images/services/Photography/250730-Nantwich_Show-79.webp',
-      alt: 'Nantwich Show event photography capturing local community celebration',
-      type: 'local' as const,
-      caption: 'Nantwich Show - Event and community photography'
-    },
-    {
-      src: '/images/services/Photography/250830-Nantwich_Food_Festival-11.webp',
-      alt: 'Nantwich Food Festival photography showcasing local culinary culture',
-      type: 'local' as const,
-      caption: 'Nantwich Food Festival - Culinary event photography'
-    },
-    // Editorial proof screenshots
+    // Editorial proof - Financial Times (special formatting)
     {
       src: '/images/services/Photography/5eb6fc44-e1a5-460d-8dea-923fd303f59d.webp',
       alt: 'Editorial proof showing published photography work for BBC, Forbes, and The Times',
-      type: 'editorial' as const,
-      caption: 'Published Editorial Work - BBC, Forbes, The Times'
+      title: 'UK vies with Germany to be European EV champion',
+      subtitle: 'Year of record sales was still below government targets',
+      caption: 'The share of EV sales in the UK hit 31 per cent in December, often a quiet month for car transactions where last-minute deliveries of EVs can inflate their market position © Vivid Brands/Alamy',
+      type: 'clipping' as const,
+    },
+    // Local Nantwich photography samples
+    {
+      src: '/images/services/Photography/240427-_Nantwich_Stock_Photography-19.webp',
+      title: 'Nantwich Market Photography',
+      alt: 'Professional Nantwich market photography showcasing local commerce and community',
+      type: 'local' as const,
+      caption: 'Local editorial-style photography for Cheshire businesses and community documentation.'
+    },
+    {
+      src: '/images/services/Photography/240427-_Nantwich_Stock_Photography-23.webp',
+      title: 'Nantwich Town Center Architecture',
+      alt: 'Nantwich town center photography capturing local business and architecture',
+      type: 'local' as const,
+      caption: 'Architectural and commercial photography showcasing local business environments.'
+    },
+    {
+      src: '/images/services/Photography/240421-Nantwich_Stock_Photography-49.webp',
+      title: 'Community Street Photography',
+      alt: 'Local Nantwich street photography showing community and daily life',
+      type: 'local' as const,
+      caption: 'Documentary-style photography capturing authentic community moments and daily life.'
+    },
+    {
+      src: '/images/services/Photography/250331-Nantwich-4.webp',
+      title: 'Modern Business Photography',
+      alt: 'Contemporary Nantwich photography showcasing modern local business',
+      type: 'local' as const,
+      caption: 'Contemporary commercial photography for modern local businesses and services.'
+    },
+    {
+      src: '/images/services/Photography/250730-Nantwich_Show-79.webp',
+      title: 'Nantwich Show Event Coverage',
+      alt: 'Nantwich Show event photography capturing local community celebration',
+      type: 'local' as const,
+      caption: 'Event photography documenting local community celebrations and cultural activities.'
+    },
+    {
+      src: '/images/services/Photography/250830-Nantwich_Food_Festival-11.webp',
+      title: 'Food Festival Documentation',
+      alt: 'Nantwich Food Festival photography showcasing local culinary culture',
+      type: 'local' as const,
+      caption: 'Culinary event photography highlighting local food culture and community gatherings.'
     },
     // Campaign work samples
     {
       src: '/images/services/Photography/photography-sample-1.webp',
+      title: 'Commercial Product Campaign',
       alt: 'Professional campaign photography sample showcasing commercial work quality',
-      type: 'clipping' as const,
-      caption: 'Commercial Campaign - Professional product photography'
+      type: 'campaign' as const,
+      caption: 'High-end commercial photography used in marketing campaigns and brand communications.'
     },
     {
       src: '/images/services/Photography/photography-sample-2.webp',
+      title: 'Creative Campaign Photography',
       alt: 'Campaign photography work demonstrating creative commercial approach',
-      type: 'clipping' as const,
-      caption: 'Creative Campaign - Commercial photography with artistic approach'
+      type: 'campaign' as const,
+      caption: 'Creative commercial photography with artistic approach for brand storytelling.'
     },
     {
       src: '/images/services/Photography/photography-sample-3.webp',
+      title: 'Technical Excellence Portfolio',
       alt: 'Professional campaign photography showing technical expertise and composition',
-      type: 'clipping' as const,
-      caption: 'Technical Excellence - Professional campaign photography'
+      type: 'campaign' as const,
+      caption: 'Technical photography demonstrating professional standards and composition expertise.'
     },
     {
       src: '/images/services/Photography/photography-sample-4.webp',
+      title: 'Professional Standards Showcase',
       alt: 'Campaign work sample highlighting professional photography standards',
-      type: 'clipping' as const,
-      caption: 'Professional Standards - High-quality campaign photography'
+      type: 'campaign' as const,
+      caption: 'Professional campaign photography meeting industry standards for commercial use.'
     }
   ];
 

@@ -45,6 +45,30 @@
     object-fit: contain;
   }
   
+  /* Financial Times editorial card styling */
+  .bg-ft-beige {
+    background-color: #f6e9dc; /* Financial Times beige */
+  }
+  
+  .font-serif {
+    font-family: 'Georgia', 'Times New Roman', serif;
+  }
+  
+  /* Text truncation utilities for balanced grid */
+  .line-clamp-2 {
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+  }
+  
+  .line-clamp-3 {
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+  }
+  
   @media (max-width: 400px) {
     .site-logo {
       height: 38px;
