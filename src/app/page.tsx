@@ -4,32 +4,34 @@ import Image from 'next/image';
 import Link from 'next/link';
 import { getAllBlogPosts } from '@/lib/blog-api';
 import { TestimonialsCarousel } from '@/components/sections/TestimonialsCarousel';
+import HeroWithCharts from '@/components/HeroWithCharts';
 
 export const metadata: Metadata = {
-  title: 'Data-Driven Automotive Photography That Delivers | Nantwich & Cheshire',
+  title: 'Vivid Media Cheshire — Faster, Smarter Websites That Work as Hard as You Do',
   description:
-    'More than photography. Data-driven automotive photography services helping businesses in Nantwich & Cheshire grow through professional automotive photography, comprehensive analytics, and strategic advertising campaigns that deliver measurable results.',
+    'Affordable mobile-first web design, secure hosting, and Google Ads campaigns that turn visitors into customers in Cheshire.',
   keywords: [
-    'automotive photography Nantwich',
-    'car photography Cheshire', 
-    'data-driven photography',
-    'automotive analytics',
-    'vehicle photography services',
-    'car dealership photography',
-    'automotive advertising campaigns',
-    'professional car photography UK',
-    'automotive marketing photography',
-    'vehicle showcase photography'
+    'AWS website hosting Cheshire',
+    'AWS CloudFront migration',
+    'mobile-first web design',
+    'Google Ads campaigns Cheshire',
+    'digital marketing Nantwich',
+    'website performance optimisation',
+    'cheaper website hosting UK',
+    'data-driven marketing Cheshire',
+    'creative web design Cheshire',
+    'Vivid Media Cheshire',
   ],
   openGraph: {
-    title: 'Data-Driven Automotive Photography That Delivers | Nantwich & Cheshire',
-    description: 'More than photography. Data-driven automotive photography services helping businesses in Nantwich & Cheshire grow through professional automotive photography and strategic campaigns.',
+    title: 'Vivid Media Cheshire — Faster, Smarter Websites That Work as Hard as You Do',
+    description:
+      'Affordable mobile-first web design, secure hosting, and Google Ads campaigns that turn visitors into customers in Cheshire.',
     images: [
       {
-        url: '/images/hero/aston-martin-db6-website.webp',
+        url: '/images/hero/230422_Chester_Stock_Photography-84.webp',
         width: 1200,
         height: 630,
-        alt: 'Professional automotive photography showcase - Aston Martin DB6 captured with expert lighting and composition in Nantwich, Cheshire',
+        alt: 'Vivid Media Cheshire — premium creative craftsmanship with cloud performance results',
       },
     ],
   },
@@ -40,61 +42,26 @@ export default async function HomePage() {
   const latestPosts = blogPosts.slice(0, 3);
 
   // Map each blog slug to its hero image path
-const cardCovers: Record<string, string> = {
-  'paid-ads-campaign-learnings': '/images/hero/google-ads-analytics-dashboard.webp',
-  'flyers-roi-breakdown': '/images/hero/whatsapp-image-2025-07-11-flyers-roi.webp',
-  'stock-photography-lessons': '/images/hero/240619-london-19.webp',
-};
+  const cardCovers: Record<string, string> = {
+    'paid-ads-campaign-learnings': '/images/hero/google-ads-analytics-dashboard.webp',
+    'flyers-roi-breakdown': '/images/hero/whatsapp-image-2025-07-11-flyers-roi.webp',
+    'stock-photography-lessons': '/images/hero/240619-london-19.webp',
+    'exploring-istock-data-deepmeta': '/images/hero/screenshot-2025-09-23-analytics-dashboard.webp',
+  };
 
   return (
     <Layout>
       <div className='min-h-screen bg-white'>
-        {/* Hero Section */}
-        <section className="relative bg-brand-black text-white py-28 md:py-40 overflow-hidden">
-  {/* Background image + dark gradient overlay */}
-  <div className="absolute inset-0">
-    <Image
-      src="/images/hero/aston-martin-db6-website.webp"
-      alt="Professional automotive photography showcase - Aston Martin DB6 captured with expert lighting and composition in Nantwich, Cheshire"
-      fill
-      className="object-cover"
-      priority
-      sizes="100vw"
-    />
-    <div className="absolute inset-0 bg-gradient-to-b from-black/60 via-black/45 to-black/25" />
-  </div>
-          <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div className="relative z-10 grid grid-cols-1 place-items-center text-center gap-6 min-h-[70vh]">
-              <div className="text-center">
-                <h1 className="text-4xl md:text-5xl lg:text-6xl font-extrabold leading-tight mb-6 text-white">
-                  More than Photography.{' '}
-                  <span className="">Data-Driven Vivid Auto Photography that Delivers!</span>
-                </h1>
-                <p className="text-lg md:text-2xl mb-8 leading-relaxed text-white/90 font-normal">
-                  Helping businesses in Nantwich & Cheshire grow through
-                  professional automotive photography, comprehensive analytics,
-                  and strategic advertising campaigns that deliver measurable
-                  results.
-                </p>
+        {/* Hero Section with Charts */}
+        <HeroWithCharts
+          heroSrc="/images/hero/230422_Chester_Stock_Photography-84.webp"
+          wixAnnual={550}
+          awsAnnual={108.4}
+          breakdown={{ aws: 60, cloudflare: 10, zoho: 38.4 }}
+          lcpSeries={[14.2, 7.8, 2.3, 1.8]}
+        />
 
-                <div className="flex flex-col sm:flex-row gap-4 justify-center">
-                  <Link
-                    href='/contact/'
-                    className='bg-brand-pink text-white px-8 py-4 rounded-lg text-lg font-semibold hover:bg-brand-pink2 transition-colors text-center'
-                  >
-                    Get Started
-                  </Link>
-                  <Link
-                    href='/services/'
-                    className='border-2 border-white text-white px-8 py-4 rounded-lg text-lg font-semibold hover:bg-white hover:text-brand-black transition-colors text-center'
-                  >
-                    View Services
-                  </Link>
-                </div>
-              </div>
-            </div>
-          </div>
-        </section>
+
 
         {/* Services Section */}
         <section className='py-20 bg-gray-50'>
@@ -104,86 +71,39 @@ const cardCovers: Record<string, string> = {
                 My Services
               </h2>
               <p className='text-xl text-gray-600 max-w-3xl mx-auto'>
-                Comprehensive solutions designed to elevate your business with
-                professional photography, data-driven insights, and strategic
-                advertising campaigns.
+                Vivid Media Cheshire helps local businesses grow with fast, secure websites, smart advertising, and visuals that tell your story. Each project combines enterprise-level hosting, data-driven design, and photography that delivers real results.
               </p>
             </div>
 
-            <div className='grid grid-cols-1 md:grid-cols-3 gap-8'>
-              {/* Photography Services */}
+            <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8'>
+              {/* Website Hosting & Migration */}
               <div className='group bg-white rounded-xl shadow-lg overflow-hidden hover:shadow-xl transition-shadow'>
                 <div className='relative h-64'>
                   <Image
-                    src='/images/services/photography-hero.webp'
-                    alt='Professional photography services - automotive and commercial photography showcase'
+                    src='/images/services/hosting-migration-card.webp'
+                    alt='AWS website hosting and migration services - 80% cost reduction and 82% faster load times'
                     fill
                     className='object-cover group-hover:scale-105 transition-transform duration-300'
-                    sizes='(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw'
+                    sizes='(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 25vw'
                   />
                   <div className='absolute inset-0 bg-black/60'></div>
                   <div className='absolute bottom-4 left-4 text-white'>
                     <h3 className='text-xl font-bold mb-2'>
-                      Photography Services
+                      Website Hosting & Migration
                     </h3>
                   </div>
                 </div>
                 <div className='p-6'>
                   <p className='text-gray-600 mb-4'>
-                    Professional automotive and commercial photography with
-                    mobile-optimized delivery and stunning visual storytelling.
+                    AWS S3 + CloudFront hosting with 80% cost reduction and 82%
+                    faster load times. Professional website migration with zero downtime.
                   </p>
                   <Link
-                    href='/services/photography'
+                    href='/services/hosting'
                     className='inline-flex items-center text-brand-pink hover:text-brand-pink2 font-medium'
-                    aria-label='Learn more about professional photography services'
+                    aria-label='Learn more about AWS website hosting and migration services'
                   >
-                    Learn More
-                    <svg
-                      className='ml-2 w-4 h-4'
-                      fill='none'
-                      stroke='currentColor'
-                      viewBox='0 0 24 24'
-                    >
-                      <path
-                        strokeLinecap='round'
-                        strokeLinejoin='round'
-                        strokeWidth={2}
-                        d='M9 5l7 7-7 7'
-                      />
-                    </svg>
-                  </Link>
-                </div>
-              </div>
-
-              {/* Data Analytics & Insights */}
-              <div className='group bg-white rounded-xl shadow-lg overflow-hidden hover:shadow-xl transition-shadow'>
-                <div className='relative h-64'>
-                  <Image
-                    src='/images/services/screenshot-2025-09-23-analytics-dashboard.webp'
-                    alt='Data analytics and insights dashboard - comprehensive analytics reporting and business intelligence'
-                    fill
-                    className='object-cover group-hover:scale-105 transition-transform duration-300'
-                    sizes='(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw'
-                  />
-                  <div className='absolute inset-0 bg-black/60'></div>
-                  <div className='absolute bottom-4 left-4 text-white'>
-                    <h3 className='text-xl font-bold mb-2'>
-                      Data Analytics & Insights
-                    </h3>
-                  </div>
-                </div>
-                <div className='p-6'>
-                  <p className='text-gray-600 mb-4'>
-                    Comprehensive analytics and data-driven insights to optimize
-                    your business performance and drive growth.
-                  </p>
-                  <Link
-                    href='/services/analytics'
-                    className='inline-flex items-center text-brand-pink hover:text-brand-pink2 font-medium'
-                    aria-label='Learn more about data analytics and business insights services'
-                  >
-                    Learn More
+                    View Hosting Services
                     <svg
                       className='ml-2 w-4 h-4'
                       fill='none'
@@ -209,7 +129,7 @@ const cardCovers: Record<string, string> = {
                     alt='Strategic ad campaigns - targeted advertising and marketing campaign management'
                     fill
                     className='object-cover group-hover:scale-105 transition-transform duration-300'
-                    sizes='(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw'
+                    sizes='(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 25vw'
                   />
                   <div className='absolute inset-0 bg-black/60'></div>
                   <div className='absolute bottom-4 left-4 text-white'>
@@ -228,7 +148,97 @@ const cardCovers: Record<string, string> = {
                     className='inline-flex items-center text-brand-pink hover:text-brand-pink2 font-medium'
                     aria-label='Learn more about strategic advertising campaigns and ROI optimization'
                   >
-                    Learn More
+                    View Ad Campaign Services
+                    <svg
+                      className='ml-2 w-4 h-4'
+                      fill='none'
+                      stroke='currentColor'
+                      viewBox='0 0 24 24'
+                    >
+                      <path
+                        strokeLinecap='round'
+                        strokeLinejoin='round'
+                        strokeWidth={2}
+                        d='M9 5l7 7-7 7'
+                      />
+                    </svg>
+                  </Link>
+                </div>
+              </div>
+
+              {/* Data Analytics & Insights */}
+              <div className='group bg-white rounded-xl shadow-lg overflow-hidden hover:shadow-xl transition-shadow'>
+                <div className='relative h-64'>
+                  <Image
+                    src='/images/services/screenshot-2025-09-23-analytics-dashboard.webp'
+                    alt='Data analytics and insights dashboard - comprehensive analytics reporting and business intelligence'
+                    fill
+                    className='object-cover group-hover:scale-105 transition-transform duration-300'
+                    sizes='(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 25vw'
+                  />
+                  <div className='absolute inset-0 bg-black/60'></div>
+                  <div className='absolute bottom-4 left-4 text-white'>
+                    <h3 className='text-xl font-bold mb-2'>
+                      Data Analytics & Insights
+                    </h3>
+                  </div>
+                </div>
+                <div className='p-6'>
+                  <p className='text-gray-600 mb-4'>
+                    Comprehensive analytics and data-driven insights to optimize
+                    your business performance and drive growth.
+                  </p>
+                  <Link
+                    href='/services/analytics'
+                    className='inline-flex items-center text-brand-pink hover:text-brand-pink2 font-medium'
+                    aria-label='Learn more about data analytics and business insights services'
+                  >
+                    View Analytics Services
+                    <svg
+                      className='ml-2 w-4 h-4'
+                      fill='none'
+                      stroke='currentColor'
+                      viewBox='0 0 24 24'
+                    >
+                      <path
+                        strokeLinecap='round'
+                        strokeLinejoin='round'
+                        strokeWidth={2}
+                        d='M9 5l7 7-7 7'
+                      />
+                    </svg>
+                  </Link>
+                </div>
+              </div>
+
+              {/* Photography Services */}
+              <div className='group bg-white rounded-xl shadow-lg overflow-hidden hover:shadow-xl transition-shadow'>
+                <div className='relative h-64'>
+                  <Image
+                    src='/images/services/photography-hero.webp'
+                    alt='Professional photography services - automotive and commercial photography showcase'
+                    fill
+                    className='object-cover group-hover:scale-105 transition-transform duration-300'
+                    sizes='(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 25vw'
+                  />
+                  <div className='absolute inset-0 bg-black/60'></div>
+                  <div className='absolute bottom-4 left-4 text-white'>
+                    <h3 className='text-xl font-bold mb-2'>
+                      Photography Services
+                    </h3>
+                  </div>
+                </div>
+                <div className='p-6'>
+                  <p className='text-gray-600 mb-4'>
+                    Professional automotive and commercial photography with
+                    mobile-optimized delivery and stunning visual storytelling.
+                  </p>
+                  <Link
+                    href='/services/photography'
+                    className='inline-flex items-center text-brand-pink hover:text-brand-pink2 font-medium'
+                    aria-label='Learn more about professional photography services'
+                  >
+                    View Photography Services
                     <svg
                       className='ml-2 w-4 h-4'
                       fill='none'
@@ -249,16 +259,15 @@ const cardCovers: Record<string, string> = {
           </div>
         </section>
 
-        {/* Latest Insights Section */}
+        {/* Case Studies Section */}
         <section className='py-20 bg-white'>
           <div className='max-w-7xl mx-auto px-4 sm:px-6 lg:px-8'>
             <div className='text-center mb-16'>
               <h2 className='text-3xl md:text-4xl font-bold text-gray-900 mb-4'>
-                Latest Insights
+                My Case Studies
               </h2>
               <p className='text-xl text-gray-600 max-w-3xl mx-auto'>
-                Stay updated with my latest insights, tips, and industry
-                knowledge to help grow your business.
+                Explore real results from my projects, including how I achieved a 2,380% ROI with flyers, analysed iStock earnings data, and what I learned from running my first Paid Ads campaign.
               </p>
             </div>
 
@@ -270,7 +279,7 @@ const cardCovers: Record<string, string> = {
                 >
                   <div className='relative h-48 sm:h-52 bg-gray-50 overflow-hidden'>
                     <Image
-                      src={cardCovers[post.slug] || post.image || '/images/hero/aston-martin-db6-website.webp'}
+                      src={cardCovers[post.slug] || post.image || '/images/hero/230422_Chester_Stock_Photography-84.webp'}
                       alt={`${post.title} - Blog post cover image`}
                       fill
                       className='object-cover group-hover:scale-105 transition-transform duration-300'
@@ -302,9 +311,9 @@ const cardCovers: Record<string, string> = {
                       <Link
                         href={`/blog/${post.slug}`}
                         className='inline-flex items-center text-brand-pink hover:text-brand-pink2 font-medium'
-                        aria-label={`Read full article: ${post.title}`}
+                        aria-label={`Read the article: ${post.title}`}
                       >
-                        Read More
+                        Read Article
                         <svg
                           className='ml-2 w-4 h-4'
                           fill='none'

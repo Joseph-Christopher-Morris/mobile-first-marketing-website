@@ -4,7 +4,7 @@ position: 'Lead Strategist for Digital Growth & SEO'
 company: 'SciMed'
 avatar: '/images/testimonials/lee-murfitt.jpg'
 content: >
-  "A huge thank you! Joe Morris is a fantastic photographer from Cheshire who
+  "A huge thank you! Joe Morris is an amazing photographer from Cheshire who
   has been providing us with amazing images of our cars for over 18 months at
   LSH Auto UK!"
 rating: 5

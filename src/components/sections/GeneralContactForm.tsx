@@ -32,17 +32,17 @@ export function GeneralContactForm() {
     const newErrors: FormErrors = {};
 
     if (!formData.fullName.trim()) {
-      newErrors.fullName = 'Full Name is required';
+      newErrors.fullName = 'Please enter your full name';
     }
 
     if (!formData.email.trim()) {
-      newErrors.email = 'Email Address is required';
+      newErrors.email = 'Please enter your email address';
     } else if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(formData.email)) {
-      newErrors.email = 'Please enter a valid email address';
+      newErrors.email = 'Please enter a valid email address (e.g., name@example.com)';
     }
 
     if (!formData.message.trim()) {
-      newErrors.message = 'Message is required';
+      newErrors.message = 'Please tell us about your project or how we can help';
     }
 
     setErrors(newErrors);
@@ -79,20 +79,40 @@ export function GeneralContactForm() {
     setIsSubmitting(true);
 
     try {
-      // Simulate form submission
-      await new Promise(resolve => setTimeout(resolve, 1000));
-
-      setIsSubmitted(true);
-      setFormData({
-        fullName: '',
-        email: '',
-        phone: '',
-        serviceInterest: '',
-        message: '',
+      // Submit to Formspree
+      const response = await fetch('https://formspree.io/f/xvgvkbjb', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({
+          name: formData.fullName,
+          email: formData.email,
+          phone: formData.phone,
+          service: formData.serviceInterest,
+          message: formData.message,
+          _subject: 'New enquiry from Vivid Media Cheshire',
+          _replyto: formData.email,
+        }),
       });
-      setErrors({});
+
+      if (response.ok) {
+        setIsSubmitted(true);
+        setFormData({
+          fullName: '',
+          email: '',
+          phone: '',
+          serviceInterest: '',
+          message: '',
+        });
+        setErrors({});
+      } else {
+        throw new Error('Form submission failed');
+      }
     } catch (error) {
       console.error('Form submission error:', error);
+      // You could add error state handling here
+      alert('There was an error sending your message. Please try again or contact us directly at joe@vividauto.photography');
     } finally {
       setIsSubmitting(false);
     }
@@ -136,7 +156,7 @@ export function GeneralContactForm() {
   return (
     <div className='bg-white rounded-xl shadow-lg p-6 md:p-8'>
       <h2 className='text-2xl font-bold text-gray-900 mb-6'>Get in Touch</h2>
-      <form onSubmit={handleSubmit} className='space-y-6'>
+      <form onSubmit={handleSubmit} className='space-y-6' method="POST" action="https://formspree.io/f/xvgvkbjb">
         <div className='grid grid-cols-1 md:grid-cols-2 gap-6'>
           <div>
             <label
@@ -235,9 +255,10 @@ export function GeneralContactForm() {
               className='w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-brand-pink focus:border-transparent transition-colors'
             >
               <option value=''>Select a service</option>
-              <option value='photography'>Photography Services</option>
-              <option value='analytics'>Data Analytics & Insights</option>
+              <option value='hosting'>Website Hosting & Migration</option>
               <option value='ad-campaigns'>Strategic Ad Campaigns</option>
+              <option value='analytics'>Data Analytics & Insights</option>
+              <option value='photography'>Photography Services</option>
               <option value='consultation'>General Consultation</option>
             </select>
           </div>

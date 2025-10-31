@@ -5,24 +5,50 @@
 @layer base {
   html {
     scroll-behavior: smooth;
+    -webkit-text-size-adjust: 100%;
+    text-size-adjust: 100%;
   }
   
   body {
     @apply text-gray-900 bg-white;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+  
+  /* Mobile performance optimizations */
+  * {
+    -webkit-tap-highlight-color: transparent;
+  }
+  
+  img, video {
+    height: auto;
+    max-width: 100%;
   }
 }
 
 @layer components {
   .nav-link-brand {
-    @apply hover:text-blue-600 transition-colors;
+    @apply hover:text-brand-pink transition-colors;
   }
   
   .btn-primary {
-    @apply bg-blue-600 text-white px-6 py-3 rounded-lg font-medium hover:bg-blue-700 transition-colors focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2;
+    @apply bg-brand-pink text-white px-6 py-3 rounded-lg font-medium hover:bg-brand-pink2 transition-colors focus:outline-none focus:ring-2 focus:ring-brand-pink focus:ring-offset-2;
   }
   
   .btn-secondary {
-    @apply bg-white text-blue-600 border-2 border-blue-600 px-6 py-3 rounded-lg font-medium hover:bg-blue-600 hover:text-white transition-colors focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2;
+    @apply bg-white text-brand-pink border-2 border-brand-pink px-6 py-3 rounded-lg font-medium hover:bg-brand-pink hover:text-white transition-colors focus:outline-none focus:ring-2 focus:ring-brand-pink focus:ring-offset-2;
+  }
+  
+  .site-logo {
+    height: 44px;
+    width: auto;
+    object-fit: contain;
+  }
+  
+  @media (max-width: 400px) {
+    .site-logo {
+      height: 38px;
+    }
   }
 }
 

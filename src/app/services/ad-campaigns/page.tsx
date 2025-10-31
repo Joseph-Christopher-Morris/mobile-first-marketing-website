@@ -2,6 +2,12 @@ import { Metadata } from 'next';
 import { Layout } from '@/components/layout';
 import Image from 'next/image';
 import Link from 'next/link';
+import { 
+  RevenueOutcomeCard, 
+  ConversionOutcomeCard, 
+  LeadsOutcomeCard, 
+  ROIOutcomeCard 
+} from '@/components/services/OutcomeCard';
 
 export const metadata: Metadata = {
   title: 'Strategic Automotive Advertising Campaigns | Maximize ROI & Reach',
@@ -382,68 +388,45 @@ export default function AdCampaignsServicesPage() {
           </div>
         </section>
 
-        {/* Results Section */}
+        {/* ROI Case Study Results Section */}
         <section className='py-20 bg-white'>
           <div className='max-w-7xl mx-auto px-4 sm:px-6 lg:px-8'>
             <div className='text-center mb-16'>
               <h2 className='text-3xl md:text-4xl font-bold text-gray-900 mb-4'>
-                Proven Results
+                ROI Case Study Results
               </h2>
               <p className='text-xl text-gray-600 max-w-3xl mx-auto'>
-                Our strategic approach delivers measurable results that drive
-                business growth and success.
+                Real outcomes from our strategic advertising campaigns, demonstrating
+                measurable ROI and business growth for our clients.
               </p>
             </div>
 
-            <div className='grid grid-cols-1 md:grid-cols-4 gap-8'>
-              <div className='text-center'>
-                <div className='text-4xl font-bold text-brand-pink mb-2'>
-                  2,470%
-                </div>
-                <div className='text-lg font-semibold text-gray-900 mb-2'>
-                  Average ROI
-                </div>
-                <p className='text-gray-600'>
-                  Exceptional return on advertising investment across all
-                  campaigns
-                </p>
-              </div>
-
-              <div className='text-center'>
-                <div className='text-4xl font-bold text-brand-pink mb-2'>
-                  £13.5K
-                </div>
-                <div className='text-lg font-semibold text-gray-900 mb-2'>
-                  Revenue Generated
-                </div>
-                <p className='text-gray-600'>
-                  From £546 initial investment in strategic campaigns
-                </p>
-              </div>
-
-              <div className='text-center'>
-                <div className='text-4xl font-bold text-brand-pink mb-2'>
-                  85%
-                </div>
-                <div className='text-lg font-semibold text-gray-900 mb-2'>
-                  Conversion Rate
-                </div>
-                <p className='text-gray-600'>
-                  Above industry average conversion rates across platforms
-                </p>
-              </div>
-
-              <div className='text-center'>
-                <div className='text-4xl font-bold text-brand-pink mb-2'>
-                  4 Years
-                </div>
-                <div className='text-lg font-semibold text-gray-900 mb-2'>
-                  Sustained Growth
-                </div>
-                <p className='text-gray-600'>
-                  Consistent year-over-year campaign performance improvement
-                </p>
-              </div>
+            <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8'>
+              <RevenueOutcomeCard
+                revenue="£13.5k"
+                investment="£546"
+                description="Exceptional revenue generation from strategic campaign investment, delivering 2,470% ROI"
+                className="h-full"
+              />
+              
+              <ConversionOutcomeCard
+                rate="85%"
+                description="Above industry average conversion rates achieved through targeted audience segmentation and optimized ad creative"
+                className="h-full"
+              />
+              
+              <LeadsOutcomeCard
+                count="4"
+                source="NYCC"
+                description="High-quality leads generated for North Yorkshire County Council campaigns through strategic targeting"
+                className="h-full"
+              />
+              
+              <ROIOutcomeCard
+                percentage="2,470%"
+                description="Average return on investment across all strategic advertising campaigns, demonstrating exceptional performance"
+                className="h-full"
+              />
             </div>
           </div>
         </section>

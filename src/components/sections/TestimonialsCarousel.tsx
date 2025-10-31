@@ -18,7 +18,7 @@ const testimonials: Testimonial[] = [
   {
     id: 'lee',
     quote:
-      'A huge thank you! Joe Morris is a Fantastic photographer from Cheshire who has been providing us with amazing images of our cars for over 18 months at LSH Auto UK!',
+      'A huge thank you! Joe Morris is an excellent photographer from Cheshire who has been providing us with amazing images of our cars for over 18 months at LSH Auto UK!',
     author: 'Lee Murfitt',
     role: 'Lead Strategist for Digital Growth & SEO',
     company: 'SciMed',
@@ -132,7 +132,7 @@ export function TestimonialsCarousel({
           id='testimonials-heading'
           className='text-2xl sm:text-3xl md:text-4xl font-bold text-brand-black mb-6 sm:mb-8 text-center'
         >
-          What Our Clients Say
+          What My Clients Say
         </h2>
 
         <div

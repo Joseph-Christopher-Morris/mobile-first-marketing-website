@@ -1,49 +1,81 @@
 import type { Metadata } from "next";
-import Image from "next/image";
 import Link from "next/link";
 import { Layout } from "@/components/layout";
+import { ServiceCard } from "@/components/services/ServiceCard";
 
 export const metadata: Metadata = {
   title:
-    "Automotive Photography, Analytics, and Ad Campaigns in Nantwich, Cheshire | Vivid Auto Photography",
+    "Website Design, Development & Digital Marketing in Nantwich and Cheshire | Professional Services",
   description:
-    "Professional automotive photography, media production, analytics, and ROI-focused ad campaigns for businesses in Nantwich and Cheshire. Data-driven services that grow dealerships, workshops, and local brands.",
+    "Professional website design, development, hosting migration, photography, data analytics, and strategic ad campaigns for businesses in Nantwich and Cheshire. Comprehensive digital marketing services that drive results.",
   keywords: [
-    "automotive photography Nantwich",
-    "car photography Cheshire",
-    "automotive media production",
-    "marketing analytics Nantwich",
+    "website design Nantwich",
+    "web development Cheshire",
+    "website hosting migration",
+    "photography services Nantwich",
     "data analytics Cheshire",
-    "automotive marketing tech",
-    "ad campaigns Nantwich",
-    "car dealership photography UK",
+    "digital marketing Nantwich",
+    "ad campaigns Cheshire",
+    "professional services UK",
   ],
   alternates: { canonical: "/services" },
   openGraph: {
     title:
-      "Automotive Photography, Analytics, and Ad Campaigns in Nantwich, Cheshire",
+      "Website Design, Development & Digital Marketing in Nantwich and Cheshire",
     description:
-      "Data-driven automotive media and marketing services for Cheshire businesses.",
+      "Comprehensive digital marketing and web services for Cheshire businesses.",
     url: "/services",
     images: [
       {
-        url: "/images/hero/aston-martin-db6-website.webp",
+        url: "/images/services/hosting-migration-card.webp",
         width: 1200,
         height: 630,
-        alt: "Automotive photography in Nantwich, Cheshire",
+        alt: "Professional digital marketing services in Nantwich, Cheshire",
       },
     ],
   },
 };
 
 export default function ServicesPage() {
+  // Service data for the cards
+  const services = [
+    {
+      title: "Website Hosting & Migration",
+      description: "Professional website hosting migration with 80% cost savings and 82% faster load times. Secure AWS S3 + CloudFront architecture with zero downtime deployment.",
+      href: "/services/hosting",
+      thumbnail: "/images/services/hosting-migration-card.webp",
+      alt: "Website hosting and migration services showing cost savings and performance improvements"
+    },
+    {
+      title: "Photography Services",
+      description: "Professional photography for businesses, events, and editorial work. Published in major publications including BBC, Forbes, and The Times.",
+      href: "/services/photography",
+      thumbnail: "/images/services/photography-hero.webp",
+      alt: "Professional photography services with published editorial work examples"
+    },
+    {
+      title: "Data Analytics & Insights",
+      description: "GA4 and Adobe-level analytics expertise with custom dashboards and reporting. Transform your data into actionable business insights.",
+      href: "/services/analytics",
+      thumbnail: "/images/services/analytics-hero.webp",
+      alt: "Data analytics dashboard showing business insights and performance metrics"
+    },
+    {
+      title: "Strategic Ad Campaigns",
+      description: "ROI-focused advertising campaigns with proven results. Case studies show £13.5k revenue from £546 investment with 85% conversion rates.",
+      href: "/services/ad-campaigns",
+      thumbnail: "/images/services/ad-campaigns-hero.webp",
+      alt: "Strategic advertising campaigns with ROI case studies and performance metrics"
+    }
+  ];
+
   // JSON-LD schema (LocalBusiness + FAQ)
   const schema = {
     "@context": "https://schema.org",
     "@type": "LocalBusiness",
-    name: "Vivid Auto Photography",
-    image: "/images/hero/aston-martin-db6-website.webp",
-    url: "https://vividauto.photography/services",
+    name: "Professional Digital Marketing Services",
+    image: "/images/services/hosting-migration-card.webp",
+    url: "https://example.com/services",
     telephone: "+44 07586 378502",
     address: {
       "@type": "PostalAddress",
@@ -55,21 +87,27 @@ export default function ServicesPage() {
     makesOffer: [
       {
         "@type": "Service",
-        name: "Automotive Photography",
+        name: "Website Hosting & Migration",
         areaServed: "Cheshire",
-        serviceType: "Commercial photography for cars and vehicles",
+        serviceType: "Professional website hosting and migration services",
       },
       {
         "@type": "Service",
-        name: "Marketing Analytics",
+        name: "Photography Services",
         areaServed: "Cheshire",
-        serviceType: "Analytics, dashboards, and reporting",
+        serviceType: "Professional photography for businesses and editorial work",
       },
       {
         "@type": "Service",
-        name: "Ad Campaign Management",
+        name: "Data Analytics",
         areaServed: "Cheshire",
-        serviceType: "Paid media planning and optimisation",
+        serviceType: "Analytics, dashboards, and business intelligence",
+      },
+      {
+        "@type": "Service",
+        name: "Strategic Ad Campaigns",
+        areaServed: "Cheshire",
+        serviceType: "ROI-focused advertising and campaign management",
       },
     ],
     "@graph": [
@@ -82,7 +120,7 @@ export default function ServicesPage() {
             acceptedAnswer: {
               "@type": "Answer",
               text:
-                "Yes. We work across Cheshire and the North West, including Crewe, Chester, and Stoke-on-Trent.",
+                "Yes. I work across Cheshire and the North West, including Crewe, Chester, and Stoke-on-Trent.",
             },
           },
           {
@@ -92,17 +130,17 @@ export default function ServicesPage() {
             acceptedAnswer: {
               "@type": "Answer",
               text:
-                "Yes. We set up tracking, dashboards, and clear reports that show ROI and key actions.",
+                "Yes. I set up tracking, dashboards, and clear reports that show ROI and key actions.",
             },
           },
           {
             "@type": "Question",
             name:
-              "Do you photograph cars for dealerships and private sellers?",
+              "What types of photography services do you offer?",
             acceptedAnswer: {
               "@type": "Answer",
               text:
-                "Yes. We shoot for dealerships, restorers, and private sellers, with mobile-optimised delivery.",
+                "I offer professional photography for businesses, events, and editorial work, with published examples in major publications.",
             },
           },
         ],
@@ -122,217 +160,108 @@ export default function ServicesPage() {
 
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           {/* Header */}
-          <header className="text-center mb-12">
-            <h1 className="text-4xl md:text-5xl font-extrabold text-gray-900">
-              Automotive Services in Nantwich, Cheshire
+          <header className="text-center mb-16">
+            <h1 className="text-4xl md:text-5xl lg:text-6xl font-extrabold text-gray-900 leading-tight">
+              Website Design, Development & Digital Marketing in Nantwich and Cheshire
             </h1>
-            <p className="mt-4 text-xl text-gray-600 max-w-3xl mx-auto">
-              We help Cheshire businesses grow with professional automotive
-              media, data analytics, and ROI-focused ad campaigns. Browse our
-              core services below and see how we improve visibility and
-              conversions.
+            <p className="mt-6 text-xl text-gray-600 max-w-4xl mx-auto leading-relaxed">
+              Professional digital marketing services that drive real results for businesses across Cheshire. 
+              From website hosting and development to photography, analytics, and strategic advertising campaigns.
             </p>
           </header>
 
           {/* Service cards */}
-          <section className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            {/* Photography */}
-            <Link
-              href="/services/photography"
-              className="group bg-white rounded-2xl shadow-lg ring-1 ring-black/5 overflow-hidden hover:shadow-xl transition"
-            >
-              <div className="relative h-56">
-                <Image
-                  src="/images/services/photography-hero.webp"
-                  alt="Automotive photography in Nantwich, Cheshire for dealerships and restorers"
-                  fill
-                  className="object-cover group-hover:scale-105 transition-transform duration-300"
-                  sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+          <section className="mb-20">
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-6xl mx-auto">
+              {services.map((service, index) => (
+                <ServiceCard
+                  key={index}
+                  title={service.title}
+                  description={service.description}
+                  href={service.href}
+                  thumbnail={service.thumbnail}
+                  alt={service.alt}
                 />
-                <div className="absolute inset-0 bg-black/55" />
-                <h2 className="absolute bottom-4 left-5 text-white text-2xl font-bold">
-                  Automotive Photography
-                </h2>
-              </div>
-              <div className="p-6">
-                <p className="text-gray-600">
-                  High quality car photography for Cheshire dealerships,
-                  auctions, and private sellers. Clean lighting, panel-true
-                  angles, and mobile-ready delivery that increases enquiries.
-                </p>
-                <span className="mt-5 inline-flex items-center text-brand-pink hover:text-brand-pink2 font-semibold">
-                  Learn More
-                  <svg
-                    className="ml-2 w-4 h-4"
-                    viewBox="0 0 24 24"
-                    fill="none"
-                    stroke="currentColor"
-                  >
-                    <path
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                      strokeWidth={2}
-                      d="M9 5l7 7-7 7"
-                    />
-                  </svg>
-                </span>
-              </div>
-            </Link>
-
-            {/* Analytics */}
-            <Link
-              href="/services/analytics"
-              className="group bg-white rounded-2xl shadow-lg ring-1 ring-black/5 overflow-hidden hover:shadow-xl transition"
-            >
-              <div className="relative h-56">
-                <Image
-                  src="/images/services/screenshot-2025-09-23-analytics-dashboard.webp"
-                  alt="Marketing analytics and dashboards for Nantwich and Cheshire businesses"
-                  fill
-                  className="object-cover group-hover:scale-105 transition-transform duration-300"
-                  sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
-                />
-                <div className="absolute inset-0 bg-black/55" />
-                <h2 className="absolute bottom-4 left-5 text-white text-2xl font-bold">
-                  Data Analytics and Reporting
-                </h2>
-              </div>
-              <div className="p-6">
-                <p className="text-gray-600">
-                  We implement tracking, build dashboards, and translate data
-                  into actions. Get clear reports on campaign performance and
-                  website behaviour so you can invest with confidence.
-                </p>
-                <span className="mt-5 inline-flex items-center text-brand-pink hover:text-brand-pink2 font-semibold">
-                  Learn More
-                  <svg
-                    className="ml-2 w-4 h-4"
-                    viewBox="0 0 24 24"
-                    fill="none"
-                    stroke="currentColor"
-                  >
-                    <path
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                      strokeWidth={2}
-                      d="M9 5l7 7-7 7"
-                    />
-                  </svg>
-                </span>
-              </div>
-            </Link>
-
-            {/* Ad Campaigns */}
-            <Link
-              href="/services/ad-campaigns"
-              className="group bg-white rounded-2xl shadow-lg ring-1 ring-black/5 overflow-hidden hover:shadow-xl transition"
-            >
-              <div className="relative h-56">
-                <Image
-                  src="/images/services/ad-campaigns-hero.webp"
-                  alt="Paid media and ad campaign management for Cheshire automotive brands"
-                  fill
-                  className="object-cover group-hover:scale-105 transition-transform duration-300"
-                  sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
-                />
-                <div className="absolute inset-0 bg-black/55" />
-                <h2 className="absolute bottom-4 left-5 text-white text-2xl font-bold">
-                  Paid Media and Ad Campaigns
-                </h2>
-              </div>
-              <div className="p-6">
-                <p className="text-gray-600">
-                  Search and social campaigns that reach buyers near Nantwich
-                  and across Cheshire. We optimise creatives, audiences, and
-                  budgets to improve lead quality and ROI.
-                </p>
-                <span className="mt-5 inline-flex items-center text-brand-pink hover:text-brand-pink2 font-semibold">
-                  Learn More
-                  <svg
-                    className="ml-2 w-4 h-4"
-                    viewBox="0 0 24 24"
-                    fill="none"
-                    stroke="currentColor"
-                  >
-                    <path
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                      strokeWidth={2}
-                      d="M9 5l7 7-7 7"
-                    />
-                  </svg>
-                </span>
-              </div>
-            </Link>
+              ))}
+            </div>
           </section>
 
-          {/* Local SEO copy block */}
-          <section className="mt-20 text-gray-700 leading-relaxed max-w-4xl mx-auto">
-            <h2 className="text-2xl md:text-3xl font-bold text-gray-900 mb-4">
-              Why Nantwich and Cheshire businesses choose us
+          {/* Why choose us section */}
+          <section className="text-gray-700 leading-relaxed max-w-4xl mx-auto mb-20">
+            <h2 className="text-2xl md:text-3xl font-bold text-gray-900 mb-6 text-center">
+              Why Nantwich and Cheshire businesses choose our services
             </h2>
-            <p className="mb-4">
-              We combine automotive media, analytics, and marketing tech so
-              local brands see real outcomes. Dealerships, garages, restorers,
-              and events teams in Nantwich and the wider Cheshire area use our
-              work to increase enquiries, improve conversion rates, and cut
-              wasted ad spend.
-            </p>
-            <p>
-              Ready to plan your next shoot or campaign?{" "}
-              <Link
-                href="/contact"
-                className="text-brand-pink hover:text-brand-pink2 font-semibold"
-              >
-                Talk to us
-              </Link>{" "}
-              about dates, budget, and goals.
-            </p>
+            <div className="grid md:grid-cols-2 gap-8">
+              <div>
+                <h3 className="text-xl font-semibold text-gray-900 mb-3">Proven Results</h3>
+                <p className="mb-4">
+                  Our services deliver measurable outcomes: 80% cost savings on hosting, 
+                  published editorial work in major publications, and advertising campaigns 
+                  with documented ROI improvements.
+                </p>
+              </div>
+              <div>
+                <h3 className="text-xl font-semibold text-gray-900 mb-3">Local Expertise</h3>
+                <p className="mb-4">
+                  Based in Nantwich with deep knowledge of the Cheshire market, 
+                  we understand local business needs and deliver solutions that 
+                  work for the regional economy.
+                </p>
+              </div>
+            </div>
           </section>
 
           {/* FAQ */}
-          <section className="mt-20">
-            <h2 className="text-2xl md:text-3xl font-bold text-gray-900 mb-6">
-              FAQs
+          <section className="mb-20">
+            <h2 className="text-2xl md:text-3xl font-bold text-gray-900 mb-8 text-center">
+              Frequently Asked Questions
             </h2>
-            <div className="space-y-4">
-              <details className="bg-white rounded-lg p-4 shadow-sm">
-                <summary className="font-semibold cursor-pointer">
+            <div className="max-w-3xl mx-auto space-y-4">
+              <details className="bg-white rounded-lg p-6 shadow-sm border border-gray-200">
+                <summary className="font-semibold cursor-pointer text-lg">
                   Do you cover locations outside Nantwich and Cheshire?
                 </summary>
-                <p className="mt-2 text-gray-700">
-                  Yes. We work across the North West, including Crewe, Chester,
-                  and Stoke-on-Trent.
+                <p className="mt-3 text-gray-700">
+                  Yes. I work across the North West, including Crewe, Chester,
+                  and Stoke-on-Trent, providing the same high-quality services
+                  throughout the region.
                 </p>
               </details>
-              <details className="bg-white rounded-lg p-4 shadow-sm">
-                <summary className="font-semibold cursor-pointer">
+              <details className="bg-white rounded-lg p-6 shadow-sm border border-gray-200">
+                <summary className="font-semibold cursor-pointer text-lg">
                   Can you provide dashboards and ongoing reporting?
                 </summary>
-                <p className="mt-2 text-gray-700">
-                  Yes. We deliver tracking, dashboards, and monthly reports with
-                  clear next steps.
+                <p className="mt-3 text-gray-700">
+                  Yes. I deliver comprehensive tracking, custom dashboards, and 
+                  detailed monthly reports with clear next steps and actionable insights.
                 </p>
               </details>
-              <details className="bg-white rounded-lg p-4 shadow-sm">
-                <summary className="font-semibold cursor-pointer">
-                  Do you work with dealerships and private sellers?
+              <details className="bg-white rounded-lg p-6 shadow-sm border border-gray-200">
+                <summary className="font-semibold cursor-pointer text-lg">
+                  What types of businesses do you work with?
                 </summary>
-                <p className="mt-2 text-gray-700">
-                  Yes. We tailor shoots and packages to the outcome you need,
-                  from quick listings to full campaigns.
+                <p className="mt-3 text-gray-700">
+                  I work with a diverse range of businesses from small local companies 
+                  to larger enterprises, tailoring services to meet specific needs and budgets.
                 </p>
               </details>
             </div>
           </section>
 
-          {/* CTA */}
-          <div className="text-center mt-16">
+          {/* CTA Section */}
+          <section className="text-center bg-gradient-to-r from-pink-50 to-purple-50 rounded-2xl p-12 mx-4">
+            <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
+              Ready to Get Started?
+            </h2>
+            <p className="text-xl text-gray-600 mb-8 max-w-2xl mx-auto">
+              Let's discuss your project requirements and how our services can help 
+              your business grow. Get in touch for a free consultation.
+            </p>
             <Link
               href="/contact"
-              className="inline-flex items-center bg-brand-pink text-white px-8 py-4 rounded-lg text-lg font-semibold hover:bg-brand-pink2 transition-colors"
+              className="inline-flex items-center bg-pink-600 text-white px-8 py-4 rounded-lg text-lg font-semibold hover:bg-pink-700 transition-colors shadow-lg hover:shadow-xl"
             >
-              Get a quote for Nantwich and Cheshire
+              Get Your Free Quote
               <svg
                 className="ml-2 w-5 h-5"
                 viewBox="0 0 24 24"
@@ -347,7 +276,7 @@ export default function ServicesPage() {
                 />
               </svg>
             </Link>
-          </div>
+          </section>
         </div>
       </main>
     </Layout>

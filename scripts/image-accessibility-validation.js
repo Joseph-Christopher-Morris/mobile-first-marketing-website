@@ -54,10 +54,10 @@ const REQUIRED_IMAGES = {
     // Portfolio Images (Requirements 2.2, 2.4, 2.6)
     portfolios: {
       photography: [
-        '/images/services/240217-australia-trip-232.webp',
+        '/images/services/240217-australia-trip-232-1.webp',
         '/images/services/240219-australia-trip-148.webp',
         '/images/services/240619-london-19.webp',
-        '/images/services/240619-london-26.webp',
+        '/images/services/240619-london-26-1.webp',
         '/images/services/240619-london-64.webp',
         '/images/services/250125-liverpool-40.webp',
       ],

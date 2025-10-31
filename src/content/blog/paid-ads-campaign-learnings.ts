@@ -17,6 +17,9 @@ const post: BlogPost = {
     <p>My goal wasn't instant sales. Instead, I wanted to <strong>drive targeted traffic</strong> to my site and encourage newsletter sign-ups, where I run <strong>A/B email tests</strong> to sharpen my marketing skills.</p>
     
     <h2>How I Prepared My Paid Ads Campaign</h2>
+    
+    <img src="/images/blog/model-car-studio.webp" alt="Minichamps Ford Escort RS Cosworth model car in studio" />
+    
     <p>Before launch, I:</p>
     
     <ul>
@@ -30,6 +33,9 @@ const post: BlogPost = {
     <h2>Results & Insights</h2>
     
     <h3>Article Campaign (Meta Ads)</h3>
+    
+    <img src="/images/blog/meta-ads-results.webp" alt="Meta Ads results graph showing 15,220 impressions and 446 clicks" />
+    
     <ul>
       <li><strong>Spend:</strong> £127.50 ad credit</li>
       <li><strong>Impressions:</strong> 15,220</li>
@@ -38,6 +44,9 @@ const post: BlogPost = {
     </ul>
     
     <h3>Leads Campaign (Google Ads)</h3>
+    
+    <img src="/images/blog/google-ads-results.webp" alt="Google Ads results graph showing 121,242 impressions and 1,544 clicks" />
+    
     <ul>
       <li><strong>Spend:</strong> £256.91</li>
       <li><strong>Impressions:</strong> 121,242</li>
@@ -64,8 +73,6 @@ const post: BlogPost = {
     
     <p>📩 <strong>Want to know what's working right now?</strong><br />
     Join my newsletter for tested tactics, real numbers, and hands-on lessons I use every week.</p>
-    
-    <p>👉 <a href="/newsletter">Join the Newsletter</a></p>
   `,
   date: '2025-08-11',
   author: 'Joe from Vivid Auto',
@@ -77,7 +84,7 @@ const post: BlogPost = {
     'paid-traffic',
     'newsletter-growth',
   ],
-  image: '/images/blog/paid-ads-campaign.jpg',
+  image: '/images/blog/screenshot-2025-08-11-143853.webp',
   readTime: 6,
   featured: false,
 };

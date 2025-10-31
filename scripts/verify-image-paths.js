@@ -24,7 +24,7 @@ const requiredImages = [
   '/images/services/250928-hampson-auctions-sunday-11.webp', // Photography hero
 
   // Sample portfolio images
-  '/images/services/240217-australia-trip-232.webp',
+  '/images/services/240217-australia-trip-232-1.webp',
   '/images/services/240219-australia-trip-148.webp',
   '/images/services/accessible-top8-campaigns-source.webp',
   '/images/services/top-3-mediums-by-conversion-rate.webp',

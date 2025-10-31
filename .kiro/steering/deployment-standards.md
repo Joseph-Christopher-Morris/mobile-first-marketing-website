@@ -99,3 +99,12 @@ inclusion: always
 - Monitor error rates and performance metrics
 - Validate all critical user journeys
 - Set up alerting for deployment issues
+
+## Analytics and Tracking
+
+### Google Analytics 4 Implementation
+
+- Google Analytics 4 tracking code (G-QJXSCJ0L43) implemented globally via CloudFront-compliant script tag
+- Verified through GA4 Realtime report post-deployment
+- Uses Next.js Script components with `afterInteractive` strategy for optimal performance
+- Requires CloudFront CSP headers to include GA4 domains for proper functionality

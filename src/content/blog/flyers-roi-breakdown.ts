@@ -17,6 +17,9 @@ const post: BlogPost = {
     <p>This isn't theory. It's <strong>£13.5K made from £546 in print costs.</strong></p>
     
     <h2>🚀 Flyer V3: Built to Scale</h2>
+    
+    <img src="/images/blog/porsche-911-hampson.jpg" alt="Porsche 911 at the Hampson Auctions Concorde Conference Centre Sale: November 2021" />
+    
     <p>By early 2023, I'd levelled up my content and my clients.</p>
     
     <p>I had repeated work with Car & Classic, stronger visuals, and better grammar. Time to scale.</p>
@@ -28,9 +31,15 @@ const post: BlogPost = {
       <li>A show-stopping cover</li>
     </ul>
     
+    <img src="/images/blog/flyer-v3-front.jpg" alt="Front of Version 3 Flyer — Sharp, personal, and proven" />
+    <img src="/images/blog/flyer-v3-back.jpg" alt="Back of Version 3 Flyer — Proof over promise" />
+    
     <p>I chose each image to <strong>create emotion, not just fill space.</strong></p>
     
     <h2>⚠️ NEC Show Roadbump</h2>
+    
+    <img src="/images/blog/praga-r1r-nec.jpg" alt="The Praga R1R race car at the ROWE trade stand at the NEC Autosport International show" />
+    
     <p>Right before the NEC Autosport International, Vistaprint emailed me:</p>
     <blockquote>"Can't print in time."</blockquote>
     
@@ -91,6 +100,9 @@ const post: BlogPost = {
     <p><em>Total revenue from flyers: <strong>£13,563.92</strong> — a <strong>2,380% ROI</strong>.</em></p>
     
     <h2>🧩 Key Takeaways</h2>
+    
+    <img src="/images/blog/porsche-mclaren-nec.jpg" alt="A Porsche 718 Cayman GT4 RS and a McLaren Senna at the Logic stand at NEC Autosport International" />
+    
     <ul>
       <li><strong>Flyers made me visible in high-trust spaces.</strong></li>
       <li><strong>My portfolio fed word-of-mouth.</strong></li>
@@ -103,9 +115,8 @@ const post: BlogPost = {
     
     <h2>📩 Like This Series?</h2>
     <p>Want more <strong>real results</strong> from the trenches of freelance marketing?</p>
-    <p>👉 <a href="/newsletter">Join the Newsletter</a> for zero-fluff breakdowns that work.</p>
   `,
-  date: '2025-07-12',
+  date: '2025-08-12',
   author: 'Joe from Vivid Auto',
   category: 'Marketing',
   tags: ['flyer-marketing', 'ROI', 'print-vs-digital', 'small-business-growth'],

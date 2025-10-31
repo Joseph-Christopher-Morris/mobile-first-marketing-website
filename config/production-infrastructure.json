@@ -1,10 +1,10 @@
 {
   "version": "1.0",
   "environment": "production",
-  "createdAt": "2025-10-05T22:56:51.289Z",
+  "createdAt": "2025-10-13T17:29:17.977Z",
   "region": "us-east-1",
   "s3": {
-    "bucketName": "mobile-marketing-site-prod-1759705011281-tyzuo9",
+    "bucketName": "mobile-marketing-site-prod-1760376557954-w49slb",
     "region": "us-east-1",
     "versioning": "Enabled",
     "encryption": "AES256",
@@ -12,17 +12,17 @@
     "objectOwnership": "BucketOwnerEnforced"
   },
   "cloudfront": {
-    "distributionId": "E2IBMHQ3GCW6ZK",
-    "domainName": "d15sc9fc739ev2.cloudfront.net",
+    "distributionId": "E17G92EIZ7VTUY",
+    "domainName": "d3vfzayzqyr2yg.cloudfront.net",
     "status": "InProgress",
-    "oacId": "E3OSELXP6A7ZL6",
+    "oacId": "EW6SYBU3WSUDO",
     "priceClass": "PriceClass_All",
     "httpVersion": "http2and3",
     "ipv6Enabled": true,
     "certificateArn": null
   },
   "securityValidation": {
-    "timestamp": "2025-10-05T22:56:54.822Z",
+    "timestamp": "2025-10-13T17:29:22.378Z",
     "s3BucketCreated": true,
     "s3SecurityConfigured": true,
     "cloudfrontValidation": "skipped",

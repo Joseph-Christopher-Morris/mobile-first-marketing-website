@@ -40,7 +40,7 @@ The script validates these critical images based on the requirements:
 **Photography Service:**
 
 - Hero: `services/250928-hampson-auctions-sunday-11.webp`
-- Portfolio: 6 images including `240217-australia-trip-232.webp`, etc.
+- Portfolio: 7 images including `240217-australia-trip-232-1.webp`, etc.
 
 **Analytics Service:**
 

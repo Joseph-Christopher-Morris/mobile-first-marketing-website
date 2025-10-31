@@ -11,6 +11,8 @@ const post: BlogPost = {
     <p>It's not about chasing trends or hoping for viral hits.<br />
     It's about producing <strong>images with steady demand</strong> — the kind buyers search for month after month.</p>
     
+    <img src="/images/blog/neon-sydney-chinatown.jpg" alt="A neon art installation in Sydney Chinatown at night, with people walking in the background" />
+    
     <h2>💡 Key Lessons I Took Away</h2>
     <ul>
       <li><strong>Evergreen beats trendy</strong> — Simple subjects like property signs or dealership shots continued to sell long after upload.</li>
@@ -26,6 +28,8 @@ const post: BlogPost = {
     <h3>Hampson Auctions</h3>
     <p>I leveraged my experience from photographing car meets, showrooms, and auctions to understand <strong>what visuals perform exceptionally well</strong>.</p>
     
+    <img src="/images/blog/hampson-auctions-oulton.jpg" alt="General view of Hampson Auctions Oulton Park Gold Cup Sale 2024 with people packed in a busy venue" />
+    
     <p>I applied this knowledge when photographing <strong>Hampson Auctions</strong> venues and sales to deliver a mix of content that:</p>
     
     <ul>
@@ -38,6 +42,8 @@ const post: BlogPost = {
     
     <h3>Nantwich Youth and Community Centre (NYCC)</h3>
     <p>I applied the same content principles for <strong>NYCC</strong>, focusing on <strong>relevance, community engagement, and visual impact</strong>.</p>
+    
+    <img src="/images/blog/nycc-outdoor-renovation.jpg" alt="View of the NYCC outdoor renovation with a cornflower blue painted shed" />
     
     <p>When creating NYCC social media posts (e.g., promoting <strong>Rock Fest II</strong>), I focused on images that:</p>
     
@@ -81,8 +87,6 @@ const post: BlogPost = {
     
     <p>📩 <strong>Want to see how I apply stock photography principles to real-world campaigns?</strong><br />
     Join my newsletter for actionable content strategies, creative lessons, and proven marketing tactics.</p>
-    
-    <p>👉 <a href="/newsletter">Join the Newsletter</a></p>
   `,
   date: '2025-07-18',
   author: 'Joe from Vivid Auto',
@@ -93,7 +97,7 @@ const post: BlogPost = {
     'evergreen-content',
     'visual-marketing',
   ],
-  image: '/images/blog/stock-lessons-sydney-neon.jpg',
+  image: '/images/blog/240217-Australia_Trip-232.webp',
   readTime: 7,
   featured: false,
 };

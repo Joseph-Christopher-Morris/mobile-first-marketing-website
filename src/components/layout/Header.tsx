@@ -40,7 +40,7 @@ export function Header({ pageTitle: _pageTitle }: HeaderProps) {
     <>
       <header className='sticky top-0 z-50 bg-white border-b border-gray-200 shadow-sm'>
         <div className='max-w-7xl mx-auto px-4 sm:px-6 lg:px-8'>
-          <div className='flex justify-between items-center h-16 md:h-20'>
+          <div className='flex justify-between items-center py-3 md:py-4'>
             {/* Logo */}
             <Link
               href='/'
@@ -48,13 +48,13 @@ export function Header({ pageTitle: _pageTitle }: HeaderProps) {
               aria-label='Go to homepage'
             >
               <Image
-                src='/images/icons/vivid-auto-photography-logo.webp'
-                alt='Vivid Auto Photography Logo'
-                width={192}
-                height={192}
-                className='w-48 h-48 object-contain'
+                src='/images/brand/VMC.png'
+                alt='Vivid Media Cheshire (VMC)'
+                width={116}
+                height={44}
+                className='site-logo object-contain'
                 priority
-                sizes='192px'
+                sizes='116px'
               />
             </Link>
 
@@ -89,17 +89,7 @@ export function Header({ pageTitle: _pageTitle }: HeaderProps) {
             <div className='hidden md:flex items-center space-x-4'>
               <Link
                 href='/contact'
-                className='bg-brand-primary text-white px-4 py-2 rounded-lg text-sm font-medium hover:bg-brand-primary-dark transition-colors focus:outline-none focus:ring-2 focus:ring-brand-primary focus:ring-offset-2'
-                style={{
-                  backgroundColor: '#F5276F',
-                  color: 'white',
-                }}
-                onMouseEnter={e => {
-                  e.currentTarget.style.backgroundColor = '#C8094C';
-                }}
-                onMouseLeave={e => {
-                  e.currentTarget.style.backgroundColor = '#F5276F';
-                }}
+                className='bg-brand-pink text-white px-4 py-2 rounded-lg text-sm font-medium hover:bg-brand-pink2 transition-colors focus:outline-none focus:ring-2 focus:ring-brand-pink focus:ring-offset-2'
               >
                 Get Started
               </Link>
@@ -109,7 +99,7 @@ export function Header({ pageTitle: _pageTitle }: HeaderProps) {
             <div className='md:hidden'>
               <button
                 onClick={toggleMobileMenu}
-                className='p-2 rounded-lg text-gray-600 hover:text-gray-900 hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 min-w-[44px] min-h-[44px] flex items-center justify-center'
+                className='p-2 rounded-lg text-gray-600 hover:text-gray-900 hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-brand-pink focus:ring-offset-2 min-w-[44px] min-h-[44px] flex items-center justify-center'
                 aria-label='Toggle mobile menu'
                 aria-expanded={isMobileMenuOpen}
               >

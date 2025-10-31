@@ -33,10 +33,10 @@ const REQUIRED_IMAGES = {
     photography: {
       hero: 'services/250928-hampson-auctions-sunday-11.webp',
       portfolio: [
-        'services/240217-australia-trip-232.webp',
+        'services/240217-australia-trip-232-1.webp',
         'services/240219-australia-trip-148.webp',
         'services/240619-london-19.webp',
-        'services/240619-london-26.webp',
+        'services/240619-london-26-1.webp',
         'services/240619-london-64.webp',
         'services/250125-liverpool-40.webp',
       ],

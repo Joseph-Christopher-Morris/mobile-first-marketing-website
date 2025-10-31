@@ -5,7 +5,7 @@ author: 'Joe from Vivid Auto'
 excerpt:
   'How selling stock photos taught me long-term content ROI — and how I applied
   these lessons to real campaigns for Hampson Auctions and NYCC.'
-featuredImage: '/images/blog/stock-lessons-sydney-neon.jpg'
+featuredImage: '/images/blog/240217-Australia_Trip-232.webp'
 categories: ['marketing', 'photography', 'case study']
 tags:
   ['stock-photography', 'content-ROI', 'evergreen-content', 'visual-marketing']
@@ -25,7 +25,7 @@ It’s not about chasing trends or hoping for viral hits.
 It’s about producing **images with steady demand** — the kind buyers search for
 month after month.
 
-![A neon art installation in Sydney Chinatown at night, with people walking in the background](/images/blog/neon-sydney-chinatown.jpg)
+![A neon art installation in Sydney Chinatown at night, with people walking in the background](/images/blog/240217-Australia_Trip-226.webp)
 
 ---
 
@@ -52,7 +52,7 @@ results.
 I leveraged my experience from photographing car meets, showrooms, and auctions
 to understand **what visuals perform exceptionally well**.
 
-![General view of Hampson Auctions Oulton Park Gold Cup Sale 2024 with people packed in a busy venue](/images/blog/hampson-auctions-oulton.jpg)
+![General view of Hampson Auctions Oulton Park Gold Cup Sale 2024 with people packed in a busy venue](/images/blog/240728-Hampson_Auctions _Oulton_Park_GC_Sun-7.webp)
 
 I applied this knowledge when photographing **Hampson Auctions** venues and
 sales to deliver a mix of content that:
@@ -70,7 +70,7 @@ sales to deliver a mix of content that:
 I applied the same content principles for **NYCC**, focusing on **relevance,
 community engagement, and visual impact**.
 
-![View of the NYCC outdoor renovation with a cornflower blue painted shed](/images/blog/nycc-outdoor-renovation.jpg)
+![View of the NYCC outdoor renovation with a cornflower blue painted shed](/images/blog/250710-NYCC-2.webp)
 
 When creating NYCC social media posts (e.g., promoting **Rock Fest II**), I
 focused on images that:

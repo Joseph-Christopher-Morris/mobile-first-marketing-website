@@ -98,11 +98,11 @@ export default function ContactPage() {
                           </p>
                           <ContactLink
                             type='email'
-                            value='joe@vividauto.photography'
+                            value='joe@vividmediacheshire.com'
                             className='text-brand-pink hover:text-brand-pink2 underline underline-offset-2'
                             aria-label='Email Joe'
                           >
-                            joe@vividauto.photography
+                            joe@vividmediacheshire.com
                           </ContactLink>
                         </div>
                       </div>
@@ -203,7 +203,7 @@ export default function ContactPage() {
                           href={siteConfig.socialMedia.facebook}
                           target='_blank'
                           rel='noopener noreferrer'
-                          className='w-12 h-12 bg-pink-600 text-white rounded-full flex items-center justify-center hover:bg-pink-700 transition-colors'
+                          className='w-12 h-12 bg-brand-pink text-white rounded-full flex items-center justify-center hover:bg-brand-pink2 transition-colors'
                           aria-label='Follow on Facebook'
                         >
                           <svg
@@ -225,7 +225,7 @@ export default function ContactPage() {
                           href={siteConfig.socialMedia.linkedin}
                           target='_blank'
                           rel='noopener noreferrer'
-                          className='w-12 h-12 bg-pink-600 text-white rounded-full flex items-center justify-center hover:bg-pink-700 transition-colors'
+                          className='w-12 h-12 bg-brand-pink text-white rounded-full flex items-center justify-center hover:bg-brand-pink2 transition-colors'
                           aria-label='Connect on LinkedIn'
                         >
                           <svg
@@ -246,7 +246,7 @@ export default function ContactPage() {
                           href={siteConfig.socialMedia.instagram}
                           target='_blank'
                           rel='noopener noreferrer'
-                          className='w-12 h-12 bg-pink-600 text-white rounded-full flex items-center justify-center hover:bg-pink-700 transition-colors'
+                          className='w-12 h-12 bg-brand-pink text-white rounded-full flex items-center justify-center hover:bg-brand-pink2 transition-colors'
                           aria-label='Follow on Instagram'
                         >
                           <svg
@@ -372,7 +372,7 @@ export default function ContactPage() {
                     Can you help if I am not sure what I need yet?
                   </h3>
                   <p className='text-gray-700'>
-                    Absolutely. If you are unsure where to start, we can look at
+                    Absolutely. If you are unsure where to start, I can look at
                     your current marketing together and decide on the most
                     helpful next steps during the free consultation.
                   </p>
