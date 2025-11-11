@@ -13,6 +13,7 @@
     "@aws-sdk/client-cloudfront": "^3.917.0",
     "@aws-sdk/client-s3": "^3.917.0",
     "chart.js": "^4.5.1",
+    "clsx": "^2.1.1",
     "gray-matter": "^4.0.3",
     "next": "^15.5.4",
     "react": "^19.0.0",

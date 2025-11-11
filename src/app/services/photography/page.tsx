@@ -3,7 +3,7 @@ import { Metadata } from 'next';
 import { Layout } from '@/components/layout';
 import Image from 'next/image';
 import Link from 'next/link';
-import { PressMentions } from '@/components/credibility/PressMentions';
+import { PressStrip } from '@/components/credibility/PressStrip';
 
 export const metadata: Metadata = {
   title: 'Professional Photography Services | Nantwich & Cheshire',
@@ -151,9 +151,7 @@ export default function PhotographyServicesPage() {
                   Specializing in local Nantwich photography and commercial campaigns.
                 </p>
 
-                <div className="mt-6 mb-6">
-                  <PressMentions variant="dark" />
-                </div>
+                <PressStrip variant="dark" />
 
                 <div className="flex flex-col sm:flex-row gap-4">
                   <Link
