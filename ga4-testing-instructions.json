@@ -1,0 +1,79 @@
+{
+  "title": "GA4 Implementation Testing Guide",
+  "timestamp": "2025-11-02T16:14:49.259Z",
+  "verificationSteps": [
+    {
+      "step": 1,
+      "title": "View Source Verification",
+      "instructions": [
+        "1. Visit https://d15sc9fc739ev2.cloudfront.net in an incognito window",
+        "2. Right-click → View Page Source",
+        "3. Search for \"G-QJXSCJ0L43\" in the source code",
+        "4. Confirm both script tags are present in <head>:",
+        "   - <script async src=\"https://www.googletagmanager.com/gtag/js?id=G-QJXSCJ0L43\">",
+        "   - gtag('config', 'G-QJXSCJ0L43');"
+      ]
+    },
+    {
+      "step": 2,
+      "title": "Google Analytics Realtime Verification",
+      "instructions": [
+        "1. Go to Google Analytics 4",
+        "2. Navigate to Reports → Realtime",
+        "3. Visit https://d15sc9fc739ev2.cloudfront.net in another tab",
+        "4. Confirm active user appears in Realtime report",
+        "5. Verify page views are being tracked"
+      ]
+    },
+    {
+      "step": 3,
+      "title": "Browser Developer Tools Check",
+      "instructions": [
+        "1. Open browser Developer Tools (F12)",
+        "2. Go to Network tab",
+        "3. Refresh the page",
+        "4. Look for requests to:",
+        "   - googletagmanager.com/gtag/js?id=G-QJXSCJ0L43",
+        "   - google-analytics.com/g/collect"
+      ]
+    },
+    {
+      "step": 4,
+      "title": "GA4 Installation Test",
+      "instructions": [
+        "1. Go to Google Analytics 4 → Admin → Data Streams",
+        "2. Click on your web data stream",
+        "3. Click \"Test your website\" in the installation panel",
+        "4. Should show ✅ green success icon"
+      ]
+    }
+  ],
+  "troubleshooting": [
+    {
+      "issue": "GA4 not tracking",
+      "solutions": [
+        "Check browser console for JavaScript errors",
+        "Verify gtag.js is loading (check Network tab)",
+        "Clear browser cache and try again",
+        "Disable ad blockers for testing",
+        "Wait 5-15 minutes for CloudFront cache to update"
+      ]
+    },
+    {
+      "issue": "Script not loading",
+      "solutions": [
+        "Check Content Security Policy settings",
+        "Verify CloudFront invalidation completed",
+        "Test in different browsers",
+        "Check for network connectivity issues"
+      ]
+    }
+  ],
+  "expectedResults": [
+    "Page views tracked automatically in GA4",
+    "User sessions recorded with proper attribution",
+    "Real-time data visible within minutes",
+    "Enhanced measurement events (scroll, clicks, etc.)",
+    "Geographic and device data collection"
+  ]
+}

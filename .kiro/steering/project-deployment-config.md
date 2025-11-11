@@ -86,6 +86,7 @@ The project has automated deployment via GitHub Actions:
 - Security hardening implemented
 - Monitoring and alerting active
 - Rollback procedures tested
+- Photography page legacy statistics removed (2025-11-01)
 
 ### 🚫 Deprecated/Prohibited
 
@@ -100,8 +101,16 @@ The project has automated deployment via GitHub Actions:
 2. **Build Testing**: `npm run build`
 3. **Code Changes**: Edit files in `src/` directory
 4. **Blog Updates**: Edit `src/app/blog/page.tsx`
-5. **Commit & Push**: Changes to `main` branch trigger auto-deployment
-6. **Monitoring**: Check CloudWatch and deployment logs
+5. **Photography Page**: Source of truth is `src/app/services/photography/page.tsx`
+6. **Commit & Push**: Changes to `main` branch trigger auto-deployment
+7. **Monitoring**: Check CloudWatch and deployment logs
+
+### Content Guidelines
+
+- **Photography Page**: Do not reintroduce legacy metric grids (3+, 50+, 100+)
+- **Approved Statistics**: Only "3,500+ licensed images" and "90+ countries"
+- **Client Preference**: Narrative copy over statistics blocks
+- **Hero Image**: Must use "photography-hero.webp" (not editorial-proof-bbc-forbes-times.webp)
 
 ## Support and Troubleshooting
 

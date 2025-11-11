@@ -2,12 +2,13 @@ import { Metadata } from 'next';
 import { Layout } from '@/components/layout';
 import Image from 'next/image';
 import Link from 'next/link';
-import { 
-  RevenueOutcomeCard, 
-  ConversionOutcomeCard, 
-  LeadsOutcomeCard, 
-  ROIOutcomeCard 
+import {
+  RevenueOutcomeCard,
+  ConversionOutcomeCard,
+  LeadsOutcomeCard,
+  ROIOutcomeCard
 } from '@/components/services/OutcomeCard';
+import { ServiceInquiryForm } from '@/components/ServiceInquiryForm';
 
 export const metadata: Metadata = {
   title: 'Strategic Automotive Advertising Campaigns | Maximize ROI & Reach',
@@ -68,19 +69,28 @@ export default function AdCampaignsServicesPage() {
             <div className='grid grid-cols-1 lg:grid-cols-2 gap-12 items-center'>
               <div>
                 <h1 className='text-4xl md:text-5xl lg:text-6xl font-bold leading-tight mb-6'>
-                  Strategic{' '}
-                  <span className='text-brand-pink'>Ad Campaigns</span>
+                  Ads That Bring You Real Leads. Not Wasted Clicks
                 </h1>
                 <p className='text-xl md:text-2xl text-brand-grey mb-8 leading-relaxed'>
-                  Maximize ROI with targeted advertising campaigns that reach
-                  your ideal customers across all platforms.
+                  Stop paying for clicks that don't turn into customers. I help Cheshire businesses run simple, targeted ad campaigns that actually get your phone ringing.
                 </p>
+                <div className='mb-8'>
+                  <p className='text-lg text-brand-grey mb-4'>
+                    Whether you want to grow your customer base or increase bookings, I set up and manage ad campaigns that do the heavy lifting for you.
+                  </p>
+                  <p className='text-lg text-brand-grey mb-4'>
+                    Every campaign is built around your goals, carefully tested, and refined over time to ensure your budget works as efficiently as possible.
+                  </p>
+                  <p className='text-lg text-brand-grey mb-6'>
+                    From Google Ads to Meta Ads, I handle the whole process: strategy, setup, and reporting, so you can focus on your business while I focus on your results.
+                  </p>
+                </div>
                 <div className='flex flex-col sm:flex-row gap-4'>
                   <Link
                     href='/contact'
                     className='bg-brand-pink text-white px-8 py-4 rounded-lg text-lg font-semibold hover:bg-brand-pink2 transition-colors text-center'
                   >
-                    Launch Campaign
+                    Get My Free Ad Plan
                   </Link>
                   <Link
                     href='/blog'
@@ -89,6 +99,9 @@ export default function AdCampaignsServicesPage() {
                     View Case Studies
                   </Link>
                 </div>
+                <p className='text-sm text-brand-grey mt-4'>
+                  No contracts or jargon, just precise results you can see.
+                </p>
               </div>
               <div className='relative'>
                 <div className='relative h-96 lg:h-[500px] rounded-lg overflow-hidden shadow-2xl'>
@@ -110,11 +123,10 @@ export default function AdCampaignsServicesPage() {
           <div className='max-w-7xl mx-auto px-4 sm:px-6 lg:px-8'>
             <div className='text-center mb-16'>
               <h2 className='text-3xl md:text-4xl font-bold text-gray-900 mb-4'>
-                Our Campaign Services
+                What's Included
               </h2>
               <p className='text-xl text-gray-600 max-w-3xl mx-auto'>
-                Comprehensive advertising solutions designed to maximize your
-                reach, engagement, and return on investment.
+                Everything you need to run successful ad campaigns that bring in real leads and customers.
               </p>
             </div>
 
@@ -136,11 +148,10 @@ export default function AdCampaignsServicesPage() {
                   </svg>
                 </div>
                 <h3 className='text-xl font-bold text-gray-900 mb-4'>
-                  Campaign Strategy
+                  Plan That Fits Your Goals
                 </h3>
                 <p className='text-gray-600'>
-                  Comprehensive campaign planning and strategy development
-                  tailored to your business goals and target audience.
+                  I create an ad strategy tailored to your specific business needs. Everything is explained clearly, so you always understand how it works.
                 </p>
               </div>
 
@@ -161,11 +172,10 @@ export default function AdCampaignsServicesPage() {
                   </svg>
                 </div>
                 <h3 className='text-xl font-bold text-gray-900 mb-4'>
-                  Multi-Platform Advertising
+                  Ads Where Your Customers Are
                 </h3>
                 <p className='text-gray-600'>
-                  Reach your audience across Google Ads, Facebook, Instagram,
-                  LinkedIn, and other major advertising platforms.
+                  I run campaigns across Google, Facebook, and Instagram to reach the audiences most likely to buy from you.
                 </p>
               </div>
 
@@ -186,11 +196,10 @@ export default function AdCampaignsServicesPage() {
                   </svg>
                 </div>
                 <h3 className='text-xl font-bold text-gray-900 mb-4'>
-                  ROI Optimization
+                  Make Every Pound Work Harder
                 </h3>
                 <p className='text-gray-600'>
-                  Continuous optimization to maximize your return on investment
-                  and improve campaign performance over time.
+                  Your ads are regularly reviewed to improve performance and reduce costs over time.
                 </p>
               </div>
 
@@ -217,11 +226,10 @@ export default function AdCampaignsServicesPage() {
                   </svg>
                 </div>
                 <h3 className='text-xl font-bold text-gray-900 mb-4'>
-                  Audience Targeting
+                  Reach the Right People
                 </h3>
                 <p className='text-gray-600'>
-                  Precise audience targeting based on demographics, interests,
-                  behaviors, and custom audience segments.
+                  I focus on targeting the customers who are ready to take action, not random clicks.
                 </p>
               </div>
 
@@ -248,11 +256,10 @@ export default function AdCampaignsServicesPage() {
                   </svg>
                 </div>
                 <h3 className='text-xl font-bold text-gray-900 mb-4'>
-                  Performance Tracking
+                  Know What's Working
                 </h3>
                 <p className='text-gray-600'>
-                  Comprehensive tracking and reporting to monitor campaign
-                  performance and identify optimization opportunities.
+                  You'll receive straightforward reports showing what is bringing in enquiries and what can be improved.
                 </p>
               </div>
 
@@ -273,11 +280,10 @@ export default function AdCampaignsServicesPage() {
                   </svg>
                 </div>
                 <h3 className='text-xl font-bold text-gray-900 mb-4'>
-                  A/B Testing
+                  Test, Learn, and Improve
                 </h3>
                 <p className='text-gray-600'>
-                  Systematic testing of ad creatives, copy, and targeting to
-                  identify the most effective campaign elements.
+                  By running small tests and tracking the results, I ensure your campaigns remain effective as they grow.
                 </p>
               </div>
             </div>
@@ -289,11 +295,11 @@ export default function AdCampaignsServicesPage() {
           <div className='max-w-7xl mx-auto px-4 sm:px-6 lg:px-8'>
             <div className='text-center mb-16'>
               <h2 className='text-3xl md:text-4xl font-bold text-gray-900 mb-4'>
-                Our Work in Action
+                My Work in Action
               </h2>
               <p className='text-xl text-gray-600 max-w-3xl mx-auto'>
-                Explore examples of our successful advertising campaigns and see
-                the results we've achieved for our clients.
+                Explore examples of my successful advertising campaigns and see
+                the results I've achieved for clients.
               </p>
             </div>
 
@@ -321,16 +327,80 @@ export default function AdCampaignsServicesPage() {
           </div>
         </section>
 
+        {/* Ad Campaigns Pricing */}
+        <section className='py-12 bg-white'>
+          <div className='max-w-5xl mx-auto px-4 sm:px-6 lg:px-8'>
+            <div className='bg-gradient-to-br from-pink-50 to-purple-50 rounded-3xl p-6 md:p-8 shadow-sm'>
+              <h2 className='text-2xl md:text-3xl font-bold text-gray-900 mb-6 text-center'>
+                Ad Campaigns Pricing
+              </h2>
+
+              <div className='grid gap-6 md:grid-cols-2 max-w-4xl mx-auto'>
+                <div className='bg-white rounded-2xl p-6 shadow-sm'>
+                  <h3 className='text-xl font-bold text-gray-900 mb-3'>
+                    Google Ads Setup
+                  </h3>
+                  <p className='text-3xl font-bold text-pink-600 mb-4'>
+                    £20 <span className='text-base font-normal text-gray-600'>one-time</span>
+                  </p>
+                  <ul className='space-y-2 text-sm text-gray-700'>
+                    <li className='flex items-start'>
+                      <span className='text-green-600 mr-2'>✓</span>
+                      Professional campaign setup
+                    </li>
+                    <li className='flex items-start'>
+                      <span className='text-green-600 mr-2'>✓</span>
+                      Conversion tracking configured
+                    </li>
+                    <li className='flex items-start'>
+                      <span className='text-green-600 mr-2'>✓</span>
+                      Optimised from day one
+                    </li>
+                  </ul>
+                </div>
+
+                <div className='bg-white rounded-2xl p-6 shadow-sm'>
+                  <h3 className='text-xl font-bold text-gray-900 mb-3'>
+                    Google Ads Management
+                  </h3>
+                  <p className='text-3xl font-bold text-pink-600 mb-4'>
+                    from £150 <span className='text-base font-normal text-gray-600'>per month</span>
+                  </p>
+                  <ul className='space-y-2 text-sm text-gray-700'>
+                    <li className='flex items-start'>
+                      <span className='text-green-600 mr-2'>✓</span>
+                      Ongoing campaign optimisation
+                    </li>
+                    <li className='flex items-start'>
+                      <span className='text-green-600 mr-2'>✓</span>
+                      Regular performance reviews
+                    </li>
+                    <li className='flex items-start'>
+                      <span className='text-green-600 mr-2'>✓</span>
+                      Monthly reporting
+                    </li>
+                  </ul>
+                </div>
+              </div>
+
+              <div className='text-center mt-6'>
+                <p className='text-sm text-gray-600'>
+                  No long contracts. Pricing tailored to your budget and goals.
+                </p>
+              </div>
+            </div>
+          </div>
+        </section>
+
         {/* Process Section */}
         <section className='py-20 bg-gray-50'>
           <div className='max-w-7xl mx-auto px-4 sm:px-6 lg:px-8'>
             <div className='text-center mb-16'>
               <h2 className='text-3xl md:text-4xl font-bold text-gray-900 mb-4'>
-                Our Campaign Process
+                How I Work
               </h2>
               <p className='text-xl text-gray-600 max-w-3xl mx-auto'>
-                From strategy development to optimization, we follow a proven
-                process to deliver exceptional campaign results.
+                A straightforward process that gets results without the complexity.
               </p>
             </div>
 
@@ -340,11 +410,10 @@ export default function AdCampaignsServicesPage() {
                   1
                 </div>
                 <h3 className='text-lg font-bold text-gray-900 mb-2'>
-                  Strategy
+                  Plan
                 </h3>
                 <p className='text-gray-600'>
-                  Develop comprehensive campaign strategy based on your goals,
-                  audience, and market analysis.
+                  We define your goals and agree on a realistic budget together.
                 </p>
               </div>
 
@@ -354,8 +423,7 @@ export default function AdCampaignsServicesPage() {
                 </div>
                 <h3 className='text-lg font-bold text-gray-900 mb-2'>Launch</h3>
                 <p className='text-gray-600'>
-                  Execute campaigns across selected platforms with precise
-                  targeting and compelling creative assets.
+                  I design and set up your campaigns to start generating results quickly.
                 </p>
               </div>
 
@@ -364,11 +432,10 @@ export default function AdCampaignsServicesPage() {
                   3
                 </div>
                 <h3 className='text-lg font-bold text-gray-900 mb-2'>
-                  Monitor
+                  Track
                 </h3>
                 <p className='text-gray-600'>
-                  Continuously monitor performance metrics and make real-time
-                  adjustments for optimal results.
+                  You'll receive clear performance updates with simple explanations.
                 </p>
               </div>
 
@@ -377,13 +444,18 @@ export default function AdCampaignsServicesPage() {
                   4
                 </div>
                 <h3 className='text-lg font-bold text-gray-900 mb-2'>
-                  Optimize
+                  Improve
                 </h3>
                 <p className='text-gray-600'>
-                  Analyze results and optimize campaigns for improved
-                  performance and maximum ROI.
+                  I optimise your campaigns over time to maximise performance and return.
                 </p>
               </div>
+            </div>
+
+            <div className='text-center mt-8'>
+              <p className='text-gray-600 max-w-2xl mx-auto'>
+                You'll always know where your money is going and what it's earning.
+              </p>
             </div>
           </div>
         </section>
@@ -393,40 +465,49 @@ export default function AdCampaignsServicesPage() {
           <div className='max-w-7xl mx-auto px-4 sm:px-6 lg:px-8'>
             <div className='text-center mb-16'>
               <h2 className='text-3xl md:text-4xl font-bold text-gray-900 mb-4'>
-                ROI Case Study Results
+                Proven Results
               </h2>
               <p className='text-xl text-gray-600 max-w-3xl mx-auto'>
-                Real outcomes from our strategic advertising campaigns, demonstrating
-                measurable ROI and business growth for our clients.
+                Here are some examples of what I've achieved for local clients and for myself:
               </p>
             </div>
 
-            <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8'>
-              <RevenueOutcomeCard
-                revenue="£13.5k"
-                investment="£546"
-                description="Exceptional revenue generation from strategic campaign investment, delivering 2,470% ROI"
-                className="h-full"
-              />
-              
-              <ConversionOutcomeCard
-                rate="85%"
-                description="Above industry average conversion rates achieved through targeted audience segmentation and optimized ad creative"
-                className="h-full"
-              />
-              
-              <LeadsOutcomeCard
-                count="4"
-                source="NYCC"
-                description="High-quality leads generated for North Yorkshire County Council campaigns through strategic targeting"
-                className="h-full"
-              />
-              
-              <ROIOutcomeCard
-                percentage="2,470%"
-                description="Average return on investment across all strategic advertising campaigns, demonstrating exceptional performance"
-                className="h-full"
-              />
+            <div className='max-w-4xl mx-auto'>
+              <div className='space-y-6'>
+                <div className='bg-gray-50 rounded-xl p-6'>
+                  <div className='flex items-start'>
+                    <div className='w-6 h-6 bg-brand-pink text-white rounded-full flex items-center justify-center text-sm font-bold mr-4 mt-1 flex-shrink-0'>1</div>
+                    <p className='text-gray-700 text-lg'>2,470% average return on investment from targeted campaigns</p>
+                  </div>
+                </div>
+
+                <div className='bg-gray-50 rounded-xl p-6'>
+                  <div className='flex items-start'>
+                    <div className='w-6 h-6 bg-brand-pink text-white rounded-full flex items-center justify-center text-sm font-bold mr-4 mt-1 flex-shrink-0'>2</div>
+                    <p className='text-gray-700 text-lg'>£13,500 generated from a £546 marketing campaign</p>
+                  </div>
+                </div>
+
+                <div className='bg-gray-50 rounded-xl p-6'>
+                  <div className='flex items-start'>
+                    <div className='w-6 h-6 bg-brand-pink text-white rounded-full flex items-center justify-center text-sm font-bold mr-4 mt-1 flex-shrink-0'>3</div>
+                    <p className='text-gray-700 text-lg'>Increased bookings on the NYCC venue pages by 35%</p>
+                  </div>
+                </div>
+
+                <div className='bg-gray-50 rounded-xl p-6'>
+                  <div className='flex items-start'>
+                    <div className='w-6 h-6 bg-brand-pink text-white rounded-full flex items-center justify-center text-sm font-bold mr-4 mt-1 flex-shrink-0'>4</div>
+                    <p className='text-gray-700 text-lg'>4 years of consistent growth helping Cheshire businesses improve visibility and sales</p>
+                  </div>
+                </div>
+
+                <div className='bg-white rounded-xl p-6 border-2 border-brand-pink'>
+                  <p className='text-gray-700 text-lg text-center'>
+                    I assisted in bringing four leads to the Nantwich Youth Community and Centre's (NYCC) venues through the booking page promotions to local Facebook Business Group pages.
+                  </p>
+                </div>
+              </div>
             </div>
           </div>
         </section>
@@ -435,17 +516,16 @@ export default function AdCampaignsServicesPage() {
         <section className='py-20 bg-brand-black text-white'>
           <div className='max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center'>
             <h2 className='text-3xl md:text-4xl font-bold mb-4'>
-              Ready to Launch Your Next Campaign?
+              Ready to Get More Local Leads?
             </h2>
             <p className='text-xl text-brand-grey mb-8 max-w-3xl mx-auto'>
-              Let's create strategic advertising campaigns that deliver
-              exceptional ROI and drive real business growth.
+              Let's build a campaign that helps your business grow and brings in consistent enquiries without the stress of managing ads yourself.
             </p>
             <Link
               href='/contact'
               className='inline-flex items-center bg-brand-pink text-white px-8 py-4 rounded-lg text-lg font-semibold hover:bg-brand-pink2 transition-colors'
             >
-              Start Your Campaign
+              Start My Campaign Plan
               <svg
                 className='ml-2 w-5 h-5'
                 fill='none'
@@ -460,8 +540,19 @@ export default function AdCampaignsServicesPage() {
                 />
               </svg>
             </Link>
+            <p className='text-sm text-brand-grey mt-4'>
+              Free consultation, local support, and results you can measure.
+            </p>
           </div>
         </section>
+
+        {/* Service Inquiry Form */}
+        <div className='max-w-7xl mx-auto px-4 sm:px-6 lg:px-8'>
+          <ServiceInquiryForm
+            serviceName="Strategic Ad Campaigns"
+            formspreeId="xpwaqjqr"
+          />
+        </div>
       </div>
     </Layout>
   );

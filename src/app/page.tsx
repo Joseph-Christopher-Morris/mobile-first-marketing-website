@@ -5,6 +5,8 @@ import Link from 'next/link';
 import { getAllBlogPosts } from '@/lib/blog-api';
 import { TestimonialsCarousel } from '@/components/sections/TestimonialsCarousel';
 import HeroWithCharts from '@/components/HeroWithCharts';
+import { PressLogos } from '@/components/PressLogos';
+import { GeneralContactForm } from '@/components/sections/GeneralContactForm';
 
 export const metadata: Metadata = {
   title: 'Vivid Media Cheshire — Faster, Smarter Websites That Work as Hard as You Do',
@@ -61,39 +63,57 @@ export default async function HomePage() {
           lcpSeries={[14.2, 7.8, 2.3, 1.8]}
         />
 
-
-
         {/* Services Section */}
-        <section className='py-20 bg-gray-50'>
-          <div className='max-w-7xl mx-auto px-4 sm:px-6 lg:px-8'>
-            <div className='text-center mb-16'>
-              <h2 className='text-3xl md:text-4xl font-bold text-gray-900 mb-4'>
-                My Services
-              </h2>
-              <p className='text-xl text-gray-600 max-w-3xl mx-auto'>
-                Vivid Media Cheshire helps local businesses grow with fast, secure websites, smart advertising, and visuals that tell your story. Each project combines enterprise-level hosting, data-driven design, and photography that delivers real results.
-              </p>
-            </div>
+        <section className='py-16 bg-gray-50'>
+          <div className='max-w-6xl mx-auto px-4 sm:px-6 lg:px-8'>
+            <h2 className='text-3xl md:text-4xl font-bold text-gray-900 mb-10 text-center'>
+              My Services
+            </h2>
 
-            <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8'>
+            <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10 xl:gap-12 justify-items-center'>
+              {/* Website Design & Development */}
+              <div className='bg-white rounded-2xl shadow-sm border border-gray-200 overflow-hidden hover:shadow-md transition-shadow w-full max-w-sm'>
+                <div className='relative h-48 bg-gray-100'>
+                  <Image
+                    src='/images/services/Website Design/PXL_20240222_004124044~2.webp'
+                    alt='Website design and development workspace'
+                    fill
+                    className='object-cover'
+                    sizes='(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw'
+                  />
+                </div>
+                <div className='p-6 text-left'>
+                  <h3 className='text-xl font-semibold mb-3'>
+                    Website Design & Development
+                  </h3>
+                  <p className='text-gray-600 mb-4'>
+                    Mobile-first websites on AWS CloudFront, built on a modular framework that is ready for SEO, analytics, and ad campaigns.
+                  </p>
+                  <Link
+                    href='/services/website-design'
+                    className='inline-flex items-center text-brand-pink hover:text-brand-pink2 font-medium'
+                    aria-label='Learn more about website design and development services'
+                  >
+                    Learn more →
+                  </Link>
+                </div>
+              </div>
+
               {/* Website Hosting & Migration */}
-              <div className='group bg-white rounded-xl shadow-lg overflow-hidden hover:shadow-xl transition-shadow'>
-                <div className='relative h-64'>
+              <div className='bg-white rounded-2xl shadow-sm border border-gray-200 overflow-hidden hover:shadow-md transition-shadow w-full max-w-sm'>
+                <div className='relative h-48 bg-gray-100'>
                   <Image
                     src='/images/services/hosting-migration-card.webp'
-                    alt='AWS website hosting and migration services - 80% cost reduction and 82% faster load times'
+                    alt='Website hosting and migration performance dashboard'
                     fill
-                    className='object-cover group-hover:scale-105 transition-transform duration-300'
-                    sizes='(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 25vw'
+                    className='object-cover'
+                    sizes='(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw'
                   />
-                  <div className='absolute inset-0 bg-black/60'></div>
-                  <div className='absolute bottom-4 left-4 text-white'>
-                    <h3 className='text-xl font-bold mb-2'>
-                      Website Hosting & Migration
-                    </h3>
-                  </div>
                 </div>
-                <div className='p-6'>
+                <div className='p-6 text-left'>
+                  <h3 className='text-xl font-semibold mb-3'>
+                    Website Hosting & Migration
+                  </h3>
                   <p className='text-gray-600 mb-4'>
                     AWS S3 + CloudFront hosting with 80% cost reduction and 82%
                     faster load times. Professional website migration with zero downtime.
@@ -103,42 +123,26 @@ export default async function HomePage() {
                     className='inline-flex items-center text-brand-pink hover:text-brand-pink2 font-medium'
                     aria-label='Learn more about AWS website hosting and migration services'
                   >
-                    View Hosting Services
-                    <svg
-                      className='ml-2 w-4 h-4'
-                      fill='none'
-                      stroke='currentColor'
-                      viewBox='0 0 24 24'
-                    >
-                      <path
-                        strokeLinecap='round'
-                        strokeLinejoin='round'
-                        strokeWidth={2}
-                        d='M9 5l7 7-7 7'
-                      />
-                    </svg>
+                    Learn more →
                   </Link>
                 </div>
               </div>
 
               {/* Strategic Ad Campaigns */}
-              <div className='group bg-white rounded-xl shadow-lg overflow-hidden hover:shadow-xl transition-shadow'>
-                <div className='relative h-64'>
+              <div className='bg-white rounded-2xl shadow-sm border border-gray-200 overflow-hidden hover:shadow-md transition-shadow w-full max-w-sm'>
+                <div className='relative h-48 bg-gray-100'>
                   <Image
                     src='/images/services/ad-campaigns-hero.webp'
-                    alt='Strategic ad campaigns - targeted advertising and marketing campaign management'
+                    alt='Strategic advertising campaigns dashboard'
                     fill
-                    className='object-cover group-hover:scale-105 transition-transform duration-300'
-                    sizes='(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 25vw'
+                    className='object-cover'
+                    sizes='(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw'
                   />
-                  <div className='absolute inset-0 bg-black/60'></div>
-                  <div className='absolute bottom-4 left-4 text-white'>
-                    <h3 className='text-xl font-bold mb-2'>
-                      Strategic Ad Campaigns
-                    </h3>
-                  </div>
                 </div>
-                <div className='p-6'>
+                <div className='p-6 text-left'>
+                  <h3 className='text-xl font-semibold mb-3'>
+                    Strategic Ad Campaigns
+                  </h3>
                   <p className='text-gray-600 mb-4'>
                     Targeted advertising campaigns designed to maximize ROI and
                     reach your ideal customers across all platforms.
@@ -148,42 +152,26 @@ export default async function HomePage() {
                     className='inline-flex items-center text-brand-pink hover:text-brand-pink2 font-medium'
                     aria-label='Learn more about strategic advertising campaigns and ROI optimization'
                   >
-                    View Ad Campaign Services
-                    <svg
-                      className='ml-2 w-4 h-4'
-                      fill='none'
-                      stroke='currentColor'
-                      viewBox='0 0 24 24'
-                    >
-                      <path
-                        strokeLinecap='round'
-                        strokeLinejoin='round'
-                        strokeWidth={2}
-                        d='M9 5l7 7-7 7'
-                      />
-                    </svg>
+                    Learn more →
                   </Link>
                 </div>
               </div>
 
               {/* Data Analytics & Insights */}
-              <div className='group bg-white rounded-xl shadow-lg overflow-hidden hover:shadow-xl transition-shadow'>
-                <div className='relative h-64'>
+              <div className='bg-white rounded-2xl shadow-sm border border-gray-200 overflow-hidden hover:shadow-md transition-shadow w-full max-w-sm'>
+                <div className='relative h-48 bg-gray-100'>
                   <Image
                     src='/images/services/screenshot-2025-09-23-analytics-dashboard.webp'
-                    alt='Data analytics and insights dashboard - comprehensive analytics reporting and business intelligence'
+                    alt='Data analytics dashboard showing business insights'
                     fill
-                    className='object-cover group-hover:scale-105 transition-transform duration-300'
-                    sizes='(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 25vw'
+                    className='object-cover'
+                    sizes='(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw'
                   />
-                  <div className='absolute inset-0 bg-black/60'></div>
-                  <div className='absolute bottom-4 left-4 text-white'>
-                    <h3 className='text-xl font-bold mb-2'>
-                      Data Analytics & Insights
-                    </h3>
-                  </div>
                 </div>
-                <div className='p-6'>
+                <div className='p-6 text-left'>
+                  <h3 className='text-xl font-semibold mb-3'>
+                    Data Analytics & Insights
+                  </h3>
                   <p className='text-gray-600 mb-4'>
                     Comprehensive analytics and data-driven insights to optimize
                     your business performance and drive growth.
@@ -193,42 +181,26 @@ export default async function HomePage() {
                     className='inline-flex items-center text-brand-pink hover:text-brand-pink2 font-medium'
                     aria-label='Learn more about data analytics and business insights services'
                   >
-                    View Analytics Services
-                    <svg
-                      className='ml-2 w-4 h-4'
-                      fill='none'
-                      stroke='currentColor'
-                      viewBox='0 0 24 24'
-                    >
-                      <path
-                        strokeLinecap='round'
-                        strokeLinejoin='round'
-                        strokeWidth={2}
-                        d='M9 5l7 7-7 7'
-                      />
-                    </svg>
+                    Learn more →
                   </Link>
                 </div>
               </div>
 
               {/* Photography Services */}
-              <div className='group bg-white rounded-xl shadow-lg overflow-hidden hover:shadow-xl transition-shadow'>
-                <div className='relative h-64'>
+              <div className='bg-white rounded-2xl shadow-sm border border-gray-200 overflow-hidden hover:shadow-md transition-shadow w-full max-w-sm'>
+                <div className='relative h-48 bg-gray-100'>
                   <Image
                     src='/images/services/photography-hero.webp'
-                    alt='Professional photography services - automotive and commercial photography showcase'
+                    alt='Professional photography services'
                     fill
-                    className='object-cover group-hover:scale-105 transition-transform duration-300'
-                    sizes='(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 25vw'
+                    className='object-cover'
+                    sizes='(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw'
                   />
-                  <div className='absolute inset-0 bg-black/60'></div>
-                  <div className='absolute bottom-4 left-4 text-white'>
-                    <h3 className='text-xl font-bold mb-2'>
-                      Photography Services
-                    </h3>
-                  </div>
                 </div>
-                <div className='p-6'>
+                <div className='p-6 text-left'>
+                  <h3 className='text-xl font-semibold mb-3'>
+                    Photography Services
+                  </h3>
                   <p className='text-gray-600 mb-4'>
                     Professional automotive and commercial photography with
                     mobile-optimized delivery and stunning visual storytelling.
@@ -238,20 +210,7 @@ export default async function HomePage() {
                     className='inline-flex items-center text-brand-pink hover:text-brand-pink2 font-medium'
                     aria-label='Learn more about professional photography services'
                   >
-                    View Photography Services
-                    <svg
-                      className='ml-2 w-4 h-4'
-                      fill='none'
-                      stroke='currentColor'
-                      viewBox='0 0 24 24'
-                    >
-                      <path
-                        strokeLinecap='round'
-                        strokeLinejoin='round'
-                        strokeWidth={2}
-                        d='M9 5l7 7-7 7'
-                      />
-                    </svg>
+                    Learn more →
                   </Link>
                 </div>
               </div>
@@ -363,6 +322,40 @@ export default async function HomePage() {
 
         {/* Testimonials Carousel - Home page only */}
         <TestimonialsCarousel />
+
+        {/* Pricing Teaser Section */}
+        <section className="py-12 bg-gray-50">
+          <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <h2 className="text-2xl md:text-3xl font-bold text-gray-900 mb-3">
+              Simple, transparent pricing
+            </h2>
+            <p className="text-lg text-gray-600 mb-6">
+              Websites from £300, hosting from £15 per month, Google Ads management from £150 per month,
+              and event photography from £200 per day.
+            </p>
+            <Link
+              href="/pricing"
+              className="inline-flex items-center bg-pink-600 text-white px-8 py-3 rounded-lg text-lg font-semibold hover:bg-pink-700 transition-colors"
+            >
+              View full pricing
+            </Link>
+          </div>
+        </section>
+
+        {/* Contact Form Section - Below Pricing CTA */}
+        <section className="py-16 bg-white">
+          <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div className="text-center mb-8">
+              <h2 className="text-3xl font-bold text-gray-900 mb-4">
+                Get Started Today
+              </h2>
+              <p className="text-lg text-gray-600">
+                Tell us about your project and we'll get back to you within one business day.
+              </p>
+            </div>
+            <GeneralContactForm />
+          </div>
+        </section>
 
         {/* CTA Section */}
         <section className='py-20 bg-brand-black text-white'>

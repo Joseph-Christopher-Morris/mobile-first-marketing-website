@@ -1,64 +1,83 @@
 ---
-title: 'Photography Services'
-shortDescription:
-  'Capture your most important moments with our professional photography
-  services.'
-order: 1
-icon: 'camera'
-featuredImage: '/images/services/250928-hampson-auctions-sunday-11.webp'
-features:
-  - 'Event Photography'
-  - 'Portrait Sessions'
-  - 'Commercial Photography'
-  - 'Product Photography'
-benefits:
-  - 'High-quality professional images'
-  - 'Quick turnaround time'
-  - 'Flexible scheduling'
-  - 'Competitive pricing'
-pricing:
-  startingPrice: 299
-  currency: 'USD'
-  billingPeriod: 'per session'
-seoTitle: 'Photography Services | Capture Every Moment'
-metaDescription:
-  'Photography services for events, portraits, and commercial needs.
-  High-quality images with quick turnaround times.'
+title: "Photography That Builds Trust and Delivers Results"
+description: "Professional photography trusted by leading brands and publications. 3,500+ licensed images, 90+ countries, £1,000+ royalties. Based in Cheshire."
+slug: "photography"
+heroImage: "/images/services/Photography/photography-hero.webp"
 ---
 
-# Photography Services
+## Photography That Builds Trust and Delivers Results
 
-Transform your vision into stunning visual stories with our comprehensive
-photography services. Whether you need event coverage, professional portraits,
-or commercial photography, our experienced team delivers exceptional results.
+Professional photography trusted by leading brands and publications, and proven to perform.
 
-## Our Photography Services
+My images have been licensed over **3,500** times, sold in more than **90 countries**, and earned over **£1,000** in royalties.
 
-### Event Photography
+Great photography does more than capture a moment. It builds credibility, tells a story, and delivers measurable results.
 
-From weddings to corporate events, we capture every important moment with
-artistic flair and professional expertise.
+**As featured in:**
+BBC News · Forbes · Financial Times · CNN · AutoTrader · Daily Mail · Business Insider
 
-### Portrait Sessions
+[Book a Photoshoot →](/contact)
 
-Professional headshots and personal portraits that showcase your best self,
-perfect for business profiles and personal branding.
+---
 
-### Commercial Photography
+## Proven Global Reach
 
-High-quality product and commercial photography that helps your business stand
-out in the marketplace.
+With thousands of licensed images and clients in over 90 countries, my work has appeared in a wide range of publications, from local businesses to international media outlets.
 
-## Why Choose Our Photography Services
+Each image connects with real audiences, whether for an auction listing, brand campaign, or editorial feature.
 
-- **Professional Equipment**: State-of-the-art cameras and lighting equipment
-- **Experienced Team**: Years of experience in various photography styles
-- **Quick Delivery**: Edited photos delivered within 48-72 hours
-- **Flexible Packages**: Customizable packages to fit your budget and needs
+**By the numbers:**
+- 3,500+ licensed images sold on leading stock platforms 
+- 90+ countries where my work has been published or purchased 
+- £1,000+ in royalties from global photography sales  
 
-## Get Started Today
+---
 
-Ready to capture your next important moment? Contact us for a consultation and
-let's discuss how we can bring your vision to life.
+## Photography Services
 
-[Contact Us](/contact) | [View Portfolio](/portfolio)
+### Photos That Build Trust and Win Clients
+
+From automotive storytelling to commercial branding, I create images that inspire trust in your business before people even make contact. Strong photography helps your website, ads, and social media stand out and attract the proper attention.
+
+### Automotive Photography
+
+Show vehicles at their best with clean, detailed imagery that attracts buyers and reflects your brand quality.
+
+### Commercial and Branding Photography
+
+Build credibility with professional portraits, product shots, and location photography designed for websites, brochures, and campaigns.
+
+### Aerial and Drone Photography
+
+As a licensed drone pilot, I provide fully insured aerial photography that adds powerful visual impact to real estate, events, and promotions.
+
+---
+
+## How We Work
+
+1. **Consultation:** We discuss your goals and what success looks like for you. 
+2. **Planning:** Locations, lighting, and logistics are organised for you. 
+3. **Shooting:** I capture your story with creativity and precision. 
+4. **Delivery:** You receive beautifully edited, web-ready images quickly.
+
+Every project includes high-resolution files, mobile-ready exports, and optional retouching.
+
+---
+
+## ✅ Reassurance You Can Rely On
+
+I hold **£1,000,000 Public Liability Insurance** for Photography and Film through Markel Direct (UK) and **£1,000,000 Drone Insurance Cover** as a licensed drone pilot.
+
+Your project is fully protected, giving you complete confidence that everything is handled safely, legally, and professionally.
+
+---
+
+## 💡 Why Choose My Photography
+
+- Trusted by major outlets: BBC News, Forbes, Financial Times, CNN, and AutoTrader 
+- Proven global results: 3,500+ licenses in 90+ countries 
+- Fully insured and certified: £1M cover and licensed drone operator 
+- Fast turnaround: Edited and delivered promptly 
+- Local and approachable: Based in Cheshire, working across the UK  
+
+[Book Your Photoshoot →](/contact)

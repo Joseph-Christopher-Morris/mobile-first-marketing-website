@@ -1,0 +1,126 @@
+{
+  "timestamp": "2025-11-10T22:11:04.972Z",
+  "productionUrl": "https://d15sc9fc739ev2.cloudfront.net",
+  "results": {
+    "chunkErrors": {
+      "passed": 8,
+      "failed": 0,
+      "warnings": 0,
+      "details": [
+        {
+          "page": "/",
+          "status": "PASS",
+          "issue": null
+        },
+        {
+          "page": "/services/photography",
+          "status": "PASS",
+          "issue": null
+        },
+        {
+          "page": "/services/hosting",
+          "status": "PASS",
+          "issue": null
+        },
+        {
+          "page": "/services/ad-campaigns",
+          "status": "PASS",
+          "issue": null
+        },
+        {
+          "page": "/services/analytics",
+          "status": "PASS",
+          "issue": null
+        },
+        {
+          "page": "/pricing",
+          "status": "PASS",
+          "issue": null
+        },
+        {
+          "page": "/about",
+          "status": "PASS",
+          "issue": null
+        },
+        {
+          "page": "/contact",
+          "status": "PASS",
+          "issue": null
+        }
+      ]
+    },
+    "pressLogos": {
+      "passed": 10,
+      "failed": 0,
+      "details": []
+    },
+    "oldLogos": {
+      "passed": 0,
+      "failed": 3,
+      "details": [
+        {
+          "page": "/",
+          "pattern": ".png",
+          "matches": [
+            "<img alt=\"Vivid Media Cheshire (VMC)\" width=\"116\" height=\"44\" decoding=\"async\" data-nimg=\"1\" class=\"site-logo object-contain\" style=\"color:transparent\" src=\"/images/brand/VMC.png\""
+          ]
+        },
+        {
+          "page": "/services/photography",
+          "pattern": ".png",
+          "matches": [
+            "<img alt=\"Vivid Media Cheshire (VMC)\" width=\"116\" height=\"44\" decoding=\"async\" data-nimg=\"1\" class=\"site-logo object-contain\" style=\"color:transparent\" src=\"/images/brand/VMC.png\""
+          ]
+        },
+        {
+          "page": "/about",
+          "pattern": ".png",
+          "matches": [
+            "<img alt=\"Vivid Media Cheshire (VMC)\" width=\"116\" height=\"44\" decoding=\"async\" data-nimg=\"1\" class=\"site-logo object-contain\" style=\"color:transparent\" src=\"/images/brand/VMC.png\""
+          ]
+        }
+      ]
+    },
+    "pricing": {
+      "passed": 6,
+      "failed": 0,
+      "details": [
+        {
+          "page": "/",
+          "issue": "Missing pricing link"
+        },
+        {
+          "page": "/services/hosting",
+          "issue": "Missing pricing link"
+        },
+        {
+          "page": "/services/photography",
+          "issue": "Missing pricing link"
+        },
+        {
+          "page": "/services/ad-campaigns",
+          "issue": "Missing pricing link"
+        },
+        {
+          "page": "/services/analytics",
+          "issue": "Missing pricing link"
+        }
+      ]
+    },
+    "navigation": {
+      "passed": 1,
+      "failed": 1,
+      "details": [
+        {
+          "location": "Header",
+          "issue": "Missing pricing link"
+        }
+      ]
+    }
+  },
+  "summary": {
+    "passed": 25,
+    "failed": 4,
+    "warnings": 0
+  }
+}

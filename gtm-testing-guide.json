@@ -1,0 +1,108 @@
+{
+  "title": "GTM + GA4 Testing Guide",
+  "timestamp": "2025-11-02T15:32:14.603Z",
+  "manualTests": [
+    {
+      "name": "Google Tag Assistant Test",
+      "steps": [
+        "1. Install Google Tag Assistant browser extension",
+        "2. Visit https://d15sc9fc739ev2.cloudfront.net/",
+        "3. Click the Tag Assistant icon",
+        "4. Verify GTM-W7L94JHW is firing",
+        "5. Verify GA4 G-QJXSCJ0L43 is receiving data"
+      ]
+    },
+    {
+      "name": "Scroll Depth Test",
+      "steps": [
+        "1. Visit any page on the site",
+        "2. Scroll to 25%, 50%, 75%, and 100% of page",
+        "3. Check GA4 Realtime > Events for scroll_depth events",
+        "4. Verify scroll_depth parameter shows correct percentages"
+      ]
+    },
+    {
+      "name": "Outbound Click Test",
+      "steps": [
+        "1. Visit the site",
+        "2. Click on social media links (Facebook, Instagram, LinkedIn)",
+        "3. Check GA4 Realtime > Events for outbound_click events",
+        "4. Verify link_url parameter shows external URLs"
+      ]
+    },
+    {
+      "name": "Form Submission Test",
+      "steps": [
+        "1. Visit /contact/ page",
+        "2. Fill out and submit the contact form",
+        "3. Check GA4 Realtime > Events for form_submission events",
+        "4. Verify form_id and form_class parameters"
+      ]
+    },
+    {
+      "name": "Engagement Timer Test",
+      "steps": [
+        "1. Visit any page on the site",
+        "2. Stay on page for at least 30 seconds",
+        "3. Check GA4 Realtime > Events for engaged_session events",
+        "4. Verify engagement_time parameter shows 30"
+      ]
+    }
+  ],
+  "ga4ConversionSetup": [
+    {
+      "step": 1,
+      "action": "Go to GA4 Admin > Events",
+      "description": "Navigate to the Events section in GA4"
+    },
+    {
+      "step": 2,
+      "action": "Mark form_submission as conversion",
+      "description": "Toggle the conversion switch for form_submission event"
+    },
+    {
+      "step": 3,
+      "action": "Mark outbound_click as conversion",
+      "description": "Toggle the conversion switch for outbound_click event"
+    },
+    {
+      "step": 4,
+      "action": "Optionally mark scroll_depth as conversion",
+      "description": "For engagement tracking (optional)"
+    },
+    {
+      "step": 5,
+      "action": "Optionally mark engaged_session as conversion",
+      "description": "For quality engagement tracking (optional)"
+    }
+  ],
+  "troubleshooting": [
+    {
+      "issue": "GTM not firing",
+      "solutions": [
+        "Check browser console for JavaScript errors",
+        "Verify GTM container ID is correct (GTM-W7L94JHW)",
+        "Ensure CloudFront cache is invalidated",
+        "Check if ad blockers are interfering"
+      ]
+    },
+    {
+      "issue": "Events not showing in GA4",
+      "solutions": [
+        "Wait 5-10 minutes for data processing",
+        "Check GA4 Realtime reports instead of standard reports",
+        "Verify GA4 measurement ID is correct (G-QJXSCJ0L43)",
+        "Ensure GTM container is published"
+      ]
+    },
+    {
+      "issue": "Smart events not triggering",
+      "solutions": [
+        "Check browser console for JavaScript errors",
+        "Verify event tracking code is present in HTML",
+        "Test on different browsers and devices",
+        "Check if Content Security Policy is blocking scripts"
+      ]
+    }
+  ]
+}

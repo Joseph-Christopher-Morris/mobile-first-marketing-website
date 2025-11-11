@@ -1,6 +1,8 @@
 import { Metadata } from 'next';
 import { Layout } from '@/components/layout';
 import Image from 'next/image';
+import Link from 'next/link';
+import { AboutServicesForm } from '@/components/AboutServicesForm';
 
 export const metadata: Metadata = {
   title: 'About Me | Digital Marketing & Photography Expert',
@@ -30,22 +32,11 @@ export default function AboutPage() {
                   </h1>
                   <div className='space-y-4 text-lg text-gray-600'>
                     <p>
-                      I&rsquo;m a digital marketer and photographer helping small
-                      businesses grow through smart strategy, creative visuals, and
-                      data-led decisions.
-                    </p>
-                    <p>
-                      My approach combines creative storytelling with analytical precision,
-                      ensuring every campaign delivers measurable results while maintaining
-                      authentic brand voice and visual appeal.
-                    </p>
-                    <p className='text-brand-pink font-semibold'>
-                      I curate experiences that connect brands with their ideal customers
-                      through strategic content and targeted campaigns.
+                      I help local businesses and trades across Cheshire attract more customers with professional visuals and straightforward marketing that gets results. You will always deal with me directly. No jargon, just reliable service that makes your business stand out.
                     </p>
                   </div>
                 </div>
-                
+
                 {/* Portrait Column */}
                 <div className='relative'>
                   <div className='relative h-96 w-full lg:h-[500px]'>
@@ -76,7 +67,7 @@ export default function AboutPage() {
                   I bring together creative expertise and analytical precision.
                 </p>
               </div>
-              
+
               <div className='grid grid-cols-1 md:grid-cols-3 gap-8 mb-12'>
                 {/* Car Photography Work */}
                 <div className='relative'>
@@ -98,7 +89,7 @@ export default function AboutPage() {
                 <div className='relative'>
                   <div className='relative h-64 w-full'>
                     <Image
-                      src='/images/about/PXL_20240220_085641747.webp'
+                      src='/images/about/PXL_20240222_004124044~2.webp'
                       alt='Digital marketing workspace showing data analysis and campaign optimization tools'
                       fill
                       className='object-cover rounded-lg shadow-lg'
@@ -114,7 +105,7 @@ export default function AboutPage() {
                 <div className='relative'>
                   <div className='relative h-64 w-full'>
                     <Image
-                      src='/images/about/PXL_20240222_004124044~2.webp'
+                      src='/images/about/PXL_20240220_085641747.webp'
                       alt='Professional collaboration and client consultation environment'
                       fill
                       className='object-cover rounded-lg shadow-lg'
@@ -130,8 +121,8 @@ export default function AboutPage() {
               <div className='text-center'>
                 <div className='max-w-4xl mx-auto space-y-4 text-gray-600'>
                   <p>
-                    I began with photography, capturing classic cars, auctions, and events, 
-                    and built a thriving business from scratch. Along the way, I discovered 
+                    I began with photography, capturing classic cars, auctions, and events,
+                    and built a thriving business from scratch. Along the way, I discovered
                     the power of <strong>analytics and marketing technology</strong>.
                   </p>
                   <p>
@@ -140,8 +131,7 @@ export default function AboutPage() {
                     <strong>Google Ads</strong> to help brands stand out and reach their target audience.
                   </p>
                   <p>
-                    My work has been featured in <strong>Business Insider</strong> and the{' '}
-                    <strong>Daily Mail</strong>, and I&rsquo;m certified in{' '}
+                    My editorial photography has been licensed by <strong>BBC News</strong> and <strong>Business Insider</strong>. I&rsquo;m certified in{' '}
                     <strong>Adobe Experience Cloud</strong> and{' '}
                     <strong>Google Marketing Platform</strong>.
                   </p>
@@ -193,7 +183,7 @@ export default function AboutPage() {
                     Photography
                   </h3>
                   <p className='text-gray-600'>
-                    Professional visuals that connect with your audience
+                    Professional visuals that make your work and premises look their best on your website, listings, and social media.
                   </p>
                 </div>
 
@@ -218,7 +208,7 @@ export default function AboutPage() {
                     Data Analytics
                   </h3>
                   <p className='text-gray-600'>
-                    Turn insights into clear actions and growth
+                    Simple, clear insights that show what is working and where to focus next.
                   </p>
                 </div>
 
@@ -249,7 +239,7 @@ export default function AboutPage() {
                     Ad Campaigns
                   </h3>
                   <p className='text-gray-600'>
-                    Strategy and optimisation across Meta & Google Ads
+                    Google and Meta campaigns that reach the right people and turn attention into enquiries.
                   </p>
                 </div>
               </div>
@@ -266,8 +256,7 @@ export default function AboutPage() {
                   Why Work With Me
                 </h2>
                 <p className='text-lg text-gray-600 max-w-3xl mx-auto'>
-                  I bring together creative expertise and data-driven insights
-                  to deliver marketing solutions that drive real results.
+                  Working with me means everything is handled personally, from the first idea to the final campaign. I show up when I say I will, keep you updated in plain English, and focus on improvements you can see, like more enquiries, more bookings, or better engagement.
                 </p>
               </div>
 
@@ -369,21 +358,20 @@ export default function AboutPage() {
                 <div className='text-center'>
                   <div className='text-3xl mb-4'>📰</div>
                   <h3 className='text-lg font-bold text-gray-900 mb-2'>
-                    Business Insider
+                    BBC News
                   </h3>
                   <p className='text-gray-600 text-sm'>
-                    Featured work and insights in leading business publication
+                    Editorial photography licensed by a nationally trusted media outlet
                   </p>
                 </div>
 
                 <div className='text-center'>
                   <div className='text-3xl mb-4'>📰</div>
                   <h3 className='text-lg font-bold text-gray-900 mb-2'>
-                    Daily Mail
+                    Business Insider
                   </h3>
                   <p className='text-gray-600 text-sm'>
-                    Photography and marketing work featured in major media
-                    outlet
+                    Editorial photography licensed by a global business publication
                   </p>
                 </div>
 
@@ -410,6 +398,32 @@ export default function AboutPage() {
             </div>
           </div>
         </section>
+
+        {/* Pricing Teaser Section */}
+        <section className="py-16 bg-gray-50">
+          <div className="container mx-auto px-4">
+            <div className="max-w-5xl mx-auto text-center">
+              <h2 className="text-3xl font-bold text-gray-900 mb-3">
+                Simple, transparent pricing
+              </h2>
+              <p className="text-lg text-gray-600 mb-6">
+                Websites from £300, hosting from £15 per month, Google Ads management from £150 per month,
+                and event photography from £200 per day.
+              </p>
+              <Link
+                href="/pricing"
+                className="inline-flex items-center bg-pink-600 text-white px-8 py-3 rounded-lg text-lg font-semibold hover:bg-pink-700 transition-colors"
+              >
+                View full pricing
+              </Link>
+            </div>
+          </div>
+        </section>
+
+        {/* About Services Form */}
+        <div className='container mx-auto px-4 py-16'>
+          <AboutServicesForm formspreeId="xpwaqjqr" />
+        </div>
 
         {/* CTA Section */}
         <section className='py-16 md:py-24 bg-brand-black text-white'>
