@@ -1,0 +1,37 @@
+{
+  "timestamp": "2025-10-31T21:48:24.013Z",
+  "url": "https://d3vfzayzqyr2yg.cloudfront.net/services/photography",
+  "galleryItems": 0,
+  "imagesFound": 30,
+  "engagementScore": 75,
+  "features": {
+    "Interactive Gallery": false,
+    "Hover Effects": true,
+    "Focus States": true,
+    "ARIA Labels": true,
+    "Keyboard Navigation": true,
+    "Click Tracking": false,
+    "Local Content": true,
+    "Credibility Indicators": true,
+    "CTA Buttons": true,
+    "Responsive Design": true,
+    "Next.js Image Optimization": false,
+    "WebP Format": true,
+    "Responsive Images": true,
+    "Preload Critical Images": true,
+    "Progressive Loading": true,
+    "Aspect Ratio Preservation": false
+  },
+  "imageCategories": {
+    "editorial": 0,
+    "local": 53,
+    "campaign": 45,
+    "clipping": 0
+  },
+  "recommendations": [
+    "Add comprehensive click tracking",
+    "Optimize image preloading strategy",
+    "Enhance local content visibility",
+    "Implement conversion-focused CTAs"
+  ]
+}

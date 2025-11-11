@@ -1,0 +1,123 @@
+{
+  "containerId": "GTM-W7L94JHW",
+  "ga4MeasurementId": "G-QJXSCJ0L43",
+  "tags": [
+    {
+      "name": "GA4 Configuration",
+      "type": "Google Analytics: GA4 Configuration",
+      "measurementId": "G-QJXSCJ0L43",
+      "trigger": "All Pages",
+      "settings": {
+        "send_page_view": true,
+        "enhanced_measurement": true,
+        "cookie_domain": "auto",
+        "cookie_expires": 63072000,
+        "anonymize_ip": false
+      }
+    },
+    {
+      "name": "GA4 Event - Scroll Depth",
+      "type": "Google Analytics: GA4 Event",
+      "eventName": "scroll_depth",
+      "trigger": "Custom Event - scroll_depth",
+      "parameters": {
+        "scroll_depth": "{{DLV - scroll_depth}}",
+        "page_location": "{{Page URL}}",
+        "page_title": "{{Page Title}}"
+      }
+    },
+    {
+      "name": "GA4 Event - Outbound Click",
+      "type": "Google Analytics: GA4 Event",
+      "eventName": "outbound_click",
+      "trigger": "Custom Event - outbound_click",
+      "parameters": {
+        "link_url": "{{DLV - link_url}}",
+        "link_text": "{{DLV - link_text}}",
+        "page_location": "{{Page URL}}"
+      }
+    },
+    {
+      "name": "GA4 Event - Form Submission",
+      "type": "Google Analytics: GA4 Event",
+      "eventName": "form_submission",
+      "trigger": "Custom Event - form_submission",
+      "parameters": {
+        "form_id": "{{DLV - form_id}}",
+        "form_class": "{{DLV - form_class}}",
+        "page_location": "{{Page URL}}",
+        "page_title": "{{Page Title}}"
+      }
+    },
+    {
+      "name": "GA4 Event - Engaged Session",
+      "type": "Google Analytics: GA4 Event",
+      "eventName": "engaged_session",
+      "trigger": "Custom Event - engaged_session",
+      "parameters": {
+        "engagement_time": "{{DLV - engagement_time}}",
+        "page_location": "{{Page URL}}",
+        "page_title": "{{Page Title}}"
+      }
+    }
+  ],
+  "triggers": [
+    {
+      "name": "All Pages",
+      "type": "Page View",
+      "conditions": "All Pages"
+    },
+    {
+      "name": "Custom Event - scroll_depth",
+      "type": "Custom Event",
+      "eventName": "scroll_depth"
+    },
+    {
+      "name": "Custom Event - outbound_click",
+      "type": "Custom Event",
+      "eventName": "outbound_click"
+    },
+    {
+      "name": "Custom Event - form_submission",
+      "type": "Custom Event",
+      "eventName": "form_submission"
+    },
+    {
+      "name": "Custom Event - engaged_session",
+      "type": "Custom Event",
+      "eventName": "engaged_session"
+    }
+  ],
+  "variables": [
+    {
+      "name": "DLV - scroll_depth",
+      "type": "Data Layer Variable",
+      "dataLayerVariableName": "scroll_depth"
+    },
+    {
+      "name": "DLV - link_url",
+      "type": "Data Layer Variable",
+      "dataLayerVariableName": "link_url"
+    },
+    {
+      "name": "DLV - link_text",
+      "type": "Data Layer Variable",
+      "dataLayerVariableName": "link_text"
+    },
+    {
+      "name": "DLV - form_id",
+      "type": "Data Layer Variable",
+      "dataLayerVariableName": "form_id"
+    },
+    {
+      "name": "DLV - form_class",
+      "type": "Data Layer Variable",
+      "dataLayerVariableName": "form_class"
+    },
+    {
+      "name": "DLV - engagement_time",
+      "type": "Data Layer Variable",
+      "dataLayerVariableName": "engagement_time"
+    }
+  ]
+}

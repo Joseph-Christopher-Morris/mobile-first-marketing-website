@@ -1,76 +1,62 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
-    <loc>https://d15sc9fc739ev2.cloudfront.net/</loc>
-    <lastmod>2025-01-11</lastmod>
+    <loc>https://vividmediacheshire.com/</loc>
+    <lastmod>2025-11-01</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
   </url>
   <url>
-    <loc>https://d15sc9fc739ev2.cloudfront.net/services/</loc>
-    <lastmod>2025-01-11</lastmod>
-    <changefreq>monthly</changefreq>
+    <loc>https://vividmediacheshire.com/services</loc>
+    <lastmod>2025-11-01</lastmod>
+    <changefreq>weekly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
-    <loc>https://d15sc9fc739ev2.cloudfront.net/services/photography/</loc>
-    <lastmod>2025-01-11</lastmod>
+    <loc>https://vividmediacheshire.com/services/hosting</loc>
+    <lastmod>2025-11-01</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://d15sc9fc739ev2.cloudfront.net/services/analytics/</loc>
-    <lastmod>2025-01-11</lastmod>
+    <loc>https://vividmediacheshire.com/services/ad-campaigns</loc>
+    <lastmod>2025-11-01</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://d15sc9fc739ev2.cloudfront.net/services/ad-campaigns/</loc>
-    <lastmod>2025-01-11</lastmod>
+    <loc>https://vividmediacheshire.com/services/analytics</loc>
+    <lastmod>2025-11-01</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
-
-
   <url>
-    <loc>https://d15sc9fc739ev2.cloudfront.net/blog/</loc>
-    <lastmod>2025-01-11</lastmod>
+    <loc>https://vividmediacheshire.com/services/photography</loc>
+    <lastmod>2025-11-01</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://vividmediacheshire.com/about</loc>
+    <lastmod>2025-11-01</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://vividmediacheshire.com/contact</loc>
+    <lastmod>2025-11-01</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://vividmediacheshire.com/blog</loc>
+    <lastmod>2025-11-01</lastmod>
     <changefreq>weekly</changefreq>
-    <priority>0.7</priority>
+    <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://d15sc9fc739ev2.cloudfront.net/blog/flyers-roi-breakdown/</loc>
-    <lastmod>2025-01-11</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://d15sc9fc739ev2.cloudfront.net/blog/paid-ads-campaign-learnings/</loc>
-    <lastmod>2025-01-11</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://d15sc9fc739ev2.cloudfront.net/blog/stock-photography-lessons/</loc>
-    <lastmod>2025-01-11</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://d15sc9fc739ev2.cloudfront.net/about/</loc>
-    <lastmod>2025-01-11</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  <url>
-    <loc>https://d15sc9fc739ev2.cloudfront.net/contact/</loc>
-    <lastmod>2025-01-11</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://d15sc9fc739ev2.cloudfront.net/privacy-policy/</loc>
-    <lastmod>2025-01-15</lastmod>
+    <loc>https://vividmediacheshire.com/privacy-policy</loc>
+    <lastmod>2025-11-01</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.3</priority>
   </url>

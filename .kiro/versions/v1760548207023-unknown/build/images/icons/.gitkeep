@@ -1,0 +1,9 @@
+# Icons and Graphics
+
+This directory contains icon files and small graphics used throughout the site.
+
+## Guidelines:
+- Size: 24x24px, 32x32px, 64x64px (multiple sizes)
+- Format: SVG preferred, PNG as fallback
+- File size: Keep under 10KB
+- Use semantic naming

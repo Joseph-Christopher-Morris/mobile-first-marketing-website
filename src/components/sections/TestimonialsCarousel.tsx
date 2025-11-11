@@ -16,20 +16,28 @@ interface TestimonialsCarouselProps {
 
 const testimonials: Testimonial[] = [
   {
-    id: 'lee',
+    id: 'anna',
     quote:
-      'A huge thank you! Joe Morris is an excellent photographer from Cheshire who has been providing us with amazing images of our cars for over 18 months at LSH Auto UK!',
-    author: 'Lee Murfitt',
-    role: 'Lead Strategist for Digital Growth & SEO',
-    company: 'SciMed',
+      'Joe has transformed our social media output creating dynamic content that drives engagement, he\'s become an integral and essential part of the team. From managing our website and working with all our client users and staff to creating content he has been a professional and joy to work with!',
+    author: 'Anna Burton',
+    role: 'Chair',
+    company: 'NYCC',
   },
   {
-    id: 'scott',
+    id: 'claire',
     quote:
-      'Joe was very flexible at the JSCC Scholarships, doing various shots of the teams working on the Citroen Saxos on the paddock, drivers posing with their cars and exciting pictures of the Saxos on track.',
-    author: 'Scott Beercroft',
-    role: 'JSCC Day Manager and Social Media Manager',
-    company: 'JSCC',
+      'Joe has been an incredible support to Feel Good Health and Fitness. He has consistently promoted the days and times of our Feel Good Gold classes on the NYCC Facebook page, helping to encourage new people to join our sessions.',
+    author: 'Claire Eaton',
+    role: 'Founder of Feel Good Gold and Fitness',
+    company: 'Feel Good Gold And Fitness',
+  },
+  {
+    id: 'zach',
+    quote:
+      'Joe has been very loyal to Hampson Auctions over the last four years, covering photography consignments across Cheshire and capturing striking images from our sales for promotional use on our email campaigns and social media channels.',
+    author: 'Zach Hamilton',
+    role: 'Managing Director',
+    company: 'Hampson Auctions',
   },
 ];
 

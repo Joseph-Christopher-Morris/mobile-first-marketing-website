@@ -34,7 +34,7 @@ export function Footer() {
                 href="https://instagram.com/vividautophotography"
                 target="_blank"
                 rel="noopener"
-                aria-label="Instagram"
+                aria-label="Instagram - Vivid Media Cheshire"
                 className="text-gray-400 hover:text-white transition-colors p-2 rounded-lg hover:bg-gray-800 min-w-[44px] min-h-[44px] flex items-center justify-center"
               >
                 <svg
@@ -100,6 +100,14 @@ export function Footer() {
               </li>
               <li>
                 <Link
+                  href='/pricing'
+                  className='text-gray-400 hover:text-white text-sm transition-colors'
+                >
+                  Pricing
+                </Link>
+              </li>
+              <li>
+                <Link
                   href='/blog'
                   className='text-gray-400 hover:text-white text-sm transition-colors'
                 >
@@ -126,6 +134,7 @@ export function Footer() {
                 <Link
                   href='/privacy-policy'
                   className='text-gray-400 hover:text-white text-sm transition-colors'
+                  aria-label='Read Vivid Media Cheshire Privacy Policy'
                 >
                   Privacy Policy
                 </Link>
@@ -139,10 +148,18 @@ export function Footer() {
             <ul className='space-y-2'>
               <li>
                 <Link
-                  href='/services/hosting'
+                  href='/services/website-hosting'
                   className='text-gray-400 hover:text-white text-sm transition-colors'
                 >
                   Website Hosting & Migration
+                </Link>
+              </li>
+              <li>
+                <Link
+                  href='/services/website-design'
+                  className='text-gray-400 hover:text-white text-sm transition-colors'
+                >
+                  Website Design & Development
                 </Link>
               </li>
               <li>
@@ -174,10 +191,21 @@ export function Footer() {
         </div>
 
         <div className='border-t border-gray-800 mt-8 pt-8 text-center'>
-          <p className='text-gray-400 text-sm'>
+          <p className='text-gray-400 text-sm mb-2'>
             © 2025 Vivid Media Cheshire. All rights reserved.
           </p>
-
+          <button
+            type='button'
+            onClick={() => {
+              if (typeof window !== 'undefined' && (window as any).reopenCookieBanner) {
+                (window as any).reopenCookieBanner();
+              }
+            }}
+            className='text-gray-400 hover:text-white text-sm transition-colors underline'
+            aria-label='Manage cookie consent preferences'
+          >
+            Manage Cookies
+          </button>
         </div>
       </div>
     </footer>

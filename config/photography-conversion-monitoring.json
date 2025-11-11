@@ -1,0 +1,125 @@
+{
+  "version": "1.0",
+  "createdAt": "2025-10-31T21:47:30.162Z",
+  "page": "/services/photography",
+  "trackingEvents": {
+    "galleryInteractions": {
+      "eventName": "photography_gallery_interaction",
+      "description": "User clicks on gallery images",
+      "parameters": {
+        "image_type": "editorial|local|campaign|clipping",
+        "image_position": "number",
+        "gallery_section": "string"
+      }
+    },
+    "ctaClicks": {
+      "eventName": "photography_cta_click",
+      "description": "User clicks on CTA buttons",
+      "parameters": {
+        "cta_type": "primary|secondary",
+        "cta_text": "string",
+        "page_section": "hero|gallery|footer"
+      }
+    },
+    "contactFormViews": {
+      "eventName": "photography_contact_view",
+      "description": "User views contact form",
+      "parameters": {
+        "referrer_section": "string",
+        "time_on_page": "number"
+      }
+    },
+    "bookingInquiries": {
+      "eventName": "photography_booking_inquiry",
+      "description": "User submits booking inquiry",
+      "parameters": {
+        "inquiry_type": "commercial|personal|editorial",
+        "form_completion_time": "number"
+      }
+    },
+    "credibilityViews": {
+      "eventName": "photography_credibility_view",
+      "description": "User views publication logos",
+      "parameters": {
+        "publication": "bbc|forbes|times",
+        "interaction_type": "view|hover|click"
+      }
+    },
+    "localFocusEngagement": {
+      "eventName": "photography_local_engagement",
+      "description": "User engages with local content",
+      "parameters": {
+        "content_type": "testimonials|statistics|location",
+        "engagement_duration": "number"
+      }
+    }
+  },
+  "conversionGoals": {
+    "primary": {
+      "name": "Photography Booking Inquiry",
+      "eventName": "photography_booking_inquiry",
+      "value": 100,
+      "description": "User submits a photography booking inquiry form"
+    },
+    "secondary": {
+      "name": "Contact Form View",
+      "eventName": "photography_contact_view",
+      "value": 25,
+      "description": "User views the contact form from photography page"
+    },
+    "engagement": {
+      "name": "Gallery Deep Engagement",
+      "eventName": "photography_gallery_interaction",
+      "condition": "interaction_count >= 3",
+      "value": 10,
+      "description": "User interacts with 3+ gallery images"
+    }
+  },
+  "dashboardMetrics": {
+    "conversionRate": {
+      "name": "Photography Conversion Rate",
+      "calculation": "booking_inquiries / page_views * 100",
+      "target": 2.5,
+      "unit": "%"
+    },
+    "galleryEngagement": {
+      "name": "Gallery Engagement Rate",
+      "calculation": "gallery_interactions / page_views * 100",
+      "target": 45,
+      "unit": "%"
+    },
+    "averageTimeOnPage": {
+      "name": "Average Time on Page",
+      "calculation": "total_time / page_views",
+      "target": 120,
+      "unit": "seconds"
+    },
+    "bounceRate": {
+      "name": "Bounce Rate",
+      "calculation": "single_page_sessions / total_sessions * 100",
+      "target": 60,
+      "unit": "%",
+      "reverse": true
+    }
+  },
+  "alertThresholds": {
+    "conversionRateDropAlert": {
+      "metric": "conversionRate",
+      "condition": "< 1.5",
+      "severity": "high",
+      "notification": "email"
+    },
+    "highBounceRateAlert": {
+      "metric": "bounceRate",
+      "condition": "> 80",
+      "severity": "medium",
+      "notification": "dashboard"
+    },
+    "lowEngagementAlert": {
+      "metric": "galleryEngagement",
+      "condition": "< 25",
+      "severity": "medium",
+      "notification": "dashboard"
+    }
+  }
+}

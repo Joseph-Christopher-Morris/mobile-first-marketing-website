@@ -1,146 +1,174 @@
+// src/app/services/page.tsx
 import type { Metadata } from "next";
 import Link from "next/link";
 import { Layout } from "@/components/layout";
 import { ServiceCard } from "@/components/services/ServiceCard";
+import ServicesContactSection from "@/components/sections/ServicesContactSection";
+import MobileStickyButton from "@/components/ui/MobileStickyButton";
 
 export const metadata: Metadata = {
   title:
     "Website Design, Development & Digital Marketing in Nantwich and Cheshire | Professional Services",
   description:
-    "Professional website design, development, hosting migration, photography, data analytics, and strategic ad campaigns for businesses in Nantwich and Cheshire. Comprehensive digital marketing services that drive results.",
+    "Affordable website design, hosting, and digital marketing for Cheshire businesses. Get faster load times, better ads, and measurable growth.",
   keywords: [
     "website design Nantwich",
     "web development Cheshire",
     "website hosting migration",
-    "photography services Nantwich",
-    "data analytics Cheshire",
     "digital marketing Nantwich",
     "ad campaigns Cheshire",
-    "professional services UK",
+    "data analytics Cheshire",
+    "photography services Nantwich",
+    "Nantwich business marketing",
   ],
   alternates: { canonical: "/services" },
   openGraph: {
     title:
       "Website Design, Development & Digital Marketing in Nantwich and Cheshire",
     description:
-      "Comprehensive digital marketing and web services for Cheshire businesses.",
+      "I help Nantwich and Cheshire businesses grow with website design, data analytics, and ROI-focused ad campaigns.",
     url: "/services",
     images: [
       {
         url: "/images/services/hosting-migration-card.webp",
         width: 1200,
         height: 630,
-        alt: "Professional digital marketing services in Nantwich, Cheshire",
+        alt: "Digital services for Nantwich and Cheshire businesses",
       },
     ],
   },
 };
 
 export default function ServicesPage() {
-  // Service data for the cards
+  // ORDERED to match: Website Design → Hosting → Strategic Ad Campaigns → Data Analytics → Photography
   const services = [
     {
+      title: "Website Design & Development",
+      description:
+        "Mobile first websites on AWS CloudFront, built on a modular framework that is ready for SEO, analytics, and ad campaigns.",
+      href: "/services/website-design",
+      thumbnail: "/images/services/Website Design/PXL_20240222_004124044~2.webp",
+      alt: "Web designer working on a website design and hosting project",
+    },
+    {
       title: "Website Hosting & Migration",
-      description: "Professional website hosting migration with 80% cost savings and 82% faster load times. Secure AWS S3 + CloudFront architecture with zero downtime deployment.",
-      href: "/services/hosting",
+      description:
+        "AWS S3 + CloudFront hosting with 80% cost reduction and 82% faster load times. Professional website migration with zero downtime.",
+      href: "/services/website-hosting",
       thumbnail: "/images/services/hosting-migration-card.webp",
-      alt: "Website hosting and migration services showing cost savings and performance improvements"
-    },
-    {
-      title: "Photography Services",
-      description: "Professional photography for businesses, events, and editorial work. Published in major publications including BBC, Forbes, and The Times.",
-      href: "/services/photography",
-      thumbnail: "/images/services/photography-hero.webp",
-      alt: "Professional photography services with published editorial work examples"
-    },
-    {
-      title: "Data Analytics & Insights",
-      description: "GA4 and Adobe-level analytics expertise with custom dashboards and reporting. Transform your data into actionable business insights.",
-      href: "/services/analytics",
-      thumbnail: "/images/services/analytics-hero.webp",
-      alt: "Data analytics dashboard showing business insights and performance metrics"
+      alt: "Website hosting and migration services showing cost savings and performance improvements",
     },
     {
       title: "Strategic Ad Campaigns",
-      description: "ROI-focused advertising campaigns with proven results. Case studies show £13.5k revenue from £546 investment with 85% conversion rates.",
+      description:
+        "Targeted advertising campaigns designed to maximize ROI and reach your ideal customers across all platforms.",
       href: "/services/ad-campaigns",
       thumbnail: "/images/services/ad-campaigns-hero.webp",
-      alt: "Strategic advertising campaigns with ROI case studies and performance metrics"
-    }
+      alt: "Strategic advertising campaigns dashboard and performance view",
+    },
+    {
+      title: "Data Analytics & Insights",
+      description:
+        "Comprehensive analytics and data-driven insights to optimize your business performance and drive growth.",
+      href: "/services/analytics",
+      thumbnail: "/images/services/screenshot-2025-09-23-analytics-dashboard.webp",
+      alt: "Data analytics dashboard showing business insights and performance metrics",
+    },
+    {
+      title: "Photography Services",
+      description:
+        "Professional automotive and commercial photography with mobile-optimized delivery and stunning visual storytelling.",
+      href: "/services/photography",
+      thumbnail: "/images/services/photography-hero.webp",
+      alt: "Professional photography services with published editorial work examples",
+    },
   ];
 
-  // JSON-LD schema (LocalBusiness + FAQ)
+  // JSON-LD schema updated to your FAQ set
   const schema = {
     "@context": "https://schema.org",
     "@type": "LocalBusiness",
-    name: "Professional Digital Marketing Services",
+    name: "Nantwich & Cheshire Digital Services",
     image: "/images/services/hosting-migration-card.webp",
     url: "https://example.com/services",
-    telephone: "+44 07586 378502",
     address: {
       "@type": "PostalAddress",
       addressLocality: "Nantwich",
       addressRegion: "Cheshire",
       addressCountry: "UK",
     },
-    areaServed: ["Nantwich", "Crewe", "Cheshire", "North West England"],
-    makesOffer: [
-      {
-        "@type": "Service",
-        name: "Website Hosting & Migration",
-        areaServed: "Cheshire",
-        serviceType: "Professional website hosting and migration services",
-      },
-      {
-        "@type": "Service",
-        name: "Photography Services",
-        areaServed: "Cheshire",
-        serviceType: "Professional photography for businesses and editorial work",
-      },
-      {
-        "@type": "Service",
-        name: "Data Analytics",
-        areaServed: "Cheshire",
-        serviceType: "Analytics, dashboards, and business intelligence",
-      },
-      {
-        "@type": "Service",
-        name: "Strategic Ad Campaigns",
-        areaServed: "Cheshire",
-        serviceType: "ROI-focused advertising and campaign management",
-      },
-    ],
+    areaServed: ["Nantwich", "Cheshire", "Crewe", "North West England", "UK"],
+    makesOffer: services.map((service) => ({
+      "@type": "Service",
+      name: service.title,
+      serviceType: service.description,
+      areaServed: "Nantwich & Cheshire",
+    })),
     "@graph": [
       {
         "@type": "FAQPage",
         mainEntity: [
           {
             "@type": "Question",
-            name: "Do you cover locations outside Nantwich and Cheshire?",
+            name: "Do I need to understand the technical side?",
             acceptedAnswer: {
               "@type": "Answer",
               text:
-                "Yes. I work across Cheshire and the North West, including Crewe, Chester, and Stoke-on-Trent.",
+                "No. I handle everything from setup to launch. You’ll get clear explanations and simple reports showing what’s working, without any jargon.",
             },
           },
           {
             "@type": "Question",
-            name:
-              "Can you deliver analytics and dashboards for campaign performance?",
+            name: "How long does the migration process take?",
             acceptedAnswer: {
               "@type": "Answer",
               text:
-                "Yes. I set up tracking, dashboards, and clear reports that show ROI and key actions.",
+                "Most migrations are completed within one to two weeks, depending on your site’s size and setup. The switchover is seamless and happens with zero downtime.",
             },
           },
           {
             "@type": "Question",
-            name:
-              "What types of photography services do you offer?",
+            name: "Can you help me get more leads for my business?",
             acceptedAnswer: {
               "@type": "Answer",
               text:
-                "I offer professional photography for businesses, events, and editorial work, with published examples in major publications.",
+                "Yes. I design websites and ad campaigns that attract the right customers and turn visitors into enquiries. Many clients start seeing more leads within the first month.",
+            },
+          },
+          {
+            "@type": "Question",
+            name: "How much does it cost to get started?",
+            acceptedAnswer: {
+              "@type": "Answer",
+              text:
+                "Packages are flexible and based on your goals. A basic site starts from a few hundred pounds, while complete design, analytics, and marketing projects are priced to match your needs.",
+            },
+          },
+          {
+            "@type": "Question",
+            name: "Can I update my own website later?",
+            acceptedAnswer: {
+              "@type": "Answer",
+              text:
+                "Yes. I’ll show you how to make simple updates like adding text or photos. If you prefer, I can handle improvements over time.",
+            },
+          },
+          {
+            "@type": "Question",
+            name: "Do you offer ongoing support and reporting?",
+            acceptedAnswer: {
+              "@type": "Answer",
+              text:
+                "Yes. I provide monthly performance updates with easy-to-read insights that show what’s working, where to improve, and how your results are growing.",
+            },
+          },
+          {
+            "@type": "Question",
+            name: "Do you work outside Nantwich and Cheshire?",
+            acceptedAnswer: {
+              "@type": "Answer",
+              text:
+                "Yes. I work with clients across the North West, including Manchester and Stoke-on-Trent, and can support remote UK projects.",
             },
           },
         ],
@@ -164,121 +192,257 @@ export default function ServicesPage() {
             <h1 className="text-4xl md:text-5xl lg:text-6xl font-extrabold text-gray-900 leading-tight">
               Website Design, Development & Digital Marketing in Nantwich and Cheshire
             </h1>
-            <p className="mt-6 text-xl text-gray-600 max-w-4xl mx-auto leading-relaxed">
-              Professional digital marketing services that drive real results for businesses across Cheshire. 
-              From website hosting and development to photography, analytics, and strategic advertising campaigns.
+            <p className="mt-6 text-2xl text-gray-700 max-w-4xl mx-auto leading-relaxed">
+              Faster, more affordable websites and smarter ads for Nantwich and Cheshire businesses.
+            </p>
+            <p className="mt-4 text-lg text-gray-600 max-w-4xl mx-auto leading-relaxed">
+              I help Nantwich and Cheshire businesses grow with website design, data analytics, and
+              ROI-focused ad campaigns. Browse my core services below to see how we boost visibility
+              and conversions.
             </p>
           </header>
 
           {/* Service cards */}
           <section className="mb-20">
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-6xl mx-auto">
-              {services.map((service, index) => (
-                <ServiceCard
-                  key={index}
-                  title={service.title}
-                  description={service.description}
-                  href={service.href}
-                  thumbnail={service.thumbnail}
-                  alt={service.alt}
-                />
-              ))}
-            </div>
-          </section>
-
-          {/* Why choose us section */}
-          <section className="text-gray-700 leading-relaxed max-w-4xl mx-auto mb-20">
-            <h2 className="text-2xl md:text-3xl font-bold text-gray-900 mb-6 text-center">
-              Why Nantwich and Cheshire businesses choose our services
-            </h2>
-            <div className="grid md:grid-cols-2 gap-8">
-              <div>
-                <h3 className="text-xl font-semibold text-gray-900 mb-3">Proven Results</h3>
-                <p className="mb-4">
-                  Our services deliver measurable outcomes: 80% cost savings on hosting, 
-                  published editorial work in major publications, and advertising campaigns 
-                  with documented ROI improvements.
-                </p>
-              </div>
-              <div>
-                <h3 className="text-xl font-semibold text-gray-900 mb-3">Local Expertise</h3>
-                <p className="mb-4">
-                  Based in Nantwich with deep knowledge of the Cheshire market, 
-                  we understand local business needs and deliver solutions that 
-                  work for the regional economy.
-                </p>
+            <div className="max-w-6xl mx-auto">
+              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10 xl:gap-12 justify-items-center">
+                {services.map((service, index) => (
+                  <div key={index} className="w-full max-w-sm">
+                    <ServiceCard
+                      title={service.title}
+                      description={service.description}
+                      href={service.href}
+                      thumbnail={service.thumbnail}
+                      alt={service.alt}
+                    />
+                  </div>
+                ))}
               </div>
             </div>
           </section>
 
-          {/* FAQ */}
+          {/* Real performance before & after */}
           <section className="mb-20">
-            <h2 className="text-2xl md:text-3xl font-bold text-gray-900 mb-8 text-center">
-              Frequently Asked Questions
+            <div className="max-w-5xl mx-auto">
+              <h2 className="text-3xl font-bold text-gray-900 mb-4 text-center">
+                Real-World Speed Improvements
+              </h2>
+              <p className="text-lg text-gray-700 mb-10 text-center max-w-3xl mx-auto leading-relaxed">
+                I migrated my automotive photography site from traditional hosting to AWS
+                S3 + CloudFront. Here's how the numbers changed on mobile, measured with
+                Google Lighthouse.
+              </p>
+
+              <div className="grid gap-6 md:grid-cols-2">
+                {/* Before card */}
+                <article className="bg-white rounded-2xl shadow-sm border border-gray-100 p-6 flex flex-col">
+                  <h3 className="text-sm font-semibold tracking-wide text-gray-500 uppercase mb-1">
+                    Before – Old Site
+                  </h3>
+                  <p className="text-2xl font-extrabold text-orange-500 mb-4">Performance 56</p>
+
+                  {/* Before screenshot */}
+                  <div className="mb-4 rounded-lg overflow-hidden">
+                    <img
+                      src="/images/services/before-hosting-performance.webp"
+                      alt="Google Lighthouse performance score of 56 before AWS migration"
+                      className="w-full h-auto"
+                    />
+                  </div>
+
+                  <dl className="space-y-2 text-sm sm:text-base text-gray-700">
+                    <div className="flex justify-between">
+                      <dt>First Contentful Paint</dt>
+                      <dd className="font-semibold">3.3s</dd>
+                    </div>
+                    <div className="flex justify-between">
+                      <dt>Largest Contentful Paint</dt>
+                      <dd className="font-semibold">14.2s</dd>
+                    </div>
+                    <div className="flex justify-between">
+                      <dt>Total Blocking Time</dt>
+                      <dd className="font-semibold">300&nbsp;ms</dd>
+                    </div>
+                    <div className="flex justify-between">
+                      <dt>Speed Index</dt>
+                      <dd className="font-semibold">6.6s</dd>
+                    </div>
+                  </dl>
+
+                  <p className="mt-4 text-sm text-gray-500">
+                    Slow load times meant lost visitors and fewer enquiries.
+                  </p>
+                </article>
+
+                {/* After card */}
+                <article className="bg-white rounded-2xl shadow-sm border border-gray-100 p-6 flex flex-col">
+                  <h3 className="text-sm font-semibold tracking-wide text-gray-500 uppercase mb-1">
+                    After – AWS Migration
+                  </h3>
+                  <p className="text-2xl font-extrabold text-emerald-600 mb-4">Performance 99</p>
+
+                  {/* After screenshot */}
+                  <div className="mb-4 rounded-lg overflow-hidden">
+                    <img
+                      src="/images/services/Web Hosting And Migration/pagespeed-aws-migration-desktop.webp"
+                      alt="Google Lighthouse performance score of 99 after AWS migration"
+                      className="w-full h-auto"
+                    />
+                  </div>
+
+                  <dl className="space-y-2 text-sm sm:text-base text-gray-700">
+                    <div className="flex justify-between">
+                      <dt>First Contentful Paint</dt>
+                      <dd className="font-semibold">1.1s</dd>
+                    </div>
+                    <div className="flex justify-between">
+                      <dt>Largest Contentful Paint</dt>
+                      <dd className="font-semibold">1.8s</dd>
+                    </div>
+                    <div className="flex justify-between">
+                      <dt>Total Blocking Time</dt>
+                      <dd className="font-semibold">20&nbsp;ms</dd>
+                    </div>
+                    <div className="flex justify-between">
+                      <dt>Speed Index</dt>
+                      <dd className="font-semibold">2.1s</dd>
+                    </div>
+                  </dl>
+
+                  <p className="mt-4 text-sm text-gray-500">
+                    Faster pages, smoother browsing, and a better experience on mobile.
+                  </p>
+                </article>
+              </div>
+
+              <p className="mt-6 text-xs text-gray-500 text-center">
+                Metrics from Google Lighthouse mobile tests for my automotive photography
+                site before and after migrating to AWS.
+              </p>
+            </div>
+          </section>
+
+          {/* Why Nantwich and Cheshire Businesses Choose Me */}
+          <section className="max-w-5xl mx-auto mb-20">
+            <h2 className="text-3xl font-bold text-gray-900 mb-6 text-center">
+              Why Nantwich and Cheshire Businesses Choose Me
             </h2>
+            <p className="text-lg text-gray-700 mb-6 leading-relaxed">
+              I blend creative website design with data-driven marketing and analytics to help local
+              brands grow with confidence. From development to ad campaigns, every project focuses on
+              measurable performance that increases visibility, enquiries, and ROI.
+            </p>
+            <p className="text-lg text-gray-700 leading-relaxed">
+              Ready to improve your digital performance? Let’s talk about your goals, budget, and
+              next steps.
+            </p>
+          </section>
+
+          {/* FAQs */}
+          <section className="mb-20">
+            <h2 className="text-3xl font-bold text-gray-900 mb-8 text-center">FAQs</h2>
             <div className="max-w-3xl mx-auto space-y-4">
               <details className="bg-white rounded-lg p-6 shadow-sm border border-gray-200">
                 <summary className="font-semibold cursor-pointer text-lg">
-                  Do you cover locations outside Nantwich and Cheshire?
+                  Do I need to understand the technical side?
                 </summary>
                 <p className="mt-3 text-gray-700">
-                  Yes. I work across the North West, including Crewe, Chester,
-                  and Stoke-on-Trent, providing the same high-quality services
-                  throughout the region.
+                  No. I handle everything from setup to launch. You’ll get clear explanations and
+                  simple reports showing what’s working, without any jargon or confusing tools.
                 </p>
               </details>
+
               <details className="bg-white rounded-lg p-6 shadow-sm border border-gray-200">
                 <summary className="font-semibold cursor-pointer text-lg">
-                  Can you provide dashboards and ongoing reporting?
+                  How long does the migration process take?
                 </summary>
                 <p className="mt-3 text-gray-700">
-                  Yes. I deliver comprehensive tracking, custom dashboards, and 
-                  detailed monthly reports with clear next steps and actionable insights.
+                  Most migrations are completed within one to two weeks, depending on your site’s size
+                  and setup. The switchover is seamless and happens with zero downtime.
                 </p>
               </details>
+
               <details className="bg-white rounded-lg p-6 shadow-sm border border-gray-200">
                 <summary className="font-semibold cursor-pointer text-lg">
-                  What types of businesses do you work with?
+                  Can you help me get more leads for my business?
                 </summary>
                 <p className="mt-3 text-gray-700">
-                  I work with a diverse range of businesses from small local companies 
-                  to larger enterprises, tailoring services to meet specific needs and budgets.
+                  Yes. I design websites and ad campaigns that attract the right customers and turn
+                  visitors into enquiries. Many clients start seeing more leads within the first month.
+                </p>
+              </details>
+
+              <details className="bg-white rounded-lg p-6 shadow-sm border border-gray-200">
+                <summary className="font-semibold cursor-pointer text-lg">
+                  How much does it cost to get started?
+                </summary>
+                <p className="mt-3 text-gray-700">
+                  Packages are flexible and based on your goals. A basic site starts from a few hundred
+                  pounds, while complete design, analytics, and marketing projects are priced to match
+                  your needs. You’ll always receive a precise quote before any work begins.
+                </p>
+              </details>
+
+              <details className="bg-white rounded-lg p-6 shadow-sm border border-gray-200">
+                <summary className="font-semibold cursor-pointer text-lg">
+                  Can I update my own website later?
+                </summary>
+                <p className="mt-3 text-gray-700">
+                  Yes. I’ll show you how to make simple updates like adding text or photos. If you
+                  prefer, I can handle updates and improvements for you over time.
+                </p>
+              </details>
+
+              <details className="bg-white rounded-lg p-6 shadow-sm border border-gray-200">
+                <summary className="font-semibold cursor-pointer text-lg">
+                  Do you offer ongoing support and reporting?
+                </summary>
+                <p className="mt-3 text-gray-700">
+                  Yes. I provide monthly performance updates with easy-to-read insights that show what’s
+                  working, where to improve, and how your results are growing.
+                </p>
+              </details>
+
+              <details className="bg-white rounded-lg p-6 shadow-sm border border-gray-200">
+                <summary className="font-semibold cursor-pointer text-lg">
+                  Do you work outside Nantwich and Cheshire?
+                </summary>
+                <p className="mt-3 text-gray-700">
+                  Yes. I work with clients across the North West, including Manchester and
+                  Stoke-on-Trent, and also support remote projects anywhere in the UK.
                 </p>
               </details>
             </div>
           </section>
 
-          {/* CTA Section */}
-          <section className="text-center bg-gradient-to-r from-pink-50 to-purple-50 rounded-2xl p-12 mx-4">
-            <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
-              Ready to Get Started?
-            </h2>
-            <p className="text-xl text-gray-600 mb-8 max-w-2xl mx-auto">
-              Let's discuss your project requirements and how our services can help 
-              your business grow. Get in touch for a free consultation.
-            </p>
-            <Link
-              href="/contact"
-              className="inline-flex items-center bg-pink-600 text-white px-8 py-4 rounded-lg text-lg font-semibold hover:bg-pink-700 transition-colors shadow-lg hover:shadow-xl"
-            >
-              Get Your Free Quote
-              <svg
-                className="ml-2 w-5 h-5"
-                viewBox="0 0 24 24"
-                fill="none"
-                stroke="currentColor"
+          {/* Pricing Teaser Section */}
+          <section className="mb-20">
+            <div className="max-w-5xl mx-auto text-center">
+              <h2 className="text-3xl font-bold text-gray-900 mb-3">
+                Simple, transparent pricing
+              </h2>
+              <p className="text-lg text-gray-600 mb-6">
+                Websites from £300, hosting from £15 per month, Google Ads management from £150 per month,
+                and event photography from £200 per day.
+              </p>
+              <Link
+                href="/pricing"
+                className="inline-flex items-center bg-pink-600 text-white px-8 py-3 rounded-lg text-lg font-semibold hover:bg-pink-700 transition-colors"
               >
-                <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  strokeWidth={2}
-                  d="M9 5l7 7-7 7"
-                />
-              </svg>
-            </Link>
+                View full pricing
+              </Link>
+            </div>
           </section>
+
+          {/* Services Contact Section with Form */}
+          <div id="form">
+            <ServicesContactSection />
+          </div>
         </div>
       </main>
+
+      {/* Mobile Sticky Button */}
+      <MobileStickyButton />
     </Layout>
   );
 }

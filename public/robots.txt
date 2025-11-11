@@ -1,31 +1,35 @@
+# Allow all search engines to crawl the site
 User-agent: *
 Allow: /
 
-# Sitemap
-Sitemap: https://d15sc9fc739ev2.cloudfront.net/sitemap.xml
+# Sitemap location
+Sitemap: https://vividmediacheshire.com/sitemap.xml
 
-# Crawl-delay for respectful crawling
+# Respectful crawl rate
 Crawl-delay: 1
 
-# Allow all major search engines
-User-agent: Googlebot
-Allow: /
-
-User-agent: Bingbot
-Allow: /
-
-User-agent: Slurp
-Allow: /
-
-User-agent: DuckDuckBot
-Allow: /
-
-# Block access to admin and private areas (if any exist in future)
+# Block sensitive or future admin areas
 Disallow: /admin/
 Disallow: /private/
 Disallow: /.well-known/
 
-# Allow access to important resources
+# Allow access to important static assets
 Allow: /images/
 Allow: /css/
 Allow: /js/
+
+# Optional: Block AI training bots (respected by some, not all)
+User-agent: GPTBot
+Disallow: /
+
+User-agent: CCBot
+Disallow: /
+
+User-agent: Google-Extended
+Disallow: /
+
+User-agent: FacebookBot
+Disallow: /
+
+User-agent: Amazonbot
+Disallow: /

@@ -35,7 +35,7 @@ This isn’t theory. It’s **£13.5K made from £546 in print costs.**
 
 ## 🚀 Flyer V3: Built to Scale
 
-![Porsche 911 at the Hampson Auctions Concorde Conference Centre Sale: November 2021](/images/blog/porsche-911-hampson.jpg)
+![Porsche 911 at the Hampson Auctions Concorde Conference Centre Sale: November 2021](/images/blog/211125_Hampson_Auctions-29.webp)
 
 By early 2023, I’d levelled up my content and my clients.
 
@@ -48,8 +48,8 @@ Time to scale.
 - Tighter writing
 - A show-stopping cover
 
-![Front of Version 3 Flyer — Sharp, personal, and proven](/images/blog/flyer-v3-front.jpg)
-![Back of Version 3 Flyer — Proof over promise](/images/blog/flyer-v3-back.jpg)
+![Front of Version 3 Flyer — Sharp, personal, and proven](/images/blog/WhatsApp Image 2025-07-11 at 2.22.33 PM (2).webp)
+![Back of Version 3 Flyer — Proof over promise](/images/blog/WhatsApp Image 2025-07-11 at 2.22.33 PM (3).webp)
 
 I chose each image to **create emotion, not just fill space.**
 
@@ -57,7 +57,7 @@ I chose each image to **create emotion, not just fill space.**
 
 ## ⚠️ NEC Show Roadbump
 
-![The Praga R1R race car at the ROWE trade stand at the NEC Autosport International show](/images/blog/praga-r1r-nec.jpg)
+![The Praga R1R race car at the ROWE trade stand at the NEC Autosport International show](/images/blog/230112_NEC_Autoshow-132.webp)
 
 Right before the NEC Autosport International, Vistaprint emailed me:
 
@@ -119,7 +119,7 @@ strategy and persistence can outperform paid ads.
 - Hampson Auctions
 - Car & Classic
 
-**2025 — £1,124.31 (to date)**
+**2025 — £1,124.31 (to July 2025)**
 
 - Hampson Auctions
 - Car & Classic
@@ -130,7 +130,7 @@ _Total revenue from flyers: **£13,563.92** — a **2,380% ROI**._
 
 ## 🧩 Key Takeaways
 
-![A Porsche 718 Cayman GT4 RS and a McLaren Senna at the Logic stand at NEC Autosport International](/images/blog/porsche-mclaren-nec.jpg)
+![A Porsche 718 Cayman GT4 RS and a McLaren Senna at the Logic stand at NEC Autosport International](/images/blog/230112_NEC_Autoshow-62.webp)
 
 - **Flyers made me visible in high-trust spaces.**
 - **My portfolio fed word-of-mouth.**

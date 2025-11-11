@@ -1,0 +1,13 @@
+<svg width="92" height="23" viewBox="0 0 92 23" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <g transform="translate(16, 3)">
+    <!-- BBC Logo blocks -->
+    <rect x="0" y="0" width="15" height="17" fill="#000000" rx="1"/>
+    <rect x="18" y="0" width="15" height="17" fill="#000000" rx="1"/>
+    <rect x="36" y="0" width="15" height="17" fill="#000000" rx="1"/>
+    
+    <!-- BBC Text -->
+    <text x="7.5" y="12" font-family="Arial, sans-serif" font-size="11" font-weight="bold" fill="white" text-anchor="middle">B</text>
+    <text x="25.5" y="12" font-family="Arial, sans-serif" font-size="11" font-weight="bold" fill="white" text-anchor="middle">B</text>
+    <text x="43.5" y="12" font-family="Arial, sans-serif" font-size="11" font-weight="bold" fill="white" text-anchor="middle">C</text>
+  </g>
+</svg>

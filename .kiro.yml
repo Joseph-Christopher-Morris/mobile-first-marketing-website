@@ -1,0 +1,83 @@
+version: 1
+
+env:
+  NODE_VERSION: "20"
+  AWS_REGION: "us-east-1"
+  # >>> Set these three in your Kiro/CI secrets <<<
+  # S3_BUCKET: mobile-marketing-site-prod-1759705011281-tyzuo9
+  # CF_DIST_ID: E2IBMHQ3GCW6ZK
+  # AWS_ROLE_ARN: arn:aws:iam::<acct>:role/<oidc-deploy-role>
+
+jobs:
+  deploy-prod:
+    steps:
+      - name: Checkout
+        run: |
+          git fetch --all --tags
+          git status
+
+      - name: Use Node $NODE_VERSION
+        run: |
+          corepack enable
+          echo "Using Node $(node -v || true)"
+
+      - name: Install deps (clean)
+        run: |
+          npm ci
+
+      - name: Build responsive images
+        run: |
+          npx sharp -i ./public/images/hero/aston-martin-db6-website.webp \
+            -o ./public/images/hero/aston-martin-db6-website-1280.webp resize 1280
+          npx sharp -i ./public/images/icons/vivid-auto-photography-logo.webp \
+            -o ./public/images/icons/vivid-media-cheshire-logo-116x44.webp resize 116 44
+
+      - name: Static build & export
+        run: |
+          npm run build:static || npm run build && npm run export
+
+      - name: Assume AWS role (OIDC)
+        run: |
+          aws --version || pipx install awscli || true
+          aws sts assume-role-with-web-identity \
+            --role-arn "$AWS_ROLE_ARN" \
+            --role-session-name kiro-deploy \
+            --web-identity-token "$(cat $KIRO_OIDC_TOKEN)" \
+            --duration-seconds 3600 > /tmp/aws_creds.json
+          export AWS_ACCESS_KEY_ID=$(jq -r '.Credentials.AccessKeyId' /tmp/aws_creds.json)
+          export AWS_SECRET_ACCESS_KEY=$(jq -r '.Credentials.SecretAccessKey' /tmp/aws_creds.json)
+          export AWS_SESSION_TOKEN=$(jq -r '.Credentials.SessionToken' /tmp/aws_creds.json)
+          aws configure set region "$AWS_REGION"
+
+      - name: S3 sync (HTML short cache)
+        run: |
+          aws s3 sync out "s3://$S3_BUCKET" \
+            --exclude "*" --include "*.html" --include "sitemap.xml" --include "robots.txt" \
+            --metadata-directive REPLACE \
+            --cache-control "public, max-age=600" \
+            --content-type "text/html; charset=utf-8"
+
+      - name: S3 sync (Assets long cache, immutable)
+        run: |
+          aws s3 sync out "s3://$S3_BUCKET" \
+            --exclude "*.html" --exclude "sitemap.xml" --exclude "robots.txt" \
+            --metadata-directive REPLACE \
+            --cache-control "public, max-age=31536000, immutable" \
+            --delete
+
+      - name: CloudFront invalidation
+        run: |
+          aws cloudfront create-invalidation \
+            --distribution-id "$CF_DIST_ID" \
+            --paths "/" "/index.html" "/services/*" "/blog*" "/images/*" "/sitemap.xml" "/_next/*"
+
+      - name: Lighthouse budget (optional gate)
+        run: |
+          npx @lhci/cli@0.13.x autorun \
+            --collect.startServerCommand="npx serve out -l 4173" \
+            --collect.url="http://127.0.0.1:4173" \
+            --assert.assertions.performance=">=0.98" \
+            --assert.assertions.'categories:accessibility'=">=0.95" \
+            --assert.assertions.'categories:seo'=">=1.00" \
+            --upload.target=temporary-public-storage || \
+          (echo "LHCI failed. Review and re-run."; exit 1)

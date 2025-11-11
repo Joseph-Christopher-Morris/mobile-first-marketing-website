@@ -1,4 +1,7 @@
-import Image from "next/image";
+"use client";
+
+import { useState, useRef, useEffect } from "react";
+import OptimizedImage from "@/components/ui/OptimizedImage";
 
 interface PhotographyImage {
   src: string;
@@ -7,124 +10,198 @@ interface PhotographyImage {
   caption?: string;
   title?: string;
   subtitle?: string;
+  location?: string; // For local work
+  client?: string;   // For campaign work
+  publication?: string; // For editorial work
 }
 
 interface PhotographyGalleryProps {
   images: PhotographyImage[];
 }
 
+
+
 export default function PhotographyGallery({ images }: PhotographyGalleryProps) {
+  const [loadedImages, setLoadedImages] = useState<Set<number>>(new Set());
+  const [focusedIndex, setFocusedIndex] = useState<number>(-1);
+  const galleryRef = useRef<HTMLDivElement>(null);
+  const imageRefs = useRef<(HTMLElement | null)[]>([]);
+
+  const handleImageLoad = (index: number) => {
+    setLoadedImages(prev => new Set(prev).add(index));
+  };
+
+  // Keyboard navigation handler
+  const handleKeyDown = (event: React.KeyboardEvent, index: number) => {
+    const { key } = event;
+    let newIndex = index;
+
+    switch (key) {
+      case 'ArrowRight':
+      case 'ArrowDown':
+        event.preventDefault();
+        newIndex = (index + 1) % images.length;
+        break;
+      case 'ArrowLeft':
+      case 'ArrowUp':
+        event.preventDefault();
+        newIndex = index === 0 ? images.length - 1 : index - 1;
+        break;
+      case 'Home':
+        event.preventDefault();
+        newIndex = 0;
+        break;
+      case 'End':
+        event.preventDefault();
+        newIndex = images.length - 1;
+        break;
+      case 'Enter':
+      case ' ':
+        event.preventDefault();
+        handleImageClick(index);
+        return;
+      default:
+        return;
+    }
+
+    setFocusedIndex(newIndex);
+    imageRefs.current[newIndex]?.focus();
+  };
+
+  // Handle image click with accessibility support
+  const handleImageClick = (index: number) => {
+    const item = images[index];
+
+    // Track gallery image click
+    if (typeof window !== 'undefined' && window.gtag) {
+      window.gtag('event', 'gallery_image_click', {
+        event_category: 'engagement',
+        event_label: item.type,
+        custom_parameter_1: item.title || `image_${index}`,
+        custom_parameter_2: item.location || item.client || 'unknown',
+        value: 1
+      });
+    }
+
+    // Announce to screen readers
+    const announcement = `Viewing ${item.title || 'image'} ${index + 1} of ${images.length}`;
+    const announcer = document.createElement('div');
+    announcer.setAttribute('aria-live', 'polite');
+    announcer.setAttribute('aria-atomic', 'true');
+    announcer.className = 'sr-only';
+    announcer.textContent = announcement;
+    document.body.appendChild(announcer);
+    setTimeout(() => document.body.removeChild(announcer), 1000);
+  };
+
+  // Set up image refs
+  useEffect(() => {
+    imageRefs.current = imageRefs.current.slice(0, images.length);
+  }, [images.length]);
+
   return (
-    <section aria-label="Photography Portfolio" className="mt-10">
-      <h2 className="text-2xl font-semibold mb-4">Portfolio Gallery</h2>
-      <p className="text-muted-foreground mb-6 max-w-2xl">
-        A mix of local photography, commercial campaigns, and real editorial placements.
-      </p>
+    <section
+      aria-label="Photography Portfolio Gallery"
+      className="py-14 sm:py-16 bg-white"
+    >
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8" ref={galleryRef}>
+        <h2 id="gallery-heading" className="text-2xl font-semibold mb-4">Portfolio Gallery</h2>
+        <p className="text-muted-foreground mb-6 max-w-2xl">
+          A mix of local photography, commercial campaigns, and real editorial placements.
+          Use arrow keys to navigate between images, Enter or Space to view details.
+        </p>
 
-      <div className="grid gap-4 grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 auto-rows-[1fr]">
+        {/* Mobile-first responsive grid */}
+        <div
+          className="grid gap-5 md:grid-cols-2 xl:grid-cols-3 items-start"
+          role="grid"
+          aria-labelledby="gallery-heading"
+          aria-describedby="gallery-instructions"
+        >
+        <div id="gallery-instructions" className="sr-only">
+          Photography portfolio gallery with {images.length} images. Use arrow keys to navigate, Enter or Space to view image details.
+        </div>
         {images.map((item, idx) => {
-          // Check if this is a tall/screenshot type that needs height capping
-          const isTall = item.type === "clipping" || item.type === "screenshot";
-          
-          // Special handling for Financial Times editorial cards with full styling
-          if (item.type === "clipping" && item.title && item.subtitle) {
-            return (
-              <figure
-                key={idx}
-                className="flex flex-col rounded-2xl border overflow-hidden bg-[#f6e9dc] text-slate-900 h-full max-h-[460px]"
-                aria-label="Editorial Proof: Financial Times EV Sales Article"
-              >
-                {/* Title */}
-                <div className="px-4 pt-4 font-serif text-xl font-semibold leading-snug line-clamp-2">
-                  {item.title}
-                </div>
-                
-                {/* Subtitle */}
-                <div className="px-4 pb-3 text-base leading-tight line-clamp-2">
-                  {item.subtitle}
-                </div>
-                
-                {/* Image */}
-                <div className="relative w-full bg-[#f6e9dc] max-h-[240px] min-h-[180px]">
-                  <Image
-                    src={item.src}
-                    alt={item.alt ?? item.title}
-                    fill
-                    className="object-contain p-2"
-                    sizes="(max-width: 480px) 100vw, (max-width: 1024px) 50vw, 33vw"
-                  />
-                </div>
-                
-                {/* Caption */}
-                <div className="px-4 py-4 text-sm leading-snug italic line-clamp-3 flex-1">
-                  {item.caption}
-                </div>
-              </figure>
-            );
-          }
+          const isClipping = item.type === 'clipping';
 
-          // Balanced card rendering for all other types
           return (
-            <figure 
-              key={idx} 
-              className="flex flex-col rounded-2xl border bg-white overflow-hidden h-full max-h-[460px]"
+            <div
+              key={idx}
+              ref={(el) => { imageRefs.current[idx] = el; }}
+              className={`bg-white rounded-2xl overflow-hidden shadow-sm border border-slate-100 flex flex-col h-full cursor-pointer hover:shadow-lg transition-shadow focus:outline-none focus:ring-2 focus:ring-brand-pink focus:ring-offset-2 ${
+                isClipping ? "bg-[#ecddcc]" : ""
+              }`}
+              role="gridcell"
+              tabIndex={0}
+              aria-label={`${item.type} photography: ${item.title || item.alt || 'Photography sample'}. ${item.location ? `Location: ${item.location}. ` : ''}${item.client ? `Client: ${item.client}. ` : ''}${item.publication ? `Publication: ${item.publication}. ` : ''}Image ${idx + 1} of ${images.length}`}
+              aria-describedby={`caption-${idx}`}
+              data-gallery-image={`${item.type}_${idx}`}
+              onClick={() => handleImageClick(idx)}
+              onKeyDown={(e) => handleKeyDown(e, idx)}
+              onFocus={() => setFocusedIndex(idx)}
             >
-              {/* Image container with balanced aspect handling */}
-              <div
-                className={
-                  isTall
-                    ? "relative w-full bg-slate-50 max-h-[240px] min-h-[180px]"
-                    : "relative w-full bg-slate-50 aspect-[4/3]"
-                }
-              >
-                <Image
+              {/* Image wrapper with mobile-first responsive sizing */}
+              <div className={`relative w-full bg-slate-100 ${isClipping ? "p-4 pb-0" : ""}`}>
+                <img
                   src={item.src}
                   alt={item.alt ?? item.title ?? "Photography sample"}
-                  fill
-                  className={isTall ? "object-contain p-2" : "object-cover"}
-                  sizes="(max-width: 480px) 100vw, (max-width: 1024px) 50vw, 33vw"
+                  loading="lazy"
+                  className={`w-full h-auto mx-auto ${
+                    isClipping
+                      ? "max-h-[320px] object-contain"
+                      : "max-h-[380px] md:max-h-[340px] object-contain md:object-cover"
+                  }`}
+                  onLoad={() => handleImageLoad(idx)}
                 />
               </div>
-              
-              {/* Text content with flex-1 to fill remaining space */}
-              <div className="p-3 flex-1 flex flex-col">
-                <p className="text-sm font-semibold leading-snug line-clamp-2">
-                  {item.title || item.alt || "Photography Sample"}
-                </p>
-                
-                {item.caption && (
-                  <p className="text-xs text-slate-600 mt-1 leading-snug line-clamp-3">
-                    {item.caption}
-                  </p>
-                )}
-                
-                {/* Type badges */}
-                <div className="mt-auto pt-3">
-                  {item.type === "clipping" && (
-                    <span className="inline-block rounded-full bg-pink-100 text-pink-700 text-[10px] px-2 py-0.5">
-                      Published
-                    </span>
-                  )}
-                  {item.type === "local" && (
-                    <span className="inline-block rounded-full bg-slate-100 text-slate-700 text-[10px] px-2 py-0.5">
-                      Local
-                    </span>
-                  )}
-                  {item.type === "campaign" && (
-                    <span className="inline-block rounded-full bg-emerald-100 text-emerald-700 text-[10px] px-2 py-0.5">
-                      Campaign
-                    </span>
-                  )}
-                  {item.type === "editorial" && (
-                    <span className="inline-block rounded-full bg-blue-100 text-blue-700 text-[10px] px-2 py-0.5">
-                      Editorial
-                    </span>
+
+              {/* Text content with consistent spacing */}
+              {isClipping ? (
+                <div className="px-4 pt-3 pb-4 space-y-2">
+                  <p className="text-sm font-medium text-slate-900">{item.title}</p>
+                  {item.caption && (
+                    <p className="text-xs text-slate-700 leading-relaxed">{item.caption}</p>
                   )}
                 </div>
-              </div>
-            </figure>
+              ) : (
+                <div className="flex-1 flex flex-col p-4 gap-2">
+                  <p className="text-sm font-semibold text-slate-900">{item.title}</p>
+                  {item.caption && (
+                    <p
+                      id={`caption-${idx}`}
+                      className="text-xs text-slate-600 leading-relaxed line-clamp-4 md:line-clamp-5"
+                    >
+                      {item.caption}
+                    </p>
+                  )}
+                  {item.client && (
+                    <p className="text-xs text-slate-500 mt-auto">Client: {item.client}</p>
+                  )}
+
+                  {/* Type badges */}
+                  <div className="mt-2">
+                    {item.type === "editorial" && (
+                      <span className="inline-block rounded-full bg-blue-100 text-blue-700 text-[10px] px-2 py-0.5">
+                        Editorial
+                      </span>
+                    )}
+                    {item.type === "local" && (
+                      <span className="inline-block rounded-full bg-brand-pink/10 text-brand-pink text-[10px] px-2 py-0.5 font-medium">
+                        Local Nantwich
+                      </span>
+                    )}
+                    {item.type === "campaign" && (
+                      <span className="inline-block rounded-full bg-emerald-100 text-emerald-700 text-[10px] px-2 py-0.5">
+                        Campaign
+                      </span>
+                    )}
+                  </div>
+                </div>
+              )}
+            </div>
           );
         })}
+        </div>
       </div>
     </section>
   );

@@ -1,0 +1,12 @@
+# Hero Images
+
+This directory contains background images for the homepage hero section.
+
+## Current Images:
+- hero-bg.jpg - Main homepage hero background
+
+## Guidelines:
+- Recommended size: 1920x1080px (16:9 aspect ratio)
+- Mobile size: 768x1024px (3:4 aspect ratio) for mobile-first design
+- File size: Keep under 500KB after compression
+- Format: JPEG or WebP preferred

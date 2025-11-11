@@ -1,9 +1,10 @@
 import type { Metadata } from 'next';
 import { Inter } from 'next/font/google';
 import Script from 'next/script';
+import CookieBanner from '@/components/CookieBanner';
 import './globals.css';
 
-const inter = Inter({ 
+const inter = Inter({
   subsets: ['latin'],
   display: 'swap',
   preload: true,
@@ -97,8 +98,6 @@ export default function RootLayout({
 }: {
   children: React.ReactNode;
 }) {
-  const GA_ID = process.env.NEXT_PUBLIC_GA_ID || 'G-QJXSCJ0L43';
-  
   return (
     <html lang='en'>
       <head>
@@ -108,22 +107,46 @@ export default function RootLayout({
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
         <link rel="dns-prefetch" href="https://d15sc9fc739ev2.cloudfront.net" />
-        
-        {/* Google Tag (GA4) */}
+
+        {/* Google tag (gtag.js) with consent mode */}
         <Script
-          src={`https://www.googletagmanager.com/gtag/js?id=${GA_ID}`}
+          async
+          src="https://www.googletagmanager.com/gtag/js?id=G-QJXSCJ0L43"
           strategy="afterInteractive"
         />
-        <Script id="ga4-init" strategy="afterInteractive">
+        <Script id="google-analytics" strategy="afterInteractive">
           {`
             window.dataLayer = window.dataLayer || [];
             function gtag(){dataLayer.push(arguments);}
+
+            // Configure consent mode
+            gtag('consent', 'default', {
+              analytics_storage: 'denied',
+              ad_storage: 'denied',
+              wait_for_update: 500
+            });
+
             gtag('js', new Date());
-            gtag('config', '${GA_ID}');
+            gtag('config', 'G-QJXSCJ0L43', {
+              anonymize_ip: true
+            });
+
+            // Check for existing consent
+            if (typeof window !== 'undefined') {
+              const consent = localStorage.getItem('cookieConsent');
+              if (consent === 'accepted') {
+                gtag('consent', 'update', {
+                  analytics_storage: 'granted'
+                });
+              }
+            }
           `}
         </Script>
       </head>
-      <body className={inter.className}>{children}</body>
+      <body className={inter.className}>
+        {children}
+        <CookieBanner />
+      </body>
     </html>
   );
 }

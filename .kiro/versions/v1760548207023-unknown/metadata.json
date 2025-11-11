@@ -1,0 +1,816 @@
+{
+  "versionId": "v1760548207023-unknown",
+  "timestamp": "2025-10-15T17:10:07.052Z",
+  "deploymentId": "deploy-1760548205541-770m99",
+  "gitCommit": "unknown",
+  "gitBranch": "unknown",
+  "buildDir": "out",
+  "artifacts": [
+    {
+      "name": "index.html",
+      "path": "404\\index.html",
+      "size": 18353,
+      "type": ".html",
+      "checksum": "fdd439c489a4b365e5f3d3581225af8b6e973d7d42b7c780b024ac52cf82cd2e"
+    },
+    {
+      "name": "404.html",
+      "path": "404.html",
+      "size": 18353,
+      "type": ".html",
+      "checksum": "fdd439c489a4b365e5f3d3581225af8b6e973d7d42b7c780b024ac52cf82cd2e"
+    },
+    {
+      "name": "index.html",
+      "path": "about\\index.html",
+      "size": 38610,
+      "type": ".html",
+      "checksum": "939c16161201979b6738aafc6d02e29cd461652d07b25bc92ba721e1341e23b0"
+    },
+    {
+      "name": "index.txt",
+      "path": "about\\index.txt",
+      "size": 17556,
+      "type": ".txt",
+      "checksum": "ab5dbc938879c31fa6709b345d418060b080620364ef75476bb8f5b6f2d6c392"
+    },
+    {
+      "name": "index.html",
+      "path": "blog\\flyers-roi-breakdown\\index.html",
+      "size": 44930,
+      "type": ".html",
+      "checksum": "a73a133c79cdd5d514c9c473a7022742354b1e3a82f33b1f13cdbc0deedfb2df"
+    },
+    {
+      "name": "index.txt",
+      "path": "blog\\flyers-roi-breakdown\\index.txt",
+      "size": 19328,
+      "type": ".txt",
+      "checksum": "b8d50fec2bdc7c92dc686e5055b5fc2da7b7353ee2953ca473c51fbe6bdedae8"
+    },
+    {
+      "name": "index.html",
+      "path": "blog\\index.html",
+      "size": 34804,
+      "type": ".html",
+      "checksum": "13d006c58fb05ee3d5f84ac97f7753c866952d2c75a482ff1c7aaa0db32c0d28"
+    },
+    {
+      "name": "index.txt",
+      "path": "blog\\index.txt",
+      "size": 13355,
+      "type": ".txt",
+      "checksum": "e59b616d7195ecf425226054e525dcb6416875820a00a7584037925c0650511e"
+    },
+    {
+      "name": "index.html",
+      "path": "blog\\paid-ads-campaign-learnings\\index.html",
+      "size": 42784,
+      "type": ".html",
+      "checksum": "1e32055fc3d667becb9121bdbcc07a86e496b79435361b5bc0342ab8be8a7fe7"
+    },
+    {
+      "name": "index.txt",
+      "path": "blog\\paid-ads-campaign-learnings\\index.txt",
+      "size": 18634,
+      "type": ".txt",
+      "checksum": "9be5daa6a509ecc3ec2c0de1884b683cdb401c12e162bd45bd169ad525f9c0b9"
+    },
+    {
+      "name": "index.html",
+      "path": "blog\\stock-photography-lessons\\index.html",
+      "size": 44543,
+      "type": ".html",
+      "checksum": "a12fd441c2105d10fec13805564fa31008964df427593d3f8898ea7526decf17"
+    },
+    {
+      "name": "index.txt",
+      "path": "blog\\stock-photography-lessons\\index.txt",
+      "size": 19341,
+      "type": ".txt",
+      "checksum": "7ada0115bbd39d862b6f3be8cf35256587ef7c98b8db8fbe70d2f4f5b6fbc5e8"
+    },
+    {
+      "name": "build-info.json",
+      "path": "build-info.json",
+      "size": 175,
+      "type": ".json",
+      "checksum": "0064bea2cf4ac650cb3d8c1895139748e15f8626907f70a868cbbdc84aec32f8"
+    },
+    {
+      "name": "index.html",
+      "path": "contact\\index.html",
+      "size": 42086,
+      "type": ".html",
+      "checksum": "55f8d18bf31bf9164be581be2f5697de95d964775aff2f6d972a5284de226b88"
+    },
+    {
+      "name": "index.txt",
+      "path": "contact\\index.txt",
+      "size": 18065,
+      "type": ".txt",
+      "checksum": "b4a5c8cc541dd9d81dbdcb67d03fa970bc2e3e80d555412c30087411310cb570"
+    },
+    {
+      "name": ".gitkeep",
+      "path": "images\\.gitkeep",
+      "size": 71,
+      "type": "",
+      "checksum": "4e48acac7698ee19cb03c7e899b9c5c612db44fb09f7dc4f568a0f7bbdae850a"
+    },
+    {
+      "name": ".gitkeep",
+      "path": "images\\about\\.gitkeep",
+      "size": 293,
+      "type": "",
+      "checksum": "482f39da71a69f7e210bb3075c27aef9e27e914619ca81a8709fe86b85ef4bc6"
+    },
+    {
+      "name": "A7302858.webp",
+      "path": "images\\about\\A7302858.webp",
+      "size": 32354,
+      "type": ".webp",
+      "checksum": "1bdd71c384136a25f954b70667cd6f273bc5c397acc9d88ef2d79e53c6d20e00"
+    },
+    {
+      "name": ".gitkeep",
+      "path": "images\\blog\\.gitkeep",
+      "size": 63,
+      "type": "",
+      "checksum": "cf5268feeb3458160d8ca9d28bee5eb6b5092383336856765943cc92d22ff54c"
+    },
+    {
+      "name": "google-ads-analytics-screenshot.webp",
+      "path": "images\\blog\\google-ads-analytics-screenshot.webp",
+      "size": 23692,
+      "type": ".webp",
+      "checksum": "aa851009798aec94a57ce8904afce4b2378c02fc1da7fb5a02c1561125068d38"
+    },
+    {
+      "name": "mobile-first-design.jpg",
+      "path": "images\\blog\\mobile-first-design.jpg",
+      "size": 48,
+      "type": ".jpg",
+      "checksum": "f6f1595346a22fe3d2ed01b5910a432eccdc9d298a61a60603973708f8474e58"
+    },
+    {
+      "name": "mobile-first-design.webp",
+      "path": "images\\blog\\mobile-first-design.webp",
+      "size": 48,
+      "type": ".webp",
+      "checksum": "f6f1595346a22fe3d2ed01b5910a432eccdc9d298a61a60603973708f8474e58"
+    },
+    {
+      "name": "screenshot-2025-08-11-analytics-data.webp",
+      "path": "images\\blog\\screenshot-2025-08-11-analytics-data.webp",
+      "size": 23692,
+      "type": ".webp",
+      "checksum": "aa851009798aec94a57ce8904afce4b2378c02fc1da7fb5a02c1561125068d38"
+    },
+    {
+      "name": "welcome-hero.jpg",
+      "path": "images\\blog\\welcome-hero.jpg",
+      "size": 36,
+      "type": ".jpg",
+      "checksum": "ffb4ef8008af773ecd651156d8c678d5f6ff3395c28bb9e6381478ad1819ffcf"
+    },
+    {
+      "name": "welcome-hero.webp",
+      "path": "images\\blog\\welcome-hero.webp",
+      "size": 36,
+      "type": ".webp",
+      "checksum": "ffb4ef8008af773ecd651156d8c678d5f6ff3395c28bb9e6381478ad1819ffcf"
+    },
+    {
+      "name": ".gitkeep",
+      "path": "images\\general\\.gitkeep",
+      "size": 243,
+      "type": "",
+      "checksum": "e75be9af9cd1093b049492ea2d4b7a243304ac450549e2e51621df52eccedd11"
+    },
+    {
+      "name": "google-analytics.webp",
+      "path": "images\\google-analytics.webp",
+      "size": 23692,
+      "type": ".webp",
+      "checksum": "aa851009798aec94a57ce8904afce4b2378c02fc1da7fb5a02c1561125068d38"
+    },
+    {
+      "name": ".gitkeep",
+      "path": "images\\hero\\.gitkeep",
+      "size": 371,
+      "type": "",
+      "checksum": "e89c9a09dd226bc1ee0ecc90dff00a3e43f0ac3f939bc93e8bbb9938eae39fcf"
+    },
+    {
+      "name": "240619-london-19.webp",
+      "path": "images\\hero\\240619-london-19.webp",
+      "size": 46984,
+      "type": ".webp",
+      "checksum": "5e143cf9eb55b505d87739317e2a3bedbed520a842a0f380e71ab770f884dfeb"
+    },
+    {
+      "name": "A7302858.webp",
+      "path": "images\\hero\\A7302858.webp",
+      "size": 32354,
+      "type": ".webp",
+      "checksum": "1bdd71c384136a25f954b70667cd6f273bc5c397acc9d88ef2d79e53c6d20e00"
+    },
+    {
+      "name": "aston-martin-db6-website.webp",
+      "path": "images\\hero\\aston-martin-db6-website.webp",
+      "size": 49328,
+      "type": ".webp",
+      "checksum": "fd98f08185f58be9b12b57069c2591c291426f10d65a97be1b163ad4aec19d90"
+    },
+    {
+      "name": "google-ads-analytics-dashboard.webp",
+      "path": "images\\hero\\google-ads-analytics-dashboard.webp",
+      "size": 23692,
+      "type": ".webp",
+      "checksum": "aa851009798aec94a57ce8904afce4b2378c02fc1da7fb5a02c1561125068d38"
+    },
+    {
+      "name": "hero-bg.jpg",
+      "path": "images\\hero\\hero-bg.jpg",
+      "size": 149,
+      "type": ".jpg",
+      "checksum": "c369790203916510dc7e487aa46a4678bb3e1a785d7dbf23b2a64deb4e5d7441"
+    },
+    {
+      "name": "hero-bg.webp",
+      "path": "images\\hero\\hero-bg.webp",
+      "size": 151,
+      "type": ".webp",
+      "checksum": "c80c6e1282ac4fca1109f91e25d6a7c9498bde96346a8616a94e2fe70e4958b3"
+    },
+    {
+      "name": "paid-ads-analytics-screenshot.webp",
+      "path": "images\\hero\\paid-ads-analytics-screenshot.webp",
+      "size": 23692,
+      "type": ".webp",
+      "checksum": "aa851009798aec94a57ce8904afce4b2378c02fc1da7fb5a02c1561125068d38"
+    },
+    {
+      "name": "screenshot-2025-08-11-analytics-data.webp",
+      "path": "images\\hero\\screenshot-2025-08-11-analytics-data.webp",
+      "size": 23692,
+      "type": ".webp",
+      "checksum": "aa851009798aec94a57ce8904afce4b2378c02fc1da7fb5a02c1561125068d38"
+    },
+    {
+      "name": "screenshot-2025-09-23-analytics-dashboard.webp",
+      "path": "images\\hero\\screenshot-2025-09-23-analytics-dashboard.webp",
+      "size": 38464,
+      "type": ".webp",
+      "checksum": "e5ee11c73a3ad2b6a4f6ccc55d36dabf1de8764cc3ec316eb7d7e84002e2602d"
+    },
+    {
+      "name": "stock-photography-samira.webp",
+      "path": "images\\hero\\stock-photography-samira.webp",
+      "size": 26170,
+      "type": ".webp",
+      "checksum": "20578f879ce25f4ec65e8d248a6e54b91775ceabd3f253a5bd19c6a67620b7f0"
+    },
+    {
+      "name": "whatsapp-image-2025-07-11-flyers-roi.webp",
+      "path": "images\\hero\\whatsapp-image-2025-07-11-flyers-roi.webp",
+      "size": 49522,
+      "type": ".webp",
+      "checksum": "d8f9eed67700db8171348b98cbfc9ae37d3969664281c7a3522e25f46cadf926"
+    },
+    {
+      "name": ".gitkeep",
+      "path": "images\\icons\\.gitkeep",
+      "size": 260,
+      "type": "",
+      "checksum": "4a6faf5a2c44970761f9ead47a6c3a9175e036a078ac91eed9f04a026824a25c"
+    },
+    {
+      "name": "vivid-auto-photography-logo-alt.png",
+      "path": "images\\icons\\vivid-auto-photography-logo-alt.png",
+      "size": 66959,
+      "type": ".png",
+      "checksum": "4015561d4ca06ea453cb1e598306b6dc9a29baf0ef09d9a3300110c71ab95598"
+    },
+    {
+      "name": "vivid-auto-photography-logo.png",
+      "path": "images\\icons\\vivid-auto-photography-logo.png",
+      "size": 66959,
+      "type": ".png",
+      "checksum": "4015561d4ca06ea453cb1e598306b6dc9a29baf0ef09d9a3300110c71ab95598"
+    },
+    {
+      "name": "vivid-auto-photography-logo.webp",
+      "path": "images\\icons\\vivid-auto-photography-logo.webp",
+      "size": 66959,
+      "type": ".webp",
+      "checksum": "4015561d4ca06ea453cb1e598306b6dc9a29baf0ef09d9a3300110c71ab95598"
+    },
+    {
+      "name": "README.md",
+      "path": "images\\README.md",
+      "size": 6770,
+      "type": ".md",
+      "checksum": "27bb4e429b05956eca9e3cb507d97178be05c9a4927fabc03b2cac2920f14189"
+    },
+    {
+      "name": ".gitkeep",
+      "path": "images\\services\\.gitkeep",
+      "size": 67,
+      "type": "",
+      "checksum": "234e1b362e533b8d0731cbfb98d80290a8e11a36f6300a68d997a016dbf95f39"
+    },
+    {
+      "name": "240217-australia-trip-232-1.webp",
+      "path": "images\\services\\240217-australia-trip-232-1.webp",
+      "size": 48688,
+      "type": ".webp",
+      "checksum": "f2944a66e7d3563cabcf74a8461173d852746cf3e7034ea078f16779722868ef"
+    },
+    {
+      "name": "240219-australia-trip-148.webp",
+      "path": "images\\services\\240219-australia-trip-148.webp",
+      "size": 68510,
+      "type": ".webp",
+      "checksum": "faadb8c56c82fe9b86a29afedfc7b97baa2abccae378f555aa7bc38780838db5"
+    },
+    {
+      "name": "240619-london-19.webp",
+      "path": "images\\services\\240619-london-19.webp",
+      "size": 42274,
+      "type": ".webp",
+      "checksum": "515e9aca8abe692998fce2a764865f23d46bdf373b26c8bd8be55114f7423407"
+    },
+    {
+      "name": "240619-london-26-1.webp",
+      "path": "images\\services\\240619-london-26-1.webp",
+      "size": 46984,
+      "type": ".webp",
+      "checksum": "5e143cf9eb55b505d87739317e2a3bedbed520a842a0f380e71ab770f884dfeb"
+    },
+    {
+      "name": "240619-london-64.webp",
+      "path": "images\\services\\240619-london-64.webp",
+      "size": 49972,
+      "type": ".webp",
+      "checksum": "7ed1b3acc393bec535112103bbf72924167eab3e4af945dbe8014def1fca2778"
+    },
+    {
+      "name": "250125-liverpool-40.webp",
+      "path": "images\\services\\250125-liverpool-40.webp",
+      "size": 50126,
+      "type": ".webp",
+      "checksum": "867ab66202373137931b6ca355e6e695303f0fc06444792534818fb2bd769d36"
+    },
+    {
+      "name": "250928-hampson-auctions-sunday-11.webp",
+      "path": "images\\services\\250928-hampson-auctions-sunday-11.webp",
+      "size": 50868,
+      "type": ".webp",
+      "checksum": "46a3e3f22ff0cd80ef36a89f6b826325616ccba6a629ba33b45f93e0a245feb5"
+    },
+    {
+      "name": "accessible-top8-campaigns-source.webp",
+      "path": "images\\services\\accessible-top8-campaigns-source.webp",
+      "size": 29688,
+      "type": ".webp",
+      "checksum": "e11c1dfd6fa33395b060737e55bfefe03ae754c149eccdc7655296e3be4eae40"
+    },
+    {
+      "name": "ad-campaigns-hero.webp",
+      "path": "images\\services\\ad-campaigns-hero.webp",
+      "size": 23692,
+      "type": ".webp",
+      "checksum": "aa851009798aec94a57ce8904afce4b2378c02fc1da7fb5a02c1561125068d38"
+    },
+    {
+      "name": "analytics-hero.webp",
+      "path": "images\\services\\analytics-hero.webp",
+      "size": 23692,
+      "type": ".webp",
+      "checksum": "aa851009798aec94a57ce8904afce4b2378c02fc1da7fb5a02c1561125068d38"
+    },
+    {
+      "name": "output-5-analytics-chart.webp",
+      "path": "images\\services\\output-5-analytics-chart.webp",
+      "size": 21610,
+      "type": ".webp",
+      "checksum": "b8826e26340d1d475b359633676898d2037d0e7a24170650e13409d1a7fd4f38"
+    },
+    {
+      "name": "photography-hero.webp",
+      "path": "images\\services\\photography-hero.webp",
+      "size": 57180,
+      "type": ".webp",
+      "checksum": "b4dcd2a17847fb4d38b982002554394762c722791f2c0199b01a109921da6dce"
+    },
+    {
+      "name": "screenshot-2025-08-12-analytics-report.webp",
+      "path": "images\\services\\screenshot-2025-08-12-analytics-report.webp",
+      "size": 46204,
+      "type": ".webp",
+      "checksum": "23e4d9799375adc4cfa7bb4865b1e4853ff6d5760b0fe1e35afda18f4bde2ae9"
+    },
+    {
+      "name": "screenshot-2025-09-23-analytics-dashboard.webp",
+      "path": "images\\services\\screenshot-2025-09-23-analytics-dashboard.webp",
+      "size": 38464,
+      "type": ".webp",
+      "checksum": "e5ee11c73a3ad2b6a4f6ccc55d36dabf1de8764cc3ec316eb7d7e84002e2602d"
+    },
+    {
+      "name": "top-3-mediums-by-conversion-rate.webp",
+      "path": "images\\services\\top-3-mediums-by-conversion-rate.webp",
+      "size": 18422,
+      "type": ".webp",
+      "checksum": "2adc8d4a958fe575dbcfb82968730fc97260f38d2f53bc32a18872f70ed4b71f"
+    },
+    {
+      "name": ".gitkeep",
+      "path": "images\\testimonials\\.gitkeep",
+      "size": 71,
+      "type": "",
+      "checksum": "3f8944289502c3f4af156334b840bd1d8e2ca651bab2efe8e5ccdd5ef7d8a5fd"
+    },
+    {
+      "name": "david-kim.jpg",
+      "path": "images\\testimonials\\david-kim.jpg",
+      "size": 34,
+      "type": ".jpg",
+      "checksum": "32c7f5f6e625675a82eb5af0771d3f80404a05abe52f0352a33814f2a60eef09"
+    },
+    {
+      "name": "lisa-rodriguez.jpg",
+      "path": "images\\testimonials\\lisa-rodriguez.jpg",
+      "size": 39,
+      "type": ".jpg",
+      "checksum": "f0397d728f3e3df51012eef38f0ce12ed8451adb5329da8393387e6d6d9d533c"
+    },
+    {
+      "name": "michael-chen.jpg",
+      "path": "images\\testimonials\\michael-chen.jpg",
+      "size": 37,
+      "type": ".jpg",
+      "checksum": "e46a77ee44f0773349e2467e47d070cfd72e3c9f9da979cff7722ccf8e4be285"
+    },
+    {
+      "name": "sarah-johnson.jpg",
+      "path": "images\\testimonials\\sarah-johnson.jpg",
+      "size": 38,
+      "type": ".jpg",
+      "checksum": "b86d2dd09324c1500b2e1494febf3779ba1e6de701534c07e6e24cfb019f43a4"
+    },
+    {
+      "name": "index.html",
+      "path": "index.html",
+      "size": 50881,
+      "type": ".html",
+      "checksum": "2541d66c6a681ff2f99a093df42ddb12346468dd5d6dbacaa61bf75b5ff9e1f0"
+    },
+    {
+      "name": "index.txt",
+      "path": "index.txt",
+      "size": 21304,
+      "type": ".txt",
+      "checksum": "6c6717aa87cbcbd699374fab02550e064d2b945dd0bdca24381ace68b6fe0b71"
+    },
+    {
+      "name": "index.html",
+      "path": "privacy-policy\\index.html",
+      "size": 43926,
+      "type": ".html",
+      "checksum": "57f33a1761034e77a493efc7c3886ea7038d6b2bdf024bfa0ee4cd85b91601fe"
+    },
+    {
+      "name": "index.txt",
+      "path": "privacy-policy\\index.txt",
+      "size": 20214,
+      "type": ".txt",
+      "checksum": "f664c7e0886c22e58497ae76a5b30adf6d226481fad0fafef90f1705c7f7a227"
+    },
+    {
+      "name": "robots.txt",
+      "path": "robots.txt",
+      "size": 543,
+      "type": ".txt",
+      "checksum": "b6b77a045fc91d83d95b5aa90b5d2191b529af46a186de3d376d48dec0f0afc7"
+    },
+    {
+      "name": "index.html",
+      "path": "services\\ad-campaigns\\index.html",
+      "size": 48811,
+      "type": ".html",
+      "checksum": "af4d9c6fa3d55802f6188a66394e4761a17b83c9bba78c1ca67385111c8f8af2"
+    },
+    {
+      "name": "index.txt",
+      "path": "services\\ad-campaigns\\index.txt",
+      "size": 22854,
+      "type": ".txt",
+      "checksum": "e3bea220706d38a2cf584772120de1b276b9ae7d9abe84692382e99f6a9798ae"
+    },
+    {
+      "name": "index.html",
+      "path": "services\\analytics\\index.html",
+      "size": 44646,
+      "type": ".html",
+      "checksum": "32c7d4c5f486dedee717038a4f9bb61f07aab194f6ff58b880db0bced54c902f"
+    },
+    {
+      "name": "index.txt",
+      "path": "services\\analytics\\index.txt",
+      "size": 20589,
+      "type": ".txt",
+      "checksum": "33b5ae675cc205e1573a728340b00f8b27c4d953287a6250f9d8dde88bb79851"
+    },
+    {
+      "name": "index.html",
+      "path": "services\\index.html",
+      "size": 34701,
+      "type": ".html",
+      "checksum": "e13c499873dc3d96e6a36546d2b69c0c323c49d975b81df4d2c1791a03fa0248"
+    },
+    {
+      "name": "index.txt",
+      "path": "services\\index.txt",
+      "size": 15245,
+      "type": ".txt",
+      "checksum": "43fbf810ff81e3480839968531c5625a214c9bf4a1078d5df33dee19d2ebf508"
+    },
+    {
+      "name": "index.html",
+      "path": "services\\photography\\index.html",
+      "size": 47895,
+      "type": ".html",
+      "checksum": "379e9f12c86d846bb3a744cdbcc07bb65b6ddaceabe3d8d690b8a316350b694f"
+    },
+    {
+      "name": "index.txt",
+      "path": "services\\photography\\index.txt",
+      "size": 22237,
+      "type": ".txt",
+      "checksum": "76d7b60120bf415eabf9589caaa9b94e77ea1e98a1b1cdb3014f10132d842bea"
+    },
+    {
+      "name": "sitemap.xml",
+      "path": "sitemap.xml",
+      "size": 2427,
+      "type": ".xml",
+      "checksum": "13d1da8aff399e3dfe7dbf6a785160c4c4d5714a3d4bbfb3dc3c6d6927287bc3"
+    },
+    {
+      "name": "139.7a5a8e93a21948c1.js",
+      "path": "_next\\static\\chunks\\139.7a5a8e93a21948c1.js",
+      "size": 740,
+      "type": ".js",
+      "checksum": "632898ee9bdecfb4bb7ad2b2524754908cc1dd253de92c603a62934bb126ed1c"
+    },
+    {
+      "name": "255-3260b6c822d7a91e.js",
+      "path": "_next\\static\\chunks\\255-3260b6c822d7a91e.js",
+      "size": 171824,
+      "type": ".js",
+      "checksum": "04dcb7e20a0437612b53f27956de54c0dd7b5d19e3d48a8f0380f578fe4cad2e"
+    },
+    {
+      "name": "4bd1b696-c023c6e3521b1417.js",
+      "path": "_next\\static\\chunks\\4bd1b696-c023c6e3521b1417.js",
+      "size": 173019,
+      "type": ".js",
+      "checksum": "2c752a401191671d5bbbe7514f5828bbb0a7cc50bfbe77ddaf1b1ccba4412ed2"
+    },
+    {
+      "name": "646.f342b7cffc01feb0.js",
+      "path": "_next\\static\\chunks\\646.f342b7cffc01feb0.js",
+      "size": 5444,
+      "type": ".js",
+      "checksum": "ab1467e26bb6750f89c9e52b89b17111bb38371d8b15c1463d2de7998597d476"
+    },
+    {
+      "name": "791-cda674857d163324.js",
+      "path": "_next\\static\\chunks\\791-cda674857d163324.js",
+      "size": 9211,
+      "type": ".js",
+      "checksum": "4fb8c3c97116ace6354e66c805da632758feab3fc9c4922673676f9b59daacaf"
+    },
+    {
+      "name": "894-93e15c40b19439d0.js",
+      "path": "_next\\static\\chunks\\894-93e15c40b19439d0.js",
+      "size": 22732,
+      "type": ".js",
+      "checksum": "7f192855a59ba4e9069daf529229fe24973d5245a661681154a06ef308ff51da"
+    },
+    {
+      "name": "page-e844f5b26190edd4.js",
+      "path": "_next\\static\\chunks\\app\\about\\page-e844f5b26190edd4.js",
+      "size": 226,
+      "type": ".js",
+      "checksum": "9be9d2c025f8d8bcfea69ca18ab619393e0acd12f97a3d22cba9913efb723199"
+    },
+    {
+      "name": "page-db6b05d68cb82d13.js",
+      "path": "_next\\static\\chunks\\app\\blog\\page-db6b05d68cb82d13.js",
+      "size": 4172,
+      "type": ".js",
+      "checksum": "4f1ab6145a29b0cdddebf76858623d3b627566e77cbaff380ab956dbaefc1622"
+    },
+    {
+      "name": "page-a2c54ed49e830685.js",
+      "path": "_next\\static\\chunks\\app\\blog\\[slug]\\page-a2c54ed49e830685.js",
+      "size": 286,
+      "type": ".js",
+      "checksum": "fd0498f1f9c82d17747728380852e48ba593932b9a3f18963c6dbd05b4b542da"
+    },
+    {
+      "name": "page-8c195fe90b948655.js",
+      "path": "_next\\static\\chunks\\app\\contact\\page-8c195fe90b948655.js",
+      "size": 6852,
+      "type": ".js",
+      "checksum": "5ba1712a6aaa6611a0cd56b3a939a4bf0d16218250d72c6bdba872fd0cd25101"
+    },
+    {
+      "name": "layout-89dfbac964c42b30.js",
+      "path": "_next\\static\\chunks\\app\\layout-89dfbac964c42b30.js",
+      "size": 358,
+      "type": ".js",
+      "checksum": "b257b6310db6e78396e43ff09ba550cd83e2fe3c8ccf99aa901dc1ef75d469c3"
+    },
+    {
+      "name": "not-found-ed8ba199d0d0d333.js",
+      "path": "_next\\static\\chunks\\app\\not-found-ed8ba199d0d0d333.js",
+      "size": 186,
+      "type": ".js",
+      "checksum": "9cfa8110d0dff6e3739ff81cfe0f4a316fe3359f22d0d7d19a01b2cbd1ed730b"
+    },
+    {
+      "name": "page-6caf702ae3a95f60.js",
+      "path": "_next\\static\\chunks\\app\\page-6caf702ae3a95f60.js",
+      "size": 5344,
+      "type": ".js",
+      "checksum": "ed6f693f1a1bfa0c0da3f4d46ffa4cf6d3d416262a584c59cf4a0f7ba2962e36"
+    },
+    {
+      "name": "page-ed8ba199d0d0d333.js",
+      "path": "_next\\static\\chunks\\app\\privacy-policy\\page-ed8ba199d0d0d333.js",
+      "size": 186,
+      "type": ".js",
+      "checksum": "9cfa8110d0dff6e3739ff81cfe0f4a316fe3359f22d0d7d19a01b2cbd1ed730b"
+    },
+    {
+      "name": "page-a2c54ed49e830685.js",
+      "path": "_next\\static\\chunks\\app\\services\\ad-campaigns\\page-a2c54ed49e830685.js",
+      "size": 286,
+      "type": ".js",
+      "checksum": "fd0498f1f9c82d17747728380852e48ba593932b9a3f18963c6dbd05b4b542da"
+    },
+    {
+      "name": "page-a2c54ed49e830685.js",
+      "path": "_next\\static\\chunks\\app\\services\\analytics\\page-a2c54ed49e830685.js",
+      "size": 286,
+      "type": ".js",
+      "checksum": "fd0498f1f9c82d17747728380852e48ba593932b9a3f18963c6dbd05b4b542da"
+    },
+    {
+      "name": "page-a2c54ed49e830685.js",
+      "path": "_next\\static\\chunks\\app\\services\\page-a2c54ed49e830685.js",
+      "size": 286,
+      "type": ".js",
+      "checksum": "fd0498f1f9c82d17747728380852e48ba593932b9a3f18963c6dbd05b4b542da"
+    },
+    {
+      "name": "page-a2c54ed49e830685.js",
+      "path": "_next\\static\\chunks\\app\\services\\photography\\page-a2c54ed49e830685.js",
+      "size": 286,
+      "type": ".js",
+      "checksum": "fd0498f1f9c82d17747728380852e48ba593932b9a3f18963c6dbd05b4b542da"
+    },
+    {
+      "name": "page-f187ad254cc1b0eb.js",
+      "path": "_next\\static\\chunks\\app\\_not-found\\page-f187ad254cc1b0eb.js",
+      "size": 131,
+      "type": ".js",
+      "checksum": "8f382f5624639be312aec6b2c26f368fe796e0cfbc8dfb650695f4ae230e4cca"
+    },
+    {
+      "name": "framework-292291387d6b2e39.js",
+      "path": "_next\\static\\chunks\\framework-292291387d6b2e39.js",
+      "size": 189765,
+      "type": ".js",
+      "checksum": "d5a5ffaf59aedad160fb13f57794475446aa339bbf3b27bf3cb63ed03db715f2"
+    },
+    {
+      "name": "main-app-ffe87789895e1d2d.js",
+      "path": "_next\\static\\chunks\\main-app-ffe87789895e1d2d.js",
+      "size": 557,
+      "type": ".js",
+      "checksum": "9ef6e31e2201ef1586881b0a0650516209d93a487dc2b065ba186c2c46166b05"
+    },
+    {
+      "name": "main-c5ae86398b4db87b.js",
+      "path": "_next\\static\\chunks\\main-c5ae86398b4db87b.js",
+      "size": 120934,
+      "type": ".js",
+      "checksum": "a6f837ae0942b0b4084a56a65e01ce5791509d04a8668873eaf515bdaa09dbb4"
+    },
+    {
+      "name": "_app-82835f42865034fa.js",
+      "path": "_next\\static\\chunks\\pages\\_app-82835f42865034fa.js",
+      "size": 912,
+      "type": ".js",
+      "checksum": "4e546f7f9a327da75326865d2dcf898f976f5414d7dbb1296cd21a96de079ca7"
+    },
+    {
+      "name": "_error-013f4188946cdd04.js",
+      "path": "_next\\static\\chunks\\pages\\_error-013f4188946cdd04.js",
+      "size": 5652,
+      "type": ".js",
+      "checksum": "79c3e9093cd1a5220e778a8baf10128d866617fb65f6e2ef1a3316c4c62b6deb"
+    },
+    {
+      "name": "polyfills-42372ed130431b0a.js",
+      "path": "_next\\static\\chunks\\polyfills-42372ed130431b0a.js",
+      "size": 112594,
+      "type": ".js",
+      "checksum": "0973c1d64c88adc8e3c950410cb58b288f72118d5965b78049438deb8f2f9683"
+    },
+    {
+      "name": "webpack-3de6f890412c68e5.js",
+      "path": "_next\\static\\chunks\\webpack-3de6f890412c68e5.js",
+      "size": 3482,
+      "type": ".js",
+      "checksum": "52c64ee170c15b2fece6ba78d4ef9361b1dba09f9f5d96d042e9b15c51224380"
+    },
+    {
+      "name": "534ae1410351ede7.css",
+      "path": "_next\\static\\css\\534ae1410351ede7.css",
+      "size": 44204,
+      "type": ".css",
+      "checksum": "b0fd3a324fea0a25f97f87314d451240cfc4d3fe026d68a4660839533c092c85"
+    },
+    {
+      "name": "19cfc7226ec3afaa-s.woff2",
+      "path": "_next\\static\\media\\19cfc7226ec3afaa-s.woff2",
+      "size": 19044,
+      "type": ".woff2",
+      "checksum": "46dd4cdca58c26ae87cc6927657bf83b2e8abfc39ffd0ab176e301a8d28d22bf"
+    },
+    {
+      "name": "21350d82a1f187e9-s.woff2",
+      "path": "_next\\static\\media\\21350d82a1f187e9-s.woff2",
+      "size": 18744,
+      "type": ".woff2",
+      "checksum": "aebf2ab4a4ce6810d73c1ac7be7cafb4e5ec4cee2d6db5fb3e09691747ec4bd6"
+    },
+    {
+      "name": "8e9860b6e62d6359-s.woff2",
+      "path": "_next\\static\\media\\8e9860b6e62d6359-s.woff2",
+      "size": 85272,
+      "type": ".woff2",
+      "checksum": "a28eb6d3ccb534ae0c94ca999371df024aab60b08c3c8a5720ee9e32fa0faaa2"
+    },
+    {
+      "name": "ba9851c3c22cd980-s.woff2",
+      "path": "_next\\static\\media\\ba9851c3c22cd980-s.woff2",
+      "size": 25844,
+      "type": ".woff2",
+      "checksum": "fccca918fea40089dacadc7045861314d1a6bc91f1f323cc1eeb22ebcdb321b5"
+    },
+    {
+      "name": "c5fe6dc8356a8c31-s.woff2",
+      "path": "_next\\static\\media\\c5fe6dc8356a8c31-s.woff2",
+      "size": 11272,
+      "type": ".woff2",
+      "checksum": "a2e2c783ca6f9c20486e81e72a279203e86730bbf8f01ff6a5ee9dbd09e1c271"
+    },
+    {
+      "name": "df0a9ae256c0569c-s.woff2",
+      "path": "_next\\static\\media\\df0a9ae256c0569c-s.woff2",
+      "size": 10280,
+      "type": ".woff2",
+      "checksum": "8db00ff46c67b22cda8bed865acf7077651cac8d2841d5b40980556b48961931"
+    },
+    {
+      "name": "e4af272ccee01ff0-s.p.woff2",
+      "path": "_next\\static\\media\\e4af272ccee01ff0-s.p.woff2",
+      "size": 48432,
+      "type": ".woff2",
+      "checksum": "c940764593d0fe5d596be327ca7558855e018039fb78509aa21921fd3644c3e4"
+    },
+    {
+      "name": "_buildManifest.js",
+      "path": "_next\\static\\static-build\\_buildManifest.js",
+      "size": 857,
+      "type": ".js",
+      "checksum": "2ff0d9ef51192dfc558f580657e8acadf33777d6b068dbb1be5469df28d0965e"
+    },
+    {
+      "name": "_ssgManifest.js",
+      "path": "_next\\static\\static-build\\_ssgManifest.js",
+      "size": 104,
+      "type": ".js",
+      "checksum": "11cd2c5965fdfab0bb18ae0e05cb3d1c62fd0c1b3a25bb267dd521b54e5b876d"
+    }
+  ],
+  "size": 3130398
+}

@@ -1,0 +1,464 @@
+import type { Metadata } from "next";
+import Link from "next/link";
+import Image from "next/image";
+import { Layout } from "@/components/layout";
+import { ServiceInquiryForm } from "@/components/ServiceInquiryForm";
+import { PerformanceComparison } from "@/components/sections/PerformanceComparison";
+
+export const metadata: Metadata = {
+  title: "AWS Website Hosting & Migration Services | 80% Cost Savings | Nantwich & Cheshire",
+  description:
+    "Save up to 80% on hosting costs and make your website load 82% faster with AWS hosting. Professional website migration with zero downtime for Nantwich and Cheshire businesses.",
+  keywords: [
+    "AWS website hosting Cheshire",
+    "website migration Nantwich",
+    "cheap website hosting",
+    "fast website hosting",
+    "website hosting migration",
+    "AWS CloudFront hosting",
+    "website speed optimization",
+    "Nantwich web hosting",
+  ],
+  alternates: { canonical: "/services/hosting" },
+  openGraph: {
+    title: "AWS Website Hosting & Migration Services | 80% Cost Savings",
+    description:
+      "Save up to 80% on hosting costs and make your website load 82% faster with professional AWS hosting and migration services.",
+    url: "/services/hosting",
+    images: [
+      {
+        url: "/images/services/hosting-migration-card.webp",
+        width: 1200,
+        height: 630,
+        alt: "AWS website hosting and migration services showing cost savings and performance improvements",
+      },
+    ],
+  },
+};
+
+export default function HostingPage() {
+  // JSON-LD schema for hosting services
+  const schema = {
+    "@context": "https://schema.org",
+    "@type": "Service",
+    name: "AWS Website Hosting & Migration Services",
+    description: "Professional AWS hosting and website migration services with 80% cost savings and 82% faster load times",
+    provider: {
+      "@type": "LocalBusiness",
+      name: "Vivid Media Cheshire",
+      address: {
+        "@type": "PostalAddress",
+        addressLocality: "Nantwich",
+        addressRegion: "Cheshire",
+        addressCountry: "UK",
+      },
+      areaServed: ["Nantwich", "Cheshire", "Crewe", "North West England", "UK"],
+    },
+    serviceType: "Website Hosting and Migration",
+    offers: {
+      "@type": "Offer",
+      description: "AWS hosting with up to 80% cost savings and 82% faster load times",
+      areaServed: "Nantwich & Cheshire",
+    },
+    "@graph": [
+      {
+        "@type": "FAQPage",
+        mainEntity: [
+          {
+            "@type": "Question",
+            name: "How much can I save with AWS hosting?",
+            acceptedAnswer: {
+              "@type": "Answer",
+              text: "Most clients save up to 80% on hosting costs, going from £550 per year on platforms like Wix or GoDaddy to just £108 per year with AWS hosting.",
+            },
+          },
+          {
+            "@type": "Question",
+            name: "Will my website be faster?",
+            acceptedAnswer: {
+              "@type": "Answer",
+              text: "Yes, AWS hosting typically makes websites 82% faster. Faster pages mean more visitors stay, more calls come in, and better Google rankings.",
+            },
+          },
+          {
+            "@type": "Question",
+            name: "Is there any downtime during migration?",
+            acceptedAnswer: {
+              "@type": "Answer",
+              text: "No, your site stays live while we migrate everything behind the scenes. The migration process has zero downtime.",
+            },
+          },
+          {
+            "@type": "Question",
+            name: "Do I need technical knowledge?",
+            acceptedAnswer: {
+              "@type": "Answer",
+              text: "Not at all. We manage the setup, security, and maintenance. You just enjoy the results - faster site, lower costs, better performance.",
+            },
+          },
+        ],
+      },
+    ],
+  };
+
+  return (
+    <Layout>
+      <main className="py-24 bg-gray-50">
+        {/* JSON-LD */}
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }}
+        />
+
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          {/* Hero Section */}
+          <section className="text-center mb-20">
+            <h1 className="text-4xl md:text-5xl lg:text-6xl font-extrabold text-gray-900 leading-tight mb-6">
+              Faster, Cheaper Websites Without the Tech Headache
+            </h1>
+            <p className="text-2xl text-gray-700 max-w-4xl mx-auto leading-relaxed mb-8">
+              Save up to 80% on hosting costs and make your website load 82% faster.
+            </p>
+            <p className="text-lg text-gray-600 max-w-3xl mx-auto leading-relaxed">
+              We handle everything. Set up, migration, and support, so you can focus on running your business.
+            </p>
+          </section>
+
+          {/* Hero Image */}
+          <section className="mb-20">
+            <div className="relative h-96 md:h-[500px] rounded-2xl overflow-hidden shadow-2xl">
+              <Image
+                src="/images/services/hosting-migration-card.webp"
+                alt="AWS website hosting and migration services - 80% cost reduction and 82% faster load times"
+                fill
+                className="object-cover"
+                priority
+                sizes="(max-width: 768px) 100vw, (max-width: 1200px) 80vw, 1200px"
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent" />
+              <div className="absolute bottom-8 left-8 text-white">
+                <h2 className="text-3xl font-bold mb-2">AWS Hosting Excellence</h2>
+                <p className="text-xl">Professional migration with zero downtime</p>
+              </div>
+            </div>
+          </section>
+
+          {/* Why Move to AWS Hosting */}
+          <section className="mb-20">
+            <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-12 text-center">
+              Why Move to AWS Hosting
+            </h2>
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-6xl mx-auto">
+              <div className="bg-white rounded-xl p-8 shadow-lg">
+                <h3 className="text-2xl font-bold text-gray-900 mb-4">Save Hundreds Each Year</h3>
+                <p className="text-lg text-gray-700 leading-relaxed">
+                  Most clients go from £550 per year on Wix or GoDaddy to just £108 per year with AWS hosting.
+                </p>
+              </div>
+              <div className="bg-white rounded-xl p-8 shadow-lg">
+                <h3 className="text-2xl font-bold text-gray-900 mb-4">Instant Speed Boost</h3>
+                <p className="text-lg text-gray-700 leading-relaxed">
+                  Faster pages mean more visitors stay, more calls come in, and more sales happen.
+                </p>
+              </div>
+              <div className="bg-white rounded-xl p-8 shadow-lg">
+                <h3 className="text-2xl font-bold text-gray-900 mb-4">Zero Downtime</h3>
+                <p className="text-lg text-gray-700 leading-relaxed">
+                  Your site stays live while we migrate everything behind the scenes.
+                </p>
+              </div>
+              <div className="bg-white rounded-xl p-8 shadow-lg">
+                <h3 className="text-2xl font-bold text-gray-900 mb-4">No Tech Stress</h3>
+                <p className="text-lg text-gray-700 leading-relaxed">
+                  We manage the setup, security, and maintenance. You enjoy the results.
+                </p>
+              </div>
+            </div>
+          </section>
+
+          {/* Built for Local Businesses */}
+          <section className="mb-20 bg-gradient-to-r from-blue-50 to-indigo-50 rounded-2xl p-12">
+            <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-8 text-center">
+              Built for Local Businesses & Trades
+            </h2>
+            <p className="text-xl text-gray-700 mb-8 text-center max-w-3xl mx-auto">
+              Whether you run a café, garage, or trade service, your website should work as hard as you do.
+            </p>
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-4xl mx-auto">
+              <div className="flex items-center space-x-3">
+                <div className="w-6 h-6 bg-green-500 rounded-full flex items-center justify-center flex-shrink-0">
+                  <svg className="w-4 h-4 text-white" fill="currentColor" viewBox="0 0 20 20">
+                    <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
+                  </svg>
+                </div>
+                <span className="text-lg text-gray-700">A faster site that shows up higher on Google</span>
+              </div>
+              <div className="flex items-center space-x-3">
+                <div className="w-6 h-6 bg-green-500 rounded-full flex items-center justify-center flex-shrink-0">
+                  <svg className="w-4 h-4 text-white" fill="currentColor" viewBox="0 0 20 20">
+                    <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
+                  </svg>
+                </div>
+                <span className="text-lg text-gray-700">Lower running costs</span>
+              </div>
+              <div className="flex items-center space-x-3">
+                <div className="w-6 h-6 bg-green-500 rounded-full flex items-center justify-center flex-shrink-0">
+                  <svg className="w-4 h-4 text-white" fill="currentColor" viewBox="0 0 20 20">
+                    <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
+                  </svg>
+                </div>
+                <span className="text-lg text-gray-700">A trustworthy setup that never locks you in</span>
+              </div>
+              <div className="flex items-center space-x-3">
+                <div className="w-6 h-6 bg-green-500 rounded-full flex items-center justify-center flex-shrink-0">
+                  <svg className="w-4 h-4 text-white" fill="currentColor" viewBox="0 0 20 20">
+                    <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
+                  </svg>
+                </div>
+                <span className="text-lg text-gray-700">More leads from people who actually find you online</span>
+              </div>
+            </div>
+          </section>
+
+          {/* Real Results */}
+          <section className="mb-20">
+            <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-8 text-center">
+              Real Results
+            </h2>
+            <div className="bg-white rounded-2xl p-8 shadow-lg max-w-4xl mx-auto text-center">
+              <blockquote className="text-xl text-gray-700 leading-relaxed italic">
+                "I cut hosting costs by over 80% and dropped our page load time from 14 seconds to under 2.
+                Our Google ranking jumped almost immediately. Now I'm focusing on getting the same lift in Google results."
+              </blockquote>
+            </div>
+          </section>
+
+          {/* Before and After Performance */}
+          <PerformanceComparison
+            title="Real-World Speed Improvements"
+            subtitle="I migrated my automotive photography site from traditional hosting to AWS S3 + CloudFront. Here's how the numbers changed on mobile, measured with Google Lighthouse."
+            beforeImage="/images/services/Web Hosting And Migration/before-hosting-performance.webp"
+            afterImage="/images/services/Web Hosting And Migration/pagespeed-aws-migration-desktop.webp"
+            beforeImageAlt="Website performance before AWS migration showing poor performance scores and slow load times"
+            afterImageAlt="Google Lighthouse performance score of 99 after AWS migration showing 1.1s load time"
+            beforeStats={{
+              performanceScore: "Poor",
+              annualCost: "£550",
+              loadTime: "14+ seconds"
+            }}
+            afterStats={{
+              performanceScore: "99/100",
+              annualCost: "£108",
+              loadTimeImprovement: "82% Faster"
+            }}
+            resultText="From 14 seconds to under 2 seconds load time"
+          />
+
+          {/* Hosting Pricing */}
+          <section className="mb-16">
+            <div className="max-w-3xl mx-auto bg-white rounded-2xl shadow-sm border border-gray-200 p-6">
+              <h2 className="text-2xl font-bold text-gray-900 mb-3">
+                Hosting pricing
+              </h2>
+              <p className="text-gray-700 mb-1">
+                <strong>Website hosting:</strong> £15 per month or £120 per year
+              </p>
+              <p className="text-gray-700 mb-3">
+                <strong>Migration:</strong> free tailored quote based on your current setup
+              </p>
+              <p className="text-sm text-gray-500 mt-3">
+                Full details are available on the{" "}
+                <Link href="/pricing" className="text-pink-600 hover:text-pink-700 underline">
+                  pricing page
+                </Link>.
+              </p>
+            </div>
+          </section>
+
+          {/* Transparent Pricing */}
+          <section className="mb-20">
+            <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-12 text-center">
+              Cost Comparison
+            </h2>
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-5xl mx-auto">
+              <div className="bg-red-50 border-2 border-red-200 rounded-xl p-8">
+                <h3 className="text-2xl font-bold text-red-800 mb-4">Before (Wix / GoDaddy): £550 per year</h3>
+                <ul className="space-y-3 text-red-700">
+                  <li className="flex items-center space-x-2">
+                    <span className="w-2 h-2 bg-red-500 rounded-full"></span>
+                    <span>Slow, limited, and costly</span>
+                  </li>
+                  <li className="flex items-center space-x-2">
+                    <span className="w-2 h-2 bg-red-500 rounded-full"></span>
+                    <span>Poor SEO performance</span>
+                  </li>
+                  <li className="flex items-center space-x-2">
+                    <span className="w-2 h-2 bg-red-500 rounded-full"></span>
+                    <span>Locked into one platform</span>
+                  </li>
+                </ul>
+              </div>
+              <div className="bg-green-50 border-2 border-green-200 rounded-xl p-8">
+                <h3 className="text-2xl font-bold text-green-800 mb-4">After (AWS): £108 per year</h3>
+                <ul className="space-y-3 text-green-700">
+                  <li className="flex items-center space-x-2">
+                    <span className="w-2 h-2 bg-green-500 rounded-full"></span>
+                    <span>82% faster load time</span>
+                  </li>
+                  <li className="flex items-center space-x-2">
+                    <span className="w-2 h-2 bg-green-500 rounded-full"></span>
+                    <span>Full flexibility and control</span>
+                  </li>
+                  <li className="flex items-center space-x-2">
+                    <span className="w-2 h-2 bg-green-500 rounded-full"></span>
+                    <span>Better Google rankings</span>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </section>
+
+          {/* FAQs */}
+          <section className="mb-20">
+            <h2 className="text-3xl font-bold text-gray-900 mb-8 text-center">Frequently Asked Questions</h2>
+            <div className="max-w-3xl mx-auto space-y-4">
+              <details className="bg-white rounded-lg p-6 shadow-sm border border-gray-200">
+                <summary className="font-semibold cursor-pointer text-lg">
+                  How much can I save with AWS hosting?
+                </summary>
+                <p className="mt-3 text-gray-700">
+                  Most clients save up to 80% on hosting costs, going from £550 per year on platforms like Wix or GoDaddy to just £108 per year with AWS hosting.
+                </p>
+              </details>
+
+              <details className="bg-white rounded-lg p-6 shadow-sm border border-gray-200">
+                <summary className="font-semibold cursor-pointer text-lg">
+                  Will my website be faster?
+                </summary>
+                <p className="mt-3 text-gray-700">
+                  Yes, AWS hosting typically makes websites 82% faster. Faster pages mean more visitors stay, more calls come in, and better Google rankings.
+                </p>
+              </details>
+
+              <details className="bg-white rounded-lg p-6 shadow-sm border border-gray-200">
+                <summary className="font-semibold cursor-pointer text-lg">
+                  Is there any downtime during migration?
+                </summary>
+                <p className="mt-3 text-gray-700">
+                  No, your site stays live while we migrate everything behind the scenes. The migration process has zero downtime.
+                </p>
+              </details>
+
+              <details className="bg-white rounded-lg p-6 shadow-sm border border-gray-200">
+                <summary className="font-semibold cursor-pointer text-lg">
+                  Do I need technical knowledge?
+                </summary>
+                <p className="mt-3 text-gray-700">
+                  Not at all. We manage the setup, security, and maintenance. You just enjoy the results - faster site, lower costs, better performance.
+                </p>
+              </details>
+            </div>
+          </section>
+
+          {/* Hosting Pricing */}
+          <section className="py-12">
+            <div className="max-w-5xl mx-auto px-4">
+              <div className="bg-gradient-to-br from-pink-50 to-purple-50 rounded-3xl p-6 md:p-8 shadow-sm">
+                <h2 className="text-2xl md:text-3xl font-bold text-gray-900 mb-6 text-center">
+                  Website Hosting Pricing
+                </h2>
+
+                <div className="max-w-2xl mx-auto">
+                  <div className="bg-white rounded-2xl p-6 shadow-sm text-center">
+                    <h3 className="text-xl font-bold text-gray-900 mb-3">
+                      AWS S3 + CloudFront Hosting
+                    </h3>
+                    <p className="text-3xl font-bold text-pink-600 mb-2">
+                      £15 <span className="text-base font-normal text-gray-600">per month</span>
+                    </p>
+                    <p className="text-lg text-gray-700 mb-4">
+                      or £120 per year
+                    </p>
+                    <ul className="space-y-2 text-sm text-gray-700 text-left max-w-md mx-auto">
+                      <li className="flex items-start">
+                        <span className="text-green-600 mr-2">✓</span>
+                        80% cost savings vs traditional hosting
+                      </li>
+                      <li className="flex items-start">
+                        <span className="text-green-600 mr-2">✓</span>
+                        82% faster load times
+                      </li>
+                      <li className="flex items-start">
+                        <span className="text-green-600 mr-2">✓</span>
+                        Zero downtime migration
+                      </li>
+                      <li className="flex items-start">
+                        <span className="text-green-600 mr-2">✓</span>
+                        Automatic backups included
+                      </li>
+                      <li className="flex items-start">
+                        <span className="text-green-600 mr-2">✓</span>
+                        24/7 monitoring
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+
+                <div className="text-center mt-6">
+                  <p className="text-sm text-gray-600">
+                    Professional migration service included. No hidden fees.
+                  </p>
+                  <p className="text-sm text-gray-500 mt-2">
+                    Full details on the{" "}
+                    <Link href="/pricing" className="text-pink-600 hover:text-pink-700 underline">
+                      pricing page
+                    </Link>.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </section>
+
+          {/* CTA */}
+          <section className="text-center bg-gradient-to-r from-pink-50 to-purple-50 rounded-2xl p-12 mx-4">
+            <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
+              Ready to Save 80% on Hosting?
+            </h2>
+            <p className="text-xl text-gray-600 mb-8 max-w-2xl mx-auto">
+              Get a free migration quote today. I will assess your current setup, handle the migration,
+              and have your new site running faster: all with zero downtime.
+            </p>
+            <Link
+              href="/contact"
+              className="inline-flex items-center bg-pink-600 text-white px-8 py-4 rounded-lg text-lg font-semibold hover:bg-pink-700 transition-colors shadow-lg hover:shadow-xl"
+            >
+              Get My Free Website Hosting Quote
+              <svg
+                className="ml-2 w-5 h-5"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+              >
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  strokeWidth={2}
+                  d="M9 5l7 7-7 7"
+                />
+              </svg>
+            </Link>
+            <p className="mt-4 text-gray-600">
+              No tech talk. Just honest savings and better performance.
+            </p>
+          </section>
+
+          {/* Service Inquiry Form */}
+          <ServiceInquiryForm
+            serviceName="Website Hosting & Migration"
+            formspreeId="xpwaqjqr"
+          />
+        </div>
+      </main>
+    </Layout>
+  );
+}

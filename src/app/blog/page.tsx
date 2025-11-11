@@ -1,4 +1,4 @@
-import type { Metadata } from 'next';
+﻿import type { Metadata } from 'next';
 import Link from 'next/link';
 import Image from 'next/image';
 import { Layout } from '@/components/layout';
@@ -42,6 +42,10 @@ export default async function BlogPage() {
       '/images/hero/google-ads-analytics-dashboard.webp',
     'flyers-roi-breakdown':
       '/images/hero/whatsapp-image-2025-07-11-flyers-roi.webp',
+    'flyer-marketing-case-study-part-1':
+      '/images/hero/aston-martin-db6-website.webp',
+    'flyer-marketing-case-study-part-2':
+      '/images/blog/211125_Hampson_Auctions-29.webp',
     'stock-photography-lessons': '/images/hero/240619-london-19.webp',
   };
 
@@ -60,9 +64,7 @@ export default async function BlogPage() {
                 My Blog
               </h1>
               <p className='text-lg md:text-xl text-gray-600 max-w-3xl mx-auto'>
-                Latest insights, tips, and updates from my Vivid Auto
-                Photography team. Stay informed about industry trends, best
-                practices, and success stories.
+                Practical tips and real success stories from my work. From running better ads to creating visuals that boost enquiries, learn what works and how you can apply it to your own marketing.
               </p>
             </div>
           </div>
@@ -96,9 +98,9 @@ export default async function BlogPage() {
                           }
                         )}
                       </time>
-                      <span className='mx-2'>•</span>
+                      <span className='mx-2'>â€¢</span>
                       <span>{featuredPost.category}</span>
-                      <span className='mx-2'>•</span>
+                      <span className='mx-2'>â€¢</span>
                       <span>{featuredPost.readTime} min read</span>
                     </div>
                     <h2 className='text-2xl md:text-3xl font-bold text-gray-900 mb-4'>
@@ -159,7 +161,7 @@ export default async function BlogPage() {
                           day: 'numeric',
                         })}
                       </time>
-                      <span className='mx-2'>•</span>
+                      <span className='mx-2'>â€¢</span>
                       <span>{post.category}</span>
                     </div>
                     <h3 className='text-xl font-bold text-gray-900 mb-3'>

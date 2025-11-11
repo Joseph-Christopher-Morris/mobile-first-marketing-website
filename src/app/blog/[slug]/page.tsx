@@ -4,6 +4,7 @@ import Image from 'next/image';
 import { notFound } from 'next/navigation';
 import { Layout } from '@/components/layout';
 import { getBlogPost, getAllBlogPosts } from '@/lib/blog-api';
+import PostContent from '@/components/blog/PostContent';
 
 interface BlogPostPageProps {
   params: {
@@ -167,8 +168,8 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
         )}
 
         {/* Post Content */}
-        <div className='max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 pb-16'>
-          <div className='prose prose-lg prose-blue max-w-none'>
+        <div className='pb-16'>
+          <article className='blog-article'>
             <div
               dangerouslySetInnerHTML={{
                 __html: post.content
@@ -180,7 +181,7 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
                   .replace(/\*\*(.*?)\*\*/g, '<strong>$1</strong>'),
               }}
             />
-          </div>
+          </article>
         </div>
 
         {/* Post Footer */}

@@ -50,11 +50,7 @@ export default function ContactPage() {
                 Let&apos;s Work Together
               </h1>
               <p className='text-base md:text-lg lg:text-xl text-gray-600 mb-6 md:mb-8'>
-                Need professional automotive or event photography, GA4 setup, ad
-                campaigns or website hosting support? Share the details of your
-                project and I will be in touch within{' '}
-                <span className='font-semibold'>one business day</span> (UK
-                time).
+                Need professional photos, a faster website, or help promoting your business online? Tell me what you are working on and I will reply within one business day with clear next steps.
               </p>
             </div>
           </div>
@@ -369,12 +365,10 @@ export default function ContactPage() {
 
                 <div className='bg-white rounded-lg p-6 shadow-sm'>
                   <h3 className='text-lg font-semibold text-gray-900 mb-2'>
-                    Can you help if I am not sure what I need yet?
+                    Can we talk things through even if I am not sure what I need?
                   </h3>
                   <p className='text-gray-700'>
-                    Absolutely. If you are unsure where to start, I can look at
-                    your current marketing together and decide on the most
-                    helpful next steps during the free consultation.
+                    Yes. In our first chat, we can look at your current website or marketing together and decide on the most helpful next steps.
                   </p>
                 </div>
               </div>
