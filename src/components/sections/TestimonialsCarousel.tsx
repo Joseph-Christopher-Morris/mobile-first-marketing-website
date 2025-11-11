@@ -1,6 +1,7 @@
 'use client';
 
 import React, { useState, useEffect, useCallback } from 'react';
+import { StarRating } from '@/components/StarRating';
 
 interface Testimonial {
   id: string;
@@ -166,6 +167,9 @@ export function TestimonialsCarousel({
                 >
                   <div className='max-w-4xl mx-auto'>
                     <blockquote className='bg-brand-white border border-brand-black/10 rounded-lg p-6 sm:p-8 md:p-12 text-center shadow-mobile-md'>
+                      <div className='flex justify-center mb-4'>
+                        <StarRating rating={5} size="md" showLabel={false} />
+                      </div>
                       <p className='text-base sm:text-lg md:text-xl text-brand-black mb-4 sm:mb-6 leading-relaxed'>
                         &quot;{testimonial.quote}&quot;
                       </p>

@@ -22,17 +22,17 @@ export default function PricingPage() {
     <Layout pageTitle="Pricing">
       <div className="min-h-screen bg-white">
         {/* Hero Section */}
-        <section className="py-20 bg-gray-50">
+        <section className="bg-gray-50 py-16 md:py-20">
           <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-            <h1 className="text-4xl md:text-5xl font-extrabold text-gray-900 mb-6">
+            <h1 className="text-4xl md:text-5xl lg:text-6xl font-extrabold text-slate-900 leading-tight mb-6">
               Simple, transparent pricing. No jargon or hidden fees.
             </h1>
-            <p className="text-xl text-gray-600 mb-8 max-w-3xl mx-auto">
+            <p className="text-base md:text-lg text-slate-700 mb-8 max-w-3xl mx-auto">
               All services are built around clear results, affordability, and performance.
             </p>
             <Link
               href="/contact"
-              className="inline-flex items-center bg-pink-600 text-white px-8 py-4 rounded-lg text-lg font-semibold hover:bg-pink-700 transition-colors"
+              className="inline-flex items-center justify-center px-8 py-3 rounded-full text-base md:text-lg font-semibold bg-brand-pink text-white shadow-lg hover:bg-brand-pink2 hover:shadow-xl transition"
             >
               Get My Free Quote →
             </Link>
@@ -263,21 +263,21 @@ export default function PricingPage() {
         </section>
 
         {/* Final CTA */}
-        <section className="py-16 bg-gradient-to-r from-pink-50 to-purple-50">
+        <section className="bg-gradient-to-r from-pink-50 to-purple-50 py-16 md:py-20">
           <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-            <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
+            <h2 className="text-3xl md:text-4xl font-bold text-slate-900 mb-4">
               Get a Fast, Free Quote
             </h2>
-            <p className="text-xl text-gray-600 mb-8 max-w-2xl mx-auto">
+            <p className="text-base md:text-lg text-slate-700 mb-8 max-w-2xl mx-auto">
               Tell me what you need – hosting, ads, analytics, or photography – and I'll reply personally within 24 hours.
             </p>
             <Link
               href="/contact"
-              className="inline-flex items-center bg-pink-600 text-white px-8 py-4 rounded-lg text-lg font-semibold hover:bg-pink-700 transition-colors shadow-lg hover:shadow-xl"
+              className="inline-flex items-center justify-center px-8 py-3 rounded-full text-base md:text-lg font-semibold bg-brand-pink text-white shadow-lg hover:bg-brand-pink2 hover:shadow-xl transition"
             >
               Get My Free Quote →
             </Link>
-            <p className="mt-4 text-gray-600">
+            <p className="mt-4 text-slate-700">
               No obligation. No jargon. Just clear answers and results that help your business grow.
             </p>
           </div>

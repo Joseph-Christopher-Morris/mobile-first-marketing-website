@@ -2,6 +2,7 @@ import type { Metadata } from 'next';
 import { Inter } from 'next/font/google';
 import Script from 'next/script';
 import CookieBanner from '@/components/CookieBanner';
+import { StickyConversionBar } from '@/components/StickyConversionBar';
 import './globals.css';
 
 const inter = Inter({
@@ -101,12 +102,113 @@ export default function RootLayout({
   return (
     <html lang='en'>
       <head>
+        {/* Critical resource preload for LCP optimization */}
+        <link
+          rel="preload"
+          href="/images/hero/230422_Chester_Stock_Photography-84.webp"
+          as="image"
+          type="image/webp"
+          fetchPriority="high"
+        />
         <link rel="icon" href="/favicon.png" sizes="any" />
         <link rel="apple-touch-icon" href="/favicon.png" />
         <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
         <link rel="dns-prefetch" href="https://d15sc9fc739ev2.cloudfront.net" />
+
+        {/* LocalBusiness Schema Markup */}
+        <Script
+          id="local-business-schema"
+          type="application/ld+json"
+          strategy="afterInteractive"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify({
+              '@context': 'https://schema.org',
+              '@type': 'LocalBusiness',
+              name: 'Vivid Media Cheshire',
+              image: 'https://d15sc9fc739ev2.cloudfront.net/images/hero/aston-martin-db6-website.webp',
+              '@id': 'https://d15sc9fc739ev2.cloudfront.net',
+              url: 'https://d15sc9fc739ev2.cloudfront.net',
+              telephone: '+44-XXXX-XXXXXX',
+              priceRange: '££',
+              address: {
+                '@type': 'PostalAddress',
+                streetAddress: 'Nantwich',
+                addressLocality: 'Nantwich',
+                addressRegion: 'Cheshire',
+                postalCode: 'CW5',
+                addressCountry: 'GB',
+              },
+              geo: {
+                '@type': 'GeoCoordinates',
+                latitude: 53.0679,
+                longitude: -2.5211,
+              },
+              openingHoursSpecification: {
+                '@type': 'OpeningHoursSpecification',
+                dayOfWeek: ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday'],
+                opens: '09:00',
+                closes: '17:00',
+              },
+              sameAs: [
+                'https://www.linkedin.com/company/vivid-media-cheshire',
+              ],
+              areaServed: [
+                {
+                  '@type': 'City',
+                  name: 'Nantwich',
+                },
+                {
+                  '@type': 'City',
+                  name: 'Crewe',
+                },
+                {
+                  '@type': 'AdministrativeArea',
+                  name: 'Cheshire',
+                },
+              ],
+              hasOfferCatalog: {
+                '@type': 'OfferCatalog',
+                name: 'Digital Marketing Services',
+                itemListElement: [
+                  {
+                    '@type': 'Offer',
+                    itemOffered: {
+                      '@type': 'Service',
+                      name: 'Website Design & Development',
+                      description: 'Mobile-first websites on AWS CloudFront',
+                    },
+                  },
+                  {
+                    '@type': 'Offer',
+                    itemOffered: {
+                      '@type': 'Service',
+                      name: 'Website Hosting & Migration',
+                      description: 'AWS S3 + CloudFront hosting with 80% cost reduction',
+                    },
+                  },
+                  {
+                    '@type': 'Offer',
+                    itemOffered: {
+                      '@type': 'Service',
+                      name: 'Strategic Ad Campaigns',
+                      description: 'Google Ads campaigns for Cheshire businesses',
+                    },
+                  },
+                  {
+                    '@type': 'Offer',
+                    itemOffered: {
+                      '@type': 'Service',
+                      name: 'Photography Services',
+                      description: 'Professional photography for local businesses',
+                    },
+                  },
+                ],
+              },
+            }),
+          }}
+        />
 
         {/* Google tag (gtag.js) with consent mode */}
         <Script
@@ -146,6 +248,7 @@ export default function RootLayout({
       <body className={inter.className}>
         {children}
         <CookieBanner />
+        <StickyConversionBar />
       </body>
     </html>
   );

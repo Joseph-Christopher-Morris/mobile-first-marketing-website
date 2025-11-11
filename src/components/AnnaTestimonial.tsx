@@ -1,4 +1,5 @@
 import React from 'react';
+import { StarRating } from './StarRating';
 import '../styles/testimonials.css';
 
 const AnnaTestimonial: React.FC = () => {
@@ -16,6 +17,11 @@ const AnnaTestimonial: React.FC = () => {
 
       {/* Testimonial Content */}
       <div className='testimonial-content'>
+        {/* Star Rating */}
+        <div className='mb-4'>
+          <StarRating rating={5} size="md" showLabel={false} />
+        </div>
+        
         <blockquote className='testimonial-text'>
           &quot;Joe has transformed our social media output creating dynamnic content that drives engagement, he’s become an integral and essential part of the team. From managing our website and working with all our client users and staff to creating content he has been a professional and joy to work with.!&quot;
         </blockquote>

@@ -102,26 +102,26 @@ export default function HeroWithCharts({
           style={{ objectFit: 'cover' }}
         />
         <div className="absolute inset-0 bg-[rgba(0,0,0,0.55)]" />
-        <div className="relative z-10 mx-auto flex h-full max-w-6xl flex-col items-center justify-center px-4 text-center text-white">
-          <h1 className="text-4xl font-extrabold leading-tight sm:text-5xl">
+        <div className="relative z-10 mx-auto flex h-full max-w-6xl flex-col items-center justify-center px-4 pt-20 md:pt-0 text-center text-white">
+          <h1 className="text-4xl md:text-5xl lg:text-6xl font-extrabold leading-tight text-white">
             Faster, smarter websites that work as hard as you do
           </h1>
-          <p className="mt-4 max-w-3xl text-base opacity-95 sm:text-lg">
+          <p className="mt-4 mb-6 max-w-3xl text-base md:text-lg text-white/85">
             Vivid Media Cheshire helps local businesses grow with affordable mobile-first web design, secure hosting, and Google Ads campaigns that turn visitors into customers.
           </p>
 
-          <PressStrip variant="dark" />
+          <PressStrip />
 
-          <div className="mt-8 flex flex-col sm:flex-row h-auto sm:h-12 items-center justify-center gap-3">
+          <div className="mt-6 flex flex-col sm:flex-row items-center justify-center gap-4">
             <a
               href="/contact"
-              className="rounded-2xl bg-[#ff2d7a] px-5 py-3 text-sm font-semibold text-white shadow-md transition hover:opacity-90"
+              className="inline-flex items-center justify-center px-8 py-3 rounded-full text-base md:text-lg font-semibold bg-brand-pink text-white shadow-lg hover:bg-brand-pink2 hover:shadow-xl transition"
             >
               Let's Grow Your Business
             </a>
             <a
               href="/services"
-              className="rounded-2xl border border-white/70 px-5 py-3 text-sm font-semibold text-white/95 backdrop-blur-sm transition hover:bg-white/10"
+              className="inline-flex items-center justify-center px-8 py-3 rounded-full text-base md:text-lg font-semibold bg-slate-900 text-white/90 hover:bg-black transition shadow-md hover:shadow-lg"
             >
               Explore Services
             </a>
@@ -131,7 +131,7 @@ export default function HeroWithCharts({
       </div>
 
       {/* PROOF CARDS */}
-      <div className="mx-auto mt-8 md:mt-10 lg:-mt-16 grid max-w-6xl grid-cols-1 gap-6 px-4 sm:grid-cols-3">
+      <div className="mx-auto mt-8 md:mt-12 lg:mt-16 grid max-w-6xl grid-cols-1 gap-6 px-4 sm:grid-cols-3">
         <h2 className="sr-only">Costs and Performance Results</h2>
         <div className="rounded-2xl bg-white p-4 shadow-xl">
           <h3 className="mb-2 text-sm font-semibold text-[#0b0b0b]">Annual Hosting Cost</h3>

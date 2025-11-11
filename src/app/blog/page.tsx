@@ -1,4 +1,4 @@
-﻿import type { Metadata } from 'next';
+import type { Metadata } from 'next';
 import Link from 'next/link';
 import Image from 'next/image';
 import { Layout } from '@/components/layout';
@@ -8,9 +8,9 @@ import { NewsletterSignup } from '@/components/sections/NewsletterSignup';
 import { ServicesShowcase } from '@/components/sections/ServicesShowcase';
 
 export const metadata: Metadata = {
-  title: 'Automotive Photography Blog | Industry Insights & Success Stories',
+  title: 'Marketing, Photography & Web Design Tips for Cheshire Businesses | Vivid Media Cheshire',
   description:
-    'Latest insights, tips, and success stories from Vivid Auto Photography. Learn about automotive photography techniques, industry trends, marketing strategies, and real-world case studies from my Nantwich & Cheshire team.',
+    'Practical marketing, photography, and web design tips for Cheshire businesses. Real case studies, proven strategies, and actionable insights from Vivid Media Cheshire in Nantwich.',
   keywords: [
     'automotive photography blog',
     'car photography tips',
@@ -24,9 +24,9 @@ export const metadata: Metadata = {
     'automotive industry updates',
   ],
   openGraph: {
-    title: 'Automotive Photography Blog | Industry Insights & Success Stories',
+    title: 'Marketing, Photography & Web Design Tips for Cheshire Businesses | Vivid Media Cheshire',
     description:
-      'Latest insights, tips, and success stories from Vivid Auto Photography. Learn about automotive photography techniques, industry trends, and real-world case studies.',
+      'Practical marketing, photography, and web design tips for Cheshire businesses. Real case studies and proven strategies from Vivid Media Cheshire.',
   },
 };
 
@@ -57,13 +57,13 @@ export default async function BlogPage() {
     <Layout>
       <div className='min-h-screen bg-gray-50'>
         {/* Hero Section */}
-        <section className='bg-white border-b border-gray-200'>
-          <div className='max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 md:py-16'>
+        <section className='bg-white border-b border-gray-200 py-16 md:py-20'>
+          <div className='max-w-7xl mx-auto px-4 sm:px-6 lg:px-8'>
             <div className='text-center'>
-              <h1 className='text-3xl md:text-4xl lg:text-5xl font-bold text-gray-900 mb-4'>
+              <h1 className='text-4xl md:text-5xl lg:text-6xl font-extrabold text-slate-900 leading-tight mb-6'>
                 My Blog
               </h1>
-              <p className='text-lg md:text-xl text-gray-600 max-w-3xl mx-auto'>
+              <p className='text-base md:text-lg text-slate-700 max-w-3xl mx-auto'>
                 Practical tips and real success stories from my work. From running better ads to creating visuals that boost enquiries, learn what works and how you can apply it to your own marketing.
               </p>
             </div>
@@ -71,7 +71,7 @@ export default async function BlogPage() {
         </section>
 
         {/* Blog Content */}
-        <section className='py-12 md:py-16'>
+        <section className='py-16 md:py-20'>
           <div className='max-w-7xl mx-auto px-4 sm:px-6 lg:px-8'>
             <div className='grid gap-8 md:grid-cols-2 lg:grid-cols-3'>
               {/* Featured Blog Post */}
@@ -98,9 +98,9 @@ export default async function BlogPage() {
                           }
                         )}
                       </time>
-                      <span className='mx-2'>â€¢</span>
+                      <span className='mx-2'>•</span>
                       <span>{featuredPost.category}</span>
-                      <span className='mx-2'>â€¢</span>
+                      <span className='mx-2'>•</span>
                       <span>{featuredPost.readTime} min read</span>
                     </div>
                     <h2 className='text-2xl md:text-3xl font-bold text-gray-900 mb-4'>
@@ -161,7 +161,7 @@ export default async function BlogPage() {
                           day: 'numeric',
                         })}
                       </time>
-                      <span className='mx-2'>â€¢</span>
+                      <span className='mx-2'>•</span>
                       <span>{post.category}</span>
                     </div>
                     <h3 className='text-xl font-bold text-gray-900 mb-3'>
