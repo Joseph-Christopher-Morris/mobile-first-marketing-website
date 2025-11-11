@@ -3,7 +3,7 @@ import { Metadata } from 'next';
 import { Layout } from '@/components/layout';
 import Image from 'next/image';
 import Link from 'next/link';
-import { PressLogoRow } from '@/components/PressLogoRow';
+import { PressMentions } from '@/components/credibility/PressMentions';
 
 export const metadata: Metadata = {
   title: 'Professional Photography Services | Nantwich & Cheshire',
@@ -151,13 +151,8 @@ export default function PhotographyServicesPage() {
                   Specializing in local Nantwich photography and commercial campaigns.
                 </p>
 
-                <div className="mt-6">
-                  <p className="text-sm uppercase tracking-wide text-brand-grey/70 mb-2">
-                    As featured in:
-                  </p>
-                  <div className="rounded-xl bg-white/95 px-6 py-4 inline-block shadow-sm">
-                    <PressLogoRow variant="photography" />
-                  </div>
+                <div className="mt-6 mb-6">
+                  <PressMentions variant="dark" />
                 </div>
 
                 <div className="flex flex-col sm:flex-row gap-4">
