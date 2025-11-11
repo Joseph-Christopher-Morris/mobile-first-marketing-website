@@ -13,7 +13,7 @@ import {
   Tooltip,
   Legend,
 } from 'chart.js';
-import { PressMentions } from '@/components/credibility/PressMentions';
+import { PressStrip } from '@/components/credibility/PressStrip';
 
 // Lazy-load chart renders (keeps JS small and avoids SSR issues)
 const Doughnut = dynamic(() => import('react-chartjs-2').then(m => m.Doughnut), { ssr: false });
@@ -109,7 +109,10 @@ export default function HeroWithCharts({
           <p className="mt-4 max-w-3xl text-base opacity-95 sm:text-lg">
             Vivid Media Cheshire helps local businesses grow with affordable mobile-first web design, secure hosting, and Google Ads campaigns that turn visitors into customers.
           </p>
-          <div className="mt-6 flex flex-col sm:flex-row h-auto sm:h-12 items-center justify-center gap-3">
+
+          <PressStrip variant="dark" />
+
+          <div className="mt-8 flex flex-col sm:flex-row h-auto sm:h-12 items-center justify-center gap-3">
             <a
               href="/contact"
               className="rounded-2xl bg-[#ff2d7a] px-5 py-3 text-sm font-semibold text-white shadow-md transition hover:opacity-90"
@@ -125,11 +128,6 @@ export default function HeroWithCharts({
           </div>
 
         </div>
-      </div>
-
-      {/* Press Mentions Section */}
-      <div className="mt-8 mb-8">
-        <PressMentions variant="dark" />
       </div>
 
       {/* PROOF CARDS */}
