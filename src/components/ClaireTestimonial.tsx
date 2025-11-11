@@ -1,4 +1,5 @@
 import React from 'react';
+import { StarRating } from './StarRating';
 import '../styles/testimonials.css';
 
 const ClaireTestimonial: React.FC = () => {
@@ -16,6 +17,11 @@ const ClaireTestimonial: React.FC = () => {
 
       {/* Testimonial Content */}
       <div className='testimonial-content'>
+        {/* Star Rating */}
+        <div className='mb-4'>
+          <StarRating rating={5} size="md" showLabel={false} />
+        </div>
+        
         <blockquote className='testimonial-text'>
           &quot;Joe has been an incredible support to Feel Good Health and Fitness. He has consistently promoted the days and times of our Feel Good Gold classes on the NYCC Facebook page, helping to encourage new people to join our sessions.&quot;
         </blockquote>

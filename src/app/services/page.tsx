@@ -63,7 +63,7 @@ export default function ServicesPage() {
       description:
         "Targeted advertising campaigns designed to maximize ROI and reach your ideal customers across all platforms.",
       href: "/services/ad-campaigns",
-      thumbnail: "/images/services/ad-campaigns-hero.webp",
+      thumbnail: "/images/services/WhatsApp Image 2025-11-11 at 9.27.14 AM.webp",
       alt: "Strategic advertising campaigns dashboard and performance view",
     },
     {
@@ -178,7 +178,7 @@ export default function ServicesPage() {
 
   return (
     <Layout>
-      <main className="py-24 bg-gray-50">
+      <main className="bg-gray-50 py-16 md:py-20">
         {/* JSON-LD */}
         <script
           type="application/ld+json"
@@ -189,13 +189,13 @@ export default function ServicesPage() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           {/* Header */}
           <header className="text-center mb-16">
-            <h1 className="text-4xl md:text-5xl lg:text-6xl font-extrabold text-gray-900 leading-tight">
+            <h1 className="text-4xl md:text-5xl lg:text-6xl font-extrabold text-slate-900 leading-tight">
               Website Design, Development & Digital Marketing in Nantwich and Cheshire
             </h1>
-            <p className="mt-6 text-2xl text-gray-700 max-w-4xl mx-auto leading-relaxed">
+            <p className="mt-6 text-xl md:text-2xl text-slate-700 max-w-4xl mx-auto leading-relaxed">
               Faster, more affordable websites and smarter ads for Nantwich and Cheshire businesses.
             </p>
-            <p className="mt-4 text-lg text-gray-600 max-w-4xl mx-auto leading-relaxed">
+            <p className="mt-4 text-base md:text-lg text-slate-700 max-w-4xl mx-auto leading-relaxed">
               I help Nantwich and Cheshire businesses grow with website design, data analytics, and
               ROI-focused ad campaigns. Browse my core services below to see how we boost visibility
               and conversions.
@@ -205,9 +205,9 @@ export default function ServicesPage() {
           {/* Service cards */}
           <section className="mb-20">
             <div className="max-w-6xl mx-auto">
-              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10 xl:gap-12 justify-items-center">
+              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 lg:justify-items-center">
                 {services.map((service, index) => (
-                  <div key={index} className="w-full max-w-sm">
+                  <div key={index} className={`w-full max-w-sm ${index >= 3 ? 'lg:col-span-1 lg:justify-self-center' : ''}`}>
                     <ServiceCard
                       title={service.title}
                       description={service.description}
@@ -418,16 +418,16 @@ export default function ServicesPage() {
           {/* Pricing Teaser Section */}
           <section className="mb-20">
             <div className="max-w-5xl mx-auto text-center">
-              <h2 className="text-3xl font-bold text-gray-900 mb-3">
+              <h2 className="text-3xl md:text-4xl font-bold text-slate-900 mb-4">
                 Simple, transparent pricing
               </h2>
-              <p className="text-lg text-gray-600 mb-6">
+              <p className="text-base md:text-lg text-slate-700 mb-6">
                 Websites from £300, hosting from £15 per month, Google Ads management from £150 per month,
                 and event photography from £200 per day.
               </p>
               <Link
                 href="/pricing"
-                className="inline-flex items-center bg-pink-600 text-white px-8 py-3 rounded-lg text-lg font-semibold hover:bg-pink-700 transition-colors"
+                className="inline-flex items-center justify-center px-8 py-3 rounded-full text-base md:text-lg font-semibold bg-brand-pink text-white shadow-lg hover:bg-brand-pink2 hover:shadow-xl transition"
               >
                 View full pricing
               </Link>

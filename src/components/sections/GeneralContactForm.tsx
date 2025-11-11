@@ -172,6 +172,7 @@ export function GeneralContactForm() {
               value={formData.fullName}
               onChange={handleChange}
               required
+              autoComplete='name'
               aria-describedby={errors.fullName ? 'fullName-error' : undefined}
               className={`w-full px-4 py-3 border rounded-lg focus:ring-2 focus:ring-brand-pink focus:border-transparent transition-colors ${
                 errors.fullName ? 'border-brand-pink bg-brand-white' : 'border-gray-300'
@@ -203,6 +204,7 @@ export function GeneralContactForm() {
               value={formData.email}
               onChange={handleChange}
               required
+              autoComplete='email'
               aria-describedby={errors.email ? 'email-error' : undefined}
               className={`w-full px-4 py-3 border rounded-lg focus:ring-2 focus:ring-brand-pink focus:border-transparent transition-colors ${
                 errors.email ? 'border-brand-pink bg-brand-white' : 'border-gray-300'
@@ -235,6 +237,7 @@ export function GeneralContactForm() {
               name='phone'
               value={formData.phone}
               onChange={handleChange}
+              autoComplete='tel'
               className='w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-brand-pink focus:border-transparent transition-colors'
               placeholder='+44 123 456 7890'
             />

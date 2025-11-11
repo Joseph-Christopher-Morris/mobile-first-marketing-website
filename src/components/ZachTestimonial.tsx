@@ -1,4 +1,5 @@
 import React from 'react';
+import { StarRating } from './StarRating';
 import '../styles/testimonials.css';
 
 const ZachTestimonial: React.FC = () => {
@@ -16,6 +17,11 @@ const ZachTestimonial: React.FC = () => {
 
       {/* Testimonial Content */}
       <div className='testimonial-content'>
+        {/* Star Rating */}
+        <div className='mb-4'>
+          <StarRating rating={5} size="md" showLabel={false} />
+        </div>
+        
         <blockquote className='testimonial-text'>
           &quot;Joe has been very loyal to Hampson Auctions over the last four years, covering photography consignments across Cheshire and capturing striking images from our sales for promotional use on our email campaigns and social media channels.!&quot;
         </blockquote>

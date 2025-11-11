@@ -31,7 +31,7 @@ export const metadata: Metadata = {
     description: 'Strategic automotive advertising campaigns designed to maximize ROI and reach your ideal customers. Proven results with 2,470% average ROI across multiple platforms.',
     images: [
       {
-        url: '/images/services/ad-campaigns-hero.webp',
+        url: '/images/services/WhatsApp Image 2025-11-11 at 9.27.14 AM.webp',
         width: 1200,
         height: 630,
         alt: 'Strategic automotive advertising campaign dashboard showing performance metrics and ROI optimization',
@@ -106,7 +106,7 @@ export default function AdCampaignsServicesPage() {
               <div className='relative'>
                 <div className='relative h-96 lg:h-[500px] rounded-lg overflow-hidden shadow-2xl'>
                   <Image
-                    src='/images/services/ad-campaigns-hero.webp'
+                    src='/images/services/WhatsApp Image 2025-11-11 at 9.27.14 AM.webp'
                     alt='Strategic advertising campaign dashboard showing performance metrics'
                     fill
                     className='object-cover'

@@ -138,38 +138,38 @@ export default function PhotographyServicesPage() {
     <Layout pageTitle="Photography Services">
       <div className="min-h-screen bg-white">
         {/* Hero Section */}
-        <section className="relative bg-brand-black text-white py-20 lg:py-32">
+        <section className="relative bg-brand-black text-white pt-20 pb-16 md:py-20">
           <div className="absolute inset-0 bg-black/20"></div>
           <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
               <div>
-                <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold leading-tight mb-6">
+                <h1 className="text-4xl md:text-5xl lg:text-6xl font-extrabold leading-tight text-white mb-6">
                   Professional <span className="text-brand-pink">Photography</span> Services
                 </h1>
-                <p className="text-xl md:text-2xl text-brand-grey mb-8 leading-relaxed">
+                <p className="text-base md:text-lg text-white/85 mb-6 leading-relaxed">
                   Published editorial photographer with work featured in major publications.
                   Specializing in local Nantwich photography and commercial campaigns.
                 </p>
 
-                <PressStrip variant="dark" />
+                <PressStrip />
 
-                <div className="flex flex-col sm:flex-row gap-4">
+                <div className="flex flex-col sm:flex-row gap-4 mt-6">
                   <Link
                     href="/contact"
-                    className="bg-brand-pink text-white px-8 py-4 rounded-lg text-lg font-semibold hover:bg-brand-pink2 transition-colors text-center"
+                    className="inline-flex items-center justify-center px-8 py-3 rounded-full text-base md:text-lg font-semibold bg-brand-pink text-white shadow-lg hover:bg-brand-pink2 hover:shadow-xl transition text-center"
                   >
-                    Book Your Photoshoot →
+                    Book Your Photoshoot
                   </Link>
                   <Link
                     href="#gallery"
-                    className="border-2 border-white text-white px-8 py-4 rounded-lg text-lg font-semibold hover:bg-white hover:text-gray-900 transition-colors text-center"
+                    className="inline-flex items-center justify-center px-8 py-3 rounded-full text-base md:text-lg font-semibold bg-slate-900 text-white/90 hover:bg-black transition shadow-md hover:shadow-lg text-center"
                   >
                     View Portfolio
                   </Link>
                 </div>
               </div>
               <div className="relative">
-                <div className="relative h-96 lg:h-[500px] rounded-lg overflow-hidden shadow-2xl">
+                <div className="relative h-[480px] rounded-2xl overflow-hidden shadow-2xl">
                   <Image
                     src="/images/services/Photography/photography-hero.webp"
                     alt="Photography showcase from Vivid Media Cheshire"
@@ -185,13 +185,13 @@ export default function PhotographyServicesPage() {
         </section>
 
         {/* Service Description */}
-        <section className="py-20 bg-gray-50">
+        <section className="bg-gray-50 py-16 md:py-20">
           <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-            <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-6">
+            <h2 className="text-3xl md:text-4xl font-bold text-slate-900 mb-4">
               Published Editorial Photographer
             </h2>
             <p className="text-xl text-gray-600 mb-8 leading-relaxed">
-              With published work featured in major publications including BBC, Forbes, and The Times,
+              With published work and photos licenced in major publications including BBC, Forbes, and The Times,
               I bring editorial-quality photography to local Nantwich businesses and commercial campaigns.
               From capturing the essence of local markets to creating compelling commercial imagery,
               every shot tells a story that connects with your audience.
@@ -218,10 +218,10 @@ export default function PhotographyServicesPage() {
         </section>
 
         {/* Photography Gallery */}
-        <section id="gallery" className="py-20 bg-white">
+        <section id="gallery" className="bg-white py-16 md:py-20">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="text-center mb-16">
-              <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">Portfolio Gallery</h2>
+              <h2 className="text-3xl md:text-4xl font-bold text-slate-900 mb-4">Portfolio Gallery</h2>
               <p className="text-xl text-gray-600 max-w-3xl mx-auto">
                 Real work samples showcasing published editorial photography, local Nantwich projects,
                 and commercial campaign work. Each image represents my commitment to quality and
@@ -309,10 +309,10 @@ export default function PhotographyServicesPage() {
         </section>
 
         {/* Process Section */}
-        <section className="py-20 bg-gray-50">
+        <section className="bg-gray-50 py-16 md:py-20">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="text-center mb-16">
-              <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
+              <h2 className="text-3xl md:text-4xl font-bold text-slate-900 mb-4">
                 My Photography Process
               </h2>
               <p className="text-xl text-gray-600 max-w-3xl mx-auto">
@@ -435,21 +435,21 @@ export default function PhotographyServicesPage() {
         </section>
 
         {/* CTA Section */}
-        <section className="py-20 bg-brand-black text-white">
+        <section className="bg-brand-black text-white py-16 md:py-20">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-            <h2 className="text-3xl md:text-4xl font-bold mb-4">
+            <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">
               Ready to Create Editorial-Quality Photography?
             </h2>
-            <p className="text-xl text-brand-grey mb-8 max-w-3xl mx-auto">
+            <p className="text-base md:text-lg text-white/85 mb-8 max-w-3xl mx-auto">
               Whether you need local business photography, commercial campaigns, or editorial-style
               imagery, let's create something that tells your story with the same quality featured in
               major publications.
             </p>
             <Link
               href="/contact"
-              className="inline-flex items-center bg-brand-pink text-white px-8 py-4 rounded-lg text-lg font-semibold hover:bg-brand-pink2 transition-colors"
+              className="inline-flex items-center justify-center px-8 py-3 rounded-full text-base md:text-lg font-semibold bg-brand-pink text-white shadow-lg hover:bg-brand-pink2 hover:shadow-xl transition"
             >
-              Book Your Photoshoot →
+              Book Your Photoshoot
               <svg className="ml-2 w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
               </svg>

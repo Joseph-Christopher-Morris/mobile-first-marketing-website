@@ -103,7 +103,7 @@ export default function HostingPage() {
 
   return (
     <Layout>
-      <main className="py-24 bg-gray-50">
+      <main className="bg-gray-50 py-16 md:py-20">
         {/* JSON-LD */}
         <script
           type="application/ld+json"
@@ -113,20 +113,20 @@ export default function HostingPage() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           {/* Hero Section */}
           <section className="text-center mb-20">
-            <h1 className="text-4xl md:text-5xl lg:text-6xl font-extrabold text-gray-900 leading-tight mb-6">
+            <h1 className="text-4xl md:text-5xl lg:text-6xl font-extrabold text-slate-900 leading-tight mb-6">
               Faster, Cheaper Websites Without the Tech Headache
             </h1>
-            <p className="text-2xl text-gray-700 max-w-4xl mx-auto leading-relaxed mb-8">
+            <p className="text-xl md:text-2xl text-slate-700 max-w-4xl mx-auto leading-relaxed mb-8">
               Save up to 80% on hosting costs and make your website load 82% faster.
             </p>
-            <p className="text-lg text-gray-600 max-w-3xl mx-auto leading-relaxed">
+            <p className="text-base md:text-lg text-slate-700 max-w-3xl mx-auto leading-relaxed">
               We handle everything. Set up, migration, and support, so you can focus on running your business.
             </p>
           </section>
 
           {/* Hero Image */}
           <section className="mb-20">
-            <div className="relative h-96 md:h-[500px] rounded-2xl overflow-hidden shadow-2xl">
+            <div className="relative h-[480px] rounded-2xl overflow-hidden shadow-2xl">
               <Image
                 src="/images/services/hosting-migration-card.webp"
                 alt="AWS website hosting and migration services - 80% cost reduction and 82% faster load times"
@@ -145,31 +145,31 @@ export default function HostingPage() {
 
           {/* Why Move to AWS Hosting */}
           <section className="mb-20">
-            <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-12 text-center">
+            <h2 className="text-3xl md:text-4xl font-bold text-slate-900 mb-4 text-center">
               Why Move to AWS Hosting
             </h2>
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-6xl mx-auto">
-              <div className="bg-white rounded-xl p-8 shadow-lg">
-                <h3 className="text-2xl font-bold text-gray-900 mb-4">Save Hundreds Each Year</h3>
-                <p className="text-lg text-gray-700 leading-relaxed">
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-6xl mx-auto mt-12">
+              <div className="bg-white rounded-2xl shadow-lg p-6 md:p-8 flex flex-col">
+                <h3 className="text-xl font-semibold text-slate-900 mb-3">Save Hundreds Each Year</h3>
+                <p className="text-sm md:text-base text-slate-700">
                   Most clients go from £550 per year on Wix or GoDaddy to just £108 per year with AWS hosting.
                 </p>
               </div>
-              <div className="bg-white rounded-xl p-8 shadow-lg">
-                <h3 className="text-2xl font-bold text-gray-900 mb-4">Instant Speed Boost</h3>
-                <p className="text-lg text-gray-700 leading-relaxed">
+              <div className="bg-white rounded-2xl shadow-lg p-6 md:p-8 flex flex-col">
+                <h3 className="text-xl font-semibold text-slate-900 mb-3">Instant Speed Boost</h3>
+                <p className="text-sm md:text-base text-slate-700">
                   Faster pages mean more visitors stay, more calls come in, and more sales happen.
                 </p>
               </div>
-              <div className="bg-white rounded-xl p-8 shadow-lg">
-                <h3 className="text-2xl font-bold text-gray-900 mb-4">Zero Downtime</h3>
-                <p className="text-lg text-gray-700 leading-relaxed">
+              <div className="bg-white rounded-2xl shadow-lg p-6 md:p-8 flex flex-col">
+                <h3 className="text-xl font-semibold text-slate-900 mb-3">Zero Downtime</h3>
+                <p className="text-sm md:text-base text-slate-700">
                   Your site stays live while we migrate everything behind the scenes.
                 </p>
               </div>
-              <div className="bg-white rounded-xl p-8 shadow-lg">
-                <h3 className="text-2xl font-bold text-gray-900 mb-4">No Tech Stress</h3>
-                <p className="text-lg text-gray-700 leading-relaxed">
+              <div className="bg-white rounded-2xl shadow-lg p-6 md:p-8 flex flex-col">
+                <h3 className="text-xl font-semibold text-slate-900 mb-3">No Tech Stress</h3>
+                <p className="text-sm md:text-base text-slate-700">
                   We manage the setup, security, and maintenance. You enjoy the results.
                 </p>
               </div>
@@ -421,16 +421,16 @@ export default function HostingPage() {
 
           {/* CTA */}
           <section className="text-center bg-gradient-to-r from-pink-50 to-purple-50 rounded-2xl p-12 mx-4">
-            <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
+            <h2 className="text-3xl md:text-4xl font-bold text-slate-900 mb-4">
               Ready to Save 80% on Hosting?
             </h2>
-            <p className="text-xl text-gray-600 mb-8 max-w-2xl mx-auto">
+            <p className="text-base md:text-lg text-slate-700 mb-8 max-w-2xl mx-auto">
               Get a free migration quote today. I will assess your current setup, handle the migration,
               and have your new site running faster: all with zero downtime.
             </p>
             <Link
               href="/contact"
-              className="inline-flex items-center bg-pink-600 text-white px-8 py-4 rounded-lg text-lg font-semibold hover:bg-pink-700 transition-colors shadow-lg hover:shadow-xl"
+              className="inline-flex items-center justify-center px-8 py-3 rounded-full text-base md:text-lg font-semibold bg-brand-pink text-white shadow-lg hover:bg-brand-pink2 hover:shadow-xl transition"
             >
               Get My Free Website Hosting Quote
               <svg
@@ -447,7 +447,7 @@ export default function HostingPage() {
                 />
               </svg>
             </Link>
-            <p className="mt-4 text-gray-600">
+            <p className="mt-4 text-slate-700">
               No tech talk. Just honest savings and better performance.
             </p>
           </section>

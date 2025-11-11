@@ -56,7 +56,7 @@ export function getAllServices(): Service[] {
       title: 'Strategic Ad Campaigns',
       description:
         'Targeted advertising campaigns designed to maximize ROI and reach your ideal customers across all platforms.',
-      image: '/images/services/ad-campaigns-hero.webp',
+      image: '/images/services/WhatsApp Image 2025-11-11 at 9.27.14 AM.webp',
       href: '/services/ad-campaigns',
       features: [
         'Campaign Strategy',
