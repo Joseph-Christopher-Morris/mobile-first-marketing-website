@@ -13,7 +13,7 @@ import {
   Tooltip,
   Legend,
 } from 'chart.js';
-import { PressLogoRow } from '@/components/PressLogoRow';
+import { PressMentions } from '@/components/credibility/PressMentions';
 
 // Lazy-load chart renders (keeps JS small and avoids SSR issues)
 const Doughnut = dynamic(() => import('react-chartjs-2').then(m => m.Doughnut), { ssr: false });
@@ -124,16 +124,12 @@ export default function HeroWithCharts({
             </a>
           </div>
 
-          {/* Supporting line */}
-          <p className="mt-4 text-sm text-white/80">
-            Trusted by local businesses and recognised by global media including the BBC, Forbes and the Financial Times for quality and performance.
-          </p>
-
-          {/* Press Logos with white panel background */}
-          <div className="mt-5 max-w-full rounded-xl bg-white/95 px-4 sm:px-6 py-4 shadow-sm overflow-x-auto">
-            <PressLogoRow variant="home" />
-          </div>
         </div>
+      </div>
+
+      {/* Press Mentions Section */}
+      <div className="mt-8 mb-8">
+        <PressMentions variant="dark" />
       </div>
 
       {/* PROOF CARDS */}
