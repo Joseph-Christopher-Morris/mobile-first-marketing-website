@@ -25,8 +25,8 @@ export function AboutServicesForm({ formspreeId }: AboutServicesFormProps) {
       });
 
       if (res.ok) {
-        setStatus("success");
-        form.reset();
+        // Redirect to thank you page
+        window.location.href = '/thank-you';
       } else {
         setStatus("error");
       }

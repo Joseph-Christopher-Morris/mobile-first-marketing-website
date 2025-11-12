@@ -129,8 +129,11 @@ export default function WebsiteDesignPage() {
             <h2 className="text-lg font-semibold text-slate-900 mb-2">
               Conversion Focused
             </h2>
-            <p className="text-slate-700 text-sm">
+            <p className="text-slate-700 text-sm mb-3">
               Layouts are shaped by real metrics and experience, not guesswork.
+            </p>
+            <p className="text-slate-700 text-sm">
+              Every design decision is guided by conversion optimisation. From layout and navigation to page speed and clear calls-to-action, each website is built to attract visitors and turn them into customers.
             </p>
           </div>
         </div>
@@ -378,6 +381,7 @@ export default function WebsiteDesignPage() {
               method="POST"
               className="space-y-4"
             >
+              <input type="hidden" name="_redirect" value="https://vividmediacheshire.com/thank-you" />
               <div className="grid gap-4 md:grid-cols-2">
                 <label className="block">
                   <span className="text-sm font-medium text-slate-800">

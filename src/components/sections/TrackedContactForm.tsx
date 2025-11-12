@@ -82,6 +82,8 @@ export default function TrackedContactForm({
       className="space-y-4 max-w-2xl mx-auto"
       id="contact"
     >
+      <input type="hidden" name="_redirect" value="https://vividmediacheshire.com/thank-you" />
+      
       <div>
         <label htmlFor="name" className="sr-only">
           Full Name

@@ -145,12 +145,26 @@ export default function RootLayout({
                 latitude: 53.0679,
                 longitude: -2.5211,
               },
-              openingHoursSpecification: {
-                '@type': 'OpeningHoursSpecification',
-                dayOfWeek: ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday'],
-                opens: '09:00',
-                closes: '17:00',
-              },
+              openingHoursSpecification: [
+                {
+                  '@type': 'OpeningHoursSpecification',
+                  dayOfWeek: ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday'],
+                  opens: '09:00',
+                  closes: '18:00',
+                },
+                {
+                  '@type': 'OpeningHoursSpecification',
+                  dayOfWeek: 'Saturday',
+                  opens: '10:00',
+                  closes: '14:00',
+                },
+                {
+                  '@type': 'OpeningHoursSpecification',
+                  dayOfWeek: 'Sunday',
+                  opens: '10:00',
+                  closes: '16:00',
+                },
+              ],
               sameAs: [
                 'https://www.linkedin.com/company/vivid-media-cheshire',
               ],
@@ -210,38 +224,52 @@ export default function RootLayout({
           }}
         />
 
-        {/* Google tag (gtag.js) with consent mode */}
+        {/* GA4 */}
         <Script
           async
           src="https://www.googletagmanager.com/gtag/js?id=G-QJXSCJ0L43"
           strategy="afterInteractive"
         />
-        <Script id="google-analytics" strategy="afterInteractive">
+        <Script id="ga4" strategy="afterInteractive">
           {`
             window.dataLayer = window.dataLayer || [];
             function gtag(){dataLayer.push(arguments);}
-
-            // Configure consent mode
+            
+            // Consent defaults
             gtag('consent', 'default', {
               analytics_storage: 'denied',
               ad_storage: 'denied',
               wait_for_update: 500
             });
-
+            
             gtag('js', new Date());
-            gtag('config', 'G-QJXSCJ0L43', {
-              anonymize_ip: true
-            });
+            gtag('config', 'G-QJXSCJ0L43', { anonymize_ip: true });
+          `}
+        </Script>
 
-            // Check for existing consent
-            if (typeof window !== 'undefined') {
-              const consent = localStorage.getItem('cookieConsent');
-              if (consent === 'accepted') {
-                gtag('consent', 'update', {
-                  analytics_storage: 'granted'
-                });
-              }
-            }
+        {/* Google Ads */}
+        <Script
+          async
+          src="https://www.googletagmanager.com/gtag/js?id=AW-17708257497"
+          strategy="afterInteractive"
+        />
+        <Script id="ads" strategy="afterInteractive">
+          {`
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+            gtag('config', 'AW-17708257497');
+          `}
+        </Script>
+
+        {/* Microsoft Clarity */}
+        <Script id="clarity" strategy="afterInteractive">
+          {`
+            (function(c,l,a,r,i,t,y){
+              c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
+              t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
+              y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
+            })(window, document, "clarity", "script", "u4yftkmpxx");
           `}
         </Script>
       </head>

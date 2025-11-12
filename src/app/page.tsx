@@ -10,9 +10,9 @@ import { GeneralContactForm } from '@/components/sections/GeneralContactForm';
 import { FAQAccordion } from '@/components/FAQAccordion';
 
 export const metadata: Metadata = {
-  title: 'Vivid Media Cheshire — Faster, Smarter Websites That Work as Hard as You Do',
+  title: 'Vivid Media Cheshire | Performance Marketing That Pays',
   description:
-    'Affordable mobile-first web design, secure hosting, and Google Ads campaigns that turn visitors into customers in Cheshire.',
+    'Performance marketing for Cheshire businesses. Fast websites, Google Ads, and analytics that deliver measurable results. Free consultation included.',
   keywords: [
     'secure cloud website hosting Cheshire',
     'secure cloud infrastructure migration',
@@ -26,9 +26,9 @@ export const metadata: Metadata = {
     'Vivid Media Cheshire',
   ],
   openGraph: {
-    title: 'Vivid Media Cheshire — Faster, Smarter Websites That Work as Hard as You Do',
+    title: 'Vivid Media Cheshire | Performance Marketing That Pays',
     description:
-      'Affordable mobile-first web design, secure hosting, and Google Ads campaigns that turn visitors into customers in Cheshire.',
+      'Performance marketing for Cheshire businesses. Fast websites, Google Ads, and analytics that deliver measurable results. Free consultation included.',
     images: [
       {
         url: '/images/hero/230422_Chester_Stock_Photography-84.webp',
@@ -87,7 +87,7 @@ export default async function HomePage() {
                   Website Design & Development
                 </h3>
                 <p className='text-sm md:text-base text-slate-700 mb-4'>
-                  Clear, fast websites that help customers find you and get in touch. Built to work with your marketing from day one.
+                  Fast, mobile-first websites that turn visitors into enquiries. Built for speed and SEO.
                 </p>
                 <Link
                   href='/services/website-design'
@@ -113,7 +113,7 @@ export default async function HomePage() {
                   Website Hosting & Migration
                 </h3>
                 <p className='text-sm md:text-base text-slate-700 mb-4'>
-                  Enterprise-grade hosting that makes your site 82% faster. Professional migration with zero downtime and transparent pricing.
+                  Make your site 82% faster with enterprise hosting. Zero downtime migration, £120 per year.
                 </p>
                 <Link
                   href='/services/hosting'
@@ -139,7 +139,7 @@ export default async function HomePage() {
                   Strategic Ad Campaigns
                 </h3>
                 <p className='text-sm md:text-base text-slate-700 mb-4'>
-                  Google Ads and social campaigns that bring real leads, not wasted clicks. Clear reporting shows what's working.
+                  Google Ads that bring real leads, not wasted clicks. Clear reporting shows what works.
                 </p>
                 <Link
                   href='/services/ad-campaigns'
@@ -165,7 +165,7 @@ export default async function HomePage() {
                   Data Analytics & Insights
                 </h3>
                 <p className='text-sm md:text-base text-slate-700 mb-4'>
-                  Understand what's working and what's not. Simple dashboards that show where your leads come from and what to improve.
+                  Know what's working. Simple dashboards show where leads come from and what to improve.
                 </p>
                 <Link
                   href='/services/analytics'
@@ -191,7 +191,7 @@ export default async function HomePage() {
                   Photography Services
                 </h3>
                 <p className='text-sm md:text-base text-slate-700 mb-4'>
-                  Professional photography for businesses that need quality images. Fast turnaround and ready for web, print, or social media.
+                  Professional photography that builds trust. Fast turnaround, ready for web and social.
                 </p>
                 <Link
                   href='/services/photography'
@@ -338,7 +338,7 @@ export default async function HomePage() {
                 Get Started Today
               </h2>
               <p className="text-base md:text-lg text-slate-700">
-                I will reply personally the same day with ideas and next steps.
+                I reply personally the same day during business hours with ideas and next steps.
               </p>
             </div>
             <GeneralContactForm />

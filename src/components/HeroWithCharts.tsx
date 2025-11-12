@@ -86,9 +86,9 @@ export default function HeroWithCharts({
 
 
   return (
-    <section className="w-full">
+    <section className="w-full pt-[4rem] md:pt-[5rem] lg:pt-[6rem]">
       {/* HERO */}
-      <div className="relative h-[60vh] min-h-[480px] w-full overflow-hidden rounded-b-3xl pb-24 md:pb-24">
+      <div className="relative h-[75vh] md:h-[60vh] min-h-[480px] w-full overflow-hidden rounded-b-3xl pb-24 md:pb-24">
         <Image
           src={heroSrc}
           alt="Vivid Media Cheshire — premium creative craftsmanship with cloud performance results"
@@ -102,15 +102,15 @@ export default function HeroWithCharts({
           style={{ objectFit: 'cover' }}
         />
         <div className="absolute inset-0 bg-[rgba(0,0,0,0.60)]" />
-        <div className="relative z-10 mx-auto flex h-full max-w-6xl flex-col items-center justify-center px-4 pt-24 pb-8 md:pt-0 md:pb-0 text-center text-white">
-          <h1 className="text-3xl md:text-5xl lg:text-6xl font-extrabold leading-tight text-white drop-shadow-lg">
+        <div className="relative z-10 mx-auto flex h-full max-w-6xl flex-col items-center justify-center px-4 pt-8 pb-8 md:pt-0 md:pb-0 text-center text-white">
+          <h1 className="text-2xl md:text-4xl lg:text-5xl font-extrabold leading-tight text-white drop-shadow-lg">
             Cheshire's Practical Performance Marketer
           </h1>
-          <p className="mt-2 mb-4 text-xl md:text-2xl text-white font-semibold drop-shadow-md">
+          <p className="mt-2 mb-4 text-lg md:text-xl text-white font-semibold drop-shadow-md">
             Marketing that pays for itself.
           </p>
-          <p className="mb-6 max-w-3xl text-base md:text-lg text-white/90 drop-shadow-md">
-            I help local businesses get more leads through clear websites, Google Ads, and analytics that work together.
+          <p className="mb-6 max-w-3xl text-sm md:text-base text-white/90 drop-shadow-md">
+            I help Cheshire businesses get more leads through fast websites, Google Ads, and clear reporting.
           </p>
 
           <PressStrip />

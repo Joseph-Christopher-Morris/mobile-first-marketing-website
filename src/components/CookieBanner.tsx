@@ -23,12 +23,14 @@ export default function CookieBanner() {
 
     // Trigger analytics reload if accepted
     if (choice === "accepted" && typeof window !== "undefined") {
-      // Reload GA4 if consent was given
+      // Grant both analytics and ad storage
       if (window.gtag) {
         window.gtag("consent", "update", {
-          analytics_storage: "granted"
+          analytics_storage: "granted",
+          ad_storage: "granted"
         });
       }
+      localStorage.setItem("cookieConsent", "accepted");
     }
 
     setIsAnimating(false);

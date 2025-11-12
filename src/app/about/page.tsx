@@ -30,9 +30,12 @@ export default function AboutPage() {
                   <h1 className='text-3xl md:text-5xl font-bold text-gray-900 mb-6'>
                     About Joe
                   </h1>
-                  <div className='space-y-4 text-lg text-gray-600'>
+                  <div className='space-y-4 text-base md:text-lg text-gray-600'>
                     <p>
-                      I help local businesses and trades across Cheshire attract more customers with professional visuals and straightforward marketing that gets results. You will always deal with me directly. No jargon, just reliable service that makes your business stand out.
+                      I help Cheshire businesses get more leads through fast websites, Google Ads, and clear reporting. You always deal with me directly. No jargon, just reliable service that works.
+                    </p>
+                    <p>
+                      Based in Nantwich, I work with local trades and businesses who want marketing that pays for itself.
                     </p>
                   </div>
                 </div>
@@ -127,13 +130,15 @@ export default function AboutPage() {
                   </p>
                   <p>
                     Now, I combine creative storytelling with tools like{' '}
-                    <strong>Adobe Analytics</strong>, <strong>Meta Ads</strong>, and{' '}
-                    <strong>Google Ads</strong> to help brands stand out and reach their target audience.
+                    <strong>Adobe Analytics</strong>, <strong>Meta Ads</strong>,{' '}
+                    <strong>Google Ads</strong>, and <strong>Microsoft Clarity</strong> to help brands stand out and understand how people interact with their content.
                   </p>
                   <p>
                     My editorial photography has been licensed by <strong>BBC News</strong> and <strong>Business Insider</strong>. I&rsquo;m certified in{' '}
                     <strong>Adobe Experience Cloud</strong> and{' '}
-                    <strong>Google Marketing Platform</strong>.
+                    <strong>Google Marketing Platform</strong> solutions including{' '}
+                    <strong>Adobe Analytics</strong>, <strong>Adobe Target</strong>, and{' '}
+                    <strong>Adobe Experience Manager</strong>.
                   </p>
                 </div>
               </div>

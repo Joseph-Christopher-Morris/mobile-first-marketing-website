@@ -128,6 +128,7 @@ export default function ServicesContactSection() {
                   method="POST"
                   action="https://formspree.io/f/xvgvkbjb"
                 >
+                  <input type="hidden" name="_redirect" value="https://vividmediacheshire.com/thank-you" />
                   {/* Hidden field so you know it came from the Services page */}
                   <input type="hidden" name="source" value="Services page" />
 

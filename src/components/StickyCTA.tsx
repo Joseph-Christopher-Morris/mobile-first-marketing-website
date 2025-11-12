@@ -2,7 +2,8 @@
 
 import { useState, useEffect } from "react";
 import { usePathname } from "next/navigation";
-import { Phone, Calendar, Mail, FileText, BarChart, Megaphone, DollarSign, BookOpen, User, Send } from "lucide-react";
+import { Phone, Calendar, FileText, BarChart, Megaphone, DollarSign, BookOpen, User, Send } from "lucide-react";
+import { trackPhoneClick } from "@/lib/trackPhone";
 
 declare global {
   interface Window {
@@ -27,16 +28,18 @@ export default function StickyCTA() {
   }, []);
 
   const getCTAConfig = () => {
-    if (pathname?.includes("/services/hosting")) return { text: "Get Hosting Quote", icon: FileText };
-    if (pathname?.includes("/services/website-design")) return { text: "Build My Website", icon: FileText };
+    // Master Plan Task 2.3: Page-specific CTA copy
+    if (pathname?.includes("/services/website-design")) return { text: "Start Your Website Project", icon: FileText };
+    if (pathname?.includes("/services/hosting")) return { text: "Move My Site Securely", icon: FileText };
+    if (pathname?.includes("/services/ad-campaigns")) return { text: "Launch My Campaign", icon: Megaphone };
+    if (pathname?.includes("/services/analytics")) return { text: "Get My Tracking Fixed", icon: BarChart };
     if (pathname?.includes("/services/photography")) return { text: "Book Your Shoot", icon: Calendar };
-    if (pathname?.includes("/services/analytics")) return { text: "View My Data Options", icon: BarChart };
-    if (pathname?.includes("/services/ad-campaigns")) return { text: "Start My Campaign", icon: Megaphone };
+    if (pathname?.includes("/services")) return { text: "Explore How I Can Help", icon: FileText };
     if (pathname?.includes("/pricing")) return { text: "See Pricing Options", icon: DollarSign };
-    if (pathname?.includes("/blog")) return { text: "Read Case Studies", icon: BookOpen };
-    if (pathname?.includes("/about")) return { text: "Work With Me", icon: User };
-    if (pathname?.includes("/contact")) return { text: "Send Message", icon: Send };
-    return { text: "Book Your Consultation", icon: Calendar };
+    if (pathname?.includes("/blog")) return { text: "Learn From My Case Studies", icon: BookOpen };
+    if (pathname?.includes("/about")) return { text: "Work With Joe", icon: User };
+    if (pathname?.includes("/contact")) return { text: "Send My Message", icon: Send };
+    return { text: "Let's Grow Your Business", icon: Calendar };
   };
 
   const getPageType = () => {
@@ -54,6 +57,9 @@ export default function StickyCTA() {
   };
 
   const handleCallClick = () => {
+    trackPhoneClick("call_joe_sticky");
+    
+    // Additional GA4 context event
     if (typeof window !== "undefined" && typeof window.gtag === "function") {
       window.gtag("event", "cta_call_click", {
         cta_text: "Call Joe",
