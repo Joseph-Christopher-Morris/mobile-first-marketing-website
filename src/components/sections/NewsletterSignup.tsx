@@ -80,6 +80,7 @@ export function NewsletterSignup() {
           </div>
         ) : (
           <form onSubmit={handleSubmit} className='max-w-md mx-auto' method="POST" action="https://formspree.io/f/xvgvkbjb">
+            <input type="hidden" name="_redirect" value="https://vividmediacheshire.com/thank-you" />
             <div className='flex flex-col sm:flex-row gap-4'>
               <label htmlFor='newsletter-email' className='sr-only'>
                 Email address for newsletter subscription

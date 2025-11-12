@@ -249,6 +249,7 @@ export default function WebsiteHostingPage() {
               method="POST"
               className="space-y-6 bg-gray-50 p-8 rounded-2xl shadow-sm"
             >
+              <input type="hidden" name="_redirect" value="https://vividmediacheshire.com/thank-you" />
               <div>
                 <label htmlFor="name" className="block text-sm font-medium text-gray-700 mb-2">
                   Full Name *

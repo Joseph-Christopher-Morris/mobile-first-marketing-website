@@ -60,11 +60,11 @@ export default async function BlogPage() {
         <section className='bg-white border-b border-gray-200 py-16 md:py-20'>
           <div className='max-w-7xl mx-auto px-4 sm:px-6 lg:px-8'>
             <div className='text-center'>
-              <h1 className='text-4xl md:text-5xl lg:text-6xl font-extrabold text-slate-900 leading-tight mb-6'>
-                My Blog
+              <h1 className='text-3xl md:text-4xl lg:text-5xl font-extrabold text-slate-900 leading-tight mb-6'>
+                My Case Studies
               </h1>
-              <p className='text-base md:text-lg text-slate-700 max-w-3xl mx-auto'>
-                Practical tips and real success stories from my work. From running better ads to creating visuals that boost enquiries, learn what works and how you can apply it to your own marketing.
+              <p className='text-sm md:text-base text-slate-700 max-w-3xl mx-auto'>
+                Real results from my projects. Learn what works and how to apply it to your business.
               </p>
             </div>
           </div>

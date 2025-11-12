@@ -32,17 +32,8 @@ export function ServiceInquiryForm({
       });
 
       if (res.ok) {
-        setStatus("success");
-        form.reset();
-        
-        // Track successful form submission in GA4
-        if (typeof window !== 'undefined' && window.gtag) {
-          window.gtag('event', 'lead_form_submit', {
-            page_path: window.location.pathname,
-            service_name: serviceName,
-            form_type: 'service_inquiry'
-          });
-        }
+        // Redirect to thank you page
+        window.location.href = '/thank-you';
       } else {
         setStatus("error");
       }

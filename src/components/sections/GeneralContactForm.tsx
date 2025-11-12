@@ -114,15 +114,8 @@ export function GeneralContactForm() {
       });
 
       if (response.ok) {
-        setIsSubmitted(true);
-        setFormData({
-          fullName: '',
-          email: '',
-          phone: '',
-          serviceInterest: '',
-          message: '',
-        });
-        setErrors({});
+        // Redirect to thank you page
+        window.location.href = '/thank-you';
       } else {
         throw new Error('Form submission failed');
       }
@@ -175,6 +168,7 @@ export function GeneralContactForm() {
       <h2 className='text-2xl font-bold text-gray-900 mb-2'>Get in Touch</h2>
       <p className='text-neutral-600 mb-6'>Fill in the form below and I will get back to you personally.</p>
       <form onSubmit={handleSubmit} className='space-y-6' method="POST" action="https://formspree.io/f/xvgvkbjb">
+        <input type="hidden" name="_redirect" value="https://vividmediacheshire.com/thank-you" />
         <div className='grid grid-cols-1 md:grid-cols-2 gap-6'>
           <div>
             <label

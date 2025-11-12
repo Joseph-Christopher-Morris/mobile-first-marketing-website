@@ -117,9 +117,12 @@ export default function HostingPage() {
           {/* Hero Section */}
           <section className="text-center mb-20">
             <h1 className="text-4xl md:text-5xl lg:text-6xl font-extrabold text-slate-900 leading-tight mb-6">
-              Fast, Reliable Hosting with Same-Day Support
+              Fast, Secure, and Transparent Hosting
             </h1>
             <p className="text-xl md:text-2xl text-slate-700 max-w-4xl mx-auto leading-relaxed mb-8">
+              Professional migration and same-day support. Free consultation included for all new clients.
+            </p>
+            <p className="text-base md:text-lg text-slate-700 max-w-3xl mx-auto leading-relaxed mb-8">
               £120 per year with 99.9% uptime and local support. I personally reply to all enquiries the same day during business hours.
             </p>
             <p className="text-base md:text-lg text-slate-700 max-w-3xl mx-auto leading-relaxed mb-8">
