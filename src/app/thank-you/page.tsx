@@ -4,7 +4,7 @@ import { Layout } from "@/components/layout";
 
 export const metadata: Metadata = {
   title: "Thank You | Message Received",
-  description: "Thanks for getting in touch! I've received your message and will reply within 24 hours.",
+  description: "Thanks for getting in touch! I've received your message and will reply the same day.",
   robots: "noindex, nofollow",
 };
 
@@ -26,7 +26,7 @@ export default function ThankYouPage() {
           </h1>
 
           <p className="text-xl text-gray-700 mb-8 leading-relaxed">
-            I've received your message and will reply within 24 hours with ideas, options, and next steps tailored to your project.
+            I've received your message and will reply the same day with ideas, options, and next steps tailored to your project.
           </p>
 
           <div className="bg-white rounded-xl p-6 shadow-sm border border-gray-100 mb-8">

@@ -30,7 +30,7 @@ export const metadata: Metadata = {
     url: "/services",
     images: [
       {
-        url: "/images/services/hosting-migration-card.webp",
+        url: "/images/services/web-hosting-and-migration/hosting-migration-card.webp",
         width: 1200,
         height: 630,
         alt: "Digital services for Nantwich and Cheshire businesses",
@@ -45,7 +45,7 @@ export default function ServicesPage() {
     {
       title: "Website Design & Development",
       description:
-        "Mobile first websites on AWS CloudFront, built on a modular framework that is ready for SEO, analytics, and ad campaigns.",
+        "Mobile first websites on secure cloud infrastructure, built on a modular framework that is ready for SEO, analytics, and ad campaigns.",
       href: "/services/website-design",
       thumbnail: "/images/services/Website Design/PXL_20240222_004124044~2.webp",
       alt: "Web designer working on a website design and hosting project",
@@ -53,9 +53,9 @@ export default function ServicesPage() {
     {
       title: "Website Hosting & Migration",
       description:
-        "AWS S3 + CloudFront hosting with 80% cost reduction and 82% faster load times. Professional website migration with zero downtime.",
+        "secure cloud hosting with global delivery hosting and 82% faster load times. Professional website migration with zero downtime and reliable performance.",
       href: "/services/website-hosting",
-      thumbnail: "/images/services/hosting-migration-card.webp",
+      thumbnail: "/images/services/web-hosting-and-migration/hosting-migration-card.webp",
       alt: "Website hosting and migration services showing cost savings and performance improvements",
     },
     {
@@ -89,7 +89,7 @@ export default function ServicesPage() {
     "@context": "https://schema.org",
     "@type": "LocalBusiness",
     name: "Nantwich & Cheshire Digital Services",
-    image: "/images/services/hosting-migration-card.webp",
+    image: "/images/services/web-hosting-and-migration/hosting-migration-card.webp",
     url: "https://example.com/services",
     address: {
       "@type": "PostalAddress",
@@ -228,8 +228,8 @@ export default function ServicesPage() {
                 Real-World Speed Improvements
               </h2>
               <p className="text-lg text-gray-700 mb-10 text-center max-w-3xl mx-auto leading-relaxed">
-                I migrated my automotive photography site from traditional hosting to AWS
-                S3 + CloudFront. Here's how the numbers changed on mobile, measured with
+                I migrated my automotive photography site from traditional hosting to secure cloud
+                S3 + global content delivery network. Here's how the numbers changed on mobile, measured with
                 Google Lighthouse.
               </p>
 
@@ -245,7 +245,7 @@ export default function ServicesPage() {
                   <div className="mb-4 rounded-lg overflow-hidden">
                     <img
                       src="/images/services/before-hosting-performance.webp"
-                      alt="Google Lighthouse performance score of 56 before AWS migration"
+                      alt="Google Lighthouse performance score of 56 before secure cloud migration"
                       className="w-full h-auto"
                     />
                   </div>
@@ -277,7 +277,7 @@ export default function ServicesPage() {
                 {/* After card */}
                 <article className="bg-white rounded-2xl shadow-sm border border-gray-100 p-6 flex flex-col">
                   <h3 className="text-sm font-semibold tracking-wide text-gray-500 uppercase mb-1">
-                    After – AWS Migration
+                    After – secure cloud Migration
                   </h3>
                   <p className="text-2xl font-extrabold text-emerald-600 mb-4">Performance 99</p>
 
@@ -285,7 +285,7 @@ export default function ServicesPage() {
                   <div className="mb-4 rounded-lg overflow-hidden">
                     <img
                       src="/images/services/Web Hosting And Migration/pagespeed-aws-migration-desktop.webp"
-                      alt="Google Lighthouse performance score of 99 after AWS migration"
+                      alt="Google Lighthouse performance score of 99 after secure cloud migration"
                       className="w-full h-auto"
                     />
                   </div>
@@ -317,7 +317,7 @@ export default function ServicesPage() {
 
               <p className="mt-6 text-xs text-gray-500 text-center">
                 Metrics from Google Lighthouse mobile tests for my automotive photography
-                site before and after migrating to AWS.
+                site before and after migrating to secure cloud.
               </p>
             </div>
           </section>

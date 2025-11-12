@@ -104,7 +104,7 @@ export default function ServicesContactSection() {
                 </div>
                 <h3 className="text-xl font-semibold text-gray-900 mb-2">Message Sent!</h3>
                 <p className="text-gray-600 mb-4">
-                  Thanks for your enquiry. I'll get back to you within 24 hours with ideas, options, and next steps.
+                  Thanks for your enquiry. I'll get back to you the same day with ideas, options, and next steps.
                 </p>
                 <button
                   onClick={() => setIsSubmitted(false)}
@@ -115,12 +115,11 @@ export default function ServicesContactSection() {
               </div>
             ) : (
               <>
-                <h3 className="text-xl font-semibold text-gray-900 mb-4">
+                <h3 className="text-xl font-semibold text-gray-900 mb-2">
                   Quick Services Enquiry
                 </h3>
-                <p className="text-sm text-gray-600 mb-6">
-                  Tell me what you&apos;re thinking about and I&apos;ll get back to
-                  you with ideas, options, and next steps.
+                <p className="text-neutral-600 mb-6">
+                  Tell me a bit about your website plans, and I'll personally get back to you the same day with ideas and next steps.
                 </p>
 
                 <form
@@ -267,11 +266,15 @@ export default function ServicesContactSection() {
                     )}
                   </button>
 
-                  <p className="text-sm text-gray-600 text-center font-medium">
-                    No obligation. I'll reply personally within 24 hours.
-                  </p>
+                  <div className="mt-4 text-sm text-slate-500 text-center">
+                    <p><strong>Hours (UK time)</strong></p>
+                    <p>Monday to Friday: 09:00 to 18:00</p>
+                    <p>Saturday: 10:00 to 14:00</p>
+                    <p>Sunday: 10:00 to 16:00</p>
+                    <p>I personally reply to all enquiries the same day during these hours.</p>
+                  </div>
 
-                  <p className="text-xs text-gray-400 text-center">
+                  <p className="text-xs text-gray-400 text-center mt-4">
                     This form is powered by Formspree. By submitting, you agree to
                     be contacted about your enquiry.
                   </p>

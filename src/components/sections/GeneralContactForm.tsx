@@ -41,10 +41,6 @@ export function GeneralContactForm() {
       newErrors.email = 'Please enter a valid email address (e.g., name@example.com)';
     }
 
-    if (!formData.message.trim()) {
-      newErrors.message = 'Please tell us about your project or how we can help';
-    }
-
     setErrors(newErrors);
     return Object.keys(newErrors).length === 0;
   };
@@ -67,6 +63,18 @@ export function GeneralContactForm() {
         [name]: undefined,
       }));
     }
+
+    // Track form input (only non-sensitive fields)
+    if (typeof window !== "undefined" && typeof window.gtag === "function") {
+      const safeValue = name === "serviceInterest" ? value : undefined;
+
+      window.gtag("event", "cta_form_input", {
+        field_name: name,
+        field_value: safeValue,
+        page_path: window.location.pathname,
+        form_id: "general_contact_form",
+      });
+    }
   };
 
   const handleSubmit = async (e: React.FormEvent) => {
@@ -74,6 +82,15 @@ export function GeneralContactForm() {
 
     if (!validateForm()) {
       return;
+    }
+
+    // Track form submission
+    if (typeof window !== "undefined" && typeof window.gtag === "function") {
+      window.gtag("event", "lead_form_submit", {
+        page_path: window.location.pathname,
+        service: formData.serviceInterest || "not_specified",
+        form_id: "general_contact_form",
+      });
     }
 
     setIsSubmitting(true);
@@ -155,7 +172,8 @@ export function GeneralContactForm() {
 
   return (
     <div className='bg-white rounded-xl shadow-lg p-6 md:p-8'>
-      <h2 className='text-2xl font-bold text-gray-900 mb-6'>Get in Touch</h2>
+      <h2 className='text-2xl font-bold text-gray-900 mb-2'>Get in Touch</h2>
+      <p className='text-neutral-600 mb-6'>Fill in the form below and I will get back to you personally.</p>
       <form onSubmit={handleSubmit} className='space-y-6' method="POST" action="https://formspree.io/f/xvgvkbjb">
         <div className='grid grid-cols-1 md:grid-cols-2 gap-6'>
           <div>
@@ -229,7 +247,7 @@ export function GeneralContactForm() {
               htmlFor='phone'
               className='block text-sm font-medium text-gray-700 mb-2'
             >
-              Phone <span className='text-gray-500'>(optional)</span>
+              Mobile Number *
             </label>
             <input
               type='tel'
@@ -237,6 +255,7 @@ export function GeneralContactForm() {
               name='phone'
               value={formData.phone}
               onChange={handleChange}
+              required
               autoComplete='tel'
               className='w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-brand-pink focus:border-transparent transition-colors'
               placeholder='+44 123 456 7890'
@@ -272,30 +291,17 @@ export function GeneralContactForm() {
             htmlFor='message'
             className='block text-sm font-medium text-gray-700 mb-2'
           >
-            Message *
+            Message <span className='text-gray-500'>(optional)</span>
           </label>
           <textarea
             id='message'
             name='message'
             value={formData.message}
             onChange={handleChange}
-            required
             rows={6}
-            aria-describedby={errors.message ? 'message-error' : undefined}
-            className={`w-full px-4 py-3 border rounded-lg focus:ring-2 focus:ring-brand-pink focus:border-transparent transition-colors resize-vertical ${
-              errors.message ? 'border-brand-pink bg-brand-white' : 'border-gray-300'
-            }`}
+            className='w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-brand-pink focus:border-transparent transition-colors resize-vertical'
             placeholder='Tell us about your project and how we can help...'
           />
-          {errors.message && (
-            <p
-              id='message-error'
-              className='mt-1 text-sm text-brand-pink'
-              role='alert'
-            >
-              {errors.message}
-            </p>
-          )}
         </div>
 
         <button
@@ -331,6 +337,15 @@ export function GeneralContactForm() {
             'Send Message'
           )}
         </button>
+
+        <div className="mt-4 text-sm text-slate-500 text-center">
+          <p><strong>Hours (UK time)</strong></p>
+          <p>Monday to Friday: 09:00 – 18:00</p>
+          <p>Saturday: 10:00 – 14:00</p>
+          <p>Sunday: 10:00 – 16:00</p>
+          <p className="mt-2">I personally reply to all enquiries the same day during these hours.</p>
+          <p className="mt-2 font-medium">No spam or sales calls. I personally handle every enquiry.</p>
+        </div>
       </form>
     </div>
   );

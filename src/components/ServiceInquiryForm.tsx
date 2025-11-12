@@ -5,11 +5,13 @@ import { useState } from "react";
 interface ServiceInquiryFormProps {
   serviceName: string;
   formspreeId: string; // e.g. "xyzabcd"
+  customMessage?: string;
 }
 
 export function ServiceInquiryForm({
   serviceName,
   formspreeId,
+  customMessage,
 }: ServiceInquiryFormProps) {
   const [status, setStatus] = useState<"idle" | "submitting" | "success" | "error">("idle");
 
@@ -32,6 +34,15 @@ export function ServiceInquiryForm({
       if (res.ok) {
         setStatus("success");
         form.reset();
+        
+        // Track successful form submission in GA4
+        if (typeof window !== 'undefined' && window.gtag) {
+          window.gtag('event', 'lead_form_submit', {
+            page_path: window.location.pathname,
+            service_name: serviceName,
+            form_type: 'service_inquiry'
+          });
+        }
       } else {
         setStatus("error");
       }
@@ -42,13 +53,37 @@ export function ServiceInquiryForm({
 
   const consentId = `consent-${serviceName.replace(/\s+/g, "-").toLowerCase()}`;
 
+  // Default messages by service type
+  const getDefaultMessage = () => {
+    if (serviceName.toLowerCase().includes('hosting')) {
+      return "Tell me a bit about your website plans, and I'll personally get back to you the same day with ideas and next steps.";
+    } else if (serviceName.toLowerCase().includes('design')) {
+      return "Share your vision, and I'll reply personally the same day with feedback and a plan to get started.";
+    } else if (serviceName.toLowerCase().includes('photography')) {
+      return "Let me know what you'd like to capture, and I'll get back to you the same day to plan your shoot.";
+    } else if (serviceName.toLowerCase().includes('analytics') || serviceName.toLowerCase().includes('data')) {
+      return "Send over a few details about your data goals, and I'll personally reply the same day to discuss how I can help.";
+    } else if (serviceName.toLowerCase().includes('ad') || serviceName.toLowerCase().includes('campaign')) {
+      return "Tell me about your business goals, and I'll personally reply the same day with ideas to boost your reach.";
+    }
+    return "Share your vision, and I'll reply personally the same day with feedback and a plan to get started.";
+  };
+
+  // Get heading based on service type
+  const getHeading = () => {
+    if (serviceName.toLowerCase().includes('ad') || serviceName.toLowerCase().includes('campaign')) {
+      return "Start My Google Ads Campaign";
+    }
+    return `Enquire About ${serviceName}`;
+  };
+
   return (
     <section className="mt-12 border border-slate-200 rounded-xl p-6 md:p-8 bg-white shadow-sm">
       <h2 className="text-2xl font-semibold mb-2">
-        Enquire About {serviceName}
+        {getHeading()}
       </h2>
-      <p className="text-sm text-slate-600 mb-6">
-        Tell me a bit about your project and I&apos;ll get back to you with a tailored plan.
+      <p className="text-neutral-600 mb-6">
+        {customMessage || getDefaultMessage()}
       </p>
 
       {status === "success" && (
@@ -89,6 +124,15 @@ export function ServiceInquiryForm({
               required
               autoComplete="name"
               className="w-full rounded-md border border-slate-300 px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-brand-pink focus:border-brand-pink"
+              onFocus={() => {
+                if (typeof window !== 'undefined' && window.gtag) {
+                  window.gtag('event', 'cta_form_input', {
+                    page_path: window.location.pathname,
+                    service_name: serviceName,
+                    field_name: 'name'
+                  });
+                }
+              }}
             />
           </div>
 
@@ -171,6 +215,14 @@ export function ServiceInquiryForm({
         >
           {status === "submitting" ? "Sending..." : "Send Enquiry"}
         </button>
+
+        <div className="mt-4 text-sm text-slate-500 text-center">
+          <p><strong>Hours (UK time)</strong></p>
+          <p>Monday to Friday: 09:00 to 18:00</p>
+          <p>Saturday: 10:00 to 14:00</p>
+          <p>Sunday: 10:00 to 16:00</p>
+          <p>I personally reply to all enquiries the same day during these hours.</p>
+        </div>
       </form>
     </section>
   );

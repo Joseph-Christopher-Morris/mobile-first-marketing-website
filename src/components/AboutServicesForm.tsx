@@ -40,9 +40,8 @@ export function AboutServicesForm({ formspreeId }: AboutServicesFormProps) {
       <h2 className="text-2xl font-semibold mb-2">
         Let&apos;s Find the Right Service for You
       </h2>
-      <p className="text-sm text-slate-600 mb-6">
-        Tell me what you&apos;re interested in and I&apos;ll recommend the best mix
-        of services for your business.
+      <p className="text-neutral-600 mb-6">
+        Send over a few details about your data goals, and I'll personally reply the same day to discuss how I can help.
       </p>
 
       {status === "success" && (

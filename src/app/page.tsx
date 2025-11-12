@@ -14,8 +14,8 @@ export const metadata: Metadata = {
   description:
     'Affordable mobile-first web design, secure hosting, and Google Ads campaigns that turn visitors into customers in Cheshire.',
   keywords: [
-    'AWS website hosting Cheshire',
-    'AWS CloudFront migration',
+    'secure cloud website hosting Cheshire',
+    'secure cloud infrastructure migration',
     'mobile-first web design',
     'Google Ads campaigns Cheshire',
     'digital marketing Nantwich',
@@ -58,7 +58,7 @@ export default async function HomePage() {
         {/* Hero Section with Charts */}
         <HeroWithCharts
           heroSrc="/images/hero/230422_Chester_Stock_Photography-84.webp"
-          wixAnnual={550}
+          wixAnnual={108}
           awsAnnual={108.4}
           breakdown={{ aws: 60, cloudflare: 10, zoho: 38.4 }}
           lcpSeries={[14.2, 7.8, 2.3, 1.8]}
@@ -87,7 +87,7 @@ export default async function HomePage() {
                   Website Design & Development
                 </h3>
                 <p className='text-sm md:text-base text-slate-700 mb-4'>
-                  Mobile-first websites on AWS CloudFront, built on a modular framework that is ready for SEO, analytics, and ad campaigns.
+                  Clear, fast websites that help customers find you and get in touch. Built to work with your marketing from day one.
                 </p>
                 <Link
                   href='/services/website-design'
@@ -102,7 +102,7 @@ export default async function HomePage() {
               <div className='bg-white rounded-2xl shadow-lg p-6 md:p-8 flex flex-col w-full max-w-sm'>
                 <div className='relative w-full aspect-[4/3] mb-4 rounded-xl overflow-hidden'>
                   <Image
-                    src='/images/services/hosting-migration-card.webp'
+                    src='/images/services/web-hosting-and-migration/hosting-migration-card.webp'
                     alt='Website hosting and migration performance dashboard'
                     fill
                     className='object-cover'
@@ -113,13 +113,12 @@ export default async function HomePage() {
                   Website Hosting & Migration
                 </h3>
                 <p className='text-sm md:text-base text-slate-700 mb-4'>
-                  AWS S3 + CloudFront hosting with 80% cost reduction and 82%
-                  faster load times. Professional website migration with zero downtime.
+                  Enterprise-grade hosting that makes your site 82% faster. Professional migration with zero downtime and transparent pricing.
                 </p>
                 <Link
                   href='/services/hosting'
                   className='inline-flex items-center gap-2 text-brand-pink font-semibold text-sm md:text-base hover:text-brand-pink2 mt-auto'
-                  aria-label='Learn more about AWS website hosting and migration services'
+                  aria-label='Learn more about secure cloud website hosting and migration services'
                 >
                   Learn more →
                 </Link>
@@ -140,8 +139,7 @@ export default async function HomePage() {
                   Strategic Ad Campaigns
                 </h3>
                 <p className='text-sm md:text-base text-slate-700 mb-4'>
-                  Targeted advertising campaigns designed to maximize ROI and
-                  reach your ideal customers across all platforms.
+                  Google Ads and social campaigns that bring real leads, not wasted clicks. Clear reporting shows what's working.
                 </p>
                 <Link
                   href='/services/ad-campaigns'
@@ -167,8 +165,7 @@ export default async function HomePage() {
                   Data Analytics & Insights
                 </h3>
                 <p className='text-sm md:text-base text-slate-700 mb-4'>
-                  Comprehensive analytics and data-driven insights to optimize
-                  your business performance and drive growth.
+                  Understand what's working and what's not. Simple dashboards that show where your leads come from and what to improve.
                 </p>
                 <Link
                   href='/services/analytics'
@@ -194,8 +191,7 @@ export default async function HomePage() {
                   Photography Services
                 </h3>
                 <p className='text-sm md:text-base text-slate-700 mb-4'>
-                  Professional automotive and commercial photography with
-                  mobile-optimized delivery and stunning visual storytelling.
+                  Professional photography for businesses that need quality images. Fast turnaround and ready for web, print, or social media.
                 </p>
                 <Link
                   href='/services/photography'
@@ -335,14 +331,14 @@ export default async function HomePage() {
         </section>
 
         {/* Contact Form Section - Below Pricing CTA */}
-        <section className="bg-white py-16 md:py-20">
+        <section id="contact" className="bg-white py-16 md:py-20">
           <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="text-center mb-8">
               <h2 className="text-3xl md:text-4xl font-bold text-slate-900 mb-4">
                 Get Started Today
               </h2>
               <p className="text-base md:text-lg text-slate-700">
-                Tell us about your project and we'll get back to you within one business day.
+                I will reply personally the same day with ideas and next steps.
               </p>
             </div>
             <GeneralContactForm />
@@ -354,28 +350,28 @@ export default async function HomePage() {
           title="Frequently Asked Questions"
           faqs={[
             {
-              question: "How much does AWS CloudFront hosting cost?",
-              answer: "Our AWS CloudFront hosting starts from £15 per month, which is 80% cheaper than traditional platforms like Wix. This includes S3 storage, CloudFront CDN, and SSL certificates. We handle all the technical setup and ongoing maintenance."
+              question: "How does your hosting compare to Wix or other DIY website builders?",
+              answer: "Wix's Light plan costs around £9 per month (£108 per year). It's fine for small personal sites, but it runs on shared servers with less control over caching, speed, and SEO. My hosting uses secure cloud infrastructure and protective caching and security layer. These are the same systems used by major global brands, but I manage everything locally here in Cheshire. That means your website loads faster, performs better in Google search, and you always speak directly to me instead of waiting in a support queue."
             },
             {
-              question: "Will my website be faster on AWS?",
-              answer: "Yes! Our clients see an average 82% improvement in load times after migrating to AWS CloudFront. Faster sites mean better SEO rankings, improved user experience, and more conversions. We've helped sites go from 14+ seconds to under 2 seconds."
+              question: "Will my website be faster on secure cloud?",
+              answer: "Yes! My clients see an average 82% improvement in load times after migrating to secure cloud infrastructure. Faster sites mean better SEO rankings, improved user experience, and more conversions. I've helped sites go from 14+ seconds to under 2 seconds."
             },
             {
               question: "Do you offer website design services?",
-              answer: "Yes, we create mobile-first websites from £300. All our sites are built on AWS CloudFront for maximum performance, include SEO optimization, and are ready for Google Ads campaigns. We focus on designs that convert visitors into customers."
+              answer: "Yes, I create mobile-first websites from £300. All my sites are built on secure cloud infrastructure for maximum performance, include SEO optimization, and are ready for Google Ads campaigns. I focus on designs that convert visitors into customers."
             },
             {
               question: "How do your Google Ads campaigns work?",
-              answer: "We manage Google Ads campaigns from £150 per month. This includes keyword research, ad creation, landing page optimization, and monthly performance reports. We focus on ROI and only recommend campaigns that make business sense for your budget."
+              answer: "I manage Google Ads campaigns from £150 per month. This includes keyword research, ad creation, landing page optimization, and monthly performance reports. I focus on ROI and only recommend campaigns that make business sense for your budget."
             },
             {
               question: "What areas do you serve?",
-              answer: "We're based in Nantwich and primarily serve businesses across Cheshire, including Crewe, Chester, and surrounding areas. However, we work with clients throughout the UK, especially for website hosting, design, and digital marketing services."
+              answer: "I'm based in Nantwich and primarily serve businesses across Cheshire, including Crewe, Chester, and surrounding areas. However, I work with clients throughout the UK, especially for website hosting, design, and digital marketing services."
             },
             {
               question: "How quickly can you get started?",
-              answer: "For website hosting migration, we can typically start within 2-3 business days and complete the migration within a week. New website projects depend on complexity but usually take 2-4 weeks. Google Ads campaigns can launch within 1-2 weeks after initial consultation."
+              answer: "For website hosting migration, I can typically start within 2-3 business days and complete the migration within a week. New website projects depend on complexity but usually take 2-4 weeks. Google Ads campaigns can launch within 1-2 weeks after initial consultation."
             }
           ]}
         />

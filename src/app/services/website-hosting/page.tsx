@@ -5,8 +5,8 @@ import { Layout } from '@/components/layout';
 
 export const metadata: Metadata = {
   title: 'Fast, Reliable Website Hosting and Setup for Small Businesses | Vivid Media Cheshire',
-  description: 'Affordable AWS hosting designed for performance, reliability, and easy scalability - perfect for growing brands and new websites.',
-  keywords: 'website hosting Cheshire, AWS website migration, fast website builder, small business hosting, CloudFront hosting',
+  description: 'Affordable secure cloud hosting designed for performance, reliability, and easy scalability - perfect for growing brands and new websites.',
+  keywords: 'website hosting Cheshire, secure cloud website migration, fast website builder, small business hosting, global content delivery network hosting',
 };
 
 export default function WebsiteHostingPage() {
@@ -22,7 +22,7 @@ export default function WebsiteHostingPage() {
                   Fast, Reliable Website Hosting and Setup for Small Businesses
                 </h1>
                 <p className="text-xl text-gray-600 mb-8">
-                  Save up to 80 percent on hosting costs and make your website load 82 percent faster. I handle the setup, migration, and support so you can focus on running your business.
+                  Make your website load 82 percent faster with reliable hosting and transparent annual pricing. I handle the setup, migration, and support so you can focus on running your business.
                 </p>
                 <EnhancedCTA
                   href="#contact-form"
@@ -36,8 +36,8 @@ export default function WebsiteHostingPage() {
               </div>
               <div className="relative">
                 <Image
-                  src="/images/services/Web Hosting And Migration/hosting-migration-card.webp"
-                  alt="Website hosting migration and setup for Cheshire businesses"
+                  src="/images/services/web-hosting-and-migration/hosting-migration-card.webp"
+                  alt="Website hosting and migration for small businesses in Cheshire"
                   width={600}
                   height={400}
                   className="rounded-2xl shadow-lg"
@@ -56,7 +56,7 @@ export default function WebsiteHostingPage() {
             </div>
             <div className="prose prose-lg mx-auto text-gray-700">
               <p className="text-xl leading-relaxed mb-6">
-                My hosting and website setups use AWS CloudFront, the same enterprise technology powering leading brands. I combine technical expertise, modern design, and analytics skills to create websites that load fast, perform reliably, and scale easily with your business.
+                My hosting and website setups use secure cloud infrastructure, the same enterprise technology powering leading brands. I combine technical expertise, modern design, and analytics skills to create websites that load fast, perform reliably, and scale easily with your business.
               </p>
               <p className="text-xl leading-relaxed mb-6">
                 Each website I host is part of a modular framework, making it simple to adapt pages and layouts for ad campaigns, seasonal offers, or new services without rebuilding everything from scratch.
@@ -114,7 +114,7 @@ export default function WebsiteHostingPage() {
             <div className="text-center mb-12">
               <h2 className="text-3xl font-bold text-gray-900 mb-4">Real Performance Example</h2>
               <p className="text-gray-600">
-                Results measured with Google Lighthouse for my automotive photography site after migrating to AWS.
+                Results measured with Google Lighthouse for my automotive photography site after migrating to secure cloud.
               </p>
             </div>
 
@@ -125,7 +125,7 @@ export default function WebsiteHostingPage() {
                 <div className="bg-red-50 p-4 rounded-2xl">
                   <Image
                     src="/images/services/Web Hosting And Migration/before-hosting-performance.webp"
-                    alt="Website performance before AWS migration showing poor Lighthouse scores"
+                    alt="Website performance before secure cloud migration showing poor Lighthouse scores"
                     width={500}
                     height={300}
                     className="rounded-lg shadow-md mx-auto"
@@ -138,7 +138,7 @@ export default function WebsiteHostingPage() {
                 <div className="bg-green-50 p-4 rounded-2xl">
                   <Image
                     src="/images/services/Web Hosting And Migration/pagespeed-aws-migration-desktop.webp"
-                    alt="Website performance after AWS migration showing excellent Lighthouse scores"
+                    alt="Website performance after secure cloud migration showing excellent Lighthouse scores"
                     width={500}
                     height={300}
                     className="rounded-lg shadow-md mx-auto"
@@ -164,11 +164,6 @@ export default function WebsiteHostingPage() {
                       <td className="py-3 px-4 text-gray-700">Performance Score (Mobile)</td>
                       <td className="py-3 px-4 text-center text-red-600 font-semibold">56/100</td>
                       <td className="py-3 px-4 text-center text-green-600 font-semibold">99/100</td>
-                    </tr>
-                    <tr className="border-b border-gray-100">
-                      <td className="py-3 px-4 text-gray-700">Annual Hosting Cost</td>
-                      <td className="py-3 px-4 text-center text-red-600 font-semibold">£550</td>
-                      <td className="py-3 px-4 text-center text-green-600 font-semibold">£110</td>
                     </tr>
                     <tr>
                       <td className="py-3 px-4 text-gray-700">Load Time</td>
@@ -204,7 +199,7 @@ export default function WebsiteHostingPage() {
                 </div>
                 <h3 className="text-xl font-semibold text-gray-900 mb-3">Migration or Setup</h3>
                 <p className="text-gray-600">
-                  Your website is configured on AWS with minimal downtime.
+                  Your website is configured on secure cloud with minimal downtime.
                 </p>
               </div>
               <div className="text-center">
@@ -245,7 +240,7 @@ export default function WebsiteHostingPage() {
             <div className="text-center mb-12">
               <h2 className="text-3xl font-bold text-gray-900 mb-4">Get a Website Hosting or Build Quote</h2>
               <p className="text-gray-600">
-                Tell me a bit about your current website or the one you would like to build, and I will get back to you personally within 24 hours with ideas and next steps.
+                Tell me a bit about your current website or the one you would like to build, and I will get back to you personally the same day with ideas and next steps.
               </p>
             </div>
 
@@ -332,7 +327,15 @@ export default function WebsiteHostingPage() {
                 Send Hosting Enquiry
               </button>
 
-              <p className="text-sm text-gray-500 text-center">
+              <div className="mt-4 text-sm text-slate-500 text-center">
+                <p><strong>Hours (UK time)</strong></p>
+                <p>Monday to Friday: 09:00 to 18:00</p>
+                <p>Saturday: 10:00 to 14:00</p>
+                <p>Sunday: 10:00 to 16:00</p>
+                <p>I personally reply to all enquiries the same day during these hours.</p>
+              </div>
+
+              <p className="text-sm text-gray-500 text-center mt-4">
                 This form is powered by Formspree. By submitting, you agree to be contacted about your enquiry.
               </p>
             </form>

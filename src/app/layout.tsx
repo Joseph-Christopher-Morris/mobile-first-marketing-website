@@ -2,7 +2,7 @@ import type { Metadata } from 'next';
 import { Inter } from 'next/font/google';
 import Script from 'next/script';
 import CookieBanner from '@/components/CookieBanner';
-import { StickyConversionBar } from '@/components/StickyConversionBar';
+import StickyCTA from '@/components/StickyCTA';
 import './globals.css';
 
 const inter = Inter({
@@ -15,14 +15,14 @@ const inter = Inter({
 export const metadata: Metadata = {
   title: {
     default:
-      'Vivid Media Cheshire - AWS CloudFront Hosting, Web Design & Google Ads | Nantwich & Cheshire',
+      'Vivid Media Cheshire - secure cloud infrastructure Hosting, Web Design & Google Ads | Nantwich & Cheshire',
     template: '%s | Vivid Media Cheshire',
   },
   description:
-    'Vivid Media Cheshire helps local businesses grow with cheaper, faster AWS CloudFront hosting and migration, mobile-first web design, and Google Ads campaigns that deliver measurable results.',
+    'Vivid Media Cheshire helps local businesses grow with cheaper, faster secure cloud infrastructure hosting and migration, mobile-first web design, and Google Ads campaigns that deliver measurable results.',
   keywords: [
-    'AWS website hosting Cheshire',
-    'AWS CloudFront migration',
+    'secure cloud website hosting Cheshire',
+    'secure cloud infrastructure migration',
     'mobile-first web design',
     'Google Ads campaigns Cheshire',
     'digital marketing Nantwich',
@@ -55,15 +55,15 @@ export const metadata: Metadata = {
     url: 'https://d15sc9fc739ev2.cloudfront.net',
     siteName: 'Vivid Media Cheshire',
     title:
-      'Vivid Media Cheshire - AWS CloudFront Hosting, Web Design & Google Ads | Nantwich & Cheshire',
+      'Vivid Media Cheshire - secure cloud infrastructure Hosting, Web Design & Google Ads | Nantwich & Cheshire',
     description:
-      'Vivid Media Cheshire helps local businesses grow with cheaper, faster AWS CloudFront hosting and migration, mobile-first web design, and Google Ads campaigns that deliver measurable results.',
+      'Vivid Media Cheshire helps local businesses grow with cheaper, faster secure cloud infrastructure hosting and migration, mobile-first web design, and Google Ads campaigns that deliver measurable results.',
     images: [
       {
         url: '/images/hero/aston-martin-db6-website.webp',
         width: 1200,
         height: 630,
-        alt: 'Vivid Media Cheshire – AWS CloudFront hosting, mobile-first design, and data-driven marketing based in Nantwich.',
+        alt: 'Vivid Media Cheshire – secure cloud infrastructure hosting, mobile-first design, and data-driven marketing based in Nantwich.',
         type: 'image/webp',
       },
     ],
@@ -71,9 +71,9 @@ export const metadata: Metadata = {
   twitter: {
     card: 'summary_large_image',
     title:
-      'Vivid Media Cheshire - AWS CloudFront Hosting, Web Design & Google Ads | Nantwich & Cheshire',
+      'Vivid Media Cheshire - secure cloud infrastructure Hosting, Web Design & Google Ads | Nantwich & Cheshire',
     description:
-      'Vivid Media Cheshire helps local businesses grow with cheaper, faster AWS CloudFront hosting and migration, mobile-first web design, and Google Ads campaigns.',
+      'Vivid Media Cheshire helps local businesses grow with cheaper, faster secure cloud infrastructure hosting and migration, mobile-first web design, and Google Ads campaigns.',
     images: ['/images/hero/aston-martin-db6-website.webp'],
   },
   robots: {
@@ -177,7 +177,7 @@ export default function RootLayout({
                     itemOffered: {
                       '@type': 'Service',
                       name: 'Website Design & Development',
-                      description: 'Mobile-first websites on AWS CloudFront',
+                      description: 'Mobile-first websites on secure cloud infrastructure',
                     },
                   },
                   {
@@ -185,7 +185,7 @@ export default function RootLayout({
                     itemOffered: {
                       '@type': 'Service',
                       name: 'Website Hosting & Migration',
-                      description: 'AWS S3 + CloudFront hosting with 80% cost reduction',
+                      description: 'secure cloud hosting with global delivery hosting and reliable performance',
                     },
                   },
                   {
@@ -248,7 +248,7 @@ export default function RootLayout({
       <body className={inter.className}>
         {children}
         <CookieBanner />
-        <StickyConversionBar />
+        <StickyCTA />
       </body>
     </html>
   );
