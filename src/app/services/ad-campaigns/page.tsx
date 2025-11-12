@@ -1,3 +1,5 @@
+'use client';
+
 import { Metadata } from 'next';
 import { Layout } from '@/components/layout';
 import Image from 'next/image';
@@ -10,35 +12,7 @@ import {
 } from '@/components/services/OutcomeCard';
 import { ServiceInquiryForm } from '@/components/ServiceInquiryForm';
 
-export const metadata: Metadata = {
-  title: 'Strategic Automotive Advertising Campaigns | Maximize ROI & Reach',
-  description:
-    'Strategic automotive advertising campaigns designed to maximize ROI and reach your ideal customers. Proven results with 2,470% average ROI across Google Ads, Facebook, and multi-platform campaigns for automotive businesses.',
-  keywords: [
-    'automotive advertising campaigns',
-    'car dealership advertising',
-    'automotive digital marketing',
-    'vehicle advertising ROI',
-    'automotive Google Ads',
-    'car sales advertising',
-    'automotive Facebook advertising',
-    'targeted automotive marketing',
-    'automotive lead generation',
-    'car dealership marketing campaigns'
-  ],
-  openGraph: {
-    title: 'Strategic Automotive Advertising Campaigns | Maximize ROI & Reach',
-    description: 'Strategic automotive advertising campaigns designed to maximize ROI and reach your ideal customers. Proven results with 2,470% average ROI across multiple platforms.',
-    images: [
-      {
-        url: '/images/services/WhatsApp Image 2025-11-11 at 9.27.14 AM.webp',
-        width: 1200,
-        height: 630,
-        alt: 'Strategic automotive advertising campaign dashboard showing performance metrics and ROI optimization',
-      },
-    ],
-  },
-};
+// Metadata moved to layout or parent component due to 'use client' directive
 
 export default function AdCampaignsServicesPage() {
   const portfolioImages = [
@@ -119,18 +93,18 @@ export default function AdCampaignsServicesPage() {
         </section>
 
         {/* Services Overview */}
-        <section className='py-20 bg-gray-50'>
+        <section className='py-16 md:py-24 bg-gray-50'>
           <div className='max-w-7xl mx-auto px-4 sm:px-6 lg:px-8'>
-            <div className='text-center mb-16'>
-              <h2 className='text-3xl md:text-4xl font-bold text-gray-900 mb-4'>
+            <div className='text-center mb-12 md:mb-16'>
+              <h2 className='text-3xl md:text-4xl font-bold text-gray-900 mb-6'>
                 What's Included
               </h2>
-              <p className='text-xl text-gray-600 max-w-3xl mx-auto'>
+              <p className='text-lg md:text-xl text-gray-600 max-w-3xl mx-auto'>
                 Everything you need to run successful ad campaigns that bring in real leads and customers.
               </p>
             </div>
 
-            <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8'>
+            <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8'>
               <div className='bg-white rounded-xl shadow-lg p-8 hover:shadow-xl transition-shadow'>
                 <div className='w-16 h-16 bg-brand-white border-2 border-brand-pink rounded-lg flex items-center justify-center mb-6'>
                   <svg
@@ -328,22 +302,22 @@ export default function AdCampaignsServicesPage() {
         </section>
 
         {/* Ad Campaigns Pricing */}
-        <section className='py-12 bg-white'>
+        <section className='py-16 md:py-20 bg-white'>
           <div className='max-w-5xl mx-auto px-4 sm:px-6 lg:px-8'>
-            <div className='bg-gradient-to-br from-pink-50 to-purple-50 rounded-3xl p-6 md:p-8 shadow-sm'>
-              <h2 className='text-2xl md:text-3xl font-bold text-gray-900 mb-6 text-center'>
+            <div className='bg-gradient-to-br from-pink-50 to-purple-50 rounded-3xl p-8 md:p-12 shadow-sm'>
+              <h2 className='text-2xl md:text-3xl font-bold text-gray-900 mb-8 text-center'>
                 Ad Campaigns Pricing
               </h2>
 
-              <div className='grid gap-6 md:grid-cols-2 max-w-4xl mx-auto'>
-                <div className='bg-white rounded-2xl p-6 shadow-sm'>
-                  <h3 className='text-xl font-bold text-gray-900 mb-3'>
+              <div className='grid gap-8 md:grid-cols-2 max-w-4xl mx-auto'>
+                <div className='bg-white rounded-2xl p-8 shadow-sm'>
+                  <h3 className='text-xl font-bold text-gray-900 mb-4'>
                     Google Ads Setup
                   </h3>
-                  <p className='text-3xl font-bold text-pink-600 mb-4'>
-                    £20 <span className='text-base font-normal text-gray-600'>one-time</span>
+                  <p className='text-3xl font-bold text-pink-600 mb-6'>
+                    £90 <span className='text-base font-normal text-gray-600'>one-time</span>
                   </p>
-                  <ul className='space-y-2 text-sm text-gray-700'>
+                  <ul className='space-y-3 text-base text-gray-700'>
                     <li className='flex items-start'>
                       <span className='text-green-600 mr-2'>✓</span>
                       Professional campaign setup
@@ -359,14 +333,14 @@ export default function AdCampaignsServicesPage() {
                   </ul>
                 </div>
 
-                <div className='bg-white rounded-2xl p-6 shadow-sm'>
-                  <h3 className='text-xl font-bold text-gray-900 mb-3'>
-                    Google Ads Management
+                <div className='bg-white rounded-2xl p-8 shadow-sm'>
+                  <h3 className='text-xl font-bold text-gray-900 mb-4'>
+                    Optional Monthly Optimisation
                   </h3>
-                  <p className='text-3xl font-bold text-pink-600 mb-4'>
+                  <p className='text-3xl font-bold text-pink-600 mb-6'>
                     from £150 <span className='text-base font-normal text-gray-600'>per month</span>
                   </p>
-                  <ul className='space-y-2 text-sm text-gray-700'>
+                  <ul className='space-y-3 text-base text-gray-700'>
                     <li className='flex items-start'>
                       <span className='text-green-600 mr-2'>✓</span>
                       Ongoing campaign optimisation
@@ -383,8 +357,8 @@ export default function AdCampaignsServicesPage() {
                 </div>
               </div>
 
-              <div className='text-center mt-6'>
-                <p className='text-sm text-gray-600'>
+              <div className='text-center mt-8'>
+                <p className='text-base text-gray-600'>
                   No long contracts. Pricing tailored to your budget and goals.
                 </p>
               </div>
@@ -547,11 +521,31 @@ export default function AdCampaignsServicesPage() {
         </section>
 
         {/* Service Inquiry Form */}
-        <div className='max-w-7xl mx-auto px-4 sm:px-6 lg:px-8'>
+        <div id="contact" className='max-w-7xl mx-auto px-4 sm:px-6 lg:px-8'>
           <ServiceInquiryForm
             serviceName="Strategic Ad Campaigns"
             formspreeId="xpwaqjqr"
           />
+        </div>
+
+        {/* Sticky CTA */}
+        <div className="fixed bottom-4 w-full flex justify-center md:justify-end px-4 z-50 pointer-events-none">
+          <button
+            className="bg-black text-white text-base font-medium px-6 py-3 rounded-full shadow-lg hover:bg-neutral-800 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-black transition-colors pointer-events-auto min-h-[48px] min-w-[48px]"
+            onClick={() => {
+              const form = document.querySelector("#contact");
+              form?.scrollIntoView({ behavior: "smooth" });
+              if (typeof window !== "undefined" && typeof (window as any).gtag === "function") {
+                (window as any).gtag("event", "sticky_cta_click", {
+                  cta_text: "Start My Campaign",
+                  page_type: "ads",
+                });
+              }
+            }}
+            aria-label="Start My Campaign - Scroll to contact form"
+          >
+            Start My Campaign
+          </button>
         </div>
       </div>
     </Layout>

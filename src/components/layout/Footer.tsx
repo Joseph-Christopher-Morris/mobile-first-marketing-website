@@ -11,8 +11,11 @@ export function Footer() {
           {/* Company Info */}
           <div className='col-span-1 md:col-span-2'>
             <h3 className='text-lg font-bold mb-4'>Vivid Media Cheshire</h3>
+            <p className='text-gray-400 text-sm mb-2'>
+              Marketing that pays for itself.
+            </p>
             <p className='text-gray-400 text-sm mb-4'>
-              Vivid Media Cheshire helps local businesses grow with cheaper, faster AWS CloudFront hosting, mobile-first web design, and Google Ads campaigns.
+              Helping Cheshire businesses grow through websites, ads, and analytics that deliver results.
             </p>
             <div className='flex space-x-4 mt-6'>
               <a

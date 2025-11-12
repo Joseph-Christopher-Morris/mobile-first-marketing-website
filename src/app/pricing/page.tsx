@@ -10,7 +10,7 @@ export const metadata: Metadata = {
     'website design Cheshire',
     'digital marketing Cheshire',
     'Google Ads management Nantwich',
-    'AWS website hosting UK',
+    'secure cloud website hosting UK',
     'affordable marketing services Cheshire',
     'local SEO packages',
   ],
@@ -24,18 +24,21 @@ export default function PricingPage() {
         {/* Hero Section */}
         <section className="bg-gray-50 py-16 md:py-20">
           <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-            <h1 className="text-4xl md:text-5xl lg:text-6xl font-extrabold text-slate-900 leading-tight mb-6">
-              Simple, transparent pricing. No jargon or hidden fees.
+            <h1 className="text-4xl md:text-5xl lg:text-6xl font-extrabold text-slate-900 leading-tight mb-4">
+              Simple, transparent pricing. No hidden fees.
             </h1>
-            <p className="text-base md:text-lg text-slate-700 mb-8 max-w-3xl mx-auto">
-              All services are built around clear results, affordability, and performance.
+            <p className="text-xl md:text-2xl text-slate-700 mb-8 max-w-3xl mx-auto font-medium">
+              Every package includes personal support and fast turnaround.
             </p>
             <Link
-              href="/contact"
+              href="#contact"
               className="inline-flex items-center justify-center px-8 py-3 rounded-full text-base md:text-lg font-semibold bg-brand-pink text-white shadow-lg hover:bg-brand-pink2 hover:shadow-xl transition"
             >
-              Get My Free Quote →
+              Get My Free Quote
             </Link>
+            <p className="mt-4 text-slate-700 text-lg">
+              I personally reply to all enquiries the same day between 09:00 and 18:00.
+            </p>
           </div>
         </section>
 
@@ -46,7 +49,7 @@ export default function PricingPage() {
 
             <div className="space-y-6">
               <div className="bg-gray-50 rounded-2xl p-6">
-                <h3 className="text-xl font-bold text-gray-900 mb-3">Google Ads Setup – £20 one-time</h3>
+                <h3 className="text-xl font-bold text-gray-900 mb-3">Google Ads Setup – £90 one-time</h3>
                 <p className="text-lg text-gray-700 mb-4">
                   Get your campaigns professionally set up, tracked, and optimised from the start.
                 </p>
@@ -60,7 +63,7 @@ export default function PricingPage() {
               <div className="bg-gray-50 rounded-2xl p-6">
                 <h3 className="text-xl font-bold text-gray-900 mb-3">Google Ads Management – from £150 per month</h3>
                 <p className="text-lg text-gray-700 mb-4">
-                  Ongoing campaign management to maximise your ROI and reduce wasted spend.
+                  Optimised for conversions with clear monthly reports.
                 </p>
                 <ul className="list-disc pl-6 text-gray-700 space-y-2">
                   <li>Regular performance reviews</li>
@@ -81,7 +84,7 @@ export default function PricingPage() {
               <div className="bg-white rounded-2xl p-6 shadow-sm">
                 <h3 className="text-xl font-bold text-gray-900 mb-3">Website Design – from £300 per website</h3>
                 <p className="text-lg text-gray-700 mb-4">
-                  Mobile-first, fast-loading websites built on AWS infrastructure.
+                  Built for speed, clarity, and measurable results.
                 </p>
                 <ul className="list-disc pl-6 text-gray-700 space-y-2">
                   <li>Responsive design</li>
@@ -93,7 +96,7 @@ export default function PricingPage() {
               <div className="bg-white rounded-2xl p-6 shadow-sm">
                 <h3 className="text-xl font-bold text-gray-900 mb-3">Website Hosting – £15 per month or £120 per year</h3>
                 <p className="text-lg text-gray-700 mb-4">
-                  AWS S3 + CloudFront hosting with 80% cost savings and 82% faster load times.
+                  Secure cloud hosting with personal same-day support.
                 </p>
                 <ul className="list-disc pl-6 text-gray-700 space-y-2">
                   <li>Zero downtime migration</li>
@@ -172,9 +175,9 @@ export default function PricingPage() {
 
             <div className="space-y-6">
               <div className="bg-gray-50 rounded-2xl p-6">
-                <h3 className="text-xl font-bold text-gray-900 mb-3">Event Photography – from £200 per day</h3>
+                <h3 className="text-xl font-bold text-gray-900 mb-3">Photography – from £150 per project</h3>
                 <p className="text-lg text-gray-700 mb-4">
-                  Professional photography for events, commercial projects, and editorial work.
+                  Professional coverage that helps clients trust your business.
                 </p>
                 <ul className="list-disc pl-6 text-gray-700 space-y-2">
                   <li>High-quality images</li>
@@ -263,23 +266,23 @@ export default function PricingPage() {
         </section>
 
         {/* Final CTA */}
-        <section className="bg-gradient-to-r from-pink-50 to-purple-50 py-16 md:py-20">
+        <section className="bg-gradient-to-r from-pink-50 to-purple-50 py-16 md:py-20" id="contact">
           <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
             <h2 className="text-3xl md:text-4xl font-bold text-slate-900 mb-4">
               Get a Fast, Free Quote
             </h2>
-            <p className="text-base md:text-lg text-slate-700 mb-8 max-w-2xl mx-auto">
-              Tell me what you need – hosting, ads, analytics, or photography – and I'll reply personally within 24 hours.
+            <p className="text-base md:text-lg text-slate-700 mb-4 max-w-2xl mx-auto">
+              Tell me what you need and I'll reply personally the same day.
+            </p>
+            <p className="text-lg text-slate-700 mb-8 font-medium">
+              I personally reply to all enquiries the same day between 09:00 and 18:00.
             </p>
             <Link
               href="/contact"
               className="inline-flex items-center justify-center px-8 py-3 rounded-full text-base md:text-lg font-semibold bg-brand-pink text-white shadow-lg hover:bg-brand-pink2 hover:shadow-xl transition"
             >
-              Get My Free Quote →
+              Get My Free Quote
             </Link>
-            <p className="mt-4 text-slate-700">
-              No obligation. No jargon. Just clear answers and results that help your business grow.
-            </p>
           </div>
         </section>
       </div>

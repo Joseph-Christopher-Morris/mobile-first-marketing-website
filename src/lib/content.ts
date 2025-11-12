@@ -13,12 +13,12 @@ export function getAllServices(): Service[] {
       id: 'hosting',
       title: 'Website Hosting & Migration',
       description:
-        'AWS S3 + CloudFront hosting with 80% cost reduction and 82% faster load times. Professional website migration with zero downtime.',
-      image: '/images/services/hosting-migration-card.webp',
+        'secure cloud hosting with global delivery hosting and 82% faster load times. Professional website migration with zero downtime and reliable performance.',
+      image: '/images/services/web-hosting-and-migration/hosting-migration-card.webp',
       href: '/services/hosting',
       features: [
-        'AWS CloudFront Migration',
-        '80% Cost Reduction',
+        'secure cloud infrastructure Migration',
+        'Transparent Annual Pricing',
         '82% Faster Load Times',
         'Zero Downtime Migration',
       ],

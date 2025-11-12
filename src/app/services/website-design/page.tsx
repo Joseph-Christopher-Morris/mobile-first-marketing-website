@@ -4,9 +4,9 @@ import { StickyWebsiteQuoteBar } from "@/components/ui/StickyWebsiteQuoteBar";
 import { Layout } from "@/components/layout";
 
 export const metadata = {
-  title: "Website Design and Development for Cheshire Businesses | Fast, SEO Ready Websites on AWS CloudFront",
+  title: "Website Design and Development for Cheshire Businesses | Fast, SEO Ready Websites on secure cloud infrastructure",
   description:
-    "Mobile-first websites built with AWS CloudFront for speed, SEO, and adaptability. Designed to grow with your business and future ad campaigns.",
+    "Mobile-first websites built with secure cloud infrastructure for speed, SEO, and adaptability. Designed to grow with your business and future ad campaigns.",
 };
 
 export default function WebsiteDesignPage() {
@@ -24,7 +24,7 @@ export default function WebsiteDesignPage() {
               Website Design & Development for Cheshire Businesses
             </h1>
             <p className="text-lg text-slate-700 mb-6">
-              Mobile first websites on AWS CloudFront that are fast, SEO ready, and built to grow with your business and future ad campaigns. Designed to make it easier for customers to find you and get in touch.
+              Mobile first websites on secure cloud infrastructure that are fast, SEO ready, and built to grow with your business and future ad campaigns. Designed to make it easier for customers to find you and get in touch.
             </p>
 
             <Link
@@ -62,7 +62,7 @@ export default function WebsiteDesignPage() {
           <div className="bg-white rounded-2xl p-6 shadow-sm text-center">
             <div className="text-3xl mb-4">⚙️</div>
             <h3 className="text-lg font-semibold text-slate-900 mb-2">
-              Built on AWS CloudFront
+              Built on secure cloud infrastructure
             </h3>
             <p className="text-slate-700 text-sm">
               Reliable hosting and faster load times that help visitors stay on your site.
@@ -143,7 +143,7 @@ export default function WebsiteDesignPage() {
             Real-World Performance Results
           </h2>
           <p className="text-slate-700 mb-6 text-sm md:text-base">
-            Here is a real example from my own automotive photography website after moving to a custom design on AWS hosting and tuning it for mobile performance. Results were measured with Google Lighthouse on mobile.
+            Here is a real example from my own automotive photography website after moving to a custom design on secure cloud hosting and tuning it for mobile performance. Results were measured with Google Lighthouse on mobile.
           </p>
 
           <div className="grid gap-6 md:grid-cols-2">
@@ -156,7 +156,7 @@ export default function WebsiteDesignPage() {
               <div className="mb-4 rounded-lg overflow-hidden">
                 <Image
                   src="/images/services/before-hosting-performance.webp"
-                  alt="Google Lighthouse performance score of 56 before AWS migration showing poor performance metrics"
+                  alt="Google Lighthouse performance score of 56 before secure cloud migration showing poor performance metrics"
                   width={400}
                   height={250}
                   className="w-full h-auto"
@@ -166,9 +166,6 @@ export default function WebsiteDesignPage() {
               <ul className="space-y-2 text-sm text-slate-800">
                 <li>
                   <span className="font-semibold">Performance score:</span> 56 out of 100
-                </li>
-                <li>
-                  <span className="font-semibold">Annual hosting cost:</span> £550
                 </li>
                 <li>
                   <span className="font-semibold">Load time:</span> more than 14 seconds
@@ -188,7 +185,7 @@ export default function WebsiteDesignPage() {
               <div className="mb-4 rounded-lg overflow-hidden">
                 <Image
                   src="/images/services/Web Hosting And Migration/pagespeed-aws-migration-desktop.webp"
-                  alt="Google Lighthouse performance score of 99 after AWS migration showing excellent performance metrics"
+                  alt="Google Lighthouse performance score of 99 after secure cloud migration showing excellent performance metrics"
                   width={400}
                   height={250}
                   className="w-full h-auto"
@@ -200,10 +197,7 @@ export default function WebsiteDesignPage() {
                   <span className="font-semibold">Performance score:</span> 99 out of 100
                 </li>
                 <li>
-                  <span className="font-semibold">Annual hosting cost:</span> about £110
-                </li>
-                <li>
-                  <span className="font-semibold">Load time improvement:</span> 82% faster load time, 80% lower hosting cost, and 99/100 performance score
+                  <span className="font-semibold">Load time improvement:</span> 82% faster load time and 99/100 performance score
                 </li>
               </ul>
             </div>
@@ -252,7 +246,7 @@ export default function WebsiteDesignPage() {
               Design & Development
             </h3>
             <p className="text-sm text-slate-700">
-              Custom website built on AWS CloudFront, using modular components and SEO-friendly code.
+              Custom website built on secure cloud infrastructure, using modular components and SEO-friendly code.
             </p>
           </div>
 
@@ -300,7 +294,7 @@ export default function WebsiteDesignPage() {
                 </li>
                 <li className="flex items-start">
                   <span className="text-green-600 mr-2">✓</span>
-                  Built on AWS CloudFront
+                  Built on secure cloud infrastructure
                 </li>
               </ul>
             </div>
@@ -316,11 +310,11 @@ export default function WebsiteDesignPage() {
               <ul className="space-y-2 text-sm text-slate-700">
                 <li className="flex items-start">
                   <span className="text-green-600 mr-2">✓</span>
-                  AWS S3 + CloudFront hosting
+                  secure cloud hosting with global delivery hosting
                 </li>
                 <li className="flex items-start">
                   <span className="text-green-600 mr-2">✓</span>
-                  80% cost savings
+                  Transparent annual pricing
                 </li>
                 <li className="flex items-start">
                   <span className="text-green-600 mr-2">✓</span>
@@ -462,7 +456,7 @@ export default function WebsiteDesignPage() {
                     name="timeline"
                     className="mt-1 block w-full rounded-lg border border-slate-300 px-3 py-2 text-sm bg-white focus:outline-none focus:ring-2 focus:ring-pink-500"
                   >
-                    <option>ASAP</option>
+                    <option>Within 1 week</option>
                     <option>1–2 weeks</option>
                     <option>This month</option>
                     <option>Just researching</option>
@@ -477,9 +471,13 @@ export default function WebsiteDesignPage() {
                 Get My Website Quote
               </button>
 
-              <p className="text-xs text-slate-500 text-center">
-                I'll reply personally within 24 hours with ideas and next steps.
-              </p>
+              <div className="mt-4 text-sm text-slate-500 text-center">
+                <p><strong>Hours (UK time)</strong></p>
+                <p>Monday to Friday: 09:00 to 18:00</p>
+                <p>Saturday: 10:00 to 14:00</p>
+                <p>Sunday: 10:00 to 16:00</p>
+                <p>I personally reply to all enquiries the same day during these hours.</p>
+              </div>
             </form>
           </div>
         </div>

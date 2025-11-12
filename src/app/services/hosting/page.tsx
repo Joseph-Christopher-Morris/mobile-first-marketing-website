@@ -4,33 +4,35 @@ import Image from "next/image";
 import { Layout } from "@/components/layout";
 import { ServiceInquiryForm } from "@/components/ServiceInquiryForm";
 import { PerformanceComparison } from "@/components/sections/PerformanceComparison";
+import { DualStickyCTA } from "@/components/DualStickyCTA";
+import { HostingServiceCard } from "@/components/SimplifiedServiceCard";
 
 export const metadata: Metadata = {
-  title: "AWS Website Hosting & Migration Services | 80% Cost Savings | Nantwich & Cheshire",
+  title: "secure cloud Website Hosting & Migration Services | Reliable Performance | Nantwich & Cheshire",
   description:
-    "Save up to 80% on hosting costs and make your website load 82% faster with AWS hosting. Professional website migration with zero downtime for Nantwich and Cheshire businesses.",
+    "Make your website load 82% faster with secure cloud hosting and transparent annual pricing. Professional website migration with zero downtime for Nantwich and Cheshire businesses.",
   keywords: [
-    "AWS website hosting Cheshire",
+    "secure cloud website hosting Cheshire",
     "website migration Nantwich",
-    "cheap website hosting",
     "fast website hosting",
     "website hosting migration",
-    "AWS CloudFront hosting",
+    "secure cloud infrastructure hosting",
     "website speed optimization",
     "Nantwich web hosting",
+    "transparent hosting pricing",
   ],
   alternates: { canonical: "/services/hosting" },
   openGraph: {
-    title: "AWS Website Hosting & Migration Services | 80% Cost Savings",
+    title: "secure cloud Website Hosting & Migration Services | Reliable Performance",
     description:
-      "Save up to 80% on hosting costs and make your website load 82% faster with professional AWS hosting and migration services.",
+      "Make your website load 82% faster with professional secure cloud hosting and migration services. Transparent annual pricing and reliable performance.",
     url: "/services/hosting",
     images: [
       {
-        url: "/images/services/hosting-migration-card.webp",
+        url: "/images/services/web-hosting-and-migration/hosting-migration-card.webp",
         width: 1200,
         height: 630,
-        alt: "AWS website hosting and migration services showing cost savings and performance improvements",
+        alt: "secure cloud website hosting and migration services showing performance improvements",
       },
     ],
   },
@@ -41,8 +43,8 @@ export default function HostingPage() {
   const schema = {
     "@context": "https://schema.org",
     "@type": "Service",
-    name: "AWS Website Hosting & Migration Services",
-    description: "Professional AWS hosting and website migration services with 80% cost savings and 82% faster load times",
+    name: "secure cloud Website Hosting & Migration Services",
+    description: "Professional secure cloud hosting and website migration services with reliable performance and 82% faster load times",
     provider: {
       "@type": "LocalBusiness",
       name: "Vivid Media Cheshire",
@@ -57,7 +59,7 @@ export default function HostingPage() {
     serviceType: "Website Hosting and Migration",
     offers: {
       "@type": "Offer",
-      description: "AWS hosting with up to 80% cost savings and 82% faster load times",
+      description: "secure cloud hosting with transparent annual pricing and 82% faster load times",
       areaServed: "Nantwich & Cheshire",
     },
     "@graph": [
@@ -66,10 +68,10 @@ export default function HostingPage() {
         mainEntity: [
           {
             "@type": "Question",
-            name: "How much can I save with AWS hosting?",
+            name: "What is the cost of secure cloud hosting?",
             acceptedAnswer: {
               "@type": "Answer",
-              text: "Most clients save up to 80% on hosting costs, going from £550 per year on platforms like Wix or GoDaddy to just £108 per year with AWS hosting.",
+              text: "Our hosting offers reliable performance and transparent annual pricing at £120 per year, which includes secure cloud infrastructure, business domain, and professional email service.",
             },
           },
           {
@@ -77,7 +79,7 @@ export default function HostingPage() {
             name: "Will my website be faster?",
             acceptedAnswer: {
               "@type": "Answer",
-              text: "Yes, AWS hosting typically makes websites 82% faster. Faster pages mean more visitors stay, more calls come in, and better Google rankings.",
+              text: "Yes, secure cloud hosting typically makes websites 82% faster. Faster pages mean more visitors stay, more calls come in, and better Google rankings.",
             },
           },
           {
@@ -103,6 +105,7 @@ export default function HostingPage() {
 
   return (
     <Layout>
+      <DualStickyCTA />
       <main className="bg-gray-50 py-16 md:py-20">
         {/* JSON-LD */}
         <script
@@ -114,22 +117,38 @@ export default function HostingPage() {
           {/* Hero Section */}
           <section className="text-center mb-20">
             <h1 className="text-4xl md:text-5xl lg:text-6xl font-extrabold text-slate-900 leading-tight mb-6">
-              Faster, Cheaper Websites Without the Tech Headache
+              Fast, Reliable Hosting with Same-Day Support
             </h1>
             <p className="text-xl md:text-2xl text-slate-700 max-w-4xl mx-auto leading-relaxed mb-8">
-              Save up to 80% on hosting costs and make your website load 82% faster.
+              £120 per year with 99.9% uptime and local support. I personally reply to all enquiries the same day during business hours.
             </p>
-            <p className="text-base md:text-lg text-slate-700 max-w-3xl mx-auto leading-relaxed">
+            <p className="text-base md:text-lg text-slate-700 max-w-3xl mx-auto leading-relaxed mb-8">
               We handle everything. Set up, migration, and support, so you can focus on running your business.
             </p>
+            
+            {/* CTA Buttons */}
+            <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
+              <a
+                href="tel:+447123456789"
+                className="inline-flex items-center justify-center px-8 py-3 rounded-full text-base md:text-lg font-semibold bg-brand-pink text-white shadow-lg hover:bg-brand-pink2 hover:shadow-xl transition"
+              >
+                Call Joe
+              </a>
+              <a
+                href="#contact"
+                className="inline-flex items-center justify-center px-8 py-3 rounded-full text-base md:text-lg font-semibold bg-slate-900 text-white/90 hover:bg-black transition shadow-md hover:shadow-lg"
+              >
+                Get Hosting Quote
+              </a>
+            </div>
           </section>
 
           {/* Hero Image */}
           <section className="mb-20">
             <div className="relative h-[480px] rounded-2xl overflow-hidden shadow-2xl">
               <Image
-                src="/images/services/hosting-migration-card.webp"
-                alt="AWS website hosting and migration services - 80% cost reduction and 82% faster load times"
+                src="/images/services/web-hosting-and-migration/hosting-migration-card.webp"
+                alt="secure cloud website hosting and migration services with reliable performance and 82% faster load times"
                 fill
                 className="object-cover"
                 priority
@@ -137,22 +156,29 @@ export default function HostingPage() {
               />
               <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent" />
               <div className="absolute bottom-8 left-8 text-white">
-                <h2 className="text-3xl font-bold mb-2">AWS Hosting Excellence</h2>
+                <h2 className="text-3xl font-bold mb-2">secure cloud hosting Excellence</h2>
                 <p className="text-xl">Professional migration with zero downtime</p>
               </div>
             </div>
           </section>
 
-          {/* Why Move to AWS Hosting */}
+          {/* Simplified Service Card */}
+          <section className="mb-20">
+            <div className="max-w-md mx-auto">
+              <HostingServiceCard />
+            </div>
+          </section>
+
+          {/* Why Move to secure cloud hosting */}
           <section className="mb-20">
             <h2 className="text-3xl md:text-4xl font-bold text-slate-900 mb-4 text-center">
-              Why Move to AWS Hosting
+              Why Move to secure cloud hosting
             </h2>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-6xl mx-auto mt-12">
               <div className="bg-white rounded-2xl shadow-lg p-6 md:p-8 flex flex-col">
-                <h3 className="text-xl font-semibold text-slate-900 mb-3">Save Hundreds Each Year</h3>
+                <h3 className="text-xl font-semibold text-slate-900 mb-3">Enterprise Performance at DIY Prices</h3>
                 <p className="text-sm md:text-base text-slate-700">
-                  Most clients go from £550 per year on Wix or GoDaddy to just £108 per year with AWS hosting.
+                  Wix Light costs £9 per month (£108 per year). My secure cloud hosting is similar in price but delivers enterprise-grade speed, better SEO, and personal support.
                 </p>
               </div>
               <div className="bg-white rounded-2xl shadow-lg p-6 md:p-8 flex flex-col">
@@ -236,11 +262,11 @@ export default function HostingPage() {
           {/* Before and After Performance */}
           <PerformanceComparison
             title="Real-World Speed Improvements"
-            subtitle="I migrated my automotive photography site from traditional hosting to AWS S3 + CloudFront. Here's how the numbers changed on mobile, measured with Google Lighthouse."
+            subtitle="I migrated my automotive photography site from traditional hosting to secure cloud hosting with global delivery. Here's how the numbers changed on mobile, measured with Google Lighthouse."
             beforeImage="/images/services/Web Hosting And Migration/before-hosting-performance.webp"
             afterImage="/images/services/Web Hosting And Migration/pagespeed-aws-migration-desktop.webp"
-            beforeImageAlt="Website performance before AWS migration showing poor performance scores and slow load times"
-            afterImageAlt="Google Lighthouse performance score of 99 after AWS migration showing 1.1s load time"
+            beforeImageAlt="Website performance before secure cloud migration showing poor performance scores and slow load times"
+            afterImageAlt="Google Lighthouse performance score of 99 after secure cloud migration showing 1.1s load time"
             beforeStats={{
               performanceScore: "Poor",
               annualCost: "£550",
@@ -281,37 +307,37 @@ export default function HostingPage() {
               Cost Comparison
             </h2>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-5xl mx-auto">
-              <div className="bg-red-50 border-2 border-red-200 rounded-xl p-8">
-                <h3 className="text-2xl font-bold text-red-800 mb-4">Before (Wix / GoDaddy): £550 per year</h3>
-                <ul className="space-y-3 text-red-700">
+              <div className="bg-gray-50 border-2 border-gray-200 rounded-xl p-8">
+                <h3 className="text-2xl font-bold text-gray-800 mb-4">Wix Light: £9/month (£108/year)</h3>
+                <ul className="space-y-3 text-gray-700">
                   <li className="flex items-center space-x-2">
-                    <span className="w-2 h-2 bg-red-500 rounded-full"></span>
-                    <span>Slow, limited, and costly</span>
+                    <span className="w-2 h-2 bg-gray-500 rounded-full"></span>
+                    <span>Shared servers with limited control</span>
                   </li>
                   <li className="flex items-center space-x-2">
-                    <span className="w-2 h-2 bg-red-500 rounded-full"></span>
-                    <span>Poor SEO performance</span>
+                    <span className="w-2 h-2 bg-gray-500 rounded-full"></span>
+                    <span>Slower caching and SEO performance</span>
                   </li>
                   <li className="flex items-center space-x-2">
-                    <span className="w-2 h-2 bg-red-500 rounded-full"></span>
-                    <span>Locked into one platform</span>
+                    <span className="w-2 h-2 bg-gray-500 rounded-full"></span>
+                    <span>Support queue wait times</span>
                   </li>
                 </ul>
               </div>
               <div className="bg-green-50 border-2 border-green-200 rounded-xl p-8">
-                <h3 className="text-2xl font-bold text-green-800 mb-4">After (AWS): £108 per year</h3>
+                <h3 className="text-2xl font-bold text-green-800 mb-4">Vivid Media (secure cloud): £108/year</h3>
                 <ul className="space-y-3 text-green-700">
                   <li className="flex items-center space-x-2">
                     <span className="w-2 h-2 bg-green-500 rounded-full"></span>
-                    <span>82% faster load time</span>
+                    <span>secure cloud infrastructure + protective caching and security layer (enterprise-grade)</span>
                   </li>
                   <li className="flex items-center space-x-2">
                     <span className="w-2 h-2 bg-green-500 rounded-full"></span>
-                    <span>Full flexibility and control</span>
+                    <span>82% faster load times, better Google rankings</span>
                   </li>
                   <li className="flex items-center space-x-2">
                     <span className="w-2 h-2 bg-green-500 rounded-full"></span>
-                    <span>Better Google rankings</span>
+                    <span>Direct access to me, managed locally in Cheshire</span>
                   </li>
                 </ul>
               </div>
@@ -324,10 +350,10 @@ export default function HostingPage() {
             <div className="max-w-3xl mx-auto space-y-4">
               <details className="bg-white rounded-lg p-6 shadow-sm border border-gray-200">
                 <summary className="font-semibold cursor-pointer text-lg">
-                  How much can I save with AWS hosting?
+                  How does your hosting compare to Wix or other DIY builders?
                 </summary>
                 <p className="mt-3 text-gray-700">
-                  Most clients save up to 80% on hosting costs, going from £550 per year on platforms like Wix or GoDaddy to just £108 per year with AWS hosting.
+                  Wix's Light plan costs around £9 per month (£108 per year). It's fine for small personal sites, but it runs on shared servers with less control over caching, speed, and SEO. My hosting uses secure cloud infrastructure and protective caching and security layer — the same systems used by major global brands, but I manage everything locally here in Cheshire. That means your website loads faster, performs better in Google search, and you always speak directly to me instead of waiting in a support queue.
                 </p>
               </details>
 
@@ -336,7 +362,7 @@ export default function HostingPage() {
                   Will my website be faster?
                 </summary>
                 <p className="mt-3 text-gray-700">
-                  Yes, AWS hosting typically makes websites 82% faster. Faster pages mean more visitors stay, more calls come in, and better Google rankings.
+                  Yes, secure cloud hosting typically makes websites 82% faster. Faster pages mean more visitors stay, more calls come in, and better Google rankings.
                 </p>
               </details>
 
@@ -371,7 +397,7 @@ export default function HostingPage() {
                 <div className="max-w-2xl mx-auto">
                   <div className="bg-white rounded-2xl p-6 shadow-sm text-center">
                     <h3 className="text-xl font-bold text-gray-900 mb-3">
-                      AWS S3 + CloudFront Hosting
+                      secure cloud hosting with global delivery Hosting
                     </h3>
                     <p className="text-3xl font-bold text-pink-600 mb-2">
                       £15 <span className="text-base font-normal text-gray-600">per month</span>
@@ -382,11 +408,11 @@ export default function HostingPage() {
                     <ul className="space-y-2 text-sm text-gray-700 text-left max-w-md mx-auto">
                       <li className="flex items-start">
                         <span className="text-green-600 mr-2">✓</span>
-                        80% cost savings vs traditional hosting
+                        Enterprise-grade secure cloud infrastructure + protective caching and security layer
                       </li>
                       <li className="flex items-start">
                         <span className="text-green-600 mr-2">✓</span>
-                        82% faster load times
+                        82% faster load times vs traditional hosting
                       </li>
                       <li className="flex items-start">
                         <span className="text-green-600 mr-2">✓</span>
@@ -398,7 +424,7 @@ export default function HostingPage() {
                       </li>
                       <li className="flex items-start">
                         <span className="text-green-600 mr-2">✓</span>
-                        24/7 monitoring
+                        Personal support, managed locally in Cheshire
                       </li>
                     </ul>
                   </div>
@@ -422,11 +448,11 @@ export default function HostingPage() {
           {/* CTA */}
           <section className="text-center bg-gradient-to-r from-pink-50 to-purple-50 rounded-2xl p-12 mx-4">
             <h2 className="text-3xl md:text-4xl font-bold text-slate-900 mb-4">
-              Ready to Save 80% on Hosting?
+              Ready for Faster, Smarter Hosting?
             </h2>
             <p className="text-base md:text-lg text-slate-700 mb-8 max-w-2xl mx-auto">
               Get a free migration quote today. I will assess your current setup, handle the migration,
-              and have your new site running faster: all with zero downtime.
+              and have your new site running faster — all with zero downtime.
             </p>
             <Link
               href="/contact"
@@ -453,10 +479,12 @@ export default function HostingPage() {
           </section>
 
           {/* Service Inquiry Form */}
-          <ServiceInquiryForm
-            serviceName="Website Hosting & Migration"
-            formspreeId="xpwaqjqr"
-          />
+          <section id="contact">
+            <ServiceInquiryForm
+              serviceName="Website Hosting & Migration"
+              formspreeId="xpwaqjqr"
+            />
+          </section>
         </div>
       </main>
     </Layout>

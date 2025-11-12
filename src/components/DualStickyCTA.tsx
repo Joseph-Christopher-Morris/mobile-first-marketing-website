@@ -1,0 +1,116 @@
+'use client';
+
+import { usePathname } from 'next/navigation';
+import { useEffect, useState } from 'react';
+
+export function DualStickyCTA() {
+  const pathname = usePathname();
+  const [isVisible, setIsVisible] = useState(false);
+
+  // Show sticky CTA after scrolling down 300px
+  useEffect(() => {
+    const handleScroll = () => {
+      setIsVisible(window.scrollY > 300);
+    };
+
+    window.addEventListener('scroll', handleScroll);
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
+
+  // Don't show on contact page
+  if (pathname === '/contact') {
+    return null;
+  }
+
+  // Get contextual CTA text based on page
+  const getCtaText = () => {
+    if (pathname.includes('/services/hosting')) return 'Get Hosting Quote';
+    if (pathname.includes('/services/website-design')) return 'Build My Website';
+    if (pathname.includes('/services/photography')) return 'Book Your Shoot';
+    if (pathname.includes('/services/analytics')) return 'View My Data Options';
+    if (pathname.includes('/services/ad-campaigns')) return 'Start My Campaign';
+    if (pathname.includes('/pricing')) return 'See Pricing Options';
+    if (pathname.includes('/blog')) return 'Read Case Studies';
+    if (pathname.includes('/about')) return 'Work With Me';
+    return 'Book Your Consultation';
+  };
+
+  const handleCallClick = () => {
+    if (typeof window !== 'undefined' && window.gtag) {
+      window.gtag('event', 'cta_call_click', {
+        page_path: pathname,
+        service_name: pathname.split('/').pop() || 'home',
+        cta_text: 'Call Joe'
+      });
+    }
+  };
+
+  const handleFormClick = () => {
+    const contactForm = document.querySelector('#contact');
+    if (contactForm) {
+      contactForm.scrollIntoView({ behavior: 'smooth' });
+    }
+
+    if (typeof window !== 'undefined' && window.gtag) {
+      window.gtag('event', 'cta_form_click', {
+        page_path: pathname,
+        service_name: pathname.split('/').pop() || 'home',
+        cta_text: getCtaText()
+      });
+    }
+  };
+
+  return (
+    <div
+      className={`fixed bottom-0 left-0 right-0 z-50 transition-transform duration-300 ${
+        isVisible ? 'translate-y-0' : 'translate-y-full'
+      }`}
+      role="complementary"
+      aria-label="Sticky call-to-action bar"
+    >
+      <div className="bg-black shadow-2xl">
+        <div className="max-w-7xl mx-auto px-4 py-4">
+          <div className="flex flex-col sm:flex-row items-center justify-center gap-3 sm:gap-4">
+            <p className="text-white text-sm sm:text-base font-medium text-center sm:text-left">
+              Ready to grow your business?
+            </p>
+            <div className="flex items-center gap-3 sm:gap-4">
+              {/* Call Joe Button - White with black text */}
+              <a
+                href="tel:+447123456789"
+                onClick={handleCallClick}
+                className="inline-flex items-center justify-center px-6 py-3 rounded-lg text-sm sm:text-base font-semibold bg-white text-black hover:bg-gray-100 transition shadow-md hover:shadow-lg min-h-[44px]"
+                aria-label="Call Joe for immediate assistance"
+              >
+                <svg
+                  className="w-4 h-4 mr-2"
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                  aria-hidden="true"
+                >
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    strokeWidth={2}
+                    d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"
+                  />
+                </svg>
+                Call Joe
+              </a>
+
+              {/* Contextual CTA Button - Pink with white text */}
+              <button
+                onClick={handleFormClick}
+                className="inline-flex items-center justify-center px-6 py-3 rounded-lg text-sm sm:text-base font-semibold bg-brand-pink text-white shadow-lg hover:bg-brand-pink2 hover:shadow-xl transition min-h-[44px]"
+                aria-label={`${getCtaText()} - scroll to contact form`}
+              >
+                {getCtaText()}
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  );
+}

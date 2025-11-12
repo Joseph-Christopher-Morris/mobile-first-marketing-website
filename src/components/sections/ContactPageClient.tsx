@@ -184,7 +184,7 @@ export function ContactPageClient() {
                     </svg>
                   </div>
                   <h4 className='font-semibold text-gray-900'>Email</h4>
-                  <p className='text-sm text-gray-600'>Within 24 hours</p>
+                  <p className='text-sm text-gray-600'>The same day</p>
                 </div>
                 <div className='text-center'>
                   <div className='w-12 h-12 bg-brand-white border-2 border-brand-pink rounded-lg flex items-center justify-center mx-auto mb-3'>

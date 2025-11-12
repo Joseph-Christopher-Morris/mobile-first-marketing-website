@@ -9,13 +9,13 @@ We handle everything. Set up, migration, and support, so you can focus on runnin
 
 ## Why Move to AWS Hosting
 
-**Save Hundreds Each Year:** Most clients go from £550 per year on Wix or GoDaddy to just £108 per year with AWS hosting.  
+**Enterprise Performance at DIY Prices:** Wix Light costs £9 per month (£108 per year). My AWS hosting is similar in price but delivers enterprise-grade speed, better SEO, and personal support.  
 
 **Instant Speed Boost:** Faster pages mean more visitors stay, more calls come in, and more sales happen.  
 
 **Zero Downtime:** Your site stays live while we migrate everything behind the scenes.  
 
-**No Tech Stress:** We manage the setup, security, and maintenance. You enjoy the results.  
+**No Tech Stress:** I manage the setup, security, and maintenance. You enjoy the results.  
 
 ---
 
@@ -42,23 +42,23 @@ Now I'm focusing on getting the same lift in Google results.
 
 ## Transparent Pricing
 
-**Before (Wix / GoDaddy): £550 per year**  
-• Slow, limited, and costly  
-• Poor SEO performance  
-• Locked into one platform  
+**Wix Light: £9/month (£108/year)**  
+• Shared servers with limited control  
+• Slower caching and SEO performance  
+• Support queue wait times  
 
-**After (AWS): £108 per year**  
-• 82% faster load time  
-• Full flexibility and control  
-• Better Google rankings  
+**Vivid Media (AWS): £108/year**  
+• AWS CloudFront + Cloudflare (enterprise-grade)  
+• 82% faster load times, better Google rankings  
+• Direct access to me, managed locally in Cheshire  
 
 ---
 
-## Ready to Save 80% on Hosting?
+## Ready for Faster, Smarter Hosting?
 
 Get a free migration quote today.  
 
-I will assess your current setup, handle the migration, and have your new site running faster: all with zero downtime.  
+I will assess your current setup, handle the migration, and have your new site running faster — all with zero downtime.  
 
 [Get My Free Website Hosting Quote →](#)
 

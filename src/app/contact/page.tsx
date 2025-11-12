@@ -49,8 +49,11 @@ export default function ContactPage() {
               <h1 className='text-2xl md:text-4xl lg:text-5xl font-bold text-gray-900 mb-4 md:mb-6'>
                 Let&apos;s Work Together
               </h1>
-              <p className='text-base md:text-lg lg:text-xl text-gray-600 mb-6 md:mb-8'>
-                Need professional photos, a faster website, or help promoting your business online? Tell me what you are working on and I will reply within one business day with clear next steps.
+              <p className='text-base md:text-lg lg:text-xl text-neutral-600 mb-2 md:mb-4'>
+                I personally reply to all enquiries the same day between 09:00 and 18:00.
+              </p>
+              <p className='text-base md:text-lg text-gray-600 mb-6 md:mb-8'>
+                Need professional photos, a faster website, or help promoting your business online? Tell me what you are working on and I will reply with clear next steps.
               </p>
             </div>
           </div>
@@ -334,8 +337,8 @@ export default function ContactPage() {
                   <p className='text-gray-700'>
                     I provide automotive and event photography, Google Analytics
                     and GA4 implementation, Google Ads, Meta Ads, paid
-                    advertising campaigns and website migration to AWS
-                    CloudFront.
+                    advertising campaigns and website migration to secure cloud
+                    global content delivery network.
                   </p>
                 </div>
 
