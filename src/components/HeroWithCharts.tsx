@@ -106,31 +106,50 @@ export default function HeroWithCharts({
           <h1 className="text-2xl md:text-4xl lg:text-5xl font-extrabold leading-tight text-white drop-shadow-lg">
             Cheshire's Practical Performance Marketer
           </h1>
-          <p className="mt-2 mb-4 text-lg md:text-xl text-white font-semibold drop-shadow-md">
-            Marketing that pays for itself.
+          {/* Mobile: First 2 lines state exactly what Joe does (Spec requirement) */}
+          <p className="mt-2 mb-2 text-base md:text-xl text-white font-semibold drop-shadow-md">
+            I build fast websites, run Google Ads, and set up analytics.
           </p>
           <p className="mb-6 max-w-3xl text-sm md:text-base text-white/90 drop-shadow-md">
-            I help Cheshire businesses get more leads through fast websites, Google Ads, and clear reporting.
+            Based in Nantwich, helping Cheshire businesses get more leads with clear reporting.
           </p>
 
           <PressStrip />
 
           <div className="mt-8 flex flex-col sm:flex-row items-center justify-center gap-5">
+            {/* Mobile CTA: Call Now (Spec requirement) */}
             <a
-              href="tel:+447123456789"
-              className="inline-flex items-center justify-center px-8 py-3 rounded-full text-base md:text-lg font-semibold bg-brand-pink text-white shadow-lg hover:bg-brand-pink2 hover:shadow-xl transition min-h-[48px]"
-              onClick={(e) => {
+              href="tel:+447586378502"
+              className="inline-flex items-center justify-center px-8 py-3 rounded-full text-base md:text-lg font-semibold bg-brand-pink text-white shadow-lg hover:bg-brand-pink2 hover:shadow-xl transition min-h-[48px] md:hidden"
+              onClick={() => {
                 if (typeof window !== 'undefined' && window.gtag) {
                   window.gtag('event', 'cta_call_click', {
                     page_path: window.location.pathname,
                     service_name: 'home',
-                    cta_text: 'Call Joe'
+                    cta_text: 'Call Now'
                   });
                 }
               }}
-              aria-label="Call Joe for immediate assistance"
+              aria-label="Call now to get your free, personalised ad plan"
             >
-              Call Joe
+              Call Now
+            </a>
+            {/* Desktop CTA: Call for a Free Ad Plan (Spec requirement) */}
+            <a
+              href="tel:+447586378502"
+              className="hidden md:inline-flex items-center justify-center px-8 py-3 rounded-full text-base md:text-lg font-semibold bg-brand-pink text-white shadow-lg hover:bg-brand-pink2 hover:shadow-xl transition min-h-[48px]"
+              onClick={() => {
+                if (typeof window !== 'undefined' && window.gtag) {
+                  window.gtag('event', 'cta_call_click', {
+                    page_path: window.location.pathname,
+                    service_name: 'home',
+                    cta_text: 'Call for a Free Ad Plan'
+                  });
+                }
+              }}
+              aria-label="Call now to get your free, personalised ad plan"
+            >
+              Call for a Free Ad Plan
             </a>
             <a
               href="#contact"

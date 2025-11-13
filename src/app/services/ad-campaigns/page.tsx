@@ -11,6 +11,7 @@ import {
   ROIOutcomeCard
 } from '@/components/services/OutcomeCard';
 import { ServiceInquiryForm } from '@/components/ServiceInquiryForm';
+import { ServiceSchemas } from '@/components/seo/ServiceSchema';
 
 // Metadata moved to layout or parent component due to 'use client' directive
 
@@ -35,6 +36,8 @@ export default function AdCampaignsServicesPage() {
 
   return (
     <Layout pageTitle='Strategic Ad Campaigns'>
+      {/* Service Schema - Spec requirement: Structured Data */}
+      {ServiceSchemas.GoogleAds()}
       <div className='min-h-screen bg-white'>
         {/* Hero Section */}
         <section className='relative bg-brand-black text-white py-20 lg:py-32'>

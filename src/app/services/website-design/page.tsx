@@ -2,6 +2,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { StickyWebsiteQuoteBar } from "@/components/ui/StickyWebsiteQuoteBar";
 import { Layout } from "@/components/layout";
+import { ServiceSchemas } from "@/components/seo/ServiceSchema";
 
 export const metadata = {
   title: "Website Design and Development for Cheshire Businesses | Fast, SEO Ready Websites on secure cloud infrastructure",
@@ -12,6 +13,8 @@ export const metadata = {
 export default function WebsiteDesignPage() {
   return (
     <Layout>
+      {/* Service Schema - Spec requirement: Structured Data */}
+      {ServiceSchemas.WebsiteDesign()}
       <main className="bg-slate-50 pb-24 md:pb-0">
       {/* Hero & Intro Section */}
       <section className="max-w-5xl mx-auto px-4 pt-10 pb-12">

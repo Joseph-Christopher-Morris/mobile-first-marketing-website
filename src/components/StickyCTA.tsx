@@ -28,18 +28,17 @@ export default function StickyCTA() {
   }, []);
 
   const getCTAConfig = () => {
-    // Master Plan Task 2.3: Page-specific CTA copy
-    if (pathname?.includes("/services/website-design")) return { text: "Start Your Website Project", icon: FileText };
-    if (pathname?.includes("/services/hosting")) return { text: "Move My Site Securely", icon: FileText };
-    if (pathname?.includes("/services/ad-campaigns")) return { text: "Launch My Campaign", icon: Megaphone };
-    if (pathname?.includes("/services/analytics")) return { text: "Get My Tracking Fixed", icon: BarChart };
-    if (pathname?.includes("/services/photography")) return { text: "Book Your Shoot", icon: Calendar };
-    if (pathname?.includes("/services")) return { text: "Explore How I Can Help", icon: FileText };
-    if (pathname?.includes("/pricing")) return { text: "See Pricing Options", icon: DollarSign };
-    if (pathname?.includes("/blog")) return { text: "Learn From My Case Studies", icon: BookOpen };
-    if (pathname?.includes("/about")) return { text: "Work With Joe", icon: User };
-    if (pathname?.includes("/contact")) return { text: "Send My Message", icon: Send };
-    return { text: "Let's Grow Your Business", icon: Calendar };
+    // Spec: MESSAGE 3 — Page-specific CTA mapping
+    if (pathname?.includes("/services/website-design")) return { text: "Call to Start Your Website Plan", icon: Phone };
+    if (pathname?.includes("/services/hosting")) return { text: "Call About Website Speed Improvements", icon: Phone };
+    if (pathname?.includes("/services/ad-campaigns")) return { text: "Call for a Google Ads Strategy", icon: Phone };
+    if (pathname?.includes("/services/analytics")) return { text: "Call About Tracking Setup", icon: Phone };
+    if (pathname?.includes("/services/photography")) return { text: "Call to Arrange a Photoshoot", icon: Phone };
+    if (pathname?.includes("/services")) return { text: "Call to Discuss Your Project", icon: Phone };
+    if (pathname?.includes("/about")) return { text: "Call to Work Together", icon: Phone };
+    if (pathname?.includes("/thank-you")) return { text: "Call If Your Enquiry Is Urgent", icon: Phone };
+    if (pathname === "/") return { text: "Call for a Free Ad Plan", icon: Phone };
+    return { text: "Call for a Free Ad Plan", icon: Phone };
   };
 
   const getPageType = () => {
@@ -106,7 +105,7 @@ export default function StickyCTA() {
         }
       `}</style>
 
-      {/* Mobile Design */}
+      {/* Mobile Design - Spec: Main CTA "Call Now", Sticky CTA "Call for a Free Ad Plan" */}
       <div className="sticky-cta fixed bottom-0 left-0 right-0 z-50 bg-black p-4 md:hidden">
         <p className="text-white text-center text-sm mb-3 font-medium">
           Ready to grow your business?
@@ -115,15 +114,15 @@ export default function StickyCTA() {
           <a
             href="tel:+447586378502"
             onClick={handleCallClick}
-            className="flex items-center justify-center gap-2 bg-white text-black px-6 py-3 rounded-lg font-semibold text-sm min-h-[44px] hover:bg-gray-100 transition-colors"
-            aria-label="Call Joe"
+            className="flex items-center justify-center gap-2 bg-[#FF2B6A] text-white px-6 py-3 rounded-lg font-semibold text-sm min-h-[48px] hover:bg-[#E02560] transition-colors"
+            aria-label="Call now to get your free, personalised ad plan"
           >
             <Phone className="w-5 h-5" />
-            Call Joe
+            Call for a Free Ad Plan
           </a>
           <button
             onClick={handleFormClick}
-            className="flex items-center justify-center gap-2 bg-[#FF2B6A] text-white px-6 py-3 rounded-lg font-semibold text-sm min-h-[44px] hover:bg-[#E02560] transition-colors"
+            className="flex items-center justify-center gap-2 bg-white text-black px-6 py-3 rounded-lg font-semibold text-sm min-h-[48px] hover:bg-gray-100 transition-colors"
             aria-label={config.text}
           >
             <Icon className="w-5 h-5" />
@@ -132,7 +131,7 @@ export default function StickyCTA() {
         </div>
       </div>
 
-      {/* Desktop Design */}
+      {/* Desktop Design - Spec: Main CTA "Call for a Free Ad Plan" */}
       <div className="sticky-cta hidden md:block fixed bottom-0 left-0 right-0 z-50 bg-black">
         <div className="max-w-7xl mx-auto px-6 py-4">
           <div className="flex items-center justify-center gap-6">
@@ -143,15 +142,15 @@ export default function StickyCTA() {
               <a
                 href="tel:+447586378502"
                 onClick={handleCallClick}
-                className="flex items-center gap-2 bg-white text-black px-6 py-3 rounded-lg font-semibold text-sm min-h-[44px] hover:bg-gray-100 transition-colors shadow-md"
-                aria-label="Call Joe"
+                className="flex items-center gap-2 bg-[#FF2B6A] text-white px-6 py-3 rounded-lg font-semibold text-sm min-h-[44px] hover:bg-[#E02560] transition-colors shadow-md"
+                aria-label="Call now to get your free, personalised ad plan"
               >
                 <Phone className="w-5 h-5" />
-                Call Joe
+                Call for a Free Ad Plan
               </a>
               <button
                 onClick={handleFormClick}
-                className="flex items-center gap-2 bg-[#FF2B6A] text-white px-6 py-3 rounded-lg font-semibold text-sm min-h-[44px] hover:bg-[#E02560] transition-colors shadow-md"
+                className="flex items-center gap-2 bg-white text-black px-6 py-3 rounded-lg font-semibold text-sm min-h-[44px] hover:bg-gray-100 transition-colors shadow-md"
                 aria-label={config.text}
               >
                 <Icon className="w-5 h-5" />

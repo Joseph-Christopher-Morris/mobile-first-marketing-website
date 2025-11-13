@@ -7,33 +7,30 @@ import ServicesContactSection from "@/components/sections/ServicesContactSection
 import MobileStickyButton from "@/components/ui/MobileStickyButton";
 
 export const metadata: Metadata = {
-  title:
-    "Website Design, Development & Digital Marketing in Nantwich and Cheshire | Professional Services",
+  title: "Digital Services for Small Businesses in Cheshire",
   description:
-    "Affordable website design, hosting, and digital marketing for Cheshire businesses. Get faster load times, better ads, and measurable growth.",
+    "Websites, hosting, ads, analytics and photography designed for small business performance.",
   keywords: [
-    "website design Nantwich",
-    "web development Cheshire",
-    "website hosting migration",
-    "digital marketing Nantwich",
-    "ad campaigns Cheshire",
-    "data analytics Cheshire",
-    "photography services Nantwich",
-    "Nantwich business marketing",
+    "digital services Cheshire",
+    "website design Cheshire",
+    "Google Ads Cheshire",
+    "analytics Cheshire",
+    "photography Cheshire",
+    "small business marketing",
+    "Nantwich digital services",
   ],
   alternates: { canonical: "/services" },
   openGraph: {
-    title:
-      "Website Design, Development & Digital Marketing in Nantwich and Cheshire",
+    title: "Digital Services for Small Businesses in Cheshire",
     description:
-      "I help Nantwich and Cheshire businesses grow with website design, data analytics, and ROI-focused ad campaigns.",
+      "Websites, hosting, ads, analytics and photography designed for small business performance.",
     url: "/services",
     images: [
       {
         url: "/images/services/web-hosting-and-migration/hosting-migration-card.webp",
         width: 1200,
         height: 630,
-        alt: "Digital services for Nantwich and Cheshire businesses",
+        alt: "Digital services for Cheshire businesses",
       },
     ],
   },
@@ -190,15 +187,10 @@ export default function ServicesPage() {
           {/* Header */}
           <header className="text-center mb-16">
             <h1 className="text-4xl md:text-5xl lg:text-6xl font-extrabold text-slate-900 leading-tight">
-              Website Design, Development & Digital Marketing in Nantwich and Cheshire
+              Websites, Ads, Analytics, and Photography for Cheshire Businesses
             </h1>
             <p className="mt-6 text-xl md:text-2xl text-slate-700 max-w-4xl mx-auto leading-relaxed">
-              Faster, more affordable websites and smarter ads for Nantwich and Cheshire businesses.
-            </p>
-            <p className="mt-4 text-base md:text-lg text-slate-700 max-w-4xl mx-auto leading-relaxed">
-              I help Nantwich and Cheshire businesses grow with website design, data analytics, and
-              ROI-focused ad campaigns. Browse my core services below to see how we boost visibility
-              and conversions.
+              I help small businesses grow with websites that load fast, Google Ads that generate enquiries, analytics that show performance clearly, and photography that builds trust. Each service is built to solve real business problems and to support long term growth.
             </p>
           </header>
 

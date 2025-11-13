@@ -6,6 +6,7 @@ import { StarRating } from '@/components/StarRating';
 interface Testimonial {
   id: string;
   quote: string;
+  mobileQuote: string; // Shortened version for mobile (spec requirement)
   author: string;
   role: string;
   company: string;
@@ -20,6 +21,7 @@ const testimonials: Testimonial[] = [
     id: 'anna',
     quote:
       'Joe has transformed our social media output creating dynamic content that drives engagement, he\'s become an integral and essential part of the team. From managing our website and working with all our client users and staff to creating content he has been a professional and joy to work with!',
+    mobileQuote: 'Joe transformed our social media output creating dynamic content that drives engagement.',
     author: 'Anna Burton',
     role: 'Chair',
     company: 'NYCC',
@@ -28,6 +30,7 @@ const testimonials: Testimonial[] = [
     id: 'claire',
     quote:
       'Joe has been an incredible support to Feel Good Health and Fitness. He has consistently promoted the days and times of our Feel Good Gold classes on the NYCC Facebook page, helping to encourage new people to join our sessions.',
+    mobileQuote: 'Joe has been an incredible support, consistently promoting our classes and helping new people join.',
     author: 'Claire Eaton',
     role: 'Founder of Feel Good Gold and Fitness',
     company: 'Feel Good Gold And Fitness',
@@ -36,6 +39,7 @@ const testimonials: Testimonial[] = [
     id: 'zach',
     quote:
       'Joe has been very loyal to Hampson Auctions over the last four years, covering photography consignments across Cheshire and capturing striking images from our sales for promotional use on our email campaigns and social media channels.',
+    mobileQuote: 'Joe has supported Hampson Auctions for four years, capturing striking images for our campaigns.',
     author: 'Zach Hamilton',
     role: 'Managing Director',
     company: 'Hampson Auctions',
@@ -170,7 +174,12 @@ export function TestimonialsCarousel({
                       <div className='flex justify-center mb-4'>
                         <StarRating rating={5} size="md" showLabel={false} />
                       </div>
-                      <p className='text-base sm:text-lg md:text-xl text-brand-black mb-4 sm:mb-6 leading-relaxed'>
+                      {/* Mobile: Show shortened quote (spec requirement) */}
+                      <p className='text-base sm:text-lg md:text-xl text-brand-black mb-4 sm:mb-6 leading-relaxed md:hidden'>
+                        &quot;{testimonial.mobileQuote}&quot;
+                      </p>
+                      {/* Desktop: Show full quote */}
+                      <p className='hidden md:block text-base sm:text-lg md:text-xl text-brand-black mb-4 sm:mb-6 leading-relaxed'>
                         &quot;{testimonial.quote}&quot;
                       </p>
                       <figcaption>

@@ -4,6 +4,7 @@ import { Layout } from '@/components/layout';
 import Image from 'next/image';
 import Link from 'next/link';
 import { PressStrip } from '@/components/credibility/PressStrip';
+import { ServiceSchemas } from '@/components/seo/ServiceSchema';
 
 export const metadata: Metadata = {
   title: 'Professional Photography Services | Nantwich & Cheshire',
@@ -136,6 +137,8 @@ export default function PhotographyServicesPage() {
 
   return (
     <Layout pageTitle="Photography Services">
+      {/* Service Schema - Spec requirement: Structured Data */}
+      {ServiceSchemas.Photography()}
       <div className="min-h-screen bg-white">
         {/* Hero Section */}
         <section className="relative bg-brand-black text-white pt-20 pb-16 md:py-20">

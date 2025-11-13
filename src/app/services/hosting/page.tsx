@@ -6,6 +6,7 @@ import { ServiceInquiryForm } from "@/components/ServiceInquiryForm";
 import { PerformanceComparison } from "@/components/sections/PerformanceComparison";
 import { DualStickyCTA } from "@/components/DualStickyCTA";
 import { HostingServiceCard } from "@/components/SimplifiedServiceCard";
+import { ServiceSchemas } from "@/components/seo/ServiceSchema";
 
 export const metadata: Metadata = {
   title: "secure cloud Website Hosting & Migration Services | Reliable Performance | Nantwich & Cheshire",
@@ -105,6 +106,8 @@ export default function HostingPage() {
 
   return (
     <Layout>
+      {/* Service Schema - Spec requirement: Structured Data */}
+      {ServiceSchemas.WebsiteHosting()}
       <DualStickyCTA />
       <main className="bg-gray-50 py-16 md:py-20">
         {/* JSON-LD */}
