@@ -3,6 +3,7 @@ import { Layout } from '@/components/layout';
 import Image from 'next/image';
 import Link from 'next/link';
 import { ServiceInquiryForm } from '@/components/ServiceInquiryForm';
+import { ServiceSchemas } from '@/components/seo/ServiceSchema';
 
 export const metadata: Metadata = {
   title: 'Data Analytics & Insights | GA4 & Adobe Analytics Expertise',
@@ -55,6 +56,8 @@ export default function AnalyticsServicesPage() {
 
   return (
     <Layout pageTitle='Data Analytics & Insights'>
+      {/* Service Schema - Spec requirement: Structured Data */}
+      {ServiceSchemas.Analytics()}
       <div className='min-h-screen bg-white'>
         {/* Hero Section */}
         <section className='relative bg-brand-black text-white py-20 lg:py-32'>

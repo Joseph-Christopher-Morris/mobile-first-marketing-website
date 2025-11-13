@@ -10,31 +10,31 @@ import { GeneralContactForm } from '@/components/sections/GeneralContactForm';
 import { FAQAccordion } from '@/components/FAQAccordion';
 
 export const metadata: Metadata = {
-  title: 'Vivid Media Cheshire | Performance Marketing That Pays',
+  title: 'Websites, Google Ads and Analytics for Cheshire Businesses',
   description:
-    'Performance marketing for Cheshire businesses. Fast websites, Google Ads, and analytics that deliver measurable results. Free consultation included.',
+    'Fast websites, Google Ads, analytics and photography for Cheshire businesses. Clear reporting and measurable results.',
   keywords: [
-    'secure cloud website hosting Cheshire',
-    'secure cloud infrastructure migration',
-    'mobile-first web design',
-    'Google Ads campaigns Cheshire',
+    'websites Cheshire',
+    'Google Ads Cheshire',
+    'analytics Cheshire',
+    'photography Cheshire',
     'digital marketing Nantwich',
-    'website performance optimisation',
-    'cheaper website hosting UK',
-    'data-driven marketing Cheshire',
-    'creative web design Cheshire',
+    'website design Cheshire',
+    'fast websites',
+    'Google Ads management',
+    'business analytics',
     'Vivid Media Cheshire',
   ],
   openGraph: {
-    title: 'Vivid Media Cheshire | Performance Marketing That Pays',
+    title: 'Websites, Google Ads and Analytics for Cheshire Businesses',
     description:
-      'Performance marketing for Cheshire businesses. Fast websites, Google Ads, and analytics that deliver measurable results. Free consultation included.',
+      'Fast websites, Google Ads, analytics and photography for Cheshire businesses. Clear reporting and measurable results.',
     images: [
       {
         url: '/images/hero/230422_Chester_Stock_Photography-84.webp',
         width: 1200,
         height: 630,
-        alt: 'Vivid Media Cheshire — premium creative craftsmanship with cloud performance results',
+        alt: 'Vivid Media Cheshire — Websites, Google Ads and Analytics for Cheshire Businesses',
       },
     ],
   },
@@ -87,7 +87,7 @@ export default async function HomePage() {
                   Website Design & Development
                 </h3>
                 <p className='text-sm md:text-base text-slate-700 mb-4'>
-                  Fast, mobile-first websites that turn visitors into enquiries. Built for speed and SEO.
+                  Fast websites that turn visitors into enquiries. Built for speed and SEO.
                 </p>
                 <Link
                   href='/services/website-design'
@@ -113,7 +113,7 @@ export default async function HomePage() {
                   Website Hosting & Migration
                 </h3>
                 <p className='text-sm md:text-base text-slate-700 mb-4'>
-                  Make your site 82% faster with enterprise hosting. Zero downtime migration, £120 per year.
+                  Make your site 82% faster. Zero downtime migration, £120 per year.
                 </p>
                 <Link
                   href='/services/hosting'
@@ -139,7 +139,7 @@ export default async function HomePage() {
                   Strategic Ad Campaigns
                 </h3>
                 <p className='text-sm md:text-base text-slate-700 mb-4'>
-                  Google Ads that bring real leads, not wasted clicks. Clear reporting shows what works.
+                  Google Ads that bring real leads. Clear reporting shows what works.
                 </p>
                 <Link
                   href='/services/ad-campaigns'
@@ -165,7 +165,7 @@ export default async function HomePage() {
                   Data Analytics & Insights
                 </h3>
                 <p className='text-sm md:text-base text-slate-700 mb-4'>
-                  Know what's working. Simple dashboards show where leads come from and what to improve.
+                  Know what's working. Simple dashboards show where leads come from.
                 </p>
                 <Link
                   href='/services/analytics'
@@ -191,7 +191,7 @@ export default async function HomePage() {
                   Photography Services
                 </h3>
                 <p className='text-sm md:text-base text-slate-700 mb-4'>
-                  Professional photography that builds trust. Fast turnaround, ready for web and social.
+                  Professional photography that builds trust. Fast turnaround.
                 </p>
                 <Link
                   href='/services/photography'

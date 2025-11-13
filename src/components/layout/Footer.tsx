@@ -11,12 +11,20 @@ export function Footer() {
           {/* Company Info */}
           <div className='col-span-1 md:col-span-2'>
             <h3 className='text-lg font-bold mb-4'>Vivid Media Cheshire</h3>
-            <p className='text-gray-400 text-sm mb-2'>
-              Marketing that pays for itself.
-            </p>
             <p className='text-gray-400 text-sm mb-4'>
-              Helping Cheshire businesses grow through websites, ads, and analytics that deliver results.
+              Websites, ads, analytics, and photography for small businesses across Cheshire. Built for performance, clarity, and measurable results.
             </p>
+            <div className='text-gray-400 text-sm mb-4'>
+              <p className='font-semibold text-white mb-2'>Business Hours (UK)</p>
+              <p>Monday to Friday: 09:00 to 18:00</p>
+              <p>Saturday: 10:00 to 14:00</p>
+              <p>Sunday: 10:00 to 16:00</p>
+            </div>
+            <div className='text-gray-400 text-sm mb-4'>
+              <p className='font-semibold text-white mb-2'>Contact</p>
+              <p>Email: joe@vividmediacheshire.com</p>
+              <p>Phone: +44 7586 378502</p>
+            </div>
             <div className='flex space-x-4 mt-6'>
               <a
                 href='https://www.facebook.com/VividAutoPhotography'
