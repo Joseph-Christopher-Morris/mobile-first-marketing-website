@@ -35,22 +35,8 @@ export function DualStickyCTA() {
     return 'Book Your Consultation';
   };
 
-  // Page-specific secondary CTA mapping
-  const stickyCtaConfig: Record<string, string> = {
-    '/': 'Free website & ads review',
-    '/services': 'Discuss your project',
-    '/services/hosting': 'Ask about hosting & speed',
-    '/services/website-design': 'Start your website plan',
-    '/services/photography': 'Arrange a photoshoot',
-    '/services/analytics': 'Ask about tracking setup',
-    '/services/ad-campaigns': 'Plan a Google Ads campaign',
-    '/about': 'Work with Joe',
-    '/contact': 'Contact form',
-    '/thank-you': 'Urgent enquiry? Call now',
-  };
-
   const getPhoneCtaText = () => {
-    return stickyCtaConfig[pathname] || 'Call Joe';
+    return 'Call Joe For A Free Quote';
   };
 
   const handleCallClick = () => {
