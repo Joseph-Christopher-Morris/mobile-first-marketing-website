@@ -25,7 +25,7 @@ export default function AdCampaignsServicesPage() {
     {
       src: '/images/services/top-3-mediums-by-conversion-rate.webp',
       alt: 'Conversion rate analysis across different advertising mediums',
-      title: 'Conversion Optimization',
+      title: 'Conversion optimisation',
     },
     {
       src: '/images/services/screenshot-2025-08-12-analytics-report.webp',
@@ -523,7 +523,7 @@ export default function AdCampaignsServicesPage() {
           </div>
         </section>
 
-        {/* Service Inquiry Form */}
+        {/* Service enquiry Form */}
         <div id="contact" className='max-w-7xl mx-auto px-4 sm:px-6 lg:px-8'>
           <ServiceInquiryForm
             serviceName="Strategic Ad Campaigns"
@@ -537,7 +537,7 @@ export default function AdCampaignsServicesPage() {
             className="bg-black text-white text-base font-medium px-6 py-3 rounded-full shadow-lg hover:bg-neutral-800 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-black transition-colors pointer-events-auto min-h-[48px] min-w-[48px]"
             onClick={() => {
               const form = document.querySelector("#contact");
-              form?.scrollIntoView({ behavior: "smooth" });
+              form?.scrollIntoView({ behaviour: "smooth" });
               if (typeof window !== "undefined" && typeof (window as any).gtag === "function") {
                 (window as any).gtag("event", "sticky_cta_click", {
                   cta_text: "Start My Campaign",

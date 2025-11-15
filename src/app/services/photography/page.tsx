@@ -5,6 +5,8 @@ import Image from 'next/image';
 import Link from 'next/link';
 import { PressStrip } from '@/components/credibility/PressStrip';
 import { ServiceSchemas } from '@/components/seo/ServiceSchema';
+import { PhotographyInquiryForm } from '@/components/PhotographyInquiryForm';
+import { DualStickyCTA } from '@/components/DualStickyCTA';
 
 export const metadata: Metadata = {
   title: 'Professional Photography Services | Nantwich & Cheshire',
@@ -63,7 +65,7 @@ export default function PhotographyServicesPage() {
     },
     {
       src: '/images/services/Photography/240427-_Nantwich_Stock_Photography-23.webp',
-      title: 'Historic Town Center Architecture',
+      title: 'Historic Town centre Architecture',
       alt: 'Architectural photography of Nantwich High Street with Tudor buildings and local shops',
       type: 'local' as const,
       location: 'High Street',
@@ -139,6 +141,7 @@ export default function PhotographyServicesPage() {
     <Layout pageTitle="Photography Services">
       {/* Service Schema - Spec requirement: Structured Data */}
       {ServiceSchemas.Photography()}
+      <DualStickyCTA />
       <div className="min-h-screen bg-white">
         {/* Hero Section */}
         <section className="relative bg-brand-black text-white pt-20 pb-16 md:py-20">
@@ -363,8 +366,59 @@ export default function PhotographyServicesPage() {
                 </div>
                 <h3 className="text-lg font-bold text-gray-900 mb-2">Delivery</h3>
                 <p className="text-gray-600">
-                  Professional editing and mobile-optimized delivery of your final images.
+                  Professional editing and mobile-optimised delivery of your final images. Most shoots are delivered within 24 to 72 hours, depending on volume.
                 </p>
+              </div>
+            </div>
+
+            {/* FAQ Section */}
+            <div className="mt-16 max-w-3xl mx-auto">
+              <h3 className="text-2xl font-bold text-gray-900 mb-6 text-center">Common Questions</h3>
+              <div className="space-y-4">
+                <details className="bg-white rounded-lg p-6 shadow-sm border border-gray-200">
+                  <summary className="font-semibold cursor-pointer text-lg">
+                    How quickly do you deliver photos?
+                  </summary>
+                  <p className="mt-3 text-gray-700">
+                    Most shoots are delivered within 24 to 72 hours, depending on volume.
+                  </p>
+                </details>
+
+                <details className="bg-white rounded-lg p-6 shadow-sm border border-gray-200">
+                  <summary className="font-semibold cursor-pointer text-lg">
+                    Do you provide editing and retouching?
+                  </summary>
+                  <p className="mt-3 text-gray-700">
+                    Yes. All delivered images are professionally edited.
+                  </p>
+                </details>
+
+                <details className="bg-white rounded-lg p-6 shadow-sm border border-gray-200">
+                  <summary className="font-semibold cursor-pointer text-lg">
+                    Can you upload images directly to my Google Business profile?
+                  </summary>
+                  <p className="mt-3 text-gray-700">
+                    Yes. This is available for most local business clients.
+                  </p>
+                </details>
+
+                <details className="bg-white rounded-lg p-6 shadow-sm border border-gray-200">
+                  <summary className="font-semibold cursor-pointer text-lg">
+                    Do you travel outside Cheshire?
+                  </summary>
+                  <p className="mt-3 text-gray-700">
+                    Yes. Travel costs may apply depending on distance.
+                  </p>
+                </details>
+
+                <details className="bg-white rounded-lg p-6 shadow-sm border border-gray-200">
+                  <summary className="font-semibold cursor-pointer text-lg">
+                    Can you handle regular shoots for my business?
+                  </summary>
+                  <p className="mt-3 text-gray-700">
+                    Yes. Ideal for businesses needing ongoing photography for Google Business profiles or social media.
+                  </p>
+                </details>
               </div>
             </div>
           </div>
@@ -448,15 +502,22 @@ export default function PhotographyServicesPage() {
               imagery, let's create something that tells your story with the same quality featured in
               major publications.
             </p>
-            <Link
-              href="/contact"
+            <a
+              href="#contact"
               className="inline-flex items-center justify-center px-8 py-3 rounded-full text-base md:text-lg font-semibold bg-brand-pink text-white shadow-lg hover:bg-brand-pink2 hover:shadow-xl transition"
             >
               Book Your Photoshoot
               <svg className="ml-2 w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
               </svg>
-            </Link>
+            </a>
+          </div>
+        </section>
+
+        {/* Photography Enquiry Form */}
+        <section id="contact" className="bg-gray-50 py-16 md:py-20">
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <PhotographyInquiryForm formspreeId="xpwaqjqr" />
           </div>
         </section>
       </div>

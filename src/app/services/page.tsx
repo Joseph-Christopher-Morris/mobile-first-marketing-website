@@ -42,7 +42,7 @@ export default function ServicesPage() {
     {
       title: "Website Design & Development",
       description:
-        "Mobile first websites on secure cloud infrastructure, built on a modular framework that is ready for SEO, analytics, and ad campaigns.",
+        "Mobile-first websites on secure cloud infrastructure, built on a modular framework that is ready for SEO, analytics, and ad campaigns.",
       href: "/services/website-design",
       thumbnail: "/images/services/Website Design/PXL_20240222_004124044~2.webp",
       alt: "Web designer working on a website design and hosting project",
@@ -66,7 +66,7 @@ export default function ServicesPage() {
     {
       title: "Data Analytics & Insights",
       description:
-        "Comprehensive analytics and data-driven insights to optimize your business performance and drive growth.",
+        "Comprehensive analytics and data-driven insights to optimise your business performance and drive growth.",
       href: "/services/analytics",
       thumbnail: "/images/services/screenshot-2025-09-23-analytics-dashboard.webp",
       alt: "Data analytics dashboard showing business insights and performance metrics",
@@ -74,7 +74,7 @@ export default function ServicesPage() {
     {
       title: "Photography Services",
       description:
-        "Professional automotive and commercial photography with mobile-optimized delivery and stunning visual storytelling.",
+        "Professional automotive and commercial photography with mobile-optimised delivery and stunning visual storytelling.",
       href: "/services/photography",
       thumbnail: "/images/services/photography-hero.webp",
       alt: "Professional photography services with published editorial work examples",

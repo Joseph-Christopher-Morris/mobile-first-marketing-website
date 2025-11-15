@@ -22,7 +22,7 @@ export function DualStickyCTA() {
     return null;
   }
 
-  // Get contextual CTA text based on page
+  // Get contextual CTA text and phone text based on page
   const getCtaText = () => {
     if (pathname.includes('/services/hosting')) return 'Get Hosting Quote';
     if (pathname.includes('/services/website-design')) return 'Build My Website';
@@ -33,6 +33,24 @@ export function DualStickyCTA() {
     if (pathname.includes('/blog')) return 'Read Case Studies';
     if (pathname.includes('/about')) return 'Work With Me';
     return 'Book Your Consultation';
+  };
+
+  // Page-specific secondary CTA mapping
+  const stickyCtaConfig: Record<string, string> = {
+    '/': 'Free website & ads review',
+    '/services': 'Discuss your project',
+    '/services/hosting': 'Ask about hosting & speed',
+    '/services/website-design': 'Start your website plan',
+    '/services/photography': 'Arrange a photoshoot',
+    '/services/analytics': 'Ask about tracking setup',
+    '/services/ad-campaigns': 'Plan a Google Ads campaign',
+    '/about': 'Work with Joe',
+    '/contact': 'Contact form',
+    '/thank-you': 'Urgent enquiry? Call now',
+  };
+
+  const getPhoneCtaText = () => {
+    return stickyCtaConfig[pathname] || 'Call Joe';
   };
 
   const handleCallClick = () => {
@@ -60,9 +78,11 @@ export function DualStickyCTA() {
     }
   };
 
+  const phoneCtaText = getPhoneCtaText();
+
   return (
     <div
-      className={`fixed bottom-0 left-0 right-0 z-50 transition-transform duration-300 ${
+      className={`fixed bottom-0 left-0 right-0 z-50 md:hidden transition-transform duration-300 ${
         isVisible ? 'translate-y-0' : 'translate-y-full'
       }`}
       role="complementary"
@@ -70,17 +90,17 @@ export function DualStickyCTA() {
     >
       <div className="bg-black shadow-2xl">
         <div className="max-w-7xl mx-auto px-4 py-4">
-          <div className="flex flex-col sm:flex-row items-center justify-center gap-3 sm:gap-4">
-            <p className="text-white text-sm sm:text-base font-medium text-center sm:text-left">
+          <div className="flex flex-col items-center justify-center gap-3">
+            <p className="text-white text-sm font-medium text-center">
               Ready to grow your business?
             </p>
-            <div className="flex items-center gap-3 sm:gap-4">
-              {/* Call Joe Button - White with black text */}
+            <div className="flex flex-col w-full gap-2">
+              {/* Call Button - Opens phone dialer */}
               <a
-                href="tel:+447123456789"
+                href="tel:+447586378502"
                 onClick={handleCallClick}
-                className="inline-flex items-center justify-center px-6 py-3 rounded-lg text-sm sm:text-base font-semibold bg-white text-black hover:bg-gray-100 transition shadow-md hover:shadow-lg min-h-[44px]"
-                aria-label="Call Joe for immediate assistance"
+                className="inline-flex items-center justify-center px-6 py-3 rounded-lg text-sm font-semibold bg-brand-pink text-white hover:bg-brand-pink2 transition shadow-md hover:shadow-lg min-h-[48px] w-full"
+                aria-label="Call now to speak with Joe about your project"
               >
                 <svg
                   className="w-4 h-4 mr-2"
@@ -96,17 +116,8 @@ export function DualStickyCTA() {
                     d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"
                   />
                 </svg>
-                Call Joe
+                {phoneCtaText}
               </a>
-
-              {/* Contextual CTA Button - Pink with white text */}
-              <button
-                onClick={handleFormClick}
-                className="inline-flex items-center justify-center px-6 py-3 rounded-lg text-sm sm:text-base font-semibold bg-brand-pink text-white shadow-lg hover:bg-brand-pink2 hover:shadow-xl transition min-h-[44px]"
-                aria-label={`${getCtaText()} - scroll to contact form`}
-              >
-                {getCtaText()}
-              </button>
             </div>
           </div>
         </div>

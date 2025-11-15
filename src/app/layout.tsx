@@ -102,7 +102,7 @@ export default function RootLayout({
   return (
     <html lang='en'>
       <head>
-        {/* Critical resource preload for LCP optimization */}
+        {/* Critical resource preload for LCP optimisation */}
         <link
           rel="preload"
           href="/images/hero/230422_Chester_Stock_Photography-84.webp"

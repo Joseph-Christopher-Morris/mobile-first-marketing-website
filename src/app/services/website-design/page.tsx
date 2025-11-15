@@ -5,7 +5,7 @@ import { Layout } from "@/components/layout";
 import { ServiceSchemas } from "@/components/seo/ServiceSchema";
 
 export const metadata = {
-  title: "Website Design and Development for Cheshire Businesses | Fast, SEO Ready Websites on secure cloud infrastructure",
+  title: "Website Design and Development for Cheshire Businesses | Fast, SEO-ready Websites on secure cloud infrastructure",
   description:
     "Mobile-first websites built with secure cloud infrastructure for speed, SEO, and adaptability. Designed to grow with your business and future ad campaigns.",
 };
@@ -27,7 +27,7 @@ export default function WebsiteDesignPage() {
               Website Design & Development for Cheshire Businesses
             </h1>
             <p className="text-lg text-slate-700 mb-6">
-              Mobile first websites on secure cloud infrastructure that are fast, SEO ready, and built to grow with your business and future ad campaigns. Designed to make it easier for customers to find you and get in touch.
+              Mobile-first websites on secure cloud infrastructure that are fast, SEO-ready, and built to grow with your business and future ad campaigns. Designed to make it easier for customers to find you and get in touch.
             </p>
 
             <Link
@@ -110,7 +110,7 @@ export default function WebsiteDesignPage() {
           <div className="bg-white rounded-2xl p-6 shadow-sm">
             <div className="text-2xl mb-3">🔍</div>
             <h2 className="text-lg font-semibold text-slate-900 mb-2">
-              SEO Ready
+              SEO-ready
             </h2>
             <p className="text-slate-700 text-sm">
               Clear structure helps the site appear for the right keywords in search.
@@ -261,7 +261,7 @@ export default function WebsiteDesignPage() {
               3
             </div>
             <h3 className="font-semibold text-slate-900 mb-2">
-              Launch & Optimize
+              Launch & optimise
             </h3>
             <p className="text-sm text-slate-700">
               Once live, I'll set up analytics, test performance, and keep your site improving over time.
@@ -296,7 +296,7 @@ export default function WebsiteDesignPage() {
                 </li>
                 <li className="flex items-start">
                   <span className="text-green-600 mr-2">✓</span>
-                  Performance focused
+                  Performance-focused
                 </li>
                 <li className="flex items-start">
                   <span className="text-green-600 mr-2">✓</span>

@@ -1,8 +1,18 @@
 "use client";
 
 import { useState, useEffect } from "react";
-import { usePathname } from "next/navigation";
-import { Phone, Calendar, FileText, BarChart, Megaphone, DollarSign, BookOpen, User, Send } from "lucide-react";
+import { usePathname, useRouter } from "next/navigation";
+import {
+  Phone,
+  BarChart3,
+  LayoutTemplate,
+  Server,
+  Target,
+  LineChart,
+  Camera,
+  User,
+  Mail,
+} from "lucide-react";
 import { trackPhoneClick } from "@/lib/trackPhone";
 
 declare global {
@@ -14,6 +24,7 @@ declare global {
 export default function StickyCTA() {
   const [isVisible, setIsVisible] = useState(false);
   const pathname = usePathname();
+  const router = useRouter();
 
   // Hide sticky CTA on contact page
   const shouldHide = pathname === '/contact';
@@ -27,65 +38,99 @@ export default function StickyCTA() {
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
-  const getCTAConfig = () => {
-    // Spec: MESSAGE 3 — Page-specific CTA mapping
-    if (pathname?.includes("/services/website-design")) return { text: "Call to Start Your Website Plan", icon: Phone };
-    if (pathname?.includes("/services/hosting")) return { text: "Call About Website Speed Improvements", icon: Phone };
-    if (pathname?.includes("/services/ad-campaigns")) return { text: "Call for a Google Ads Strategy", icon: Phone };
-    if (pathname?.includes("/services/analytics")) return { text: "Call About Tracking Setup", icon: Phone };
-    if (pathname?.includes("/services/photography")) return { text: "Call to Arrange a Photoshoot", icon: Phone };
-    if (pathname?.includes("/services")) return { text: "Call to Discuss Your Project", icon: Phone };
-    if (pathname?.includes("/about")) return { text: "Call to Work Together", icon: Phone };
-    if (pathname?.includes("/thank-you")) return { text: "Call If Your Enquiry Is Urgent", icon: Phone };
-    if (pathname === "/") return { text: "Call for a Free Ad Plan", icon: Phone };
-    return { text: "Call for a Free Ad Plan", icon: Phone };
-  };
-
   const getPageType = () => {
-    if (pathname?.includes("/services/hosting")) return "hosting";
-    if (pathname?.includes("/services/website-design")) return "design";
-    if (pathname?.includes("/services/photography")) return "photography";
-    if (pathname?.includes("/services/analytics")) return "analytics";
-    if (pathname?.includes("/services/ad-campaigns")) return "ads";
-    if (pathname?.includes("/pricing")) return "pricing";
-    if (pathname?.includes("/blog")) return "blog";
-    if (pathname?.includes("/about")) return "about";
-    if (pathname?.includes("/contact")) return "contact";
+    if (pathname.startsWith("/services/website-design")) return "website_design";
+    if (pathname.startsWith("/services/hosting")) return "website_hosting";
+    if (pathname.startsWith("/services/ad-campaigns")) return "ad_campaigns";
+    if (pathname.startsWith("/services/analytics")) return "analytics";
+    if (pathname.startsWith("/services/photography")) return "photography";
+    if (pathname.startsWith("/services")) return "services";
+    if (pathname.startsWith("/pricing")) return "pricing";
+    if (pathname.startsWith("/blog")) return "blog";
+    if (pathname.startsWith("/about")) return "about";
+    if (pathname.startsWith("/contact")) return "contact";
+    if (pathname.startsWith("/thank-you")) return "thank_you";
     if (pathname === "/") return "home";
     return "other";
   };
 
+  const pageType = getPageType();
+
+  const secondaryLabel = {
+    home: "Book Your Consultation",
+    services: "Send Your Project Details",
+    website_design: "Request a Website Quote",
+    website_hosting: "Request a Speed Review",
+    ad_campaigns: "Request a Free Ad Plan",
+    analytics: "Request a Tracking Setup",
+    photography: "Check Photography Availability",
+    pricing: "Request a Quote",
+    blog: "Ask a Question",
+    about: "Send a Message to Joe",
+    contact: "Fill Out the Form Below",
+    thank_you: "Return to Homepage",
+    other: "Send an Enquiry",
+  }[pageType];
+
+  const getSecondaryIcon = () => {
+    switch (pageType) {
+      case "website_design":
+        return LayoutTemplate;
+      case "website_hosting":
+        return Server;
+      case "ad_campaigns":
+        return Target;
+      case "analytics":
+        return LineChart;
+      case "photography":
+        return Camera;
+      case "about":
+        return User;
+      case "contact":
+      case "thank_you":
+        return Mail;
+      case "home":
+      case "services":
+      case "pricing":
+      case "blog":
+      case "other":
+      default:
+        return BarChart3;
+    }
+  };
+
+  const SecondaryIcon = getSecondaryIcon();
+
   const handleCallClick = () => {
     trackPhoneClick("call_joe_sticky");
     
-    // Additional GA4 context event
     if (typeof window !== "undefined" && typeof window.gtag === "function") {
-      window.gtag("event", "cta_call_click", {
-        cta_text: "Call Joe",
+      window.gtag("event", "sticky_cta_click", {
         page_path: pathname,
-        page_type: getPageType(),
+        page_type: pageType,
+        cta_variant: "call",
       });
     }
   };
 
   const handleFormClick = () => {
-    const config = getCTAConfig();
     if (typeof window !== "undefined" && typeof window.gtag === "function") {
-      window.gtag("event", "cta_form_click", {
-        cta_text: config.text,
+      window.gtag("event", "sticky_cta_click", {
         page_path: pathname,
-        page_type: getPageType(),
+        page_type: pageType,
+        cta_variant: "form",
       });
     }
 
-    const form = document.querySelector("#contact");
-    form?.scrollIntoView({ behavior: "smooth" });
+    if (pageType === "thank_you") {
+      router.push("/");
+      return;
+    }
+
+    router.push("/contact");
   };
 
   if (!isVisible || shouldHide) return null;
-
-  const config = getCTAConfig();
-  const Icon = config.icon;
 
   return (
     <>
@@ -105,7 +150,7 @@ export default function StickyCTA() {
         }
       `}</style>
 
-      {/* Mobile Design - Spec: Main CTA "Call Now", Sticky CTA "Call for a Free Ad Plan" */}
+      {/* Mobile Design */}
       <div className="sticky-cta fixed bottom-0 left-0 right-0 z-50 bg-black p-4 md:hidden">
         <p className="text-white text-center text-sm mb-3 font-medium">
           Ready to grow your business?
@@ -123,15 +168,15 @@ export default function StickyCTA() {
           <button
             onClick={handleFormClick}
             className="flex items-center justify-center gap-2 bg-white text-black px-6 py-3 rounded-lg font-semibold text-sm min-h-[48px] hover:bg-gray-100 transition-colors"
-            aria-label={config.text}
+            aria-label={secondaryLabel}
           >
-            <Icon className="w-5 h-5" />
-            {config.text}
+            <SecondaryIcon className="w-5 h-5" />
+            {secondaryLabel}
           </button>
         </div>
       </div>
 
-      {/* Desktop Design - Spec: Main CTA "Call for a Free Ad Plan" */}
+      {/* Desktop Design */}
       <div className="sticky-cta hidden md:block fixed bottom-0 left-0 right-0 z-50 bg-black">
         <div className="max-w-7xl mx-auto px-6 py-4">
           <div className="flex items-center justify-center gap-6">
@@ -151,10 +196,10 @@ export default function StickyCTA() {
               <button
                 onClick={handleFormClick}
                 className="flex items-center gap-2 bg-white text-black px-6 py-3 rounded-lg font-semibold text-sm min-h-[44px] hover:bg-gray-100 transition-colors shadow-md"
-                aria-label={config.text}
+                aria-label={secondaryLabel}
               >
-                <Icon className="w-5 h-5" />
-                {config.text}
+                <SecondaryIcon className="w-5 h-5" />
+                {secondaryLabel}
               </button>
             </div>
           </div>

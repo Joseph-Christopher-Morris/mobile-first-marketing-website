@@ -84,10 +84,10 @@ export const ServiceSchemas = {
     <ServiceSchema
       serviceName="Website Design & Development"
       serviceType="Web Design Service"
-      description="Mobile-first website design and development for Cheshire businesses. Fast, SEO-optimized websites built on secure cloud infrastructure."
+      description="Mobile-first website design and development for Cheshire businesses. Fast, SEO-optimised websites built on secure cloud infrastructure."
       url="https://d15sc9fc739ev2.cloudfront.net/services/website-design"
       priceRange="From £300"
-      serviceOutput="Professional, mobile-optimized website"
+      serviceOutput="Professional, mobile-optimised website"
       areaServed={['Nantwich', 'Crewe', 'Chester', 'Cheshire', 'UK']}
     />
   ),

@@ -24,7 +24,7 @@ export default function MobileStickyButton() {
     const formElement = document.getElementById('form');
     if (formElement) {
       formElement.scrollIntoView({
-        behavior: 'smooth',
+        behaviour: 'smooth',
         block: 'start'
       });
     }

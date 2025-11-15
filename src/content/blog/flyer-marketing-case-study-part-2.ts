@@ -96,7 +96,7 @@ const post: BlogPost = {
 
     <h2>🎯 What's Next</h2>
 
-    <p>While I shifted focus to <strong>digital marketing and website optimization</strong>, the flyer foundation kept working in the background. The relationships built through offline marketing continued generating revenue years later.</p>
+    <p>While I shifted focus to <strong>digital marketing and website optimisation</strong>, the flyer foundation kept working in the background. The relationships built through offline marketing continued generating revenue years later.</p>
 
     <p>The total return? <strong>£13,563.92 from a £546 investment</strong> — a <strong>2,380% ROI</strong> that proved offline marketing still works in our digital world.</p>
 
