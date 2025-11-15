@@ -50,7 +50,7 @@ const defaultGoals: ConversionGoal[] = [
   },
   {
     id: 'booking_inquiry',
-    name: 'Booking Inquiry',
+    name: 'Booking enquiry',
     trigger: 'click',
     target: '[href="/contact"]',
     value: 10

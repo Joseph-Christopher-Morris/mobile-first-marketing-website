@@ -89,7 +89,7 @@ const post: BlogPost = {
 
     <ul>
       <li><strong>Research Trends:</strong> Stay updated on market trends. Identify what types of images are in demand and create content accordingly.</li>
-      <li><strong>Optimize Keywords:</strong> Use relevant keywords to improve searchability. Think like a buyer when selecting keywords.</li>
+      <li><strong>optimise Keywords:</strong> Use relevant keywords to improve searchability. Think like a buyer when selecting keywords.</li>
       <li><strong>Engage with the Community:</strong> Join stock photography forums and social media groups. Networking can provide insights and support.</li>
       <li><strong>Diversify Your Portfolio:</strong> Offer a range of subjects. This increases your chances of sales across different markets.</li>
       <li><strong>Regularly Update Your Portfolio:</strong> Keep your portfolio fresh by adding new images regularly. This signals to platforms that you are an active contributor.</li>

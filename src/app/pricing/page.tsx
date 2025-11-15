@@ -89,7 +89,7 @@ export default function PricingPage() {
                 <ul className="list-disc pl-6 text-gray-700 space-y-2">
                   <li>Responsive design</li>
                   <li>SEO optimised</li>
-                  <li>Performance focused</li>
+                  <li>Performance-focused</li>
                 </ul>
               </div>
 

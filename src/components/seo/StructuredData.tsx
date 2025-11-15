@@ -217,7 +217,7 @@ export default function StructuredData({ type, data }: StructuredDataProps) {
         name: "Emma Davies",
         business: "Cheshire Wedding Venue",
         rating: 5,
-        review: "Outstanding quality and attention to detail. The venue photography has elevated our marketing materials and booking inquiries have increased significantly.",
+        review: "Outstanding quality and attention to detail. The venue photography has elevated our marketing materials and booking enquiries have increased significantly.",
         date: "2024-07-10"
       }
     ];

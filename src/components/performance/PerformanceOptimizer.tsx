@@ -61,8 +61,8 @@ export const useCriticalCSS = () => {
   const criticalCSS = `
     /* Critical CSS for above-the-fold content */
     .hero-section {
-      background-color: #000;
-      color: #fff;
+      background-colour: #000;
+      colour: #fff;
       padding: 5rem 1rem;
     }
 
@@ -80,24 +80,24 @@ export const useCriticalCSS = () => {
     }
 
     .cta-button {
-      background-color: #ec4899;
-      color: white;
+      background-colour: #ec4899;
+      colour: white;
       padding: 1rem 2rem;
       border-radius: 0.5rem;
       font-weight: 600;
       text-decoration: none;
       display: inline-block;
-      transition: background-color 0.2s;
+      transition: background-colour 0.2s;
     }
 
     .cta-button:hover {
-      background-color: #db2777;
+      background-colour: #db2777;
     }
 
     /* Prevent layout shift */
     .image-container {
       aspect-ratio: 4/3;
-      background-color: #f1f5f9;
+      background-colour: #f1f5f9;
     }
 
     /* Loading states */

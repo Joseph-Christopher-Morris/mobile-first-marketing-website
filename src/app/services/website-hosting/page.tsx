@@ -101,7 +101,7 @@ export default function WebsiteHostingPage() {
                 <div className="text-3xl mb-4">📊</div>
                 <h3 className="text-xl font-semibold text-gray-900 mb-3">SEO & Analytics Ready</h3>
                 <p className="text-gray-600">
-                  Optimized for Google Lighthouse performance and set up for GA4 tracking from launch.
+                  optimised for Google Lighthouse performance and set up for GA4 tracking from launch.
                 </p>
               </div>
             </div>

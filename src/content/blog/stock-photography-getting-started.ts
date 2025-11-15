@@ -27,7 +27,7 @@ const post: BlogPost = {
 
     <h2>❌ Why I Ditched Wirestock for Direct Sales</h2>
 
-    <p>I decided to sign up directly for <strong>Adobe Stock</strong>, <strong>Shutterstock</strong>, <strong>iStock</strong>, and <strong>Alamy</strong> to sell my photos to people who wanted to license my assets for various purposes.</p>
+    <p>I decided to sign up directly for <strong>Adobe Stock</strong>, <strong>Shutterstock</strong>, <strong>iStock</strong>, and <strong>Alamy</strong> to sell my photos to people who wanted to licence my assets for various purposes.</p>
 
     <p>I had a photography tutor who acted as a coach, mentor, and sounding board whenever I had questions about:</p>
 

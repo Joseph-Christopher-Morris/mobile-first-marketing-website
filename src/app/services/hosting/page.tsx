@@ -3,37 +3,35 @@ import Link from "next/link";
 import Image from "next/image";
 import { Layout } from "@/components/layout";
 import { ServiceInquiryForm } from "@/components/ServiceInquiryForm";
-import { PerformanceComparison } from "@/components/sections/PerformanceComparison";
 import { DualStickyCTA } from "@/components/DualStickyCTA";
 import { HostingServiceCard } from "@/components/SimplifiedServiceCard";
 import { ServiceSchemas } from "@/components/seo/ServiceSchema";
 
 export const metadata: Metadata = {
-  title: "secure cloud Website Hosting & Migration Services | Reliable Performance | Nantwich & Cheshire",
+  title: "Fast, secure website hosting for Cheshire businesses | Vivid Media Cheshire",
   description:
-    "Make your website load 82% faster with secure cloud hosting and transparent annual pricing. Professional website migration with zero downtime for Nantwich and Cheshire businesses.",
+    "From £120 per year with 99.9% uptime and local support. Professional migration, same day replies and zero downtime for Nantwich and Cheshire businesses.",
   keywords: [
-    "secure cloud website hosting Cheshire",
+    "website hosting Cheshire",
     "website migration Nantwich",
     "fast website hosting",
-    "website hosting migration",
-    "secure cloud infrastructure hosting",
-    "website speed optimization",
+    "secure cloud hosting",
+    "website speed optimisation",
     "Nantwich web hosting",
     "transparent hosting pricing",
   ],
   alternates: { canonical: "/services/hosting" },
   openGraph: {
-    title: "secure cloud Website Hosting & Migration Services | Reliable Performance",
+    title: "Fast, secure website hosting for Cheshire businesses",
     description:
-      "Make your website load 82% faster with professional secure cloud hosting and migration services. Transparent annual pricing and reliable performance.",
+      "From £120 per year with 99.9% uptime and local support. Professional migration, same day replies and zero downtime.",
     url: "/services/hosting",
     images: [
       {
         url: "/images/services/web-hosting-and-migration/hosting-migration-card.webp",
         width: 1200,
         height: 630,
-        alt: "secure cloud website hosting and migration services showing performance improvements",
+        alt: "Website hosting and migration services for Cheshire businesses",
       },
     ],
   },
@@ -44,8 +42,8 @@ export default function HostingPage() {
   const schema = {
     "@context": "https://schema.org",
     "@type": "Service",
-    name: "secure cloud Website Hosting & Migration Services",
-    description: "Professional secure cloud hosting and website migration services with reliable performance and 82% faster load times",
+    name: "Website Hosting & Migration Services",
+    description: "Professional website hosting and migration services with reliable performance and zero downtime",
     provider: {
       "@type": "LocalBusiness",
       name: "Vivid Media Cheshire",
@@ -60,7 +58,7 @@ export default function HostingPage() {
     serviceType: "Website Hosting and Migration",
     offers: {
       "@type": "Offer",
-      description: "secure cloud hosting with transparent annual pricing and 82% faster load times",
+      description: "Website hosting from £120 per year with zero downtime migration",
       areaServed: "Nantwich & Cheshire",
     },
     "@graph": [
@@ -69,18 +67,10 @@ export default function HostingPage() {
         mainEntity: [
           {
             "@type": "Question",
-            name: "What is the cost of secure cloud hosting?",
-            acceptedAnswer: {
-              "@type": "Answer",
-              text: "Our hosting offers reliable performance and transparent annual pricing at £120 per year, which includes secure cloud infrastructure, business domain, and professional email service.",
-            },
-          },
-          {
-            "@type": "Question",
             name: "Will my website be faster?",
             acceptedAnswer: {
               "@type": "Answer",
-              text: "Yes, secure cloud hosting typically makes websites 82% faster. Faster pages mean more visitors stay, more calls come in, and better Google rankings.",
+              text: "In most cases yes. Moving to secure cloud hosting with tuned caching and a good setup reduces load times significantly. Faster sites help visitors stay longer, view more pages and contact you with more confidence.",
             },
           },
           {
@@ -88,15 +78,23 @@ export default function HostingPage() {
             name: "Is there any downtime during migration?",
             acceptedAnswer: {
               "@type": "Answer",
-              text: "No, your site stays live while we migrate everything behind the scenes. The migration process has zero downtime.",
+              text: "The migration is planned to avoid downtime. Your current site stays live while the new hosting is set up and tested. The final switch is done when everything is ready so visitors do not see a broken site.",
             },
           },
           {
             "@type": "Question",
-            name: "Do I need technical knowledge?",
+            name: "Do I need any technical knowledge?",
             acceptedAnswer: {
               "@type": "Answer",
-              text: "Not at all. We manage the setup, security, and maintenance. You just enjoy the results - faster site, lower costs, better performance.",
+              text: "No. You do not need to manage servers, DNS records or configuration yourself. I manage the technical parts and keep you updated in clear language.",
+            },
+          },
+          {
+            "@type": "Question",
+            name: "Can you help if I already have a website on another platform?",
+            acceptedAnswer: {
+              "@type": "Answer",
+              text: "Yes. I can review your current setup and advise whether a direct migration is possible, or whether a rebuild is a better long term choice. In each case you get a clear, written plan before any work begins.",
             },
           },
         ],
@@ -106,7 +104,7 @@ export default function HostingPage() {
 
   return (
     <Layout>
-      {/* Service Schema - Spec requirement: Structured Data */}
+      {/* Service Schema */}
       {ServiceSchemas.WebsiteHosting()}
       <DualStickyCTA />
       <main className="bg-gray-50 py-16 md:py-20">
@@ -118,24 +116,36 @@ export default function HostingPage() {
 
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           {/* Hero Section */}
-          <section className="text-center mb-20">
+          <section className="text-center mb-12">
             <h1 className="text-4xl md:text-5xl lg:text-6xl font-extrabold text-slate-900 leading-tight mb-6">
-              Fast, Secure, and Transparent Hosting
+              Fast, secure website hosting for Cheshire businesses
             </h1>
-            <p className="text-xl md:text-2xl text-slate-700 max-w-4xl mx-auto leading-relaxed mb-8">
-              Professional migration and same-day support. Free consultation included for all new clients.
+            <p className="text-xl text-gray-600 mb-8">
+              Make your website load 82 percent faster with reliable hosting and simple, transparent pricing. Hosting is £15 per month or £120 per year when paid annually. I handle the setup, migration and support so you can focus on running your business.
             </p>
-            <p className="text-base md:text-lg text-slate-700 max-w-3xl mx-auto leading-relaxed mb-8">
-              £120 per year with 99.9% uptime and local support. I personally reply to all enquiries the same day during business hours.
-            </p>
-            <p className="text-base md:text-lg text-slate-700 max-w-3xl mx-auto leading-relaxed mb-8">
-              We handle everything. Set up, migration, and support, so you can focus on running your business.
-            </p>
+            
+            {/* Hero bullet points */}
+            <div className="max-w-2xl mx-auto mb-8 text-left">
+              <ul className="space-y-2 text-base text-slate-700">
+                <li className="flex items-start">
+                  <span className="text-green-600 mr-2 mt-1">•</span>
+                  <span>Faster load times and more stable hosting</span>
+                </li>
+                <li className="flex items-start">
+                  <span className="text-green-600 mr-2 mt-1">•</span>
+                  <span>Zero downtime migration where your site stays live</span>
+                </li>
+                <li className="flex items-start">
+                  <span className="text-green-600 mr-2 mt-1">•</span>
+                  <span>Personal support from Nantwich</span>
+                </li>
+              </ul>
+            </div>
             
             {/* CTA Buttons */}
             <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
               <a
-                href="tel:+447123456789"
+                href="tel:+447586378502"
                 className="inline-flex items-center justify-center px-8 py-3 rounded-full text-base md:text-lg font-semibold bg-brand-pink text-white shadow-lg hover:bg-brand-pink2 hover:shadow-xl transition"
               >
                 Call Joe
@@ -154,7 +164,7 @@ export default function HostingPage() {
             <div className="relative h-[480px] rounded-2xl overflow-hidden shadow-2xl">
               <Image
                 src="/images/services/web-hosting-and-migration/hosting-migration-card.webp"
-                alt="secure cloud website hosting and migration services with reliable performance and 82% faster load times"
+                alt="Website hosting and migration services for Cheshire businesses"
                 fill
                 className="object-cover"
                 priority
@@ -162,329 +172,262 @@ export default function HostingPage() {
               />
               <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent" />
               <div className="absolute bottom-8 left-8 text-white">
-                <h2 className="text-3xl font-bold mb-2">secure cloud hosting Excellence</h2>
-                <p className="text-xl">Professional migration with zero downtime</p>
+                <h2 className="text-3xl font-bold mb-2">Professional hosting and migration</h2>
+                <p className="text-xl">Zero downtime, local support</p>
               </div>
             </div>
           </section>
 
-          {/* Simplified Service Card */}
+          {/* Intro Section */}
+          <section className="mb-20">
+            <h2 className="text-3xl md:text-4xl font-bold text-slate-900 mb-6 text-center">
+              Why reliable hosting matters
+            </h2>
+            <p className="text-lg text-slate-700 max-w-4xl mx-auto leading-relaxed text-center">
+              If your website is slow or unreliable, you lose visitors, enquiries and trust. Good hosting should be invisible. Pages should load quickly, stay online and support your business quietly in the background. That is what this hosting service is designed to do for Cheshire small businesses.
+            </p>
+          </section>
+
+          {/* Hosting Package Card */}
           <section className="mb-20">
             <div className="max-w-md mx-auto">
               <HostingServiceCard />
             </div>
           </section>
 
-          {/* Why Move to secure cloud hosting */}
+          {/* Why Choose This Hosting */}
           <section className="mb-20">
-            <h2 className="text-3xl md:text-4xl font-bold text-slate-900 mb-4 text-center">
-              Why Move to secure cloud hosting
+            <h2 className="text-3xl md:text-4xl font-bold text-slate-900 mb-12 text-center">
+              Why choose secure cloud hosting
             </h2>
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-6xl mx-auto mt-12">
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-6xl mx-auto">
               <div className="bg-white rounded-2xl shadow-lg p-6 md:p-8 flex flex-col">
-                <h3 className="text-xl font-semibold text-slate-900 mb-3">Enterprise Performance at DIY Prices</h3>
+                <h3 className="text-xl font-semibold text-slate-900 mb-3">Built on secure, modern infrastructure</h3>
                 <p className="text-sm md:text-base text-slate-700">
-                  Wix Light costs £9 per month (£108 per year). My secure cloud hosting is similar in price but delivers enterprise-grade speed, better SEO, and personal support.
+                  Your website is hosted on secure cloud infrastructure with a protective caching and security layer. That keeps your site fast, stable and resilient, even during busy periods.
                 </p>
               </div>
               <div className="bg-white rounded-2xl shadow-lg p-6 md:p-8 flex flex-col">
-                <h3 className="text-xl font-semibold text-slate-900 mb-3">Instant Speed Boost</h3>
+                <h3 className="text-xl font-semibold text-slate-900 mb-3">Instant speed boost</h3>
                 <p className="text-sm md:text-base text-slate-700">
-                  Faster pages mean more visitors stay, more calls come in, and more sales happen.
+                  Faster pages help visitors stay longer, click more and contact you. A quick site feels more professional and helps improve visibility in search results.
                 </p>
               </div>
               <div className="bg-white rounded-2xl shadow-lg p-6 md:p-8 flex flex-col">
-                <h3 className="text-xl font-semibold text-slate-900 mb-3">Zero Downtime</h3>
+                <h3 className="text-xl font-semibold text-slate-900 mb-3">Zero downtime migration</h3>
                 <p className="text-sm md:text-base text-slate-700">
-                  Your site stays live while we migrate everything behind the scenes.
+                  Your site stays live while everything is moved behind the scenes. The migration is planned carefully, tested on a staging setup and then switched over when everything is ready.
                 </p>
               </div>
               <div className="bg-white rounded-2xl shadow-lg p-6 md:p-8 flex flex-col">
-                <h3 className="text-xl font-semibold text-slate-900 mb-3">No Tech Stress</h3>
+                <h3 className="text-xl font-semibold text-slate-900 mb-3">No technical stress</h3>
                 <p className="text-sm md:text-base text-slate-700">
-                  We manage the setup, security, and maintenance. You enjoy the results.
+                  You do not need to learn hosting dashboards or server settings. I handle the setup, monitoring, backups and ongoing tweaks. If you have a question you can contact me directly.
                 </p>
+              </div>
+              <div className="bg-white rounded-2xl shadow-lg p-6 md:p-8 flex flex-col md:col-span-2">
+                <h3 className="text-xl font-semibold text-slate-900 mb-3">Designed for local businesses and trades</h3>
+                <p className="text-sm md:text-base text-slate-700 mb-4">
+                  Whether you run a garage, café, consultancy, clinic or trade service, your website should work as hard as you do. This hosting is set up for small business needs, not hobby projects. You get performance, stability and a person to speak to.
+                </p>
+                <div className="mt-4">
+                  <p className="font-semibold text-slate-900 mb-2">You get:</p>
+                  <ul className="space-y-2 text-slate-700">
+                    <li className="flex items-start">
+                      <span className="text-green-600 mr-2 mt-1">•</span>
+                      <span>Faster load times</span>
+                    </li>
+                    <li className="flex items-start">
+                      <span className="text-green-600 mr-2 mt-1">•</span>
+                      <span>A stable, secure setup</span>
+                    </li>
+                    <li className="flex items-start">
+                      <span className="text-green-600 mr-2 mt-1">•</span>
+                      <span>Clear annual pricing</span>
+                    </li>
+                    <li className="flex items-start">
+                      <span className="text-green-600 mr-2 mt-1">•</span>
+                      <span>Local support from Nantwich</span>
+                    </li>
+                  </ul>
+                </div>
               </div>
             </div>
           </section>
 
-          {/* Built for Local Businesses */}
-          <section className="mb-20 bg-gradient-to-r from-blue-50 to-indigo-50 rounded-2xl p-12">
-            <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-8 text-center">
-              Built for Local Businesses & Trades
+          {/* Real World Speed Improvements */}
+          <section className="mb-20">
+            <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-6 text-center">
+              Real world speed improvements
             </h2>
-            <p className="text-xl text-gray-700 mb-8 text-center max-w-3xl mx-auto">
-              Whether you run a café, garage, or trade service, your website should work as hard as you do.
+            <p className="text-lg text-gray-700 max-w-4xl mx-auto mb-12 text-center">
+              I migrated my automotive photography site from traditional hosting to secure cloud hosting with global delivery. These are the results measured on mobile using Google Lighthouse.
             </p>
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-4xl mx-auto">
-              <div className="flex items-center space-x-3">
-                <div className="w-6 h-6 bg-green-500 rounded-full flex items-center justify-center flex-shrink-0">
-                  <svg className="w-4 h-4 text-white" fill="currentColor" viewBox="0 0 20 20">
-                    <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
-                  </svg>
+            
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-5xl mx-auto mb-8">
+              {/* Before Migration */}
+              <div className="bg-white rounded-2xl shadow-lg p-8">
+                <h3 className="text-2xl font-bold text-gray-900 mb-6">Before migration</h3>
+                <div className="space-y-4">
+                  <div>
+                    <p className="text-sm text-gray-600 mb-1">Performance score:</p>
+                    <p className="text-xl font-semibold text-red-600">Poor</p>
+                  </div>
+                  <div>
+                    <p className="text-sm text-gray-600 mb-1">Annual hosting cost:</p>
+                    <p className="text-xl font-semibold text-gray-900">£550</p>
+                  </div>
+                  <div>
+                    <p className="text-sm text-gray-600 mb-1">Load time:</p>
+                    <p className="text-xl font-semibold text-gray-900">14 seconds plus</p>
+                  </div>
                 </div>
-                <span className="text-lg text-gray-700">A faster site that shows up higher on Google</span>
               </div>
-              <div className="flex items-center space-x-3">
-                <div className="w-6 h-6 bg-green-500 rounded-full flex items-center justify-center flex-shrink-0">
-                  <svg className="w-4 h-4 text-white" fill="currentColor" viewBox="0 0 20 20">
-                    <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
-                  </svg>
+
+              {/* After Migration */}
+              <div className="bg-green-50 border-2 border-green-200 rounded-2xl shadow-lg p-8">
+                <h3 className="text-2xl font-bold text-green-900 mb-6">After migration</h3>
+                <div className="space-y-4">
+                  <div>
+                    <p className="text-sm text-green-700 mb-1">Performance score:</p>
+                    <p className="text-xl font-semibold text-green-900">99 out of 100</p>
+                  </div>
+                  <div>
+                    <p className="text-sm text-green-700 mb-1">Annual hosting cost:</p>
+                    <p className="text-xl font-semibold text-green-900">£120 per year</p>
+                  </div>
+                  <div>
+                    <p className="text-sm text-green-700 mb-1">Load time improvement:</p>
+                    <p className="text-xl font-semibold text-green-900">82 percent faster</p>
+                  </div>
                 </div>
-                <span className="text-lg text-gray-700">Lower running costs</span>
-              </div>
-              <div className="flex items-center space-x-3">
-                <div className="w-6 h-6 bg-green-500 rounded-full flex items-center justify-center flex-shrink-0">
-                  <svg className="w-4 h-4 text-white" fill="currentColor" viewBox="0 0 20 20">
-                    <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
-                  </svg>
-                </div>
-                <span className="text-lg text-gray-700">A trustworthy setup that never locks you in</span>
-              </div>
-              <div className="flex items-center space-x-3">
-                <div className="w-6 h-6 bg-green-500 rounded-full flex items-center justify-center flex-shrink-0">
-                  <svg className="w-4 h-4 text-white" fill="currentColor" viewBox="0 0 20 20">
-                    <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
-                  </svg>
-                </div>
-                <span className="text-lg text-gray-700">More leads from people who actually find you online</span>
               </div>
             </div>
+
+            <p className="text-lg text-gray-700 max-w-4xl mx-auto text-center">
+              These are real results from a live site. Fast hosting does not just feel better. It supports better search visibility and a smoother experience for visitors.
+            </p>
           </section>
 
-          {/* Real Results */}
+          {/* Pricing Section */}
           <section className="mb-20">
-            <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-8 text-center">
-              Real Results
+            <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-6 text-center">
+              Website hosting pricing
             </h2>
-            <div className="bg-white rounded-2xl p-8 shadow-lg max-w-4xl mx-auto text-center">
-              <blockquote className="text-xl text-gray-700 leading-relaxed italic">
-                "I cut hosting costs by over 80% and dropped our page load time from 14 seconds to under 2.
-                Our Google ranking jumped almost immediately. Now I'm focusing on getting the same lift in Google results."
-              </blockquote>
-            </div>
-          </section>
+            <p className="text-lg text-gray-700 max-w-4xl mx-auto mb-12 text-center">
+              Hosting is priced in a simple way. You pay one annual fee for a high quality setup and support, with a clear quote if migration work is needed.
+            </p>
 
-          {/* Before and After Performance */}
-          <PerformanceComparison
-            title="Real-World Speed Improvements"
-            subtitle="I migrated my automotive photography site from traditional hosting to secure cloud hosting with global delivery. Here's how the numbers changed on mobile, measured with Google Lighthouse."
-            beforeImage="/images/services/Web Hosting And Migration/before-hosting-performance.webp"
-            afterImage="/images/services/Web Hosting And Migration/pagespeed-aws-migration-desktop.webp"
-            beforeImageAlt="Website performance before secure cloud migration showing poor performance scores and slow load times"
-            afterImageAlt="Google Lighthouse performance score of 99 after secure cloud migration showing 1.1s load time"
-            beforeStats={{
-              performanceScore: "Poor",
-              annualCost: "£550",
-              loadTime: "14+ seconds"
-            }}
-            afterStats={{
-              performanceScore: "99/100",
-              annualCost: "£108",
-              loadTimeImprovement: "82% Faster"
-            }}
-            resultText="From 14 seconds to under 2 seconds load time"
-          />
-
-          {/* Hosting Pricing */}
-          <section className="mb-16">
-            <div className="max-w-3xl mx-auto bg-white rounded-2xl shadow-sm border border-gray-200 p-6">
-              <h2 className="text-2xl font-bold text-gray-900 mb-3">
-                Hosting pricing
-              </h2>
-              <p className="text-gray-700 mb-1">
-                <strong>Website hosting:</strong> £15 per month or £120 per year
-              </p>
-              <p className="text-gray-700 mb-3">
-                <strong>Migration:</strong> free tailored quote based on your current setup
-              </p>
-              <p className="text-sm text-gray-500 mt-3">
-                Full details are available on the{" "}
-                <Link href="/pricing" className="text-pink-600 hover:text-pink-700 underline">
-                  pricing page
-                </Link>.
-              </p>
-            </div>
-          </section>
-
-          {/* Transparent Pricing */}
-          <section className="mb-20">
-            <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-12 text-center">
-              Cost Comparison
-            </h2>
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-5xl mx-auto">
-              <div className="bg-gray-50 border-2 border-gray-200 rounded-xl p-8">
-                <h3 className="text-2xl font-bold text-gray-800 mb-4">Wix Light: £9/month (£108/year)</h3>
+            <div className="max-w-4xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-8">
+              {/* Hosting */}
+              <div className="bg-white rounded-2xl shadow-lg p-8">
+                <h3 className="text-2xl font-bold text-gray-900 mb-6">Hosting</h3>
                 <ul className="space-y-3 text-gray-700">
-                  <li className="flex items-center space-x-2">
-                    <span className="w-2 h-2 bg-gray-500 rounded-full"></span>
-                    <span>Shared servers with limited control</span>
+                  <li className="flex items-start">
+                    <span className="text-green-600 mr-2 mt-1">•</span>
+                    <span>£15 per month or £120 per year when paid annually</span>
                   </li>
-                  <li className="flex items-center space-x-2">
-                    <span className="w-2 h-2 bg-gray-500 rounded-full"></span>
-                    <span>Slower caching and SEO performance</span>
+                  <li className="flex items-start">
+                    <span className="text-green-600 mr-2 mt-1">•</span>
+                    <span>Secure cloud hosting with global delivery path</span>
                   </li>
-                  <li className="flex items-center space-x-2">
-                    <span className="w-2 h-2 bg-gray-500 rounded-full"></span>
-                    <span>Support queue wait times</span>
+                  <li className="flex items-start">
+                    <span className="text-green-600 mr-2 mt-1">•</span>
+                    <span>Automatic backups included</span>
+                  </li>
+                  <li className="flex items-start">
+                    <span className="text-green-600 mr-2 mt-1">•</span>
+                    <span>Monitoring and routine updates</span>
+                  </li>
+                  <li className="flex items-start">
+                    <span className="text-green-600 mr-2 mt-1">•</span>
+                    <span>Personal support, managed locally in Cheshire</span>
                   </li>
                 </ul>
               </div>
-              <div className="bg-green-50 border-2 border-green-200 rounded-xl p-8">
-                <h3 className="text-2xl font-bold text-green-800 mb-4">Vivid Media (secure cloud): £108/year</h3>
-                <ul className="space-y-3 text-green-700">
-                  <li className="flex items-center space-x-2">
-                    <span className="w-2 h-2 bg-green-500 rounded-full"></span>
-                    <span>secure cloud infrastructure + protective caching and security layer (enterprise-grade)</span>
-                  </li>
-                  <li className="flex items-center space-x-2">
-                    <span className="w-2 h-2 bg-green-500 rounded-full"></span>
-                    <span>82% faster load times, better Google rankings</span>
-                  </li>
-                  <li className="flex items-center space-x-2">
-                    <span className="w-2 h-2 bg-green-500 rounded-full"></span>
-                    <span>Direct access to me, managed locally in Cheshire</span>
-                  </li>
-                </ul>
+
+              {/* Migration */}
+              <div className="bg-white rounded-2xl shadow-lg p-8">
+                <h3 className="text-2xl font-bold text-gray-900 mb-6">Migration</h3>
+                <p className="text-gray-700 mb-4">
+                  Migration work is quoted based on your current setup. This includes a review of your existing site, a migration plan, staging and final cutover with zero downtime. You will always receive a clear written quote before any work starts.
+                </p>
+                <p className="text-sm text-gray-600 mt-6 p-4 bg-gray-50 rounded-lg">
+                  There are no surprise charges and no long contracts. You stay in control of your website and its running costs.
+                </p>
               </div>
             </div>
           </section>
 
           {/* FAQs */}
           <section className="mb-20">
-            <h2 className="text-3xl font-bold text-gray-900 mb-8 text-center">Frequently Asked Questions</h2>
-            <div className="max-w-3xl mx-auto space-y-4">
-              <details className="bg-white rounded-lg p-6 shadow-sm border border-gray-200">
-                <summary className="font-semibold cursor-pointer text-lg">
-                  How does your hosting compare to Wix or other DIY builders?
-                </summary>
-                <p className="mt-3 text-gray-700">
-                  Wix's Light plan costs around £9 per month (£108 per year). It's fine for small personal sites, but it runs on shared servers with less control over caching, speed, and SEO. My hosting uses secure cloud infrastructure and protective caching and security layer — the same systems used by major global brands, but I manage everything locally here in Cheshire. That means your website loads faster, performs better in Google search, and you always speak directly to me instead of waiting in a support queue.
+            <h2 className="text-3xl font-bold text-gray-900 mb-8 text-center">Frequently asked questions</h2>
+            <div className="max-w-3xl mx-auto space-y-6">
+              <div className="bg-white rounded-lg p-6 shadow-sm border border-gray-200">
+                <h3 className="font-semibold text-lg mb-3">How much does hosting cost?</h3>
+                <p className="text-gray-700">
+                  Hosting is £15 per month or £120 per year when paid annually. This includes hosting, backups, and support. Migration work is quoted separately depending on your setup.
                 </p>
-              </details>
+              </div>
 
-              <details className="bg-white rounded-lg p-6 shadow-sm border border-gray-200">
-                <summary className="font-semibold cursor-pointer text-lg">
-                  Will my website be faster?
-                </summary>
-                <p className="mt-3 text-gray-700">
-                  Yes, secure cloud hosting typically makes websites 82% faster. Faster pages mean more visitors stay, more calls come in, and better Google rankings.
+              <div className="bg-white rounded-lg p-6 shadow-sm border border-gray-200">
+                <h3 className="font-semibold text-lg mb-3">Will my website be faster?</h3>
+                <p className="text-gray-700">
+                  Yes. Modern cloud hosting with proper caching usually improves load times significantly. Faster pages help people stay longer and contact you with more confidence.
                 </p>
-              </details>
+              </div>
 
-              <details className="bg-white rounded-lg p-6 shadow-sm border border-gray-200">
-                <summary className="font-semibold cursor-pointer text-lg">
-                  Is there any downtime during migration?
-                </summary>
-                <p className="mt-3 text-gray-700">
-                  No, your site stays live while we migrate everything behind the scenes. The migration process has zero downtime.
+              <div className="bg-white rounded-lg p-6 shadow-sm border border-gray-200">
+                <h3 className="font-semibold text-lg mb-3">Is there any downtime during migration?</h3>
+                <p className="text-gray-700">
+                  No. Your current site stays live while the new environment is prepared. The switch happens only when everything is ready.
                 </p>
-              </details>
+              </div>
 
-              <details className="bg-white rounded-lg p-6 shadow-sm border border-gray-200">
-                <summary className="font-semibold cursor-pointer text-lg">
-                  Do I need technical knowledge?
-                </summary>
-                <p className="mt-3 text-gray-700">
-                  Not at all. We manage the setup, security, and maintenance. You just enjoy the results - faster site, lower costs, better performance.
+              <div className="bg-white rounded-lg p-6 shadow-sm border border-gray-200">
+                <h3 className="font-semibold text-lg mb-3">Do I need to understand hosting or servers?</h3>
+                <p className="text-gray-700">
+                  No. You do not need technical knowledge. I manage the hosting, security, and setup and keep you updated in simple terms.
                 </p>
-              </details>
-            </div>
-          </section>
+              </div>
 
-          {/* Hosting Pricing */}
-          <section className="py-12">
-            <div className="max-w-5xl mx-auto px-4">
-              <div className="bg-gradient-to-br from-pink-50 to-purple-50 rounded-3xl p-6 md:p-8 shadow-sm">
-                <h2 className="text-2xl md:text-3xl font-bold text-gray-900 mb-6 text-center">
-                  Website Hosting Pricing
-                </h2>
-
-                <div className="max-w-2xl mx-auto">
-                  <div className="bg-white rounded-2xl p-6 shadow-sm text-center">
-                    <h3 className="text-xl font-bold text-gray-900 mb-3">
-                      secure cloud hosting with global delivery Hosting
-                    </h3>
-                    <p className="text-3xl font-bold text-pink-600 mb-2">
-                      £15 <span className="text-base font-normal text-gray-600">per month</span>
-                    </p>
-                    <p className="text-lg text-gray-700 mb-4">
-                      or £120 per year
-                    </p>
-                    <ul className="space-y-2 text-sm text-gray-700 text-left max-w-md mx-auto">
-                      <li className="flex items-start">
-                        <span className="text-green-600 mr-2">✓</span>
-                        Enterprise-grade secure cloud infrastructure + protective caching and security layer
-                      </li>
-                      <li className="flex items-start">
-                        <span className="text-green-600 mr-2">✓</span>
-                        82% faster load times vs traditional hosting
-                      </li>
-                      <li className="flex items-start">
-                        <span className="text-green-600 mr-2">✓</span>
-                        Zero downtime migration
-                      </li>
-                      <li className="flex items-start">
-                        <span className="text-green-600 mr-2">✓</span>
-                        Automatic backups included
-                      </li>
-                      <li className="flex items-start">
-                        <span className="text-green-600 mr-2">✓</span>
-                        Personal support, managed locally in Cheshire
-                      </li>
-                    </ul>
-                  </div>
-                </div>
-
-                <div className="text-center mt-6">
-                  <p className="text-sm text-gray-600">
-                    Professional migration service included. No hidden fees.
-                  </p>
-                  <p className="text-sm text-gray-500 mt-2">
-                    Full details on the{" "}
-                    <Link href="/pricing" className="text-pink-600 hover:text-pink-700 underline">
-                      pricing page
-                    </Link>.
-                  </p>
-                </div>
+              <div className="bg-white rounded-lg p-6 shadow-sm border border-gray-200">
+                <h3 className="font-semibold text-lg mb-3">What happens if something goes wrong?</h3>
+                <p className="text-gray-700">
+                  You contact me directly. I keep backups in place and resolve issues quickly without sending you through support queues.
+                </p>
               </div>
             </div>
           </section>
 
-          {/* CTA */}
-          <section className="text-center bg-gradient-to-r from-pink-50 to-purple-50 rounded-2xl p-12 mx-4">
+          {/* Final CTA Block */}
+          <section className="text-center bg-gradient-to-r from-pink-50 to-purple-50 rounded-2xl p-12 mb-20">
             <h2 className="text-3xl md:text-4xl font-bold text-slate-900 mb-4">
-              Ready for Faster, Smarter Hosting?
+              Ready for faster, more stable hosting
             </h2>
             <p className="text-base md:text-lg text-slate-700 mb-8 max-w-2xl mx-auto">
-              Get a free migration quote today. I will assess your current setup, handle the migration,
-              and have your new site running faster — all with zero downtime.
+              If your site feels slow or unreliable, or you are not sure what you are paying for, it might be time to move to a more modern setup. I can review your current website, explain your options and handle the migration for you.
             </p>
-            <Link
-              href="/contact"
-              className="inline-flex items-center justify-center px-8 py-3 rounded-full text-base md:text-lg font-semibold bg-brand-pink text-white shadow-lg hover:bg-brand-pink2 hover:shadow-xl transition"
-            >
-              Get My Free Website Hosting Quote
-              <svg
-                className="ml-2 w-5 h-5"
-                viewBox="0 0 24 24"
-                fill="none"
-                stroke="currentColor"
+            <div className="flex flex-col sm:flex-row items-center justify-center gap-4 mb-4">
+              <a
+                href="tel:+447586378502"
+                className="inline-flex items-center justify-center px-8 py-3 rounded-full text-base md:text-lg font-semibold bg-brand-pink text-white shadow-lg hover:bg-brand-pink2 hover:shadow-xl transition"
               >
-                <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  strokeWidth={2}
-                  d="M9 5l7 7-7 7"
-                />
-              </svg>
-            </Link>
-            <p className="mt-4 text-slate-700">
-              No tech talk. Just honest savings and better performance.
+                Call Joe
+              </a>
+              <a
+                href="#contact"
+                className="inline-flex items-center justify-center px-8 py-3 rounded-full text-base md:text-lg font-semibold bg-slate-900 text-white/90 hover:bg-black transition shadow-md hover:shadow-lg"
+              >
+                Get My Free Website Hosting Quote
+              </a>
+            </div>
+            <p className="text-slate-700">
+              No technical jargon. Just clear advice and a realistic plan for your website.
             </p>
           </section>
 
-          {/* Service Inquiry Form */}
+          {/* Service Enquiry Form */}
           <section id="contact">
             <ServiceInquiryForm
               serviceName="Website Hosting & Migration"

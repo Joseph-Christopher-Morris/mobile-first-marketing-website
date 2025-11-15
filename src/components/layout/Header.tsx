@@ -49,7 +49,7 @@ export function Header({ pageTitle: _pageTitle }: HeaderProps) {
               aria-label='Go to homepage'
             >
               <Image
-                src='/images/brand/VMC.png'
+                src='/images/brand/VMC-nav.webp'
                 alt='Vivid Media Cheshire (VMC)'
                 width={116}
                 height={44}
@@ -74,7 +74,7 @@ export function Header({ pageTitle: _pageTitle }: HeaderProps) {
                   style={
                     pathname === item.href
                       ? {
-                          color: '#F5276F',
+                          colour: '#F5276F',
                           borderBottomColor: '#F5276F',
                         }
                       : {}

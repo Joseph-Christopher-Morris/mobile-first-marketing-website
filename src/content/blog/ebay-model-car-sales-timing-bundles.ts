@@ -110,7 +110,7 @@ const post: BlogPost = {
     'model-cars',
     'ecommerce-strategy',
     'bundling',
-    'conversion-optimization',
+    'conversion-optimisation',
   ],
   image: '/images/blog/240708-Model_Car_Collection-21 (1).jpg',
   readTime: 6,

@@ -158,7 +158,7 @@ export default function HeroWithCharts({
                 e.preventDefault();
                 const contactForm = document.querySelector('#contact');
                 if (contactForm) {
-                  contactForm.scrollIntoView({ behavior: 'smooth' });
+                  contactForm.scrollIntoView({ behaviour: 'smooth' });
                 }
                 if (typeof window !== 'undefined' && window.gtag) {
                   window.gtag('event', 'cta_form_click', {

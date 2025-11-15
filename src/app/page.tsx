@@ -144,7 +144,7 @@ export default async function HomePage() {
                 <Link
                   href='/services/ad-campaigns'
                   className='inline-flex items-center gap-2 text-brand-pink font-semibold text-sm md:text-base hover:text-brand-pink2 mt-auto'
-                  aria-label='Learn more about strategic advertising campaigns and ROI optimization'
+                  aria-label='Learn more about strategic advertising campaigns and ROI optimisation'
                 >
                   Learn more →
                 </Link>
@@ -359,11 +359,11 @@ export default async function HomePage() {
             },
             {
               question: "Do you offer website design services?",
-              answer: "Yes, I create mobile-first websites from £300. All my sites are built on secure cloud infrastructure for maximum performance, include SEO optimization, and are ready for Google Ads campaigns. I focus on designs that convert visitors into customers."
+              answer: "Yes, I create mobile-first websites from £300. All my sites are built on secure cloud infrastructure for maximum performance, include SEO optimisation, and are ready for Google Ads campaigns. I focus on designs that convert visitors into customers."
             },
             {
               question: "How do your Google Ads campaigns work?",
-              answer: "I manage Google Ads campaigns from £150 per month. This includes keyword research, ad creation, landing page optimization, and monthly performance reports. I focus on ROI and only recommend campaigns that make business sense for your budget."
+              answer: "I manage Google Ads campaigns from £150 per month. This includes keyword research, ad creation, landing page optimisation, and monthly performance reports. I focus on ROI and only recommend campaigns that make business sense for your budget."
             },
             {
               question: "What areas do you serve?",

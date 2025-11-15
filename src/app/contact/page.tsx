@@ -6,7 +6,7 @@ import { ContactLink } from '@/components/sections/ContactPageClient';
 
 export const metadata: Metadata = {
   title:
-    'Contact Vivid Auto Photography | Professional Automotive Photography Services',
+    'Vivid Media Cheshire | Performance Marketer For SMEs',
   description:
     'Get in touch about professional automotive photography, data analytics, or strategic advertising campaigns in Nantwich & Cheshire. Free consultation available. Response within one business day (UK time).',
   keywords: [

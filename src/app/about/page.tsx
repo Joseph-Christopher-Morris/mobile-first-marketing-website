@@ -93,7 +93,7 @@ export default function AboutPage() {
                   <div className='relative h-64 w-full'>
                     <Image
                       src='/images/about/PXL_20240222_004124044~2.webp'
-                      alt='Digital marketing workspace showing data analysis and campaign optimization tools'
+                      alt='Digital marketing workspace showing data analysis and campaign optimisation tools'
                       fill
                       className='object-cover rounded-lg shadow-lg'
                     />
