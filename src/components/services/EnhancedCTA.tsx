@@ -25,25 +25,21 @@ const defaultVariants: CTAVariant[] = [
   {
     id: 'book-photoshoot',
     text: 'Book Your Photoshoot →',
-    urgency: 'Limited availability this month',
-    availability: '3 slots remaining'
+    availability: 'Free consultation included'
   },
   {
     id: 'schedule-session',
     text: 'Schedule Your Session →',
-    urgency: 'Book now for priority scheduling',
     availability: 'Next available: This week'
   },
   {
     id: 'get-started',
     text: 'Get Started Today →',
-    urgency: 'Professional photography available',
     availability: 'Same-week booking available'
   },
   {
     id: 'contact-photographer',
     text: 'Contact Photographer →',
-    urgency: 'Published photographer available',
     availability: 'Free consultation included'
   }
 ];
