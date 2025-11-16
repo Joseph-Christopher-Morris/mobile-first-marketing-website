@@ -14,7 +14,7 @@ benefits:
   - 'Data-driven decision making'
   - 'Improved ROI tracking'
   - 'Custom reporting solutions'
-  - 'Ongoing optimization recommendations'
+  - 'Ongoing optimisation recommendations'
 pricing:
   startingPrice: 499
   currency: 'USD'
@@ -36,7 +36,7 @@ and actionable insights.
 ### Web Analytics Setup
 
 Complete Google Analytics and other tracking platform setup to monitor your
-website performance and user behavior.
+website performance and user behaviour.
 
 ### Custom Dashboard Creation
 
@@ -59,7 +59,7 @@ your business story.
   properties
 - **Custom Reporting**: Monthly reports tailored to your business goals
 - **Actionable Insights**: Clear recommendations based on data analysis
-- **Ongoing Support**: Continuous monitoring and optimization suggestions
+- **Ongoing Support**: Continuous monitoring and optimisation suggestions
 
 ## Industries We Serve
 

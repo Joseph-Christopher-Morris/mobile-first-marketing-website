@@ -30,7 +30,7 @@ Though I had **416 assets** approved on Wirestock, the time it took for photos t
 
 ## ❌ Why I Ditched Wirestock for Direct Sales
 
-I decided to sign up directly for **Adobe Stock**, **Shutterstock**, **iStock**, and **Alamy** to sell my photos to people who wanted to license my assets for various purposes.
+I decided to sign up directly for **Adobe Stock**, **Shutterstock**, **iStock**, and **Alamy** to sell my photos to people who wanted to licence my assets for various purposes.
 
 I had a photography tutor who acted as a coach, mentor, and sounding board whenever I had questions about:
 

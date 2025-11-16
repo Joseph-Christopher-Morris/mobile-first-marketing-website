@@ -1,0 +1,88 @@
+.
+
+----------
+
+# 🇬🇧 UK English Normalisation – Regex Rules for Kiro
+
+**Goal:**  
+Convert remaining **US English** spellings and phrases in Vivid Media Cheshire content and Google Ads landing pages to **UK English**, while avoiding over-aggressive “z → s” conversions.
+
+Apply these rules across:
+
+-   All `page.tsx` files (Services, Hosting, Design, Analytics, Photography, Ads)
+    
+-   Shared layout components and SEO metadata
+    
+-   Any JSON/MD content blocks used for copy
+    
+
+----------
+
+## 🔧 Notes for Implementation
+
+-   All regexes below assume **JavaScript/TypeScript-style** syntax.
+    
+-   Use the **`gi`** flags unless otherwise noted (global, case-insensitive).
+    
+-   Replacements are **literal UK spellings** – no regex in the replacement string.
+    
+-   Apply rules in the order listed to avoid flip-flopping spellings.
+    
+
+----------
+
+## 1. Optimise / Optimisation Family
+
+`// optimize → optimise  pattern: /\boptimize\b/gi  replaceWith: 'optimise'  // optimized → optimised  pattern: /\boptimized\b/gi  replaceWith: 'optimised'  // optimizing → optimising  pattern: /\boptimizing\b/gi  replaceWith: 'optimising'  // optimization → optimisation  pattern: /\boptimization\b/gi  replaceWith: 'optimisation'` 
+
+Common phrases to catch on landing pages:
+
+`// speed optimization → speed optimisation  pattern: /\bspeed optimization\b/gi  replaceWith: 'speed optimisation'  // performance optimization → performance optimisation  pattern: /\bperformance optimization\b/gi  replaceWith: 'performance optimisation'` 
+
+----------
+
+## 2. Analyse / Analysis Family
+
+`// analyze → analyse  pattern: /\banalyze\b/gi  replaceWith: 'analyse'  // analyzed → analysed  pattern: /\banalyzed\b/gi  replaceWith: 'analysed'  // analyzing → analysing  pattern: /\banalyzing\b/gi  replaceWith: 'analysing'` 
+
+----------
+
+## 3. Customise / Personalise
+
+`// customize → customise  pattern: /\bcustomize\b/gi  replaceWith: 'customise'  // customized → customised  pattern: /\bcustomized\b/gi  replaceWith: 'customised'  // customizing → customising  pattern: /\bcustomizing\b/gi  replaceWith: 'customising'  // customization → customisation  pattern: /\bcustomization\b/gi  replaceWith: 'customisation'  // personalize → personalise  pattern: /\bpersonalize\b/gi  replaceWith: 'personalise'  // personalized → personalised  pattern: /\bpersonalized\b/gi  replaceWith: 'personalised'` 
+
+----------
+
+## 4. Behaviour / Colour / Centre / Favourite
+
+`// color → colour  pattern: /\bcolor\b/gi  replaceWith: 'colour'  // behavior → behaviour  pattern: /\bbehavior\b/gi  replaceWith: 'behaviour'  // center (as noun) → centre  pattern: /\bcenter\b/gi  replaceWith: 'centre'  // favorite → favourite  pattern: /\bfavorite\b/gi  replaceWith: 'favourite'` 
+
+> ⚠️ If you use “center” in CSS classes (e.g. `text-center`), **exclude code blocks** from replacement or run these only over content strings, not class names.
+
+----------
+
+## 5. Organisation / Licence / Defence / Enquiries
+
+`// organize → organise  pattern: /\borganize\b/gi  replaceWith: 'organise'  // organized → organised  pattern: /\borganized\b/gi  replaceWith: 'organised'  // organizing → organising  pattern: /\borganizing\b/gi  replaceWith: 'organising'  // license (noun) → licence  pattern: /\blicense\b/gi  replaceWith: 'licence'  // defense → defence  pattern: /\bdefense\b/gi  replaceWith: 'defence'  // inquiry → enquiry  pattern: /\binquiry\b/gi  replaceWith: 'enquiry'  // inquiries → enquiries  pattern: /\binquiries\b/gi  replaceWith: 'enquiries'` 
+
+----------
+
+## 6. Hosting & Website Copy Phrases (Contextual)
+
+These are more contextual to your hosting/marketing pages.
+
+`// No tech stress. → No technical stress.  pattern: /\bNo tech stress\./gi  replaceWith: 'No technical stress.'  // Mobile first → Mobile-first  pattern: /\bMobile first\b/gi  replaceWith: 'Mobile-first'  // Performance focused → Performance-focused  pattern: /\bPerformance focused\b/gi  replaceWith: 'Performance-focused'  // SEO Ready → SEO-ready  pattern: /\bSEO Ready\b/gi  replaceWith: 'SEO-ready'` 
+
+----------
+
+## 7. Quick Sanity Check Regex
+
+After running the replacements above, you can run this **one-off scan** to catch any leftover US variants that weren’t explicitly listed:
+
+`// Scan only – do NOT auto-replace with this.  // Use it to surface any remaining US spellings.  pattern: /\b(optimi[sz]e(?:d|r|s|)?|optimi[sz]ation|analy[sz]e(?:d|s|r|)?|colo?r|center|favor(?:ite|)|defen[cs]e|licen[cs]e|organize(?:d|s|r|)?|inquir(?:y|ies))\b/gi` 
+
+Manually review any hits and either:
+
+-   Add a specific rule above, or
+    
+-   Intentionally ignore (e.g. brand names).

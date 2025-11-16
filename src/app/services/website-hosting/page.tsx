@@ -30,9 +30,6 @@ export default function WebsiteHostingPage() {
                 >
                   Get Hosting Quote
                 </EnhancedCTA>
-                <p className="text-sm text-gray-500 mt-4">
-                  Free consultation included
-                </p>
               </div>
               <div className="relative">
                 <Image
@@ -224,10 +221,46 @@ export default function WebsiteHostingPage() {
             <div className="space-y-6">
               <div className="bg-gray-50 rounded-lg p-6 shadow-sm">
                 <h3 className="text-lg font-semibold text-gray-900 mb-2">
+                  How much does hosting cost?
+                </h3>
+                <p className="text-gray-700">
+                  Website hosting is £15 per month or £120 per year when paid annually. This includes secure hosting, monitoring, backups and personal support.
+                </p>
+              </div>
+
+              <div className="bg-gray-50 rounded-lg p-6 shadow-sm">
+                <h3 className="text-lg font-semibold text-gray-900 mb-2">
                   Will this help my Google Ads or SEO?
                 </h3>
                 <p className="text-gray-700">
-                  Yes. Faster load times and a clean setup usually improve quality scores for ads and help your site perform better in organic search, which means better value from your marketing spend.
+                  Yes. Faster load times and a clean setup normally improve quality scores for Google Ads and help your site perform better in organic search, which means better value from your marketing spend.
+                </p>
+              </div>
+
+              <div className="bg-gray-50 rounded-lg p-6 shadow-sm">
+                <h3 className="text-lg font-semibold text-gray-900 mb-2">
+                  Do I need to understand hosting or servers?
+                </h3>
+                <p className="text-gray-700">
+                  No. I handle the technical setup, monitoring and ongoing care, and explain everything in clear, straightforward language so you never need to deal with hosting dashboards or server settings.
+                </p>
+              </div>
+
+              <div className="bg-gray-50 rounded-lg p-6 shadow-sm">
+                <h3 className="text-lg font-semibold text-gray-900 mb-2">
+                  What happens if something goes wrong with my site?
+                </h3>
+                <p className="text-gray-700">
+                  You contact me directly. I investigate the issue, restore from a backup if required and explain what happened in plain English. The focus is getting you back online quickly and preventing repeat issues.
+                </p>
+              </div>
+
+              <div className="bg-gray-50 rounded-lg p-6 shadow-sm">
+                <h3 className="text-lg font-semibold text-gray-900 mb-2">
+                  Can you host a site that is already built?
+                </h3>
+                <p className="text-gray-700">
+                  Yes. I can review your existing website and check how it is built. If a direct migration is possible, I will move it safely. If a rebuild is better long term, I will explain why and provide a clear written plan before any work begins.
                 </p>
               </div>
             </div>
