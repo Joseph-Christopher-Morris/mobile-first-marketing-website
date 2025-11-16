@@ -91,7 +91,7 @@ My trip to Sydney produced architectural and cultural photos that performed well
 Exploring my iStock data through **DeepMeta 4** taught me how to:
 
 - **Double down** on photos that sell well  
-- **Segment photos** into categories and license types  
+- **Segment photos** into categories and licence types  
 - **Discover where and why** my photos get used (via Google Image Search)  
 - **Read charts** to identify which months drove the most revenue — and why  
 

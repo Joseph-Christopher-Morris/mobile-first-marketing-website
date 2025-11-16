@@ -9,7 +9,7 @@ features:
   - 'Google Ads Management'
   - 'Social Media Advertising'
   - 'Campaign Strategy Development'
-  - 'Performance Optimization'
+  - 'Performance optimisation'
 benefits:
   - 'Increased brand visibility'
   - 'Higher conversion rates'
@@ -28,7 +28,7 @@ metaDescription:
 # Strategic Ad Campaigns
 
 Maximize your marketing impact with our comprehensive advertising campaign
-services. We create, manage, and optimize campaigns across multiple platforms to
+services. We create, manage, and optimise campaigns across multiple platforms to
 deliver measurable results for your business.
 
 ## Our Campaign Services
@@ -36,7 +36,7 @@ deliver measurable results for your business.
 ### Google Ads Management
 
 Complete Google Ads setup and management, including keyword research, ad
-creation, and ongoing optimization for maximum ROI.
+creation, and ongoing optimisation for maximum ROI.
 
 ### Social Media Advertising
 
@@ -48,9 +48,9 @@ platforms to reach your ideal customers.
 Custom advertising strategies tailored to your business goals, target audience,
 and budget requirements.
 
-### Performance Optimization
+### Performance optimisation
 
-Continuous monitoring and optimization to improve campaign performance and
+Continuous monitoring and optimisation to improve campaign performance and
 reduce cost per acquisition.
 
 ## Platform Expertise
@@ -65,7 +65,7 @@ reduce cost per acquisition.
 1. **Strategy Development**: Understanding your goals and target audience
 2. **Campaign Setup**: Creating compelling ads and targeting parameters
 3. **Launch & Monitor**: Deploying campaigns and tracking performance
-4. **Optimize & Scale**: Continuous improvement and scaling successful campaigns
+4. **optimise & Scale**: Continuous improvement and scaling successful campaigns
 
 ## Success Metrics
 

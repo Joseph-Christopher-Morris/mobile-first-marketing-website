@@ -89,7 +89,7 @@ When building a stock photography portfolio, quality is crucial. Each image shou
 To succeed in stock photography, consider these strategies:
 
 - **Research Trends:** Stay updated on market trends. Identify what types of images are in demand and create content accordingly.  
-- **Optimize Keywords:** Use relevant keywords to improve searchability. Think like a buyer when selecting keywords.  
+- **optimise Keywords:** Use relevant keywords to improve searchability. Think like a buyer when selecting keywords.  
 - **Engage with the Community:** Join stock photography forums and social media groups. Networking can provide insights and support.  
 - **Diversify Your Portfolio:** Offer a range of subjects. This increases your chances of sales across different markets.  
 - **Regularly Update Your Portfolio:** Keep your portfolio fresh by adding new images regularly. This signals to platforms that you are an active contributor.

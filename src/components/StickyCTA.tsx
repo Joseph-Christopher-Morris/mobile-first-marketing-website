@@ -40,6 +40,7 @@ export default function StickyCTA() {
 
   const getPageType = () => {
     if (pathname.startsWith("/services/website-design")) return "website_design";
+    if (pathname.startsWith("/services/website-hosting")) return "website_hosting";
     if (pathname.startsWith("/services/hosting")) return "website_hosting";
     if (pathname.startsWith("/services/ad-campaigns")) return "ad_campaigns";
     if (pathname.startsWith("/services/analytics")) return "analytics";
@@ -55,6 +56,22 @@ export default function StickyCTA() {
   };
 
   const pageType = getPageType();
+
+  const primaryLabel = {
+    home: "Call About Your Project",
+    services: "Call About Your Project",
+    website_design: "Call about Website Design",
+    website_hosting: "Call about Website Hosting",
+    ad_campaigns: "Call About Ad Campaigns",
+    analytics: "Call about Analytics",
+    photography: "Call about Photography",
+    pricing: "Call for a Quote",
+    blog: "Call Joe",
+    about: "Call Joe",
+    contact: "Call Joe",
+    thank_you: "Call Joe",
+    other: "Call Joe",
+  }[pageType];
 
   const secondaryLabel = {
     home: "Book Your Consultation",
@@ -160,10 +177,10 @@ export default function StickyCTA() {
             href="tel:+447586378502"
             onClick={handleCallClick}
             className="flex items-center justify-center gap-2 bg-[#FF2B6A] text-white px-6 py-3 rounded-lg font-semibold text-sm min-h-[48px] hover:bg-[#E02560] transition-colors"
-            aria-label="Call now to get your free, personalised ad plan"
+            aria-label={`Call Joe about ${pageType.replace('_', ' ')}`}
           >
             <Phone className="w-5 h-5" />
-            Call for a Free Ad Plan
+            {primaryLabel}
           </a>
           <button
             onClick={handleFormClick}
@@ -188,10 +205,10 @@ export default function StickyCTA() {
                 href="tel:+447586378502"
                 onClick={handleCallClick}
                 className="flex items-center gap-2 bg-[#FF2B6A] text-white px-6 py-3 rounded-lg font-semibold text-sm min-h-[44px] hover:bg-[#E02560] transition-colors shadow-md"
-                aria-label="Call now to get your free, personalised ad plan"
+                aria-label={`Call Joe about ${pageType.replace('_', ' ')}`}
               >
                 <Phone className="w-5 h-5" />
-                Call for a Free Ad Plan
+                {primaryLabel}
               </a>
               <button
                 onClick={handleFormClick}
