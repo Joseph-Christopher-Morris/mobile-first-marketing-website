@@ -30,7 +30,7 @@ Use shortened versions:
 ## 6. Mobile Speed Requirements
 - Lazy-load all below-the-fold images.
 - Optimise all images as WebP.
-- LCP under 2 seconds on 4G.
+- LCP under 1.8 seconds on 4G.
 
 ## 7. Mobile Content Hierarchy
 1. Hero heading  
