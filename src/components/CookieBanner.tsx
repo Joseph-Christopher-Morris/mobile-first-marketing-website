@@ -30,6 +30,12 @@ export default function CookieBanner() {
           ad_storage: "granted"
         });
       }
+      
+      // Ensure Clarity is initialized
+      if (typeof (window as any).clarity === "function") {
+        (window as any).clarity("consent");
+      }
+      
       localStorage.setItem("cookieConsent", "accepted");
     }
 

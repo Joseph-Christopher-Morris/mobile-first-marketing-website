@@ -138,7 +138,7 @@ export default function ServicesPage() {
             acceptedAnswer: {
               "@type": "Answer",
               text:
-                "Packages are flexible and based on your goals. A basic site starts from a few hundred pounds, while complete design, analytics, and marketing projects are priced to match your needs.",
+                "Packages are flexible and based on your goals. A basic site starts from £300, while complete design, analytics, and marketing projects are priced to match your needs. You'll always receive a precise quote before any work begins.",
             },
           },
           {
@@ -369,8 +369,7 @@ export default function ServicesPage() {
                   How much does it cost to get started?
                 </summary>
                 <p className="mt-3 text-gray-700">
-                  Packages are flexible and based on your goals. A basic site starts from a few hundred
-                  pounds, while complete design, analytics, and marketing projects are priced to match
+                  Packages are flexible and based on your goals. A basic site starts from £300, while complete design, analytics, and marketing projects are priced to match
                   your needs. You’ll always receive a precise quote before any work begins.
                 </p>
               </details>

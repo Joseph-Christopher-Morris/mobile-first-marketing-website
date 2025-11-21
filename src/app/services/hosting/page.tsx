@@ -20,12 +20,12 @@ export const metadata: Metadata = {
     "Nantwich web hosting",
     "transparent hosting pricing",
   ],
-  alternates: { canonical: "/services/hosting" },
+  alternates: { canonical: "https://vividmediacheshire.com/services/hosting" },
   openGraph: {
     title: "Fast, secure website hosting for Cheshire businesses",
     description:
       "From £120 per year with 99.9% uptime and local support. Professional migration, same day replies and zero downtime.",
-    url: "/services/hosting",
+    url: "https://vividmediacheshire.com/services/hosting",
     images: [
       {
         url: "/images/services/web-hosting-and-migration/hosting-migration-card.webp",

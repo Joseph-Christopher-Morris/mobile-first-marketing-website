@@ -24,7 +24,11 @@ export const metadata: Metadata = {
     'local photography Nantwich',
     'campaign photography'
   ],
+  alternates: {
+    canonical: 'https://vividmediacheshire.com/services/photography'
+  },
   openGraph: {
+    url: 'https://vividmediacheshire.com/services/photography',
     title: 'Professional Photography Services | Nantwich & Cheshire',
     description:
       'Professional photography services with published editorial work for BBC, Forbes, and The Times. Local Nantwich photography and commercial campaigns.',

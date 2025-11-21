@@ -19,14 +19,14 @@ export const metadata: Metadata = {
     'analytics consulting',
     'performance metrics',
     'conversion tracking',
-    'data visualization'
+    'data visualisation'
   ],
   openGraph: {
     title: 'Data Analytics & Insights | GA4 & Adobe Analytics Expertise',
     description: 'Professional data analytics services with GA4 and Adobe Analytics expertise. Transform your business data into actionable insights.',
     images: [
       {
-        url: '/images/services/screenshot-2025-09-23-analytics-dashboard.webp',
+        url: '/images/services/Google-analytics-dashboard.webp',
         width: 1200,
         height: 630,
         alt: 'Advanced analytics dashboard showing comprehensive business metrics and performance data',
@@ -95,7 +95,7 @@ export default function AnalyticsServicesPage() {
               <div className='relative'>
                 <div className='relative h-96 lg:h-[500px] rounded-lg overflow-hidden shadow-2xl'>
                   <Image
-                    src='/images/services/screenshot-2025-09-23-analytics-dashboard.webp'
+                    src='/images/services/Google-analytics-dashboard.webp'
                     alt='Advanced analytics dashboard showing comprehensive business metrics'
                     fill
                     className='object-cover'
