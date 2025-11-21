@@ -184,7 +184,7 @@ export default function ContactPage() {
                       </div>
                       <div className='flex justify-between items-center'>
                         <span className='font-medium'>Sunday</span>
-                        <span className='text-brand-pink'>Closed</span>
+                        <span>10:00 – 16:00</span>
                       </div>
                     </div>
                     <p className='text-xs text-gray-500 mt-2'>
