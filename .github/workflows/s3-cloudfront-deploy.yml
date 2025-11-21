@@ -39,7 +39,7 @@ jobs:
           if grep -RInE "from-|via-|bg-gradient-|indigo-|purple-|yellow-" src apps; then
             echo "::error::Prohibited gradient/color classes found"; exit 1; fi
       - name: Build (Next export → /out)
-        run: npm run build && npm run export
+        run: npm run build
       - name: Patch sitemap to include Privacy Policy if missing
         run: |
           PRIV="https://d15sc9fc739ev2.cloudfront.net/privacy-policy/"
