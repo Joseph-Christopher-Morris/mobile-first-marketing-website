@@ -35,7 +35,7 @@ export const metadata: Metadata = {
   authors: [
     {
       name: 'Vivid Media Cheshire',
-      url: 'https://d15sc9fc739ev2.cloudfront.net',
+      url: 'https://vividmediacheshire.com',
     },
   ],
   creator: 'Vivid Media Cheshire',
@@ -45,14 +45,14 @@ export const metadata: Metadata = {
     address: false,
     telephone: false,
   },
-  metadataBase: new URL('https://d15sc9fc739ev2.cloudfront.net'),
+  metadataBase: new URL('https://vividmediacheshire.com'),
   alternates: {
     canonical: '/',
   },
   openGraph: {
     type: 'website',
     locale: 'en_GB',
-    url: 'https://d15sc9fc739ev2.cloudfront.net',
+    url: 'https://vividmediacheshire.com',
     siteName: 'Vivid Media Cheshire',
     title:
       'Vivid Media Cheshire - secure cloud infrastructure Hosting, Web Design & Google Ads | Nantwich & Cheshire',
@@ -102,6 +102,9 @@ export default function RootLayout({
   return (
     <html lang='en'>
       <head>
+        {/* Google Search Console Verification */}
+        <meta name="google-site-verification" content="google78b99cbb6a5b4d4e" />
+        
         {/* Critical resource preload for LCP optimisation */}
         <link
           rel="preload"
@@ -110,8 +113,22 @@ export default function RootLayout({
           type="image/webp"
           fetchPriority="high"
         />
-        <link rel="icon" href="/favicon.png" sizes="any" />
-        <link rel="apple-touch-icon" href="/favicon.png" />
+        {/* Favicon and app icons */}
+        <link
+          rel="icon"
+          href="/favicon.png"
+          type="image/png"
+          sizes="48x48"
+        />
+        <link
+          rel="shortcut icon"
+          href="/favicon.png"
+          type="image/png"
+        />
+        <link
+          rel="apple-touch-icon"
+          href="/favicon.png"
+        />
         <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
@@ -127,9 +144,9 @@ export default function RootLayout({
               '@context': 'https://schema.org',
               '@type': 'LocalBusiness',
               name: 'Vivid Media Cheshire',
-              image: 'https://d15sc9fc739ev2.cloudfront.net/images/hero/aston-martin-db6-website.webp',
-              '@id': 'https://d15sc9fc739ev2.cloudfront.net',
-              url: 'https://d15sc9fc739ev2.cloudfront.net',
+              image: 'https://vividmediacheshire.com/images/hero/aston-martin-db6-website.webp',
+              '@id': 'https://vividmediacheshire.com',
+              url: 'https://vividmediacheshire.com',
               telephone: '+44-XXXX-XXXXXX',
               priceRange: '££',
               address: {
@@ -262,16 +279,20 @@ export default function RootLayout({
           `}
         </Script>
 
-        {/* Microsoft Clarity */}
-        <Script id="clarity" strategy="afterInteractive">
-          {`
-            (function(c,l,a,r,i,t,y){
-              c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
-              t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
-              y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
-            })(window, document, "clarity", "script", "u4yftkmpxx");
-          `}
-        </Script>
+        {/* Microsoft Clarity - Proper Next.js Implementation */}
+        <Script
+          id="clarity-init"
+          strategy="afterInteractive"
+          dangerouslySetInnerHTML={{
+            __html: `
+              window.clarity = window.clarity || function(){(window.clarity.q=window.clarity.q||[]).push(arguments)};
+            `,
+          }}
+        />
+        <Script
+          src="https://www.clarity.ms/tag/u4yftkmpxx"
+          strategy="afterInteractive"
+        />
       </head>
       <body className={inter.className}>
         {children}

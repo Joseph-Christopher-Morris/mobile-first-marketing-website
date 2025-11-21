@@ -274,10 +274,6 @@ export default function HostingPage() {
                     <p className="text-xl font-semibold text-red-600">Poor</p>
                   </div>
                   <div>
-                    <p className="text-sm text-gray-600 mb-1">Annual hosting cost:</p>
-                    <p className="text-xl font-semibold text-gray-900">£550</p>
-                  </div>
-                  <div>
                     <p className="text-sm text-gray-600 mb-1">Load time:</p>
                     <p className="text-xl font-semibold text-gray-900">14 seconds plus</p>
                   </div>
@@ -291,10 +287,6 @@ export default function HostingPage() {
                   <div>
                     <p className="text-sm text-green-700 mb-1">Performance score:</p>
                     <p className="text-xl font-semibold text-green-900">99 out of 100</p>
-                  </div>
-                  <div>
-                    <p className="text-sm text-green-700 mb-1">Annual hosting cost:</p>
-                    <p className="text-xl font-semibold text-green-900">£120 per year</p>
                   </div>
                   <div>
                     <p className="text-sm text-green-700 mb-1">Load time improvement:</p>
