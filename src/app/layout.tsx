@@ -92,6 +92,8 @@ export const metadata: Metadata = {
   verification: {
     google: 'google-site-verification-placeholder',
   },
+  manifest: '/manifest.json',
+  themeColor: '#2563eb',
 };
 
 export default function RootLayout({

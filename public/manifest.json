@@ -1,0 +1,16 @@
+{
+  "name": "Vivid Media Cheshire",
+  "short_name": "Vivid Media",
+  "description": "Professional web design, photography, and digital marketing services",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#ffffff",
+  "theme_color": "#2563eb",
+  "icons": [
+    {
+      "src": "/favicon.ico",
+      "sizes": "any",
+      "type": "image/x-icon"
+    }
+  ]
+}
