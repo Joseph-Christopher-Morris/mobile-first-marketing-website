@@ -10,6 +10,8 @@ on:
 permissions:
   contents: read
   pull-requests: write
+  statuses: write
+  checks: write
 
 jobs:
   lighthouse:
@@ -34,7 +36,7 @@ jobs:
       - name: Run Lighthouse CI
         run: lhci autorun --config=./.lighthouserc.js
         env:
-          LHCI_GITHUB_APP_TOKEN: ${{ secrets.LHCI_GITHUB_APP_TOKEN || github.token }}
+          LHCI_GITHUB_APP_TOKEN: ${{ github.token }}
       
       - name: Upload Lighthouse results
         uses: actions/upload-artifact@v4
