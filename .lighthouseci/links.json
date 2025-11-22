@@ -1,0 +1,8 @@
+{
+  "http://localhost:50934/services/photography/index.html": "https://storage.googleapis.com/lighthouse-infrastructure.appspot.com/reports/1763766847397-14391.report.html",
+  "http://localhost:57655/index.html": "https://storage.googleapis.com/lighthouse-infrastructure.appspot.com/reports/1763766848495-87301.report.html",
+  "http://localhost:50934/services/ad-campaigns/index.html": "https://storage.googleapis.com/lighthouse-infrastructure.appspot.com/reports/1763766849727-46591.report.html",
+  "http://localhost:57655/about/index.html": "https://storage.googleapis.com/lighthouse-infrastructure.appspot.com/reports/1763766850723-76200.report.html",
+  "http://localhost:50934/services/analytics/index.html": "https://storage.googleapis.com/lighthouse-infrastructure.appspot.com/reports/1763766851921-300.report.html",
+  "http://localhost:50934/blog/index.html": "https://storage.googleapis.com/lighthouse-infrastructure.appspot.com/reports/1763766853222-20215.report.html"
+}
