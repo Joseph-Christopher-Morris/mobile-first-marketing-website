@@ -1,8 +1,10 @@
 {
-  "http://localhost:50934/services/photography/index.html": "https://storage.googleapis.com/lighthouse-infrastructure.appspot.com/reports/1763766847397-14391.report.html",
-  "http://localhost:57655/index.html": "https://storage.googleapis.com/lighthouse-infrastructure.appspot.com/reports/1763766848495-87301.report.html",
-  "http://localhost:50934/services/ad-campaigns/index.html": "https://storage.googleapis.com/lighthouse-infrastructure.appspot.com/reports/1763766849727-46591.report.html",
-  "http://localhost:57655/about/index.html": "https://storage.googleapis.com/lighthouse-infrastructure.appspot.com/reports/1763766850723-76200.report.html",
-  "http://localhost:50934/services/analytics/index.html": "https://storage.googleapis.com/lighthouse-infrastructure.appspot.com/reports/1763766851921-300.report.html",
-  "http://localhost:50934/blog/index.html": "https://storage.googleapis.com/lighthouse-infrastructure.appspot.com/reports/1763766853222-20215.report.html"
+  "http://localhost:52345/index.html": "https://storage.googleapis.com/lighthouse-infrastructure.appspot.com/reports/1763770832127-70621.report.html",
+  "http://localhost:52345/about/index.html": "https://storage.googleapis.com/lighthouse-infrastructure.appspot.com/reports/1763770832823-37261.report.html",
+  "http://localhost:52345/contact/index.html": "https://storage.googleapis.com/lighthouse-infrastructure.appspot.com/reports/1763770833301-6107.report.html",
+  "http://localhost:52345/services/index.html": "https://storage.googleapis.com/lighthouse-infrastructure.appspot.com/reports/1763770833822-48326.report.html",
+  "http://localhost:52345/services/photography/index.html": "https://storage.googleapis.com/lighthouse-infrastructure.appspot.com/reports/1763770834319-83103.report.html",
+  "http://localhost:52345/services/ad-campaigns/index.html": "https://storage.googleapis.com/lighthouse-infrastructure.appspot.com/reports/1763770835124-14066.report.html",
+  "http://localhost:52345/services/analytics/index.html": "https://storage.googleapis.com/lighthouse-infrastructure.appspot.com/reports/1763770835628-86353.report.html",
+  "http://localhost:52345/blog/index.html": "https://storage.googleapis.com/lighthouse-infrastructure.appspot.com/reports/1763770836132-84734.report.html"
 }
