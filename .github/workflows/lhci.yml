@@ -35,8 +35,7 @@ jobs:
       
       - name: Run Lighthouse CI
         run: lhci autorun --config=./.lighthouserc.js
-        env:
-          LHCI_GITHUB_APP_TOKEN: ${{ github.token }}
+        # No LHCI_GITHUB_APP_TOKEN - we upload artifacts instead of posting statuses
       
       - name: Upload Lighthouse results
         uses: actions/upload-artifact@v4
