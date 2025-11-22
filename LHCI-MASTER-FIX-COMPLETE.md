@@ -33,16 +33,17 @@ permissions:
 
 **Reason**: Without these permissions, LHCI couldn't post commit statuses, causing 422 errors.
 
-### 3. `.github/workflows/lhci.yml` - Token Configuration
+### 3. `.github/workflows/lhci.yml` - Disable GitHub Status Posting
 
-**Changed**: Use native `github.token` instead of custom secret
+**Changed**: Removed `LHCI_GITHUB_APP_TOKEN` environment variable
 
 ```yaml
-env:
-  LHCI_GITHUB_APP_TOKEN: ${{ github.token }}
+- name: Run Lighthouse CI
+  run: lhci autorun --config=./.lighthouserc.js
+  # No LHCI_GITHUB_APP_TOKEN - we upload artifacts instead
 ```
 
-**Reason**: The native token has proper repo/sha matching and correct permissions when combined with the workflow permissions above.
+**Reason**: LHCI's GitHub status posting was causing 422 errors. We use GitHub Actions artifacts instead, which is more reliable and doesn't require special API permissions.
 
 ## Results
 
