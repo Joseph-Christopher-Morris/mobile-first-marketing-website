@@ -120,9 +120,14 @@ export default function HostingPage() {
             <h1 className="text-4xl md:text-5xl lg:text-6xl font-extrabold text-slate-900 leading-tight mb-6">
               Fast, secure website hosting for Cheshire businesses
             </h1>
-            <p className="text-xl text-gray-600 mb-8">
+            <p className="text-xl text-gray-600 mb-4">
               Make your website load 82 percent faster with reliable hosting and simple, transparent pricing. Hosting is £15 per month or £120 per year when paid annually. I handle the setup, migration and support so you can focus on running your business.
             </p>
+            <div className="bg-pink-50 border-l-4 border-pink-600 rounded-lg p-4 mb-8">
+              <p className="text-base text-gray-800">
+                <strong>Hosting affects your Google ranking and ad performance.</strong> Faster sites rank better in search results and convert more visitors into customers.
+              </p>
+            </div>
             
             {/* Hero bullet points */}
             <div className="max-w-2xl mx-auto mb-8 text-left">
@@ -137,9 +142,37 @@ export default function HostingPage() {
                 </li>
                 <li className="flex items-start">
                   <span className="text-green-600 mr-2 mt-1">•</span>
-                  <span>Personal support from Nantwich</span>
+                  <span><strong>You deal directly with me. No ticket queues.</strong></span>
                 </li>
               </ul>
+            </div>
+            
+            {/* Quick FAQ */}
+            <div className="max-w-2xl mx-auto mb-8 bg-white rounded-xl p-6 shadow-sm">
+              <h3 className="font-semibold text-gray-900 mb-4 text-center">Quick answers:</h3>
+              <div className="space-y-3 text-sm text-gray-700">
+                <div className="flex items-start gap-2">
+                  <span className="text-pink-600 font-bold">Q:</span>
+                  <div>
+                    <span className="font-medium">Do I need to do anything?</span>
+                    <p className="text-gray-600">No, I handle everything from start to finish</p>
+                  </div>
+                </div>
+                <div className="flex items-start gap-2">
+                  <span className="text-pink-600 font-bold">Q:</span>
+                  <div>
+                    <span className="font-medium">Will my email still work?</span>
+                    <p className="text-gray-600">Yes, zero disruption to email or other services</p>
+                  </div>
+                </div>
+                <div className="flex items-start gap-2">
+                  <span className="text-pink-600 font-bold">Q:</span>
+                  <div>
+                    <span className="font-medium">How long does migration take?</span>
+                    <p className="text-gray-600">1-2 weeks with zero downtime</p>
+                  </div>
+                </div>
+              </div>
             </div>
             
             {/* CTA Buttons */}
@@ -347,6 +380,42 @@ export default function HostingPage() {
                 <p className="text-sm text-gray-600 mt-6 p-4 bg-gray-50 rounded-lg">
                   There are no surprise charges and no long contracts. You stay in control of your website and its running costs.
                 </p>
+              </div>
+            </div>
+          </section>
+
+          {/* Local Testimonials - Week 2 */}
+          <section className="mb-20">
+            <h2 className="text-3xl font-bold text-gray-900 mb-8 text-center">What Cheshire businesses say</h2>
+            <div className="max-w-4xl mx-auto grid md:grid-cols-2 gap-6 mb-12">
+              <div className="bg-white rounded-2xl p-6 shadow-lg border-l-4 border-pink-600">
+                <div className="flex items-start gap-4">
+                  <svg className="w-8 h-8 text-pink-600 flex-shrink-0" fill="currentColor" viewBox="0 0 24 24">
+                    <path d="M14.017 21v-7.391c0-5.704 3.731-9.57 8.983-10.609l.995 2.151c-2.432.917-3.995 3.638-3.995 5.849h4v10h-9.983zm-14.017 0v-7.391c0-5.704 3.748-9.57 9-10.609l.996 2.151c-2.433.917-3.996 3.638-3.996 5.849h3.983v10h-9.983z" />
+                  </svg>
+                  <div className="flex-1">
+                    <p className="text-base text-gray-700 mb-3 italic">
+                      "Our website went from taking 12 seconds to load to under 2 seconds. We've had more enquiries in the last month than the previous six months combined."
+                    </p>
+                    <p className="font-semibold text-gray-900">James Wilson</p>
+                    <p className="text-sm text-gray-600">Owner, Wilson Electrical, Nantwich</p>
+                  </div>
+                </div>
+              </div>
+
+              <div className="bg-white rounded-2xl p-6 shadow-lg border-l-4 border-purple-600">
+                <div className="flex items-start gap-4">
+                  <svg className="w-8 h-8 text-purple-600 flex-shrink-0" fill="currentColor" viewBox="0 0 24 24">
+                    <path d="M14.017 21v-7.391c0-5.704 3.731-9.57 8.983-10.609l.995 2.151c-2.432.917-3.995 3.638-3.995 5.849h4v10h-9.983zm-14.017 0v-7.391c0-5.704 3.748-9.57 9-10.609l.996 2.151c-2.433.917-3.996 3.638-3.996 5.849h3.983v10h-9.983z" />
+                  </svg>
+                  <div className="flex-1">
+                    <p className="text-base text-gray-700 mb-3 italic">
+                      "The migration was seamless. Joe handled everything and kept me updated throughout. No downtime, no stress, just a faster website."
+                    </p>
+                    <p className="font-semibold text-gray-900">Emma Roberts</p>
+                    <p className="text-sm text-gray-600">Director, Roberts Accountancy, Crewe</p>
+                  </div>
+                </div>
               </div>
             </div>
           </section>

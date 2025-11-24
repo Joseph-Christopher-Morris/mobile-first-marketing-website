@@ -38,7 +38,6 @@ export const metadata: Metadata = {
 
 export default function ServicesPage() {
   // ORDERED to match: Website Design → Hosting → Strategic Ad Campaigns → Data Analytics → Photography
-  // Week 2: Added "Best for" labels to each service
   const services = [
     {
       title: "Website Design & Development",
@@ -47,7 +46,6 @@ export default function ServicesPage() {
       href: "/services/website-design",
       thumbnail: "/images/services/Website Design/PXL_20240222_004124044~2.webp",
       alt: "Web designer working on a website design and hosting project",
-      bestFor: "Best for trades needing more enquiries",
     },
     {
       title: "Website Hosting & Migration",
@@ -56,7 +54,6 @@ export default function ServicesPage() {
       href: "/services/website-hosting",
       thumbnail: "/images/services/web-hosting-and-migration/hosting-migration-card.webp",
       alt: "Website hosting and migration services showing cost savings and performance improvements",
-      bestFor: "Best for businesses with slow Wix sites",
     },
     {
       title: "Strategic Ad Campaigns",
@@ -65,7 +62,6 @@ export default function ServicesPage() {
       href: "/services/ad-campaigns",
       thumbnail: "/images/services/WhatsApp Image 2025-11-11 at 9.27.14 AM.webp",
       alt: "Strategic advertising campaigns dashboard and performance view",
-      bestFor: "Best for businesses wanting more leads",
     },
     {
       title: "Data Analytics & Insights",
@@ -74,7 +70,6 @@ export default function ServicesPage() {
       href: "/services/analytics",
       thumbnail: "/images/services/screenshot-2025-09-23-analytics-dashboard.webp",
       alt: "Data analytics dashboard showing business insights and performance metrics",
-      bestFor: "Best for tracking Google Ads ROI",
     },
     {
       title: "Photography Services",
@@ -83,7 +78,6 @@ export default function ServicesPage() {
       href: "/services/photography",
       thumbnail: "/images/services/photography-hero.webp",
       alt: "Professional photography services with published editorial work examples",
-      bestFor: "Best for businesses needing professional imagery",
     },
   ];
 
@@ -198,55 +192,20 @@ export default function ServicesPage() {
             <p className="mt-6 text-xl md:text-2xl text-slate-700 max-w-4xl mx-auto leading-relaxed">
               I help small businesses grow with websites that load fast, Google Ads that generate enquiries, analytics that show performance clearly, and photography that builds trust. Each service is built to solve real business problems and to support long term growth.
             </p>
-            
-            {/* Start Here CTA */}
-            <div className="mt-8">
-              <Link
-                href="/contact"
-                className="inline-flex items-center justify-center px-8 py-4 rounded-full text-lg font-semibold bg-brand-pink text-white shadow-lg hover:bg-brand-pink2 hover:shadow-xl transition"
-              >
-                Tell me what you need →
-              </Link>
-            </div>
-            
-            {/* Micro-Proof Row */}
-            <div className="mt-8 flex flex-wrap items-center justify-center gap-6 text-sm md:text-base text-gray-700">
-              <div className="flex items-center gap-2">
-                <svg className="w-5 h-5 text-green-600" fill="currentColor" viewBox="0 0 20 20">
-                  <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
-                </svg>
-                <span className="font-medium">82% faster load times</span>
-              </div>
-              <span className="text-gray-400">•</span>
-              <div className="flex items-center gap-2">
-                <svg className="w-5 h-5 text-green-600" fill="currentColor" viewBox="0 0 20 20">
-                  <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
-                </svg>
-                <span className="font-medium">GA4 + Ads tracking included</span>
-              </div>
-              <span className="text-gray-400">•</span>
-              <div className="flex items-center gap-2">
-                <svg className="w-5 h-5 text-green-600" fill="currentColor" viewBox="0 0 20 20">
-                  <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
-                </svg>
-                <span className="font-medium">Local Cheshire support</span>
-              </div>
-            </div>
           </header>
 
           {/* Service cards */}
           <section className="mb-20">
             <div className="max-w-6xl mx-auto">
-              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 lg:justify-items-centre">
+              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 lg:justify-items-center">
                 {services.map((service, index) => (
-                  <div key={index} className={`w-full max-w-sm ${index >= 3 ? 'lg:col-span-1 lg:justify-self-centre' : ''}`}>
+                  <div key={index} className={`w-full max-w-sm ${index >= 3 ? 'lg:col-span-1 lg:justify-self-center' : ''}`}>
                     <ServiceCard
                       title={service.title}
                       description={service.description}
                       href={service.href}
                       thumbnail={service.thumbnail}
                       alt={service.alt}
-                      bestFor={service.bestFor}
                     />
                   </div>
                 ))}
@@ -257,10 +216,10 @@ export default function ServicesPage() {
           {/* Real performance before & after */}
           <section className="mb-20">
             <div className="max-w-5xl mx-auto">
-              <h2 className="text-3xl font-bold text-gray-900 mb-4 text-centre">
+              <h2 className="text-3xl font-bold text-gray-900 mb-4 text-center">
                 Real-World Speed Improvements
               </h2>
-              <p className="text-lg text-gray-700 mb-10 text-centre max-w-3xl mx-auto leading-relaxed">
+              <p className="text-lg text-gray-700 mb-10 text-center max-w-3xl mx-auto leading-relaxed">
                 I migrated my automotive photography site from traditional hosting to secure cloud
                 S3 + global content delivery network. Here's how the numbers changed on mobile, measured with
                 Google Lighthouse.
@@ -348,7 +307,7 @@ export default function ServicesPage() {
                 </article>
               </div>
 
-              <p className="mt-6 text-xs text-gray-500 text-centre">
+              <p className="mt-6 text-xs text-gray-500 text-center">
                 Metrics from Google Lighthouse mobile tests for my automotive photography
                 site before and after migrating to secure cloud.
               </p>
@@ -357,7 +316,7 @@ export default function ServicesPage() {
 
           {/* Why Nantwich and Cheshire Businesses Choose Me */}
           <section className="max-w-5xl mx-auto mb-20">
-            <h2 className="text-3xl font-bold text-gray-900 mb-6 text-centre">
+            <h2 className="text-3xl font-bold text-gray-900 mb-6 text-center">
               Why Nantwich and Cheshire Businesses Choose Me
             </h2>
             <p className="text-lg text-gray-700 mb-6 leading-relaxed">
@@ -373,7 +332,7 @@ export default function ServicesPage() {
 
           {/* FAQs */}
           <section className="mb-20">
-            <h2 className="text-3xl font-bold text-gray-900 mb-8 text-centre">FAQs</h2>
+            <h2 className="text-3xl font-bold text-gray-900 mb-8 text-center">FAQs</h2>
             <div className="max-w-3xl mx-auto space-y-4">
               <details className="bg-white rounded-lg p-6 shadow-sm border border-gray-200">
                 <summary className="font-semibold cursor-pointer text-lg">
@@ -449,7 +408,7 @@ export default function ServicesPage() {
 
           {/* Pricing Teaser Section */}
           <section className="mb-20">
-            <div className="max-w-5xl mx-auto text-centre">
+            <div className="max-w-5xl mx-auto text-center">
               <h2 className="text-3xl md:text-4xl font-bold text-slate-900 mb-4">
                 Simple, transparent pricing
               </h2>
@@ -459,7 +418,7 @@ export default function ServicesPage() {
               </p>
               <Link
                 href="/pricing"
-                className="inline-flex items-centre justify-centre px-8 py-3 rounded-full text-base md:text-lg font-semibold bg-brand-pink text-white shadow-lg hover:bg-brand-pink2 hover:shadow-xl transition"
+                className="inline-flex items-center justify-center px-8 py-3 rounded-full text-base md:text-lg font-semibold bg-brand-pink text-white shadow-lg hover:bg-brand-pink2 hover:shadow-xl transition"
               >
                 View full pricing
               </Link>

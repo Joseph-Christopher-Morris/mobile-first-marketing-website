@@ -69,20 +69,15 @@ export default function AnalyticsServicesPage() {
                   Data <span className='text-brand-pink'>Analytics</span> &
                   Insights
                 </h1>
-                <p className='text-xl md:text-2xl text-brand-grey mb-6 leading-relaxed'>
-                  Transform your data into clear, actionable insights that help your business grow faster and perform more effectively.
+                <p className='text-xl md:text-2xl text-brand-grey mb-8 leading-relaxed'>
+                  Track every lead from Google Ads. See which keywords drive phone calls, measure cost per enquiry, and fix tracking gaps costing you money.
                 </p>
-                <div className='mb-8'>
-                  <p className='text-lg text-brand-grey mb-2'>
-                    Your business data already holds the answers you need. I'll help you uncover what works, what doesn't, and how to make informed decisions that lead to better results. Every report, chart, and insight is built to be simple, visual, and easy to act on.
-                  </p>
-                </div>
-                <div className='flex flex-col sm:flex-row gap-4'>
+                <div className='flex flex-col sm:flex-row gap-4 mb-4'>
                   <Link
                     href='/contact'
                     className='bg-brand-pink text-white px-8 py-4 rounded-lg text-lg font-semibold hover:bg-brand-pink2 transition-colors text-center'
                   >
-                    Get Started Today
+                    Get a Free Ads & Tracking Audit
                   </Link>
                   <Link
                     href='/blog'
@@ -90,6 +85,15 @@ export default function AnalyticsServicesPage() {
                   >
                     View Case Studies
                   </Link>
+                </div>
+                
+                {/* Local Trust Strip */}
+                <div className='inline-flex flex-wrap items-center gap-2 text-sm text-white/80 bg-white/10 px-4 py-2 rounded-full border border-white/20'>
+                  <span>Certified in GA4 & Adobe Analytics</span>
+                  <span className='text-white/40'>•</span>
+                  <span>Based in Nantwich</span>
+                  <span className='text-white/40'>•</span>
+                  <span>Reply same day</span>
                 </div>
               </div>
               <div className='relative'>
@@ -102,6 +106,63 @@ export default function AnalyticsServicesPage() {
                     priority
                   />
                 </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        {/* Ads Attribution Block */}
+        <section className='py-12 bg-gradient-to-br from-pink-50 to-purple-50'>
+          <div className='max-w-5xl mx-auto px-4 sm:px-6 lg:px-8'>
+            <div className='bg-white rounded-2xl p-8 shadow-lg'>
+              <h2 className='text-3xl font-bold text-gray-900 mb-6 text-center'>
+                See exactly what's working with your ads
+              </h2>
+              <div className='grid md:grid-cols-3 gap-6'>
+                <div className='text-center'>
+                  <div className='w-16 h-16 bg-pink-100 rounded-full flex items-center justify-center mx-auto mb-4'>
+                    <svg className='w-8 h-8 text-pink-600' fill='none' stroke='currentColor' viewBox='0 0 24 24'>
+                      <path strokeLinecap='round' strokeLinejoin='round' strokeWidth={2} d='M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z' />
+                    </svg>
+                  </div>
+                  <h3 className='font-semibold text-gray-900 mb-2'>Track keyword calls</h3>
+                  <p className='text-gray-600 text-sm'>
+                    See which keywords drive phone calls so you know exactly what's bringing in real enquiries
+                  </p>
+                </div>
+                <div className='text-center'>
+                  <div className='w-16 h-16 bg-pink-100 rounded-full flex items-center justify-center mx-auto mb-4'>
+                    <svg className='w-8 h-8 text-pink-600' fill='none' stroke='currentColor' viewBox='0 0 24 24'>
+                      <path strokeLinecap='round' strokeLinejoin='round' strokeWidth={2} d='M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z' />
+                    </svg>
+                  </div>
+                  <h3 className='font-semibold text-gray-900 mb-2'>Measure cost per enquiry</h3>
+                  <p className='text-gray-600 text-sm'>
+                    Know your true cost per lead and stop wasting budget on ads that don't convert
+                  </p>
+                </div>
+                <div className='text-center'>
+                  <div className='w-16 h-16 bg-pink-100 rounded-full flex items-center justify-center mx-auto mb-4'>
+                    <svg className='w-8 h-8 text-pink-600' fill='none' stroke='currentColor' viewBox='0 0 24 24'>
+                      <path strokeLinecap='round' strokeLinejoin='round' strokeWidth={2} d='M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z' />
+                    </svg>
+                  </div>
+                  <h3 className='font-semibold text-gray-900 mb-2'>Fix tracking gaps</h3>
+                  <p className='text-gray-600 text-sm'>
+                    Identify and fix tracking issues that are costing you money and hiding your best-performing campaigns
+                  </p>
+                </div>
+              </div>
+              <div className='text-center mt-8'>
+                <p className='text-sm text-gray-600 mb-4'>
+                  <strong>GA4 setup from £75</strong>  (includes custom events and conversion tracking)
+                </p>
+                <Link
+                  href='/contact'
+                  className='inline-flex items-center bg-brand-pink text-white px-6 py-3 rounded-lg font-semibold hover:bg-brand-pink2 transition-colors'
+                >
+                  Get Your Free Audit
+                </Link>
               </div>
             </div>
           </div>
@@ -124,7 +185,7 @@ export default function AnalyticsServicesPage() {
                 <div className='bg-gray-50 rounded-xl p-6'>
                   <div className='flex items-start'>
                     <div className='w-6 h-6 bg-brand-pink text-white rounded-full flex items-center justify-center text-sm font-bold mr-4 mt-1 flex-shrink-0'>1</div>
-                    <p className='text-gray-700 text-lg'>+55% more views in 28 days after optimizing post timing and analytics tracking</p>
+                    <p className='text-gray-700 text-lg'>+55% more views in 28 days after optimising post timing and analytics tracking</p>
                   </div>
                 </div>
 
@@ -328,6 +389,72 @@ export default function AnalyticsServicesPage() {
           </div>
         </section>
 
+        {/* Microsoft Clarity Behaviour Insights */}
+        <section className='py-16 md:py-20 bg-gradient-to-br from-purple-50 to-indigo-50'>
+          <div className='max-w-7xl mx-auto px-4 sm:px-6 lg:px-8'>
+            <div className='text-center mb-12'>
+              <h2 className='text-3xl md:text-4xl font-bold text-gray-900 mb-4'>
+                Behaviour Insights with Microsoft Clarity
+              </h2>
+              <p className='text-xl text-gray-600 max-w-3xl mx-auto'>
+                I use Microsoft Clarity to support user experience and conversion analysis. Clarity shows scroll depth, click behaviour and hesitation patterns, which help me understand where visitors struggle. Combined with GA4 reporting, this gives a clearer view of how to improve your website and your conversion performance.
+              </p>
+            </div>
+
+            <div className='grid grid-cols-1 md:grid-cols-3 gap-8'>
+              <div className='bg-white rounded-xl shadow-lg p-8 hover:shadow-xl transition-shadow'>
+                <div className='w-16 h-16 bg-purple-100 rounded-lg flex items-center justify-center mb-6'>
+                  <svg className='w-8 h-8 text-purple-600' fill='none' stroke='currentColor' viewBox='0 0 24 24'>
+                    <path strokeLinecap='round' strokeLinejoin='round' strokeWidth={2} d='M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z' />
+                  </svg>
+                </div>
+                <h3 className='text-xl font-bold text-gray-900 mb-4'>
+                  User Behaviour Analysis
+                </h3>
+                <p className='text-gray-600'>
+                  Track how visitors interact with your site, including rage clicks, dead clicks and areas where users get stuck or confused.
+                </p>
+              </div>
+
+              <div className='bg-white rounded-xl shadow-lg p-8 hover:shadow-xl transition-shadow'>
+                <div className='w-16 h-16 bg-purple-100 rounded-lg flex items-center justify-center mb-6'>
+                  <svg className='w-8 h-8 text-purple-600' fill='none' stroke='currentColor' viewBox='0 0 24 24'>
+                    <path strokeLinecap='round' strokeLinejoin='round' strokeWidth={2} d='M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z' />
+                  </svg>
+                </div>
+                <h3 className='text-xl font-bold text-gray-900 mb-4'>
+                  Conversion Funnel Insights
+                </h3>
+                <p className='text-gray-600'>
+                  Identify where visitors drop off in your conversion funnel and understand the friction points preventing them from completing actions.
+                </p>
+              </div>
+
+              <div className='bg-white rounded-xl shadow-lg p-8 hover:shadow-xl transition-shadow'>
+                <div className='w-16 h-16 bg-purple-100 rounded-lg flex items-center justify-center mb-6'>
+                  <svg className='w-8 h-8 text-purple-600' fill='none' stroke='currentColor' viewBox='0 0 24 24'>
+                    <path strokeLinecap='round' strokeLinejoin='round' strokeWidth={2} d='M13 10V3L4 14h7v7l9-11h-7z' />
+                  </svg>
+                </div>
+                <h3 className='text-xl font-bold text-gray-900 mb-4'>
+                  GA4 Integration
+                </h3>
+                <p className='text-gray-600'>
+                  Combine Clarity's qualitative insights with GA4's quantitative data for a complete picture of user behaviour and conversion performance.
+                </p>
+              </div>
+            </div>
+
+            <div className='text-center mt-12'>
+              <div className='bg-white rounded-xl p-6 max-w-3xl mx-auto shadow-md'>
+                <p className='text-gray-700 text-lg'>
+                  <strong>Why this matters:</strong> GA4 tells you what's happening on your site, but Clarity shows you why. Together, they provide the complete picture needed to make data-driven improvements that actually increase conversions.
+                </p>
+              </div>
+            </div>
+          </div>
+        </section>
+
         {/* Analytics Pricing */}
         <section className='py-12 bg-white'>
           <div className='max-w-5xl mx-auto px-4 sm:px-6 lg:px-8'>
@@ -446,6 +573,8 @@ export default function AnalyticsServicesPage() {
           </div>
         </section>
 
+
+
         {/* Portfolio Section */}
         <section className='py-20 bg-gray-50'>
           <div className='max-w-7xl mx-auto px-4 sm:px-6 lg:px-8'>
@@ -479,6 +608,11 @@ export default function AnalyticsServicesPage() {
                   </div>
                 </div>
               ))}
+            </div>
+            
+            {/* Scroll prompt - Week 2 */}
+            <div className='text-center mt-8 animate-bounce'>
+              <p className='text-sm text-gray-500'>Scroll to see our process ↓</p>
             </div>
           </div>
         </section>

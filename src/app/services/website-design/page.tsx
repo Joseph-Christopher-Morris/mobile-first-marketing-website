@@ -32,14 +32,28 @@ export default function WebsiteDesignPage() {
 
             <Link
               href="#website-quote"
-              className="inline-flex items-center justify-center rounded-full bg-pink-600 px-8 py-4 text-base font-semibold text-white shadow-md hover:bg-pink-700 transition-colors mb-3"
+              className="inline-flex items-center justify-center rounded-full bg-pink-600 px-8 py-4 text-base font-semibold text-white shadow-md hover:bg-pink-700 transition-colors mb-2"
             >
               Get a Free Website Quote →
             </Link>
 
-            <p className="text-sm text-slate-600">
-              No hidden fees. Every site is modular, fast, and tailored to your goals.
+            <p className="text-sm text-slate-600 mb-4">
+              Takes about 60 seconds with no obligation
             </p>
+
+            {/* Local Trust Strip */}
+            <div className="inline-flex flex-wrap items-center gap-2 text-sm text-slate-600 bg-slate-50 px-4 py-2 rounded-full border border-slate-200">
+              <span className="flex items-center gap-1">
+                <svg className="w-4 h-4 text-pink-600" fill="currentColor" viewBox="0 0 20 20">
+                  <path fillRule="evenodd" d="M5.05 4.05a7 7 0 119.9 9.9L10 18.9l-4.95-4.95a7 7 0 010-9.9zM10 11a2 2 0 100-4 2 2 0 000 4z" clipRule="evenodd" />
+                </svg>
+                Based in Nantwich
+              </span>
+              <span className="text-slate-400">•</span>
+              <span>Serving Cheshire East</span>
+              <span className="text-slate-400">•</span>
+              <span>Reply same day</span>
+            </div>
           </div>
 
           {/* Featured image */}
@@ -56,8 +70,34 @@ export default function WebsiteDesignPage() {
         </div>
       </section>
 
-      {/* Why Businesses Choose Vivid Media Cheshire */}
+      {/* Who This Is For */}
       <section className="max-w-5xl mx-auto px-4 pb-12">
+        <div className="bg-gradient-to-br from-pink-50 to-purple-50 rounded-2xl p-6 md:p-8 mb-12">
+          <h2 className="text-2xl font-semibold text-slate-900 mb-4 text-center">
+            Who this is for
+          </h2>
+          <div className="max-w-3xl mx-auto space-y-3">
+            <div className="flex items-start gap-3">
+              <span className="text-pink-600 text-xl mt-1">✓</span>
+              <p className="text-slate-700">
+                <strong>Trades</strong> (plumbers, builders, garages) needing more enquiries from local customers
+              </p>
+            </div>
+            <div className="flex items-start gap-3">
+              <span className="text-pink-600 text-xl mt-1">✓</span>
+              <p className="text-slate-700">
+                <strong>Local venues and service SMEs</strong> wanting a better online presence that actually brings in business
+              </p>
+            </div>
+            <div className="flex items-start gap-3">
+              <span className="text-pink-600 text-xl mt-1">✓</span>
+              <p className="text-slate-700">
+                <strong>Businesses frustrated with slow Wix or outdated sites</strong> that don't convert visitors into customers
+              </p>
+            </div>
+          </div>
+        </div>
+
         <h2 className="text-2xl font-semibold text-slate-900 mb-8 text-center">
           Why Businesses Choose Vivid Media Cheshire
         </h2>
@@ -89,6 +129,86 @@ export default function WebsiteDesignPage() {
             </h3>
             <p className="text-slate-700 text-sm">
               Your site is built and improved efficiently so you are not waiting around.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      {/* WCAG 2.1 Accessibility Standards */}
+      <section className="max-w-5xl mx-auto px-4 pb-12">
+        <div className="bg-gradient-to-br from-blue-50 to-indigo-50 rounded-2xl p-6 md:p-8">
+          <h2 className="text-2xl font-semibold text-slate-900 mb-4 text-center">
+            Built to WCAG 2.1 Accessibility Standards
+          </h2>
+          <p className="text-slate-700 mb-6 text-center max-w-3xl mx-auto">
+            Every website I build follows WCAG 2.1 Level AA accessibility guidelines, ensuring your site works for everyone, including people with disabilities. This is not just good practice. It is better for SEO, user experience, and legal compliance.
+          </p>
+          
+          <div className="grid gap-6 md:grid-cols-2">
+            <div className="bg-white rounded-xl p-5 shadow-sm">
+              <h3 className="font-semibold text-slate-900 mb-3 flex items-center gap-2">
+                <span className="text-blue-600">✓</span>
+                Keyboard Navigation
+              </h3>
+              <p className="text-sm text-slate-700">
+                All interactive elements work with keyboard-only navigation, helping users who can't use a mouse.
+              </p>
+            </div>
+
+            <div className="bg-white rounded-xl p-5 shadow-sm">
+              <h3 className="font-semibold text-slate-900 mb-3 flex items-center gap-2">
+                <span className="text-blue-600">✓</span>
+                Screen Reader Compatible
+              </h3>
+              <p className="text-sm text-slate-700">
+                Proper semantic HTML and ARIA labels ensure screen readers can navigate and understand your content.
+              </p>
+            </div>
+
+            <div className="bg-white rounded-xl p-5 shadow-sm">
+              <h3 className="font-semibold text-slate-900 mb-3 flex items-center gap-2">
+                <span className="text-blue-600">✓</span>
+                Color Contrast Compliance
+              </h3>
+              <p className="text-sm text-slate-700">
+                Text and interactive elements meet WCAG AA contrast ratios (4.5:1 for normal text, 3:1 for large text).
+              </p>
+            </div>
+
+            <div className="bg-white rounded-xl p-5 shadow-sm">
+              <h3 className="font-semibold text-slate-900 mb-3 flex items-center gap-2">
+                <span className="text-blue-600">✓</span>
+                Responsive Text Sizing
+              </h3>
+              <p className="text-sm text-slate-700">
+                Text can be resized up to 200% without breaking layout or losing functionality.
+              </p>
+            </div>
+
+            <div className="bg-white rounded-xl p-5 shadow-sm">
+              <h3 className="font-semibold text-slate-900 mb-3 flex items-center gap-2">
+                <span className="text-blue-600">✓</span>
+                Focus Indicators
+              </h3>
+              <p className="text-sm text-slate-700">
+                Clear visual indicators show which element is focused, making navigation easier for keyboard users.
+              </p>
+            </div>
+
+            <div className="bg-white rounded-xl p-5 shadow-sm">
+              <h3 className="font-semibold text-slate-900 mb-3 flex items-center gap-2">
+                <span className="text-blue-600">✓</span>
+                Alternative Text for Images
+              </h3>
+              <p className="text-sm text-slate-700">
+                All images include descriptive alt text so screen reader users understand visual content.
+              </p>
+            </div>
+          </div>
+
+          <div className="mt-6 p-4 bg-white rounded-lg border-l-4 border-blue-600">
+            <p className="text-sm text-slate-700">
+              <strong>Why this matters:</strong> Accessible websites reach more customers, rank better in search engines, and reduce legal risk. Plus, many accessibility improvements (like clear navigation and readable text) benefit all users, not just those with disabilities.
             </p>
           </div>
         </div>
@@ -139,8 +259,20 @@ export default function WebsiteDesignPage() {
               Every design decision is guided by conversion optimisation. From layout and navigation to page speed and clear calls-to-action, each website is built to attract visitors and turn them into customers.
             </p>
           </div>
+
+          <div className="bg-white rounded-2xl p-6 shadow-sm">
+            <div className="text-2xl mb-3">🔍</div>
+            <h2 className="text-lg font-semibold text-slate-900 mb-2">
+              Microsoft Clarity Insights
+            </h2>
+            <p className="text-slate-700 text-sm">
+              I use Microsoft Clarity to analyse how visitors interact with your site, including scroll depth, click behaviour and areas where people hesitate. These insights help me improve usability and support better conversion performance.
+            </p>
+          </div>
         </div>
       </section>
+
+
 
       {/* Real-World Performance Results */}
       <section className="max-w-5xl mx-auto px-4 pb-12">
@@ -226,47 +358,59 @@ export default function WebsiteDesignPage() {
         </div>
       </section>
 
-      {/* Process Section */}
+      {/* Process Section - Next Steps */}
       <section className="max-w-5xl mx-auto px-4 pb-12">
-        <h2 className="text-2xl font-semibold text-slate-900 mb-6">
-          How I Build Your Website
+        <h2 className="text-2xl font-semibold text-slate-900 mb-6 text-center">
+          Your next steps
         </h2>
-        <div className="grid gap-6 md:grid-cols-3">
-          <div className="bg-white rounded-2xl p-6 shadow-sm">
-            <div className="w-9 h-9 rounded-full bg-pink-100 text-pink-700 flex items-center justify-center font-semibold mb-3">
+        <div className="grid gap-6 md:grid-cols-3 mb-8">
+          <div className="bg-white rounded-2xl p-6 shadow-sm border-2 border-pink-100">
+            <div className="w-9 h-9 rounded-full bg-pink-600 text-white flex items-center justify-center font-semibold mb-3">
               1
             </div>
             <h3 className="font-semibold text-slate-900 mb-2">
-              Discovery & Planning
+              Free quote / call
             </h3>
-            <p className="text-sm text-slate-700">
-              We'll discuss your goals, audience, and ideas. I'll create a plan aligned with your business objectives.
+            <p className="text-sm text-slate-700 mb-2">
+              Tell me about your business and goals. I'll reply same day with a clear quote and realistic timeline.
             </p>
+            <p className="text-xs text-slate-500">Usually within 2-4 hours</p>
           </div>
 
-          <div className="bg-white rounded-2xl p-6 shadow-sm">
-            <div className="w-9 h-9 rounded-full bg-pink-100 text-pink-700 flex items-center justify-center font-semibold mb-3">
+          <div className="bg-white rounded-2xl p-6 shadow-sm border-2 border-pink-100">
+            <div className="w-9 h-9 rounded-full bg-pink-600 text-white flex items-center justify-center font-semibold mb-3">
               2
             </div>
             <h3 className="font-semibold text-slate-900 mb-2">
-              Design & Development
+              Design + build
             </h3>
-            <p className="text-sm text-slate-700">
-              Custom website built on secure cloud infrastructure, using modular components and SEO-friendly code.
+            <p className="text-sm text-slate-700 mb-2">
+              I'll create your site on secure cloud infrastructure with SEO, analytics, and conversion tracking built in.
             </p>
+            <p className="text-xs text-slate-500">Typically 2-4 weeks</p>
           </div>
 
-          <div className="bg-white rounded-2xl p-6 shadow-sm">
-            <div className="w-9 h-9 rounded-full bg-pink-100 text-pink-700 flex items-center justify-center font-semibold mb-3">
+          <div className="bg-white rounded-2xl p-6 shadow-sm border-2 border-pink-100">
+            <div className="w-9 h-9 rounded-full bg-pink-600 text-white flex items-center justify-center font-semibold mb-3">
               3
             </div>
             <h3 className="font-semibold text-slate-900 mb-2">
-              Launch & optimise
+              Launch + tracking
             </h3>
-            <p className="text-sm text-slate-700">
-              Once live, I'll set up analytics, test performance, and keep your site improving over time.
+            <p className="text-sm text-slate-700 mb-2">
+              Your site goes live with full analytics. I'll monitor performance and help you get more enquiries.
             </p>
+            <p className="text-xs text-slate-500">Ongoing support included</p>
           </div>
+        </div>
+
+        <div className="text-center bg-slate-50 rounded-xl p-6">
+          <p className="text-slate-700 mb-2">
+            <strong>Most Cheshire SME sites start from £300</strong>
+          </p>
+          <p className="text-sm text-slate-600">
+            Every project is tailored to your specific needs. You will get a precise quote before any work begins
+          </p>
         </div>
       </section>
 

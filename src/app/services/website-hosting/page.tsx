@@ -203,7 +203,7 @@ export default function WebsiteHostingPage() {
                 <div className="bg-pink-100 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4">
                   <span className="text-2xl font-bold text-pink-600">3</span>
                 </div>
-                <h3 className="text-xl font-semibold text-gray-900 mb-3">Optimization & Support</h3>
+                <h3 className="text-xl font-semibold text-gray-900 mb-3">optimisation & Support</h3>
                 <p className="text-gray-600">
                   I monitor performance and help with updates, SEO tweaks, or design improvements.
                 </p>

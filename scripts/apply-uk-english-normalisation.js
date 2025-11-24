@@ -53,6 +53,11 @@ const normalisationRules = [
   { pattern: /\bMobile first\b/gi, replacement: 'Mobile-first', description: 'Mobile first → Mobile-first' },
   { pattern: /\bPerformance focused\b/gi, replacement: 'Performance-focused', description: 'Performance focused → Performance-focused' },
   { pattern: /\bSEO Ready\b/gi, replacement: 'SEO-ready', description: 'SEO Ready → SEO-ready' },
+  
+  // 7. Additional compound terms
+  { pattern: /\bmobile-optimized\b/gi, replacement: 'mobile-optimised', description: 'mobile-optimized → mobile-optimised' },
+  { pattern: /\bMobile-Optimized\b/g, replacement: 'Mobile-Optimised', description: 'Mobile-Optimized → Mobile-Optimised' },
+  { pattern: /\bROI Optimization\b/g, replacement: 'ROI Optimisation', description: 'ROI Optimization → ROI Optimisation' },
 ];
 
 // Files to process
@@ -100,15 +105,22 @@ function applyNormalisationToContent(content, filePath) {
         const lines = modifiedContent.split('\n');
         const processedLines = lines.map(line => {
           // Skip lines with className, class=, import, or CSS-related content
+          // Also skip lines that are purely CSS utility classes
           if (
             line.includes('className') ||
             line.includes('class=') ||
             line.includes('import ') ||
-            line.includes('text-center') ||
-            line.includes('justify-center') ||
-            line.includes('items-center')
+            line.match(/text-center|justify-center|items-center|place-center|content-center/i)
           ) {
-            return line;
+            // For lines with className, only replace in string content, not class names
+            if (line.includes('className') && rule.pattern.source.includes('center')) {
+              // Skip center → centre replacement in className lines entirely
+              return line;
+            }
+            // For other rules, still apply to content within the line
+            if (!line.includes('className') || rule.pattern.source.includes('center')) {
+              return line;
+            }
           }
           return line.replace(rule.pattern, rule.replacement);
         });

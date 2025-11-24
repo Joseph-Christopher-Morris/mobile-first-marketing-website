@@ -8,6 +8,7 @@ export interface ServiceCardProps {
   href: string;
   thumbnail: string;
   alt: string;
+  bestFor?: string; // Week 2: Added "Best for" label
 }
 
 export const ServiceCard: React.FC<ServiceCardProps> = ({
@@ -15,7 +16,8 @@ export const ServiceCard: React.FC<ServiceCardProps> = ({
   description,
   href,
   thumbnail,
-  alt
+  alt,
+  bestFor
 }) => {
   return (
     <Link
@@ -32,6 +34,15 @@ export const ServiceCard: React.FC<ServiceCardProps> = ({
           sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
         />
       </div>
+
+      {/* Week 2: "Best for" label */}
+      {bestFor && (
+        <div className="mb-3">
+          <span className="inline-flex items-center px-3 py-1 rounded-full text-xs font-semibold bg-pink-100 text-pink-700">
+            ✓ {bestFor}
+          </span>
+        </div>
+      )}
 
       {/* Content */}
       <h3 className="text-xl font-semibold text-slate-900 mb-3">
