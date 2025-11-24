@@ -1,0 +1,378 @@
+{
+  "timestamp": "2025-11-23T21:24:54.784Z",
+  "summary": {
+    "totalPages": 16,
+    "compliant": 1,
+    "nonCompliant": 15,
+    "warnings": 10
+  },
+  "pages": [
+    {
+      "page": "about",
+      "path": "C:\\Users\\Joe\\Projects\\website-sync-20251003_133144\\src\\app\\about\\page.tsx",
+      "issues": [
+        {
+          "type": "UK_ENGLISH",
+          "severity": "error",
+          "message": "American spelling detected: \"center\" (use UK English)"
+        }
+      ],
+      "warnings": [
+        {
+          "type": "CTA",
+          "severity": "warning",
+          "message": "CTA detected but may not use approved wording"
+        }
+      ],
+      "compliant": false
+    },
+    {
+      "page": "blog",
+      "path": "C:\\Users\\Joe\\Projects\\website-sync-20251003_133144\\src\\app\\blog\\page.tsx",
+      "issues": [
+        {
+          "type": "UK_ENGLISH",
+          "severity": "error",
+          "message": "American spelling detected: \"center\" (use UK English)"
+        }
+      ],
+      "warnings": [],
+      "compliant": false
+    },
+    {
+      "page": "blog/[slug]",
+      "path": "C:\\Users\\Joe\\Projects\\website-sync-20251003_133144\\src\\app\\blog\\[slug]\\page.tsx",
+      "issues": [
+        {
+          "type": "UK_ENGLISH",
+          "severity": "error",
+          "message": "American spelling detected: \"center\" (use UK English)"
+        }
+      ],
+      "warnings": [
+        {
+          "type": "CTA",
+          "severity": "warning",
+          "message": "CTA detected but may not use approved wording"
+        }
+      ],
+      "compliant": false
+    },
+    {
+      "page": "contact",
+      "path": "C:\\Users\\Joe\\Projects\\website-sync-20251003_133144\\src\\app\\contact\\page.tsx",
+      "issues": [
+        {
+          "type": "UK_ENGLISH",
+          "severity": "error",
+          "message": "American spelling detected: \"center\" (use UK English)"
+        }
+      ],
+      "warnings": [],
+      "compliant": false
+    },
+    {
+      "page": "free-audit",
+      "path": "C:\\Users\\Joe\\Projects\\website-sync-20251003_133144\\src\\app\\free-audit\\page.tsx",
+      "issues": [
+        {
+          "type": "UK_ENGLISH",
+          "severity": "error",
+          "message": "American spelling detected: \"center\" (use UK English)"
+        },
+        {
+          "type": "TESTIMONIALS",
+          "severity": "error",
+          "message": "Missing required testimonials: Anna, Claire, Zach"
+        }
+      ],
+      "warnings": [],
+      "compliant": false
+    },
+    {
+      "page": "home",
+      "path": "C:\\Users\\Joe\\Projects\\website-sync-20251003_133144\\src\\app\\page.tsx",
+      "issues": [
+        {
+          "type": "UK_ENGLISH",
+          "severity": "error",
+          "message": "American spelling detected: \"center\" (use UK English)"
+        }
+      ],
+      "warnings": [
+        {
+          "type": "CTA",
+          "severity": "warning",
+          "message": "CTA detected but may not use approved wording"
+        }
+      ],
+      "compliant": false
+    },
+    {
+      "page": "pricing",
+      "path": "C:\\Users\\Joe\\Projects\\website-sync-20251003_133144\\src\\app\\pricing\\page.tsx",
+      "issues": [
+        {
+          "type": "UK_ENGLISH",
+          "severity": "error",
+          "message": "American spelling detected: \"center\" (use UK English)"
+        }
+      ],
+      "warnings": [
+        {
+          "type": "CTA",
+          "severity": "warning",
+          "message": "CTA detected but may not use approved wording"
+        }
+      ],
+      "compliant": false
+    },
+    {
+      "page": "privacy-policy",
+      "path": "C:\\Users\\Joe\\Projects\\website-sync-20251003_133144\\src\\app\\privacy-policy\\page.tsx",
+      "issues": [],
+      "warnings": [],
+      "compliant": true
+    },
+    {
+      "page": "services/ad-campaigns",
+      "path": "C:\\Users\\Joe\\Projects\\website-sync-20251003_133144\\src\\app\\services\\ad-campaigns\\page.tsx",
+      "issues": [
+        {
+          "type": "UK_ENGLISH",
+          "severity": "error",
+          "message": "American spelling detected: \"center\" (use UK English)"
+        },
+        {
+          "type": "ACCESSIBILITY",
+          "severity": "error",
+          "message": "Missing required WCAG 2.1 accessibility statement"
+        },
+        {
+          "type": "CLARITY",
+          "severity": "error",
+          "message": "Missing required Microsoft Clarity statement"
+        }
+      ],
+      "warnings": [
+        {
+          "type": "CTA",
+          "severity": "warning",
+          "message": "CTA detected but may not use approved wording"
+        }
+      ],
+      "compliant": false
+    },
+    {
+      "page": "services/analytics",
+      "path": "C:\\Users\\Joe\\Projects\\website-sync-20251003_133144\\src\\app\\services\\analytics\\page.tsx",
+      "issues": [
+        {
+          "type": "UK_ENGLISH",
+          "severity": "error",
+          "message": "American spelling detected: \"center\" (use UK English)"
+        },
+        {
+          "type": "UK_ENGLISH",
+          "severity": "error",
+          "message": "American spelling detected: \"visualization\" (use UK English)"
+        },
+        {
+          "type": "ACCESSIBILITY",
+          "severity": "error",
+          "message": "Missing required WCAG 2.1 accessibility statement"
+        },
+        {
+          "type": "CLARITY",
+          "severity": "error",
+          "message": "Missing required Microsoft Clarity statement"
+        }
+      ],
+      "warnings": [
+        {
+          "type": "GOOGLE_ADS",
+          "severity": "warning",
+          "message": "Missing Google Ads message match: \"GA4 and tracking setup\""
+        },
+        {
+          "type": "GOOGLE_ADS",
+          "severity": "warning",
+          "message": "Missing Google Ads message match: \"insight reporting\""
+        },
+        {
+          "type": "GOOGLE_ADS",
+          "severity": "warning",
+          "message": "Missing Google Ads message match: \"conversion tracking for Google Ads\""
+        },
+        {
+          "type": "CTA",
+          "severity": "warning",
+          "message": "CTA detected but may not use approved wording"
+        }
+      ],
+      "compliant": false
+    },
+    {
+      "page": "services/hosting",
+      "path": "C:\\Users\\Joe\\Projects\\website-sync-20251003_133144\\src\\app\\services\\hosting\\page.tsx",
+      "issues": [
+        {
+          "type": "UK_ENGLISH",
+          "severity": "error",
+          "message": "American spelling detected: \"center\" (use UK English)"
+        },
+        {
+          "type": "ACCESSIBILITY",
+          "severity": "error",
+          "message": "Missing required WCAG 2.1 accessibility statement"
+        },
+        {
+          "type": "CLARITY",
+          "severity": "error",
+          "message": "Missing required Microsoft Clarity statement"
+        }
+      ],
+      "warnings": [
+        {
+          "type": "GOOGLE_ADS",
+          "severity": "warning",
+          "message": "Missing Google Ads message match: \"fast websites for Cheshire businesses\""
+        },
+        {
+          "type": "GOOGLE_ADS",
+          "severity": "warning",
+          "message": "Missing Google Ads message match: \"annual hosting from £120\""
+        }
+      ],
+      "compliant": false
+    },
+    {
+      "page": "services",
+      "path": "C:\\Users\\Joe\\Projects\\website-sync-20251003_133144\\src\\app\\services\\page.tsx",
+      "issues": [
+        {
+          "type": "ACCESSIBILITY",
+          "severity": "error",
+          "message": "Missing required WCAG 2.1 accessibility statement"
+        },
+        {
+          "type": "CLARITY",
+          "severity": "error",
+          "message": "Missing required Microsoft Clarity statement"
+        }
+      ],
+      "warnings": [],
+      "compliant": false
+    },
+    {
+      "page": "services/photography",
+      "path": "C:\\Users\\Joe\\Projects\\website-sync-20251003_133144\\src\\app\\services\\photography\\page.tsx",
+      "issues": [
+        {
+          "type": "UK_ENGLISH",
+          "severity": "error",
+          "message": "American spelling detected: \"center\" (use UK English)"
+        },
+        {
+          "type": "ACCESSIBILITY",
+          "severity": "error",
+          "message": "Missing required WCAG 2.1 accessibility statement"
+        },
+        {
+          "type": "CLARITY",
+          "severity": "error",
+          "message": "Missing required Microsoft Clarity statement"
+        }
+      ],
+      "warnings": [
+        {
+          "type": "CTA",
+          "severity": "warning",
+          "message": "CTA detected but may not use approved wording"
+        }
+      ],
+      "compliant": false
+    },
+    {
+      "page": "services/website-design",
+      "path": "C:\\Users\\Joe\\Projects\\website-sync-20251003_133144\\src\\app\\services\\website-design\\page.tsx",
+      "issues": [
+        {
+          "type": "UK_ENGLISH",
+          "severity": "error",
+          "message": "American spelling detected: \"center\" (use UK English)"
+        },
+        {
+          "type": "ACCESSIBILITY",
+          "severity": "error",
+          "message": "Missing required WCAG 2.1 accessibility statement"
+        },
+        {
+          "type": "CLARITY",
+          "severity": "error",
+          "message": "Missing required Microsoft Clarity statement"
+        }
+      ],
+      "warnings": [
+        {
+          "type": "GOOGLE_ADS",
+          "severity": "warning",
+          "message": "Missing Google Ads message match: \"Website design for Cheshire businesses\""
+        },
+        {
+          "type": "GOOGLE_ADS",
+          "severity": "warning",
+          "message": "Missing Google Ads message match: \"fast, mobile‑first websites\""
+        }
+      ],
+      "compliant": false
+    },
+    {
+      "page": "services/website-hosting",
+      "path": "C:\\Users\\Joe\\Projects\\website-sync-20251003_133144\\src\\app\\services\\website-hosting\\page.tsx",
+      "issues": [
+        {
+          "type": "UK_ENGLISH",
+          "severity": "error",
+          "message": "American spelling detected: \"center\" (use UK English)"
+        },
+        {
+          "type": "ACCESSIBILITY",
+          "severity": "error",
+          "message": "Missing required WCAG 2.1 accessibility statement"
+        },
+        {
+          "type": "CLARITY",
+          "severity": "error",
+          "message": "Missing required Microsoft Clarity statement"
+        }
+      ],
+      "warnings": [
+        {
+          "type": "GOOGLE_ADS",
+          "severity": "warning",
+          "message": "Missing Google Ads message match: \"fast websites for Cheshire businesses\""
+        },
+        {
+          "type": "GOOGLE_ADS",
+          "severity": "warning",
+          "message": "Missing Google Ads message match: \"annual hosting from £120\""
+        }
+      ],
+      "compliant": false
+    },
+    {
+      "page": "thank-you",
+      "path": "C:\\Users\\Joe\\Projects\\website-sync-20251003_133144\\src\\app\\thank-you\\page.tsx",
+      "issues": [
+        {
+          "type": "UK_ENGLISH",
+          "severity": "error",
+          "message": "American spelling detected: \"center\" (use UK English)"
+        }
+      ],
+      "warnings": [],
+      "compliant": false
+    }
+  ]
+}

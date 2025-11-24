@@ -3,6 +3,7 @@ import { Inter } from 'next/font/google';
 import Script from 'next/script';
 import CookieBanner from '@/components/CookieBanner';
 import StickyCTA from '@/components/StickyCTA';
+import { TrackingProvider } from '@/components/TrackingProvider';
 import './globals.css';
 
 const inter = Inter({
@@ -297,9 +298,11 @@ export default function RootLayout({
         />
       </head>
       <body className={inter.className}>
-        {children}
-        <CookieBanner />
-        <StickyCTA />
+        <TrackingProvider>
+          {children}
+          <CookieBanner />
+          <StickyCTA />
+        </TrackingProvider>
       </body>
     </html>
   );

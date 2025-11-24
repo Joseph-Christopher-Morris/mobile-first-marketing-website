@@ -267,6 +267,73 @@ export default function AdCampaignsServicesPage() {
           </div>
         </section>
 
+        {/* Microsoft Clarity for Ad Campaigns */}
+        <section className='py-16 md:py-20 bg-gradient-to-br from-pink-50 to-purple-50'>
+          <div className='max-w-7xl mx-auto px-4 sm:px-6 lg:px-8'>
+            <div className='text-center mb-12'>
+              <h2 className='text-3xl md:text-4xl font-bold text-gray-900 mb-4'>
+                Understanding Visitor Behaviour with Microsoft Clarity
+              </h2>
+              <p className='text-xl text-gray-600 max-w-3xl mx-auto'>
+                I use Microsoft Clarity to analyse what visitors do after clicking your ads. Heatmaps, scroll maps and behaviour recordings help identify friction points, improve landing page flow and support stronger conversion rates. These insights guide adjustments to your Google Ads campaigns and landing pages.
+              </p>
+            </div>
+
+            <div className='grid grid-cols-1 md:grid-cols-3 gap-8'>
+              <div className='bg-white rounded-xl shadow-lg p-8 hover:shadow-xl transition-shadow'>
+                <div className='w-16 h-16 bg-pink-100 rounded-lg flex items-center justify-center mb-6'>
+                  <svg className='w-8 h-8 text-pink-600' fill='none' stroke='currentColor' viewBox='0 0 24 24'>
+                    <path strokeLinecap='round' strokeLinejoin='round' strokeWidth={2} d='M15 15l-2 5L9 9l11 4-5 2zm0 0l5 5M7.188 2.239l.777 2.897M5.136 7.965l-2.898-.777M13.95 4.05l-2.122 2.122m-5.657 5.656l-2.12 2.122' />
+                  </svg>
+                </div>
+                <h3 className='text-xl font-bold text-gray-900 mb-4'>
+                  Heatmaps & Click Tracking
+                </h3>
+                <p className='text-gray-600'>
+                  See exactly where visitors click, scroll and engage on your landing pages after clicking your ads.
+                </p>
+              </div>
+
+              <div className='bg-white rounded-xl shadow-lg p-8 hover:shadow-xl transition-shadow'>
+                <div className='w-16 h-16 bg-pink-100 rounded-lg flex items-center justify-center mb-6'>
+                  <svg className='w-8 h-8 text-pink-600' fill='none' stroke='currentColor' viewBox='0 0 24 24'>
+                    <path strokeLinecap='round' strokeLinejoin='round' strokeWidth={2} d='M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z' />
+                  </svg>
+                </div>
+                <h3 className='text-xl font-bold text-gray-900 mb-4'>
+                  Scroll Depth Analysis
+                </h3>
+                <p className='text-gray-600'>
+                  Understand how far visitors scroll and where they lose interest, helping optimise page content and layout.
+                </p>
+              </div>
+
+              <div className='bg-white rounded-xl shadow-lg p-8 hover:shadow-xl transition-shadow'>
+                <div className='w-16 h-16 bg-pink-100 rounded-lg flex items-center justify-center mb-6'>
+                  <svg className='w-8 h-8 text-pink-600' fill='none' stroke='currentColor' viewBox='0 0 24 24'>
+                    <path strokeLinecap='round' strokeLinejoin='round' strokeWidth={2} d='M14.752 11.168l-3.197-2.132A1 1 0 0010 9.87v4.263a1 1 0 001.555.832l3.197-2.132a1 1 0 000-1.664z' />
+                    <path strokeLinecap='round' strokeLinejoin='round' strokeWidth={2} d='M21 12a9 9 0 11-18 0 9 9 0 0118 0z' />
+                  </svg>
+                </div>
+                <h3 className='text-xl font-bold text-gray-900 mb-4'>
+                  Session Recordings
+                </h3>
+                <p className='text-gray-600'>
+                  Watch real visitor sessions to identify confusion points, navigation issues and conversion barriers.
+                </p>
+              </div>
+            </div>
+
+            <div className='text-center mt-12'>
+              <div className='bg-white rounded-xl p-6 max-w-3xl mx-auto shadow-md'>
+                <p className='text-gray-700 text-lg'>
+                  <strong>Why this matters:</strong> Understanding how visitors behave after clicking your ads helps reduce wasted spend, improve landing page performance and increase your conversion rate. These insights directly inform campaign optimisation decisions.
+                </p>
+              </div>
+            </div>
+          </div>
+        </section>
+
         {/* Portfolio Section */}
         <section className='py-20 bg-white'>
           <div className='max-w-7xl mx-auto px-4 sm:px-6 lg:px-8'>
@@ -537,7 +604,7 @@ export default function AdCampaignsServicesPage() {
             className="bg-black text-white text-base font-medium px-6 py-3 rounded-full shadow-lg hover:bg-neutral-800 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-black transition-colors pointer-events-auto min-h-[48px] min-w-[48px]"
             onClick={() => {
               const form = document.querySelector("#contact");
-              form?.scrollIntoView({ behaviour: "smooth" });
+              form?.scrollIntoView({ behavior: "smooth" });
               if (typeof window !== "undefined" && typeof (window as any).gtag === "function") {
                 (window as any).gtag("event", "sticky_cta_click", {
                   cta_text: "Start My Campaign",

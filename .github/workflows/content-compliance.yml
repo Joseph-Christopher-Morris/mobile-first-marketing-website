@@ -1,0 +1,52 @@
+name: Content Compliance Check
+
+on:
+  pull_request:
+    paths:
+      - 'src/app/**/*.tsx'
+      - 'src/app/**/*.ts'
+      - 'src/components/**/*.tsx'
+  push:
+    branches:
+      - main
+    paths:
+      - 'src/app/**/*.tsx'
+      - 'src/app/**/*.ts'
+
+jobs:
+  content-compliance:
+    runs-on: ubuntu-latest
+    
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v3
+      
+      - name: Setup Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: '22'
+      
+      - name: Install dependencies
+        run: npm ci
+      
+      - name: Run content compliance audit
+        run: node scripts/audit-content-compliance.js
+      
+      - name: Upload audit results
+        if: always()
+        uses: actions/upload-artifact@v3
+        with:
+          name: content-compliance-report
+          path: content-compliance-audit-*.json
+      
+      - name: Check for violations
+        run: |
+          REPORT=$(ls -t content-compliance-audit-*.json | head -1)
+          NON_COMPLIANT=$(node -p "require('./$REPORT').summary.nonCompliant")
+          
+          if [ "$NON_COMPLIANT" -gt 0 ]; then
+            echo "❌ Content compliance check failed: $NON_COMPLIANT page(s) non-compliant"
+            exit 1
+          fi
+          
+          echo "✅ All pages are compliant"

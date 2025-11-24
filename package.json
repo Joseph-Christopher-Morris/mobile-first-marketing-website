@@ -7,7 +7,12 @@
     "build": "next build",
     "build:static": "next build",
     "start": "next start",
-    "lh:check": "node scripts/check-lighthouse.mjs reports/*.json"
+    "lh:check": "node scripts/check-lighthouse.mjs reports/*.json",
+    "content:audit": "node scripts/audit-content-compliance.js",
+    "content:validate": "node scripts/validate-content-requirements.js",
+    "content:update": "node scripts/update-page-to-spec.js",
+    "content:generate": "node scripts/create-content-from-spec.js",
+    "content:check": "node scripts/audit-content-compliance.js"
   },
   "dependencies": {
     "@aws-sdk/client-cloudfront": "^3.917.0",

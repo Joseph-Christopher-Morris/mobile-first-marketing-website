@@ -27,13 +27,13 @@ export function getAllServices(): Service[] {
       id: 'photography',
       title: 'Photography Services',
       description:
-        'Professional automotive and commercial photography with mobile-optimized delivery and stunning visual storytelling.',
+        'Professional automotive and commercial photography with mobile-optimised delivery and stunning visual storytelling.',
       image: '/images/services/photography-hero.webp',
       href: '/services/photography',
       features: [
         'Automotive Photography',
         'Commercial Photography',
-        'Mobile-Optimized Delivery',
+        'Mobile-Optimised Delivery',
         'Professional Editing',
       ],
     },
@@ -41,14 +41,14 @@ export function getAllServices(): Service[] {
       id: 'analytics',
       title: 'Data Analytics & Insights',
       description:
-        'Comprehensive analytics and data-driven insights to optimize your business performance and drive growth.',
+        'Comprehensive analytics and data-driven insights to optimise your business performance and drive growth.',
       image: '/images/services/screenshot-2025-09-23-analytics-dashboard.webp',
       href: '/services/analytics',
       features: [
         'Performance Analytics',
         'Data Visualization',
         'Growth Insights',
-        'ROI Optimization',
+        'ROI Optimisation',
       ],
     },
     {
@@ -61,7 +61,7 @@ export function getAllServices(): Service[] {
       features: [
         'Campaign Strategy',
         'Multi-Platform Advertising',
-        'ROI Optimization',
+        'ROI Optimisation',
         'Performance Tracking',
       ],
     },
