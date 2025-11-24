@@ -45,7 +45,7 @@ export default function ContactPage() {
         {/* Hero Section */}
         <section className='bg-brand-white py-12 md:py-20'>
           <div className='container mx-auto px-4'>
-            <div className='max-w-4xl mx-auto text-center'>
+            <div className='max-w-4xl mx-auto text-centre'>
               <h1 className='text-2xl md:text-4xl lg:text-5xl font-bold text-gray-900 mb-4 md:mb-6'>
                 Let&apos;s Work Together
               </h1>
@@ -212,15 +212,15 @@ export default function ContactPage() {
                       Hours (UK time)
                     </h3>
                     <div className='space-y-3 text-gray-700'>
-                      <div className='flex justify-between items-center'>
+                      <div className='flex justify-between items-centre'>
                         <span className='font-medium'>Monday – Friday</span>
                         <span>09:00 – 18:00</span>
                       </div>
-                      <div className='flex justify-between items-center'>
+                      <div className='flex justify-between items-centre'>
                         <span className='font-medium'>Saturday</span>
                         <span>10:00 – 14:00</span>
                       </div>
-                      <div className='flex justify-between items-center'>
+                      <div className='flex justify-between items-centre'>
                         <span className='font-medium'>Sunday</span>
                         <span>10:00 – 16:00</span>
                       </div>
@@ -240,7 +240,7 @@ export default function ContactPage() {
                           href={siteConfig.socialMedia.facebook}
                           target='_blank'
                           rel='noopener noreferrer'
-                          className='w-12 h-12 bg-brand-pink text-white rounded-full flex items-center justify-center hover:bg-brand-pink2 transition-colors'
+                          className='w-12 h-12 bg-brand-pink text-white rounded-full flex items-centre justify-centre hover:bg-brand-pink2 transition-colours'
                           aria-label='Follow on Facebook'
                         >
                           <svg
@@ -262,7 +262,7 @@ export default function ContactPage() {
                           href={siteConfig.socialMedia.linkedin}
                           target='_blank'
                           rel='noopener noreferrer'
-                          className='w-12 h-12 bg-brand-pink text-white rounded-full flex items-center justify-center hover:bg-brand-pink2 transition-colors'
+                          className='w-12 h-12 bg-brand-pink text-white rounded-full flex items-centre justify-centre hover:bg-brand-pink2 transition-colours'
                           aria-label='Connect on LinkedIn'
                         >
                           <svg
@@ -283,7 +283,7 @@ export default function ContactPage() {
                           href={siteConfig.socialMedia.instagram}
                           target='_blank'
                           rel='noopener noreferrer'
-                          className='w-12 h-12 bg-brand-pink text-white rounded-full flex items-center justify-center hover:bg-brand-pink2 transition-colors'
+                          className='w-12 h-12 bg-brand-pink text-white rounded-full flex items-centre justify-centre hover:bg-brand-pink2 transition-colours'
                           aria-label='Follow on Instagram'
                         >
                           <svg
@@ -313,7 +313,7 @@ export default function ContactPage() {
                     </p>
                     <a
                       href='tel:+447586378502'
-                      className='inline-flex items-center space-x-2 text-brand-pink hover:text-brand-pink2 font-semibold'
+                      className='inline-flex items-centre space-x-2 text-brand-pink hover:text-brand-pink2 font-semibold'
                       aria-label='Call now'
                     >
                       <svg
@@ -342,7 +342,7 @@ export default function ContactPage() {
         <section className='py-12 md:py-16 bg-gray-50'>
           <div className='container mx-auto px-4'>
             <div className='max-w-4xl mx-auto'>
-              <h2 className='text-2xl md:text-3xl font-bold text-gray-900 text-center mb-8'>
+              <h2 className='text-2xl md:text-3xl font-bold text-gray-900 text-centre mb-8'>
                 Frequently asked questions
               </h2>
 

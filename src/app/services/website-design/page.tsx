@@ -18,7 +18,7 @@ export default function WebsiteDesignPage() {
       <main className="bg-slate-50 pb-24 md:pb-0">
       {/* Hero & Intro Section */}
       <section className="max-w-5xl mx-auto px-4 pt-10 pb-12">
-        <div className="grid gap-8 md:grid-cols-[minmax(0,1.2fr)_minmax(0,1fr)] items-center">
+        <div className="grid gap-8 md:grid-cols-[minmax(0,1.2fr)_minmax(0,1fr)] items-centre">
           <div>
             <p className="text-sm font-semibold tracking-wide text-pink-600 uppercase mb-2">
               Website Design & Development
@@ -32,7 +32,7 @@ export default function WebsiteDesignPage() {
 
             <Link
               href="#website-quote"
-              className="inline-flex items-center justify-center rounded-full bg-pink-600 px-8 py-4 text-base font-semibold text-white shadow-md hover:bg-pink-700 transition-colors mb-2"
+              className="inline-flex items-centre justify-centre rounded-full bg-pink-600 px-8 py-4 text-base font-semibold text-white shadow-md hover:bg-pink-700 transition-colours mb-2"
             >
               Get a Free Website Quote →
             </Link>
@@ -42,8 +42,8 @@ export default function WebsiteDesignPage() {
             </p>
 
             {/* Local Trust Strip */}
-            <div className="inline-flex flex-wrap items-center gap-2 text-sm text-slate-600 bg-slate-50 px-4 py-2 rounded-full border border-slate-200">
-              <span className="flex items-center gap-1">
+            <div className="inline-flex flex-wrap items-centre gap-2 text-sm text-slate-600 bg-slate-50 px-4 py-2 rounded-full border border-slate-200">
+              <span className="flex items-centre gap-1">
                 <svg className="w-4 h-4 text-pink-600" fill="currentColor" viewBox="0 0 20 20">
                   <path fillRule="evenodd" d="M5.05 4.05a7 7 0 119.9 9.9L10 18.9l-4.95-4.95a7 7 0 010-9.9zM10 11a2 2 0 100-4 2 2 0 000 4z" clipRule="evenodd" />
                 </svg>
@@ -73,7 +73,7 @@ export default function WebsiteDesignPage() {
       {/* Who This Is For */}
       <section className="max-w-5xl mx-auto px-4 pb-12">
         <div className="bg-gradient-to-br from-pink-50 to-purple-50 rounded-2xl p-6 md:p-8 mb-12">
-          <h2 className="text-2xl font-semibold text-slate-900 mb-4 text-center">
+          <h2 className="text-2xl font-semibold text-slate-900 mb-4 text-centre">
             Who this is for
           </h2>
           <div className="max-w-3xl mx-auto space-y-3">
@@ -98,11 +98,11 @@ export default function WebsiteDesignPage() {
           </div>
         </div>
 
-        <h2 className="text-2xl font-semibold text-slate-900 mb-8 text-center">
+        <h2 className="text-2xl font-semibold text-slate-900 mb-8 text-centre">
           Why Businesses Choose Vivid Media Cheshire
         </h2>
         <div className="grid gap-6 md:grid-cols-3">
-          <div className="bg-white rounded-2xl p-6 shadow-sm text-center">
+          <div className="bg-white rounded-2xl p-6 shadow-sm text-centre">
             <div className="text-3xl mb-4">⚙️</div>
             <h3 className="text-lg font-semibold text-slate-900 mb-2">
               Built on secure cloud infrastructure
@@ -112,7 +112,7 @@ export default function WebsiteDesignPage() {
             </p>
           </div>
 
-          <div className="bg-white rounded-2xl p-6 shadow-sm text-center">
+          <div className="bg-white rounded-2xl p-6 shadow-sm text-centre">
             <div className="text-3xl mb-4">🧩</div>
             <h3 className="text-lg font-semibold text-slate-900 mb-2">
               Modular Framework
@@ -122,7 +122,7 @@ export default function WebsiteDesignPage() {
             </p>
           </div>
 
-          <div className="bg-white rounded-2xl p-6 shadow-sm text-center">
+          <div className="bg-white rounded-2xl p-6 shadow-sm text-centre">
             <div className="text-3xl mb-4">⚡</div>
             <h3 className="text-lg font-semibold text-slate-900 mb-2">
               Kiro Enhanced Workflow
@@ -137,16 +137,16 @@ export default function WebsiteDesignPage() {
       {/* WCAG 2.1 Accessibility Standards */}
       <section className="max-w-5xl mx-auto px-4 pb-12">
         <div className="bg-gradient-to-br from-blue-50 to-indigo-50 rounded-2xl p-6 md:p-8">
-          <h2 className="text-2xl font-semibold text-slate-900 mb-4 text-center">
+          <h2 className="text-2xl font-semibold text-slate-900 mb-4 text-centre">
             Built to WCAG 2.1 Accessibility Standards
           </h2>
-          <p className="text-slate-700 mb-6 text-center max-w-3xl mx-auto">
+          <p className="text-slate-700 mb-6 text-centre max-w-3xl mx-auto">
             Every website I build follows WCAG 2.1 Level AA accessibility guidelines, ensuring your site works for everyone, including people with disabilities. This is not just good practice. It is better for SEO, user experience, and legal compliance.
           </p>
           
           <div className="grid gap-6 md:grid-cols-2">
             <div className="bg-white rounded-xl p-5 shadow-sm">
-              <h3 className="font-semibold text-slate-900 mb-3 flex items-center gap-2">
+              <h3 className="font-semibold text-slate-900 mb-3 flex items-centre gap-2">
                 <span className="text-blue-600">✓</span>
                 Keyboard Navigation
               </h3>
@@ -156,7 +156,7 @@ export default function WebsiteDesignPage() {
             </div>
 
             <div className="bg-white rounded-xl p-5 shadow-sm">
-              <h3 className="font-semibold text-slate-900 mb-3 flex items-center gap-2">
+              <h3 className="font-semibold text-slate-900 mb-3 flex items-centre gap-2">
                 <span className="text-blue-600">✓</span>
                 Screen Reader Compatible
               </h3>
@@ -166,9 +166,9 @@ export default function WebsiteDesignPage() {
             </div>
 
             <div className="bg-white rounded-xl p-5 shadow-sm">
-              <h3 className="font-semibold text-slate-900 mb-3 flex items-center gap-2">
+              <h3 className="font-semibold text-slate-900 mb-3 flex items-centre gap-2">
                 <span className="text-blue-600">✓</span>
-                Color Contrast Compliance
+                Colour Contrast Compliance
               </h3>
               <p className="text-sm text-slate-700">
                 Text and interactive elements meet WCAG AA contrast ratios (4.5:1 for normal text, 3:1 for large text).
@@ -176,7 +176,7 @@ export default function WebsiteDesignPage() {
             </div>
 
             <div className="bg-white rounded-xl p-5 shadow-sm">
-              <h3 className="font-semibold text-slate-900 mb-3 flex items-center gap-2">
+              <h3 className="font-semibold text-slate-900 mb-3 flex items-centre gap-2">
                 <span className="text-blue-600">✓</span>
                 Responsive Text Sizing
               </h3>
@@ -186,7 +186,7 @@ export default function WebsiteDesignPage() {
             </div>
 
             <div className="bg-white rounded-xl p-5 shadow-sm">
-              <h3 className="font-semibold text-slate-900 mb-3 flex items-center gap-2">
+              <h3 className="font-semibold text-slate-900 mb-3 flex items-centre gap-2">
                 <span className="text-blue-600">✓</span>
                 Focus Indicators
               </h3>
@@ -196,7 +196,7 @@ export default function WebsiteDesignPage() {
             </div>
 
             <div className="bg-white rounded-xl p-5 shadow-sm">
-              <h3 className="font-semibold text-slate-900 mb-3 flex items-center gap-2">
+              <h3 className="font-semibold text-slate-900 mb-3 flex items-centre gap-2">
                 <span className="text-blue-600">✓</span>
                 Alternative Text for Images
               </h3>
@@ -342,15 +342,15 @@ export default function WebsiteDesignPage() {
           </div>
 
           <div className="mt-6 space-y-2">
-            <div className="flex items-center text-sm text-slate-700">
+            <div className="flex items-centre text-sm text-slate-700">
               <span className="text-green-600 mr-2">✅</span>
               Better Google Ads landing page scores
             </div>
-            <div className="flex items-center text-sm text-slate-700">
+            <div className="flex items-centre text-sm text-slate-700">
               <span className="text-green-600 mr-2">✅</span>
               Improved visitor engagement
             </div>
-            <div className="flex items-center text-sm text-slate-700">
+            <div className="flex items-centre text-sm text-slate-700">
               <span className="text-green-600 mr-2">✅</span>
               Stronger organic SEO results
             </div>
@@ -360,12 +360,12 @@ export default function WebsiteDesignPage() {
 
       {/* Process Section - Next Steps */}
       <section className="max-w-5xl mx-auto px-4 pb-12">
-        <h2 className="text-2xl font-semibold text-slate-900 mb-6 text-center">
+        <h2 className="text-2xl font-semibold text-slate-900 mb-6 text-centre">
           Your next steps
         </h2>
         <div className="grid gap-6 md:grid-cols-3 mb-8">
           <div className="bg-white rounded-2xl p-6 shadow-sm border-2 border-pink-100">
-            <div className="w-9 h-9 rounded-full bg-pink-600 text-white flex items-center justify-center font-semibold mb-3">
+            <div className="w-9 h-9 rounded-full bg-pink-600 text-white flex items-centre justify-centre font-semibold mb-3">
               1
             </div>
             <h3 className="font-semibold text-slate-900 mb-2">
@@ -378,7 +378,7 @@ export default function WebsiteDesignPage() {
           </div>
 
           <div className="bg-white rounded-2xl p-6 shadow-sm border-2 border-pink-100">
-            <div className="w-9 h-9 rounded-full bg-pink-600 text-white flex items-center justify-center font-semibold mb-3">
+            <div className="w-9 h-9 rounded-full bg-pink-600 text-white flex items-centre justify-centre font-semibold mb-3">
               2
             </div>
             <h3 className="font-semibold text-slate-900 mb-2">
@@ -391,7 +391,7 @@ export default function WebsiteDesignPage() {
           </div>
 
           <div className="bg-white rounded-2xl p-6 shadow-sm border-2 border-pink-100">
-            <div className="w-9 h-9 rounded-full bg-pink-600 text-white flex items-center justify-center font-semibold mb-3">
+            <div className="w-9 h-9 rounded-full bg-pink-600 text-white flex items-centre justify-centre font-semibold mb-3">
               3
             </div>
             <h3 className="font-semibold text-slate-900 mb-2">
@@ -404,7 +404,7 @@ export default function WebsiteDesignPage() {
           </div>
         </div>
 
-        <div className="text-center bg-slate-50 rounded-xl p-6">
+        <div className="text-centre bg-slate-50 rounded-xl p-6">
           <p className="text-slate-700 mb-2">
             <strong>Most Cheshire SME sites start from £300</strong>
           </p>
@@ -417,7 +417,7 @@ export default function WebsiteDesignPage() {
       {/* Pricing Section */}
       <section className="max-w-5xl mx-auto px-4 pb-12">
         <div className="bg-gradient-to-br from-pink-50 to-purple-50 rounded-3xl p-6 md:p-8 shadow-sm">
-          <h2 className="text-2xl md:text-3xl font-bold text-slate-900 mb-6 text-center">
+          <h2 className="text-2xl md:text-3xl font-bold text-slate-900 mb-6 text-centre">
             Website Design Pricing
           </h2>
 
@@ -478,7 +478,7 @@ export default function WebsiteDesignPage() {
             </div>
           </div>
 
-          <div className="text-center">
+          <div className="text-centre">
             <p className="text-sm text-slate-600 mb-4">
               Every project is tailored to your specific needs and goals
             </p>
@@ -498,27 +498,27 @@ export default function WebsiteDesignPage() {
         className="max-w-5xl mx-auto px-4 pb-16"
       >
         <div className="bg-gradient-to-br from-pink-50 via-white to-sky-50 rounded-3xl p-6 md:p-8 shadow-sm">
-          <div className="text-center mb-8">
+          <div className="text-centre mb-8">
             <Link
               href="#website-quote"
-              className="inline-flex items-center justify-center rounded-full bg-pink-600 px-8 py-4 text-base font-semibold text-white shadow-md hover:bg-pink-700 transition-colors mb-4"
+              className="inline-flex items-centre justify-centre rounded-full bg-pink-600 px-8 py-4 text-base font-semibold text-white shadow-md hover:bg-pink-700 transition-colours mb-4"
             >
               Get a Free Website Quote
             </Link>
           </div>
 
           <div className="max-w-2xl mx-auto mb-6">
-            <h2 className="text-2xl md:text-3xl font-semibold text-slate-900 mb-2 text-center">
+            <h2 className="text-2xl md:text-3xl font-semibold text-slate-900 mb-2 text-centre">
               Let's Design a Faster, Smarter Website Together
             </h2>
-            <p className="text-slate-700 text-sm md:text-base text-center">
+            <p className="text-slate-700 text-sm md:text-base text-centre">
               Ready to create a website that works as hard as you do? Tell me about your project and we can build something that drives real enquiries and repeat customers.
             </p>
           </div>
 
           {/* Form section */}
           <div className="bg-white rounded-2xl p-6 shadow-sm max-w-2xl mx-auto">
-            <h3 className="text-xl font-semibold text-slate-900 mb-2 text-center">
+            <h3 className="text-xl font-semibold text-slate-900 mb-2 text-centre">
               Quick Website Design Enquiry
             </h3>
 
@@ -617,12 +617,12 @@ export default function WebsiteDesignPage() {
 
               <button
                 type="submit"
-                className="w-full inline-flex items-center justify-center rounded-full bg-pink-600 px-8 py-3 text-sm font-semibold text-white shadow-md hover:bg-pink-700 transition-colors"
+                className="w-full inline-flex items-centre justify-centre rounded-full bg-pink-600 px-8 py-3 text-sm font-semibold text-white shadow-md hover:bg-pink-700 transition-colours"
               >
                 Get My Website Quote
               </button>
 
-              <div className="mt-4 text-sm text-slate-500 text-center">
+              <div className="mt-4 text-sm text-slate-500 text-centre">
                 <p><strong>Hours (UK time)</strong></p>
                 <p>Monday to Friday: 09:00 to 18:00</p>
                 <p>Saturday: 10:00 to 14:00</p>

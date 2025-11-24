@@ -43,7 +43,7 @@ export default function AdCampaignsServicesPage() {
         <section className='relative bg-brand-black text-white py-20 lg:py-32'>
           <div className='absolute inset-0 bg-black/20'></div>
           <div className='relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8'>
-            <div className='grid grid-cols-1 lg:grid-cols-2 gap-12 items-center'>
+            <div className='grid grid-cols-1 lg:grid-cols-2 gap-12 items-centre'>
               <div>
                 <h1 className='text-4xl md:text-5xl lg:text-6xl font-bold leading-tight mb-6'>
                   Ads That Bring You Real Leads. Not Wasted Clicks
@@ -65,13 +65,13 @@ export default function AdCampaignsServicesPage() {
                 <div className='flex flex-col sm:flex-row gap-4'>
                   <Link
                     href='/contact'
-                    className='bg-brand-pink text-white px-8 py-4 rounded-lg text-lg font-semibold hover:bg-brand-pink2 transition-colors text-center'
+                    className='bg-brand-pink text-white px-8 py-4 rounded-lg text-lg font-semibold hover:bg-brand-pink2 transition-colours text-centre'
                   >
                     Get My Free Ad Plan
                   </Link>
                   <Link
                     href='/blog'
-                    className='border-2 border-white text-white px-8 py-4 rounded-lg text-lg font-semibold hover:bg-white hover:text-gray-900 transition-colors text-center'
+                    className='border-2 border-white text-white px-8 py-4 rounded-lg text-lg font-semibold hover:bg-white hover:text-gray-900 transition-colours text-centre'
                   >
                     View Case Studies
                   </Link>
@@ -98,7 +98,7 @@ export default function AdCampaignsServicesPage() {
         {/* Services Overview */}
         <section className='py-16 md:py-24 bg-gray-50'>
           <div className='max-w-7xl mx-auto px-4 sm:px-6 lg:px-8'>
-            <div className='text-center mb-12 md:mb-16'>
+            <div className='text-centre mb-12 md:mb-16'>
               <h2 className='text-3xl md:text-4xl font-bold text-gray-900 mb-6'>
                 What's Included
               </h2>
@@ -109,7 +109,7 @@ export default function AdCampaignsServicesPage() {
 
             <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8'>
               <div className='bg-white rounded-xl shadow-lg p-8 hover:shadow-xl transition-shadow'>
-                <div className='w-16 h-16 bg-brand-white border-2 border-brand-pink rounded-lg flex items-center justify-center mb-6'>
+                <div className='w-16 h-16 bg-brand-white border-2 border-brand-pink rounded-lg flex items-centre justify-centre mb-6'>
                   <svg
                     className='w-8 h-8 text-brand-pink'
                     fill='none'
@@ -133,7 +133,7 @@ export default function AdCampaignsServicesPage() {
               </div>
 
               <div className='bg-white rounded-xl shadow-lg p-8 hover:shadow-xl transition-shadow'>
-                <div className='w-16 h-16 bg-brand-white border-2 border-brand-pink rounded-lg flex items-center justify-center mb-6'>
+                <div className='w-16 h-16 bg-brand-white border-2 border-brand-pink rounded-lg flex items-centre justify-centre mb-6'>
                   <svg
                     className='w-8 h-8 text-brand-pink'
                     fill='none'
@@ -157,7 +157,7 @@ export default function AdCampaignsServicesPage() {
               </div>
 
               <div className='bg-white rounded-xl shadow-lg p-8 hover:shadow-xl transition-shadow'>
-                <div className='w-16 h-16 bg-brand-white border-2 border-brand-pink rounded-lg flex items-center justify-center mb-6'>
+                <div className='w-16 h-16 bg-brand-white border-2 border-brand-pink rounded-lg flex items-centre justify-centre mb-6'>
                   <svg
                     className='w-8 h-8 text-brand-pink'
                     fill='none'
@@ -181,7 +181,7 @@ export default function AdCampaignsServicesPage() {
               </div>
 
               <div className='bg-white rounded-xl shadow-lg p-8 hover:shadow-xl transition-shadow'>
-                <div className='w-16 h-16 bg-brand-white border-2 border-brand-pink rounded-lg flex items-center justify-center mb-6'>
+                <div className='w-16 h-16 bg-brand-white border-2 border-brand-pink rounded-lg flex items-centre justify-centre mb-6'>
                   <svg
                     className='w-8 h-8 text-brand-pink'
                     fill='none'
@@ -211,7 +211,7 @@ export default function AdCampaignsServicesPage() {
               </div>
 
               <div className='bg-white rounded-xl shadow-lg p-8 hover:shadow-xl transition-shadow'>
-                <div className='w-16 h-16 bg-brand-white border-2 border-brand-pink rounded-lg flex items-center justify-center mb-6'>
+                <div className='w-16 h-16 bg-brand-white border-2 border-brand-pink rounded-lg flex items-centre justify-centre mb-6'>
                   <svg
                     className='w-8 h-8 text-brand-pink'
                     fill='none'
@@ -241,7 +241,7 @@ export default function AdCampaignsServicesPage() {
               </div>
 
               <div className='bg-white rounded-xl shadow-lg p-8 hover:shadow-xl transition-shadow'>
-                <div className='w-16 h-16 bg-brand-white border-2 border-brand-pink rounded-lg flex items-center justify-center mb-6'>
+                <div className='w-16 h-16 bg-brand-white border-2 border-brand-pink rounded-lg flex items-centre justify-centre mb-6'>
                   <svg
                     className='w-8 h-8 text-brand-pink'
                     fill='none'
@@ -270,7 +270,7 @@ export default function AdCampaignsServicesPage() {
         {/* Microsoft Clarity for Ad Campaigns */}
         <section className='py-16 md:py-20 bg-gradient-to-br from-pink-50 to-purple-50'>
           <div className='max-w-7xl mx-auto px-4 sm:px-6 lg:px-8'>
-            <div className='text-center mb-12'>
+            <div className='text-centre mb-12'>
               <h2 className='text-3xl md:text-4xl font-bold text-gray-900 mb-4'>
                 Understanding Visitor Behaviour with Microsoft Clarity
               </h2>
@@ -281,7 +281,7 @@ export default function AdCampaignsServicesPage() {
 
             <div className='grid grid-cols-1 md:grid-cols-3 gap-8'>
               <div className='bg-white rounded-xl shadow-lg p-8 hover:shadow-xl transition-shadow'>
-                <div className='w-16 h-16 bg-pink-100 rounded-lg flex items-center justify-center mb-6'>
+                <div className='w-16 h-16 bg-pink-100 rounded-lg flex items-centre justify-centre mb-6'>
                   <svg className='w-8 h-8 text-pink-600' fill='none' stroke='currentColor' viewBox='0 0 24 24'>
                     <path strokeLinecap='round' strokeLinejoin='round' strokeWidth={2} d='M15 15l-2 5L9 9l11 4-5 2zm0 0l5 5M7.188 2.239l.777 2.897M5.136 7.965l-2.898-.777M13.95 4.05l-2.122 2.122m-5.657 5.656l-2.12 2.122' />
                   </svg>
@@ -295,7 +295,7 @@ export default function AdCampaignsServicesPage() {
               </div>
 
               <div className='bg-white rounded-xl shadow-lg p-8 hover:shadow-xl transition-shadow'>
-                <div className='w-16 h-16 bg-pink-100 rounded-lg flex items-center justify-center mb-6'>
+                <div className='w-16 h-16 bg-pink-100 rounded-lg flex items-centre justify-centre mb-6'>
                   <svg className='w-8 h-8 text-pink-600' fill='none' stroke='currentColor' viewBox='0 0 24 24'>
                     <path strokeLinecap='round' strokeLinejoin='round' strokeWidth={2} d='M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z' />
                   </svg>
@@ -309,7 +309,7 @@ export default function AdCampaignsServicesPage() {
               </div>
 
               <div className='bg-white rounded-xl shadow-lg p-8 hover:shadow-xl transition-shadow'>
-                <div className='w-16 h-16 bg-pink-100 rounded-lg flex items-center justify-center mb-6'>
+                <div className='w-16 h-16 bg-pink-100 rounded-lg flex items-centre justify-centre mb-6'>
                   <svg className='w-8 h-8 text-pink-600' fill='none' stroke='currentColor' viewBox='0 0 24 24'>
                     <path strokeLinecap='round' strokeLinejoin='round' strokeWidth={2} d='M14.752 11.168l-3.197-2.132A1 1 0 0010 9.87v4.263a1 1 0 001.555.832l3.197-2.132a1 1 0 000-1.664z' />
                     <path strokeLinecap='round' strokeLinejoin='round' strokeWidth={2} d='M21 12a9 9 0 11-18 0 9 9 0 0118 0z' />
@@ -324,7 +324,7 @@ export default function AdCampaignsServicesPage() {
               </div>
             </div>
 
-            <div className='text-center mt-12'>
+            <div className='text-centre mt-12'>
               <div className='bg-white rounded-xl p-6 max-w-3xl mx-auto shadow-md'>
                 <p className='text-gray-700 text-lg'>
                   <strong>Why this matters:</strong> Understanding how visitors behave after clicking your ads helps reduce wasted spend, improve landing page performance and increase your conversion rate. These insights directly inform campaign optimisation decisions.
@@ -337,7 +337,7 @@ export default function AdCampaignsServicesPage() {
         {/* Portfolio Section */}
         <section className='py-20 bg-white'>
           <div className='max-w-7xl mx-auto px-4 sm:px-6 lg:px-8'>
-            <div className='text-center mb-16'>
+            <div className='text-centre mb-16'>
               <h2 className='text-3xl md:text-4xl font-bold text-gray-900 mb-4'>
                 My Work in Action
               </h2>
@@ -375,7 +375,7 @@ export default function AdCampaignsServicesPage() {
         <section className='py-16 md:py-20 bg-white'>
           <div className='max-w-5xl mx-auto px-4 sm:px-6 lg:px-8'>
             <div className='bg-gradient-to-br from-pink-50 to-purple-50 rounded-3xl p-8 md:p-12 shadow-sm'>
-              <h2 className='text-2xl md:text-3xl font-bold text-gray-900 mb-8 text-center'>
+              <h2 className='text-2xl md:text-3xl font-bold text-gray-900 mb-8 text-centre'>
                 Ad Campaigns Pricing
               </h2>
 
@@ -427,7 +427,7 @@ export default function AdCampaignsServicesPage() {
                 </div>
               </div>
 
-              <div className='text-center mt-8'>
+              <div className='text-centre mt-8'>
                 <p className='text-base text-gray-600'>
                   No long contracts. Pricing tailored to your budget and goals.
                 </p>
@@ -439,7 +439,7 @@ export default function AdCampaignsServicesPage() {
         {/* Process Section */}
         <section className='py-20 bg-gray-50'>
           <div className='max-w-7xl mx-auto px-4 sm:px-6 lg:px-8'>
-            <div className='text-center mb-16'>
+            <div className='text-centre mb-16'>
               <h2 className='text-3xl md:text-4xl font-bold text-gray-900 mb-4'>
                 How I Work
               </h2>
@@ -449,8 +449,8 @@ export default function AdCampaignsServicesPage() {
             </div>
 
             <div className='grid grid-cols-1 md:grid-cols-4 gap-8'>
-              <div className='text-center'>
-                <div className='w-16 h-16 bg-brand-pink text-white rounded-full flex items-center justify-center mx-auto mb-4 text-xl font-bold'>
+              <div className='text-centre'>
+                <div className='w-16 h-16 bg-brand-pink text-white rounded-full flex items-centre justify-centre mx-auto mb-4 text-xl font-bold'>
                   1
                 </div>
                 <h3 className='text-lg font-bold text-gray-900 mb-2'>
@@ -461,8 +461,8 @@ export default function AdCampaignsServicesPage() {
                 </p>
               </div>
 
-              <div className='text-center'>
-                <div className='w-16 h-16 bg-brand-pink text-white rounded-full flex items-center justify-center mx-auto mb-4 text-xl font-bold'>
+              <div className='text-centre'>
+                <div className='w-16 h-16 bg-brand-pink text-white rounded-full flex items-centre justify-centre mx-auto mb-4 text-xl font-bold'>
                   2
                 </div>
                 <h3 className='text-lg font-bold text-gray-900 mb-2'>Launch</h3>
@@ -471,8 +471,8 @@ export default function AdCampaignsServicesPage() {
                 </p>
               </div>
 
-              <div className='text-center'>
-                <div className='w-16 h-16 bg-brand-pink text-white rounded-full flex items-center justify-center mx-auto mb-4 text-xl font-bold'>
+              <div className='text-centre'>
+                <div className='w-16 h-16 bg-brand-pink text-white rounded-full flex items-centre justify-centre mx-auto mb-4 text-xl font-bold'>
                   3
                 </div>
                 <h3 className='text-lg font-bold text-gray-900 mb-2'>
@@ -483,8 +483,8 @@ export default function AdCampaignsServicesPage() {
                 </p>
               </div>
 
-              <div className='text-center'>
-                <div className='w-16 h-16 bg-brand-pink text-white rounded-full flex items-center justify-center mx-auto mb-4 text-xl font-bold'>
+              <div className='text-centre'>
+                <div className='w-16 h-16 bg-brand-pink text-white rounded-full flex items-centre justify-centre mx-auto mb-4 text-xl font-bold'>
                   4
                 </div>
                 <h3 className='text-lg font-bold text-gray-900 mb-2'>
@@ -496,7 +496,7 @@ export default function AdCampaignsServicesPage() {
               </div>
             </div>
 
-            <div className='text-center mt-8'>
+            <div className='text-centre mt-8'>
               <p className='text-gray-600 max-w-2xl mx-auto'>
                 You'll always know where your money is going and what it's earning.
               </p>
@@ -507,7 +507,7 @@ export default function AdCampaignsServicesPage() {
         {/* ROI Case Study Results Section */}
         <section className='py-20 bg-white'>
           <div className='max-w-7xl mx-auto px-4 sm:px-6 lg:px-8'>
-            <div className='text-center mb-16'>
+            <div className='text-centre mb-16'>
               <h2 className='text-3xl md:text-4xl font-bold text-gray-900 mb-4'>
                 Proven Results
               </h2>
@@ -520,34 +520,34 @@ export default function AdCampaignsServicesPage() {
               <div className='space-y-6'>
                 <div className='bg-gray-50 rounded-xl p-6'>
                   <div className='flex items-start'>
-                    <div className='w-6 h-6 bg-brand-pink text-white rounded-full flex items-center justify-center text-sm font-bold mr-4 mt-1 flex-shrink-0'>1</div>
+                    <div className='w-6 h-6 bg-brand-pink text-white rounded-full flex items-centre justify-centre text-sm font-bold mr-4 mt-1 flex-shrink-0'>1</div>
                     <p className='text-gray-700 text-lg'>2,470% average return on investment from targeted campaigns</p>
                   </div>
                 </div>
 
                 <div className='bg-gray-50 rounded-xl p-6'>
                   <div className='flex items-start'>
-                    <div className='w-6 h-6 bg-brand-pink text-white rounded-full flex items-center justify-center text-sm font-bold mr-4 mt-1 flex-shrink-0'>2</div>
+                    <div className='w-6 h-6 bg-brand-pink text-white rounded-full flex items-centre justify-centre text-sm font-bold mr-4 mt-1 flex-shrink-0'>2</div>
                     <p className='text-gray-700 text-lg'>£13,500 generated from a £546 marketing campaign</p>
                   </div>
                 </div>
 
                 <div className='bg-gray-50 rounded-xl p-6'>
                   <div className='flex items-start'>
-                    <div className='w-6 h-6 bg-brand-pink text-white rounded-full flex items-center justify-center text-sm font-bold mr-4 mt-1 flex-shrink-0'>3</div>
+                    <div className='w-6 h-6 bg-brand-pink text-white rounded-full flex items-centre justify-centre text-sm font-bold mr-4 mt-1 flex-shrink-0'>3</div>
                     <p className='text-gray-700 text-lg'>Increased bookings on the NYCC venue pages by 35%</p>
                   </div>
                 </div>
 
                 <div className='bg-gray-50 rounded-xl p-6'>
                   <div className='flex items-start'>
-                    <div className='w-6 h-6 bg-brand-pink text-white rounded-full flex items-center justify-center text-sm font-bold mr-4 mt-1 flex-shrink-0'>4</div>
+                    <div className='w-6 h-6 bg-brand-pink text-white rounded-full flex items-centre justify-centre text-sm font-bold mr-4 mt-1 flex-shrink-0'>4</div>
                     <p className='text-gray-700 text-lg'>4 years of consistent growth helping Cheshire businesses improve visibility and sales</p>
                   </div>
                 </div>
 
                 <div className='bg-white rounded-xl p-6 border-2 border-brand-pink'>
-                  <p className='text-gray-700 text-lg text-center'>
+                  <p className='text-gray-700 text-lg text-centre'>
                     I assisted in bringing four leads to the Nantwich Youth Community and Centre's (NYCC) venues through the booking page promotions to local Facebook Business Group pages.
                   </p>
                 </div>
@@ -558,7 +558,7 @@ export default function AdCampaignsServicesPage() {
 
         {/* CTA Section */}
         <section className='py-20 bg-brand-black text-white'>
-          <div className='max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center'>
+          <div className='max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-centre'>
             <h2 className='text-3xl md:text-4xl font-bold mb-4'>
               Ready to Get More Local Leads?
             </h2>
@@ -567,7 +567,7 @@ export default function AdCampaignsServicesPage() {
             </p>
             <Link
               href='/contact'
-              className='inline-flex items-center bg-brand-pink text-white px-8 py-4 rounded-lg text-lg font-semibold hover:bg-brand-pink2 transition-colors'
+              className='inline-flex items-centre bg-brand-pink text-white px-8 py-4 rounded-lg text-lg font-semibold hover:bg-brand-pink2 transition-colours'
             >
               Start My Campaign Plan
               <svg
@@ -599,9 +599,9 @@ export default function AdCampaignsServicesPage() {
         </div>
 
         {/* Sticky CTA */}
-        <div className="fixed bottom-4 w-full flex justify-center md:justify-end px-4 z-50 pointer-events-none">
+        <div className="fixed bottom-4 w-full flex justify-centre md:justify-end px-4 z-50 pointer-events-none">
           <button
-            className="bg-black text-white text-base font-medium px-6 py-3 rounded-full shadow-lg hover:bg-neutral-800 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-black transition-colors pointer-events-auto min-h-[48px] min-w-[48px]"
+            className="bg-black text-white text-base font-medium px-6 py-3 rounded-full shadow-lg hover:bg-neutral-800 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-black transition-colours pointer-events-auto min-h-[48px] min-w-[48px]"
             onClick={() => {
               const form = document.querySelector("#contact");
               form?.scrollIntoView({ behavior: "smooth" });

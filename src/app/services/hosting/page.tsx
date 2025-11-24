@@ -116,7 +116,7 @@ export default function HostingPage() {
 
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           {/* Hero Section */}
-          <section className="text-center mb-12">
+          <section className="text-centre mb-12">
             <h1 className="text-4xl md:text-5xl lg:text-6xl font-extrabold text-slate-900 leading-tight mb-6">
               Fast, secure website hosting for Cheshire businesses
             </h1>
@@ -149,7 +149,7 @@ export default function HostingPage() {
             
             {/* Quick FAQ */}
             <div className="max-w-2xl mx-auto mb-8 bg-white rounded-xl p-6 shadow-sm">
-              <h3 className="font-semibold text-gray-900 mb-4 text-center">Quick answers:</h3>
+              <h3 className="font-semibold text-gray-900 mb-4 text-centre">Quick answers:</h3>
               <div className="space-y-3 text-sm text-gray-700">
                 <div className="flex items-start gap-2">
                   <span className="text-pink-600 font-bold">Q:</span>
@@ -176,16 +176,16 @@ export default function HostingPage() {
             </div>
             
             {/* CTA Buttons */}
-            <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
+            <div className="flex flex-col sm:flex-row items-centre justify-centre gap-4">
               <a
                 href="tel:+447586378502"
-                className="inline-flex items-center justify-center px-8 py-3 rounded-full text-base md:text-lg font-semibold bg-brand-pink text-white shadow-lg hover:bg-brand-pink2 hover:shadow-xl transition"
+                className="inline-flex items-centre justify-centre px-8 py-3 rounded-full text-base md:text-lg font-semibold bg-brand-pink text-white shadow-lg hover:bg-brand-pink2 hover:shadow-xl transition"
               >
                 Call Joe
               </a>
               <a
                 href="#contact"
-                className="inline-flex items-center justify-center px-8 py-3 rounded-full text-base md:text-lg font-semibold bg-slate-900 text-white/90 hover:bg-black transition shadow-md hover:shadow-lg"
+                className="inline-flex items-centre justify-centre px-8 py-3 rounded-full text-base md:text-lg font-semibold bg-slate-900 text-white/90 hover:bg-black transition shadow-md hover:shadow-lg"
               >
                 Get Hosting Quote
               </a>
@@ -213,10 +213,10 @@ export default function HostingPage() {
 
           {/* Intro Section */}
           <section className="mb-20">
-            <h2 className="text-3xl md:text-4xl font-bold text-slate-900 mb-6 text-center">
+            <h2 className="text-3xl md:text-4xl font-bold text-slate-900 mb-6 text-centre">
               Why reliable hosting matters
             </h2>
-            <p className="text-lg text-slate-700 max-w-4xl mx-auto leading-relaxed text-center">
+            <p className="text-lg text-slate-700 max-w-4xl mx-auto leading-relaxed text-centre">
               If your website is slow or unreliable, you lose visitors, enquiries and trust. Good hosting should be invisible. Pages should load quickly, stay online and support your business quietly in the background. That is what this hosting service is designed to do for Cheshire small businesses.
             </p>
           </section>
@@ -230,7 +230,7 @@ export default function HostingPage() {
 
           {/* Why Choose This Hosting */}
           <section className="mb-20">
-            <h2 className="text-3xl md:text-4xl font-bold text-slate-900 mb-12 text-center">
+            <h2 className="text-3xl md:text-4xl font-bold text-slate-900 mb-12 text-centre">
               Why choose secure cloud hosting
             </h2>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-6xl mx-auto">
@@ -290,10 +290,10 @@ export default function HostingPage() {
 
           {/* Real World Speed Improvements */}
           <section className="mb-20">
-            <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-6 text-center">
+            <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-6 text-centre">
               Real world speed improvements
             </h2>
-            <p className="text-lg text-gray-700 max-w-4xl mx-auto mb-12 text-center">
+            <p className="text-lg text-gray-700 max-w-4xl mx-auto mb-12 text-centre">
               I migrated my automotive photography site from traditional hosting to secure cloud hosting with global delivery. These are the results measured on mobile using Google Lighthouse.
             </p>
             
@@ -329,17 +329,17 @@ export default function HostingPage() {
               </div>
             </div>
 
-            <p className="text-lg text-gray-700 max-w-4xl mx-auto text-center">
+            <p className="text-lg text-gray-700 max-w-4xl mx-auto text-centre">
               These are real results from a live site. Fast hosting does not just feel better. It supports better search visibility and a smoother experience for visitors.
             </p>
           </section>
 
           {/* Pricing Section */}
           <section className="mb-20">
-            <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-6 text-center">
+            <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-6 text-centre">
               Website hosting pricing
             </h2>
-            <p className="text-lg text-gray-700 max-w-4xl mx-auto mb-12 text-center">
+            <p className="text-lg text-gray-700 max-w-4xl mx-auto mb-12 text-centre">
               Hosting is priced in a simple way. You pay one annual fee for a high quality setup and support, with a clear quote if migration work is needed.
             </p>
 
@@ -386,7 +386,7 @@ export default function HostingPage() {
 
           {/* Local Testimonials - Week 2 */}
           <section className="mb-20">
-            <h2 className="text-3xl font-bold text-gray-900 mb-8 text-center">What Cheshire businesses say</h2>
+            <h2 className="text-3xl font-bold text-gray-900 mb-8 text-centre">What Cheshire businesses say</h2>
             <div className="max-w-4xl mx-auto grid md:grid-cols-2 gap-6 mb-12">
               <div className="bg-white rounded-2xl p-6 shadow-lg border-l-4 border-pink-600">
                 <div className="flex items-start gap-4">
@@ -422,7 +422,7 @@ export default function HostingPage() {
 
           {/* FAQs */}
           <section className="mb-20">
-            <h2 className="text-3xl font-bold text-gray-900 mb-8 text-center">Frequently asked questions</h2>
+            <h2 className="text-3xl font-bold text-gray-900 mb-8 text-centre">Frequently asked questions</h2>
             <div className="max-w-3xl mx-auto space-y-6">
               <div className="bg-white rounded-lg p-6 shadow-sm border border-gray-200">
                 <h3 className="font-semibold text-lg mb-3">How much does hosting cost?</h3>
@@ -462,23 +462,23 @@ export default function HostingPage() {
           </section>
 
           {/* Final CTA Block */}
-          <section className="text-center bg-gradient-to-r from-pink-50 to-purple-50 rounded-2xl p-12 mb-20">
+          <section className="text-centre bg-gradient-to-r from-pink-50 to-purple-50 rounded-2xl p-12 mb-20">
             <h2 className="text-3xl md:text-4xl font-bold text-slate-900 mb-4">
               Ready for faster, more stable hosting
             </h2>
             <p className="text-base md:text-lg text-slate-700 mb-8 max-w-2xl mx-auto">
               If your site feels slow or unreliable, or you are not sure what you are paying for, it might be time to move to a more modern setup. I can review your current website, explain your options and handle the migration for you.
             </p>
-            <div className="flex flex-col sm:flex-row items-center justify-center gap-4 mb-4">
+            <div className="flex flex-col sm:flex-row items-centre justify-centre gap-4 mb-4">
               <a
                 href="tel:+447586378502"
-                className="inline-flex items-center justify-center px-8 py-3 rounded-full text-base md:text-lg font-semibold bg-brand-pink text-white shadow-lg hover:bg-brand-pink2 hover:shadow-xl transition"
+                className="inline-flex items-centre justify-centre px-8 py-3 rounded-full text-base md:text-lg font-semibold bg-brand-pink text-white shadow-lg hover:bg-brand-pink2 hover:shadow-xl transition"
               >
                 Call Joe
               </a>
               <a
                 href="#contact"
-                className="inline-flex items-center justify-center px-8 py-3 rounded-full text-base md:text-lg font-semibold bg-slate-900 text-white/90 hover:bg-black transition shadow-md hover:shadow-lg"
+                className="inline-flex items-centre justify-centre px-8 py-3 rounded-full text-base md:text-lg font-semibold bg-slate-900 text-white/90 hover:bg-black transition shadow-md hover:shadow-lg"
               >
                 Get My Free Website Hosting Quote
               </a>
