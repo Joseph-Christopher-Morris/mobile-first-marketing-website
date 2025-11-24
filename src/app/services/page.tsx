@@ -191,7 +191,7 @@ export default function ServicesPage() {
 
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           {/* Header */}
-          <header className="text-center mb-16">
+          <header className="text-centre mb-16">
             <h1 className="text-4xl md:text-5xl lg:text-6xl font-extrabold text-slate-900 leading-tight">
               Websites, Ads, Analytics, and Photography for Cheshire Businesses
             </h1>
@@ -203,29 +203,29 @@ export default function ServicesPage() {
             <div className="mt-8">
               <Link
                 href="/contact"
-                className="inline-flex items-center justify-center px-8 py-4 rounded-full text-lg font-semibold bg-brand-pink text-white shadow-lg hover:bg-brand-pink2 hover:shadow-xl transition"
+                className="inline-flex items-centre justify-centre px-8 py-4 rounded-full text-lg font-semibold bg-brand-pink text-white shadow-lg hover:bg-brand-pink2 hover:shadow-xl transition"
               >
                 Tell me what you need →
               </Link>
             </div>
             
             {/* Micro-Proof Row */}
-            <div className="mt-8 flex flex-wrap items-center justify-center gap-6 text-sm md:text-base text-gray-700">
-              <div className="flex items-center gap-2">
+            <div className="mt-8 flex flex-wrap items-centre justify-centre gap-6 text-sm md:text-base text-gray-700">
+              <div className="flex items-centre gap-2">
                 <svg className="w-5 h-5 text-green-600" fill="currentColor" viewBox="0 0 20 20">
                   <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
                 </svg>
                 <span className="font-medium">82% faster load times</span>
               </div>
               <span className="text-gray-400">•</span>
-              <div className="flex items-center gap-2">
+              <div className="flex items-centre gap-2">
                 <svg className="w-5 h-5 text-green-600" fill="currentColor" viewBox="0 0 20 20">
                   <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
                 </svg>
                 <span className="font-medium">GA4 + Ads tracking included</span>
               </div>
               <span className="text-gray-400">•</span>
-              <div className="flex items-center gap-2">
+              <div className="flex items-centre gap-2">
                 <svg className="w-5 h-5 text-green-600" fill="currentColor" viewBox="0 0 20 20">
                   <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
                 </svg>

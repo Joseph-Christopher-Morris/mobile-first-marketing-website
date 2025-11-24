@@ -16,7 +16,7 @@ export default function WebsiteHostingPage() {
         {/* Hero Section */}
         <section className="relative bg-gradient-to-br from-pink-50 to-purple-50 py-16 lg:py-24">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div className="grid lg:grid-cols-2 gap-12 items-center">
+            <div className="grid lg:grid-cols-2 gap-12 items-centre">
               <div>
                 <h1 className="text-4xl lg:text-5xl font-bold text-gray-900 mb-6">
                   Fast, Reliable Website Hosting and Setup for Small Businesses
@@ -48,7 +48,7 @@ export default function WebsiteHostingPage() {
         {/* Core Pitch Section */}
         <section className="py-16 bg-white">
           <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div className="text-center mb-12">
+            <div className="text-centre mb-12">
               <h2 className="text-3xl font-bold text-gray-900 mb-6">The Core Pitch</h2>
             </div>
             <div className="prose prose-lg mx-auto text-gray-700">
@@ -68,7 +68,7 @@ export default function WebsiteHostingPage() {
         {/* Hosting Highlights */}
         <section className="py-16 bg-gray-50">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div className="text-center mb-12">
+            <div className="text-centre mb-12">
               <h2 className="text-3xl font-bold text-gray-900 mb-4">Hosting Highlights</h2>
             </div>
 
@@ -108,7 +108,7 @@ export default function WebsiteHostingPage() {
         {/* Performance Example */}
         <section className="py-16 bg-white">
           <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div className="text-center mb-12">
+            <div className="text-centre mb-12">
               <h2 className="text-3xl font-bold text-gray-900 mb-4">Real Performance Example</h2>
               <p className="text-gray-600">
                 Results measured with Google Lighthouse for my automotive photography site after migrating to secure cloud.
@@ -117,7 +117,7 @@ export default function WebsiteHostingPage() {
 
             {/* Before/After Screenshots */}
             <div className="grid md:grid-cols-2 gap-8 mb-12">
-              <div className="text-center">
+              <div className="text-centre">
                 <h3 className="text-xl font-semibold text-red-600 mb-4">Before Migration</h3>
                 <div className="bg-red-50 p-4 rounded-2xl">
                   <Image
@@ -130,7 +130,7 @@ export default function WebsiteHostingPage() {
                   <p className="text-sm text-red-700 mt-3">Poor performance scores and slow loading times</p>
                 </div>
               </div>
-              <div className="text-center">
+              <div className="text-centre">
                 <h3 className="text-xl font-semibold text-green-600 mb-4">After Migration</h3>
                 <div className="bg-green-50 p-4 rounded-2xl">
                   <Image
@@ -152,20 +152,20 @@ export default function WebsiteHostingPage() {
                   <thead>
                     <tr className="border-b border-gray-200">
                       <th className="text-left py-3 px-4 font-semibold text-gray-900">Metric</th>
-                      <th className="text-center py-3 px-4 font-semibold text-gray-900">Before Migration</th>
-                      <th className="text-center py-3 px-4 font-semibold text-gray-900">After Migration</th>
+                      <th className="text-centre py-3 px-4 font-semibold text-gray-900">Before Migration</th>
+                      <th className="text-centre py-3 px-4 font-semibold text-gray-900">After Migration</th>
                     </tr>
                   </thead>
                   <tbody>
                     <tr className="border-b border-gray-100">
                       <td className="py-3 px-4 text-gray-700">Performance Score (Mobile)</td>
-                      <td className="py-3 px-4 text-center text-red-600 font-semibold">56/100</td>
-                      <td className="py-3 px-4 text-center text-green-600 font-semibold">99/100</td>
+                      <td className="py-3 px-4 text-centre text-red-600 font-semibold">56/100</td>
+                      <td className="py-3 px-4 text-centre text-green-600 font-semibold">99/100</td>
                     </tr>
                     <tr>
                       <td className="py-3 px-4 text-gray-700">Load Time</td>
-                      <td className="py-3 px-4 text-center text-red-600 font-semibold">14+ seconds</td>
-                      <td className="py-3 px-4 text-center text-green-600 font-semibold">Under 2 seconds</td>
+                      <td className="py-3 px-4 text-centre text-red-600 font-semibold">14+ seconds</td>
+                      <td className="py-3 px-4 text-centre text-green-600 font-semibold">Under 2 seconds</td>
                     </tr>
                   </tbody>
                 </table>
@@ -177,12 +177,12 @@ export default function WebsiteHostingPage() {
         {/* How It Works */}
         <section className="py-16 bg-gray-50">
           <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div className="text-center mb-12">
+            <div className="text-centre mb-12">
               <h2 className="text-3xl font-bold text-gray-900 mb-4">How It Works</h2>
             </div>
             <div className="grid md:grid-cols-3 gap-8">
-              <div className="text-center">
-                <div className="bg-pink-100 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4">
+              <div className="text-centre">
+                <div className="bg-pink-100 w-16 h-16 rounded-full flex items-centre justify-centre mx-auto mb-4">
                   <span className="text-2xl font-bold text-pink-600">1</span>
                 </div>
                 <h3 className="text-xl font-semibold text-gray-900 mb-3">Discovery & Planning</h3>
@@ -190,8 +190,8 @@ export default function WebsiteHostingPage() {
                   I review your current setup and goals, then recommend the right hosting approach.
                 </p>
               </div>
-              <div className="text-center">
-                <div className="bg-pink-100 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4">
+              <div className="text-centre">
+                <div className="bg-pink-100 w-16 h-16 rounded-full flex items-centre justify-centre mx-auto mb-4">
                   <span className="text-2xl font-bold text-pink-600">2</span>
                 </div>
                 <h3 className="text-xl font-semibold text-gray-900 mb-3">Migration or Setup</h3>
@@ -199,8 +199,8 @@ export default function WebsiteHostingPage() {
                   Your website is configured on secure cloud with minimal downtime.
                 </p>
               </div>
-              <div className="text-center">
-                <div className="bg-pink-100 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4">
+              <div className="text-centre">
+                <div className="bg-pink-100 w-16 h-16 rounded-full flex items-centre justify-centre mx-auto mb-4">
                   <span className="text-2xl font-bold text-pink-600">3</span>
                 </div>
                 <h3 className="text-xl font-semibold text-gray-900 mb-3">optimisation & Support</h3>
@@ -215,7 +215,7 @@ export default function WebsiteHostingPage() {
         {/* FAQ Section */}
         <section className="py-16 bg-white">
           <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div className="text-center mb-12">
+            <div className="text-centre mb-12">
               <h2 className="text-3xl font-bold text-gray-900 mb-4">Frequently Asked Questions</h2>
             </div>
             <div className="space-y-6">
@@ -270,7 +270,7 @@ export default function WebsiteHostingPage() {
         {/* Contact Form */}
         <section id="contact-form" className="py-16 bg-gray-50">
           <div className="max-w-2xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div className="text-center mb-12">
+            <div className="text-centre mb-12">
               <h2 className="text-3xl font-bold text-gray-900 mb-4">Get a Website Hosting or Build Quote</h2>
               <p className="text-gray-600">
                 Tell me a bit about your current website or the one you would like to build, and I will get back to you personally the same day with ideas and next steps.
@@ -356,12 +356,12 @@ export default function WebsiteHostingPage() {
 
               <button
                 type="submit"
-                className="w-full bg-pink-600 text-white font-medium py-3 px-6 rounded-lg hover:bg-pink-700 transition-colors duration-200"
+                className="w-full bg-pink-600 text-white font-medium py-3 px-6 rounded-lg hover:bg-pink-700 transition-colours duration-200"
               >
                 Send Hosting Enquiry
               </button>
 
-              <div className="mt-4 text-sm text-slate-500 text-center">
+              <div className="mt-4 text-sm text-slate-500 text-centre">
                 <p><strong>Hours (UK time)</strong></p>
                 <p>Monday to Friday: 09:00 to 18:00</p>
                 <p>Saturday: 10:00 to 14:00</p>
@@ -369,7 +369,7 @@ export default function WebsiteHostingPage() {
                 <p>I personally reply to all enquiries the same day during these hours.</p>
               </div>
 
-              <p className="text-sm text-gray-500 text-center mt-4">
+              <p className="text-sm text-gray-500 text-centre mt-4">
                 This form is powered by Formspree. By submitting, you agree to be contacted about your enquiry.
               </p>
             </form>
