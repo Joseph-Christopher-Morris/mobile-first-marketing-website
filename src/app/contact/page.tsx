@@ -234,7 +234,7 @@ export default function ContactPage() {
                     <h3 className='text-xl font-bold text-gray-900 mb-4'>
                       Follow me
                     </h3>
-                    <div className='flex space-x-4'>
+                    <div className='social-links'>
                       {siteConfig.socialMedia.facebook && (
                         <a
                           href={siteConfig.socialMedia.facebook}
