@@ -122,15 +122,9 @@ const post: BlogPost = {
     <p><a href="/blog">Explore more work like this</a> or <a href="/contact">get in touch</a>.</p>
   `,
   date: '2025-07-18',
-  author: 'Joe from Vivid Auto',
-  category: 'Photography',
-  tags: [
-    'stock-photography',
-    'breakthrough',
-    'income-growth',
-    'consistency',
-    'photography-business',
-  ],
+  author: 'Joe — Digital Marketing & Analytics',
+  category: 'Case Studies',
+  tags: ['content-strategy', 'case-study', 'conversion-optimisation', 'small-business'],
   image: '/images/blog/Cumulative_Shutterstock_Downloads_Earnings_Jan-Apr2023.png',
   readTime: 6,
   featured: false,

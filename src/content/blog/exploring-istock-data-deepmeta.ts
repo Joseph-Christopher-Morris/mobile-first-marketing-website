@@ -94,15 +94,9 @@ const post: BlogPost = {
     <p><a href="/blog">Explore more work like this</a> or <a href="/contact">get in touch</a>.</p>
   `,
   date: '2025-08-14',
-  author: 'Joe from Vivid Auto',
-  category: 'Analytics',
-  tags: [
-    'stock-photography',
-    'data-analysis',
-    'istock',
-    'deepmeta',
-    'earnings-breakdown',
-  ],
+  author: 'Joe — Digital Marketing & Analytics',
+  category: 'Case Studies',
+  tags: ['content-strategy', 'analytics'],
   image: '/images/hero/screenshot-2025-09-23-analytics-dashboard.webp',
   readTime: 6,
   featured: false,

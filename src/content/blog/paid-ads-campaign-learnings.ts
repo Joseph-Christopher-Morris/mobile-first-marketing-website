@@ -93,15 +93,9 @@ const post: BlogPost = {
     <p><a href="/blog">Explore more work like this</a> or <a href="/contact">get in touch</a>.</p>
   `,
   date: '2025-08-11',
-  author: 'Joe from Vivid Auto',
-  category: 'Marketing',
-  tags: [
-    'meta-ads',
-    'google-ads',
-    'hotjar',
-    'paid-traffic',
-    'newsletter-growth',
-  ],
+  author: 'Joe — Digital Marketing & Analytics',
+  category: 'Case Studies',
+  tags: ['google-ads'],
   image: '/images/blog/screenshot-2025-08-11-143853.webp',
   readTime: 6,
   featured: false,

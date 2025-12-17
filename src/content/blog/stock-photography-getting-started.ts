@@ -104,15 +104,9 @@ const post: BlogPost = {
     <p><a href="/blog">Explore more work like this</a> or <a href="/contact">get in touch</a>.</p>
   `,
   date: '2025-07-18',
-  author: 'Joe from Vivid Auto',
-  category: 'Photography',
-  tags: [
-    'stock-photography',
-    'getting-started',
-    'income-diversification',
-    'photography-business',
-    'freelance-strategy',
-  ],
+  author: 'Joe — Digital Marketing & Analytics',
+  category: 'Case Studies',
+  tags: ['content-strategy', 'case-study', 'small-business'],
   image: '/images/blog/230226_Swadlincote_Stock_Photography-23.webp',
   readTime: 5,
   featured: false,

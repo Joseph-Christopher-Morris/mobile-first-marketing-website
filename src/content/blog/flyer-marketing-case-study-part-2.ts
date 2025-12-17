@@ -105,9 +105,9 @@ const post: BlogPost = {
     <p><a href="/blog">Explore related case studies</a> or <a href="/contact">get in touch</a>.</p>
   `,
   date: '2025-07-12',
-  author: 'Joe from Vivid Auto',
-  category: 'Marketing',
-  tags: ['flyer-marketing', 'offline-marketing', 'business-growth', 'client-management', 'case-study'],
+  author: 'Joe — Digital Marketing & Analytics',
+  category: 'Case Studies',
+  tags: ['offline-marketing', 'case-study'],
   image: '/images/blog/211125_Hampson_Auctions-29.webp',
   readTime: 3,
   featured: false,

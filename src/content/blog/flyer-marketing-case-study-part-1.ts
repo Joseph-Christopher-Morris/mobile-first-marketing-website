@@ -17,7 +17,7 @@ const post: BlogPost = {
 
     <img src="/images/blog/WhatsApp Image 2025-07-11 at 2.22.32 PM (1).webp" alt="Version 1 of my flyer, handed out at car meets and Oulton Park" />
 
-    <p>After launching <em>Vivid Auto Photography</em>, I knew I needed real-world visibility. Instead of relying solely on Instagram or ads, I wanted print materials that felt premium and sparked real conversations at events.</p>
+    <p>After launching <em>Vivid Media Cheshire</em>, I knew I needed real-world visibility. Instead of relying solely on Instagram or ads, I wanted print materials that felt premium and sparked real conversations at events.</p>
 
     <p>I designed <strong>sleek business cards</strong> and started distributing them during <strong>car meets, races, and track days</strong> like those at <em>Oulton Park</em>.<br />
     Every conversation was a touchpoint. Every photo became social proof.</p>
@@ -95,9 +95,9 @@ const post: BlogPost = {
     <p><a href="/blog">Explore related case studies</a> or <a href="/contact">get in touch</a>.</p>
   `,
   date: '2025-07-12',
-  author: 'Joe from Vivid Auto',
-  category: 'Marketing',
-  tags: ['flyer-marketing', 'offline-marketing', 'photography-business', 'ROI', 'case-study'],
+  author: 'Joe — Digital Marketing & Analytics',
+  category: 'Case Studies',
+  tags: ['offline-marketing', 'case-study'],
   image: '/images/hero/aston-martin-db6-website.webp',
   readTime: 4,
   featured: false,

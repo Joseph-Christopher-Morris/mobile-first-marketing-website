@@ -23,7 +23,7 @@ export const metadata: Metadata = {
   ],
   openGraph: {
     title:
-      'Contact Vivid Auto Photography | Professional Automotive Photography Services',
+      'Contact Vivid Media Cheshire | Professional Automotive Photography Services',
     description:
       'Get in touch about professional automotive photography, data analytics, or strategic advertising campaigns in Nantwich & Cheshire. Free consultation available.',
     type: 'website',
@@ -32,7 +32,7 @@ export const metadata: Metadata = {
         url: '/images/hero/aston-martin-db6-website.webp',
         width: 1200,
         height: 630,
-        alt: 'Contact Vivid Auto Photography for professional automotive photography services in Nantwich & Cheshire',
+        alt: 'Contact Vivid Media Cheshire for professional automotive photography services in Nantwich & Cheshire',
       },
     ],
   },

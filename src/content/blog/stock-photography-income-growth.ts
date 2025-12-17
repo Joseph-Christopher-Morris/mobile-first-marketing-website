@@ -20,7 +20,7 @@ const post: BlogPost = {
 
     <h2>📊 My Stock Photography Revenue (2022–2025)</h2>
 
-    <img src="/images/blog/Cumulative_Stock_Photography_Revenue_2022_2025_v2.webp" alt="Vivid Auto Photography Cumulative Stock Photography Revenue Line Chart (2022 - 2025)" />
+    <img src="/images/blog/Cumulative_Stock_Photography_Revenue_2022_2025_v2.webp" alt="Vivid Media Cheshire Cumulative Stock Photography Revenue Line Chart (2022 - 2025)" />
 
     <ul>
       <li><strong>2022:</strong> $2.36</li>
@@ -120,15 +120,9 @@ const post: BlogPost = {
     <p><a href="/blog">Explore more work like this</a> or <a href="/contact">get in touch</a>.</p>
   `,
   date: '2025-07-18',
-  author: 'Joe from Vivid Auto',
-  category: 'Marketing',
-  tags: [
-    'stock-photography',
-    'income-growth',
-    'passive-income',
-    'photography-business',
-    'revenue-scaling',
-  ],
+  author: 'Joe — Digital Marketing & Analytics',
+  category: 'Case Studies',
+  tags: ['content-strategy', 'conversion-optimisation', 'small-business'],
   image: '/images/blog/Stock_Photography_Revenue_Bar_Chart.png',
   readTime: 8,
   featured: false,

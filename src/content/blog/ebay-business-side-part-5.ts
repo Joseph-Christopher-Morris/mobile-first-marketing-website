@@ -81,15 +81,9 @@ const post: BlogPost = {
     <p><a href="/blog">Explore more work like this</a> or <a href="/contact">get in touch</a>.</p>
   `,
   date: '2025-07-06',
-  author: 'Joe from Vivid Auto',
-  category: 'Business',
-  tags: [
-    'ebay-selling',
-    'business-admin',
-    'commission-tracking',
-    'customer-challenges',
-    'ecommerce',
-  ],
+  author: 'Joe — Digital Marketing & Analytics',
+  category: 'Case Studies',
+  tags: ['ecommerce'],
   image: '/images/blog/240804-Model_Car_Collection-46 (1).jpg',
   readTime: 5,
   featured: false,

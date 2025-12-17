@@ -1,0 +1,28 @@
+{
+  "filesUpdated": [
+    "src/config/site.ts",
+    "blog/ebay-business-side-part-5.ts",
+    "blog/ebay-model-car-sales-timing-bundles.ts",
+    "blog/ebay-model-ford-collection-part-1.ts",
+    "blog/ebay-photography-workflow-part-2.ts",
+    "blog/ebay-repeat-buyers-part-4.ts",
+    "blog/exploring-istock-data-deepmeta.ts",
+    "blog/flyer-marketing-case-study-part-1.ts",
+    "blog/flyer-marketing-case-study-part-2.ts",
+    "blog/flyers-roi-breakdown.ts",
+    "blog/paid-ads-campaign-learnings.ts",
+    "blog/stock-photography-breakthrough.ts",
+    "blog/stock-photography-getting-started.ts",
+    "blog/stock-photography-income-growth.ts",
+    "blog/stock-photography-lessons.ts",
+    "src/app/contact/page.tsx",
+    "src/app/blog/[slug]/page.tsx"
+  ],
+  "brandReferences": 14,
+  "authorUpdates": 14,
+  "metadataFixes": 36,
+  "categoryFixes": 14,
+  "tagFixes": 8,
+  "ogImageUpdates": 0,
+  "errors": []
+}

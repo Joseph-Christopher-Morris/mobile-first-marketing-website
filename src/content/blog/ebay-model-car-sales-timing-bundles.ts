@@ -109,15 +109,9 @@ const post: BlogPost = {
     <p><a href="/blog">Explore related case studies</a> or <a href="/contact">get in touch</a>.</p>
   `,
   date: '2025-07-06',
-  author: 'Joe from Vivid Auto',
-  category: 'Business',
-  tags: [
-    'ebay-selling',
-    'model-cars',
-    'ecommerce-strategy',
-    'bundling',
-    'conversion-optimisation',
-  ],
+  author: 'Joe — Digital Marketing & Analytics',
+  category: 'Case Studies',
+  tags: ['conversion-optimisation'],
   image: '/images/blog/240620-Model_Car_Collection-111.webp',
   readTime: 6,
   featured: false,
