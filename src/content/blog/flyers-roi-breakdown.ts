@@ -83,6 +83,13 @@ const post: BlogPost = {
     </ul>
     <p>That's how I turned <strong>£546 into £13,563.92</strong> — a <strong>2,380% return</strong>.<br />
     Without Google Ads, Meta boosts or influencers.</p>
+
+    <h2>🔍 A Note on ROI Context and Future Expectations</h2>
+    <p>That <strong>2,380% ROI</strong> was possible because this flyer campaign started at a very specific point in my business journey.</p>
+    <p>At the time, I was building from <strong>zero clients</strong>, already had my <strong>equipment and software paid for</strong>, and invested <strong>£546 total</strong>, including around <strong>£200 on flyers</strong>. Every booking represented new revenue, which naturally amplified the percentage return.</p>
+    <p>If I were to run a new flyer marketing campaign today for <strong>Vivid Media Cheshire</strong>, I would expect a more realistic return in the region of <strong>100% to 200% ROI</strong>, based on higher operating costs, a mature service offering, and different growth constraints.</p>
+    <p>For a <strong>community-led campaign</strong>, such as a <strong>NYCC venue booking drive</strong>, where the goal is awareness and utilisation rather than pure profit, a <strong>50% ROI</strong> would be a reasonable and healthy outcome.</p>
+    <p>The key takeaway is not the headline percentage. It is that <strong>offline marketing worked consistently</strong>, scaled over time, and remained effective even as my focus shifted toward digital marketing.</p>
     
     <hr />
     <h2>🔗 Related Case Studies</h2>

@@ -8,13 +8,13 @@ const post: BlogPost = {
   content: `
     <p><em>Selling to the Same Customer: How I Handled eBay Repeat Buyers</em></p>
 
-    <img src="/images/blog/240708-Model_Car_Collection-69 (1).jpg" alt="Consistent studio photography setup showing repeatable quality standards for model car listings" />
+    <img src="/images/blog/240708-Model_Car_Collection-69 (1).jpg?v=20251217" alt="Consistent studio photography setup showing repeatable quality standards for model car listings" />
 
     <p>This part focuses on what happens when buyers return, ask about duplicates, or order multiple cars in one go. These <strong>eBay repeat buyers</strong> are a sign of strong trust and consistent customer satisfaction.</p>
 
     <h2>Prologue: Selling in Batches</h2>
 
-    <img src="/images/blog/Screenshot 2025-08-14 094204.webp" alt="An example of a Hot Wheels and Matchbox combined postage order" />
+    <img src="/images/blog/240804-Model_Car_Collection-46 (1).jpg?v=20251217" alt="Example of combined postage order showing multi-item packaging" />
 
     <p>Some listings naturally led to repeat buyers. During the holiday season, <strong>multiple orders</strong> became common as people looked for gifts or wanted to grow their collections.<br />
     Customer feedback reinforced that I was doing something right. <strong>Fair descriptions</strong>, <strong>fast shipping</strong>, and <strong>transparent communication</strong> built loyalty.</p>
@@ -44,7 +44,7 @@ const post: BlogPost = {
 
     <h2>Admin and Logistics</h2>
 
-    <img src="/images/blog/Screenshot 2025-08-14 093911.webp" alt="Example of a combined postage order" />
+    <img src="/images/blog/Screenshot 2025-07-04 211333.webp?v=20251217" alt="Example of a combined postage order" />
 
     <p><strong>Multi-item orders added steps:</strong></p>
 
@@ -55,7 +55,7 @@ const post: BlogPost = {
       <li>Tracking communication</li>
     </ul>
 
-    <img src="/images/blog/240616-Model_Car_Collection-3.webp" alt="Packaged models ready for shipping showing careful handling and professional presentation" />
+    <img src="/images/blog/240617-Model_Car_Collection-66 (1).jpg?v=20251217" alt="Packaged models ready for shipping showing careful handling and professional presentation" />
     <p><em>Each multi-item order required careful packaging to ensure models arrived safely while maximizing value for the buyer.</em></p>
 
     <p>These orders were more complex but often more rewarding.</p>
@@ -83,7 +83,7 @@ const post: BlogPost = {
   author: 'Joe — Digital Marketing & Analytics',
   category: 'Case Studies',
   tags: ['ecommerce'],
-  image: '/images/blog/240708-Model_Car_Collection-21 (1).jpg',
+  image: '/images/blog/240708-Model_Car_Collection-69 (1).jpg?v=20251217',
   readTime: 4,
   featured: false,
 };

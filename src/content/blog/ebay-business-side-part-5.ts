@@ -8,7 +8,7 @@ const post: BlogPost = {
   content: `
     <p><em>Behind the Scenes: Business, Admin, and Buyer Challenges</em></p>
 
-    <img src="/images/blog/240708-Model_Car_Collection-130 (1).jpg" alt="Model car collection showing the scale and volume of inventory management for eBay business operations" />
+    <img src="/images/blog/240708-Model_Car_Collection-130 (1).jpg?v=20251217" alt="Model car collection showing the scale and volume of inventory management for eBay business operations" />
 
     <p>In this final article, I reveal what it was like to run the project from the inside. Running an eBay model car selling business, especially when handling someone else's collection, meant balancing <strong>fairness</strong>, <strong>admin</strong>, and <strong>patience</strong>.</p>
 
@@ -28,7 +28,7 @@ const post: BlogPost = {
       <li>Postage</li>
     </ul>
 
-    <img src="/images/blog/Screenshot 2025-08-14 094416.webp" alt="Commission tracking spreadsheet showing transparent payment calculations" />
+    <img src="/images/blog/Screenshot 2025-07-04 211333.webp?v=20251217" alt="Commission tracking spreadsheet showing transparent payment calculations" class="analytics-screenshot" />
     <p><em>The commission tracker I used to maintain transparency — every sale, fee, and payment documented.</em></p>
 
     <p>An example from the <strong>commission tracker</strong> was shared with John. I used this spreadsheet to track every sale, deduct postage and fees, and ensure that payments were <strong>fair and transparent</strong>.</p>
@@ -39,7 +39,7 @@ const post: BlogPost = {
 
     <h2>Emotional and Practical Challenges</h2>
 
-    <img src="/images/blog/240617-Model_Car_Collection-66 (1).jpg" alt="Individual Ford model in packaging showing the careful handling required for commission sales" />
+    <img src="/images/blog/240617-Model_Car_Collection-66 (1).jpg?v=20251217" alt="Individual Ford model in packaging showing the careful handling required for commission sales" />
 
     <p>There was emotional weight to selling someone else's collection. I wanted to do right by John. At the same time, I had to deal with:</p>
 
@@ -53,7 +53,7 @@ const post: BlogPost = {
 
     <h2>Conclusion</h2>
 
-    <img src="/images/blog/230112_NEC_Autoshow-132.webp" alt="A white UT Models 1:18 Scale Ford Escort RS Cosworth rally car is displayed in an outdoor studio" />
+    <img src="/images/blog/240708-Model_Car_Collection-69 (1).webp?v=20251217" alt="A white UT Models 1:18 Scale Ford Escort RS Cosworth rally car is displayed in an outdoor studio" />
 
     <p>Selling John's collection was a hands‑on, emotionally complex experience. It taught me how to <strong>manage customer relationships</strong>, <strong>promote business transparency</strong>, and <strong>effectively present products</strong> simultaneously.</p>
 
@@ -84,7 +84,7 @@ const post: BlogPost = {
   author: 'Joe — Digital Marketing & Analytics',
   category: 'Case Studies',
   tags: ['ecommerce'],
-  image: '/images/blog/240804-Model_Car_Collection-46 (1).jpg',
+  image: '/images/blog/240708-Model_Car_Collection-130 (1).jpg?v=20251217',
   readTime: 5,
   featured: false,
 };

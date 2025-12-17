@@ -138,6 +138,43 @@
       @apply mb-1.5;
     }
   }
+  
+  /* Analytics / dashboard screenshots: constrain size and reduce "white void" */
+  .analytics-screenshot {
+    width: 100%;
+    max-width: 900px;
+    height: auto;
+    display: block;
+    margin: 16px auto;
+    border-radius: 12px;
+  }
+  
+  /* Ensure analytics screenshots never create accidental mega-gaps */
+  img.analytics-screenshot {
+    display: block;
+    width: 100%;
+    height: auto;
+    max-width: 100%;
+    margin: 16px 0;
+    border-radius: 12px;
+  }
+  
+  /* Cap height if an image is still too tall */
+  img.analytics-screenshot.cap-height {
+    max-height: 520px;
+    object-fit: cover;
+    object-position: top;
+  }
+  
+  /* Blog table wrapper for proper spacing */
+  .blog-table {
+    margin-top: 12px;
+    overflow-x: auto;
+  }
+  
+  .blog-table table {
+    margin-top: 0;
+  }
 }
 
 @layer utilities {
