@@ -85,14 +85,19 @@ const post: BlogPost = {
 
     <p>In the next part of the series, I'll talk about what happened when buyers returned for more, how I packaged multi-item orders, and what it was like to manage inventory at scale.</p>
 
-    <h2>More in this Series</h2>
-
+    <hr />
+    <h2>📚 Model Car Collection Series</h2>
     <ul>
-      <li><strong>Part 1: How I Photographed and Sold a Model Ford Car Collection on eBay</strong> — Follow the real-world process I used to photograph, list, and profit from a full Ford model car collection.</li>
-      <li><strong>Part 2: Building an eBay Photography Workflow That Scales</strong> — Explore my full photo setup, editing workflow, and how I handled early buyer issues.</li>
-      <li><strong>Part 4: How to Handle Repeat Orders, Combined Shipping, and Loyal Buyers</strong> — Learn how I built trust with repeat customers and managed multi-item orders.</li>
-      <li><strong>Part 5: The Business Side of Selling Model Cars on eBay</strong> — Get a behind-the-scenes look at commission tracking, admin challenges, and refunds.</li>
+      <li><a href="/blog/ebay-model-ford-collection-part-1">Part 1 — Model Ford Collection</a></li>
+      <li><a href="/blog/ebay-photography-workflow-part-2">Part 2 — Photography Workflow</a></li>
+      <li><a href="/blog/ebay-model-car-sales-timing-bundles">Part 3 — Sales Timing & Bundles</a></li>
+      <li><a href="/blog/ebay-repeat-buyers-part-4">Part 4 — Repeat Buyers</a></li>
+      <li><a href="/blog/ebay-business-side-part-5">Part 5 — Business Side</a></li>
     </ul>
+    <div>
+      <p><strong>Previous:</strong> <a href="/blog/ebay-photography-workflow-part-2">Part 2 — Photography Workflow</a></p>
+      <p><strong>Next:</strong> <a href="/blog/ebay-repeat-buyers-part-4">Part 4 — Repeat Buyers</a></p>
+    </div>
 
     <p><em>Have you ever tried combining postage or bundling items on eBay? I'd love to hear your experience in the comments below.</em></p>
 

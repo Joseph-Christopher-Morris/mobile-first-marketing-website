@@ -2,116 +2,113 @@ import { BlogPost } from '../../lib/blog-types';
 
 const post: BlogPost = {
   slug: 'flyer-marketing-case-study-part-2',
-  title: 'Flyer Marketing Case Study #2: Scaling Success and Learning from Setbacks',
-  excerpt: 'How momentum built from the first flyer success, refined designs led to bigger clients, and what I learned when one client didn\'t pay.',
+  title: 'The £13.5K Flyer Strategy That Just Kept Working',
+  excerpt:
+    'One flyer landed my first freelance win. The second lit the fuse—race teams, auction gigs, referrals, real income.',
   content: `
-    <p>After the success of my first flyer campaign, momentum was building. But scaling offline marketing isn't just about printing more—it's about <strong>refining your approach</strong> and learning from both wins and losses.</p>
+    <p><em>A yellow Toyota Supra at the Meguiar's car care stand at TRAX Silverstone 2021</em></p>
+    <img
+      src="/images/blog/Toyota_Supra_MK4_Yellow_front_three_quarter_landscape.webp"
+      alt="Yellow Toyota Supra at Meguiar's stand, TRAX Silverstone 2021"
+    />
+    <p>One flyer landed my first freelance win.</p>
+    <p>The second? It lit the fuse.</p>
+    <p>Race teams. Auction gigs. Referrals. Real income.</p>
+    <p>All from a refined flyer marketing strategy that most people overlook.</p>
+    <p>In a world inundated with social ads and AI-generated content, authentic marketing that connects remains effective. And I've got the results to prove it.</p>
 
-    <img src="/images/blog/211125_Hampson_Auctions-29.webp" alt="Porsche 911 at the Hampson Auctions Concorde Conference Centre Sale: November 2021" />
-
-    <p>By early 2023, I'd levelled up my content and my clients. I had repeated work with Car & Classic, stronger visuals, and better grammar. Time to scale.</p>
-
-    <h2>🚀 Flyer V3: Built to Scale</h2>
-
-    <p><strong>Flyer V3 Goals:</strong></p>
+    <h2>🧠 Strategy Behind Flyer Marketing V2</h2>
+    <p>The front of my Version 2 flyer introduces people to my photography business, gives a summary of me as a photographer and shows the prices of my photography services.</p>
+    <p>By April 2021, I'd covered the JSCC Scholarships and shot a Lamborghini SVJ Roadster. That gave me stronger material for a better flyer.</p>
+    <p><strong>Goals:</strong></p>
     <ul>
-      <li>More varied, premium images</li>
-      <li>Tighter writing</li>
-      <li>A show-stopping cover</li>
+      <li>Cleaner design and premium feel</li>
+      <li>Better image variety</li>
+      <li>Add real testimonials</li>
+    </ul>
+    <p>Back of Version 2 Flyer – Built to build trust fast. Testimonials, standout client results, and over 2 million views helped me show proof, not just promise. It introduced my work, my audience, and what makes my images different.</p>
+    <p><strong>Images:</strong></p>
+    <ul>
+      <li>Cover: McLaren 650S</li>
+      <li>Pricing: Lotus Evora GT410</li>
+      <li>Featured: SVJ Roadster, JSCC</li>
+      <li>Details: R8 V10, Dalmatian & Lamborghini</li>
+      <li>About me: On-location portrait</li>
+      <li>I chose each shot to stop thumbs and start conversations.</li>
     </ul>
 
-    <img src="/images/blog/WhatsApp Image 2025-07-11 at 2.22.33 PM (2).webp" alt="Front of Version 3 Flyer — Sharp, personal, and proven" />
-    <img src="/images/blog/WhatsApp Image 2025-07-11 at 2.22.33 PM (3).webp" alt="Back of Version 3 Flyer — Proof over promise" />
+    <h2>📸 The First Big Win: Hampson Auctions</h2>
+    <p>Photo I took of the Hampson Auctions Tatton Park stand. A dog is posing in front of a red Ford Escort Mexico rally car with Hampson Auctions sponsorship.</p>
+    <img
+      src="/images/blog/Ford_Escort_Mexico_MK1_with_Dog_front_poster.webp"
+      alt="Ford Escort Mexico rally car with dog at Hampson Auctions stand"
+    />
+    <p>In August 2021, I handed my new flyer to Zach at Hampson Auctions at the Tatton Park Classic Car Show.</p>
+    <p>Zach let me shoot their stand on the spot.</p>
+    <p>By August 30th, 2021, I was covering their Oulton Park Gold Cup sale. I've worked with Hampson Auctions ever since.</p>
+    <blockquote>
+      <p>Thanks, Joe. I hope you enjoyed the auction. And thanks for all your help. You're always welcome. You're part of the team.</p>
+      <p>— Zach Hamilton, Managing Director, Hampson Auctions</p>
+    </blockquote>
 
-    <p>I chose each image to <strong>create emotion, not just fill space.</strong> The new design showcased:</p>
-
+    <h2>🚗 Real Gigs, Real Encounters</h2>
+    <p><em>A white Audi TT RS MK2 Filmed with an Edelkrone gear at TRAX Silverstone 2021.</em></p>
+    <img
+      src="/images/blog/Audi_TTS_Martini_White_Rear_three_quarter_landscape.webp"
+      alt="White Audi TT RS Mk2 filmed at TRAX Silverstone 2021"
+    />
+    <p>At TRAX Silverstone, I brought flyers, a Nikon D850, and £10,000 of Edelkrone gear.</p>
+    <p><strong>I walked away with the following:</strong></p>
     <ul>
-      <li><strong>Premium automotive photography</strong> from actual client work</li>
-      <li><strong>Varied compositions</strong> showing technical range</li>
-      <li><strong>Professional layout</strong> that felt like a high-end brochure</li>
-      <li><strong>Clear contact information</strong> and service offerings</li>
+      <li>Paid shoots: Vauxhall Astra VXR & Audi TTRS</li>
+      <li>Filmed the UK's biggest Audi R8 meet</li>
+      <li>I met an auctioneer who later referred me to Historics Auctioneers</li>
+      <li>All from showing up and talking to people. That was just the start.</li>
     </ul>
 
-    <h2>⚠️ NEC Show Roadbump</h2>
+    <h2>🏁 The Car & Classic Breakthrough</h2>
+    <p><em>A behind-the-scenes look at a Bentley S2 driving on a photoshoot</em></p>
+    <img
+      src="/images/blog/250705-Bentley_S2-1.webp"
+      alt="Bentley S2 on location photoshoot for Car & Classic"
+    />
+    <p>By June 2022, my flyers had unlocked contracts with top auction houses and race teams; now it was time to scale. I landed a freelance gig with Car & Classic — over 60 paid photoshoots since.</p>
+    <p>Duncan's referral opened the door to North West Motor Auction.</p>
+    <blockquote>
+      <p>That's a great picture. Thank you very much! I hope you had a great day and got some good shots. See you next time.</p>
+      <p>— Duncan Brown, Auctioneer 4 Hire</p>
+    </blockquote>
 
-    <img src="/images/blog/230112_NEC_Autoshow-132.webp" alt="The Praga R1R race car at the ROWE trade stand at the NEC Autosport International show" />
+    <h2>🧩 Key Takeaways</h2>
+    <p>Flyers still work when they say something</p>
+    <p>Offline conversations lead to real bookings</p>
+    <p>Good visuals + initiative > cold outreach</p>
 
-    <p>Right before the NEC Autosport International, Vistaprint emailed me:</p>
-    <blockquote>"Can't print in time."</blockquote>
+    <h2>📩 Join the Newsletter for Raw Results</h2>
+    <p>Tap join or scroll down. Get exclusive marketing and e-commerce insights in your inbox.</p>
+    <p>No bull. Just what's worked.</p>
 
-    <p>I called, got it sorted, and got refunded.<br />
-    But by show day, only the old flyers were ready.</p>
-
-    <p>The NEC didn't deliver many leads, but it was still worth attending. I met passionate people and saw the best of motorsport tech — <strong>still a win.</strong></p>
-
-    <h2>📉 The Client Who Didn't Pay… At First</h2>
-
-    <p>Not every lead is golden.</p>
-
-    <p>Bidding Classics found me via LinkedIn. I delivered the work. Then came the silence.</p>
-
-    <p>Like other photographers, I chased overdue invoices and eventually had to file a CCJ.<br />
-    It worked — I got paid. But it reminded me that not every flashy brand respects your time.</p>
-
-    <p>That experience sharpened my filters. Now I vet leads more thoroughly and focus on clients who <strong>value the craft.</strong></p>
-
-    <h2>💰 Building Momentum: Year-by-Year Growth</h2>
-
-    <p>The flyer strategy wasn't just about one-off wins. It built <strong>compound growth</strong>:</p>
-
-    <p><strong>2021 — £780</strong></p>
+    <hr />
+    <h2>📚 Flyer Marketing Case Study Series</h2>
     <ul>
-      <li>Hampson Auctions (first major client)</li>
-      <li>JSCC (motorsport breakthrough)</li>
-      <li>Bathgate Silica Sand (unexpected bonus)</li>
-      <li>Individual car shoots (Vauxhall VXR, Audi TTS)</li>
+      <li><a href="/blog/flyer-marketing-case-study-part-1">Part 1 — How I Made £13.5K with a 2,380% ROI</a></li>
+      <li><a href="/blog/flyer-marketing-case-study-part-2">Part 2 — The £13.5K Flyer Strategy That Just Kept Working</a></li>
+      <li><a href="/blog/flyers-roi-breakdown">Part 3 — Year-by-Year ROI Breakdown (2021–2025)</a></li>
     </ul>
-
-    <p><strong>2022 — £3,590.59</strong></p>
-    <ul>
-      <li>Hampson Auctions (repeat business)</li>
-      <li>Northwest Motor Auction (referral)</li>
-      <li>Car & Classic (major breakthrough)</li>
-    </ul>
-
-    <p><strong>2023 — £5,968.47</strong></p>
-    <ul>
-      <li>Hampson Auctions (ongoing relationship)</li>
-      <li>Car & Classic (regular work)</li>
-      <li>Historics Auctioneers (expansion)</li>
-      <li>Bidding Classics (payment issues resolved)</li>
-    </ul>
-
-    <h2>🧩 Key Lessons from Scaling</h2>
-
-    <img src="/images/blog/230112_NEC_Autoshow-62.webp" alt="A Porsche 718 Cayman GT4 RS and a McLaren Senna at the Logic stand at NEC Autosport International" />
-
-    <ul>
-      <li><strong>Flyers made me visible in high-trust spaces.</strong> Car shows, auctions, and motorsport events where my ideal clients gathered.</li>
-      <li><strong>My portfolio fed word-of-mouth.</strong> Each successful shoot led to referrals and repeat business.</li>
-      <li><strong>Referrals snowballed into real money.</strong> One client introduction often led to multiple opportunities.</li>
-      <li><strong>Quality over quantity.</strong> Better to have fewer, higher-paying clients than chase every lead.</li>
-      <li><strong>Payment terms matter.</strong> Clear contracts and payment schedules prevent headaches later.</li>
-    </ul>
-
-    <h2>🎯 What's Next</h2>
-
-    <p>While I shifted focus to <strong>digital marketing and website optimisation</strong>, the flyer foundation kept working in the background. The relationships built through offline marketing continued generating revenue years later.</p>
-
-    <p>The total return? <strong>£13,563.92 from a £546 investment</strong> — a <strong>2,380% ROI</strong> that proved offline marketing still works in our digital world.</p>
-
-    <h2>📩 Want More Real Marketing Results?</h2>
-
-    <p>This case study shows what's possible when you combine <strong>strategic thinking with tactical execution</strong>. No theory, just real numbers from real campaigns.</p>
-
-    <p>Subscribe for more tested tactics, honest breakdowns, and marketing strategies that actually work for small businesses and freelancers.</p>
+    <div>
+      <p><strong>Previous:</strong> <a href="/blog/flyer-marketing-case-study-part-1">Part 1 — How I Made £13.5K with a 2,380% ROI</a></p>
+      <p><strong>Next:</strong> <a href="/blog/flyers-roi-breakdown">Part 3 — Year-by-Year ROI Breakdown (2021–2025)</a></p>
+    </div>
+    
+    <p>Flyers aren't dead. Most land flat. Mine landed clients.</p>
+    <p>What did you learn from mine? Let's talk 👇</p>
   `,
-  date: '2025-07-15',
+  date: '2025-07-12',
   author: 'Joe from Vivid Auto',
   category: 'Marketing',
   tags: ['flyer-marketing', 'offline-marketing', 'business-growth', 'client-management', 'case-study'],
   image: '/images/blog/211125_Hampson_Auctions-29.webp',
-  readTime: 5,
+  readTime: 3,
   featured: false,
 };
 
