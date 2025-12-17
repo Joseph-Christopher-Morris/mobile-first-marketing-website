@@ -8,13 +8,13 @@ const post: BlogPost = {
   content: `
     <p><em>Studio Workflow and Customer Experience</em></p>
 
-    <img src="/images/blog/240616-Model_Car_Collection-10 (1).jpg" alt="Minichamps 1:43 Scale Ford model in white studio setup showing photography workflow" />
+    <img src="/images/blog/240620-Model_Car_Collection-111.webp?v=20251217" alt="Minichamps 1:43 Scale Ford model in white studio setup showing photography workflow" />
 
     <p>This article explores my photo setup, editing workflow, and the first signs of customer issues. Learning how to adapt early helped me improve quality and avoid future mistakes.</p>
 
     <h2>Prologue: Lessons from Early Sales</h2>
 
-    <img src="/images/blog/Screenshot 2025-08-14 093957.webp" alt="Damaged parcel after dispatch" />
+    <img src="/images/blog/240617-Model_Car_Collection-66 (1).jpg?v=20251217" alt="Example of careful packaging to prevent damage during shipping" />
 
     <p>In the first week, <strong>90%</strong> of the cars arrived safely. But two models raised concerns:</p>
 
@@ -30,7 +30,7 @@ const post: BlogPost = {
 
     <h2>Building an eBay Photography Workflow That Scales</h2>
 
-    <img src="/images/blog/250705-Bentley_S2-1 (1).webp" alt="Norev 1:43 Scale Ford Focus RS photographed in a white studio" />
+    <img src="/images/blog/240616-Model_Car_Collection-10 (1).jpg?v=20251217" alt="Norev 1:43 Scale Ford Focus RS photographed in a white studio" />
 
     <p>To maintain listing quality, I built a reliable eBay photography workflow that allowed me to scale production without losing consistency:</p>
 
@@ -45,7 +45,7 @@ const post: BlogPost = {
 
     <h2>Managing Efficiency with AI</h2>
 
-    <img src="/images/blog/Screenshot 2025-08-14 094346.webp" alt="AI-generated listing description showing workflow efficiency improvements" />
+    <img src="/images/blog/Screenshot 2025-07-04 211333.webp?v=20251217" alt="Example of listing description workflow showing efficiency improvements" />
 
     <p>To speed up descriptions, I used <strong>AI-generated drafts</strong> as starting points. I always reviewed them carefully to correct inaccuracies, add the <strong>"can combine postage"</strong> note, and maintain a personal tone.</p>
 
@@ -53,7 +53,7 @@ const post: BlogPost = {
 
     <h2>Conclusion</h2>
 
-    <img src="/images/blog/240620-Model_Car_Collection-96 (1).jpg" alt="Final edited product shot showing the quality standards achieved through the workflow" />
+    <img src="/images/blog/240620-Model_Car_Collection-96 (1).jpg?v=20251217" alt="Final edited product shot showing the quality standards achieved through the workflow" />
     <p><em>The result of a refined workflow — consistent, professional product photography that builds buyer trust.</em></p>
 
     <p>This phase taught me the importance of sharp photography, detailed editing, and handling customer dissatisfaction with <strong>professionalism</strong>.</p>
@@ -85,7 +85,7 @@ const post: BlogPost = {
   author: 'Joe — Digital Marketing & Analytics',
   category: 'Case Studies',
   tags: ['ecommerce'],
-  image: '/images/blog/240616-Model_Car_Collection-3.webp',
+  image: '/images/blog/240620-Model_Car_Collection-111.webp?v=20251217',
   readTime: 5,
   featured: false,
 };

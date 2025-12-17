@@ -8,13 +8,13 @@ const post: BlogPost = {
   content: `
     <p><em>Listing Strategy and Conversion Lessons</em></p>
 
-    <img src="/images/blog/240620-Model_Car_Collection-116.webp" alt="Multiple Ford model cars arranged together showing bundling strategy for eBay sales" />
+    <img src="/images/blog/240708-Model_Car_Collection-21.webp?v=20251217" alt="Multiple Ford model cars arranged together showing bundling strategy for eBay sales" />
 
     <p>In this third part of the series, I'll walk you through the tactics I used to improve the conversion rate when selling my neighbour's model Ford collection. From timing listings to writing efficient descriptions and encouraging multi-item purchases, this phase of the project brought out the eCommerce strategist in me.</p>
 
     <h2>Prologue: Why Combined Postage Matters</h2>
 
-    <img src="/images/blog/240603-Car_Collection-38 (1).jpg" alt="Different Ford models from the collection showing variety available for bundling opportunities" />
+    <img src="/images/blog/240617-Model_Car_Collection-91 (1).jpg?v=20251217" alt="Ford models arranged to show bundling opportunities and collection variety" />
 
     <p>One of the best ways to encourage more sales on eBay is to offer <strong>combined postage</strong>. This strategy appeals to buyers who want to grow their collection or save money while shopping.</p>
 
@@ -25,7 +25,7 @@ const post: BlogPost = {
 
     <h2>Optimising eBay Model Car Sales with Smart Bundling</h2>
 
-    <img src="/images/blog/240620-Model_Car_Collection-96 (1).jpg" alt="Brown Ford B-Max showing the visual pairing strategy used to encourage multi-item purchases" />
+    <img src="/images/blog/240620-Model_Car_Collection-96 (1).jpg?v=20251217" alt="Brown Ford B-Max showing the visual pairing strategy used to encourage multi-item purchases" />
 
     <p>Before I began listing each item, I grouped cars that complemented each other in case buyers were interested in purchasing more than one. This <strong>bundling technique</strong> became a core part of my eBay model car sales strategy.<br />
     For example, I paired a <strong>brown Ford B-Max</strong> with a <strong>gold Ford Edge</strong>. These visual or thematic pairings made browsing more appealing and encouraged buyers to explore my other listings.</p>
@@ -44,7 +44,7 @@ const post: BlogPost = {
       <p><strong>Minichamps 1:43 Ford Escort Cosworth Mobil 1 Rally Monte Carlo 1993 #6</strong></p>
     </blockquote>
 
-    <img src="/images/blog/240616-Model_Car_Collection-38 (2).jpg" alt="Ford Escort Cosworth photographed with consistent lighting to maintain professional listing standards" />
+    <img src="/images/blog/Screenshot 2025-07-04 211333.webp?v=20251217" alt="Ford Escort Cosworth photographed with consistent lighting to maintain professional listing standards" />
 
     <p>I created product listings for each Ford and Jaguar model based on the images I had edited. Each listing included important fields such as <strong>brand</strong>, <strong>scale</strong>, <strong>condition</strong>, and <strong>model type</strong>.</p>
 
@@ -55,7 +55,7 @@ const post: BlogPost = {
 
     <h2>Publishing and Tracking Conversions</h2>
 
-    <img src="/images/blog/Screenshot 2025-08-14 094416.webp" alt="Overall traffic on my eBay page showing: impressions, listing views, quantity sold, click-through-rate and sales conversion rate" />
+    <img src="/images/blog/Screenshot 2025-07-04 193922 (1).webp?v=20251217" alt="Overall traffic on my eBay page showing: impressions, listing views, quantity sold, click-through-rate and sales conversion rate" class="analytics-screenshot" />
 
     <p>Once I had about <strong>100 listings</strong> ready, I waited for the right moment to publish them. I aimed to post them around <strong>5 PM British Summer Time</strong>, particularly during weekends when eBay offered reduced seller fees.</p>
 
@@ -65,7 +65,7 @@ const post: BlogPost = {
 
     <h2>Single-Item Sales vs. Multi-Item Orders</h2>
 
-    <img src="/images/blog/Screenshot 2025-08-14 094204.webp" alt="Example of a combined order" />
+    <img src="/images/blog/240804-Model_Car_Collection-46 (1).jpg?v=20251217" alt="Example of a combined order" />
 
     <p>Single-item orders were easier to package. There was a reduced risk of models rubbing against each other and fewer concerns about display cases being damaged during shipping.</p>
 
@@ -77,7 +77,7 @@ const post: BlogPost = {
 
     <h2>Conclusion</h2>
 
-    <img src="/images/blog/240617-Model_Car_Collection-91 (1).jpg" alt="Silver Ford model photographed to the same standard demonstrating consistent presentation across all listings" />
+    <img src="/images/blog/240617-Model_Car_Collection-91 (1).jpg?v=20251217" alt="Red Ford model photographed to the same standard demonstrating consistent presentation across all listings" />
 
     <p>I relied on <strong>intuition</strong>, <strong>experience from selling Hot Wheels</strong>, and a <strong>transparent workflow</strong> to make the most of each listing. Timing was another key factor. Posting listings on <strong>Sunday afternoons</strong> proved far more effective than uploading them during quiet times, such as early mornings on weekdays.</p>
 
@@ -112,7 +112,7 @@ const post: BlogPost = {
   author: 'Joe — Digital Marketing & Analytics',
   category: 'Case Studies',
   tags: ['conversion-optimisation'],
-  image: '/images/blog/240620-Model_Car_Collection-111.webp',
+  image: '/images/blog/240708-Model_Car_Collection-21.webp?v=20251217',
   readTime: 6,
   featured: false,
 };

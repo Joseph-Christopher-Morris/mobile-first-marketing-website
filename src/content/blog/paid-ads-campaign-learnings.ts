@@ -35,7 +35,7 @@ const post: BlogPost = {
 
     <h3>Article Campaign (Meta Ads)</h3>
 
-    <img src="/images/blog/Screenshot 2025-08-11 143943.webp" alt="Meta Ads results graph showing 15,220 impressions and 446 clicks" />
+    <img src="/images/blog/Screenshot 2025-08-11 143853.webp?v=20251217" alt="Meta Ads results graph showing 15,220 impressions and 446 clicks" class="analytics-screenshot" />
 
     <ul>
       <li><strong>Spend:</strong> £127.50 ad credit</li>
@@ -46,7 +46,7 @@ const post: BlogPost = {
 
     <h3>Leads Campaign (Google Ads)</h3>
 
-    <img src="/images/blog/Screenshot 2025-08-11 143943.webp" alt="Google Ads results graph showing 121,242 impressions and 1,544 clicks" />
+    <img src="/images/blog/Screenshot 2025-08-11 143943.webp?v=20251217" alt="Google Ads results graph showing 121,242 impressions and 1,544 clicks" class="analytics-screenshot" />
 
     <ul>
       <li><strong>Spend:</strong> £256.91</li>
@@ -57,7 +57,7 @@ const post: BlogPost = {
 
     <h3>UX Impact</h3>
 
-    <img src="/images/blog/screenshot-2025-08-11-143853.webp" alt="Hotjar heatmap showing user behavior and scroll patterns on landing page" />
+    <img src="/images/blog/screenshot-2025-08-11-143853.webp?v=20251217" alt="Hotjar heatmap showing user behavior and scroll patterns on landing page" />
     <p><em>Hotjar data revealing where visitors actually looked — this insight drove my CTA repositioning strategy.</em></p>
 
     <p>Hotjar revealed many visitors <strong>scrolled past my original CTA</strong>.<br />
@@ -96,7 +96,7 @@ const post: BlogPost = {
   author: 'Joe — Digital Marketing & Analytics',
   category: 'Case Studies',
   tags: ['google-ads'],
-  image: '/images/blog/screenshot-2025-08-11-143853.webp',
+  image: '/images/blog/screenshot-2025-08-11-143853.webp?v=20251217',
   readTime: 6,
   featured: false,
 };
