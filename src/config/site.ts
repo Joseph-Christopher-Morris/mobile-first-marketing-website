@@ -1,7 +1,7 @@
 export const siteConfig = {
-  name: 'Vivid Auto Photography',
+  name: 'Vivid Media Cheshire',
   description:
-    'Professional Vivid Auto Photography services with mobile-first approach. Specializing in photography, analytics, and ad campaigns to grow your business.',
+    'Professional Vivid Media Cheshire services with mobile-first approach. Specializing in photography, analytics, and ad campaigns to grow your business.',
   url: 'https://d15sc9fc739ev2.cloudfront.net',
   ogImage: '/images/hero/aston-martin-db6-website.webp',
   links: {

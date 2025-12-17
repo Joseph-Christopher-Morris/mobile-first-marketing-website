@@ -34,7 +34,7 @@ export async function generateMetadata({
     title: post.title,
     description: post.excerpt,
     openGraph: {
-      title: `${post.title} | Mobile-First Vivid Auto Photography`,
+      title: `${post.title} | Mobile-First Vivid Media Cheshire`,
       description: post.excerpt,
       type: 'article',
       publishedTime: post.date,
@@ -101,8 +101,8 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
             </nav>
 
             {/* Post Header */}
-            <div className='text-center'>
-              <div className='flex items-center justify-center space-x-2 text-sm text-gray-500 mb-4'>
+            <div className='text-centre'>
+              <div className='flex items-centre justify-centre space-x-2 text-sm text-gray-500 mb-4'>
                 <span className='bg-brand-white text-brand-pink px-3 py-1 rounded-full font-medium border-2 border-brand-pink'>
                   {post.category}
                 </span>
@@ -130,10 +130,10 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
                 {post.excerpt}
               </p>
 
-              <div className='flex items-center justify-center space-x-4 text-sm text-gray-500'>
+              <div className='flex items-centre justify-centre space-x-4 text-sm text-gray-500'>
                 <span>By {post.author}</span>
                 {post.tags.length > 0 && (
-                  <div className='flex items-center space-x-2'>
+                  <div className='flex items-centre space-x-2'>
                     <span>•</span>
                     <div className='flex flex-wrap gap-2'>
                       {post.tags.map(tag => (
@@ -207,7 +207,7 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
             )}
 
             {/* Navigation */}
-            <div className='flex justify-between items-center pt-8 border-t border-gray-200'>
+            <div className='flex justify-between items-centre pt-8 border-t border-gray-200'>
               <Link
                 href='/blog'
                 className='inline-flex items-center text-brand-pink hover:text-brand-pink2 font-medium'
@@ -228,7 +228,7 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
                 Back to Blog
               </Link>
 
-              <div className='flex items-center space-x-4'>
+              <div className='flex items-centre space-x-4'>
                 <span className='text-sm text-gray-500'>Share this post:</span>
                 <div className='flex space-x-2'>
                   <button className='p-2 text-gray-400 hover:text-brand-pink transition-colors'>

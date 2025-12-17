@@ -101,9 +101,9 @@ const post: BlogPost = {
     <p><a href="/blog">Explore more work like this</a> or <a href="/contact">get in touch</a>.</p>
   `,
   date: '2025-11-04',
-  author: 'Joe from Vivid Auto',
-  category: 'Marketing',
-  tags: ['flyer-marketing', 'ROI', 'print-vs-digital', 'small-business-growth'],
+  author: 'Joe — Digital Marketing & Analytics',
+  category: 'Case Studies',
+  tags: ['offline-marketing', 'conversion-optimisation', 'small-business'],
   image: '/images/hero/whatsapp-image-2025-07-11-flyers-roi.webp',
   readTime: 8,
   featured: true,

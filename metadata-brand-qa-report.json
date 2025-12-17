@@ -1,0 +1,57 @@
+{
+  "legacyBrands": [],
+  "wrongAuthor": [],
+  "invalidCategories": [],
+  "invalidTags": [],
+  "descriptionLength": [
+    {
+      "file": "src/app/page.tsx",
+      "length": 117,
+      "description": "Fast websites, Google Ads, analytics and photography for Cheshire businesses. Clear reporting and measurable results."
+    },
+    {
+      "file": "src/app/contact/page.tsx",
+      "length": 203,
+      "description": "Get in touch about professional automotive photography, data analytics, or strategic advertising campaigns in Nantwich & Cheshire. Free consultation available. Response within one business day (UK time)."
+    },
+    {
+      "file": "src/app/blog/page.tsx",
+      "length": 179,
+      "description": "Practical marketing, photography, and web design tips for Cheshire businesses. Real case studies, proven strategies, and actionable insights from Vivid Media Cheshire in Nantwich."
+    },
+    {
+      "file": "src/app/services/analytics/page.tsx",
+      "length": 172,
+      "description": "Professional data analytics services with GA4 and Adobe Analytics expertise. Transform your business data into actionable insights that drive growth in Nantwich & Cheshire."
+    },
+    {
+      "file": "src/app/services/photography/page.tsx",
+      "length": 171,
+      "description": "Professional photography services in Nantwich & Cheshire. Published editorial work for BBC, Forbes, and The Times. Local Nantwich photography and commercial campaign work."
+    },
+    {
+      "file": "src/app/services/website-hosting/page.tsx",
+      "length": 138,
+      "description": "Affordable secure cloud hosting designed for performance, reliability, and easy scalability - perfect for growing brands and new websites."
+    },
+    {
+      "file": "src/app/services/page.tsx",
+      "length": 90,
+      "description": "Websites, hosting, ads, analytics and photography designed for small business performance."
+    }
+  ],
+  "missingMetadata": [],
+  "tagUsage": {
+    "ecommerce": 4,
+    "conversion-optimisation": 5,
+    "content-strategy": 5,
+    "analytics": 1,
+    "offline-marketing": 3,
+    "case-study": 4,
+    "small-business": 4,
+    "google-ads": 1
+  },
+  "categoryUsage": {
+    "Case Studies": 14
+  }
+}
