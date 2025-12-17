@@ -36,6 +36,33 @@ export default async function BlogPage() {
   const featuredPost = featuredPosts[0];
   const regularPosts = allPosts.filter(post => !post.featured);
   const services = getAllServices();
+  
+  // Model Car Collection series ordering (Part 5 → Part 1 on blog listing)
+  const modelCarSeriesListingOrder = [
+    'ebay-business-side-part-5',
+    'ebay-repeat-buyers-part-4',
+    'ebay-model-car-sales-timing-bundles',
+    'ebay-photography-workflow-part-2',
+    'ebay-model-ford-collection-part-1',
+  ];
+  
+  const seriesIndex = new Map(modelCarSeriesListingOrder.map((s, i) => [s, i]));
+  
+  const sortedRegularPosts = [...regularPosts].sort((a, b) => {
+    const ai = seriesIndex.get(a.slug);
+    const bi = seriesIndex.get(b.slug);
+    
+    // Both in series: order by seriesIndex (Part 5 → Part 1)
+    if (ai !== undefined && bi !== undefined) return ai - bi;
+    
+    // Only one in series: series comes first (higher on page)
+    if (ai !== undefined) return -1;
+    if (bi !== undefined) return 1;
+    
+    // Fallback: keep existing behavior (usually newest first)
+    return new Date(b.date).getTime() - new Date(a.date).getTime();
+  });
+  
   // Map each blog slug to its hero image path
   const cardCovers: Record<string, string> = {
     'paid-ads-campaign-learnings':
@@ -47,6 +74,12 @@ export default async function BlogPage() {
     'flyer-marketing-case-study-part-2':
       '/images/blog/211125_Hampson_Auctions-29.webp',
     'stock-photography-lessons': '/images/hero/240619-london-19.webp',
+    // Model Car Collection series covers
+    'ebay-model-ford-collection-part-1': '/images/blog/240616-Model_Car_Collection-3.webp',
+    'ebay-photography-workflow-part-2': '/images/blog/240602-Car_Collection-7.webp',
+    'ebay-model-car-sales-timing-bundles': '/images/blog/240708-Model_Car_Collection-21 (1).jpg',
+    'ebay-repeat-buyers-part-4': '/images/blog/240804-Model_Car_Collection-46 (1).jpg',
+    'ebay-business-side-part-5': '/images/blog/240620-Model_Car_Collection-96 (1).jpg',
   };
 
   // Prefer our mapped cover, then frontmatter image, then a safe default
@@ -134,7 +167,7 @@ export default async function BlogPage() {
               )}
 
               {/* Regular Blog Posts */}
-              {regularPosts.map((post, index) => (
+              {sortedRegularPosts.map((post, index) => (
                 <article
                   key={post.slug}
                   className='bg-white rounded-lg shadow-sm border border-gray-200 overflow-hidden'

@@ -77,6 +77,19 @@ const post: BlogPost = {
       Get a behind-the-scenes look at commission tracking, admin challenges, and refunds.</li>
     </ul>
 
+    <hr />
+    <h2>📚 Model Car Collection Series</h2>
+    <ul>
+      <li><a href="/blog/ebay-model-ford-collection-part-1">Part 1 — Model Ford Collection</a></li>
+      <li><a href="/blog/ebay-photography-workflow-part-2">Part 2 — Photography Workflow</a></li>
+      <li><a href="/blog/ebay-model-car-sales-timing-bundles">Part 3 — Sales Timing & Bundles</a></li>
+      <li><a href="/blog/ebay-repeat-buyers-part-4">Part 4 — Repeat Buyers</a></li>
+      <li><a href="/blog/ebay-business-side-part-5">Part 5 — Business Side</a></li>
+    </ul>
+    <div>
+      <p><strong>Next:</strong> <a href="/blog/ebay-photography-workflow-part-2">Part 2 — Photography Workflow</a></p>
+    </div>
+
     <p>📬 <strong>Want More Real Wins Like This?</strong></p>
 
     <p>If this article lit a fire under you, wait until you see what's next.<br />

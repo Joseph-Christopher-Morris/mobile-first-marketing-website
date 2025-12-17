@@ -81,10 +81,16 @@ const post: BlogPost = {
 
     <p>I kept costs low (<strong>£546 total</strong>) and returns high. That's a <strong>2,380% ROI</strong> without social ads or influencers.</p>
 
-    <h2>📚 Continue Reading</h2>
-
-    <p><strong>Part 2</strong><br />
-    Momentum kicks in. Refined design, real results, and my first big break.</p>
+    <hr />
+    <h2>📚 Flyer Marketing Case Study Series</h2>
+    <ul>
+      <li><a href="/blog/flyer-marketing-case-study-part-1">Part 1 — How I Made £13.5K with a 2,380% ROI</a></li>
+      <li><a href="/blog/flyer-marketing-case-study-part-2">Part 2 — The £13.5K Flyer Strategy That Just Kept Working</a></li>
+      <li><a href="/blog/flyers-roi-breakdown">Part 3 — Year-by-Year ROI Breakdown (2021–2025)</a></li>
+    </ul>
+    <div>
+      <p><strong>Next:</strong> <a href="/blog/flyer-marketing-case-study-part-2">Part 2 — The £13.5K Flyer Strategy That Just Kept Working</a></p>
+    </div>
   `,
   date: '2025-07-12',
   author: 'Joe from Vivid Auto',

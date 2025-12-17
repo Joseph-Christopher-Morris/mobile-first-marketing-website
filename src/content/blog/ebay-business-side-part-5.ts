@@ -56,21 +56,18 @@ const post: BlogPost = {
 
     <p>John got funds for his home improvement project. I gained experience, income, and a story worth sharing.</p>
 
-    <h2>Complete Series</h2>
-
+    <hr />
+    <h2>📚 Model Car Collection Series</h2>
     <ul>
-      <li><strong>Part 1: How I Photographed and Sold a Model Ford Car Collection on eBay</strong><br />
-      👉 <a href="/blog/ebay-model-ford-collection-part-1">Follow the real-world process I used to photograph, list, and profit</a></li>
-
-      <li><strong>Part 2: Building an eBay Photography Workflow That Scales</strong><br />
-      👉 <a href="/blog/ebay-photography-workflow-part-2">Explore my full photo setup, editing workflow, and customer issues</a></li>
-
-      <li><strong>Part 3: eBay Model Car Sales — How Timing and Bundles Made a Big Difference</strong><br />
-      👉 <a href="/blog/ebay-model-car-sales-timing-bundles">See how I used smart timing and product bundling</a></li>
-
-      <li><strong>Part 4: How I Managed eBay Repeat Buyers, Combined Shipping, and Multi-Item Orders</strong><br />
-      👉 <a href="/blog/ebay-repeat-buyers-part-4">Learn how I built trust with repeat customers</a></li>
+      <li><a href="/blog/ebay-model-ford-collection-part-1">Part 1 — Model Ford Collection</a></li>
+      <li><a href="/blog/ebay-photography-workflow-part-2">Part 2 — Photography Workflow</a></li>
+      <li><a href="/blog/ebay-model-car-sales-timing-bundles">Part 3 — Sales Timing & Bundles</a></li>
+      <li><a href="/blog/ebay-repeat-buyers-part-4">Part 4 — Repeat Buyers</a></li>
+      <li><a href="/blog/ebay-business-side-part-5">Part 5 — Business Side</a></li>
     </ul>
+    <div>
+      <p><strong>Previous:</strong> <a href="/blog/ebay-repeat-buyers-part-4">Part 4 — Repeat Buyers</a></p>
+    </div>
 
     <p>📬 <strong>Ready for More Real Business Stories?</strong></p>
 

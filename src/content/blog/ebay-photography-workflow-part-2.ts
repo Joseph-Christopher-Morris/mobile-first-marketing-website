@@ -57,21 +57,19 @@ const post: BlogPost = {
 
     <p><em>What challenges have you faced in your own selling journey? Let me know in the comments.</em></p>
 
-    <h2>More in this Series</h2>
-
+    <hr />
+    <h2>📚 Model Car Collection Series</h2>
     <ul>
-      <li><strong>Part 1: How I Photographed and Sold a Model Ford Car Collection on eBay</strong><br />
-      👉 <a href="/blog/ebay-model-ford-collection-part-1">Follow the real-world process I used to photograph, list, and profit from a full Ford model car collection</a></li>
-
-      <li><strong>Part 3: eBay Model Car Sales; How Timing and Bundles Made a Big Difference</strong><br />
-      👉 <a href="/blog/ebay-model-car-sales-timing-bundles">See how I used smart timing and product bundling to boost conversions</a></li>
-
-      <li><strong>Part 4: How to Handle Repeat Orders, Combined Shipping, and Loyal Buyers</strong><br />
-      Learn how I built trust with repeat customers and managed multi-item orders.</li>
-
-      <li><strong>Part 5: The Business Side of Selling Model Cars on eBay</strong><br />
-      Get a behind-the-scenes look at commission tracking, admin challenges, and refunds.</li>
+      <li><a href="/blog/ebay-model-ford-collection-part-1">Part 1 — Model Ford Collection</a></li>
+      <li><a href="/blog/ebay-photography-workflow-part-2">Part 2 — Photography Workflow</a></li>
+      <li><a href="/blog/ebay-model-car-sales-timing-bundles">Part 3 — Sales Timing & Bundles</a></li>
+      <li><a href="/blog/ebay-repeat-buyers-part-4">Part 4 — Repeat Buyers</a></li>
+      <li><a href="/blog/ebay-business-side-part-5">Part 5 — Business Side</a></li>
     </ul>
+    <div>
+      <p><strong>Previous:</strong> <a href="/blog/ebay-model-ford-collection-part-1">Part 1 — Model Ford Collection</a></p>
+      <p><strong>Next:</strong> <a href="/blog/ebay-model-car-sales-timing-bundles">Part 3 — Sales Timing & Bundles</a></p>
+    </div>
 
     <p>📬 <strong>Stay in the Loop</strong></p>
 
