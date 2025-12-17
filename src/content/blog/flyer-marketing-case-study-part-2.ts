@@ -8,7 +8,7 @@ const post: BlogPost = {
   content: `
     <p><em>A yellow Toyota Supra at the Meguiar's car care stand at TRAX Silverstone 2021</em></p>
     <img
-      src="/images/blog/Toyota_Supra_MK4_Yellow_front_three_quarter_landscape.webp"
+      src="/images/blog/Toyota Supra MK4 Yellow front three quarter landscape.webp"
       alt="Yellow Toyota Supra at Meguiar's stand, TRAX Silverstone 2021"
     />
     <p>One flyer landed my first freelance win.</p>
@@ -40,7 +40,7 @@ const post: BlogPost = {
     <h2>📸 The First Big Win: Hampson Auctions</h2>
     <p>Photo I took of the Hampson Auctions Tatton Park stand. A dog is posing in front of a red Ford Escort Mexico rally car with Hampson Auctions sponsorship.</p>
     <img
-      src="/images/blog/Ford_Escort_Mexico_MK1_with_Dog_front_poster.webp"
+      src="/images/blog/Ford Escort Mexico MK1 with Dog front poster.webp"
       alt="Ford Escort Mexico rally car with dog at Hampson Auctions stand"
     />
     <p>In August 2021, I handed my new flyer to Zach at Hampson Auctions at the Tatton Park Classic Car Show.</p>
@@ -54,7 +54,7 @@ const post: BlogPost = {
     <h2>🚗 Real Gigs, Real Encounters</h2>
     <p><em>A white Audi TT RS MK2 Filmed with an Edelkrone gear at TRAX Silverstone 2021.</em></p>
     <img
-      src="/images/blog/Audi_TTS_Martini_White_Rear_three_quarter_landscape.webp"
+      src="/images/blog/Audi TTS Martini White Rear three quarter landscape.webp"
       alt="White Audi TT RS Mk2 filmed at TRAX Silverstone 2021"
     />
     <p>At TRAX Silverstone, I brought flyers, a Nikon D850, and £10,000 of Edelkrone gear.</p>
@@ -69,7 +69,7 @@ const post: BlogPost = {
     <h2>🏁 The Car & Classic Breakthrough</h2>
     <p><em>A behind-the-scenes look at a Bentley S2 driving on a photoshoot</em></p>
     <img
-      src="/images/blog/250705-Bentley_S2-1.webp"
+      src="/images/blog/250705-Bentley_S2-1 (1).webp"
       alt="Bentley S2 on location photoshoot for Car & Classic"
     />
     <p>By June 2022, my flyers had unlocked contracts with top auction houses and race teams; now it was time to scale. I landed a freelance gig with Car & Classic — over 60 paid photoshoots since.</p>
@@ -89,19 +89,20 @@ const post: BlogPost = {
     <p>No bull. Just what's worked.</p>
 
     <hr />
-    <h2>📚 Flyer Marketing Case Study Series</h2>
+    <h2>🔗 Related Case Studies</h2>
     <ul>
-      <li><a href="/blog/flyer-marketing-case-study-part-1">Part 1 — How I Made £13.5K with a 2,380% ROI</a></li>
-      <li><a href="/blog/flyer-marketing-case-study-part-2">Part 2 — The £13.5K Flyer Strategy That Just Kept Working</a></li>
-      <li><a href="/blog/flyers-roi-breakdown">Part 3 — Year-by-Year ROI Breakdown (2021–2025)</a></li>
+      <li><a href="/blog/flyer-marketing-case-study-part-1">Flyer Marketing (Part 1) — The flyer that started it all</a></li>
+      <li><a href="/blog/flyer-marketing-case-study-part-2">Flyer Marketing (Part 2) — The refined flyer that scaled</a></li>
+      <li><a href="/blog/flyers-roi-breakdown">Flyer Marketing (Part 3) — Year-by-year ROI breakdown</a></li>
     </ul>
-    <div>
-      <p><strong>Previous:</strong> <a href="/blog/flyer-marketing-case-study-part-1">Part 1 — How I Made £13.5K with a 2,380% ROI</a></p>
-      <p><strong>Next:</strong> <a href="/blog/flyers-roi-breakdown">Part 3 — Year-by-Year ROI Breakdown (2021–2025)</a></p>
-    </div>
     
     <p>Flyers aren't dead. Most land flat. Mine landed clients.</p>
     <p>What did you learn from mine? Let's talk 👇</p>
+
+    <hr />
+    <h2>What to Do Next</h2>
+    <p>Continue through the series to see how this work develops in practice.</p>
+    <p><a href="/blog">Explore related case studies</a> or <a href="/contact">get in touch</a>.</p>
   `,
   date: '2025-07-12',
   author: 'Joe from Vivid Auto',

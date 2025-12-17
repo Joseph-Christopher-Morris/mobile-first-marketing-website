@@ -18,8 +18,6 @@ const post: BlogPost = {
 
     <h2>How I Prepared My Paid Ads Campaign</h2>
 
-    <img src="/images/blog/240708-Model_Car_Collection-69 (1).jpg" alt="Minichamps Ford Escort RS Cosworth model car in studio" />
-
     <p>Before launch, I:</p>
 
     <ul>
@@ -31,6 +29,9 @@ const post: BlogPost = {
     </ul>
 
     <h2>Results & Insights</h2>
+
+    <img src="/images/blog/240708-Model_Car_Collection-69 (1).jpg" alt="Product photography used in the Meta Ads campaign showing professional presentation" />
+    <p><em>The type of high-quality product shots I used in my Meta Ads campaign to attract the right audience.</em></p>
 
     <h3>Article Campaign (Meta Ads)</h3>
 
@@ -55,6 +56,10 @@ const post: BlogPost = {
     </ul>
 
     <h3>UX Impact</h3>
+
+    <img src="/images/blog/screenshot-2025-08-11-143853.webp" alt="Hotjar heatmap showing user behavior and scroll patterns on landing page" />
+    <p><em>Hotjar data revealing where visitors actually looked — this insight drove my CTA repositioning strategy.</em></p>
+
     <p>Hotjar revealed many visitors <strong>scrolled past my original CTA</strong>.<br />
     By moving it higher & making it more distinct, <strong>newsletter sign-ups improved</strong>.</p>
 
@@ -73,6 +78,19 @@ const post: BlogPost = {
 
     <p>📩 <strong>Want to know what's working right now?</strong><br />
     Join my newsletter for tested tactics, real numbers, and hands-on lessons I use every week.</p>
+
+    <hr />
+    <h2>🔗 Related Case Studies</h2>
+    <ul>
+      <li><a href="/blog/flyer-marketing-case-study-part-1">Flyer Marketing — How I Made £13.5K with a 2,380% ROI</a></li>
+      <li><a href="/blog/stock-photography-getting-started">Stock Photography — Getting Started</a></li>
+      <li><a href="/blog/ebay-model-ford-collection-part-1">Model Car Collection — Selling on eBay</a></li>
+    </ul>
+
+    <hr />
+    <h2>What to Do Next</h2>
+    <p>This article is one example of how I approach real-world problems through structured thinking and practical execution.</p>
+    <p><a href="/blog">Explore more work like this</a> or <a href="/contact">get in touch</a>.</p>
   `,
   date: '2025-08-11',
   author: 'Joe from Vivid Auto',

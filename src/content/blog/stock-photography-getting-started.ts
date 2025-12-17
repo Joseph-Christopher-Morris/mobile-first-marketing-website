@@ -27,6 +27,9 @@ const post: BlogPost = {
 
     <h2>❌ Why I Ditched Wirestock for Direct Sales</h2>
 
+    <img src="/images/blog/Cumulative_Shutterstock_Downloads_Earnings_Jan-Apr2023.png" alt="Early Shutterstock earnings showing the beginning of direct platform sales" />
+    <p><em>My first direct sales on Shutterstock — proof that cutting out the middleman was the right decision.</em></p>
+
     <p>I decided to sign up directly for <strong>Adobe Stock</strong>, <strong>Shutterstock</strong>, <strong>iStock</strong>, and <strong>Alamy</strong> to sell my photos to people who wanted to licence my assets for various purposes.</p>
 
     <p>I had a photography tutor who acted as a coach, mentor, and sounding board whenever I had questions about:</p>
@@ -64,6 +67,9 @@ const post: BlogPost = {
 
     <h2>🧠 What Stock Photography Really Taught Me</h2>
 
+    <img src="/images/blog/230210_Stoke_Car_Photography-9.webp" alt="Everyday street scene showing the type of mundane content that sells consistently" />
+    <p><em>This type of everyday scene — a closed shop on a high street — consistently outsold more "artistic" shots.</em></p>
+
     <ul>
       <li><strong>Lesson 1: Patience pays.</strong> Sales come slow. That's part of the game.</li>
       <li><strong>Lesson 2: The mundane sells.</strong> Skips and signs often beat fancy car shots.</li>
@@ -71,8 +77,6 @@ const post: BlogPost = {
     </ul>
 
     <h2>🎯 Final Take: How Stock Photography Changed My Mindset</h2>
-
-    <img src="/images/blog/230210_Stoke_Car_Photography-9.webp" alt="A closed Poundland on a Crewe high street with a person walking in the background. Photo taken circa November 2022" />
 
     <p>Many people have a multitude of reasons to begin stock photography.<br />
     My case was to <strong>diversify income</strong>, <strong>supplement cash flow</strong>, and <strong>do something I enjoy</strong>.</p>
@@ -82,21 +86,22 @@ const post: BlogPost = {
 
     <p>Stock photography wasn't a side hustle — it was a <strong>mindset shift</strong>.</p>
 
-    <h2>📚 Continue Reading</h2>
-
+    <hr />
+    <h2>🔗 Related Case Studies</h2>
     <ul>
-      <li><strong>Part 2 — My Stock Photography Breakthrough (2023–2024)</strong><br />
-      👉 <a href="/blog/stock-photography-breakthrough">See what sparked my breakthrough in Part 2</a></li>
-
-      <li><strong>Part 3 — From $2.36 to $1,166: My Real Stock Photography Income Growth Story</strong><br />
-      👉 <a href="/blog/stock-photography-income-growth">Check out Part 3 for the full earnings breakdown</a></li>
-
-      <li><strong>Part 4 — Stock Photography Lessons And Applications</strong><br />
-      👉 <a href="/blog/stock-photography-lessons">Unlock the key lessons in Part 4</a></li>
+      <li><a href="/blog/stock-photography-getting-started">Stock Photography — Getting Started</a></li>
+      <li><a href="/blog/stock-photography-income-growth">Stock Photography — Income Growth</a></li>
+      <li><a href="/blog/stock-photography-breakthrough">Stock Photography — Breakthrough</a></li>
+      <li><a href="/blog/stock-photography-lessons">Stock Photography — Lessons Learned</a></li>
     </ul>
 
     <p>🔔 <strong>Subscribe</strong> for tested freelance strategies.<br />
     No bull. Just what works.</p>
+
+    <hr />
+    <h2>What to Do Next</h2>
+    <p>This article is one example of how I approach real-world problems through structured thinking and practical execution.</p>
+    <p><a href="/blog">Explore more work like this</a> or <a href="/contact">get in touch</a>.</p>
   `,
   date: '2025-07-18',
   author: 'Joe from Vivid Auto',

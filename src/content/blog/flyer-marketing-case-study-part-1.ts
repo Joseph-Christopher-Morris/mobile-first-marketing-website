@@ -82,15 +82,17 @@ const post: BlogPost = {
     <p>I kept costs low (<strong>£546 total</strong>) and returns high. That's a <strong>2,380% ROI</strong> without social ads or influencers.</p>
 
     <hr />
-    <h2>📚 Flyer Marketing Case Study Series</h2>
+    <h2>🔗 Related Case Studies</h2>
     <ul>
-      <li><a href="/blog/flyer-marketing-case-study-part-1">Part 1 — How I Made £13.5K with a 2,380% ROI</a></li>
-      <li><a href="/blog/flyer-marketing-case-study-part-2">Part 2 — The £13.5K Flyer Strategy That Just Kept Working</a></li>
-      <li><a href="/blog/flyers-roi-breakdown">Part 3 — Year-by-Year ROI Breakdown (2021–2025)</a></li>
+      <li><a href="/blog/flyer-marketing-case-study-part-1">Flyer Marketing (Part 1) — The flyer that started it all</a></li>
+      <li><a href="/blog/flyer-marketing-case-study-part-2">Flyer Marketing (Part 2) — The refined flyer that scaled</a></li>
+      <li><a href="/blog/flyers-roi-breakdown">Flyer Marketing (Part 3) — Year-by-year ROI breakdown</a></li>
     </ul>
-    <div>
-      <p><strong>Next:</strong> <a href="/blog/flyer-marketing-case-study-part-2">Part 2 — The £13.5K Flyer Strategy That Just Kept Working</a></p>
-    </div>
+
+    <hr />
+    <h2>What to Do Next</h2>
+    <p>Continue through the series to see how this work develops in practice.</p>
+    <p><a href="/blog">Explore related case studies</a> or <a href="/contact">get in touch</a>.</p>
   `,
   date: '2025-07-12',
   author: 'Joe from Vivid Auto',

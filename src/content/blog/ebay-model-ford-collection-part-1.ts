@@ -6,7 +6,7 @@ const post: BlogPost = {
   excerpt:
     'What started as a personal project to downsize my Hot Wheels collection turned into photographing and selling my neighbour\'s prized Ford model car collection on eBay.',
   content: `
-    <img src="/images/blog/240616-Model_Car_Collection-3.webp" alt="Minichamps Ford Escort RS Cosworth | Michael Schumacher Collection | In White Studio" />
+    <img src="/images/blog/240602-Car_Collection-18 (1).webp" alt="Ford model car collection overview showing the variety and scope of the neighbor's prized collection" />
 
     <p>What started as a personal project to downsize my own Hot Wheels collection turned into something much bigger: photographing and selling my neighbour's prized Ford model car collection on eBay.</p>
 
@@ -34,11 +34,17 @@ const post: BlogPost = {
 
     <h2>Photographing the First Model</h2>
 
+    <img src="/images/blog/240602-Car_Collection-7.webp" alt="Ford Focus WRC Rally car in portable studio setup showing the photography process" />
+    <p><em>The first model I photographed — a 1:18 AUTOART Ford Focus WRC Rally car in my portable studio setup.</em></p>
+
     <p>The first car I shot was a <strong>1:18 AUTOART Ford Focus WRC Rally car</strong>. It barely fit in my portable studio, but it drew attention despite some cosmetic wear.</p>
 
     <p>Using a <strong>Sony A7III</strong> with a <strong>Nikon F-mount lens and converter</strong>, I adapted my setup to get sharp close-up shots. Macro photography proved essential in capturing detail, especially for collector-grade models.</p>
 
     <h2>Analytics and Optimisation</h2>
+
+    <img src="/images/blog/240620-Model_Car_Collection-111.webp" alt="Multiple Ford models arranged showing the scale and variety of the collection" />
+    <p><em>Part of the collection showing the variety and quality of models I was working with.</em></p>
 
     <blockquote>
       <p>137,917 impressions in one week — 100% organic.<br />
@@ -51,6 +57,9 @@ const post: BlogPost = {
     I tracked these metrics to refine timing and optimise titles for better visibility.</p>
 
     <h2>Why This Model Ford Car Collection on eBay Mattered</h2>
+
+    <img src="/images/blog/240708-Model_Car_Collection-21 (1).jpg" alt="eBay analytics dashboard showing traffic metrics and performance data" />
+    <p><em>Real eBay performance data showing how organic traffic drove sales without paid promotions.</em></p>
 
     <p>I used <strong>eBay's Performance and Traffic pages</strong> to monitor impressions, click-through rates, and sales. This helped me adjust titles, timing, and groupings to improve results without using promoted listings.</p>
 
@@ -78,17 +87,14 @@ const post: BlogPost = {
     </ul>
 
     <hr />
-    <h2>📚 Model Car Collection Series</h2>
+    <h2>🔗 Related Case Studies</h2>
     <ul>
-      <li><a href="/blog/ebay-model-ford-collection-part-1">Part 1 — Model Ford Collection</a></li>
-      <li><a href="/blog/ebay-photography-workflow-part-2">Part 2 — Photography Workflow</a></li>
-      <li><a href="/blog/ebay-model-car-sales-timing-bundles">Part 3 — Sales Timing & Bundles</a></li>
-      <li><a href="/blog/ebay-repeat-buyers-part-4">Part 4 — Repeat Buyers</a></li>
-      <li><a href="/blog/ebay-business-side-part-5">Part 5 — Business Side</a></li>
+      <li><a href="/blog/ebay-model-ford-collection-part-1">Model Car Collection (Part 1) — Model Ford Collection</a></li>
+      <li><a href="/blog/ebay-photography-workflow-part-2">Model Car Collection (Part 2) — Photography Workflow</a></li>
+      <li><a href="/blog/ebay-model-car-sales-timing-bundles">Model Car Collection (Part 3) — Sales Timing & Bundles</a></li>
+      <li><a href="/blog/ebay-repeat-buyers-part-4">Model Car Collection (Part 4) — Repeat Buyers</a></li>
+      <li><a href="/blog/ebay-business-side-part-5">Model Car Collection (Part 5) — Business Side</a></li>
     </ul>
-    <div>
-      <p><strong>Next:</strong> <a href="/blog/ebay-photography-workflow-part-2">Part 2 — Photography Workflow</a></p>
-    </div>
 
     <p>📬 <strong>Want More Real Wins Like This?</strong></p>
 
@@ -96,6 +102,11 @@ const post: BlogPost = {
     I unpack how I sold over <strong>950 models</strong>, handled wildcard buyers, and turned a flyer into <strong>£13.5K+ freelance gigs</strong>.</p>
 
     <p><strong>Subscribe</strong> for raw, tested strategies that get results — not recycled fluff.</p>
+
+    <hr />
+    <h2>What to Do Next</h2>
+    <p>Continue through the series to see how this work develops in practice.</p>
+    <p><a href="/blog">Explore related case studies</a> or <a href="/contact">get in touch</a>.</p>
   `,
   date: '2025-07-06',
   author: 'Joe from Vivid Auto',
@@ -107,7 +118,7 @@ const post: BlogPost = {
     'ecommerce',
     'commission-work',
   ],
-  image: '/images/blog/240616-Model_Car_Collection-3.webp',
+  image: '/images/blog/240602-Car_Collection-7.webp',
   readTime: 7,
   featured: false,
 };
