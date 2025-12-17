@@ -52,14 +52,10 @@ export default async function BlogPage() {
     const ai = seriesIndex.get(a.slug);
     const bi = seriesIndex.get(b.slug);
     
-    // Both in series: order by seriesIndex (Part 5 → Part 1)
+    // Both in Model Car Collection series: order by seriesIndex (Part 5 → Part 1)
     if (ai !== undefined && bi !== undefined) return ai - bi;
     
-    // Only one in series: series comes first (higher on page)
-    if (ai !== undefined) return -1;
-    if (bi !== undefined) return 1;
-    
-    // Fallback: keep existing behavior (usually newest first)
+    // Normal chronological ordering (newest first) for all other cases
     return new Date(b.date).getTime() - new Date(a.date).getTime();
   });
   
