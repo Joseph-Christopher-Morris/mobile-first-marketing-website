@@ -8,7 +8,7 @@ const post: BlogPost = {
   content: `
     <p><em>Studio Workflow and Customer Experience</em></p>
 
-    <img src="/images/blog/240602-Car_Collection-7.webp" alt="Minichamps 1:43 Scale Ford Puma with cracked resin display" />
+    <img src="/images/blog/240616-Model_Car_Collection-10 (1).jpg" alt="Minichamps 1:43 Scale Ford model in white studio setup showing photography workflow" />
 
     <p>This article explores my photo setup, editing workflow, and the first signs of customer issues. Learning how to adapt early helped me improve quality and avoid future mistakes.</p>
 
@@ -45,7 +45,7 @@ const post: BlogPost = {
 
     <h2>Managing Efficiency with AI</h2>
 
-    <img src="/images/blog/Screenshot 2025-08-14 094416.webp" alt="Example of a written description for a listing" />
+    <img src="/images/blog/Screenshot 2025-08-14 094346.webp" alt="AI-generated listing description showing workflow efficiency improvements" />
 
     <p>To speed up descriptions, I used <strong>AI-generated drafts</strong> as starting points. I always reviewed them carefully to correct inaccuracies, add the <strong>"can combine postage"</strong> note, and maintain a personal tone.</p>
 
@@ -53,29 +53,33 @@ const post: BlogPost = {
 
     <h2>Conclusion</h2>
 
+    <img src="/images/blog/240620-Model_Car_Collection-96 (1).jpg" alt="Final edited product shot showing the quality standards achieved through the workflow" />
+    <p><em>The result of a refined workflow — consistent, professional product photography that builds buyer trust.</em></p>
+
     <p>This phase taught me the importance of sharp photography, detailed editing, and handling customer dissatisfaction with <strong>professionalism</strong>.</p>
 
     <p><em>What challenges have you faced in your own selling journey? Let me know in the comments.</em></p>
 
     <hr />
-    <h2>📚 Model Car Collection Series</h2>
+    <h2>🔗 Related Case Studies</h2>
     <ul>
-      <li><a href="/blog/ebay-model-ford-collection-part-1">Part 1 — Model Ford Collection</a></li>
-      <li><a href="/blog/ebay-photography-workflow-part-2">Part 2 — Photography Workflow</a></li>
-      <li><a href="/blog/ebay-model-car-sales-timing-bundles">Part 3 — Sales Timing & Bundles</a></li>
-      <li><a href="/blog/ebay-repeat-buyers-part-4">Part 4 — Repeat Buyers</a></li>
-      <li><a href="/blog/ebay-business-side-part-5">Part 5 — Business Side</a></li>
+      <li><a href="/blog/ebay-model-ford-collection-part-1">Model Car Collection (Part 1) — Model Ford Collection</a></li>
+      <li><a href="/blog/ebay-photography-workflow-part-2">Model Car Collection (Part 2) — Photography Workflow</a></li>
+      <li><a href="/blog/ebay-model-car-sales-timing-bundles">Model Car Collection (Part 3) — Sales Timing & Bundles</a></li>
+      <li><a href="/blog/ebay-repeat-buyers-part-4">Model Car Collection (Part 4) — Repeat Buyers</a></li>
+      <li><a href="/blog/ebay-business-side-part-5">Model Car Collection (Part 5) — Business Side</a></li>
     </ul>
-    <div>
-      <p><strong>Previous:</strong> <a href="/blog/ebay-model-ford-collection-part-1">Part 1 — Model Ford Collection</a></p>
-      <p><strong>Next:</strong> <a href="/blog/ebay-model-car-sales-timing-bundles">Part 3 — Sales Timing & Bundles</a></p>
-    </div>
 
     <p>📬 <strong>Stay in the Loop</strong></p>
 
     <p>Enjoyed this article? Get real-world stories like this, plus practical insights on photography, eCommerce, and creative project management, delivered straight to your inbox.</p>
 
     <p><strong>Subscribe to my newsletter</strong> for exclusive behind-the-scenes updates and lessons I only share with email readers.</p>
+
+    <hr />
+    <h2>What to Do Next</h2>
+    <p>Continue through the series to see how this work develops in practice.</p>
+    <p><a href="/blog">Explore related case studies</a> or <a href="/contact">get in touch</a>.</p>
   `,
   date: '2025-07-06',
   author: 'Joe from Vivid Auto',
@@ -87,7 +91,7 @@ const post: BlogPost = {
     'model-cars',
     'ecommerce',
   ],
-  image: '/images/blog/240602-Car_Collection-7.webp',
+  image: '/images/blog/240616-Model_Car_Collection-3.webp',
   readTime: 5,
   featured: false,
 };

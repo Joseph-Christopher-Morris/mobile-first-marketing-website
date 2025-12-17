@@ -85,18 +85,20 @@ const post: BlogPost = {
     Without Google Ads, Meta boosts or influencers.</p>
     
     <hr />
-    <h2>📚 Flyer Marketing Case Study Series</h2>
+    <h2>🔗 Related Case Studies</h2>
     <ul>
-      <li><a href="/blog/flyer-marketing-case-study-part-1">Part 1 — How I Made £13.5K with a 2,380% ROI</a></li>
-      <li><a href="/blog/flyer-marketing-case-study-part-2">Part 2 — The £13.5K Flyer Strategy That Just Kept Working</a></li>
-      <li><a href="/blog/flyers-roi-breakdown">Part 3 — Year-by-Year ROI Breakdown (2021–2025)</a></li>
+      <li><a href="/blog/flyer-marketing-case-study-part-1">Flyer Marketing (Part 1) — The flyer that started it all</a></li>
+      <li><a href="/blog/flyer-marketing-case-study-part-2">Flyer Marketing (Part 2) — The refined flyer that scaled</a></li>
+      <li><a href="/blog/flyers-roi-breakdown">Flyer Marketing (Part 3) — Year-by-year ROI breakdown</a></li>
     </ul>
-    <div>
-      <p><strong>Previous:</strong> <a href="/blog/flyer-marketing-case-study-part-2">Part 2 — The £13.5K Flyer Strategy That Just Kept Working</a></p>
-    </div>
     
     <h2>📩 Like This Series?</h2>
     <p>Want more <strong>real results</strong> from the trenches of freelance marketing?</p>
+
+    <hr />
+    <h2>What to Do Next</h2>
+    <p>This series demonstrates how offline marketing and consistent execution deliver measurable results.</p>
+    <p><a href="/blog">Explore more work like this</a> or <a href="/contact">get in touch</a>.</p>
   `,
   date: '2025-11-04',
   author: 'Joe from Vivid Auto',

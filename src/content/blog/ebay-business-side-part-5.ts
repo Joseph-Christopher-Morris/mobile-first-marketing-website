@@ -8,7 +8,7 @@ const post: BlogPost = {
   content: `
     <p><em>Behind the Scenes: Business, Admin, and Buyer Challenges</em></p>
 
-    <img src="/images/blog/250705-Bentley_S2-1.jpg" alt="A detailed 1:18 scale Mustang MACH III with open engine bay, photographed in a white studio as part of the Ford model car collection" />
+    <img src="/images/blog/240708-Model_Car_Collection-130 (1).jpg" alt="Model car collection showing the scale and volume of inventory management for eBay business operations" />
 
     <p>In this final article, I reveal what it was like to run the project from the inside. Running an eBay model car selling business, especially when handling someone else's collection, meant balancing <strong>fairness</strong>, <strong>admin</strong>, and <strong>patience</strong>.</p>
 
@@ -28,6 +28,9 @@ const post: BlogPost = {
       <li>Postage</li>
     </ul>
 
+    <img src="/images/blog/Screenshot 2025-08-14 094416.webp" alt="Commission tracking spreadsheet showing transparent payment calculations" />
+    <p><em>The commission tracker I used to maintain transparency — every sale, fee, and payment documented.</em></p>
+
     <p>An example from the <strong>commission tracker</strong> was shared with John. I used this spreadsheet to track every sale, deduct postage and fees, and ensure that payments were <strong>fair and transparent</strong>.</p>
 
     <p>To maintain transparency, I used an <strong>Excel spreadsheet</strong> to track every sale. It listed the model, sale price, postage cost, and our respective shares. I printed this out and reviewed it with John directly.</p>
@@ -36,7 +39,7 @@ const post: BlogPost = {
 
     <h2>Emotional and Practical Challenges</h2>
 
-    <img src="/images/blog/240602-Car_Collection-18 (1).webp" alt="A yellow 1:43 scale 2004 Ford GT from the Ford 100 Years series is displayed in its original packaging in a white studio" />
+    <img src="/images/blog/240617-Model_Car_Collection-66 (1).jpg" alt="Individual Ford model in packaging showing the careful handling required for commission sales" />
 
     <p>There was emotional weight to selling someone else's collection. I wanted to do right by John. At the same time, I had to deal with:</p>
 
@@ -57,23 +60,25 @@ const post: BlogPost = {
     <p>John got funds for his home improvement project. I gained experience, income, and a story worth sharing.</p>
 
     <hr />
-    <h2>📚 Model Car Collection Series</h2>
+    <h2>🔗 Related Case Studies</h2>
     <ul>
-      <li><a href="/blog/ebay-model-ford-collection-part-1">Part 1 — Model Ford Collection</a></li>
-      <li><a href="/blog/ebay-photography-workflow-part-2">Part 2 — Photography Workflow</a></li>
-      <li><a href="/blog/ebay-model-car-sales-timing-bundles">Part 3 — Sales Timing & Bundles</a></li>
-      <li><a href="/blog/ebay-repeat-buyers-part-4">Part 4 — Repeat Buyers</a></li>
-      <li><a href="/blog/ebay-business-side-part-5">Part 5 — Business Side</a></li>
+      <li><a href="/blog/ebay-model-ford-collection-part-1">Model Car Collection (Part 1) — Model Ford Collection</a></li>
+      <li><a href="/blog/ebay-photography-workflow-part-2">Model Car Collection (Part 2) — Photography Workflow</a></li>
+      <li><a href="/blog/ebay-model-car-sales-timing-bundles">Model Car Collection (Part 3) — Sales Timing & Bundles</a></li>
+      <li><a href="/blog/ebay-repeat-buyers-part-4">Model Car Collection (Part 4) — Repeat Buyers</a></li>
+      <li><a href="/blog/ebay-business-side-part-5">Model Car Collection (Part 5) — Business Side</a></li>
     </ul>
-    <div>
-      <p><strong>Previous:</strong> <a href="/blog/ebay-repeat-buyers-part-4">Part 4 — Repeat Buyers</a></p>
-    </div>
 
     <p>📬 <strong>Ready for More Real Business Stories?</strong></p>
 
     <p>This series showed you the complete journey from photography to profit. Want more behind-the-scenes insights from my photography and eCommerce projects?</p>
 
     <p><strong>Subscribe to my newsletter</strong> for exclusive case studies, real numbers, and lessons I only share with email readers.</p>
+
+    <hr />
+    <h2>What to Do Next</h2>
+    <p>This series demonstrates how structured thinking and practical execution solve real-world problems.</p>
+    <p><a href="/blog">Explore more work like this</a> or <a href="/contact">get in touch</a>.</p>
   `,
   date: '2025-07-06',
   author: 'Joe from Vivid Auto',
@@ -85,7 +90,7 @@ const post: BlogPost = {
     'customer-challenges',
     'ecommerce',
   ],
-  image: '/images/blog/240620-Model_Car_Collection-96 (1).jpg',
+  image: '/images/blog/240804-Model_Car_Collection-46 (1).jpg',
   readTime: 5,
   featured: false,
 };

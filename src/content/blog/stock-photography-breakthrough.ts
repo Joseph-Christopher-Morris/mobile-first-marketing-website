@@ -33,6 +33,9 @@ const post: BlogPost = {
 
     <h2>🚀 Diversifying to Adobe Stock & iStock</h2>
 
+    <img src="/images/blog/Stock_Photography_Earnings_Comparison.webp" alt="Bar chart comparing earnings across Shutterstock, Adobe Stock, and iStock platforms" />
+    <p><em>Platform diversification in action — spreading uploads across multiple agencies reduced risk and maximized reach.</em></p>
+
     <p>In 2023, <strong>Adobe Stock</strong> and <strong>iStock</strong> combined accounted for approximately <strong>22%</strong> of my total stock photography income. Not massive individually, but they played a key role in building a broader, more resilient revenue stream.</p>
 
     <p><strong>Why it mattered:</strong></p>
@@ -101,21 +104,22 @@ const post: BlogPost = {
 
     <p>That mindset helped me land larger clients, grow my freelance work, and establish a brand with published work featured in <strong>BBC</strong>, <strong>Financial Times</strong>, and <strong>Forbes</strong>.</p>
 
-    <h2>📚 Continue Reading</h2>
-
+    <hr />
+    <h2>🔗 Related Case Studies</h2>
     <ul>
-      <li><strong>Part 1 — Why I Started Selling Stock Photography (And How You Can Too)</strong><br />
-      👉 <a href="/blog/stock-photography-getting-started">Read Part 1 and start selling your shots</a></li>
-
-      <li><strong>Part 3 — From $2.36 to $1,166: My Real Stock Photography Income Growth Story</strong><br />
-      👉 <a href="/blog/stock-photography-income-growth">Check out Part 3 for the full earnings breakdown</a></li>
-
-      <li><strong>Part 4 — Stock Photography Lessons And Applications</strong><br />
-      👉 <a href="/blog/stock-photography-lessons">Unlock the key lessons in Part 4</a></li>
+      <li><a href="/blog/stock-photography-getting-started">Stock Photography — Getting Started</a></li>
+      <li><a href="/blog/stock-photography-income-growth">Stock Photography — Income Growth</a></li>
+      <li><a href="/blog/stock-photography-breakthrough">Stock Photography — Breakthrough</a></li>
+      <li><a href="/blog/stock-photography-lessons">Stock Photography — Lessons Learned</a></li>
     </ul>
 
     <p>📩 <strong>Ready to see how I turned slow trickles into recurring income?</strong><br />
     Join my newsletter for tested strategies, raw numbers, and hands-on lessons.</p>
+
+    <hr />
+    <h2>What to Do Next</h2>
+    <p>This article is one example of how I approach real-world problems through structured thinking and practical execution.</p>
+    <p><a href="/blog">Explore more work like this</a> or <a href="/contact">get in touch</a>.</p>
   `,
   date: '2025-07-18',
   author: 'Joe from Vivid Auto',
@@ -127,7 +131,7 @@ const post: BlogPost = {
     'consistency',
     'photography-business',
   ],
-  image: '/images/blog/240221-Australia_Trip-314.webp',
+  image: '/images/blog/Cumulative_Shutterstock_Downloads_Earnings_Jan-Apr2023.png',
   readTime: 6,
   featured: false,
 };

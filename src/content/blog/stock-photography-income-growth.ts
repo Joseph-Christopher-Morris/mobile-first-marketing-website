@@ -35,6 +35,9 @@ const post: BlogPost = {
 
     <p>These images showed up in my download reports repeatedly:</p>
 
+    <img src="/images/blog/Stock_Photography_Revenue_Bar_Chart.png" alt="Revenue breakdown showing which photo categories performed best" />
+    <p><em>Real performance data showing which types of images generated the most revenue across platforms.</em></p>
+
     <h3>For Sale Sign in Residential Area</h3>
     <p>Practical for property listings, blogs, and local news stories.<br />
     <strong>Adobe Stock | 16 downloads | Royalty $11.22.</strong></p>
@@ -99,21 +102,22 @@ const post: BlogPost = {
 
     <p>Building a successful stock photography portfolio takes time and effort. By focusing on quality, consistency, and strategic marketing, you can create a semi-passive income stream.</p>
 
-    <h2>📚 Continue Reading</h2>
-
+    <hr />
+    <h2>🔗 Related Case Studies</h2>
     <ul>
-      <li><strong>Part 1 — Why I Started Selling Stock Photography (And How You Can Too)</strong><br />
-      👉 <a href="/blog/stock-photography-getting-started">Read Part 1 and start selling your shots</a></li>
-
-      <li><strong>Part 2 — My Stock Photography Breakthrough (2023–2024)</strong><br />
-      👉 <a href="/blog/stock-photography-breakthrough">See what sparked my breakthrough in Part 2</a></li>
-
-      <li><strong>Part 4 — Stock Photography Lessons And Applications</strong><br />
-      👉 <a href="/blog/stock-photography-lessons">Unlock the key lessons in Part 4</a></li>
+      <li><a href="/blog/stock-photography-getting-started">Stock Photography — Getting Started</a></li>
+      <li><a href="/blog/stock-photography-income-growth">Stock Photography — Income Growth</a></li>
+      <li><a href="/blog/stock-photography-breakthrough">Stock Photography — Breakthrough</a></li>
+      <li><a href="/blog/stock-photography-lessons">Stock Photography — Lessons Learned</a></li>
     </ul>
 
     <p>📩 <strong>Want to Know What's Working Right Now?</strong><br />
     Join my newsletter for tested tactics, real numbers, and the hands-on lessons I use every week — both in stock photography and freelance work.</p>
+
+    <hr />
+    <h2>What to Do Next</h2>
+    <p>This article is one example of how I approach real-world problems through structured thinking and practical execution.</p>
+    <p><a href="/blog">Explore more work like this</a> or <a href="/contact">get in touch</a>.</p>
   `,
   date: '2025-07-18',
   author: 'Joe from Vivid Auto',
@@ -125,7 +129,7 @@ const post: BlogPost = {
     'photography-business',
     'revenue-scaling',
   ],
-  image: '/images/blog/Cumulative_Stock_Photography_Revenue_2022_2025_v2.webp',
+  image: '/images/blog/Stock_Photography_Revenue_Bar_Chart.png',
   readTime: 8,
   featured: false,
 };

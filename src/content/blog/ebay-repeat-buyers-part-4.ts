@@ -8,7 +8,7 @@ const post: BlogPost = {
   content: `
     <p><em>Selling to the Same Customer: How I Handled eBay Repeat Buyers</em></p>
 
-    <img src="/images/blog/250705-Bentley_S2-1 (1).webp" alt="Minichamps 1:43 Scale Ford Focus RS500 is displayed in a white studio" />
+    <img src="/images/blog/240708-Model_Car_Collection-69 (1).jpg" alt="Consistent studio photography setup showing repeatable quality standards for model car listings" />
 
     <p>This part focuses on what happens when buyers return, ask about duplicates, or order multiple cars in one go. These <strong>eBay repeat buyers</strong> are a sign of strong trust and consistent customer satisfaction.</p>
 
@@ -55,25 +55,29 @@ const post: BlogPost = {
       <li>Tracking communication</li>
     </ul>
 
+    <img src="/images/blog/240616-Model_Car_Collection-3.webp" alt="Packaged models ready for shipping showing careful handling and professional presentation" />
+    <p><em>Each multi-item order required careful packaging to ensure models arrived safely while maximizing value for the buyer.</em></p>
+
     <p>These orders were more complex but often more rewarding.</p>
 
     <hr />
-    <h2>📚 Model Car Collection Series</h2>
+    <h2>🔗 Related Case Studies</h2>
     <ul>
-      <li><a href="/blog/ebay-model-ford-collection-part-1">Part 1 — Model Ford Collection</a></li>
-      <li><a href="/blog/ebay-photography-workflow-part-2">Part 2 — Photography Workflow</a></li>
-      <li><a href="/blog/ebay-model-car-sales-timing-bundles">Part 3 — Sales Timing & Bundles</a></li>
-      <li><a href="/blog/ebay-repeat-buyers-part-4">Part 4 — Repeat Buyers</a></li>
-      <li><a href="/blog/ebay-business-side-part-5">Part 5 — Business Side</a></li>
+      <li><a href="/blog/ebay-model-ford-collection-part-1">Model Car Collection (Part 1) — Model Ford Collection</a></li>
+      <li><a href="/blog/ebay-photography-workflow-part-2">Model Car Collection (Part 2) — Photography Workflow</a></li>
+      <li><a href="/blog/ebay-model-car-sales-timing-bundles">Model Car Collection (Part 3) — Sales Timing & Bundles</a></li>
+      <li><a href="/blog/ebay-repeat-buyers-part-4">Model Car Collection (Part 4) — Repeat Buyers</a></li>
+      <li><a href="/blog/ebay-business-side-part-5">Model Car Collection (Part 5) — Business Side</a></li>
     </ul>
-    <div>
-      <p><strong>Previous:</strong> <a href="/blog/ebay-model-car-sales-timing-bundles">Part 3 — Sales Timing & Bundles</a></p>
-      <p><strong>Next:</strong> <a href="/blog/ebay-business-side-part-5">Part 5 — Business Side</a></p>
-    </div>
 
     <p>📬 <strong>Stay in the Loop</strong></p>
 
     <p>Enjoyed this article? Get real-world stories like this, plus practical insights on photography, eCommerce, and creative project management, delivered straight to your inbox.</p>
+
+    <hr />
+    <h2>What to Do Next</h2>
+    <p>Continue through the series to see how this work develops in practice.</p>
+    <p><a href="/blog">Explore related case studies</a> or <a href="/contact">get in touch</a>.</p>
   `,
   date: '2025-07-06',
   author: 'Joe from Vivid Auto',
@@ -85,7 +89,7 @@ const post: BlogPost = {
     'multi-item-orders',
     'ecommerce',
   ],
-  image: '/images/blog/240804-Model_Car_Collection-46 (1).jpg',
+  image: '/images/blog/240708-Model_Car_Collection-21 (1).jpg',
   readTime: 4,
   featured: false,
 };

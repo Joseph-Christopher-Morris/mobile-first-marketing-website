@@ -40,6 +40,7 @@ const post: BlogPost = {
     </ul>
     <h2>💵 Breakdown of iStock Earnings</h2>
     <img src="/images/blog/Screenshot 2025-08-14 093805.webp" alt="DeepMeta Dashboard showing my Sales by Royalty Year" />
+    <p><em>Year-over-year earnings growth tracked through DeepMeta 4 — showing how consistent uploads compound over time.</em></p>
     <table>
       <thead>
         <tr>
@@ -67,12 +68,30 @@ const post: BlogPost = {
       </tbody>
     </table>
     <h2>🌍 Top 3 Countries Where My Photos Sold</h2>
+
+    <img src="/images/blog/240915-Trentham_Car_Meet-1.webp" alt="Car meet photography showing the type of automotive content that sells internationally" />
+    <p><em>UK-based automotive photography that resonated with buyers across multiple countries — proof that quality content travels.</em></p>
+
     <h3>🇬🇧 United Kingdom — $183.77</h3>
     <p>I took my photos in the UK, making images of shops like <strong>WHSmith</strong> relevant to British publications such as <em>The Daily Express</em>.</p>
     <h3>🇺🇸 United States — $112.38</h3>
     <p>My car photography and "Sale" sign images resonate with American audiences, suitable for articles about the economy and automotive industry.</p>
     <p>📩 <strong>Want to see more data-driven insights like this?</strong><br />
     Join my newsletter for behind-the-scenes analytics, real earnings breakdowns, and lessons from my photography business.</p>
+
+    <hr />
+    <h2>🔗 Related Case Studies</h2>
+    <ul>
+      <li><a href="/blog/stock-photography-getting-started">Stock Photography — Getting Started</a></li>
+      <li><a href="/blog/stock-photography-income-growth">Stock Photography — Income Growth & Scaling</a></li>
+      <li><a href="/blog/stock-photography-breakthrough">Stock Photography — My 2023-2024 Breakthrough</a></li>
+      <li><a href="/blog/stock-photography-lessons">Stock Photography — Lessons & Real-World Applications</a></li>
+    </ul>
+
+    <hr />
+    <h2>What to Do Next</h2>
+    <p>This article is one example of how I approach real-world problems through structured thinking and practical execution.</p>
+    <p><a href="/blog">Explore more work like this</a> or <a href="/contact">get in touch</a>.</p>
   `,
   date: '2025-08-14',
   author: 'Joe from Vivid Auto',

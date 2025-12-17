@@ -25,6 +25,9 @@ const post: BlogPost = {
 
     <h2>How This Shaped My Approach to Other Content Strategies</h2>
 
+    <img src="/images/blog/Stock_Photography_Earnings_Comparison_Clear.png" alt="Clear earnings comparison showing the long-term value of evergreen content" />
+    <p><em>The data that changed my content strategy — proof that evergreen subjects deliver consistent returns over time.</em></p>
+
     <h3>Hampson Auctions</h3>
     <p>I leveraged my experience from photographing car meets, showrooms, and auctions to understand <strong>what visuals perform exceptionally well</strong>.</p>
 
@@ -73,20 +76,22 @@ const post: BlogPost = {
 
     <p>From <strong>stock photos</strong> to <strong>social media campaigns</strong>, I learned that content ROI comes from <strong>the long game, not short-term trends</strong>.</p>
 
-    <h2>Related Reading</h2>
+    <hr />
+    <h2>🔗 Related Case Studies</h2>
     <ul>
-      <li><strong>Part 1 — Why I Started Selling Stock Photography (And How You Can Too)</strong><br />
-      👉 <a href="/blog/stock-photography-getting-started">Read Part 1</a></li>
-
-      <li><strong>Part 2 — My Stock Photography Breakthrough (2023–2024)</strong><br />
-      👉 <a href="/blog/stock-photography-breakthrough">See what sparked my breakthrough</a></li>
-
-      <li><strong>Part 3 — From $2.36 to $1,166: My Real Stock Photography Income Growth Story</strong><br />
-      👉 <a href="/blog/stock-photography-income-growth">Check out the full earnings breakdown</a></li>
+      <li><a href="/blog/stock-photography-getting-started">Stock Photography — Getting Started</a></li>
+      <li><a href="/blog/stock-photography-income-growth">Stock Photography — Income Growth</a></li>
+      <li><a href="/blog/stock-photography-breakthrough">Stock Photography — Breakthrough</a></li>
+      <li><a href="/blog/stock-photography-lessons">Stock Photography — Lessons Learned</a></li>
     </ul>
 
     <p>📩 <strong>Want to see how I apply stock photography principles to real-world campaigns?</strong><br />
     Join my newsletter for actionable content strategies, creative lessons, and proven marketing tactics.</p>
+
+    <hr />
+    <h2>What to Do Next</h2>
+    <p>This article is one example of how I approach real-world problems through structured thinking and practical execution.</p>
+    <p><a href="/blog">Explore more work like this</a> or <a href="/contact">get in touch</a>.</p>
   `,
   date: '2025-07-18',
   author: 'Joe from Vivid Auto',
@@ -97,7 +102,7 @@ const post: BlogPost = {
     'evergreen-content',
     'visual-marketing',
   ],
-  image: '/images/blog/240217-Australia_Trip-232.webp',
+  image: '/images/blog/Stock_Photography_Earnings_Comparison_Clear.png',
   readTime: 7,
   featured: false,
 };

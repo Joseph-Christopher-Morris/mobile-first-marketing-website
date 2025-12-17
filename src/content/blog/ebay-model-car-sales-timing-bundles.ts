@@ -8,13 +8,13 @@ const post: BlogPost = {
   content: `
     <p><em>Listing Strategy and Conversion Lessons</em></p>
 
-    <img src="/images/blog/240620-Model_Car_Collection-96 (1).jpg" alt="A limited-edition Ford die-cast display pairing a Model T with a Mondeo Ghia on a polished wooden base" />
+    <img src="/images/blog/240620-Model_Car_Collection-116.webp" alt="Multiple Ford model cars arranged together showing bundling strategy for eBay sales" />
 
     <p>In this third part of the series, I'll walk you through the tactics I used to improve the conversion rate when selling my neighbour's model Ford collection. From timing listings to writing efficient descriptions and encouraging multi-item purchases, this phase of the project brought out the eCommerce strategist in me.</p>
 
     <h2>Prologue: Why Combined Postage Matters</h2>
 
-    <img src="/images/blog/240602-Car_Collection-18 (1).webp" alt="Minichamps 1:43 Scale Ford Motor Company 100 Years Celebration Collection" />
+    <img src="/images/blog/240603-Car_Collection-38 (1).jpg" alt="Different Ford models from the collection showing variety available for bundling opportunities" />
 
     <p>One of the best ways to encourage more sales on eBay is to offer <strong>combined postage</strong>. This strategy appeals to buyers who want to grow their collection or save money while shopping.</p>
 
@@ -25,7 +25,7 @@ const post: BlogPost = {
 
     <h2>Optimising eBay Model Car Sales with Smart Bundling</h2>
 
-    <img src="/images/blog/240602-Car_Collection-7.webp" alt="Norev 1:43 Scale metallic brown Ford B-Max" />
+    <img src="/images/blog/240620-Model_Car_Collection-96 (1).jpg" alt="Brown Ford B-Max showing the visual pairing strategy used to encourage multi-item purchases" />
 
     <p>Before I began listing each item, I grouped cars that complemented each other in case buyers were interested in purchasing more than one. This <strong>bundling technique</strong> became a core part of my eBay model car sales strategy.<br />
     For example, I paired a <strong>brown Ford B-Max</strong> with a <strong>gold Ford Edge</strong>. These visual or thematic pairings made browsing more appealing and encouraged buyers to explore my other listings.</p>
@@ -44,7 +44,7 @@ const post: BlogPost = {
       <p><strong>Minichamps 1:43 Ford Escort Cosworth Mobil 1 Rally Monte Carlo 1993 #6</strong></p>
     </blockquote>
 
-    <img src="/images/blog/240616-Model_Car_Collection-3.webp" alt="Minichamps 1:43 Scale red Ford Escort RS Cosworth model car in studio" />
+    <img src="/images/blog/240616-Model_Car_Collection-38 (2).jpg" alt="Ford Escort Cosworth photographed with consistent lighting to maintain professional listing standards" />
 
     <p>I created product listings for each Ford and Jaguar model based on the images I had edited. Each listing included important fields such as <strong>brand</strong>, <strong>scale</strong>, <strong>condition</strong>, and <strong>model type</strong>.</p>
 
@@ -77,7 +77,7 @@ const post: BlogPost = {
 
     <h2>Conclusion</h2>
 
-    <img src="/images/blog/250705-Bentley_S2-1 (1).webp" alt="Minichamps 1:43 Scale silver Ford Focus displayed in a white studio" />
+    <img src="/images/blog/240617-Model_Car_Collection-91 (1).jpg" alt="Silver Ford model photographed to the same standard demonstrating consistent presentation across all listings" />
 
     <p>I relied on <strong>intuition</strong>, <strong>experience from selling Hot Wheels</strong>, and a <strong>transparent workflow</strong> to make the most of each listing. Timing was another key factor. Posting listings on <strong>Sunday afternoons</strong> proved far more effective than uploading them during quiet times, such as early mornings on weekdays.</p>
 
@@ -86,18 +86,14 @@ const post: BlogPost = {
     <p>In the next part of the series, I'll talk about what happened when buyers returned for more, how I packaged multi-item orders, and what it was like to manage inventory at scale.</p>
 
     <hr />
-    <h2>📚 Model Car Collection Series</h2>
+    <h2>🔗 Related Case Studies</h2>
     <ul>
-      <li><a href="/blog/ebay-model-ford-collection-part-1">Part 1 — Model Ford Collection</a></li>
-      <li><a href="/blog/ebay-photography-workflow-part-2">Part 2 — Photography Workflow</a></li>
-      <li><a href="/blog/ebay-model-car-sales-timing-bundles">Part 3 — Sales Timing & Bundles</a></li>
-      <li><a href="/blog/ebay-repeat-buyers-part-4">Part 4 — Repeat Buyers</a></li>
-      <li><a href="/blog/ebay-business-side-part-5">Part 5 — Business Side</a></li>
+      <li><a href="/blog/ebay-model-ford-collection-part-1">Model Car Collection (Part 1) — Model Ford Collection</a></li>
+      <li><a href="/blog/ebay-photography-workflow-part-2">Model Car Collection (Part 2) — Photography Workflow</a></li>
+      <li><a href="/blog/ebay-model-car-sales-timing-bundles">Model Car Collection (Part 3) — Sales Timing & Bundles</a></li>
+      <li><a href="/blog/ebay-repeat-buyers-part-4">Model Car Collection (Part 4) — Repeat Buyers</a></li>
+      <li><a href="/blog/ebay-business-side-part-5">Model Car Collection (Part 5) — Business Side</a></li>
     </ul>
-    <div>
-      <p><strong>Previous:</strong> <a href="/blog/ebay-photography-workflow-part-2">Part 2 — Photography Workflow</a></p>
-      <p><strong>Next:</strong> <a href="/blog/ebay-repeat-buyers-part-4">Part 4 — Repeat Buyers</a></p>
-    </div>
 
     <p><em>Have you ever tried combining postage or bundling items on eBay? I'd love to hear your experience in the comments below.</em></p>
 
@@ -106,6 +102,11 @@ const post: BlogPost = {
     <p>Enjoyed this article? Get real-world stories like this, plus practical insights on photography, eCommerce, and creative project management, delivered straight to your inbox.</p>
 
     <p><strong>Subscribe to my newsletter</strong> for exclusive behind-the-scenes updates and lessons I only share with email readers.</p>
+
+    <hr />
+    <h2>What to Do Next</h2>
+    <p>Continue through the series to see how this work develops in practice.</p>
+    <p><a href="/blog">Explore related case studies</a> or <a href="/contact">get in touch</a>.</p>
   `,
   date: '2025-07-06',
   author: 'Joe from Vivid Auto',
@@ -117,7 +118,7 @@ const post: BlogPost = {
     'bundling',
     'conversion-optimisation',
   ],
-  image: '/images/blog/240708-Model_Car_Collection-21 (1).jpg',
+  image: '/images/blog/240620-Model_Car_Collection-111.webp',
   readTime: 6,
   featured: false,
 };
