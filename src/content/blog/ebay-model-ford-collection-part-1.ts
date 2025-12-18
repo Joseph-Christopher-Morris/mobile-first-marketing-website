@@ -6,8 +6,6 @@ const post: BlogPost = {
   excerpt:
     'What started as a personal project to downsize my Hot Wheels collection turned into photographing and selling my neighbour\'s prized Ford model car collection on eBay.',
   content: `
-    <img src="/images/blog/240616-Model_Car_Collection-3.webp?v=20251217" alt="Ford model car collection overview showing the variety and scope of the neighbor's prized collection" />
-
     <p>What started as a personal project to downsize my own Hot Wheels collection turned into something much bigger: photographing and selling my neighbour's prized Ford model car collection on eBay.</p>
 
     <p>This article is the first part of a five-part series where I'll walk through how I photographed, listed, packaged, and shipped dozens of model cars — while refining my digital skills and navigating real customer expectations.</p>
@@ -34,17 +32,17 @@ const post: BlogPost = {
 
     <h2>Photographing the First Model</h2>
 
-    <img src="/images/blog/240602-Car_Collection-7.webp?v=20251217" alt="Ford Focus WRC Rally car in portable studio setup showing the photography process" />
-    <p><em>The first model I photographed — a 1:18 AUTOART Ford Focus WRC Rally car in my portable studio setup.</em></p>
+    <img src="/images/blog/240602-Car_Collection-7.webp" alt="Ford Focus RS/WRC rally car model showing the first model photographed from the collection" />
+    <p><em>The first model photographed: Ford Focus RS/WRC rally car that started the professional photography workflow for the collection.</em></p>
 
     <p>The first car I shot was a <strong>1:18 AUTOART Ford Focus WRC Rally car</strong>. It barely fit in my portable studio, but it drew attention despite some cosmetic wear.</p>
 
     <p>Using a <strong>Sony A7III</strong> with a <strong>Nikon F-mount lens and converter</strong>, I adapted my setup to get sharp close-up shots. Macro photography proved essential in capturing detail, especially for collector-grade models.</p>
 
-    <h2>Analytics and Optimisation</h2>
+    <h2>Photography Standards and Quality</h2>
 
-    <img src="/images/blog/240620-Model_Car_Collection-111.webp?v=20251217" alt="Part of the collection showing the variety and quality of models I was working with" />
-    <p><em>Part of the collection showing the variety and quality of models I was working with.</em></p>
+    <img src="/images/blog/Screenshot 2025-07-04 193922 (1).webp" alt="eBay Performance &amp; Traffic analytics showing impressions and CTR for the Ford model listings (June 14–21, 2024)" />
+    <p><em>eBay Performance &amp; Traffic dashboard (June 14–21, 2024). I used this to monitor impressions and CTR and refine titles and timing.</em></p>
 
     <blockquote>
       <p>137,917 impressions in one week — 100% organic.<br />
@@ -58,10 +56,9 @@ const post: BlogPost = {
 
     <h2>Why This Model Ford Car Collection on eBay Mattered</h2>
 
-    <img src="/images/blog/Screenshot 2025-07-04 193922 (1).webp?v=20251217" alt="eBay analytics dashboard showing traffic metrics and performance data" class="analytics-screenshot" />
-    <p><em>Real eBay performance data showing how organic traffic drove sales without paid promotions.</em></p>
-
     <p>I used <strong>eBay's Performance and Traffic pages</strong> to monitor impressions, click-through rates, and sales. This helped me adjust titles, timing, and groupings to improve results without using promoted listings.</p>
+
+    <p>The data showed clear patterns: certain Ford models consistently outperformed others, and timing played a crucial role in visibility. This analytical approach helped me refine my strategy for the remaining collection.</p>
 
     <h2>Conclusion</h2>
 
@@ -112,7 +109,7 @@ const post: BlogPost = {
   author: 'Joe — Digital Marketing & Analytics',
   category: 'Case Studies',
   tags: ['ecommerce'],
-  image: '/images/blog/240616-Model_Car_Collection-3.webp?v=20251217',
+  image: '/images/blog/240616-Model_Car_Collection-3.webp',
   readTime: 7,
   featured: false,
 };

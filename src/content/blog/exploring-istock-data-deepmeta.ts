@@ -39,36 +39,13 @@ const post: BlogPost = {
       <li><strong>2025:</strong> Continued success in <strong>cars</strong> and <strong>UK high street</strong> themes.</li>
     </ul>
     <h2>💵 Breakdown of iStock Earnings</h2>
-    <img class="analytics-screenshot cap-height" src="/images/blog/Screenshot 2025-08-14 093805-cropped.webp?v=20251217" alt="DeepMeta Dashboard showing my sales by royalty year" />
+    <img class="analytics-screenshot" src="/images/blog/Screenshot 2025-08-14 093805-cropped.webp?v=20251217" alt="DeepMeta Dashboard showing my sales by royalty year" />
     <p><em>Year-over-year earnings growth tracked through DeepMeta 4 — showing how consistent uploads compound over time.</em></p>
-    <div class="blog-table">
-    <table>
-      <thead>
-        <tr>
-          <th>Year</th>
-          <th>Total Royalties</th>
-          <th>Royalties per Download (RPD)</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr>
-          <td>2023</td>
-          <td>$23.35</td>
-          <td>$0.69</td>
-        </tr>
-        <tr>
-          <td>2024</td>
-          <td>$241.01</td>
-          <td>$0.41</td>
-        </tr>
-        <tr>
-          <td>2025 (to June)</td>
-          <td>$219.67</td>
-          <td>$0.46</td>
-        </tr>
-      </tbody>
-    </table>
-    </div>
+    
+    <p><strong>Key Performance Stats:</strong></p>
+    <p>• <strong>2023:</strong> $23.35 total royalties, $0.69 royalties per download (RPD)<br />
+    • <strong>2024:</strong> $241.01 total royalties, $0.41 RPD<br />
+    • <strong>2025 (to June):</strong> $219.67 total royalties, $0.46 RPD</p>
     <h2>🌍 Top 3 Countries Where My Photos Sold</h2>
 
     <img src="/images/blog/Screenshot 2025-08-14 094416.webp?v=20251217" alt="Top 3 Countries Where My Photos Sold" class="analytics-screenshot" />
@@ -103,7 +80,7 @@ const post: BlogPost = {
   author: 'Joe — Digital Marketing & Analytics',
   category: 'Case Studies',
   tags: ['content-strategy', 'analytics'],
-  image: '/images/blog/240915-Trentham_Car_Meet-1.webp',
+  image: '/images/blog/screenshot-2025-09-23-analytics-dashboard.webp',
   readTime: 6,
   featured: false,
 };

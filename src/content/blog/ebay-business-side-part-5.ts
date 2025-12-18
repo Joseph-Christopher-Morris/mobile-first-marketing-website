@@ -8,7 +8,7 @@ const post: BlogPost = {
   content: `
     <p><em>Behind the Scenes: Business, Admin, and Buyer Challenges</em></p>
 
-    <img src="/images/blog/240708-Model_Car_Collection-130 (1).jpg?v=20251217" alt="Model car collection showing the scale and volume of inventory management for eBay business operations" />
+
 
     <p>In this final article, I reveal what it was like to run the project from the inside. Running an eBay model car selling business, especially when handling someone else's collection, meant balancing <strong>fairness</strong>, <strong>admin</strong>, and <strong>patience</strong>.</p>
 
@@ -28,8 +28,8 @@ const post: BlogPost = {
       <li>Postage</li>
     </ul>
 
-    <img src="/images/blog/Screenshot 2025-07-04 211333.webp?v=20251217" alt="Commission tracking spreadsheet showing transparent payment calculations" class="analytics-screenshot" />
-    <p><em>The commission tracker I used to maintain transparency — every sale, fee, and payment documented.</em></p>
+    <img src="/images/blog/image (2).jpg" alt="Model Ford earnings and commission spreadsheet showing the transparent 75/25 split calculation and payment tracking system" class="analytics-screenshot" />
+    <p><em>The commission tracker I used to maintain transparency — every sale, fee, and payment documented with John's approval.</em></p>
 
     <p>An example from the <strong>commission tracker</strong> was shared with John. I used this spreadsheet to track every sale, deduct postage and fees, and ensure that payments were <strong>fair and transparent</strong>.</p>
 
@@ -39,7 +39,8 @@ const post: BlogPost = {
 
     <h2>Emotional and Practical Challenges</h2>
 
-    <img src="/images/blog/240617-Model_Car_Collection-66 (1).jpg?v=20251217" alt="Individual Ford model in packaging showing the careful handling required for commission sales" />
+    <img src="/images/blog/ezgif-675443f33cc2e4.webp" alt="Damaged eBay parcel showing the reality of shipping challenges — why careful packaging became essential" />
+    <p><em>Damaged parcel reality — operational challenges that required professional handling and transparent communication with both buyers and John.</em></p>
 
     <p>There was emotional weight to selling someone else's collection. I wanted to do right by John. At the same time, I had to deal with:</p>
 
@@ -53,7 +54,7 @@ const post: BlogPost = {
 
     <h2>Conclusion</h2>
 
-    <img src="/images/blog/240708-Model_Car_Collection-69 (1).webp?v=20251217" alt="A white UT Models 1:18 Scale Ford Escort RS Cosworth rally car is displayed in an outdoor studio" />
+
 
     <p>Selling John's collection was a hands‑on, emotionally complex experience. It taught me how to <strong>manage customer relationships</strong>, <strong>promote business transparency</strong>, and <strong>effectively present products</strong> simultaneously.</p>
 
@@ -84,7 +85,7 @@ const post: BlogPost = {
   author: 'Joe — Digital Marketing & Analytics',
   category: 'Case Studies',
   tags: ['ecommerce'],
-  image: '/images/blog/240708-Model_Car_Collection-130 (1).jpg?v=20251217',
+  image: '/images/blog/240620-Model_Car_Collection-96 (1).jpg',
   readTime: 5,
   featured: false,
 };

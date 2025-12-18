@@ -4,7 +4,7 @@ import Image from 'next/image';
 import { notFound } from 'next/navigation';
 import { Layout } from '@/components/layout';
 import { getBlogPost, getAllBlogPosts } from '@/lib/blog-api';
-import PostContent from '@/components/blog/PostContent';
+import { processContentForHeroEnforcement } from '@/lib/content-processor';
 
 interface BlogPostPageProps {
   params: {
@@ -152,36 +152,35 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
           </div>
         </header>
 
-        {/* Featured Image */}
+        {/* HERO SECTION - SINGLE SOURCE OF TRUTH - DETERMINISTIC RENDERING */}
         {post.image && (
-          <div className='max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 -mt-8 mb-12'>
+          <div className='blog-hero max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 -mt-8 mb-12'>
             <div className='relative w-full h-64 md:h-96 rounded-lg overflow-hidden shadow-lg'>
               <Image
                 src={post.image}
-                alt={post.title}
+                alt={`Hero image for ${post.title}`}
                 fill
                 className='object-cover'
-                priority
+                priority={true}
+                sizes="(max-width: 768px) 100vw, (max-width: 1200px) 80vw, 1200px"
+                fetchPriority="high"
+                loading="eager"
               />
             </div>
           </div>
         )}
 
-        {/* Post Content */}
+        {/* Post Content - Content images load AFTER hero */}
         <div className='pb-16'>
-          <article className='blog-article'>
-            <div
-              dangerouslySetInnerHTML={{
-                __html: post.content
-                  .replace(/\n/g, '<br />')
-                  .replace(/#{1,6}\s/g, match => {
-                    const level = match.trim().length;
-                    return `<h${level}>`;
-                  })
-                  .replace(/\*\*(.*?)\*\*/g, '<strong>$1</strong>'),
-              }}
-            />
-          </article>
+          <div className='max-w-4xl mx-auto px-4 sm:px-6 lg:px-8'>
+            <article className='prose prose-lg max-w-none blog-content'>
+              <div
+                dangerouslySetInnerHTML={{
+                  __html: processContentForHeroEnforcement(post.content),
+                }}
+              />
+            </article>
+          </div>
         </div>
 
         {/* Post Footer */}

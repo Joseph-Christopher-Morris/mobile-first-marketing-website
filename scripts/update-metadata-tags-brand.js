@@ -10,10 +10,15 @@
  * - Standardize categories to: Case Studies, Insights, Guides
  * - Use approved tags only
  * - Update Open Graph images to reflect business outcomes
+ * 
+ * SAFETY: Does NOT modify image fields unless --include-images flag is used
  */
 
 const fs = require('fs');
 const path = require('path');
+
+// Check for --include-images flag
+const INCLUDE_IMAGES = process.argv.includes('--include-images');
 
 // Approved tags only
 const APPROVED_TAGS = [
@@ -77,10 +82,23 @@ function replaceBrandReferences(content) {
 
 /**
  * Update blog post metadata
+ * 
+ * SAFETY: Skips image field modifications unless --include-images flag is set
  */
 function updateBlogMetadata(content, filename) {
   let updated = content;
   let changes = 0;
+  
+  // SAFETY CHECK: Do not modify image fields unless explicitly allowed
+  if (!INCLUDE_IMAGES) {
+    // Protect image: field and <img src="..."> from modification
+    const imageFieldPattern = /image:\s*['"`][^'"`]+['"`]/g;
+    const imgSrcPattern = /<img\s+[^>]*src\s*=\s*['"`][^'"`]+['"`][^>]*>/g;
+    
+    if (imageFieldPattern.test(content) || imgSrcPattern.test(content)) {
+      console.log(`🔒 ${filename}: Skipping image field modifications (use --include-images to allow)`);
+    }
+  }
   
   // Update author
   if (content.includes('author:') && !content.includes('Joe — Digital Marketing & Analytics')) {
@@ -317,6 +335,12 @@ function generateReport() {
  */
 async function main() {
   console.log('\n🚀 Starting Metadata, Tags & Brand Alignment Update...\n');
+  
+  if (INCLUDE_IMAGES) {
+    console.log('⚠️  WARNING: --include-images flag detected. Image fields will be modified.');
+  } else {
+    console.log('🔒 SAFETY: Image fields are protected. Use --include-images to modify them.');
+  }
   
   try {
     updateSiteConfig();
