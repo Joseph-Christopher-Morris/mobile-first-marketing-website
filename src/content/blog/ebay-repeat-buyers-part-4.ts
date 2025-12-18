@@ -6,20 +6,23 @@ const post: BlogPost = {
   excerpt:
     'What happens when buyers return, ask about duplicates, or order multiple cars in one go. These eBay repeat buyers are a sign of strong trust and customer satisfaction.',
   content: `
-    <p><em>Selling to the Same Customer: How I Handled eBay Repeat Buyers</em></p>
-
-    <img src="/images/blog/240708-Model_Car_Collection-69 (1).jpg?v=20251217" alt="Consistent studio photography setup showing repeatable quality standards for model car listings" />
-
     <p>This part focuses on what happens when buyers return, ask about duplicates, or order multiple cars in one go. These <strong>eBay repeat buyers</strong> are a sign of strong trust and consistent customer satisfaction.</p>
+
+    <img src="/images/blog/240804-Model_Car_Collection-46 (1).jpg" alt="eBay repeat-buyer workflow proof — multi-item order / combined shipping process captured as operational evidence" />
+    <p><em>Hero image: proof of repeat-buyer operations and combined shipping workflow.</em></p>
 
     <h2>Prologue: Selling in Batches</h2>
 
-    <img src="/images/blog/240804-Model_Car_Collection-46 (1).jpg?v=20251217" alt="Example of combined postage order showing multi-item packaging" />
+    <img src="/images/blog/WhatsApp Image 2025-07-06 at 9.09.08 PM.jpeg" alt="Positive eBay feedback from a repeat customer — showing how professional service builds loyalty and trust" />
+    <p><em>Customer loyalty proof showing positive feedback from repeat buyers — evidence that professional service and quality standards build long-term relationships.</em></p>
 
     <p>Some listings naturally led to repeat buyers. During the holiday season, <strong>multiple orders</strong> became common as people looked for gifts or wanted to grow their collections.<br />
     Customer feedback reinforced that I was doing something right. <strong>Fair descriptions</strong>, <strong>fast shipping</strong>, and <strong>transparent communication</strong> built loyalty.</p>
 
     <h2>Handling Multi-Item Requests</h2>
+
+    <img src="/images/blog/WhatsApp Image 2025-07-04 at 8.44.20 PM (1).jpg" alt="Positive eBay buyer review showing 5-star feedback — proof that the professional approach and quality standards worked" />
+    <p><em>Buyer review proof showing 5-star feedback — evidence that professional service and quality standards built trust with repeat customers.</em></p>
 
     <p>When buyers placed bids on several cars, I created a <strong>custom invoice</strong> with updated postage. I used <strong>sturdy boxes</strong> with padding to ensure models stayed safe.</p>
 
@@ -44,8 +47,6 @@ const post: BlogPost = {
 
     <h2>Admin and Logistics</h2>
 
-    <img src="/images/blog/Screenshot 2025-07-04 211333.webp?v=20251217" alt="Example of a combined postage order" />
-
     <p><strong>Multi-item orders added steps:</strong></p>
 
     <ul>
@@ -55,10 +56,18 @@ const post: BlogPost = {
       <li>Tracking communication</li>
     </ul>
 
-    <img src="/images/blog/240617-Model_Car_Collection-66 (1).jpg?v=20251217" alt="Packaged models ready for shipping showing careful handling and professional presentation" />
-    <p><em>Each multi-item order required careful packaging to ensure models arrived safely while maximizing value for the buyer.</em></p>
+    <p><em>Each multi-item order required careful packaging to ensure models arrived safely while maximizing value for the buyer. The extra administrative work was worth it for the increased customer satisfaction and repeat business.</em></p>
 
     <p>These orders were more complex but often more rewarding.</p>
+
+    <h2>Analytics and Optimisation</h2>
+
+    <img src="/images/blog/Screenshot 2025-07-04 193922 (1).webp" alt="eBay Performance & Traffic dashboard showing impressions and CTR trends used to optimise repeat-buyer listing strategy" />
+    <p><em>eBay Performance &amp; Traffic proof: impressions and CTR trends used to time listings and spot repeat-buyer activity.</em></p>
+
+    <p>Tracking repeat buyer patterns through eBay's Performance &amp; Traffic data helped me identify which models generated returning customers and when to list similar items for maximum visibility.</p>
+
+    <p>This insight informed timing decisions, bundle strategy, and listing cadence without relying on promoted listings.</p>
 
     <hr />
     <h2>🔗 Related Case Studies</h2>
@@ -83,7 +92,7 @@ const post: BlogPost = {
   author: 'Joe — Digital Marketing & Analytics',
   category: 'Case Studies',
   tags: ['ecommerce'],
-  image: '/images/blog/240708-Model_Car_Collection-69 (1).jpg?v=20251217',
+  image: '/images/blog/240804-Model_Car_Collection-46 (1).jpg',
   readTime: 4,
   featured: false,
 };

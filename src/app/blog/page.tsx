@@ -70,6 +70,8 @@ export default async function BlogPage() {
     'flyer-marketing-case-study-part-2':
       '/images/blog/211125_Hampson_Auctions-29.webp',
     'stock-photography-lessons': '/images/hero/240619-london-19.webp',
+    // DeepMeta analytics article - LOCKED thumbnail (analytics dashboard)
+    'exploring-istock-data-deepmeta': '/images/blog/screenshot-2025-09-23-analytics-dashboard.webp',
     // Model Car Collection series covers
     'ebay-model-ford-collection-part-1': '/images/blog/240616-Model_Car_Collection-3.webp',
     'ebay-photography-workflow-part-2': '/images/blog/240602-Car_Collection-7.webp',
