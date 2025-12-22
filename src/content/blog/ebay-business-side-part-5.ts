@@ -28,7 +28,7 @@ const post: BlogPost = {
       <li>Postage</li>
     </ul>
 
-    <img src="/images/blog/image (2).jpg" alt="Model Ford earnings and commission spreadsheet showing the transparent 75/25 split calculation and payment tracking system" class="analytics-screenshot" />
+    <img src="/images/blog/image (2).webp" alt="Model Ford earnings and commission spreadsheet showing the transparent 75/25 split calculation and payment tracking system" class="analytics-screenshot" />
     <p><em>The commission tracker I used to maintain transparency — every sale, fee, and payment documented with John's approval.</em></p>
 
     <p>An example from the <strong>commission tracker</strong> was shared with John. I used this spreadsheet to track every sale, deduct postage and fees, and ensure that payments were <strong>fair and transparent</strong>.</p>
@@ -85,7 +85,7 @@ const post: BlogPost = {
   author: 'Joe — Digital Marketing & Analytics',
   category: 'Case Studies',
   tags: ['ecommerce'],
-  image: '/images/blog/240620-Model_Car_Collection-96 (1).jpg',
+  image: '/images/blog/240620-Model_Car_Collection-96 (1).webp',
   readTime: 5,
   featured: false,
 };

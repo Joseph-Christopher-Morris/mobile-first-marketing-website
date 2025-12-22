@@ -244,60 +244,32 @@ export default function RootLayout({
           }}
         />
 
-        {/* GA4 */}
+        {/* Google Tag Manager */}
         <Script
-          async
-          src="https://www.googletagmanager.com/gtag/js?id=G-QJXSCJ0L43"
-          strategy="afterInteractive"
-        />
-        <Script id="ga4" strategy="afterInteractive">
-          {`
-            window.dataLayer = window.dataLayer || [];
-            function gtag(){dataLayer.push(arguments);}
-            
-            // Consent defaults
-            gtag('consent', 'default', {
-              analytics_storage: 'denied',
-              ad_storage: 'denied',
-              wait_for_update: 500
-            });
-            
-            gtag('js', new Date());
-            gtag('config', 'G-QJXSCJ0L43', { anonymize_ip: true });
-          `}
-        </Script>
-
-        {/* Google Ads */}
-        <Script
-          async
-          src="https://www.googletagmanager.com/gtag/js?id=AW-17708257497"
-          strategy="afterInteractive"
-        />
-        <Script id="ads" strategy="afterInteractive">
-          {`
-            window.dataLayer = window.dataLayer || [];
-            function gtag(){dataLayer.push(arguments);}
-            gtag('js', new Date());
-            gtag('config', 'AW-17708257497');
-          `}
-        </Script>
-
-        {/* Microsoft Clarity - Proper Next.js Implementation */}
-        <Script
-          id="clarity-init"
+          id="gtm"
           strategy="afterInteractive"
           dangerouslySetInnerHTML={{
             __html: `
-              window.clarity = window.clarity || function(){(window.clarity.q=window.clarity.q||[]).push(arguments)};
+              (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+              new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+              j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+              'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+              })(window,document,'script','dataLayer','GTM-W7L94JHW');
             `,
           }}
         />
-        <Script
-          src="https://www.clarity.ms/tag/u4yftkmpxx"
-          strategy="afterInteractive"
-        />
       </head>
       <body className={inter.className}>
+        {/* Google Tag Manager (noscript) */}
+        <noscript>
+          <iframe 
+            src="https://www.googletagmanager.com/ns.html?id=GTM-W7L94JHW"
+            height="0" 
+            width="0" 
+            style={{display:'none',visibility:'hidden'}}
+          />
+        </noscript>
+        
         <TrackingProvider>
           {children}
           <CookieBanner />

@@ -30,16 +30,41 @@ export async function generateMetadata({
     };
   }
 
+  const baseUrl = 'https://vividmediacheshire.com';
+  const postUrl = `${baseUrl}/blog/${params.slug}`;
+  const imageUrl = post.image ? `${baseUrl}${post.image}` : `${baseUrl}/images/hero/aston-martin-db6-website.webp`;
+
   return {
     title: post.title,
     description: post.excerpt,
+    metadataBase: new URL(baseUrl),
+    alternates: {
+      canonical: `/blog/${params.slug}`,
+    },
     openGraph: {
-      title: `${post.title} | Mobile-First Vivid Media Cheshire`,
-      description: post.excerpt,
       type: 'article',
+      title: post.title,
+      description: post.excerpt,
+      url: postUrl,
+      siteName: 'Vivid Media Cheshire',
       publishedTime: post.date,
       authors: [post.author],
       tags: post.tags,
+      images: [
+        {
+          url: imageUrl,
+          width: 1200,
+          height: 630,
+          alt: `${post.title} - Vivid Media Cheshire`,
+          type: 'image/webp',
+        },
+      ],
+    },
+    twitter: {
+      card: 'summary_large_image',
+      title: post.title,
+      description: post.excerpt,
+      images: [imageUrl],
     },
   };
 }

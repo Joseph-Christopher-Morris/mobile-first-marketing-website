@@ -6,14 +6,14 @@ const post: BlogPost = {
   excerpt:
     'What happens when buyers return, ask about duplicates, or order multiple cars in one go. These eBay repeat buyers are a sign of strong trust and customer satisfaction.',
   content: `
-    <p>This part focuses on what happens when buyers return, ask about duplicates, or order multiple cars in one go. These <strong>eBay repeat buyers</strong> are a sign of strong trust and consistent customer satisfaction.</p>
-
-    <img src="/images/blog/240804-Model_Car_Collection-46 (1).jpg" alt="eBay repeat-buyer workflow proof — multi-item order / combined shipping process captured as operational evidence" />
+    <img src="/images/blog/240804-Model_Car_Collection-46 (1).webp" alt="eBay repeat-buyer workflow proof — multi-item order / combined shipping process captured as operational evidence" />
     <p><em>Hero image: proof of repeat-buyer operations and combined shipping workflow.</em></p>
+
+    <p>This part focuses on what happens when buyers return, ask about duplicates, or order multiple cars in one go. These <strong>eBay repeat buyers</strong> are a sign of strong trust and consistent customer satisfaction.</p>
 
     <h2>Prologue: Selling in Batches</h2>
 
-    <img src="/images/blog/WhatsApp Image 2025-07-06 at 9.09.08 PM.jpeg" alt="Positive eBay feedback from a repeat customer — showing how professional service builds loyalty and trust" />
+    <img src="/images/blog/WhatsApp Image 2025-07-06 at 9.09.08 PM.webp" alt="Positive eBay feedback from a repeat customer — showing how professional service builds loyalty and trust" />
     <p><em>Customer loyalty proof showing positive feedback from repeat buyers — evidence that professional service and quality standards build long-term relationships.</em></p>
 
     <p>Some listings naturally led to repeat buyers. During the holiday season, <strong>multiple orders</strong> became common as people looked for gifts or wanted to grow their collections.<br />
@@ -21,7 +21,7 @@ const post: BlogPost = {
 
     <h2>Handling Multi-Item Requests</h2>
 
-    <img src="/images/blog/WhatsApp Image 2025-07-04 at 8.44.20 PM (1).jpg" alt="Positive eBay buyer review showing 5-star feedback — proof that the professional approach and quality standards worked" />
+    <img src="/images/blog/WhatsApp Image 2025-07-04 at 8.44.20 PM (1).webp" alt="Positive eBay buyer review showing 5-star feedback — proof that the professional approach and quality standards worked" />
     <p><em>Buyer review proof showing 5-star feedback — evidence that professional service and quality standards built trust with repeat customers.</em></p>
 
     <p>When buyers placed bids on several cars, I created a <strong>custom invoice</strong> with updated postage. I used <strong>sturdy boxes</strong> with padding to ensure models stayed safe.</p>
@@ -62,8 +62,8 @@ const post: BlogPost = {
 
     <h2>Analytics and Optimisation</h2>
 
-    <img src="/images/blog/Screenshot 2025-07-04 193922 (1).webp" alt="eBay Performance & Traffic dashboard showing impressions and CTR trends used to optimise repeat-buyer listing strategy" />
-    <p><em>eBay Performance &amp; Traffic proof: impressions and CTR trends used to time listings and spot repeat-buyer activity.</em></p>
+    <img src="/images/blog/screenshot-2025-07-04-193922.webp" alt="eBay analytics dashboard showing impressions and click-through rate trends for repeat-buyer activity" />
+    <p><em>eBay analytics used to spot repeat-buyer patterns and identify when to list similar models for maximum visibility.</em></p>
 
     <p>Tracking repeat buyer patterns through eBay's Performance &amp; Traffic data helped me identify which models generated returning customers and when to list similar items for maximum visibility.</p>
 
@@ -92,7 +92,7 @@ const post: BlogPost = {
   author: 'Joe — Digital Marketing & Analytics',
   category: 'Case Studies',
   tags: ['ecommerce'],
-  image: '/images/blog/240804-Model_Car_Collection-46 (1).jpg',
+  image: '/images/blog/240804-Model_Car_Collection-46 (1).webp',
   readTime: 4,
   featured: false,
 };

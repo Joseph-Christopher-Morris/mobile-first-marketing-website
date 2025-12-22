@@ -6,6 +6,7 @@ import { getAllBlogPosts, getFeaturedPosts } from '@/lib/blog-api';
 import { getAllServices } from '@/lib/content';
 import { NewsletterSignup } from '@/components/sections/NewsletterSignup';
 import { ServicesShowcase } from '@/components/sections/ServicesShowcase';
+import { resolveBlogCardImageWithLegacy } from '@/lib/blog-thumbnail-resolver';
 
 export const metadata: Metadata = {
   title: 'Marketing, Photography & Web Design Tips for Cheshire Businesses | Vivid Media Cheshire',
@@ -58,31 +59,6 @@ export default async function BlogPage() {
     // Normal chronological ordering (newest first) for all other cases
     return new Date(b.date).getTime() - new Date(a.date).getTime();
   });
-  
-  // Map each blog slug to its hero image path
-  const cardCovers: Record<string, string> = {
-    'paid-ads-campaign-learnings':
-      '/images/hero/google-ads-analytics-dashboard.webp',
-    'flyers-roi-breakdown':
-      '/images/hero/whatsapp-image-2025-07-11-flyers-roi.webp',
-    'flyer-marketing-case-study-part-1':
-      '/images/hero/aston-martin-db6-website.webp',
-    'flyer-marketing-case-study-part-2':
-      '/images/blog/211125_Hampson_Auctions-29.webp',
-    'stock-photography-lessons': '/images/hero/240619-london-19.webp',
-    // DeepMeta analytics article - LOCKED thumbnail (analytics dashboard)
-    'exploring-istock-data-deepmeta': '/images/blog/screenshot-2025-09-23-analytics-dashboard.webp',
-    // Model Car Collection series covers
-    'ebay-model-ford-collection-part-1': '/images/blog/240616-Model_Car_Collection-3.webp',
-    'ebay-photography-workflow-part-2': '/images/blog/240602-Car_Collection-7.webp',
-    'ebay-model-car-sales-timing-bundles': '/images/blog/240708-Model_Car_Collection-21 (1).jpg',
-    'ebay-repeat-buyers-part-4': '/images/blog/240804-Model_Car_Collection-46 (1).jpg',
-    'ebay-business-side-part-5': '/images/blog/240620-Model_Car_Collection-96 (1).jpg',
-  };
-
-  // Prefer our mapped cover, then frontmatter image, then a safe default
-  const coverFor = (slug: string, img?: string) =>
-    cardCovers[slug] || img || '/images/hero/aston-martin-db6-website.webp';
 
   return (
     <Layout>
@@ -110,7 +86,7 @@ export default async function BlogPage() {
                 <article className='md:col-span-2 lg:col-span-3 bg-white rounded-lg shadow-sm border border-gray-200 overflow-hidden'>
                   <div className='relative w-full h-48 md:h-64 bg-gray-200'>
                     <Image
-                      src={coverFor(featuredPost.slug, featuredPost.image)}
+                      src={resolveBlogCardImageWithLegacy(featuredPost)}
                       alt={featuredPost.title}
                       fill
                       className='object-cover'
@@ -172,11 +148,7 @@ export default async function BlogPage() {
                 >
                   <div className='relative w-full h-48 bg-gray-200'>
                     <Image
-                      src={
-                        cardCovers[post.slug] ??
-                        post.image ??
-                        '/images/hero/aston-martin-db6-website.webp'
-                      }
+                      src={resolveBlogCardImageWithLegacy(post)}
                       alt={post.title}
                       fill
                       className='object-cover'

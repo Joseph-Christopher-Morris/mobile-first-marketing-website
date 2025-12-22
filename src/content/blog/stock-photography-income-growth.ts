@@ -35,7 +35,7 @@ const post: BlogPost = {
 
     <p>These images showed up in my download reports repeatedly:</p>
 
-    <img src="/images/blog/Stock_Photography_Revenue_Bar_Chart.png" alt="Revenue breakdown showing which photo categories performed best" />
+    <img src="/images/blog/Stock_Photography_Revenue_Bar_Chart.webp" alt="Revenue breakdown showing which photo categories performed best" />
     <p><em>Real performance data showing which types of images generated the most revenue across platforms.</em></p>
 
     <h3>For Sale Sign in Residential Area</h3>

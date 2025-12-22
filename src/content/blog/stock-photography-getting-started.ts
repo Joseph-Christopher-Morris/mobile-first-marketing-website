@@ -27,7 +27,7 @@ const post: BlogPost = {
 
     <h2>❌ Why I Ditched Wirestock for Direct Sales</h2>
 
-    <img src="/images/blog/Cumulative_Shutterstock_Downloads_Earnings_Jan-Apr2023.png" alt="Early Shutterstock earnings showing the beginning of direct platform sales" />
+    <img src="/images/blog/Cumulative_Shutterstock_Downloads_Earnings_Jan-Apr2023.webp" alt="Early Shutterstock earnings showing the beginning of direct platform sales" />
     <p><em>My first direct sales on Shutterstock — proof that cutting out the middleman was the right decision.</em></p>
 
     <p>I decided to sign up directly for <strong>Adobe Stock</strong>, <strong>Shutterstock</strong>, <strong>iStock</strong>, and <strong>Alamy</strong> to sell my photos to people who wanted to licence my assets for various purposes.</p>
@@ -42,7 +42,7 @@ const post: BlogPost = {
       <li>How to edit the picture in Lightroom Classic</li>
     </ul>
 
-    <img src="/images/blog/Cumulative_Shutterstock_Downloads_Earnings_Jan-Apr2023.png" alt="First Photo licensed on my Shutterstock account on November 2nd 2022" />
+    <img src="/images/blog/Cumulative_Shutterstock_Downloads_Earnings_Jan-Apr2023.webp" alt="First Photo licensed on my Shutterstock account on November 2nd 2022" />
 
     <p>The photos I had ready to sell for my Shutterstock account included images from:</p>
 

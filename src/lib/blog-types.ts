@@ -10,6 +10,10 @@ export interface BlogPost {
   image: string;
   readTime: number;
   featured?: boolean;
+  // Optional image fields for blog card thumbnails
+  cardImage?: string;
+  coverImage?: string;
+  heroImage?: string;
 }
 
 export interface BlogCategory {

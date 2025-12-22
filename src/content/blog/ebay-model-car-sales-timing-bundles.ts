@@ -14,7 +14,7 @@ const post: BlogPost = {
 
     <h2>Prologue: Why Combined Postage Matters</h2>
 
-    <img src="/images/blog/image (1).jpg" alt="Hot Wheels combined order showing how bundling multiple items saves buyers money and increases seller revenue" />
+    <img src="/images/blog/image (1).webp" alt="Hot Wheels combined order showing how bundling multiple items saves buyers money and increases seller revenue" />
     <p><em>Hot Wheels bundling proof showing how combined orders save buyers money while increasing seller revenue through higher average order values.</em></p>
 
     <p>One of the best ways to encourage more sales on eBay is to offer <strong>combined postage</strong>. This strategy appeals to buyers who want to grow their collection or save money while shopping.</p>
@@ -108,7 +108,7 @@ const post: BlogPost = {
   author: 'Joe — Digital Marketing & Analytics',
   category: 'Case Studies',
   tags: ['conversion-optimisation'],
-  image: '/images/blog/240708-Model_Car_Collection-21 (1).jpg',
+  image: '/images/blog/240708-Model_Car_Collection-21 (1).webp',
   readTime: 6,
   featured: false,
 };
