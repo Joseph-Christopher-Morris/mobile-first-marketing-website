@@ -25,7 +25,7 @@ const post: BlogPost = {
 
     <h2>How This Shaped My Approach to Other Content Strategies</h2>
 
-    <img src="/images/blog/Stock_Photography_Earnings_Comparison_Clear.png" alt="Clear earnings comparison showing the long-term value of evergreen content" />
+    <img src="/images/blog/Stock_Photography_Earnings_Comparison_Clear.webp" alt="Clear earnings comparison showing the long-term value of evergreen content" />
     <p><em>The data that changed my content strategy — proof that evergreen subjects deliver consistent returns over time.</em></p>
 
     <h3>Hampson Auctions</h3>
@@ -97,7 +97,7 @@ const post: BlogPost = {
   author: 'Joe — Digital Marketing & Analytics',
   category: 'Case Studies',
   tags: ['content-strategy', 'conversion-optimisation'],
-  image: '/images/blog/Stock_Photography_Earnings_Comparison_Clear.png',
+  image: '/images/blog/Stock_Photography_Earnings_Comparison_Clear.webp',
   readTime: 7,
   featured: false,
 };

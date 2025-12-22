@@ -28,7 +28,7 @@ const post: BlogPost = {
 
     <h2>Building an eBay Photography Workflow That Scales</h2>
 
-    <img src="/images/blog/WhatsApp Image 2025-07-05 at 9.00.50 PM.jpg" alt="Hot Wheels listing description showing the detailed, accurate copy that built buyer confidence and encouraged purchases" />
+    <img src="/images/blog/WhatsApp Image 2025-07-05 at 9.00.50 PM.webp" alt="Hot Wheels listing description showing the detailed, accurate copy that built buyer confidence and encouraged purchases" />
     <p><em>Listing description proof showing the detailed, accurate copy that built buyer confidence and encouraged purchases.</em></p>
 
     <p>To maintain listing quality, I built a reliable eBay photography workflow that allowed me to scale production without losing consistency:</p>
@@ -81,7 +81,7 @@ const post: BlogPost = {
   author: 'Joe — Digital Marketing & Analytics',
   category: 'Case Studies',
   tags: ['ecommerce'],
-  image: '/images/blog/240616-Model_Car_Collection-10 (1).jpg',
+  image: '/images/blog/240616-Model_Car_Collection-10 (1).webp',
   readTime: 5,
   featured: false,
 };

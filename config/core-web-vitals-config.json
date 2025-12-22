@@ -1,67 +1,26 @@
 {
-  "targets": {
+  "thresholds": {
     "lcp": {
-      "value": 2500,
-      "unit": "ms",
-      "description": "Largest Contentful Paint - measures loading performance"
+      "good": 2500,
+      "poor": 4000
     },
     "fid": {
-      "value": 100,
-      "unit": "ms", 
-      "description": "First Input Delay - measures interactivity"
+      "good": 100,
+      "poor": 300
     },
     "cls": {
-      "value": 0.1,
-      "unit": "score",
-      "description": "Cumulative Layout Shift - measures visual stability"
+      "good": 0.1,
+      "poor": 0.25
     }
   },
-  "testUrls": [
-    {
-      "name": "Home",
-      "url": "https://d15sc9fc739ev2.cloudfront.net/",
-      "priority": "high",
-      "description": "Main landing page"
-    },
-    {
-      "name": "Services",
-      "url": "https://d15sc9fc739ev2.cloudfront.net/services/",
-      "priority": "high",
-      "description": "Services overview page"
-    },
-    {
-      "name": "Photography Services",
-      "url": "https://d15sc9fc739ev2.cloudfront.net/services/photography/",
-      "priority": "high",
-      "description": "Photography services detail page"
-    },
-    {
-      "name": "Blog",
-      "url": "https://d15sc9fc739ev2.cloudfront.net/blog/",
-      "priority": "medium",
-      "description": "Blog listing page"
-    },
-    {
-      "name": "Contact",
-      "url": "https://d15sc9fc739ev2.cloudfront.net/contact/",
-      "priority": "medium",
-      "description": "Contact form page"
-    }
-  ],
   "monitoring": {
-    "frequency": "daily",
-    "alertThresholds": {
-      "lcp": 3000,
-      "fid": 150,
-      "cls": 0.15
-    },
-    "retryAttempts": 3,
-    "timeout": 30000
+    "enabled": true,
+    "reportingEndpoint": "/api/web-vitals",
+    "sampleRate": 1
   },
-  "reporting": {
-    "generateSummary": true,
-    "saveDetailedResults": true,
-    "includePerformanceMetrics": true,
-    "includeRecommendations": true
+  "alerts": {
+    "enabled": true,
+    "thresholdExceeded": true,
+    "dailyReport": true
   }
 }

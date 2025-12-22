@@ -25,19 +25,19 @@ export default function PricingPage() {
         <section className="bg-gray-50 py-16 md:py-20">
           <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
             <h1 className="text-4xl md:text-5xl lg:text-6xl font-extrabold text-slate-900 leading-tight mb-4">
-              Simple, transparent pricing. No hidden fees.
+              Simple, transparent pricing – no hidden fees.
             </h1>
             <p className="text-xl md:text-2xl text-slate-700 mb-8 max-w-3xl mx-auto font-medium">
-              Every package includes personal support and fast turnaround.
+              Every website is built for speed, clarity, and measurable results. You deal directly with me from start to finish.
             </p>
             <Link
               href="#contact"
               className="inline-flex items-center justify-center px-8 py-3 rounded-full text-base md:text-lg font-semibold bg-brand-pink text-white shadow-lg hover:bg-brand-pink2 hover:shadow-xl transition"
             >
-              Get My Free Quote
+              Get My Free Quote →
             </Link>
             <p className="mt-4 text-slate-700 text-lg">
-              I personally reply to all enquiries the same day between 09:00 and 18:00.
+              I reply personally the same day between 09:00 and 18:00.
             </p>
           </div>
         </section>
@@ -82,15 +82,48 @@ export default function PricingPage() {
 
             <div className="space-y-6">
               <div className="bg-white rounded-2xl p-6 shadow-sm">
-                <h3 className="text-xl font-bold text-gray-900 mb-3">Website Design – from £300 per website</h3>
+                <h3 className="text-xl font-bold text-gray-900 mb-3">Conversion Landing Page – from £300</h3>
                 <p className="text-lg text-gray-700 mb-4">
-                  Built for speed, clarity, and measurable results.
+                  A single-page website built to turn visitors into calls and enquiries.
                 </p>
                 <ul className="list-disc pl-6 text-gray-700 space-y-2">
-                  <li>Responsive design</li>
-                  <li>SEO optimised</li>
-                  <li>Performance-focused</li>
+                  <li>Mobile-first, responsive design</li>
+                  <li>Speed and performance optimised</li>
+                  <li>SEO-ready for local search</li>
                 </ul>
+                <p className="text-sm text-gray-600 mt-4 font-medium">
+                  <strong>Who this is for:</strong> Trades and local services that need fast enquiries from Google or Google Ads.
+                </p>
+              </div>
+
+              <div className="bg-white rounded-2xl p-6 shadow-sm">
+                <h3 className="text-xl font-bold text-gray-900 mb-3">Small Business Website – from £750</h3>
+                <p className="text-lg text-gray-700 mb-4">
+                  A professional multi-page website that forms the foundation of your business online.
+                </p>
+                <ul className="list-disc pl-6 text-gray-700 space-y-2">
+                  <li>5–7 core pages</li>
+                  <li>Clean, modern design aligned to your brand</li>
+                  <li>Easy content management</li>
+                </ul>
+                <p className="text-sm text-gray-600 mt-4 font-medium">
+                  <strong>Who this is for:</strong> Small businesses that want a professional online presence with room to grow.
+                </p>
+              </div>
+
+              <div className="bg-white rounded-2xl p-6 shadow-sm">
+                <h3 className="text-xl font-bold text-gray-900 mb-3">Content-Heavy Website – from £1,200</h3>
+                <p className="text-lg text-gray-700 mb-4">
+                  A scalable website designed for businesses with multiple services, content, or portfolios.
+                </p>
+                <ul className="list-disc pl-6 text-gray-700 space-y-2">
+                  <li>15–30+ pages</li>
+                  <li>Structured navigation and page hierarchy</li>
+                  <li>SEO foundations for long-term growth</li>
+                </ul>
+                <p className="text-sm text-gray-600 mt-4 font-medium">
+                  <strong>Who this is for:</strong> Agencies, event companies, and businesses using content as a growth channel.
+                </p>
               </div>
 
               <div className="bg-white rounded-2xl p-6 shadow-sm">
@@ -104,6 +137,13 @@ export default function PricingPage() {
                   <li>24/7 monitoring</li>
                 </ul>
               </div>
+            </div>
+
+            {/* Global Pricing Clarifier */}
+            <div className="mt-8 p-4 bg-yellow-50 border-l-4 border-yellow-400 rounded-r-lg">
+              <p className="text-gray-700 italic">
+                <strong>Important:</strong> Prices depend on structure and complexity. The £300 price applies to single-page landing pages only.
+              </p>
             </div>
           </div>
         </section>
@@ -281,7 +321,7 @@ export default function PricingPage() {
               href="/contact"
               className="inline-flex items-center justify-center px-8 py-3 rounded-full text-base md:text-lg font-semibold bg-brand-pink text-white shadow-lg hover:bg-brand-pink2 hover:shadow-xl transition"
             >
-              Get My Free Quote
+              Get My Free Quote →
             </Link>
           </div>
         </section>

@@ -3,13 +3,13 @@
 import Image from "next/image";
 
 const pressLogos = [
-  { src: "/images/press-logos/bbc.png", alt: "BBC logo" },
-  { src: "/images/press-logos/forbes.png", alt: "Forbes logo" },
-  { src: "/images/press-logos/financial-times.png", alt: "Financial Times logo" },
-  { src: "/images/press-logos/cnn.png", alt: "CNN logo" },
-  { src: "/images/press-logos/daily-mail.png", alt: "Daily Mail logo" },
-  { src: "/images/press-logos/business-insider.png", alt: "Business Insider logo" },
-  { src: "/images/press-logos/autotrader.png", alt: "Autotrader logo" },
+  { src: "/images/press-logos/bbc.webp", alt: "BBC logo" },
+  { src: "/images/press-logos/forbes.webp", alt: "Forbes logo" },
+  { src: "/images/press-logos/financial-times.webp", alt: "Financial Times logo" },
+  { src: "/images/press-logos/cnn.webp", alt: "CNN logo" },
+  { src: "/images/press-logos/daily-mail.webp", alt: "Daily Mail logo" },
+  { src: "/images/press-logos/business-insider.webp", alt: "Business Insider logo" },
+  { src: "/images/press-logos/autotrader.webp", alt: "Autotrader logo" },
 ];
 
 export function PressMentions({ variant = "dark" }: { variant?: "light" | "dark" }) {

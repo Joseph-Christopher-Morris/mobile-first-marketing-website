@@ -125,7 +125,7 @@ const post: BlogPost = {
   author: 'Joe — Digital Marketing & Analytics',
   category: 'Case Studies',
   tags: ['content-strategy', 'case-study', 'conversion-optimisation', 'small-business'],
-  image: '/images/blog/Cumulative_Shutterstock_Downloads_Earnings_Jan-Apr2023.png',
+  image: '/images/blog/Cumulative_Shutterstock_Downloads_Earnings_Jan-Apr2023.webp',
   readTime: 6,
   featured: false,
 };

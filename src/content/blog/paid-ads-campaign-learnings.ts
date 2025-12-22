@@ -30,7 +30,7 @@ const post: BlogPost = {
 
     <h2>Results & Insights</h2>
 
-    <img src="/images/blog/240708-Model_Car_Collection-69 (1).jpg" alt="Product photography used in the Meta Ads campaign showing professional presentation" />
+    <img src="/images/blog/240708-Model_Car_Collection-69 (1).webp" alt="Product photography used in the Meta Ads campaign showing professional presentation" />
     <p><em>The type of high-quality product shots I used in my Meta Ads campaign to attract the right audience.</em></p>
 
     <h3>Article Campaign (Meta Ads)</h3>

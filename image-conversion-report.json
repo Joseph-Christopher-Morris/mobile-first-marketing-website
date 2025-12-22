@@ -1,33 +1,266 @@
 {
   "summary": {
-    "totalConverted": 0,
-    "totalErrors": 9,
-    "originalSize": 0,
-    "convertedSize": 0,
-    "savings": 0,
-    "savingsPercent": 0
+    "totalConverted": 6,
+    "totalErrors": 58,
+    "originalSize": 67276,
+    "convertedSize": 67278,
+    "savings": -2,
+    "savingsPercent": -0.002972828348891135
   },
-  "conversions": [],
+  "conversions": [
+    {
+      "original": "C:\\Users\\Joe\\Projects\\website-sync-20251003_133144\\public\\images\\blog\\mobile-first-design.jpg",
+      "converted": "C:\\Users\\Joe\\Projects\\website-sync-20251003_133144\\public\\images\\blog\\mobile-first-design.webp",
+      "originalSize": 48,
+      "convertedSize": 48
+    },
+    {
+      "original": "C:\\Users\\Joe\\Projects\\website-sync-20251003_133144\\public\\images\\blog\\New folder\\mobile-first-design.jpg",
+      "converted": "C:\\Users\\Joe\\Projects\\website-sync-20251003_133144\\public\\images\\blog\\New folder\\mobile-first-design.webp",
+      "originalSize": 48,
+      "convertedSize": 48
+    },
+    {
+      "original": "C:\\Users\\Joe\\Projects\\website-sync-20251003_133144\\public\\images\\blog\\New folder\\welcome-hero.jpg",
+      "converted": "C:\\Users\\Joe\\Projects\\website-sync-20251003_133144\\public\\images\\blog\\New folder\\welcome-hero.webp",
+      "originalSize": 36,
+      "convertedSize": 36
+    },
+    {
+      "original": "C:\\Users\\Joe\\Projects\\website-sync-20251003_133144\\public\\images\\blog\\welcome-hero.jpg",
+      "converted": "C:\\Users\\Joe\\Projects\\website-sync-20251003_133144\\public\\images\\blog\\welcome-hero.webp",
+      "originalSize": 36,
+      "convertedSize": 36
+    },
+    {
+      "original": "C:\\Users\\Joe\\Projects\\website-sync-20251003_133144\\public\\images\\hero\\hero-bg.jpg",
+      "converted": "C:\\Users\\Joe\\Projects\\website-sync-20251003_133144\\public\\images\\hero\\hero-bg.webp",
+      "originalSize": 149,
+      "convertedSize": 151
+    },
+    {
+      "original": "C:\\Users\\Joe\\Projects\\website-sync-20251003_133144\\public\\images\\icons\\vivid-auto-photography-logo.png",
+      "converted": "C:\\Users\\Joe\\Projects\\website-sync-20251003_133144\\public\\images\\icons\\vivid-auto-photography-logo.webp",
+      "originalSize": 66959,
+      "convertedSize": 66959
+    }
+  ],
   "errors": [
     {
-      "file": "C:\\Users\\Joe\\Projects\\website-sync-20251003_133144\\public\\images\\blog\\mobile-first-design.jpg",
-      "error": "ENOENT: no such file or directory, stat 'C:\\Users\\Joe\\Projects\\website-sync-20251003_133144\\public\\images\\blog\\mobile-first-design.webp'"
+      "file": "C:\\Users\\Joe\\Projects\\website-sync-20251003_133144\\public\\images\\blog\\240603-Car_Collection-38 (1).jpg",
+      "error": "ENOENT: no such file or directory, stat 'C:\\Users\\Joe\\Projects\\website-sync-20251003_133144\\public\\images\\blog\\240603-Car_Collection-38 (1).webp'"
     },
     {
-      "file": "C:\\Users\\Joe\\Projects\\website-sync-20251003_133144\\public\\images\\blog\\welcome-hero.jpg",
-      "error": "ENOENT: no such file or directory, stat 'C:\\Users\\Joe\\Projects\\website-sync-20251003_133144\\public\\images\\blog\\welcome-hero.webp'"
+      "file": "C:\\Users\\Joe\\Projects\\website-sync-20251003_133144\\public\\images\\blog\\240616-Model_Car_Collection-10 (1).jpg",
+      "error": "ENOENT: no such file or directory, stat 'C:\\Users\\Joe\\Projects\\website-sync-20251003_133144\\public\\images\\blog\\240616-Model_Car_Collection-10 (1).webp'"
     },
     {
-      "file": "C:\\Users\\Joe\\Projects\\website-sync-20251003_133144\\public\\images\\hero\\hero-bg.jpg",
-      "error": "ENOENT: no such file or directory, stat 'C:\\Users\\Joe\\Projects\\website-sync-20251003_133144\\public\\images\\hero\\hero-bg.webp'"
+      "file": "C:\\Users\\Joe\\Projects\\website-sync-20251003_133144\\public\\images\\blog\\240616-Model_Car_Collection-38 (2).jpg",
+      "error": "ENOENT: no such file or directory, stat 'C:\\Users\\Joe\\Projects\\website-sync-20251003_133144\\public\\images\\blog\\240616-Model_Car_Collection-38 (2).webp'"
+    },
+    {
+      "file": "C:\\Users\\Joe\\Projects\\website-sync-20251003_133144\\public\\images\\blog\\240617-Model_Car_Collection-66 (1).jpg",
+      "error": "ENOENT: no such file or directory, stat 'C:\\Users\\Joe\\Projects\\website-sync-20251003_133144\\public\\images\\blog\\240617-Model_Car_Collection-66 (1).webp'"
+    },
+    {
+      "file": "C:\\Users\\Joe\\Projects\\website-sync-20251003_133144\\public\\images\\blog\\240617-Model_Car_Collection-91 (1).jpg",
+      "error": "ENOENT: no such file or directory, stat 'C:\\Users\\Joe\\Projects\\website-sync-20251003_133144\\public\\images\\blog\\240617-Model_Car_Collection-91 (1).webp'"
+    },
+    {
+      "file": "C:\\Users\\Joe\\Projects\\website-sync-20251003_133144\\public\\images\\blog\\240620-Model_Car_Collection-96 (1).jpg",
+      "error": "ENOENT: no such file or directory, stat 'C:\\Users\\Joe\\Projects\\website-sync-20251003_133144\\public\\images\\blog\\240620-Model_Car_Collection-96 (1).webp'"
+    },
+    {
+      "file": "C:\\Users\\Joe\\Projects\\website-sync-20251003_133144\\public\\images\\blog\\240708-Model_Car_Collection-130 (1).jpg",
+      "error": "ENOENT: no such file or directory, stat 'C:\\Users\\Joe\\Projects\\website-sync-20251003_133144\\public\\images\\blog\\240708-Model_Car_Collection-130 (1).webp'"
+    },
+    {
+      "file": "C:\\Users\\Joe\\Projects\\website-sync-20251003_133144\\public\\images\\blog\\240708-Model_Car_Collection-21 (1).jpg",
+      "error": "ENOENT: no such file or directory, stat 'C:\\Users\\Joe\\Projects\\website-sync-20251003_133144\\public\\images\\blog\\240708-Model_Car_Collection-21 (1).webp'"
+    },
+    {
+      "file": "C:\\Users\\Joe\\Projects\\website-sync-20251003_133144\\public\\images\\blog\\240708-Model_Car_Collection-69 (1).jpg",
+      "error": "ENOENT: no such file or directory, stat 'C:\\Users\\Joe\\Projects\\website-sync-20251003_133144\\public\\images\\blog\\240708-Model_Car_Collection-69 (1).webp'"
+    },
+    {
+      "file": "C:\\Users\\Joe\\Projects\\website-sync-20251003_133144\\public\\images\\blog\\240804-Model_Car_Collection-46 (1).jpg",
+      "error": "ENOENT: no such file or directory, stat 'C:\\Users\\Joe\\Projects\\website-sync-20251003_133144\\public\\images\\blog\\240804-Model_Car_Collection-46 (1).webp'"
+    },
+    {
+      "file": "C:\\Users\\Joe\\Projects\\website-sync-20251003_133144\\public\\images\\blog\\Cumulative_Shutterstock_Downloads_Earnings_Jan-Apr2023.png",
+      "error": "ENOENT: no such file or directory, stat 'C:\\Users\\Joe\\Projects\\website-sync-20251003_133144\\public\\images\\blog\\Cumulative_Shutterstock_Downloads_Earnings_Jan-Apr2023.webp'"
+    },
+    {
+      "file": "C:\\Users\\Joe\\Projects\\website-sync-20251003_133144\\public\\images\\blog\\image (1).jpg",
+      "error": "ENOENT: no such file or directory, stat 'C:\\Users\\Joe\\Projects\\website-sync-20251003_133144\\public\\images\\blog\\image (1).webp'"
+    },
+    {
+      "file": "C:\\Users\\Joe\\Projects\\website-sync-20251003_133144\\public\\images\\blog\\image (2).jpg",
+      "error": "ENOENT: no such file or directory, stat 'C:\\Users\\Joe\\Projects\\website-sync-20251003_133144\\public\\images\\blog\\image (2).webp'"
+    },
+    {
+      "file": "C:\\Users\\Joe\\Projects\\website-sync-20251003_133144\\public\\images\\blog\\New folder\\240603-Car_Collection-38 (1).jpg",
+      "error": "ENOENT: no such file or directory, stat 'C:\\Users\\Joe\\Projects\\website-sync-20251003_133144\\public\\images\\blog\\New folder\\240603-Car_Collection-38 (1).webp'"
+    },
+    {
+      "file": "C:\\Users\\Joe\\Projects\\website-sync-20251003_133144\\public\\images\\blog\\New folder\\240616-Model_Car_Collection-10 (1).jpg",
+      "error": "ENOENT: no such file or directory, stat 'C:\\Users\\Joe\\Projects\\website-sync-20251003_133144\\public\\images\\blog\\New folder\\240616-Model_Car_Collection-10 (1).webp'"
+    },
+    {
+      "file": "C:\\Users\\Joe\\Projects\\website-sync-20251003_133144\\public\\images\\blog\\New folder\\240616-Model_Car_Collection-38 (2).jpg",
+      "error": "ENOENT: no such file or directory, stat 'C:\\Users\\Joe\\Projects\\website-sync-20251003_133144\\public\\images\\blog\\New folder\\240616-Model_Car_Collection-38 (2).webp'"
+    },
+    {
+      "file": "C:\\Users\\Joe\\Projects\\website-sync-20251003_133144\\public\\images\\blog\\New folder\\240617-Model_Car_Collection-66 (1).jpg",
+      "error": "ENOENT: no such file or directory, stat 'C:\\Users\\Joe\\Projects\\website-sync-20251003_133144\\public\\images\\blog\\New folder\\240617-Model_Car_Collection-66 (1).webp'"
+    },
+    {
+      "file": "C:\\Users\\Joe\\Projects\\website-sync-20251003_133144\\public\\images\\blog\\New folder\\240617-Model_Car_Collection-91 (1).jpg",
+      "error": "ENOENT: no such file or directory, stat 'C:\\Users\\Joe\\Projects\\website-sync-20251003_133144\\public\\images\\blog\\New folder\\240617-Model_Car_Collection-91 (1).webp'"
+    },
+    {
+      "file": "C:\\Users\\Joe\\Projects\\website-sync-20251003_133144\\public\\images\\blog\\New folder\\240620-Model_Car_Collection-96 (1).jpg",
+      "error": "ENOENT: no such file or directory, stat 'C:\\Users\\Joe\\Projects\\website-sync-20251003_133144\\public\\images\\blog\\New folder\\240620-Model_Car_Collection-96 (1).webp'"
+    },
+    {
+      "file": "C:\\Users\\Joe\\Projects\\website-sync-20251003_133144\\public\\images\\blog\\New folder\\240708-Model_Car_Collection-130 (1).jpg",
+      "error": "ENOENT: no such file or directory, stat 'C:\\Users\\Joe\\Projects\\website-sync-20251003_133144\\public\\images\\blog\\New folder\\240708-Model_Car_Collection-130 (1).webp'"
+    },
+    {
+      "file": "C:\\Users\\Joe\\Projects\\website-sync-20251003_133144\\public\\images\\blog\\New folder\\240708-Model_Car_Collection-21 (1).jpg",
+      "error": "ENOENT: no such file or directory, stat 'C:\\Users\\Joe\\Projects\\website-sync-20251003_133144\\public\\images\\blog\\New folder\\240708-Model_Car_Collection-21 (1).webp'"
+    },
+    {
+      "file": "C:\\Users\\Joe\\Projects\\website-sync-20251003_133144\\public\\images\\blog\\New folder\\240708-Model_Car_Collection-69 (1).jpg",
+      "error": "ENOENT: no such file or directory, stat 'C:\\Users\\Joe\\Projects\\website-sync-20251003_133144\\public\\images\\blog\\New folder\\240708-Model_Car_Collection-69 (1).webp'"
+    },
+    {
+      "file": "C:\\Users\\Joe\\Projects\\website-sync-20251003_133144\\public\\images\\blog\\New folder\\240804-Model_Car_Collection-46 (1).jpg",
+      "error": "ENOENT: no such file or directory, stat 'C:\\Users\\Joe\\Projects\\website-sync-20251003_133144\\public\\images\\blog\\New folder\\240804-Model_Car_Collection-46 (1).webp'"
+    },
+    {
+      "file": "C:\\Users\\Joe\\Projects\\website-sync-20251003_133144\\public\\images\\blog\\New folder\\Cumulative_Shutterstock_Downloads_Earnings_Jan-Apr2023.png",
+      "error": "ENOENT: no such file or directory, stat 'C:\\Users\\Joe\\Projects\\website-sync-20251003_133144\\public\\images\\blog\\New folder\\Cumulative_Shutterstock_Downloads_Earnings_Jan-Apr2023.webp'"
+    },
+    {
+      "file": "C:\\Users\\Joe\\Projects\\website-sync-20251003_133144\\public\\images\\blog\\New folder\\image (1).jpg",
+      "error": "ENOENT: no such file or directory, stat 'C:\\Users\\Joe\\Projects\\website-sync-20251003_133144\\public\\images\\blog\\New folder\\image (1).webp'"
+    },
+    {
+      "file": "C:\\Users\\Joe\\Projects\\website-sync-20251003_133144\\public\\images\\blog\\New folder\\image (2).jpg",
+      "error": "ENOENT: no such file or directory, stat 'C:\\Users\\Joe\\Projects\\website-sync-20251003_133144\\public\\images\\blog\\New folder\\image (2).webp'"
+    },
+    {
+      "file": "C:\\Users\\Joe\\Projects\\website-sync-20251003_133144\\public\\images\\blog\\New folder\\Screenshot 2025-07-05 201726.jpg",
+      "error": "ENOENT: no such file or directory, stat 'C:\\Users\\Joe\\Projects\\website-sync-20251003_133144\\public\\images\\blog\\New folder\\Screenshot 2025-07-05 201726.webp'"
+    },
+    {
+      "file": "C:\\Users\\Joe\\Projects\\website-sync-20251003_133144\\public\\images\\blog\\New folder\\Stock_Photography_Earnings_Comparison_Clear.png",
+      "error": "ENOENT: no such file or directory, stat 'C:\\Users\\Joe\\Projects\\website-sync-20251003_133144\\public\\images\\blog\\New folder\\Stock_Photography_Earnings_Comparison_Clear.webp'"
+    },
+    {
+      "file": "C:\\Users\\Joe\\Projects\\website-sync-20251003_133144\\public\\images\\blog\\New folder\\Stock_Photography_Revenue_Bar_Chart.png",
+      "error": "ENOENT: no such file or directory, stat 'C:\\Users\\Joe\\Projects\\website-sync-20251003_133144\\public\\images\\blog\\New folder\\Stock_Photography_Revenue_Bar_Chart.webp'"
+    },
+    {
+      "file": "C:\\Users\\Joe\\Projects\\website-sync-20251003_133144\\public\\images\\blog\\New folder\\Stock_Photography_SAMIRA.png",
+      "error": "ENOENT: no such file or directory, stat 'C:\\Users\\Joe\\Projects\\website-sync-20251003_133144\\public\\images\\blog\\New folder\\Stock_Photography_SAMIRA.webp'"
+    },
+    {
+      "file": "C:\\Users\\Joe\\Projects\\website-sync-20251003_133144\\public\\images\\blog\\New folder\\WhatsApp Image 2025-07-04 at 8.44.20 PM (1).jpg",
+      "error": "ENOENT: no such file or directory, stat 'C:\\Users\\Joe\\Projects\\website-sync-20251003_133144\\public\\images\\blog\\New folder\\WhatsApp Image 2025-07-04 at 8.44.20 PM (1).webp'"
+    },
+    {
+      "file": "C:\\Users\\Joe\\Projects\\website-sync-20251003_133144\\public\\images\\blog\\New folder\\WhatsApp Image 2025-07-05 at 7.58.19 PM.jpg",
+      "error": "ENOENT: no such file or directory, stat 'C:\\Users\\Joe\\Projects\\website-sync-20251003_133144\\public\\images\\blog\\New folder\\WhatsApp Image 2025-07-05 at 7.58.19 PM.webp'"
+    },
+    {
+      "file": "C:\\Users\\Joe\\Projects\\website-sync-20251003_133144\\public\\images\\blog\\New folder\\WhatsApp Image 2025-07-05 at 9.00.50 PM.jpg",
+      "error": "ENOENT: no such file or directory, stat 'C:\\Users\\Joe\\Projects\\website-sync-20251003_133144\\public\\images\\blog\\New folder\\WhatsApp Image 2025-07-05 at 9.00.50 PM.webp'"
+    },
+    {
+      "file": "C:\\Users\\Joe\\Projects\\website-sync-20251003_133144\\public\\images\\blog\\New folder\\WhatsApp Image 2025-07-06 at 9.09.08 PM.jpeg",
+      "error": "ENOENT: no such file or directory, stat 'C:\\Users\\Joe\\Projects\\website-sync-20251003_133144\\public\\images\\blog\\New folder\\WhatsApp Image 2025-07-06 at 9.09.08 PM.webp'"
+    },
+    {
+      "file": "C:\\Users\\Joe\\Projects\\website-sync-20251003_133144\\public\\images\\blog\\Screenshot 2025-07-05 201726.jpg",
+      "error": "ENOENT: no such file or directory, stat 'C:\\Users\\Joe\\Projects\\website-sync-20251003_133144\\public\\images\\blog\\Screenshot 2025-07-05 201726.webp'"
+    },
+    {
+      "file": "C:\\Users\\Joe\\Projects\\website-sync-20251003_133144\\public\\images\\blog\\Stock_Photography_Earnings_Comparison_Clear.png",
+      "error": "ENOENT: no such file or directory, stat 'C:\\Users\\Joe\\Projects\\website-sync-20251003_133144\\public\\images\\blog\\Stock_Photography_Earnings_Comparison_Clear.webp'"
+    },
+    {
+      "file": "C:\\Users\\Joe\\Projects\\website-sync-20251003_133144\\public\\images\\blog\\Stock_Photography_Revenue_Bar_Chart.png",
+      "error": "ENOENT: no such file or directory, stat 'C:\\Users\\Joe\\Projects\\website-sync-20251003_133144\\public\\images\\blog\\Stock_Photography_Revenue_Bar_Chart.webp'"
+    },
+    {
+      "file": "C:\\Users\\Joe\\Projects\\website-sync-20251003_133144\\public\\images\\blog\\Stock_Photography_SAMIRA.png",
+      "error": "ENOENT: no such file or directory, stat 'C:\\Users\\Joe\\Projects\\website-sync-20251003_133144\\public\\images\\blog\\Stock_Photography_SAMIRA.webp'"
+    },
+    {
+      "file": "C:\\Users\\Joe\\Projects\\website-sync-20251003_133144\\public\\images\\blog\\WhatsApp Image 2025-07-04 at 8.44.20 PM (1).jpg",
+      "error": "ENOENT: no such file or directory, stat 'C:\\Users\\Joe\\Projects\\website-sync-20251003_133144\\public\\images\\blog\\WhatsApp Image 2025-07-04 at 8.44.20 PM (1).webp'"
+    },
+    {
+      "file": "C:\\Users\\Joe\\Projects\\website-sync-20251003_133144\\public\\images\\blog\\WhatsApp Image 2025-07-05 at 7.58.19 PM.jpg",
+      "error": "ENOENT: no such file or directory, stat 'C:\\Users\\Joe\\Projects\\website-sync-20251003_133144\\public\\images\\blog\\WhatsApp Image 2025-07-05 at 7.58.19 PM.webp'"
+    },
+    {
+      "file": "C:\\Users\\Joe\\Projects\\website-sync-20251003_133144\\public\\images\\blog\\WhatsApp Image 2025-07-05 at 9.00.50 PM.jpg",
+      "error": "ENOENT: no such file or directory, stat 'C:\\Users\\Joe\\Projects\\website-sync-20251003_133144\\public\\images\\blog\\WhatsApp Image 2025-07-05 at 9.00.50 PM.webp'"
+    },
+    {
+      "file": "C:\\Users\\Joe\\Projects\\website-sync-20251003_133144\\public\\images\\blog\\WhatsApp Image 2025-07-06 at 9.09.08 PM.jpeg",
+      "error": "ENOENT: no such file or directory, stat 'C:\\Users\\Joe\\Projects\\website-sync-20251003_133144\\public\\images\\blog\\WhatsApp Image 2025-07-06 at 9.09.08 PM.webp'"
+    },
+    {
+      "file": "C:\\Users\\Joe\\Projects\\website-sync-20251003_133144\\public\\images\\brand\\VMC.png",
+      "error": "ENOENT: no such file or directory, stat 'C:\\Users\\Joe\\Projects\\website-sync-20251003_133144\\public\\images\\brand\\VMC.webp'"
+    },
+    {
+      "file": "C:\\Users\\Joe\\Projects\\website-sync-20251003_133144\\public\\images\\icons\\Vivid Media Cheshire Logo Logo Favicon.png",
+      "error": "ENOENT: no such file or directory, stat 'C:\\Users\\Joe\\Projects\\website-sync-20251003_133144\\public\\images\\icons\\Vivid Media Cheshire Logo Logo Favicon.webp'"
+    },
+    {
+      "file": "C:\\Users\\Joe\\Projects\\website-sync-20251003_133144\\public\\images\\icons\\Vivid Media Cheshire Logo.png",
+      "error": "ENOENT: no such file or directory, stat 'C:\\Users\\Joe\\Projects\\website-sync-20251003_133144\\public\\images\\icons\\Vivid Media Cheshire Logo.webp'"
     },
     {
       "file": "C:\\Users\\Joe\\Projects\\website-sync-20251003_133144\\public\\images\\icons\\vivid-auto-photography-logo-alt.png",
       "error": "ENOENT: no such file or directory, stat 'C:\\Users\\Joe\\Projects\\website-sync-20251003_133144\\public\\images\\icons\\vivid-auto-photography-logo-alt.webp'"
     },
     {
-      "file": "C:\\Users\\Joe\\Projects\\website-sync-20251003_133144\\public\\images\\icons\\vivid-auto-photography-logo.png",
-      "error": "ENOENT: no such file or directory, stat 'C:\\Users\\Joe\\Projects\\website-sync-20251003_133144\\public\\images\\icons\\vivid-auto-photography-logo.webp'"
+      "file": "C:\\Users\\Joe\\Projects\\website-sync-20251003_133144\\public\\images\\icons\\VMC.png",
+      "error": "ENOENT: no such file or directory, stat 'C:\\Users\\Joe\\Projects\\website-sync-20251003_133144\\public\\images\\icons\\VMC.webp'"
+    },
+    {
+      "file": "C:\\Users\\Joe\\Projects\\website-sync-20251003_133144\\public\\images\\press-logos\\autotrader.png",
+      "error": "ENOENT: no such file or directory, stat 'C:\\Users\\Joe\\Projects\\website-sync-20251003_133144\\public\\images\\press-logos\\autotrader.webp'"
+    },
+    {
+      "file": "C:\\Users\\Joe\\Projects\\website-sync-20251003_133144\\public\\images\\press-logos\\bbc.png",
+      "error": "ENOENT: no such file or directory, stat 'C:\\Users\\Joe\\Projects\\website-sync-20251003_133144\\public\\images\\press-logos\\bbc.webp'"
+    },
+    {
+      "file": "C:\\Users\\Joe\\Projects\\website-sync-20251003_133144\\public\\images\\press-logos\\business-insider.png",
+      "error": "ENOENT: no such file or directory, stat 'C:\\Users\\Joe\\Projects\\website-sync-20251003_133144\\public\\images\\press-logos\\business-insider.webp'"
+    },
+    {
+      "file": "C:\\Users\\Joe\\Projects\\website-sync-20251003_133144\\public\\images\\press-logos\\cnn.png",
+      "error": "ENOENT: no such file or directory, stat 'C:\\Users\\Joe\\Projects\\website-sync-20251003_133144\\public\\images\\press-logos\\cnn.webp'"
+    },
+    {
+      "file": "C:\\Users\\Joe\\Projects\\website-sync-20251003_133144\\public\\images\\press-logos\\daily-mail.png",
+      "error": "ENOENT: no such file or directory, stat 'C:\\Users\\Joe\\Projects\\website-sync-20251003_133144\\public\\images\\press-logos\\daily-mail.webp'"
+    },
+    {
+      "file": "C:\\Users\\Joe\\Projects\\website-sync-20251003_133144\\public\\images\\press-logos\\financial-times.png",
+      "error": "ENOENT: no such file or directory, stat 'C:\\Users\\Joe\\Projects\\website-sync-20251003_133144\\public\\images\\press-logos\\financial-times.webp'"
+    },
+    {
+      "file": "C:\\Users\\Joe\\Projects\\website-sync-20251003_133144\\public\\images\\press-logos\\forbes.png",
+      "error": "ENOENT: no such file or directory, stat 'C:\\Users\\Joe\\Projects\\website-sync-20251003_133144\\public\\images\\press-logos\\forbes.webp'"
     },
     {
       "file": "C:\\Users\\Joe\\Projects\\website-sync-20251003_133144\\public\\images\\testimonials\\david-kim.jpg",
@@ -46,5 +279,5 @@
       "error": "ENOENT: no such file or directory, stat 'C:\\Users\\Joe\\Projects\\website-sync-20251003_133144\\public\\images\\testimonials\\sarah-johnson.webp'"
     }
   ],
-  "timestamp": "2025-10-11T21:16:59.254Z"
+  "timestamp": "2025-12-22T15:34:44.877Z"
 }

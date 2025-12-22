@@ -1,0 +1,36 @@
+{
+  "behaviors": [
+    {
+      "pathPattern": "/_next/static/*",
+      "cachePolicyId": "immutable-assets",
+      "ttl": 31536000,
+      "compress": true
+    },
+    {
+      "pathPattern": "/images/*",
+      "cachePolicyId": "optimized-images",
+      "ttl": 86400,
+      "compress": true
+    },
+    {
+      "pathPattern": "*.html",
+      "cachePolicyId": "no-cache",
+      "ttl": 0,
+      "compress": true
+    },
+    {
+      "pathPattern": "/api/*",
+      "cachePolicyId": "no-cache",
+      "ttl": 0,
+      "compress": false
+    }
+  ],
+  "headers": {
+    "Cache-Control": "public, max-age=31536000, immutable",
+    "X-Content-Type-Options": "nosniff",
+    "X-Frame-Options": "DENY",
+    "X-XSS-Protection": "1; mode=block",
+    "Strict-Transport-Security": "max-age=31536000; includeSubDomains",
+    "Referrer-Policy": "strict-origin-when-cross-origin"
+  }
+}

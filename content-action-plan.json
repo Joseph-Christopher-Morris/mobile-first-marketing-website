@@ -1,0 +1,23 @@
+{
+  "immediate": [
+    "Fix blog content issues",
+    "Fix service page issues"
+  ],
+  "shortTerm": [
+    "Add RSS feed for blog",
+    "Add social sharing buttons to blog posts",
+    "Add related posts section",
+    "ad-campaigns: Add FAQ section",
+    "analytics: Add testimonials section",
+    "analytics: Add FAQ section",
+    "ebay-business-side-part-5: Add structured data for better SEO",
+    "ebay-model-car-sales-timing-bundles: Add structured data for better SEO",
+    "ebay-model-ford-collection-part-1: Add structured data for better SEO"
+  ],
+  "longTerm": [
+    "Implement advanced SEO features",
+    "Add content personalization",
+    "Optimize for Core Web Vitals",
+    "Implement A/B testing for content"
+  ]
+}

@@ -1,0 +1,151 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Analytics Validation Dashboard</title>
+    <style>
+        body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; margin: 0; padding: 20px; background: #f5f5f5; }
+        .container { max-width: 1200px; margin: 0 auto; }
+        .header { background: white; padding: 20px; border-radius: 8px; margin-bottom: 20px; box-shadow: 0 2px 4px rgba(0,0,0,0.1); }
+        .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 20px; }
+        .card { background: white; padding: 20px; border-radius: 8px; box-shadow: 0 2px 4px rgba(0,0,0,0.1); }
+        .status-excellent { border-left: 4px solid #10b981; }
+        .status-good { border-left: 4px solid #f59e0b; }
+        .status-fair { border-left: 4px solid #ef4444; }
+        .status-needs-improvement { border-left: 4px solid #ef4444; }
+        .status-error { border-left: 4px solid #dc2626; }
+        .check-item { display: flex; justify-content: space-between; padding: 8px 0; border-bottom: 1px solid #e5e7eb; }
+        .check-item:last-child { border-bottom: none; }
+        .check-pass { color: #10b981; }
+        .check-fail { color: #ef4444; }
+        .recommendations { background: #fef3c7; border: 1px solid #f59e0b; border-radius: 4px; padding: 15px; margin-top: 20px; }
+        .issues { background: #fee2e2; border: 1px solid #ef4444; border-radius: 4px; padding: 15px; margin-top: 20px; }
+        .timestamp { color: #6b7280; font-size: 14px; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>📊 Analytics Validation Dashboard</h1>
+            <p class="timestamp">Generated: 2025-12-22T15:37:45.225Z</p>
+        </div>
+        
+        <div class="grid">
+            <div class="card status-good">
+                <h2>🔍 Google Analytics 4</h2>
+                <p><strong>Status:</strong> good</p>
+                <p><strong>Tracking ID:</strong> G-QJXSCJ0L43</p>
+                
+        <div class="check-item">
+          <span>configuration found</span>
+          <span class="check-pass">✓</span>
+        </div>
+      
+        <div class="check-item">
+          <span>correct tracking id</span>
+          <span class="check-pass">✓</span>
+        </div>
+      
+        <div class="check-item">
+          <span>proper implementation</span>
+          <span class="check-pass">✓</span>
+        </div>
+      
+        <div class="check-item">
+          <span>nextjs integration</span>
+          <span class="check-pass">✓</span>
+        </div>
+      
+        <div class="check-item">
+          <span>csp compliant</span>
+          <span class="check-fail">✗</span>
+        </div>
+      
+        <div class="check-item">
+          <span>conversion events</span>
+          <span class="check-pass">✓</span>
+        </div>
+      
+            </div>
+            
+            <div class="card status-needs-improvement">
+                <h2>👁️ Microsoft Clarity</h2>
+                <p><strong>Status:</strong> needs-improvement</p>
+                <p><strong>Project ID:</strong> o5ggbmm8wd</p>
+                
+        <div class="check-item">
+          <span>configuration found</span>
+          <span class="check-pass">✓</span>
+        </div>
+      
+        <div class="check-item">
+          <span>correct project id</span>
+          <span class="check-fail">✗</span>
+        </div>
+      
+        <div class="check-item">
+          <span>proper implementation</span>
+          <span class="check-fail">✗</span>
+        </div>
+      
+        <div class="check-item">
+          <span>no conflicts</span>
+          <span class="check-fail">✗</span>
+        </div>
+      
+            </div>
+            
+            <div class="card status-excellent">
+                <h2>🎯 Conversion Tracking</h2>
+                <p><strong>Status:</strong> excellent</p>
+                
+        <div class="check-item">
+          <span>thank you page</span>
+          <span class="check-pass">✓</span>
+        </div>
+      
+        <div class="check-item">
+          <span>conversion events</span>
+          <span class="check-pass">✓</span>
+        </div>
+      
+        <div class="check-item">
+          <span>google ads tracking</span>
+          <span class="check-pass">✓</span>
+        </div>
+      
+        <div class="check-item">
+          <span>form tracking</span>
+          <span class="check-pass">✓</span>
+        </div>
+      
+        <div class="check-item">
+          <span>ecommerce tracking</span>
+          <span class="check-pass">✓</span>
+        </div>
+      
+            </div>
+        </div>
+        
+        
+        <div class="recommendations">
+            <h3>💡 Recommendations</h3>
+            <ul>
+                <li>Update CloudFront CSP headers to include GA4 domains</li><li>Use Next.js Script component for Clarity instead of raw script injection</li>
+            </ul>
+        </div>
+        
+        
+        
+        <div class="issues">
+            <h3>⚠️ Issues Found</h3>
+            <ul>
+                <li>Expected Clarity ID o5ggbmm8wd not found</li><li>GA4 scripts not detected in production HTML</li><li>Clarity scripts not detected in production HTML</li>
+            </ul>
+        </div>
+        
+    </div>
+</body>
+</html>
