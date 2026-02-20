@@ -4,36 +4,15 @@ import Image from 'next/image';
 import Link from 'next/link';
 import { ServiceInquiryForm } from '@/components/ServiceInquiryForm';
 import { ServiceSchemas } from '@/components/seo/ServiceSchema';
+import { buildMetadata } from '@/lib/seo';
 
-export const metadata: Metadata = {
-  title: 'Data Analytics & Insights | GA4 & Adobe Analytics Expertise',
-  description:
-    'Professional data analytics services with GA4 and Adobe Analytics expertise. Transform your business data into actionable insights that drive growth in Nantwich & Cheshire.',
-  keywords: [
-    'GA4 analytics',
-    'Adobe Analytics',
-    'Google Analytics 4',
-    'data analytics Nantwich',
-    'business intelligence',
-    'data insights',
-    'analytics consulting',
-    'performance metrics',
-    'conversion tracking',
-    'data visualisation'
-  ],
-  openGraph: {
-    title: 'Data Analytics & Insights | GA4 & Adobe Analytics Expertise',
-    description: 'Professional data analytics services with GA4 and Adobe Analytics expertise. Transform your business data into actionable insights.',
-    images: [
-      {
-        url: '/images/services/Google-analytics-dashboard.webp',
-        width: 1200,
-        height: 630,
-        alt: 'Advanced analytics dashboard showing comprehensive business metrics and performance data',
-      },
-    ],
-  },
-};
+export const metadata: Metadata = buildMetadata({
+  intent: "Analytics & Tracking Setup",
+  qualifier: "for Cheshire Businesses",
+  description: "Professional data analytics services with GA4 and Adobe Analytics expertise. Transform your business data into actionable insights that drive growth in Nantwich & Cheshire.",
+  canonicalPath: "/services/analytics/",
+  ogImage: "/images/services/Google-analytics-dashboard.webp",
+});
 
 export default function AnalyticsServicesPage() {
   const portfolioImages = [

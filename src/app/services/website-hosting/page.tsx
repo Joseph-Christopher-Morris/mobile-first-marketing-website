@@ -2,12 +2,14 @@ import { Metadata } from 'next';
 import Image from 'next/image';
 import EnhancedCTA from '@/components/services/EnhancedCTA';
 import { Layout } from '@/components/layout';
+import { buildMetadata } from '@/lib/seo';
 
-export const metadata: Metadata = {
-  title: 'Fast, Reliable Website Hosting and Setup for Small Businesses | Vivid Media Cheshire',
-  description: 'Affordable secure cloud hosting designed for performance, reliability, and easy scalability - perfect for growing brands and new websites.',
-  keywords: 'website hosting Cheshire, secure cloud website migration, fast website builder, small business hosting, global content delivery network hosting',
-};
+export const metadata: Metadata = buildMetadata({
+  intent: "Website Hosting & Migration",
+  qualifier: "for Cheshire Businesses",
+  description: "Affordable secure cloud hosting designed for performance, reliability, and easy scalability - perfect for growing brands and new websites.",
+  canonicalPath: "/services/website-hosting/",
+});
 
 export default function WebsiteHostingPage() {
   return (

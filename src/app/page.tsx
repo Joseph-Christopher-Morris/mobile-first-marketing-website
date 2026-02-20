@@ -8,36 +8,15 @@ import HeroWithCharts from '@/components/HeroWithCharts';
 import { PressLogos } from '@/components/PressLogos';
 import { GeneralContactForm } from '@/components/sections/GeneralContactForm';
 import { FAQAccordion } from '@/components/FAQAccordion';
+import { buildMetadata } from '@/lib/seo';
 
-export const metadata: Metadata = {
-  title: 'Websites, Google Ads and Analytics for Cheshire Businesses',
-  description:
-    'Fast websites, Google Ads, analytics and photography for Cheshire businesses. Clear reporting and measurable results.',
-  keywords: [
-    'websites Cheshire',
-    'Google Ads Cheshire',
-    'analytics Cheshire',
-    'photography Cheshire',
-    'digital marketing Nantwich',
-    'website design Cheshire',
-    'fast websites',
-    'Google Ads management',
-    'business analytics',
-    'Vivid Media Cheshire',
-  ],
-  openGraph: {
-    title: 'Websites, Google Ads and Analytics for Cheshire Businesses',
-    description:
-      'Fast websites, Google Ads, analytics and photography for Cheshire businesses. Clear reporting and measurable results.',
-    images: [
-      {
-        url: '/images/hero/230422_Chester_Stock_Photography-84.webp',
-        width: 1200,
-        height: 630,
-        alt: 'Vivid Media Cheshire — Websites, Google Ads and Analytics for Cheshire Businesses',
-      },
-    ],
-  },
+export const metadata: Metadata = buildMetadata({
+  intent: "Websites, Google Ads and Analytics",
+  qualifier: "for Cheshire Businesses",
+  description: "Fast websites, Google Ads, analytics and photography for Cheshire businesses. Clear reporting and measurable results.",
+  canonicalPath: "/",
+  ogImage: "/images/hero/230422_Chester_Stock_Photography-84.webp",
+});
 };
 
 export default async function HomePage() {

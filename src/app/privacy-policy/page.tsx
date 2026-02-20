@@ -1,14 +1,13 @@
 import type { Metadata } from "next";
 import { Header } from "@/components/layout/Header";
 import { Footer } from "@/components/layout/Footer";
+import { buildMetadata } from "@/lib/seo";
 
-export const metadata: Metadata = {
-  title: "Privacy Policy | Vivid Media Cheshire",
-  description:
-    "Our commitment to privacy, data collection practices, and how we protect your information.",
-  alternates: { canonical: "/privacy-policy" },
-  robots: { index: true, follow: true },
-};
+export const metadata: Metadata = buildMetadata({
+  intent: "Privacy Policy",
+  description: "Our commitment to privacy, data collection practices, and how we protect your information.",
+  canonicalPath: "/privacy-policy/",
+});
 
 export default function PrivacyPolicyPage() {
   return (

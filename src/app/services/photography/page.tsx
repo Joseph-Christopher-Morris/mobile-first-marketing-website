@@ -7,42 +7,15 @@ import { PressStrip } from '@/components/credibility/PressStrip';
 import { ServiceSchemas } from '@/components/seo/ServiceSchema';
 import { PhotographyInquiryForm } from '@/components/PhotographyInquiryForm';
 import { DualStickyCTA } from '@/components/DualStickyCTA';
+import { buildMetadata } from '@/lib/seo';
 
-export const metadata: Metadata = {
-  title: 'Professional Photography Services | Nantwich & Cheshire',
-  description:
-    'Professional photography services in Nantwich & Cheshire. Published editorial work for BBC, Forbes, and The Times. Local Nantwich photography and commercial campaign work.',
-  keywords: [
-    'professional photography services',
-    'photography Nantwich',
-    'commercial photography Cheshire',
-    'editorial photography',
-    'published photographer',
-    'BBC photographer',
-    'Forbes photographer',
-    'The Times photographer',
-    'local photography Nantwich',
-    'campaign photography'
-  ],
-  alternates: {
-    canonical: 'https://vividmediacheshire.com/services/photography'
-  },
-  openGraph: {
-    url: 'https://vividmediacheshire.com/services/photography',
-    title: 'Professional Photography Services | Nantwich & Cheshire',
-    description:
-      'Professional photography services with published editorial work for BBC, Forbes, and The Times. Local Nantwich photography and commercial campaigns.',
-    images: [
-      {
-        // if you want, change this to the real path you’re serving from /public
-        url: '/images/services/Photography/photography-hero.webp',
-        width: 1200,
-        height: 630,
-        alt: 'General view of a busy Hampson Auctions sale at Oulton Park, shot in July 2024'
-      }
-    ]
-  }
-};
+export const metadata: Metadata = buildMetadata({
+  intent: "Photography Services",
+  qualifier: "in Cheshire",
+  description: "Professional photography services in Nantwich & Cheshire. Published editorial work for BBC, Forbes, and The Times. Local Nantwich photography and commercial campaign work.",
+  canonicalPath: "/services/photography/",
+  ogImage: "/images/services/Photography/photography-hero.webp",
+});
 
 export default function PhotographyServicesPage() {
   const galleryImages = [

@@ -6,13 +6,14 @@ import { ServiceInquiryForm } from "@/components/ServiceInquiryForm";
 import { DualStickyCTA } from "@/components/DualStickyCTA";
 import { HostingServiceCard } from "@/components/SimplifiedServiceCard";
 import { ServiceSchemas } from "@/components/seo/ServiceSchema";
+import { buildMetadata } from "@/lib/seo";
 
-export const metadata: Metadata = {
-  title: "Fast, secure website hosting for Cheshire businesses | Vivid Media Cheshire",
-  description:
-    "From £120 per year with 99.9% uptime and local support. Professional migration, same day replies and zero downtime for Nantwich and Cheshire businesses.",
-  keywords: [
-    "website hosting Cheshire",
+export const metadata: Metadata = buildMetadata({
+  intent: "Secure Website Hosting",
+  qualifier: "for Cheshire Businesses",
+  description: "From £120 per year with 99.9% uptime and local support. Professional migration, same day replies and zero downtime for Nantwich and Cheshire businesses.",
+  canonicalPath: "/services/hosting/",
+});
     "website migration Nantwich",
     "fast website hosting",
     "secure cloud hosting",

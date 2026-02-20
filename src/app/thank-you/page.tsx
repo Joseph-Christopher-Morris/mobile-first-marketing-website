@@ -1,24 +1,12 @@
+import { buildMetadata } from "@/lib/seo";
 import Conversion from "./Conversion";
 
-export const metadata = {
-  title: "Thank you | Vivid Media Cheshire",
+export const metadata = buildMetadata({
+  intent: "Thank You",
   description: "Thank you. I will reply the same day during business hours.",
-  robots: { index: false, follow: false },
-  alternates: {
-    canonical: "https://vividmediacheshire.com/thank-you"
-  },
-  openGraph: {
-    title: "Thank you | Vivid Media Cheshire",
-    description: "Thank you. I will reply the same day during business hours.",
-    url: "https://vividmediacheshire.com/thank-you",
-    type: "website"
-  },
-  twitter: {
-    card: "summary_large_image",
-    title: "Thank you | Vivid Media Cheshire",
-    description: "Thank you. I will reply the same day during business hours."
-  }
-};
+  canonicalPath: "/thank-you/",
+  noindex: true,
+});
 
 export default function ThankYouPage() {
   return (

@@ -1,21 +1,13 @@
 import { Metadata } from 'next';
 import { Layout } from '@/components/layout';
 import Link from 'next/link';
+import { buildMetadata } from '@/lib/seo';
 
-export const metadata: Metadata = {
-  title: 'Pricing | Vivid Media Cheshire',
-  description:
-    'Transparent pricing for websites, ads, analytics, and photography. Affordable packages for Cheshire small businesses.',
-  keywords: [
-    'website design Cheshire',
-    'digital marketing Cheshire',
-    'Google Ads management Nantwich',
-    'secure cloud website hosting UK',
-    'affordable marketing services Cheshire',
-    'local SEO packages',
-  ],
-  alternates: { canonical: '/pricing' },
-};
+export const metadata: Metadata = buildMetadata({
+  intent: "Pricing",
+  description: "Transparent pricing for websites, ads, analytics, and photography. Affordable packages for Cheshire small businesses.",
+  canonicalPath: "/pricing/",
+});
 
 export default function PricingPage() {
   return (
