@@ -3,31 +3,14 @@ import { GeneralContactForm } from '@/components/sections/GeneralContactForm';
 import { Layout } from '@/components/layout';
 import { siteConfig } from '@/config/site';
 import { ContactLink } from '@/components/sections/ContactPageClient';
+import { buildMetadata } from '@/lib/seo';
 
-export const metadata: Metadata = {
-  title:
-    'Vivid Media Cheshire | Performance Marketer For SMEs',
-  description:
-    'Get in touch about professional automotive photography, data analytics, or strategic advertising campaigns in Nantwich & Cheshire. Free consultation available. Response within one business day (UK time).',
-  keywords: [
-    'contact automotive photographer',
-    'automotive photography Nantwich',
-    'car photography Cheshire',
-    'automotive photography consultation',
-    'professional car photographer contact',
-    'automotive marketing services contact',
-    'vehicle photography enquiry',
-    'automotive advertising consultation',
-    'car dealership photography contact',
-    'automotive photography quote',
-  ],
-  openGraph: {
-    title:
-      'Contact Vivid Media Cheshire | Professional Automotive Photography Services',
-    description:
-      'Get in touch about professional automotive photography, data analytics, or strategic advertising campaigns in Nantwich & Cheshire. Free consultation available.',
-    type: 'website',
-    images: [
+export const metadata: Metadata = buildMetadata({
+  intent: "Contact",
+  qualifier: "Vivid Media Cheshire",
+  description: "Get in touch about professional automotive photography, data analytics, or strategic advertising campaigns in Nantwich & Cheshire. Free consultation available. Response within one business day (UK time).",
+  canonicalPath: "/contact/",
+});
       {
         url: '/images/hero/aston-martin-db6-website.webp',
         width: 1200,

@@ -7,29 +7,13 @@ import { getAllServices } from '@/lib/content';
 import { NewsletterSignup } from '@/components/sections/NewsletterSignup';
 import { ServicesShowcase } from '@/components/sections/ServicesShowcase';
 import { resolveBlogCardImageWithLegacy } from '@/lib/blog-thumbnail-resolver';
+import { buildMetadata } from '@/lib/seo';
 
-export const metadata: Metadata = {
-  title: 'Marketing, Photography & Web Design Tips for Cheshire Businesses | Vivid Media Cheshire',
-  description:
-    'Practical marketing, photography, and web design tips for Cheshire businesses. Real case studies, proven strategies, and actionable insights from Vivid Media Cheshire in Nantwich.',
-  keywords: [
-    'automotive photography blog',
-    'car photography tips',
-    'automotive marketing insights',
-    'photography industry trends',
-    'automotive advertising case studies',
-    'vehicle photography techniques',
-    'car dealership marketing',
-    'automotive photography success stories',
-    'photography business insights',
-    'automotive industry updates',
-  ],
-  openGraph: {
-    title: 'Marketing, Photography & Web Design Tips for Cheshire Businesses | Vivid Media Cheshire',
-    description:
-      'Practical marketing, photography, and web design tips for Cheshire businesses. Real case studies and proven strategies from Vivid Media Cheshire.',
-  },
-};
+export const metadata: Metadata = buildMetadata({
+  intent: "Case Studies & Insights",
+  description: "Practical marketing, photography, and web design tips for Cheshire businesses. Real case studies, proven strategies, and actionable insights from Vivid Media Cheshire in Nantwich.",
+  canonicalPath: "/blog/",
+});
 
 export default async function BlogPage() {
   const allPosts = await getAllBlogPosts();
@@ -121,7 +105,7 @@ export default async function BlogPage() {
                       className='inline-flex items-center text-brand-pink hover:text-brand-pink2 font-medium'
                       aria-label={`Read the article: ${featuredPost.title}`}
                     >
-                      Read Article
+                      {featuredPost.title}
                       <svg
                         className='ml-2 w-4 h-4'
                         fill='none'
@@ -179,7 +163,7 @@ export default async function BlogPage() {
                         className='inline-flex items-center text-brand-pink hover:text-brand-pink2 font-medium'
                         aria-label={`Read the article: ${post.title}`}
                       >
-                        Read Article
+                        {post.title}
                         <svg
                           className='ml-2 w-4 h-4'
                           fill='none'

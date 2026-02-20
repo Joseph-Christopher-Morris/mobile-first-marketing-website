@@ -3,18 +3,13 @@ import { Layout } from '@/components/layout';
 import Image from 'next/image';
 import Link from 'next/link';
 import { AboutServicesForm } from '@/components/AboutServicesForm';
+import { buildMetadata } from '@/lib/seo';
 
-export const metadata: Metadata = {
-  title: 'About Me | Digital Marketing & Photography Expert',
-  description:
-    'Learn about my journey from professional photography to data-driven digital marketing, with expertise in Adobe Experience Cloud and Google Marketing Platform.',
-  openGraph: {
-    title: 'About Me | Digital Marketing & Photography Expert',
-    description:
-      'Learn about my journey from professional photography to data-driven digital marketing, with expertise in Adobe Experience Cloud and Google Marketing Platform.',
-    type: 'website',
-  },
-};
+export const metadata: Metadata = buildMetadata({
+  intent: "About Joe",
+  description: "Learn about my journey from professional photography to data-driven digital marketing, with expertise in Adobe Experience Cloud and Google Marketing Platform.",
+  canonicalPath: "/about/",
+});
 
 export default function AboutPage() {
   return (

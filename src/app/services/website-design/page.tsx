@@ -3,12 +3,14 @@ import Link from "next/link";
 import { StickyWebsiteQuoteBar } from "@/components/ui/StickyWebsiteQuoteBar";
 import { Layout } from "@/components/layout";
 import { ServiceSchemas } from "@/components/seo/ServiceSchema";
+import { buildMetadata } from "@/lib/seo";
 
-export const metadata = {
-  title: "Website Design and Development for Cheshire Businesses | Fast, SEO-ready Websites on secure cloud infrastructure",
-  description:
-    "Mobile-first websites built with secure cloud infrastructure for speed, SEO, and adaptability. Designed to grow with your business and future ad campaigns.",
-};
+export const metadata = buildMetadata({
+  intent: "Website Design",
+  qualifier: "for Cheshire Businesses",
+  description: "Mobile-first websites built with secure cloud infrastructure for speed, SEO, and adaptability. Designed to grow with your business and future ad campaigns.",
+  canonicalPath: "/services/website-design/",
+});
 
 export default function WebsiteDesignPage() {
   return (

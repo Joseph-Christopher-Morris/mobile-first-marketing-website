@@ -21,18 +21,6 @@ export const metadata: Metadata = {
   },
   description:
     'Vivid Media Cheshire helps local businesses grow with cheaper, faster secure cloud infrastructure hosting and migration, mobile-first web design, and Google Ads campaigns that deliver measurable results.',
-  keywords: [
-    'secure cloud website hosting Cheshire',
-    'secure cloud infrastructure migration',
-    'mobile-first web design',
-    'Google Ads campaigns Cheshire',
-    'digital marketing Nantwich',
-    'website performance optimisation',
-    'cheaper website hosting UK',
-    'data-driven marketing Cheshire',
-    'creative web design Cheshire',
-    'Vivid Media Cheshire',
-  ],
   authors: [
     {
       name: 'Vivid Media Cheshire',
@@ -255,6 +243,42 @@ export default function RootLayout({
               j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
               'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
               })(window,document,'script','dataLayer','GTM-W7L94JHW');
+            `,
+          }}
+        />
+
+        {/* Microsoft Clarity - Direct Implementation */}
+        <Script
+          id="clarity-direct"
+          strategy="afterInteractive"
+          dangerouslySetInnerHTML={{
+            __html: `
+              (function() {
+                if (window.clarity || document.querySelector('script[src*="clarity.ms/tag/u4yftkmpxx"]')) return;
+                (function(c,l,a,r,i,t,y){
+                  c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
+                  t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
+                  y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
+                })(window, document, "clarity", "script", "u4yftkmpxx");
+              })();
+            `,
+          }}
+        />
+
+        {/* Ahrefs Web Analytics - Direct Implementation */}
+        <Script
+          id="ahrefs-direct"
+          strategy="afterInteractive"
+          dangerouslySetInnerHTML={{
+            __html: `
+              (function () {
+                if (document.querySelector('script[src="https://analytics.ahrefs.com/analytics.js"]')) return;
+                var s = document.createElement('script');
+                s.async = true;
+                s.src = 'https://analytics.ahrefs.com/analytics.js';
+                s.setAttribute('data-key', 'l985apHePEHsTj+zER1zlw');
+                document.head.appendChild(s);
+              })();
             `,
           }}
         />

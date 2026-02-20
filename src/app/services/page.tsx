@@ -5,36 +5,15 @@ import { Layout } from "@/components/layout";
 import { ServiceCard } from "@/components/services/ServiceCard";
 import ServicesContactSection from "@/components/sections/ServicesContactSection";
 import MobileStickyButton from "@/components/ui/MobileStickyButton";
+import { buildMetadata } from "@/lib/seo";
 
-export const metadata: Metadata = {
-  title: "Digital Services for Small Businesses in Cheshire",
-  description:
-    "Websites, hosting, ads, analytics and photography designed for small business performance.",
-  keywords: [
-    "digital services Cheshire",
-    "website design Cheshire",
-    "Google Ads Cheshire",
-    "analytics Cheshire",
-    "photography Cheshire",
-    "small business marketing",
-    "Nantwich digital services",
-  ],
-  alternates: { canonical: "/services" },
-  openGraph: {
-    title: "Digital Services for Small Businesses in Cheshire",
-    description:
-      "Websites, hosting, ads, analytics and photography designed for small business performance.",
-    url: "/services",
-    images: [
-      {
-        url: "/images/services/web-hosting-and-migration/hosting-migration-card.webp",
-        width: 1200,
-        height: 630,
-        alt: "Digital services for Cheshire businesses",
-      },
-    ],
-  },
-};
+export const metadata: Metadata = buildMetadata({
+  intent: "Digital Services",
+  qualifier: "for Cheshire Businesses",
+  description: "Websites, hosting, ads, analytics and photography designed for small business performance.",
+  canonicalPath: "/services/",
+  ogImage: "/images/services/web-hosting-and-migration/hosting-migration-card.webp",
+});
 
 export default function ServicesPage() {
   // ORDERED to match: Website Design → Hosting → Strategic Ad Campaigns → Data Analytics → Photography
@@ -93,7 +72,7 @@ export default function ServicesPage() {
     "@type": "LocalBusiness",
     name: "Nantwich & Cheshire Digital Services",
     image: "/images/services/web-hosting-and-migration/hosting-migration-card.webp",
-    url: "https://example.com/services",
+    url: "https://vividmediacheshire.com/services/",
     address: {
       "@type": "PostalAddress",
       addressLocality: "Nantwich",
