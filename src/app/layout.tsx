@@ -1,4 +1,4 @@
-import type { Metadata } from 'next';
+import type { Metadata, Viewport } from 'next';
 import { Inter } from 'next/font/google';
 import Script from 'next/script';
 import CookieBanner from '@/components/CookieBanner';
@@ -12,6 +12,10 @@ const inter = Inter({
   preload: true,
   variable: '--font-inter',
 });
+
+export const viewport: Viewport = {
+  themeColor: '#2563eb',
+};
 
 export const metadata: Metadata = {
   title: {
@@ -82,7 +86,6 @@ export const metadata: Metadata = {
     google: 'google-site-verification-placeholder',
   },
   manifest: '/manifest.json',
-  themeColor: '#2563eb',
 };
 
 export default function RootLayout({

@@ -15,8 +15,10 @@
     "content:check": "node scripts/audit-content-compliance.js"
   },
   "dependencies": {
-    "@aws-sdk/client-cloudfront": "^3.917.0",
-    "@aws-sdk/client-s3": "^3.917.0",
+    "@aws-sdk/client-cloudfront": "^3.995.0",
+    "@aws-sdk/client-s3": "^3.995.0",
+    "@aws-sdk/credential-providers": "^3.995.0",
+    "@aws-sdk/lib-storage": "^3.995.0",
     "chart.js": "^4.5.1",
     "clsx": "^2.1.1",
     "gray-matter": "^4.0.3",

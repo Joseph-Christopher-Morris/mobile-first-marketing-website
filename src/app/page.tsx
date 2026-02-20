@@ -17,7 +17,6 @@ export const metadata: Metadata = buildMetadata({
   canonicalPath: "/",
   ogImage: "/images/hero/230422_Chester_Stock_Photography-84.webp",
 });
-};
 
 export default async function HomePage() {
   const blogPosts = await getAllBlogPosts();

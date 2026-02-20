@@ -26,6 +26,7 @@ const {
   CloudFrontClient,
   CreateInvalidationCommand,
 } = require('@aws-sdk/client-cloudfront');
+const { fromIni } = require('@aws-sdk/credential-providers');
 const fs = require('fs');
 const path = require('path');
 const crypto = require('crypto');
@@ -38,8 +39,19 @@ class Deployment {
     this.buildDir = 'out';
     this.environment = process.env.ENVIRONMENT || 'production';
 
-    this.s3Client = new S3Client({ region: this.region });
-    this.cloudFrontClient = new CloudFrontClient({ region: 'us-east-1' });
+    // Configure AWS credentials - try environment variables first, then fall back to credentials file
+    const credentials = process.env.AWS_ACCESS_KEY_ID 
+      ? undefined  // Use environment variables
+      : fromIni({ profile: process.env.AWS_PROFILE || 'default' });
+
+    this.s3Client = new S3Client({ 
+      region: this.region,
+      credentials 
+    });
+    this.cloudFrontClient = new CloudFrontClient({ 
+      region: 'us-east-1',
+      credentials 
+    });
 
     this.uploadedFiles = [];
     this.invalidationPaths = [];
@@ -80,30 +92,15 @@ class Deployment {
     console.log('🔨 Building Next.js static export...');
 
     try {
-      // Clean previous build with robust cleanup
+      // Clean previous build
       if (fs.existsSync(this.buildDir)) {
         console.log('🧹 Cleaning previous build...');
         try {
-          // Try PowerShell first (more reliable on Windows)
-          execSync(
-            `powershell -Command "Remove-Item -Recurse -Force '${this.buildDir}'"`,
-            {
-              stdio: 'pipe',
-              timeout: 30000,
-            }
-          );
-        } catch (error1) {
-          try {
-            // Fallback to CMD
-            execSync(`rmdir /s /q ${this.buildDir}`, { stdio: 'pipe' });
-          } catch (error2) {
-            // If cleanup fails, use timestamp-based directory
-            const timestamp = Date.now();
-            this.buildDir = `out-${timestamp}`;
-            console.log(
-              `   ⚠️  Using temporary build directory: ${this.buildDir}`
-            );
-          }
+          // Use Node.js fs.rmSync for cross-platform compatibility
+          fs.rmSync(this.buildDir, { recursive: true, force: true });
+        } catch (error) {
+          console.warn(`   ⚠️  Could not clean build directory: ${error.message}`);
+          // Continue anyway - Next.js will overwrite
         }
       }
 

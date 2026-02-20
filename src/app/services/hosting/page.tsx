@@ -14,29 +14,6 @@ export const metadata: Metadata = buildMetadata({
   description: "From £120 per year with 99.9% uptime and local support. Professional migration, same day replies and zero downtime for Nantwich and Cheshire businesses.",
   canonicalPath: "/services/hosting/",
 });
-    "website migration Nantwich",
-    "fast website hosting",
-    "secure cloud hosting",
-    "website speed optimisation",
-    "Nantwich web hosting",
-    "transparent hosting pricing",
-  ],
-  alternates: { canonical: "https://vividmediacheshire.com/services/hosting" },
-  openGraph: {
-    title: "Fast, secure website hosting for Cheshire businesses",
-    description:
-      "From £120 per year with 99.9% uptime and local support. Professional migration, same day replies and zero downtime.",
-    url: "https://vividmediacheshire.com/services/hosting",
-    images: [
-      {
-        url: "/images/services/web-hosting-and-migration/hosting-migration-card.webp",
-        width: 1200,
-        height: 630,
-        alt: "Website hosting and migration services for Cheshire businesses",
-      },
-    ],
-  },
-};
 
 export default function HostingPage() {
   // JSON-LD schema for hosting services

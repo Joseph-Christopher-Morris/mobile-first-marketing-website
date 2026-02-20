@@ -10,16 +10,8 @@ export const metadata: Metadata = buildMetadata({
   qualifier: "Vivid Media Cheshire",
   description: "Get in touch about professional automotive photography, data analytics, or strategic advertising campaigns in Nantwich & Cheshire. Free consultation available. Response within one business day (UK time).",
   canonicalPath: "/contact/",
+  ogImage: "/images/hero/aston-martin-db6-website.webp",
 });
-      {
-        url: '/images/hero/aston-martin-db6-website.webp',
-        width: 1200,
-        height: 630,
-        alt: 'Contact Vivid Media Cheshire for professional automotive photography services in Nantwich & Cheshire',
-      },
-    ],
-  },
-};
 
 export default function ContactPage() {
   return (
