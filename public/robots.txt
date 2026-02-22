@@ -8,17 +8,19 @@ Sitemap: https://vividmediacheshire.com/sitemap.xml
 # Respectful crawl rate
 Crawl-delay: 1
 
-# Block sensitive or future admin areas
+# Block sensitive areas
 Disallow: /admin/
 Disallow: /private/
 Disallow: /.well-known/
+Disallow: /thank-you/
 
 # Allow access to important static assets
 Allow: /images/
 Allow: /css/
 Allow: /js/
+Allow: /_next/
 
-# Optional: Block AI training bots (respected by some, not all)
+# Block AI training bots
 User-agent: GPTBot
 Disallow: /
 

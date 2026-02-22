@@ -8,9 +8,9 @@ import MobileStickyButton from "@/components/ui/MobileStickyButton";
 import { buildMetadata } from "@/lib/seo";
 
 export const metadata: Metadata = buildMetadata({
-  intent: "Digital Services",
-  qualifier: "for Cheshire Businesses",
-  description: "Websites, hosting, ads, analytics and photography designed for small business performance.",
+  intent: "Digital Marketing & Web Services",
+  qualifier: "in Cheshire",
+  description: "Mobile-first websites, analytics, ad campaigns and editorial photography built on secure cloud infrastructure for growing businesses.",
   canonicalPath: "/services/",
   ogImage: "/images/services/web-hosting-and-migration/hosting-migration-card.webp",
 });

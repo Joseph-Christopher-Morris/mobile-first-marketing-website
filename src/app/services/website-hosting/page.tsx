@@ -5,9 +5,9 @@ import { Layout } from '@/components/layout';
 import { buildMetadata } from '@/lib/seo';
 
 export const metadata: Metadata = buildMetadata({
-  intent: "Website Hosting & Migration",
-  qualifier: "for Cheshire Businesses",
-  description: "Affordable secure cloud hosting designed for performance, reliability, and easy scalability - perfect for growing brands and new websites.",
+  intent: "Cloud Website Hosting",
+  qualifier: "in Cheshire",
+  description: "Secure cloud hosting with performance optimisation, analytics integration and transparent pricing for small business websites.",
   canonicalPath: "/services/website-hosting/",
 });
 

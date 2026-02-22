@@ -9,6 +9,33 @@ interface BuildMetadataParams {
   noindex?: boolean;
 }
 
+// Constants
+const BRAND = 'Vivid Media Cheshire';
+export const SITE_URL = 'https://vividmediacheshire.com';
+
+/**
+ * Build standardized title with brand appended once
+ */
+function buildTitle(intent: string, qualifier?: string): string {
+  if (qualifier) {
+    return `${intent} ${qualifier} | ${BRAND}`;
+  }
+  return `${intent} | ${BRAND}`;
+}
+
+/**
+ * Clean and truncate description to prevent keyword stuffing
+ */
+function cleanDescription(text: string): string {
+  return text
+    .replace(/\s+/g, ' ')
+    .trim()
+    .slice(0, 155);
+}
+
+/**
+ * Build metadata for a page with standardized branding
+ */
 export function buildMetadata({
   intent,
   qualifier,
@@ -17,36 +44,39 @@ export function buildMetadata({
   ogImage = '/og-image.jpg',
   noindex = false,
 }: BuildMetadataParams): Metadata {
-  // Build title: Intent + Optional Qualifier + " | Vivid Media Cheshire"
-  const titleParts = [intent];
-  if (qualifier) {
-    titleParts.push(qualifier);
-  }
-  const title = `${titleParts.join(' ')} | Vivid Media Cheshire`;
+  // Normalize canonical path to always have trailing slash (except root)
+  const normalizedPath = canonicalPath === '/' 
+    ? '/' 
+    : canonicalPath.endsWith('/') 
+      ? canonicalPath 
+      : `${canonicalPath}/`;
+  
+  // Build absolute canonical URL
+  const canonicalUrl = `${SITE_URL}${normalizedPath}`;
 
-  // Normalize whitespace in description
-  const normalizedDescription = description.replace(/\s+/g, ' ').trim();
-
-  // Build absolute OpenGraph URL
-  const absoluteUrl = `https://vividmediacheshire.com${canonicalPath}`;
+  // Build full title with brand
+  const fullTitle = buildTitle(intent, qualifier);
+  
+  // Clean description
+  const cleanedDescription = cleanDescription(description);
 
   const metadata: Metadata = {
-    title,
-    description: normalizedDescription,
+    title: fullTitle,
+    description: cleanedDescription,
     alternates: {
-      canonical: canonicalPath,
+      canonical: canonicalUrl,
     },
     openGraph: {
-      title,
-      description: normalizedDescription,
-      url: absoluteUrl,
-      siteName: 'Vivid Media Cheshire',
+      title: fullTitle,
+      description: cleanedDescription,
+      url: canonicalUrl,
+      siteName: BRAND,
       images: [
         {
           url: ogImage,
           width: 1200,
           height: 630,
-          alt: title,
+          alt: fullTitle,
         },
       ],
       locale: 'en_GB',
@@ -54,8 +84,8 @@ export function buildMetadata({
     },
     twitter: {
       card: 'summary_large_image',
-      title,
-      description: normalizedDescription,
+      title: fullTitle,
+      description: cleanedDescription,
       images: [ogImage],
     },
   };
@@ -64,6 +94,10 @@ export function buildMetadata({
     metadata.robots = {
       index: false,
       follow: false,
+      googleBot: {
+        index: false,
+        follow: false,
+      },
     };
   }
 

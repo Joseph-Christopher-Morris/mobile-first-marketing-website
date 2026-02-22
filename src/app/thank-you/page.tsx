@@ -3,7 +3,7 @@ import Conversion from "./Conversion";
 
 export const metadata = buildMetadata({
   intent: "Thank You",
-  description: "Thank you. I will reply the same day during business hours.",
+  description: "Thanks for your message — I'll get back to you shortly.",
   canonicalPath: "/thank-you/",
   noindex: true,
 });

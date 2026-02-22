@@ -10,9 +10,9 @@ import { DualStickyCTA } from '@/components/DualStickyCTA';
 import { buildMetadata } from '@/lib/seo';
 
 export const metadata: Metadata = buildMetadata({
-  intent: "Photography Services",
+  intent: "Editorial & Commercial Photography",
   qualifier: "in Cheshire",
-  description: "Professional photography services in Nantwich & Cheshire. Published editorial work for BBC, Forbes, and The Times. Local Nantwich photography and commercial campaign work.",
+  description: "Published editorial photography for BBC, Forbes and commercial campaigns. Local photography supporting digital marketing and content strategy.",
   canonicalPath: "/services/photography/",
   ogImage: "/images/services/Photography/photography-hero.webp",
 });

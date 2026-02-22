@@ -54,7 +54,6 @@ class Deployment {
     });
 
     this.uploadedFiles = [];
-    this.invalidationPaths = [];
     this.deploymentId = `deploy-${Date.now()}`;
 
     this.validateConfiguration();
@@ -190,10 +189,10 @@ class Deployment {
       };
     }
 
-    // HTML files - short cache (5 minutes = 300 seconds) per requirement 4.5
+    // HTML files - no cache to prevent stale content (per Ahrefs crawl fix requirements)
     if (ext === '.html') {
       return {
-        'Cache-Control': 'public, max-age=300, must-revalidate',
+        'Cache-Control': 'public, max-age=0, must-revalidate',
       };
     }
 
@@ -229,6 +228,13 @@ class Deployment {
       };
     }
 
+    // Sitemap and robots - short cache for crawlers
+    if (fileName === 'sitemap.xml' || fileName === 'robots.txt') {
+      return {
+        'Cache-Control': 'public, max-age=3600',
+      };
+    }
+
     // JSON files (manifest, etc.) - medium cache (1 day)
     if (ext === '.json') {
       return {
@@ -249,10 +255,10 @@ class Deployment {
     const ext = path.extname(filePath).toLowerCase();
 
     const contentTypes = {
-      '.html': 'text/html',
-      '.css': 'text/css',
-      '.js': 'application/javascript',
-      '.json': 'application/json',
+      '.html': 'text/html; charset=utf-8',
+      '.css': 'text/css; charset=utf-8',
+      '.js': 'application/javascript; charset=utf-8',
+      '.json': 'application/json; charset=utf-8',
       '.png': 'image/png',
       '.jpg': 'image/jpeg',
       '.jpeg': 'image/jpeg',
@@ -265,8 +271,8 @@ class Deployment {
       '.woff2': 'font/woff2',
       '.ttf': 'font/ttf',
       '.eot': 'application/vnd.ms-fontobject',
-      '.xml': 'application/xml',
-      '.txt': 'text/plain',
+      '.xml': 'application/xml; charset=utf-8',
+      '.txt': 'text/plain; charset=utf-8',
     };
 
     return contentTypes[ext] || 'application/octet-stream';
@@ -332,18 +338,6 @@ class Deployment {
       contentType,
       cacheControl: cacheHeaders['Cache-Control'],
     });
-
-    // Track files that need cache invalidation
-    const isImageFile = /\.(webp|jpg|jpeg|png|gif|svg|ico|avif)$/i.test(s3Key);
-    const isShortCacheFile =
-      cacheHeaders['Cache-Control'].includes('max-age=300') ||
-      cacheHeaders['Cache-Control'].includes('no-cache');
-
-    // Always invalidate HTML files and files with short cache times
-    // Also invalidate image files to ensure updated images are served immediately
-    if (isShortCacheFile || isImageFile) {
-      this.invalidationPaths.push(`/${s3Key}`);
-    }
   }
 
   /**
@@ -479,9 +473,6 @@ class Deployment {
             Key: key,
           })
         );
-
-        // Add to invalidation paths
-        this.invalidationPaths.push(`/${key}`);
       }
 
       console.log('✅ Cleanup completed');
@@ -502,47 +493,15 @@ class Deployment {
       return;
     }
 
-    if (this.invalidationPaths.length === 0) {
-      console.log('ℹ️  No cache invalidation needed');
-      return;
-    }
-
     console.log('🔄 Invalidating CloudFront cache...');
 
     try {
-      // Remove duplicates and organize paths
-      let pathsToInvalidate = [...new Set(this.invalidationPaths)];
+      // Use wildcard patterns for efficient invalidation
+      // CloudFront rules: paths must start with /, no http://, no query strings, no hashes
+      const pathsToInvalidate = ['/_next/*', '/*'];
 
-      // Check if we have many image files to invalidate
-      const imagePaths = pathsToInvalidate.filter(path =>
-        /\/images\/.*\.(webp|jpg|jpeg|png|gif|svg|ico|avif)$/i.test(path)
-      );
-
-      // If we have many image files, use wildcard pattern for efficiency
-      if (imagePaths.length > 20) {
-        // Remove individual image paths and add wildcard
-        pathsToInvalidate = pathsToInvalidate.filter(
-          path =>
-            !/\/images\/.*\.(webp|jpg|jpeg|png|gif|svg|ico|avif)$/i.test(path)
-        );
-        pathsToInvalidate.push('/images/*');
-        console.log(
-          `   Optimized: Using /images/* wildcard for ${imagePaths.length} image files`
-        );
-      }
-
-      // If still too many paths, invalidate everything
-      if (pathsToInvalidate.length > 100) {
-        pathsToInvalidate = ['/*'];
-        console.log('   Too many files changed, invalidating all paths');
-      } else {
-        console.log(`   Invalidating ${pathsToInvalidate.length} paths`);
-        if (imagePaths.length > 0 && imagePaths.length <= 20) {
-          console.log(
-            `   Including ${imagePaths.length} individual image files`
-          );
-        }
-      }
+      console.log(`   Invalidating ${pathsToInvalidate.length} paths (using wildcards)`);
+      console.log(`   Paths: ${pathsToInvalidate.join(', ')}`);
 
       const invalidationParams = {
         DistributionId: this.distributionId,
@@ -588,9 +547,6 @@ class Deployment {
 
     if (this.distributionId) {
       console.log(`   CloudFront Distribution: ${this.distributionId}`);
-      console.log(
-        `   Cache Invalidation Paths: ${this.invalidationPaths.length}`
-      );
     }
 
     console.log(`   Completed: ${new Date().toISOString()}`);

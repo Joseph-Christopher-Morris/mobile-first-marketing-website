@@ -8,7 +8,7 @@ import { buildMetadata } from "@/lib/seo";
 export const metadata = buildMetadata({
   intent: "Website Design",
   qualifier: "for Cheshire Businesses",
-  description: "Mobile-first websites built with secure cloud infrastructure for speed, SEO, and adaptability. Designed to grow with your business and future ad campaigns.",
+  description: "Fast, SEO-ready websites built on secure cloud infrastructure. Designed for speed, analytics and scalable marketing campaigns.",
   canonicalPath: "/services/website-design/",
 });
 
