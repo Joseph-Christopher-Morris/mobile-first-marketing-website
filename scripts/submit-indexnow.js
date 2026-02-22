@@ -391,7 +391,7 @@ async function main() {
         domain: SITE_DOMAIN,
         excludePaths: ['/thank-you/']
       });
-      console.log(`✓ Collected ${urls.length} URLs from sitemap\n`);
+      urls = urls.map(url => url.replace(SITE_DOMAIN, CLOUDFRONT_DOMAIN));
     }
 
     // Validate URLs
@@ -431,7 +431,7 @@ async function main() {
     const keyLocation = `https://${CLOUDFRONT_DOMAIN}/${INDEXNOW_API_KEY}.txt`;
     
     const result = await submitUrls({
-      host: SITE_DOMAIN,
+      host: CLOUDFRONT_DOMAIN,
       key: INDEXNOW_API_KEY,
       keyLocation,
       urlList: urls
