@@ -3,12 +3,12 @@ import { GeneralContactForm } from '@/components/sections/GeneralContactForm';
 import { Layout } from '@/components/layout';
 import { siteConfig } from '@/config/site';
 import { ContactLink } from '@/components/sections/ContactPageClient';
-import { buildMetadata } from '@/lib/seo';
+import { buildSEO } from '@/lib/seo';
 
-export const metadata: Metadata = buildMetadata({
+export const metadata: Metadata = buildSEO({
   intent: "Contact",
-  qualifier: "Vivid Media Cheshire",
-  description: "Tell me what you need and I'll reply personally the same day. Websites, hosting, ads, analytics, and photography in Cheshire.",
+  qualifier: "Start Your Project",
+  description: "Get same-day reply from Joe. Websites, Google Ads, analytics, and photography for Cheshire businesses. Call 07586 378502 or email for free consultation.",
   canonicalPath: "/contact/",
   ogImage: "/images/hero/aston-martin-db6-website.webp",
 });

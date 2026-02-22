@@ -2,12 +2,11 @@ import { Metadata } from 'next';
 import Image from 'next/image';
 import EnhancedCTA from '@/components/services/EnhancedCTA';
 import { Layout } from '@/components/layout';
-import { buildMetadata } from '@/lib/seo';
+import { buildSEO } from '@/lib/seo';
 
-export const metadata: Metadata = buildMetadata({
+export const metadata: Metadata = buildSEO({
   intent: "Cloud Website Hosting",
-  qualifier: "in Cheshire",
-  description: "Secure cloud hosting with performance optimisation, analytics integration and transparent pricing for small business websites.",
+  description: "Secure cloud hosting with 82% faster load times, zero downtime migration, and transparent pricing. £15/month for Cheshire small business websites.",
   canonicalPath: "/services/website-hosting/",
 });
 
@@ -123,7 +122,7 @@ export default function WebsiteHostingPage() {
                 <h3 className="text-xl font-semibold text-red-600 mb-4">Before Migration</h3>
                 <div className="bg-red-50 p-4 rounded-2xl">
                   <Image
-                    src="/images/services/Web Hosting And Migration/before-hosting-performance.webp"
+                    src="/images/services/web-hosting-and-migration/before-hosting-performance.webp"
                     alt="Website performance before secure cloud migration showing poor Lighthouse scores"
                     width={500}
                     height={300}
@@ -136,7 +135,7 @@ export default function WebsiteHostingPage() {
                 <h3 className="text-xl font-semibold text-green-600 mb-4">After Migration</h3>
                 <div className="bg-green-50 p-4 rounded-2xl">
                   <Image
-                    src="/images/services/Web Hosting And Migration/pagespeed-aws-migration-desktop.webp"
+                    src="/images/services/web-hosting-and-migration/pagespeed-aws-migration-desktop.webp"
                     alt="Website performance after secure cloud migration showing excellent Lighthouse scores"
                     width={500}
                     height={300}

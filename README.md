@@ -128,6 +128,7 @@ For detailed deployment instructions and troubleshooting, see:
 
 - `config/production-deployment-instructions.md`
 - `docs/s3-cloudfront-deployment-runbook.md`
+- `docs/indexnow-github-secrets-setup.md` - IndexNow search engine notification setup
 
 ### AWS Amplify Setup
 

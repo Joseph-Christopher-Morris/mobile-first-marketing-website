@@ -1,10 +1,10 @@
 import { Metadata } from 'next';
-import { buildMetadata } from '@/lib/seo';
+import { buildSEO } from '@/lib/seo';
 import FreeAuditClient from './FreeAuditClient';
 
-export const metadata: Metadata = buildMetadata({
+export const metadata: Metadata = buildSEO({
   intent: "Free Website & Marketing Audit",
-  description: "Get a free review of your website, ads, or analytics setup with clear recommendations.",
+  description: "Get free review of your website, Google Ads, or analytics setup with clear recommendations. Same-day response from Cheshire digital marketing specialist.",
   canonicalPath: "/free-audit/",
 });
 

@@ -3,8 +3,7 @@ import { BlogPost } from '../../lib/blog-types';
 const post: BlogPost = {
   slug: 'ebay-model-ford-collection-part-1',
   title: 'Selling and Photographing a Model Ford Car Collection on eBay: How I Made a Profit (Part 1)',
-  excerpt:
-    'What started as a personal project to downsize my Hot Wheels collection turned into photographing and selling my neighbour\'s prized Ford model car collection on eBay.',
+  excerpt: "What started as a personal project to downsize my Hot Wheels collection turned into photographing and selling my neighbour's prized Ford model car collection on eBay.",
   content: `
     <p>What started as a personal project to downsize my own Hot Wheels collection turned into something much bigger: photographing and selling my neighbour's prized Ford model car collection on eBay.</p>
 
@@ -32,7 +31,7 @@ const post: BlogPost = {
 
     <h2>Photographing the First Model</h2>
 
-    <img src="/images/blog/240602-Car_Collection-7.webp" alt="Ford Focus RS/WRC rally car model showing the first model photographed from the collection" />
+    <img src="/images/blog/240602-Car_Collection-7.webp" alt="Ford Focus RS/WRC rally car model showing the first model photographed from the collection" loading="lazy" />
     <p><em>The first model photographed: Ford Focus RS/WRC rally car that started the professional photography workflow for the collection.</em></p>
 
     <p>The first car I shot was a <strong>1:18 AUTOART Ford Focus WRC Rally car</strong>. It barely fit in my portable studio, but it drew attention despite some cosmetic wear.</p>
@@ -41,7 +40,7 @@ const post: BlogPost = {
 
     <h2>Photography Standards and Quality</h2>
 
-    <img src="/images/blog/Screenshot 2025-07-04 193922 (1).webp" alt="eBay Performance &amp; Traffic analytics showing impressions and CTR for the Ford model listings (June 14–21, 2024)" />
+    <img src="/images/blog/screenshot-2025-07-04-193922.webp" alt="eBay Performance &amp; Traffic analytics showing impressions and CTR for the Ford model listings (June 14–21, 2024)" loading="lazy" />
     <p><em>eBay Performance &amp; Traffic dashboard (June 14–21, 2024). I used this to monitor impressions and CTR and refine titles and timing.</em></p>
 
     <blockquote>
@@ -88,7 +87,7 @@ const post: BlogPost = {
     <ul>
       <li><a href="/blog/ebay-model-ford-collection-part-1">Model Car Collection (Part 1) — Model Ford Collection</a></li>
       <li><a href="/blog/ebay-photography-workflow-part-2">Model Car Collection (Part 2) — Photography Workflow</a></li>
-      <li><a href="/blog/ebay-model-car-sales-timing-bundles">Model Car Collection (Part 3) — Sales Timing & Bundles</a></li>
+      <li><a href="/blog/ebay-model-car-sales-timing-bundles">Model Car Collection (Part 3) — Sales Timing &amp; Bundles</a></li>
       <li><a href="/blog/ebay-repeat-buyers-part-4">Model Car Collection (Part 4) — Repeat Buyers</a></li>
       <li><a href="/blog/ebay-business-side-part-5">Model Car Collection (Part 5) — Business Side</a></li>
     </ul>

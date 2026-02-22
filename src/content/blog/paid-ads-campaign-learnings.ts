@@ -21,21 +21,21 @@ const post: BlogPost = {
     <p>Before launch, I:</p>
 
     <ul>
-      <li><strong>Defined my audiences</strong> — hobbyists, collectors, motorsport fans for the article; eBay sellers & small business owners for the service ad.</li>
+      <li><strong>Defined my audiences</strong> — hobbyists, collectors, motorsport fans for the article; eBay sellers &amp; small business owners for the service ad.</li>
       <li><strong>Set budgets</strong> — £4.30/day for the article (ad credits), £12.80/day for the service (paid budget).</li>
       <li><strong>Crafted creatives</strong> — clean product shots for the article, service-focused imagery for the offer.</li>
-      <li><strong>Optimised landing pages</strong> — Hotjar heatmaps & session recordings helped refine layout and reposition my call-to-action (CTA).</li>
-      <li><strong>Improved Google Ads targeting</strong> — Focused on UK cities & niche terms like "selling a model car collection."</li>
+      <li><strong>Optimised landing pages</strong> — Hotjar heatmaps &amp; session recordings helped refine layout and reposition my call-to-action (CTA).</li>
+      <li><strong>Improved Google Ads targeting</strong> — Focused on UK cities &amp; niche terms like "selling a model car collection."</li>
     </ul>
 
-    <h2>Results & Insights</h2>
+    <h2>Results &amp; Insights</h2>
 
-    <img src="/images/blog/240708-Model_Car_Collection-69 (1).webp" alt="Product photography used in the Meta Ads campaign showing professional presentation" />
+    <img src="/images/blog/240708-Model_Car_Collection-69 (1).webp" alt="Product photography used in the Meta Ads campaign showing professional presentation" loading="lazy" />
     <p><em>The type of high-quality product shots I used in my Meta Ads campaign to attract the right audience.</em></p>
 
     <h3>Article Campaign (Meta Ads)</h3>
 
-    <img src="/images/blog/Screenshot 2025-08-11 143853.webp?v=20251217" alt="Meta Ads results graph showing 15,220 impressions and 446 clicks" class="analytics-screenshot" />
+    <img src="/images/blog/screenshot-2025-08-11-143853.webp?v=20251217" alt="Meta Ads results graph showing 15,220 impressions and 446 clicks" class="analytics-screenshot" loading="lazy" />
 
     <ul>
       <li><strong>Spend:</strong> £127.50 ad credit</li>
@@ -46,22 +46,22 @@ const post: BlogPost = {
 
     <h3>Leads Campaign (Google Ads)</h3>
 
-    <img src="/images/blog/Screenshot 2025-08-11 143943.webp?v=20251217" alt="Google Ads results graph showing 121,242 impressions and 1,544 clicks" class="analytics-screenshot" />
+    <img src="/images/blog/screenshot-2025-08-11-143943.webp?v=20251217" alt="Google Ads results graph showing 121,242 impressions and 1,544 clicks" class="analytics-screenshot" loading="lazy" />
 
     <ul>
       <li><strong>Spend:</strong> £256.91</li>
       <li><strong>Impressions:</strong> 121,242</li>
       <li><strong>Clicks:</strong> 1,544</li>
-      <li><strong>Result:</strong> Higher click quality & stronger buying intent</li>
+      <li><strong>Result:</strong> Higher click quality &amp; stronger buying intent</li>
     </ul>
 
     <h3>UX Impact</h3>
 
-    <img src="/images/blog/screenshot-2025-08-11-143853.webp?v=20251217" alt="Hotjar heatmap showing user behavior and scroll patterns on landing page" />
+    <img src="/images/blog/screenshot-2025-08-11-143853.webp?v=20251217" alt="Hotjar heatmap showing user behavior and scroll patterns on landing page" loading="lazy" />
     <p><em>Hotjar data revealing where visitors actually looked — this insight drove my CTA repositioning strategy.</em></p>
 
     <p>Hotjar revealed many visitors <strong>scrolled past my original CTA</strong>.<br />
-    By moving it higher & making it more distinct, <strong>newsletter sign-ups improved</strong>.</p>
+    By moving it higher &amp; making it more distinct, <strong>newsletter sign-ups improved</strong>.</p>
 
     <h2>Key Takeaways</h2>
     <ul>
@@ -69,7 +69,7 @@ const post: BlogPost = {
       <li><strong>Content vs. Offer</strong> — Awareness ads = cheaper clicks; direct offers = higher intent.</li>
       <li><strong>Keyword exclusions save budget</strong> — Removing irrelevant search terms cut wasted spend.</li>
       <li><strong>Run ads directly</strong> — Avoid extra fees from third-party ad managers like Wix Ads.</li>
-      <li><strong>Email list growth compounds</strong> — Every sign-up means future test opportunities & leads.</li>
+      <li><strong>Email list growth compounds</strong> — Every sign-up means future test opportunities &amp; leads.</li>
     </ul>
 
     <h2>Final Thoughts</h2>

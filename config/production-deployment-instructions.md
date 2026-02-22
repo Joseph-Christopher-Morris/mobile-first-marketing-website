@@ -69,8 +69,27 @@ If issues occur, rollback using:
 node scripts/rollback.js --env=production --version=previous
 ```
 
+## IndexNow Integration
+
+The deployment pipeline automatically submits URLs to IndexNow for instant search engine notification.
+
+### Setup Required
+
+Configure GitHub Secrets for IndexNow integration:
+- See `docs/indexnow-github-secrets-setup.md` for complete setup instructions
+- Required secret: `INDEXNOW_API_KEY`
+
+### Verification
+
+After deployment, verify IndexNow submissions:
+```bash
+node scripts/validate-indexnow-key.js
+cat logs/indexnow-submissions.json
+```
+
 ## Support
 
 For issues or questions, refer to:
 - docs/s3-cloudfront-deployment-runbook.md
 - docs/s3-cloudfront-troubleshooting-guide.md
+- docs/indexnow-github-secrets-setup.md

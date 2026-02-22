@@ -7,12 +7,11 @@ import { getAllServices } from '@/lib/content';
 import { NewsletterSignup } from '@/components/sections/NewsletterSignup';
 import { ServicesShowcase } from '@/components/sections/ServicesShowcase';
 import { resolveBlogCardImageWithLegacy } from '@/lib/blog-thumbnail-resolver';
-import { buildMetadata } from '@/lib/seo';
+import { buildSEO } from '@/lib/seo';
 
-export const metadata: Metadata = buildMetadata({
-  intent: "Digital Marketing Insights",
-  qualifier: "from Cheshire",
-  description: "Real-world insights on SEO, analytics, advertising performance and cloud-based website strategy for small businesses.",
+export const metadata: Metadata = buildSEO({
+  intent: "Digital Marketing Case Studies",
+  description: "Real case studies on SEO, Google Ads, analytics, and website performance. Learn what works from actual Cheshire business projects with proven ROI results.",
   canonicalPath: "/blog/",
 });
 

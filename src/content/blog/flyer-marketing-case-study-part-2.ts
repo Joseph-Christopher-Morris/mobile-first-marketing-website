@@ -7,10 +7,8 @@ const post: BlogPost = {
     'One flyer landed my first freelance win. The second lit the fuse—race teams, auction gigs, referrals, real income.',
   content: `
     <p><em>A yellow Toyota Supra at the Meguiar's car care stand at TRAX Silverstone 2021</em></p>
-    <img
-      src="/images/blog/Toyota Supra MK4 Yellow front three quarter landscape.webp"
-      alt="Yellow Toyota Supra at Meguiar's stand, TRAX Silverstone 2021"
-    />
+    <img src="/images/blog/Toyota Supra MK4 Yellow front three quarter landscape.webp"
+      alt="Yellow Toyota Supra at Meguiar's stand, TRAX Silverstone 2021" loading="lazy" />
     <p>One flyer landed my first freelance win.</p>
     <p>The second? It lit the fuse.</p>
     <p>Race teams. Auction gigs. Referrals. Real income.</p>
@@ -32,17 +30,15 @@ const post: BlogPost = {
       <li>Cover: McLaren 650S</li>
       <li>Pricing: Lotus Evora GT410</li>
       <li>Featured: SVJ Roadster, JSCC</li>
-      <li>Details: R8 V10, Dalmatian & Lamborghini</li>
+      <li>Details: R8 V10, Dalmatian &amp; Lamborghini</li>
       <li>About me: On-location portrait</li>
       <li>I chose each shot to stop thumbs and start conversations.</li>
     </ul>
 
     <h2>📸 The First Big Win: Hampson Auctions</h2>
     <p>Photo I took of the Hampson Auctions Tatton Park stand. A dog is posing in front of a red Ford Escort Mexico rally car with Hampson Auctions sponsorship.</p>
-    <img
-      src="/images/blog/Ford Escort Mexico MK1 with Dog front poster.webp"
-      alt="Ford Escort Mexico rally car with dog at Hampson Auctions stand"
-    />
+    <img src="/images/blog/Ford Escort Mexico MK1 with Dog front poster.webp"
+      alt="Ford Escort Mexico rally car with dog at Hampson Auctions stand" loading="lazy" />
     <p>In August 2021, I handed my new flyer to Zach at Hampson Auctions at the Tatton Park Classic Car Show.</p>
     <p>Zach let me shoot their stand on the spot.</p>
     <p>By August 30th, 2021, I was covering their Oulton Park Gold Cup sale. I've worked with Hampson Auctions ever since.</p>
@@ -53,26 +49,22 @@ const post: BlogPost = {
 
     <h2>🚗 Real Gigs, Real Encounters</h2>
     <p><em>A white Audi TT RS MK2 Filmed with an Edelkrone gear at TRAX Silverstone 2021.</em></p>
-    <img
-      src="/images/blog/Audi TTS Martini White Rear three quarter landscape.webp"
-      alt="White Audi TT RS Mk2 filmed at TRAX Silverstone 2021"
-    />
+    <img src="/images/blog/Audi TTS Martini White Rear three quarter landscape.webp"
+      alt="White Audi TT RS Mk2 filmed at TRAX Silverstone 2021" loading="lazy" />
     <p>At TRAX Silverstone, I brought flyers, a Nikon D850, and £10,000 of Edelkrone gear.</p>
     <p><strong>I walked away with the following:</strong></p>
     <ul>
-      <li>Paid shoots: Vauxhall Astra VXR & Audi TTRS</li>
+      <li>Paid shoots: Vauxhall Astra VXR &amp; Audi TTRS</li>
       <li>Filmed the UK's biggest Audi R8 meet</li>
       <li>I met an auctioneer who later referred me to Historics Auctioneers</li>
       <li>All from showing up and talking to people. That was just the start.</li>
     </ul>
 
-    <h2>🏁 The Car & Classic Breakthrough</h2>
+    <h2>🏁 The Car &amp; Classic Breakthrough</h2>
     <p><em>A behind-the-scenes look at a Bentley S2 driving on a photoshoot</em></p>
-    <img
-      src="/images/blog/250705-Bentley_S2-1 (1).webp"
-      alt="Bentley S2 on location photoshoot for Car & Classic"
-    />
-    <p>By June 2022, my flyers had unlocked contracts with top auction houses and race teams; now it was time to scale. I landed a freelance gig with Car & Classic — over 60 paid photoshoots since.</p>
+    <img src="/images/blog/250705-Bentley_S2-1 (1).webp"
+      alt="Bentley S2 on location photoshoot for Car &amp; Classic" loading="lazy" />
+    <p>By June 2022, my flyers had unlocked contracts with top auction houses and race teams; now it was time to scale. I landed a freelance gig with Car &amp; Classic — over 60 paid photoshoots since.</p>
     <p>Duncan's referral opened the door to North West Motor Auction.</p>
     <blockquote>
       <p>That's a great picture. Thank you very much! I hope you had a great day and got some good shots. See you next time.</p>

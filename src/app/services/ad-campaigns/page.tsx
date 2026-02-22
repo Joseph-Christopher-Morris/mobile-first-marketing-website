@@ -1,13 +1,15 @@
 import { Metadata } from 'next';
-import { buildMetadata } from '@/lib/seo';
+import { generateMetadata as generateSocialMetadata } from '@/lib/metadata-generator';
 import AdCampaignsClient from './AdCampaignsClient';
 
-export const metadata: Metadata = buildMetadata({
-  intent: "Google Ads Campaign Management",
-  qualifier: "in Cheshire",
-  description: "Performance-focused ad campaigns with analytics tracking, conversion optimisation and real campaign reporting.",
-  canonicalPath: "/services/ad-campaigns/",
-  ogImage: "/images/services/WhatsApp Image 2025-11-11 at 9.27.14 AM.webp",
+export const metadata: Metadata = generateSocialMetadata({
+  pageType: 'service',
+  content: {
+    title: 'Google Ads Campaign Management',
+    description: 'Performance-focused Google Ads with conversion tracking and clear ROI reporting. Setup from £90, management from £150/month for Cheshire small businesses.',
+    image: '/images/services/WhatsApp Image 2025-11-11 at 9.27.14 AM.webp',
+  },
+  canonicalPath: '/services/ad-campaigns',
 });
 
 export default function AdCampaignsPage() {

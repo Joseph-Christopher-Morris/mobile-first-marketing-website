@@ -7,12 +7,17 @@
     "build": "next build",
     "build:static": "next build",
     "start": "next start",
+    "test": "vitest --run",
+    "test:watch": "vitest",
+    "test:ui": "vitest --ui",
     "lh:check": "node scripts/check-lighthouse.mjs reports/*.json",
     "content:audit": "node scripts/audit-content-compliance.js",
     "content:validate": "node scripts/validate-content-requirements.js",
     "content:update": "node scripts/update-page-to-spec.js",
     "content:generate": "node scripts/create-content-from-spec.js",
-    "content:check": "node scripts/audit-content-compliance.js"
+    "content:check": "node scripts/audit-content-compliance.js",
+    "seo:check": "node scripts/seo-check.js",
+    "validate:images": "node scripts/validate-blog-images.js"
   },
   "dependencies": {
     "@aws-sdk/client-cloudfront": "^3.995.0",
@@ -38,11 +43,15 @@
     "@types/node": "^22.13.0",
     "@types/react": "19.2.2",
     "@types/react-dom": "^19.2.2",
+    "@vitest/ui": "^4.0.18",
     "autoprefixer": "^10.4.21",
     "chrome-launcher": "^1.2.1",
+    "fast-check": "^4.5.3",
     "lighthouse": "^12.8.2",
     "tailwindcss": "^3.4.18",
-    "typescript": "^5.9.3"
+    "typescript": "^5.9.3",
+    "vitest": "^4.0.18",
+    "yaml": "^2.8.2"
   },
   "browserslist": [
     "defaults and fully supports es6-module",

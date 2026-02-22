@@ -20,7 +20,7 @@ const post: BlogPost = {
 
     <h2>📊 My Stock Photography Revenue (2022–2025)</h2>
 
-    <img src="/images/blog/Cumulative_Stock_Photography_Revenue_2022_2025_v2.webp" alt="Vivid Media Cheshire Cumulative Stock Photography Revenue Line Chart (2022 - 2025)" />
+    <img src="/images/blog/Cumulative_Stock_Photography_Revenue_2022_2025_v2.webp" alt="Vivid Media Cheshire Cumulative Stock Photography Revenue Line Chart (2022 - 2025)" loading="lazy" />
 
     <ul>
       <li><strong>2022:</strong> $2.36</li>
@@ -35,7 +35,7 @@ const post: BlogPost = {
 
     <p>These images showed up in my download reports repeatedly:</p>
 
-    <img src="/images/blog/Stock_Photography_Revenue_Bar_Chart.webp" alt="Revenue breakdown showing which photo categories performed best" />
+    <img src="/images/blog/Stock_Photography_Revenue_Bar_Chart.webp" alt="Revenue breakdown showing which photo categories performed best" loading="lazy" />
     <p><em>Real performance data showing which types of images generated the most revenue across platforms.</em></p>
 
     <h3>For Sale Sign in Residential Area</h3>

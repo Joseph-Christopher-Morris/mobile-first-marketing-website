@@ -6,12 +6,11 @@ import { ServiceInquiryForm } from "@/components/ServiceInquiryForm";
 import { DualStickyCTA } from "@/components/DualStickyCTA";
 import { HostingServiceCard } from "@/components/SimplifiedServiceCard";
 import { ServiceSchemas } from "@/components/seo/ServiceSchema";
-import { buildMetadata } from "@/lib/seo";
+import { buildSEO } from "@/lib/seo";
 
-export const metadata: Metadata = buildMetadata({
-  intent: "Cloud Website Hosting",
-  qualifier: "in Cheshire",
-  description: "Secure cloud hosting with performance optimisation, analytics integration and transparent pricing for small business websites.",
+export const metadata: Metadata = buildSEO({
+  intent: "Website Hosting & Migration",
+  description: "Secure cloud hosting with 82% faster load times, zero downtime migration, transparent pricing. £15/month for Cheshire small businesses with support",
   canonicalPath: "/services/hosting/",
 });
 

@@ -1,0 +1,164 @@
+# Implementation Plan
+
+- [x] 1. Write bug condition exploration test
+  - **Property 1: Fault Condition** - Duplicate Brand Names in Page Titles
+  - **CRITICAL**: This test MUST FAIL on unfixed code - failure confirms the bug exists
+  - **DO NOT attempt to fix the test or the code when it fails**
+  - **NOTE**: This test encodes the expected behavior - it will validate the fix when it passes after implementation
+  - **GOAL**: Surface counterexamples that demonstrate duplicate brand names exist in current titles
+  - **Scoped PBT Approach**: Manually inspect current live site or local build to find concrete failing cases
+  - Test that Contact page title contains "Vivid Media Cheshire" exactly once (currently shows duplicate)
+  - Test that all page titles are under 60 characters
+  - Test that titles follow "Primary Keyword | Supporting Context" format
+  - Run manual inspection on UNFIXED code using browser DevTools or `npm run build` + HTML inspection
+  - **EXPECTED OUTCOME**: Test FAILS - Contact page shows "Contact Vivid Media Cheshire | Vivid Media Cheshire"
+  - Document counterexamples found:
+    - Contact page: duplicate brand name
+    - Services page: possible length violation
+    - Pricing page: possible format inconsistency
+  - Mark task complete when inspection is done, failures are documented
+  - _Requirements: 1.1, 1.2, 1.3, 2.1, 2.3_
+
+- [x] 2. Write preservation property tests (BEFORE implementing fix)
+  - **Property 2: Preservation** - OpenGraph, Twitter, Canonical, and Robots Metadata
+  - **IMPORTANT**: Follow observation-first methodology
+  - Observe behavior on UNFIXED code for non-title metadata fields
+  - Create test file `tests/seo-preservation.test.ts` with property-based tests
+  - Test OpenGraph metadata: title, description, images, url, siteName, locale, type fields remain unchanged
+  - Test Twitter card metadata: card, title, description, images fields remain unchanged
+  - Test canonical URL normalization: trailing slashes and absolute URLs remain consistent
+  - Test robots meta tags: noindex parameter still generates correct robots meta
+  - Use property-based testing library (e.g., fast-check) to generate random inputs
+  - Run tests on UNFIXED code
+  - **EXPECTED OUTCOME**: Tests PASS (confirms baseline behavior to preserve)
+  - Mark task complete when tests are written, run, and passing on unfixed code
+  - _Requirements: 3.1, 3.2, 3.3, 3.4_
+
+- [ ] 3. Fix for duplicate brand names in page titles
+
+  - [x] 3.1 Refactor src/lib/seo.ts
+    - Rename `buildMetadata()` to `buildSEO()`
+    - Rename `buildTitle()` to `buildCleanTitle()` and remove "| Vivid Media Cheshire" suffix
+    - Add `detectDuplicateBrand()` function to check for brand name in intent/qualifier
+    - Add `validateTitleLength()` function to ensure titles (without brand) are under 45 characters
+    - Update `cleanDescription()` to enforce 140-155 character range with validation
+    - Add JSDoc comments explaining new behavior
+    - Update all exports to use `buildSEO` name
+    - _Bug_Condition: isBugCondition(input) where input.intent or input.qualifier contains "Vivid Media Cheshire" OR buildMetadata(input).title contains duplicate brand OR title length > 60_
+    - _Expected_Behavior: Brand name "Vivid Media Cheshire" appears exactly once at end of title, total length < 60 characters_
+    - _Preservation: OpenGraph, Twitter, canonical URL, and robots meta functionality unchanged_
+    - _Requirements: 2.1, 2.2, 2.3, 2.4, 2.5_
+
+  - [x] 3.2 Update src/app/layout.tsx
+    - Add `title.template: '%s | Vivid Media Cheshire'` to metadata export
+    - Add `title.default: 'Websites, Ads & Analytics for Cheshire Businesses'` for homepage fallback
+    - Remove "| Vivid Media Cheshire" suffix from existing hardcoded titles
+    - Preserve all other metadata fields (authors, creator, publisher, formatDetection, metadataBase, alternates, openGraph, twitter, robots, verification, manifest)
+    - _Bug_Condition: Layout metadata layering causes duplicate brand names_
+    - _Expected_Behavior: Template pattern ensures brand appears exactly once_
+    - _Preservation: All non-title metadata fields remain unchanged_
+    - _Requirements: 2.1, 2.6, 3.1_
+
+  - [x] 3.3 Update page files to use buildSEO()
+    - Update src/app/page.tsx (Homepage)
+      - Change import from `buildMetadata` to `buildSEO`
+      - Update intent: "Websites, Ads & Analytics for Cheshire Businesses"
+      - Remove qualifier parameter
+      - Update description to be conversion-focused, 140-155 characters
+    - Update src/app/services/page.tsx
+      - Change import from `buildMetadata` to `buildSEO`
+      - Update intent: "Digital Marketing & Website Services for Small Businesses"
+      - Remove qualifier parameter
+      - Update description to be conversion-focused, 140-155 characters
+    - Update src/app/pricing/page.tsx
+      - Change import from `buildMetadata` to `buildSEO`
+      - Update intent: "Transparent Website & Marketing Pricing for Small Businesses"
+      - Remove qualifier parameter
+      - Update description to be conversion-focused, 140-155 characters
+    - Update src/app/about/page.tsx
+      - Change import from `buildMetadata` to `buildSEO`
+      - Update intent: "About Vivid Media Cheshire — Local Digital Marketing Support"
+      - Remove qualifier parameter
+      - Update description to be conversion-focused, 140-155 characters
+    - Update src/app/contact/page.tsx
+      - Change import from `buildMetadata` to `buildSEO`
+      - Update intent: "Contact Vivid Media Cheshire — Start Your Project"
+      - Remove qualifier parameter
+      - Update description to be conversion-focused, 140-155 characters
+    - Update src/app/blog/page.tsx
+      - Change import from `buildMetadata` to `buildSEO`
+      - Update intent: "Digital Marketing Insights for Small Businesses"
+      - Remove qualifier parameter
+      - Update description to be conversion-focused, 140-155 characters
+    - Search for any other files using `buildMetadata` and update them
+    - _Bug_Condition: Pages using buildMetadata with brand-containing qualifiers create duplicates_
+    - _Expected_Behavior: All pages use buildSEO with clean titles, brand added via template_
+    - _Preservation: Page navigation and display remain visually identical_
+    - _Requirements: 2.1, 2.2, 2.3, 2.4, 2.7_
+
+  - [x] 3.4 Create scripts/seo-check.js verification script
+    - Scan src/app directory recursively to find all page.tsx files
+    - Extract metadata exports from each file
+    - Build list of all routes
+    - Validate each route:
+      - Brand name appears exactly once in title
+      - Title length is under 60 characters
+      - Title follows "Primary Keyword | Supporting Context" format
+      - No duplicate titles across routes
+      - Description length is between 140-155 characters
+      - Description is present and non-empty
+    - Generate report showing total routes, routes with issues, routes passing
+    - Exit with code 1 if any issues found, 0 if all pass
+    - _Bug_Condition: No automated validation of title correctness_
+    - _Expected_Behavior: Script validates all titles meet SEO requirements_
+    - _Preservation: No impact on existing functionality_
+    - _Requirements: 2.8_
+
+  - [x] 3.5 Add npm script for seo:check
+    - Update package.json scripts section
+    - Add `"seo:check": "node scripts/seo-check.js"`
+    - _Bug_Condition: No easy way to run SEO validation_
+    - _Expected_Behavior: Developers can run `npm run seo:check` to validate titles_
+    - _Preservation: No impact on existing scripts_
+    - _Requirements: 2.8_
+
+  - [x] 3.6 Verify CloudFront invalidation in deployment workflow
+    - Open .github/workflows/s3-cloudfront-deploy.yml
+    - Confirm invalidation step exists for distribution E2IBMHQ3GCW6ZK
+    - If missing, add step: `aws cloudfront create-invalidation --distribution-id E2IBMHQ3GCW6ZK --paths "/*"`
+    - Ensure invalidation runs after S3 upload
+    - _Bug_Condition: Metadata changes may not be visible due to CloudFront caching_
+    - _Expected_Behavior: Cache invalidation ensures metadata changes are immediately visible_
+    - _Preservation: S3 + CloudFront deployment architecture unchanged_
+    - _Requirements: 2.9, 3.1_
+
+  - [x] 3.7 Verify bug condition exploration test now passes
+    - **Property 1: Expected Behavior** - Single Brand Name in All Titles
+    - **IMPORTANT**: Re-run the SAME inspection from task 1 - do NOT write a new test
+    - The inspection from task 1 encodes the expected behavior
+    - When this passes, it confirms the expected behavior is satisfied
+    - Build the application: `npm run build`
+    - Inspect generated HTML for all routes
+    - Verify Contact page title shows "Contact Vivid Media Cheshire — Start Your Project | Vivid Media Cheshire" (brand appears once)
+    - Verify all page titles are under 60 characters
+    - Verify all titles follow "Primary Keyword | Supporting Context" format
+    - **EXPECTED OUTCOME**: Inspection PASSES (confirms bug is fixed)
+    - _Requirements: 2.1, 2.3_
+
+  - [x] 3.8 Verify preservation tests still pass
+    - **Property 2: Preservation** - OpenGraph, Twitter, Canonical, and Robots Metadata
+    - **IMPORTANT**: Re-run the SAME tests from task 2 - do NOT write new tests
+    - Run preservation property tests: `npm test tests/seo-preservation.test.ts`
+    - **EXPECTED OUTCOME**: Tests PASS (confirms no regressions)
+    - Confirm all OpenGraph metadata fields unchanged
+    - Confirm all Twitter card metadata fields unchanged
+    - Confirm canonical URL normalization unchanged
+    - Confirm robots meta tags unchanged
+
+- [x] 4. Checkpoint - Ensure all tests pass
+  - Run `npm run seo:check` and verify all routes pass validation
+  - Run `npm test` and verify all preservation tests pass
+  - Build application and manually inspect titles in browser DevTools
+  - Deploy to staging (if available) and run Ahrefs crawl to verify zero duplicate titles
+  - Verify CloudFront cache invalidation works by checking metadata changes are visible
+  - Ask user if any questions arise or if ready to deploy to production

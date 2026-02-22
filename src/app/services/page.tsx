@@ -5,12 +5,11 @@ import { Layout } from "@/components/layout";
 import { ServiceCard } from "@/components/services/ServiceCard";
 import ServicesContactSection from "@/components/sections/ServicesContactSection";
 import MobileStickyButton from "@/components/ui/MobileStickyButton";
-import { buildMetadata } from "@/lib/seo";
+import { buildSEO } from "@/lib/seo";
 
-export const metadata: Metadata = buildMetadata({
-  intent: "Digital Marketing & Web Services",
-  qualifier: "in Cheshire",
-  description: "Mobile-first websites, analytics, ad campaigns and editorial photography built on secure cloud infrastructure for growing businesses.",
+export const metadata: Metadata = buildSEO({
+  intent: "Digital Marketing & Websites",
+  description: "Mobile-first websites, Google Ads, analytics, and photography for Cheshire businesses. 82% faster load times, local support, transparent pricing.",
   canonicalPath: "/services/",
   ogImage: "/images/services/web-hosting-and-migration/hosting-migration-card.webp",
 });
@@ -296,7 +295,7 @@ export default function ServicesPage() {
                   {/* After screenshot */}
                   <div className="mb-4 rounded-lg overflow-hidden">
                     <img
-                      src="/images/services/Web Hosting And Migration/pagespeed-aws-migration-desktop.webp"
+                      src="/images/services/web-hosting-and-migration/pagespeed-aws-migration-desktop.webp"
                       alt="Google Lighthouse performance score of 99 after secure cloud migration"
                       className="w-full h-auto"
                     />

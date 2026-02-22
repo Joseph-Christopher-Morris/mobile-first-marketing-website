@@ -14,20 +14,20 @@ const post: BlogPost = {
     💡 The moments that worked — and didn't</p>
     <p>This isn't theory. It's <strong>£13.5K made from £546 in print costs.</strong></p>
     <h2>🚀 Flyer V3: Built to Scale</h2>
-    <img src="/images/blog/211125_Hampson_Auctions-29.webp" alt="Porsche 911 at the Hampson Auctions Concorde Conference Centre Sale: November 2021" />
+    <img src="/images/blog/211125_Hampson_Auctions-29.webp" alt="Porsche 911 at the Hampson Auctions Concorde Conference Centre Sale: November 2021" loading="lazy" />
     <p>By early 2023, I'd levelled up my content and my clients.</p>
-    <p>I had repeated work with Car & Classic, stronger visuals, and better grammar. Time to scale.</p>
+    <p>I had repeated work with Car &amp; Classic, stronger visuals, and better grammar. Time to scale.</p>
     <p><strong>Flyer V3 Goals:</strong></p>
     <ul>
       <li>More varied, premium images</li>
       <li>Tighter writing</li>
       <li>A show-stopping cover</li>
     </ul>
-    <img src="/images/blog/WhatsApp Image 2025-07-11 at 2.22.33 PM (2).webp" alt="Front of Version 3 Flyer — Sharp, personal, and proven" />
-    <img src="/images/blog/WhatsApp Image 2025-07-11 at 2.22.33 PM (3).webp" alt="Back of Version 3 Flyer — Proof over promise" />
+    <img src="/images/blog/WhatsApp Image 2025-07-11 at 2.22.33 PM (2).webp" alt="Front of Version 3 Flyer — Sharp, personal, and proven" loading="lazy" />
+    <img src="/images/blog/WhatsApp Image 2025-07-11 at 2.22.33 PM (3).webp" alt="Back of Version 3 Flyer — Proof over promise" loading="lazy" />
     <p>I chose each image to <strong>create emotion, not just fill space.</strong></p>
     <h2>⚠️ NEC Show Roadbump</h2>
-    <img src="/images/blog/230112_NEC_Autoshow-132.webp" alt="The Praga R1R race car at the ROWE trade stand at the NEC Autosport International show" />
+    <img src="/images/blog/230112_NEC_Autoshow-132.webp" alt="The Praga R1R race car at the ROWE trade stand at the NEC Autosport International show" loading="lazy" />
     <p>Right before the NEC Autosport International, Vistaprint emailed me:</p>
     <blockquote>"Can't print in time."</blockquote>
     <p>I called, got it sorted, and got refunded.<br />
@@ -53,28 +53,28 @@ const post: BlogPost = {
     <ul>
       <li>Hampson Auctions</li>
       <li>Northwest Motor Auction</li>
-      <li>Car & Classic</li>
+      <li>Car &amp; Classic</li>
     </ul>
     <p><strong>2023 — £5,968.47</strong></p>
     <ul>
       <li>Hampson Auctions</li>
-      <li>Car & Classic</li>
+      <li>Car &amp; Classic</li>
       <li>Historics Auctioneers</li>
       <li>Bidding Classics</li>
     </ul>
     <p><strong>2024 — £2,099.55</strong></p>
     <ul>
       <li>Hampson Auctions</li>
-      <li>Car & Classic</li>
+      <li>Car &amp; Classic</li>
     </ul>
     <p><strong>2025 — £1,124.31 (to July 2025)</strong></p>
     <ul>
       <li>Hampson Auctions</li>
-      <li>Car & Classic</li>
+      <li>Car &amp; Classic</li>
     </ul>
     <p><em>Total revenue from flyers: <strong>£13,563.92</strong> — a <strong>2,380% ROI</strong>.</em></p>
     <h2>🧩 Key Takeaways</h2>
-    <img src="/images/blog/230112_NEC_Autoshow-62.webp" alt="A Porsche 718 Cayman GT4 RS and a McLaren Senna at the Logic stand at NEC Autosport International" />
+    <img src="/images/blog/230112_NEC_Autoshow-62.webp" alt="A Porsche 718 Cayman GT4 RS and a McLaren Senna at the Logic stand at NEC Autosport International" loading="lazy" />
     <ul>
       <li><strong>Flyers made me visible in high-trust spaces.</strong></li>
       <li><strong>My portfolio fed word-of-mouth.</strong></li>

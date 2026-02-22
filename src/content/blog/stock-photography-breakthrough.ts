@@ -9,7 +9,7 @@ const post: BlogPost = {
     <p>I didn't jump into stock photography expecting overnight success.<br />
     I got in for one reason: to build a recurring income stream from my creative work.</p>
 
-    <img src="/images/blog/240221-Australia_Trip-314.webp" alt="Landscape of Sydney framed by palm trees and shrubs in the foreground" />
+    <img src="/images/blog/240221-Australia_Trip-314.webp" alt="Landscape of Sydney framed by palm trees and shrubs in the foreground" loading="lazy" />
 
     <p>In <strong>Part 1</strong>, I shared how I cut out middlemen like Wirestock and started licensing directly with Shutterstock and Adobe Stock.</p>
 
@@ -19,7 +19,7 @@ const post: BlogPost = {
 
     <p>By January 2023, I had nearly <strong>1,000 assets</strong> on Shutterstock. It wasn't an explosive start, but it was consistent.</p>
 
-    <img src="/images/blog/Shutterstock_Downloads_Earnings_Jan_Apr_2023.webp" alt="Shutterstock earnings and revenue line chart (January to April 2023)" />
+    <img src="/images/blog/Shutterstock_Downloads_Earnings_Jan_Apr_2023.webp" alt="Shutterstock earnings and revenue line chart (January to April 2023)" loading="lazy" />
 
     <ul>
       <li>🔹 <strong>January 2023:</strong> 5 downloads — $1.93</li>
@@ -31,9 +31,9 @@ const post: BlogPost = {
     <p>My Shutterstock revenue started to compound. Small amounts, but noticeable.<br />
     My breakthrough wasn't viral — it was <strong>volume</strong>.</p>
 
-    <h2>🚀 Diversifying to Adobe Stock & iStock</h2>
+    <h2>🚀 Diversifying to Adobe Stock &amp; iStock</h2>
 
-    <img src="/images/blog/Stock_Photography_Earnings_Comparison.webp" alt="Bar chart comparing earnings across Shutterstock, Adobe Stock, and iStock platforms" />
+    <img src="/images/blog/Stock_Photography_Earnings_Comparison.webp" alt="Bar chart comparing earnings across Shutterstock, Adobe Stock, and iStock platforms" loading="lazy" />
     <p><em>Platform diversification in action — spreading uploads across multiple agencies reduced risk and maximized reach.</em></p>
 
     <p>In 2023, <strong>Adobe Stock</strong> and <strong>iStock</strong> combined accounted for approximately <strong>22%</strong> of my total stock photography income. Not massive individually, but they played a key role in building a broader, more resilient revenue stream.</p>
@@ -57,7 +57,7 @@ const post: BlogPost = {
 
     <h3>3. Patience Is a Superpower</h3>
 
-    <img src="/images/blog/Screenshot 2025-05-25 191000.webp" alt="A Screenshot of a picture I took of the Nantwich farmers market on BBC News" />
+    <img src="/images/blog/screenshot-2025-05-25-191000.webp" alt="A Screenshot of a picture I took of the Nantwich farmers market on BBC News" loading="lazy" />
 
     <p>Growth wasn't linear.<br />
     Some months were slow. Others picked up when I uploaded niche or seasonal content.</p>
@@ -77,7 +77,7 @@ const post: BlogPost = {
 
     <h2>💵 My 2023 Earnings Breakdown (Stock Photography Breakthrough)</h2>
 
-    <img src="/images/blog/Stock_Photography_Earnings_Comparison.webp" alt="Stock photography bar chart showing revenue from Shutterstock, Adobe Stock, and iStock" />
+    <img src="/images/blog/Stock_Photography_Earnings_Comparison.webp" alt="Stock photography bar chart showing revenue from Shutterstock, Adobe Stock, and iStock" loading="lazy" />
 
     <ul>
       <li><strong>January 2023 – December 2023:</strong> $146.54 (across Shutterstock, Adobe Stock, and iStock)</li>
@@ -125,7 +125,7 @@ const post: BlogPost = {
   author: 'Joe — Digital Marketing & Analytics',
   category: 'Case Studies',
   tags: ['content-strategy', 'case-study', 'conversion-optimisation', 'small-business'],
-  image: '/images/blog/Cumulative_Shutterstock_Downloads_Earnings_Jan-Apr2023.webp',
+  image: '/images/blog/Cumulative_Shutterstock_Downloads_Earnings_Jan-Apr2023.png',
   readTime: 6,
   featured: false,
 };

@@ -1,10 +1,12 @@
 import type { Metadata } from 'next';
 import Link from 'next/link';
-import Image from 'next/image';
 import { notFound } from 'next/navigation';
 import { Layout } from '@/components/layout';
 import { getBlogPost, getAllBlogPosts } from '@/lib/blog-api';
 import { processContentForHeroEnforcement } from '@/lib/content-processor';
+import { buildSEO } from '@/lib/seo';
+import { generateMetadata as generateSocialMetadata } from '@/lib/metadata-generator';
+import BlogHeroImage from '@/components/blog/BlogHeroImage';
 
 interface BlogPostPageProps {
   params: {
@@ -25,48 +27,28 @@ export async function generateMetadata({
   const post = await getBlogPost(params.slug);
 
   if (!post) {
-    return {
-      title: 'Post Not Found',
-    };
+    return buildSEO({
+      intent: "Post Not Found",
+      description: "The blog post you are looking for could not be found. Browse our digital marketing case studies and insights.",
+      canonicalPath: `/blog/${params.slug}/`,
+      skipTitleValidation: true,
+    });
   }
 
-  const baseUrl = 'https://vividmediacheshire.com';
-  const postUrl = `${baseUrl}/blog/${params.slug}`;
-  const imageUrl = post.image ? `${baseUrl}${post.image}` : `${baseUrl}/images/hero/aston-martin-db6-website.webp`;
-
-  return {
-    title: post.title,
-    description: post.excerpt,
-    metadataBase: new URL(baseUrl),
-    alternates: {
-      canonical: `/blog/${params.slug}`,
-    },
-    openGraph: {
+  // Use the new social sharing metadata generator
+  return generateSocialMetadata({
+    pageType: 'blog',
+    content: {
+      title: post.title,
+      description: post.excerpt,
+      image: post.image,
       type: 'article',
-      title: post.title,
-      description: post.excerpt,
-      url: postUrl,
-      siteName: 'Vivid Media Cheshire',
-      publishedTime: post.date,
-      authors: [post.author],
+      publishedDate: post.date,
+      author: post.author,
       tags: post.tags,
-      images: [
-        {
-          url: imageUrl,
-          width: 1200,
-          height: 630,
-          alt: `${post.title} - Vivid Media Cheshire`,
-          type: 'image/webp',
-        },
-      ],
     },
-    twitter: {
-      card: 'summary_large_image',
-      title: post.title,
-      description: post.excerpt,
-      images: [imageUrl],
-    },
-  };
+    canonicalPath: `/blog/${params.slug}`,
+  });
 }
 
 export default async function BlogPostPage({ params }: BlogPostPageProps) {
@@ -181,11 +163,9 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
         {post.image && (
           <div className='blog-hero max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 -mt-8 mb-12'>
             <div className='relative w-full h-64 md:h-96 rounded-lg overflow-hidden shadow-lg'>
-              <Image
+              <BlogHeroImage
                 src={post.image}
                 alt={`Hero image for ${post.title}`}
-                fill
-                className='object-cover'
                 priority={true}
                 sizes="(max-width: 768px) 100vw, (max-width: 1200px) 80vw, 1200px"
                 fetchPriority="high"

@@ -101,7 +101,7 @@ const LocalFocusSection: React.FC<LocalFocusSectionProps> = ({ localStats }) => 
           <div className='relative'>
             <div className='relative h-96 lg:h-[500px] rounded-lg overflow-hidden shadow-xl'>
               <Image
-                src='/images/services/Photography/240427-_Nantwich_Stock_Photography-19.webp'
+                src='/images/services/photography/240427-_Nantwich_Stock_Photography-19.webp'
                 alt='Nantwich market square showing local community and business activity'
                 fill
                 className='object-cover'

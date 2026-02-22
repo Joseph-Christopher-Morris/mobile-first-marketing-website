@@ -8,16 +8,16 @@ const post: BlogPost = {
   content: `
     <p>Over <strong>1,100 downloads</strong> across 24 months have earned me <strong>$484.05</strong> in royalties on iStock.<br />
     This article explores my journey and what the data reveals in <strong>DeepMeta 4</strong>.</p>
-    <img src="/images/blog/240915-Trentham_Car_Meet-1.webp" alt="A row of cars displayed at a Trentham Gardens Classic Car Meet" />
+    <img src="/images/blog/240915-Trentham_Car_Meet-1.webp" alt="A row of cars displayed at a Trentham Gardens Classic Car Meet" loading="lazy" />
     <h2>🧭 Prologue</h2>
-    <img src="/images/blog/Cumulative_Stock_Photography_Revenue_2022_2025_v2.webp?v=20251217" alt="DeepMeta 4 Dashboard screenshot segmenting my earnings from my iStock account" class="analytics-screenshot" />
+    <img src="/images/blog/Cumulative_Stock_Photography_Revenue_2022_2025_v2.webp?v=20251217" alt="DeepMeta 4 Dashboard screenshot segmenting my earnings from my iStock account" class="analytics-screenshot" loading="lazy" />
     <p>I have created a <strong>case study</strong> on my stock photography journey, detailing why I started, my key takeaways, and how my stock photography earnings scaled from <strong>October 2022 to June 2025</strong>.</p>
     <h3>Why did I start importing my iStock earnings data to DeepMeta 4?</h3>
     <p>In <strong>January 2024</strong>, I found navigating my iStock data text files to be unintuitive — especially when compared to using my <strong>Shutterstock</strong> and <strong>Adobe Stock</strong> dashboards.</p>
     <p>iStock had dashboards, but they felt outdated and uncompetitive compared to its competitors.<br />
     After a quick Google search, I discovered I could upload my iStock <code>.txt</code> data to <strong>DeepMeta 4</strong>, which presented my datasets in a <strong>presentable, intuitive, and informative</strong> manner.</p>
     <h2>📊 Trends Over Time on My iStock Account via DeepMeta 4</h2>
-    <img src="/images/blog/Screenshot 2025-08-14 093957.webp?v=20251217" alt="DeepMeta 4 Dashboard segmenting my earnings from my iStock account" class="analytics-screenshot" />
+    <img src="/images/blog/screenshot-2025-08-14-093957.webp?v=20251217" alt="DeepMeta 4 Dashboard segmenting my earnings from my iStock account" class="analytics-screenshot" loading="lazy" />
     <p>For the first twelve months of my iStock account (<strong>March 2023 – March 2024</strong>), I had only a few hundred photos uploaded — not enough data to draw meaningful conclusions.</p>
     <p>Shutterstock was different: I had <strong>4,000 images</strong> on that platform.<br />
     Evergreen content such as <strong>MoT signs</strong>, <strong>roadwork images</strong>, and <strong>car showroom shots</strong> consistently generated downloads.</p>
@@ -32,14 +32,14 @@ const post: BlogPost = {
     These subjects are highly relevant to publications and individuals creating content.<br />
     A row of cars can serve as a hero image for a dealership's website, while a "Shop Sale" photo can be licensed for articles about the UK high street.</p>
     <h2>🏆 Top 25 Photos | 2023–2025</h2>
-    <img src="/images/blog/Screenshot 2025-08-14 094204.webp?v=20251217" alt="DeepMeta Dashboard showing my Top 25 selling photos from 2023 to 2025" class="analytics-screenshot" />
+    <img src="/images/blog/screenshot-2025-08-14-094204.webp?v=20251217" alt="DeepMeta Dashboard showing my Top 25 selling photos from 2023 to 2025" class="analytics-screenshot" loading="lazy" />
     <ul>
       <li><strong>2023:</strong> Most sales came from <strong>car images</strong>, followed by high street and tractor photos.</li>
       <li><strong>2024:</strong> Marked by dominance in <strong>car auction/dealership images</strong> and high street photos, with landmark images rising.</li>
       <li><strong>2025:</strong> Continued success in <strong>cars</strong> and <strong>UK high street</strong> themes.</li>
     </ul>
     <h2>💵 Breakdown of iStock Earnings</h2>
-    <img class="analytics-screenshot" src="/images/blog/Screenshot 2025-08-14 093805-cropped.webp?v=20251217" alt="DeepMeta Dashboard showing my sales by royalty year" />
+    <img class="analytics-screenshot" src="/images/blog/screenshot-2025-08-14-093805-cropped.webp?v=20251217" alt="DeepMeta Dashboard showing my sales by royalty year" loading="lazy" />
     <p><em>Year-over-year earnings growth tracked through DeepMeta 4 — showing how consistent uploads compound over time.</em></p>
     
     <p><strong>Key Performance Stats:</strong></p>
@@ -48,7 +48,7 @@ const post: BlogPost = {
     • <strong>2025 (to June):</strong> $219.67 total royalties, $0.46 RPD</p>
     <h2>🌍 Top 3 Countries Where My Photos Sold</h2>
 
-    <img src="/images/blog/Screenshot 2025-08-14 094416.webp?v=20251217" alt="Top 3 Countries Where My Photos Sold" class="analytics-screenshot" />
+    <img src="/images/blog/screenshot-2025-08-14-094416.webp?v=20251217" alt="Top 3 Countries Where My Photos Sold" class="analytics-screenshot" loading="lazy" />
     <p><em>UK-based automotive photography that resonated with buyers across multiple countries — proof that quality content travels.</em></p>
 
     <h3>🇬🇧 United Kingdom — $183.77</h3>
@@ -66,9 +66,9 @@ const post: BlogPost = {
     <h2>🔗 Related Case Studies</h2>
     <ul>
       <li><a href="/blog/stock-photography-getting-started">Stock Photography — Getting Started</a></li>
-      <li><a href="/blog/stock-photography-income-growth">Stock Photography — Income Growth & Scaling</a></li>
+      <li><a href="/blog/stock-photography-income-growth">Stock Photography — Income Growth &amp; Scaling</a></li>
       <li><a href="/blog/stock-photography-breakthrough">Stock Photography — My 2023-2024 Breakthrough</a></li>
-      <li><a href="/blog/stock-photography-lessons">Stock Photography — Lessons & Real-World Applications</a></li>
+      <li><a href="/blog/stock-photography-lessons">Stock Photography — Lessons &amp; Real-World Applications</a></li>
     </ul>
 
     <hr />

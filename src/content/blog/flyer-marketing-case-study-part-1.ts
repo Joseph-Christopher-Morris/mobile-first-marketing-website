@@ -7,7 +7,7 @@ const post: BlogPost = {
   content: `
     <p>While everyone's shouting on Instagram and dumping budgets into Meta Ads, I tried something wildly simple: <strong>printing flyers</strong>.</p>
 
-    <img src="/images/hero/aston-martin-db6-website.webp" alt="Aston Martin DB6 Photoshoot" />
+    <img src="/images/hero/aston-martin-db6-website.webp" alt="Aston Martin DB6 Photoshoot" loading="lazy" />
     <p><em>I used this picture of the Aston Martin on the back of my business card because it's a memorable image.</em></p>
 
     <p><strong>£546 later</strong>, those flyers helped me earn <strong>over £13,500</strong>, landing paid jobs with <strong>race teams, sponsors, and car auctions</strong>.<br />
@@ -15,7 +15,7 @@ const post: BlogPost = {
 
     <h2>🎯 Background: Building from Zero</h2>
 
-    <img src="/images/blog/WhatsApp Image 2025-07-11 at 2.22.32 PM (1).webp" alt="Version 1 of my flyer, handed out at car meets and Oulton Park" />
+    <img src="/images/blog/WhatsApp Image 2025-07-11 at 2.22.32 PM (1).webp" alt="Version 1 of my flyer, handed out at car meets and Oulton Park" loading="lazy" />
 
     <p>After launching <em>Vivid Media Cheshire</em>, I knew I needed real-world visibility. Instead of relying solely on Instagram or ads, I wanted print materials that felt premium and sparked real conversations at events.</p>
 
@@ -33,7 +33,7 @@ const post: BlogPost = {
       <li>Personal touches like photos of my dog and high-impact cars</li>
     </ul>
 
-    <img src="/images/blog/WhatsApp Image 2025-07-11 at 2.22.32 PM.webp" alt="Back of Version 1 Flyer – Designed for real conversations" />
+    <img src="/images/blog/WhatsApp Image 2025-07-11 at 2.22.32 PM.webp" alt="Back of Version 1 Flyer – Designed for real conversations" loading="lazy" />
 
     <h3>Key Image Choices</h3>
 
@@ -48,7 +48,7 @@ const post: BlogPost = {
 
     <h2>🚀 First Breakthrough Client</h2>
 
-    <img src="/images/blog/211211_24_Club_24_Hours_37_Watermark.webp" alt="Junior Saloon Car Championship Citroen Saxos" />
+    <img src="/images/blog/211211_24_Club_24_Hours_37_Watermark.webp" alt="Junior Saloon Car Championship Citroen Saxos" loading="lazy" />
 
     <p>Thanks to my Dad handing a flyer to someone in <strong>JSCC team clothing</strong>, I landed my first <strong>paid shoot in October 2020</strong>. That flyer led to:</p>
 
@@ -62,7 +62,7 @@ const post: BlogPost = {
 
     <h2>📬 Why Physical Marketing Still Wins</h2>
 
-    <img src="/images/blog/Bathgate Yamaha R1 Superbike with Volvo FM Lorry in sand front three quarter poster.webp" alt="Bathgate Silica Sand Superbike Sponsor Photoshoot" />
+    <img src="/images/blog/Bathgate Yamaha R1 Superbike with Volvo FM Lorry in sand front three quarter poster.webp" alt="Bathgate Silica Sand Superbike Sponsor Photoshoot" loading="lazy" />
 
     <p>People remember what they can <strong>touch</strong>. My flyers broke through the digital noise and:</p>
 

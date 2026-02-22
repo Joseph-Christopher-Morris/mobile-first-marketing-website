@@ -105,10 +105,17 @@ jobs:
           [ -f out/robots.txt ] && aws s3 cp out/robots.txt s3://$S3_BUCKET/robots.txt --cache-control "$HTML_CACHE" --content-type "text/plain"
 
       - name: Invalidate CloudFront
-        if: ${{ github.event.inputs.invalidate == 'true' }}
         run: |
           aws cloudfront create-invalidation --distribution-id "$CF_DISTRIBUTION_ID" \
             --paths "/" "/index.html" "/services/*" "/blog*" "/images/*" "/_next/*" "/sitemap.xml"
+
+      - name: Submit to IndexNow
+        run: node scripts/submit-indexnow.js --all
+        env:
+          INDEXNOW_API_KEY: ${{ secrets.INDEXNOW_API_KEY }}
+          SITE_DOMAIN: vividmediacheshire.com
+          CLOUDFRONT_DOMAIN: d15sc9fc739ev2.cloudfront.net
+        continue-on-error: true
 
       - name: Finalize Audit + Dashboard
         run: |
