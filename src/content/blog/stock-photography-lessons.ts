@@ -11,7 +11,7 @@ const post: BlogPost = {
     <p>It's not about chasing trends or hoping for viral hits.<br />
     It's about producing <strong>images with steady demand</strong> — the kind buyers search for month after month.</p>
 
-    <img src="/images/blog/240217-Australia_Trip-226.webp" alt="A neon art installation in Sydney Chinatown at night, with people walking in the background" />
+    <img src="/images/blog/240217-Australia_Trip-226.webp" alt="A neon art installation in Sydney Chinatown at night, with people walking in the background" loading="lazy" />
 
     <h2>💡 Key Lessons I Took Away</h2>
     <ul>
@@ -25,13 +25,13 @@ const post: BlogPost = {
 
     <h2>How This Shaped My Approach to Other Content Strategies</h2>
 
-    <img src="/images/blog/Stock_Photography_Earnings_Comparison_Clear.webp" alt="Clear earnings comparison showing the long-term value of evergreen content" />
+    <img src="/images/blog/Stock_Photography_Earnings_Comparison_Clear.webp" alt="Clear earnings comparison showing the long-term value of evergreen content" loading="lazy" />
     <p><em>The data that changed my content strategy — proof that evergreen subjects deliver consistent returns over time.</em></p>
 
     <h3>Hampson Auctions</h3>
     <p>I leveraged my experience from photographing car meets, showrooms, and auctions to understand <strong>what visuals perform exceptionally well</strong>.</p>
 
-    <img src="/images/blog/240728-Hampson_Auctions _Oulton_Park_GC_Sun-7.webp" alt="General view of Hampson Auctions Oulton Park Gold Cup Sale 2024 with people packed in a busy venue" />
+    <img src="/images/blog/240728-Hampson_Auctions _Oulton_Park_GC_Sun-7.webp" alt="General view of Hampson Auctions Oulton Park Gold Cup Sale 2024 with people packed in a busy venue" loading="lazy" />
 
     <p>I applied this knowledge when photographing <strong>Hampson Auctions</strong> venues and sales to deliver a mix of content that:</p>
 
@@ -46,7 +46,7 @@ const post: BlogPost = {
     <h3>Nantwich Youth and Community Centre (NYCC)</h3>
     <p>I applied the same content principles for <strong>NYCC</strong>, focusing on <strong>relevance, community engagement, and visual impact</strong>.</p>
 
-    <img src="/images/blog/250710-NYCC-2.webp" alt="View of the NYCC outdoor renovation with a cornflower blue painted shed" />
+    <img src="/images/blog/250710-NYCC-2.webp" alt="View of the NYCC outdoor renovation with a cornflower blue painted shed" loading="lazy" />
 
     <p>When creating NYCC social media posts (e.g., promoting <strong>Rock Fest II</strong>), I focused on images that:</p>
 
@@ -60,7 +60,7 @@ const post: BlogPost = {
 
     <ul>
       <li>Was <strong>relevant</strong> to the message or event</li>
-      <li>Met <strong>stakeholder expectations</strong> for style & quality</li>
+      <li>Met <strong>stakeholder expectations</strong> for style &amp; quality</li>
       <li>Respected <strong>GDPR and privacy guidelines</strong></li>
       <li>Avoided <strong>sensitive or controversial topics</strong></li>
     </ul>

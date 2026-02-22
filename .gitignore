@@ -120,8 +120,12 @@ test-results/
 validation-reports/
 lighthouse-reports/
 playwright-report/
-logs/
 reports/
+
+# IndexNow submission logs (keep directory structure)
+logs/*.json
+logs/*.log
+!logs/.gitkeep
 
 # Test files (temporary)
 test-*.html

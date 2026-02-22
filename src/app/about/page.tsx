@@ -3,12 +3,12 @@ import { Layout } from '@/components/layout';
 import Image from 'next/image';
 import Link from 'next/link';
 import { AboutServicesForm } from '@/components/AboutServicesForm';
-import { buildMetadata } from '@/lib/seo';
+import { buildSEO } from '@/lib/seo';
 
-export const metadata: Metadata = buildMetadata({
-  intent: "About Joe Morris",
-  qualifier: "Digital Marketing & Photography",
-  description: "Cloud-based web developer and published editorial photographer helping Cheshire businesses grow through analytics-led marketing.",
+export const metadata: Metadata = buildSEO({
+  intent: "About",
+  qualifier: "Digital Marketing Support",
+  description: "Nantwich digital marketing specialist helping Cheshire businesses with fast websites, Google Ads, and analytics. BBC-licensed photographer, Adobe certified",
   canonicalPath: "/about/",
 });
 

@@ -4,18 +4,18 @@ const post: BlogPost = {
   slug: 'stock-photography-getting-started',
   title: 'Why I Started Selling Stock Photography (And How You Can Too)',
   excerpt:
-    'I didn\'t start stock photography for exposure. I began for income. Learn how I diversified my photography business and what stock photography really taught me.',
+    "I didn't start stock photography for exposure. I began for income. Learn how I diversified my photography business and what stock photography really taught me.",
   content: `
     <p>I didn't start stock photography for exposure. I began for income.<br />
     Commissioned shoots, eBay sales, and even Hot Wheels listings — I wanted another income stream.</p>
 
-    <img src="/images/blog/230226_Swadlincote_Stock_Photography-23.webp" alt="A row of cars waiting at a traffic light, with a Fendi storefront window display in the background" />
+    <img src="/images/blog/230226_Swadlincote_Stock_Photography-23.webp" alt="A row of cars waiting at a traffic light, with a Fendi storefront window display in the background" loading="lazy" />
 
     <p>Stock photography gave me that — plus patience, sharper instincts, and a new creative edge.</p>
 
     <h2>📸 Why I Started Stock Photography (It Wasn't for Exposure)</h2>
 
-    <img src="/images/blog/Shutterstock_Downloads_Earnings_Jan_Apr_2023.webp" alt="Vivid Brands Wirestock storefront with earnings and downloads" />
+    <img src="/images/blog/Shutterstock_Downloads_Earnings_Jan_Apr_2023.webp" alt="Vivid Brands Wirestock storefront with earnings and downloads" loading="lazy" />
 
     <p>The reason I wanted to dabble in stock photography was to <strong>diversify my income</strong> from paid commissioned photoshoots, Car And Classic consignments, and selling my Hot Wheels cars.</p>
 
@@ -27,7 +27,7 @@ const post: BlogPost = {
 
     <h2>❌ Why I Ditched Wirestock for Direct Sales</h2>
 
-    <img src="/images/blog/Cumulative_Shutterstock_Downloads_Earnings_Jan-Apr2023.webp" alt="Early Shutterstock earnings showing the beginning of direct platform sales" />
+    <img src="/images/blog/Cumulative_Shutterstock_Downloads_Earnings_Jan-Apr2023.png" alt="Early Shutterstock earnings showing the beginning of direct platform sales" loading="lazy" />
     <p><em>My first direct sales on Shutterstock — proof that cutting out the middleman was the right decision.</em></p>
 
     <p>I decided to sign up directly for <strong>Adobe Stock</strong>, <strong>Shutterstock</strong>, <strong>iStock</strong>, and <strong>Alamy</strong> to sell my photos to people who wanted to licence my assets for various purposes.</p>
@@ -42,7 +42,7 @@ const post: BlogPost = {
       <li>How to edit the picture in Lightroom Classic</li>
     </ul>
 
-    <img src="/images/blog/Cumulative_Shutterstock_Downloads_Earnings_Jan-Apr2023.webp" alt="First Photo licensed on my Shutterstock account on November 2nd 2022" />
+    <img src="/images/blog/Cumulative_Shutterstock_Downloads_Earnings_Jan-Apr2023.png" alt="First Photo licensed on my Shutterstock account on November 2nd 2022" loading="lazy" />
 
     <p>The photos I had ready to sell for my Shutterstock account included images from:</p>
 
@@ -67,7 +67,7 @@ const post: BlogPost = {
 
     <h2>🧠 What Stock Photography Really Taught Me</h2>
 
-    <img src="/images/blog/230210_Stoke_Car_Photography-9.webp" alt="Everyday street scene showing the type of mundane content that sells consistently" />
+    <img src="/images/blog/230210_Stoke_Car_Photography-9.webp" alt="Everyday street scene showing the type of mundane content that sells consistently" loading="lazy" />
     <p><em>This type of everyday scene — a closed shop on a high street — consistently outsold more "artistic" shots.</em></p>
 
     <ul>

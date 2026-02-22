@@ -6,18 +6,30 @@
  */
 
 export function processContentForHeroEnforcement(content: string): string {
-  // Add loading="lazy" and fetchpriority="low" to all img tags in content
-  // This prevents them from being preloaded before the hero image
+  // Add loading="lazy", fetchpriority="low", and onerror fallback to all img tags in content
+  // This prevents them from being preloaded before the hero image and provides fallback for missing images
   return content.replace(
-    /<img([^>]*?)>/gi,
+    /<img([^>]*?)\/?>/gi,
     (match, attributes) => {
-      // Don't modify if already has loading attribute
-      if (attributes.includes('loading=')) {
-        return match;
+      let modifiedAttributes = attributes;
+      
+      // Add loading="lazy" if not present
+      if (!attributes.includes('loading=')) {
+        modifiedAttributes += ' loading="lazy"';
       }
       
-      // Add lazy loading and low priority
-      return `<img${attributes} loading="lazy" fetchpriority="low">`;
+      // Add fetchpriority="low" if not present
+      if (!attributes.includes('fetchpriority=')) {
+        modifiedAttributes += ' fetchpriority="low"';
+      }
+      
+      // Add onerror fallback if not present
+      if (!attributes.includes('onerror=')) {
+        modifiedAttributes += ' onerror="this.src=\'/images/blog/default.webp\'"';
+      }
+      
+      // Return self-closing tag
+      return `<img${modifiedAttributes} />`;
     }
   );
 }

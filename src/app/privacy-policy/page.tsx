@@ -1,11 +1,11 @@
 import type { Metadata } from "next";
 import { Header } from "@/components/layout/Header";
 import { Footer } from "@/components/layout/Footer";
-import { buildMetadata } from "@/lib/seo";
+import { buildSEO } from "@/lib/seo";
 
-export const metadata: Metadata = buildMetadata({
+export const metadata: Metadata = buildSEO({
   intent: "Privacy Policy",
-  description: "How Vivid Media Cheshire collects, uses, and protects personal data.",
+  description: "How Vivid Media Cheshire collects, uses, and protects personal data. GDPR-compliant privacy notice for website visitors and clients.",
   canonicalPath: "/privacy-policy/",
 });
 

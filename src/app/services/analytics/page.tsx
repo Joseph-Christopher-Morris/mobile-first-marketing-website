@@ -4,12 +4,11 @@ import Image from 'next/image';
 import Link from 'next/link';
 import { ServiceInquiryForm } from '@/components/ServiceInquiryForm';
 import { ServiceSchemas } from '@/components/seo/ServiceSchema';
-import { buildMetadata } from '@/lib/seo';
+import { buildSEO } from '@/lib/seo';
 
-export const metadata: Metadata = buildMetadata({
+export const metadata: Metadata = buildSEO({
   intent: "Data Analytics & Insights",
-  qualifier: "for Cheshire Businesses",
-  description: "Clarity, tracking, and reporting dashboards that turn marketing data into clear decisions.",
+  description: "Track Google Ads performance, measure cost per enquiry, and fix tracking gaps. GA4 setup from £75. Microsoft Clarity insights for Cheshire businesses.",
   canonicalPath: "/services/analytics/",
   ogImage: "/images/services/Google-analytics-dashboard.webp",
 });

@@ -7,21 +7,23 @@ import { PressStrip } from '@/components/credibility/PressStrip';
 import { ServiceSchemas } from '@/components/seo/ServiceSchema';
 import { PhotographyInquiryForm } from '@/components/PhotographyInquiryForm';
 import { DualStickyCTA } from '@/components/DualStickyCTA';
-import { buildMetadata } from '@/lib/seo';
+import { generateMetadata as generateSocialMetadata } from '@/lib/metadata-generator';
 
-export const metadata: Metadata = buildMetadata({
-  intent: "Editorial & Commercial Photography",
-  qualifier: "in Cheshire",
-  description: "Published editorial photography for BBC, Forbes and commercial campaigns. Local photography supporting digital marketing and content strategy.",
-  canonicalPath: "/services/photography/",
-  ogImage: "/images/services/Photography/photography-hero.webp",
+export const metadata: Metadata = generateSocialMetadata({
+  pageType: 'service',
+  content: {
+    title: 'Editorial & Commercial Photography',
+    description: 'BBC-licensed editorial photography and commercial campaigns for Cheshire businesses. Professional imagery supporting digital marketing and content strategy',
+    image: '/images/services/photography/photography-hero.webp',
+  },
+  canonicalPath: '/services/photography',
 });
 
 export default function PhotographyServicesPage() {
   const galleryImages = [
     // Editorial proof - Financial Times (keep if you want top-of-page proof)
     {
-      src: '/images/services/Photography/5eb6fc44-e1a5-460d-8dea-923fd303f59d.webp',
+      src: '/images/services/photography/5eb6fc44-e1a5-460d-8dea-923fd303f59d.webp',
       alt: 'Published editorial photography work featured in Financial Times article about UK electric vehicle sales for leading business media',
       title: 'UK vies with Germany to be European EV champion',
       subtitle: 'Year of record sales was still below government targets',
@@ -32,7 +34,7 @@ export default function PhotographyServicesPage() {
 
     // Local / Nantwich (existing content – keeping)
     {
-      src: '/images/services/Photography/240427-_Nantwich_Stock_Photography-19.webp',
+      src: '/images/services/photography/240427-_Nantwich_Stock_Photography-19.webp',
       title: 'Nantwich Market Square Photography',
       alt: 'Professional commercial photography of Nantwich Market Square showing local traders and historic market town atmosphere',
       type: 'local' as const,
@@ -41,7 +43,7 @@ export default function PhotographyServicesPage() {
         'Capturing the vibrant atmosphere of Nantwich Market Square for local business and tourism use.'
     },
     {
-      src: '/images/services/Photography/240427-_Nantwich_Stock_Photography-23.webp',
+      src: '/images/services/photography/240427-_Nantwich_Stock_Photography-23.webp',
       title: 'Historic Town centre Architecture',
       alt: 'Architectural photography of Nantwich High Street with Tudor buildings and local shops',
       type: 'local' as const,
@@ -50,7 +52,7 @@ export default function PhotographyServicesPage() {
         "Architectural photography highlighting Nantwich's distinctive Tudor street scene for web, print, and destination marketing."
     },
     {
-      src: '/images/services/Photography/240421-Nantwich_Stock_Photography-49.webp',
+      src: '/images/services/photography/240421-Nantwich_Stock_Photography-49.webp',
       title: 'Community Life Documentation',
       alt: 'Documentary street photography capturing authentic daily life in Nantwich town centre',
       type: 'local' as const,
@@ -60,7 +62,7 @@ export default function PhotographyServicesPage() {
 
     // Hampson Auctions — DRONE
     {
-      src: '/images/services/Photography/WhatsApp%20Image%202025-11-01%20at%2011.58.16%20AM.webp',
+      src: '/images/services/photography/WhatsApp Image 2025-11-01 at 11.58.16 AM.webp',
       title: 'Hampson Auctions Bolesworth Castle Sale',
       alt: 'Aerial drone photograph of the Hampson Auctions Bolesworth Castle venue showcasing a diverse lineup of vehicles',
       type: 'campaign' as const,
@@ -71,7 +73,7 @@ export default function PhotographyServicesPage() {
 
     // Hampson Auctions — creative
     {
-      src: '/images/services/Photography/photography-sample-2.webp',
+      src: '/images/services/photography/photography-sample-2.webp',
       title: 'Hampson Auctions Creative Event Photography',
       alt: 'Creative commercial photography from the Hampson Auctions Bolesworth Castle Sale with enhanced golden evening atmosphere',
       type: 'campaign' as const,
@@ -82,7 +84,7 @@ export default function PhotographyServicesPage() {
 
     // Singtel licensed image
     {
-      src: '/images/services/Photography/photography-sample-1.webp',
+      src: '/images/services/photography/photography-sample-1.webp',
       title: 'Singtel Investor Day 2025',
       alt: 'Licensed commercial photograph used in Singtel Investor Day 2025 presentation on ROIC improvement at Optus',
       type: 'campaign' as const,
@@ -93,7 +95,7 @@ export default function PhotographyServicesPage() {
 
     // CNN / FTSE 100 / LSEG
     {
-      src: '/images/services/Photography/photography-sample-3.webp',
+      src: '/images/services/photography/photography-sample-3.webp',
       title: 'FTSE 100 News',
       alt: 'Corporate photograph of the London Stock Exchange Group building used in CNN coverage of the FTSE 100 index',
       type: 'campaign' as const,
@@ -104,7 +106,7 @@ export default function PhotographyServicesPage() {
 
     // The Times — UK Car Finance scandal
     {
-      src: '/images/services/Photography/photography-sample-4.webp',
+      src: '/images/services/photography/photography-sample-4.webp',
       title: 'Professional Standards Showcase',
       alt: 'Editorial photograph of UK car dealerships featured in The Times coverage of the UK Car Finance scandal',
       type: 'campaign' as const,
@@ -154,7 +156,7 @@ export default function PhotographyServicesPage() {
               <div className="relative">
                 <div className="relative h-[480px] rounded-2xl overflow-hidden shadow-2xl">
                   <Image
-                    src="/images/services/Photography/photography-hero.webp"
+                    src="/images/services/photography/photography-hero.webp"
                     alt="Photography showcase from Vivid Media Cheshire"
                     fill
                     className="object-cover"

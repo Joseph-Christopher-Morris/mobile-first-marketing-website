@@ -1,7 +1,7 @@
-import { buildMetadata } from "@/lib/seo";
+import { buildSEO } from "@/lib/seo";
 import Conversion from "./Conversion";
 
-export const metadata = buildMetadata({
+export const metadata = buildSEO({
   intent: "Thank You",
   description: "Thanks for your message — I'll get back to you shortly.",
   canonicalPath: "/thank-you/",

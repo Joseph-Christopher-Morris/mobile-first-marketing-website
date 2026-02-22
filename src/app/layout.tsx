@@ -18,7 +18,10 @@ export const viewport: Viewport = {
 };
 
 export const metadata: Metadata = {
-  title: 'Websites, Ads, Analytics & Photography in Cheshire | Vivid Media Cheshire',
+  title: {
+    template: '%s | Vivid Media Cheshire',
+    default: 'Websites, Ads & Analytics for Cheshire Businesses',
+  },
   description:
     'Fast websites, Google Ads, and analytics for Cheshire businesses. Clear reporting and measurable results from Nantwich.',
   authors: [
@@ -44,7 +47,7 @@ export const metadata: Metadata = {
     url: 'https://vividmediacheshire.com',
     siteName: 'Vivid Media Cheshire',
     title:
-      'Web Design, Hosting & Ads | Vivid Media Cheshire',
+      'Web Design, Hosting & Ads',
     description:
       'Fast websites, Google Ads, and analytics for Cheshire businesses. Clear reporting and measurable results from Nantwich.',
     images: [
@@ -60,7 +63,7 @@ export const metadata: Metadata = {
   twitter: {
     card: 'summary_large_image',
     title:
-      'Web Design, Hosting & Ads | Vivid Media Cheshire',
+      'Web Design, Hosting & Ads',
     description:
       'Fast websites, Google Ads, and analytics for Cheshire businesses. Clear reporting and measurable results from Nantwich.',
     images: ['/images/hero/aston-martin-db6-website.webp'],

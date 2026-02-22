@@ -1,12 +1,12 @@
 import { Metadata } from 'next';
 import { Layout } from '@/components/layout';
 import Link from 'next/link';
-import { buildMetadata } from '@/lib/seo';
+import { buildSEO } from '@/lib/seo';
 
-export const metadata: Metadata = buildMetadata({
+export const metadata: Metadata = buildSEO({
   intent: "Pricing",
-  qualifier: "for Digital Marketing Services",
-  description: "Transparent pricing for websites, hosting, Google Ads management, analytics dashboards, and photography across Cheshire.",
+  qualifier: "for Small Businesses",
+  description: "Clear pricing for websites from £300, hosting from £15/month, Google Ads from £150/month. No hidden fees. Based in Nantwich, serving Cheshire businesses.",
   canonicalPath: "/pricing/",
 });
 

@@ -14,7 +14,7 @@ const post: BlogPost = {
 
     <h2>Prologue: Why Combined Postage Matters</h2>
 
-    <img src="/images/blog/image (1).webp" alt="Hot Wheels combined order showing how bundling multiple items saves buyers money and increases seller revenue" />
+    <img src="/images/blog/image (1).jpg" alt="Hot Wheels combined order showing how bundling multiple items saves buyers money and increases seller revenue" loading="lazy" />
     <p><em>Hot Wheels bundling proof showing how combined orders save buyers money while increasing seller revenue through higher average order values.</em></p>
 
     <p>One of the best ways to encourage more sales on eBay is to offer <strong>combined postage</strong>. This strategy appeals to buyers who want to grow their collection or save money while shopping.</p>
@@ -26,7 +26,7 @@ const post: BlogPost = {
 
     <h2>Optimising eBay Model Car Sales with Smart Bundling</h2>
 
-    <img src="/images/blog/Screenshot 2025-07-04 211333.webp" alt="Combined Model Ford order showing multiple items purchased together — demonstrating the success of the combined postage strategy" />
+    <img src="/images/blog/Screenshot 2025-07-04 211333.webp" alt="Combined Model Ford order showing multiple items purchased together — demonstrating the success of the combined postage strategy" loading="lazy" />
     <p><em>Combined order proof showing multiple Ford models purchased together — demonstrating the success of the bundling and combined postage strategy.</em></p>
 
     <p>Before I began listing each item, I grouped cars that complemented each other in case buyers were interested in purchasing more than one. This <strong>bundling technique</strong> became a core part of my eBay model car sales strategy.<br />
@@ -86,7 +86,7 @@ const post: BlogPost = {
     <ul>
       <li><a href="/blog/ebay-model-ford-collection-part-1">Model Car Collection (Part 1) — Model Ford Collection</a></li>
       <li><a href="/blog/ebay-photography-workflow-part-2">Model Car Collection (Part 2) — Photography Workflow</a></li>
-      <li><a href="/blog/ebay-model-car-sales-timing-bundles">Model Car Collection (Part 3) — Sales Timing & Bundles</a></li>
+      <li><a href="/blog/ebay-model-car-sales-timing-bundles">Model Car Collection (Part 3) — Sales Timing &amp; Bundles</a></li>
       <li><a href="/blog/ebay-repeat-buyers-part-4">Model Car Collection (Part 4) — Repeat Buyers</a></li>
       <li><a href="/blog/ebay-business-side-part-5">Model Car Collection (Part 5) — Business Side</a></li>
     </ul>
@@ -108,7 +108,7 @@ const post: BlogPost = {
   author: 'Joe — Digital Marketing & Analytics',
   category: 'Case Studies',
   tags: ['conversion-optimisation'],
-  image: '/images/blog/240708-Model_Car_Collection-21 (1).webp',
+  image: '/images/blog/240708-Model_Car_Collection-21 (1).jpg',
   readTime: 6,
   featured: false,
 };

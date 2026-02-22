@@ -3,13 +3,16 @@ import Link from "next/link";
 import { StickyWebsiteQuoteBar } from "@/components/ui/StickyWebsiteQuoteBar";
 import { Layout } from "@/components/layout";
 import { ServiceSchemas } from "@/components/seo/ServiceSchema";
-import { buildMetadata } from "@/lib/seo";
+import { generateMetadata as generateSocialMetadata } from "@/lib/metadata-generator";
 
-export const metadata = buildMetadata({
-  intent: "Website Design",
-  qualifier: "for Cheshire Businesses",
-  description: "Fast, SEO-ready websites built on secure cloud infrastructure. Designed for speed, analytics and scalable marketing campaigns.",
-  canonicalPath: "/services/website-design/",
+export const metadata = generateSocialMetadata({
+  pageType: 'service',
+  content: {
+    title: 'Website Design',
+    description: 'Fast, SEO-ready websites on secure cloud for Cheshire businesses. Mobile-first design, 82% faster load times, conversion-focused layouts from £300.',
+    image: '/images/services/Website Design/PXL_20240222_004124044~2.webp',
+  },
+  canonicalPath: '/services/website-design',
 });
 
 export default function WebsiteDesignPage() {
@@ -324,7 +327,7 @@ export default function WebsiteDesignPage() {
               {/* After Screenshot */}
               <div className="mb-4 rounded-lg overflow-hidden">
                 <Image
-                  src="/images/services/Web Hosting And Migration/pagespeed-aws-migration-desktop.webp"
+                  src="/images/services/web-hosting-and-migration/pagespeed-aws-migration-desktop.webp"
                   alt="Google Lighthouse performance score of 99 after secure cloud migration showing excellent performance metrics"
                   width={400}
                   height={250}

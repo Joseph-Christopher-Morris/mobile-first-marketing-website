@@ -3,8 +3,7 @@ import { BlogPost } from '../../lib/blog-types';
 const post: BlogPost = {
   slug: 'ebay-business-side-part-5',
   title: 'The Business Side of Selling Model Cars on eBay: Commission, Admin, and Buyer Issues (Part 5)',
-  excerpt:
-    'Behind the scenes of running an eBay model car selling business. Balancing fairness, admin, and patience when handling someone else\'s collection.',
+  excerpt: "Behind the scenes of running an eBay model car selling business. Balancing fairness, admin, and patience when handling someone else's collection.",
   content: `
     <p><em>Behind the Scenes: Business, Admin, and Buyer Challenges</em></p>
 
@@ -28,7 +27,7 @@ const post: BlogPost = {
       <li>Postage</li>
     </ul>
 
-    <img src="/images/blog/image (2).webp" alt="Model Ford earnings and commission spreadsheet showing the transparent 75/25 split calculation and payment tracking system" class="analytics-screenshot" />
+    <img src="/images/blog/image (2).jpg" alt="Model Ford earnings and commission spreadsheet showing the transparent 75/25 split calculation and payment tracking system" class="analytics-screenshot" loading="lazy" />
     <p><em>The commission tracker I used to maintain transparency — every sale, fee, and payment documented with John's approval.</em></p>
 
     <p>An example from the <strong>commission tracker</strong> was shared with John. I used this spreadsheet to track every sale, deduct postage and fees, and ensure that payments were <strong>fair and transparent</strong>.</p>
@@ -39,7 +38,7 @@ const post: BlogPost = {
 
     <h2>Emotional and Practical Challenges</h2>
 
-    <img src="/images/blog/ezgif-675443f33cc2e4.webp" alt="Damaged eBay parcel showing the reality of shipping challenges — why careful packaging became essential" />
+    <img src="/images/blog/ezgif-675443f33cc2e4.webp" alt="Damaged eBay parcel showing the reality of shipping challenges — why careful packaging became essential" loading="lazy" />
     <p><em>Damaged parcel reality — operational challenges that required professional handling and transparent communication with both buyers and John.</em></p>
 
     <p>There was emotional weight to selling someone else's collection. I wanted to do right by John. At the same time, I had to deal with:</p>
@@ -65,7 +64,7 @@ const post: BlogPost = {
     <ul>
       <li><a href="/blog/ebay-model-ford-collection-part-1">Model Car Collection (Part 1) — Model Ford Collection</a></li>
       <li><a href="/blog/ebay-photography-workflow-part-2">Model Car Collection (Part 2) — Photography Workflow</a></li>
-      <li><a href="/blog/ebay-model-car-sales-timing-bundles">Model Car Collection (Part 3) — Sales Timing & Bundles</a></li>
+      <li><a href="/blog/ebay-model-car-sales-timing-bundles">Model Car Collection (Part 3) — Sales Timing &amp; Bundles</a></li>
       <li><a href="/blog/ebay-repeat-buyers-part-4">Model Car Collection (Part 4) — Repeat Buyers</a></li>
       <li><a href="/blog/ebay-business-side-part-5">Model Car Collection (Part 5) — Business Side</a></li>
     </ul>
@@ -85,7 +84,7 @@ const post: BlogPost = {
   author: 'Joe — Digital Marketing & Analytics',
   category: 'Case Studies',
   tags: ['ecommerce'],
-  image: '/images/blog/240620-Model_Car_Collection-96 (1).webp',
+  image: '/images/blog/240620-Model_Car_Collection-96 (1).jpg',
   readTime: 5,
   featured: false,
 };

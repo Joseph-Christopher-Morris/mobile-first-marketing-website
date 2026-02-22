@@ -1,3 +1,28 @@
 {
-  "mcpServers": {}
+  "mcpServers": {
+    "aws": {
+      "command": "npx",
+      "args": ["-y", "@modelcontextprotocol/server-aws"],
+      "env": {
+        "AWS_REGION": "eu-west-2"
+      },
+      "disabled": false,
+      "autoApprove": []
+    },
+    "filesystem": {
+      "command": "npx",
+      "args": ["-y", "@modelcontextprotocol/server-filesystem"],
+      "env": {
+        "MCP_FILESYSTEM_ROOT": "."
+      },
+      "disabled": false,
+      "autoApprove": []
+    },
+    "lighthouse": {
+      "command": "npx",
+      "args": ["-y", "@modelcontextprotocol/server-lighthouse"],
+      "disabled": false,
+      "autoApprove": []
+    }
+  }
 }
