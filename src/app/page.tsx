@@ -8,14 +8,16 @@ import HeroWithCharts from '@/components/HeroWithCharts';
 import { PressLogos } from '@/components/PressLogos';
 import { GeneralContactForm } from '@/components/sections/GeneralContactForm';
 import { FAQAccordion } from '@/components/FAQAccordion';
-import { buildMetadata } from '@/lib/seo';
+import { generateMetadata as generateSocialMetadata } from '@/lib/metadata-generator';
 
-export const metadata: Metadata = buildMetadata({
-  intent: "Websites, Ads, Analytics & Photography",
-  qualifier: "in Cheshire",
-  description: "Fast, conversion-focused websites, Google Ads that generate enquiries, clear analytics reporting, and professional photography for Cheshire small businesses.",
-  canonicalPath: "/",
-  ogImage: "/images/hero/230422_Chester_Stock_Photography-84.webp",
+export const metadata: Metadata = generateSocialMetadata({
+  pageType: 'homepage',
+  content: {
+    title: 'Websites, Ads & Analytics - Cheshire',
+    description: 'Fast websites, Google Ads that generate enquiries, and clear analytics reporting for Cheshire small businesses. Local support, transparent pricing.',
+    image: '/images/hero/230422_Chester_Stock_Photography-84.webp',
+  },
+  canonicalPath: '/',
 });
 
 export default async function HomePage() {
@@ -389,3 +391,4 @@ export default async function HomePage() {
     </Layout>
   );
 }
+// IndexNow integration complete
