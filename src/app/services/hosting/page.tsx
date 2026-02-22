@@ -9,9 +9,9 @@ import { ServiceSchemas } from "@/components/seo/ServiceSchema";
 import { buildMetadata } from "@/lib/seo";
 
 export const metadata: Metadata = buildMetadata({
-  intent: "Secure Website Hosting",
-  qualifier: "for Cheshire Businesses",
-  description: "From £120 per year with 99.9% uptime and local support. Professional migration, same day replies and zero downtime for Nantwich and Cheshire businesses.",
+  intent: "Cloud Website Hosting",
+  qualifier: "in Cheshire",
+  description: "Secure cloud hosting with performance optimisation, analytics integration and transparent pricing for small business websites.",
   canonicalPath: "/services/hosting/",
 });
 

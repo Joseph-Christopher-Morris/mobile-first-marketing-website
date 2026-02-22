@@ -3,9 +3,8 @@ import { buildMetadata } from '@/lib/seo';
 import FreeAuditClient from './FreeAuditClient';
 
 export const metadata: Metadata = buildMetadata({
-  intent: "Free Website Audit",
-  qualifier: "for Cheshire Businesses",
-  description: "Discover how your website performs against Cheshire East competitors with our free 10-point website audit. No obligation required.",
+  intent: "Free Website & Marketing Audit",
+  description: "Get a free review of your website, ads, or analytics setup with clear recommendations.",
   canonicalPath: "/free-audit/",
 });
 

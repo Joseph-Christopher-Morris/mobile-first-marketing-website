@@ -10,8 +10,9 @@ import { resolveBlogCardImageWithLegacy } from '@/lib/blog-thumbnail-resolver';
 import { buildMetadata } from '@/lib/seo';
 
 export const metadata: Metadata = buildMetadata({
-  intent: "Case Studies & Insights",
-  description: "Practical marketing, photography, and web design tips for Cheshire businesses. Real case studies, proven strategies, and actionable insights from Vivid Media Cheshire in Nantwich.",
+  intent: "Digital Marketing Insights",
+  qualifier: "from Cheshire",
+  description: "Real-world insights on SEO, analytics, advertising performance and cloud-based website strategy for small businesses.",
   canonicalPath: "/blog/",
 });
 
@@ -103,9 +104,9 @@ export default async function BlogPage() {
                     <Link
                       href={`/blog/${featuredPost.slug}`}
                       className='inline-flex items-center text-brand-pink hover:text-brand-pink2 font-medium'
-                      aria-label={`Read the article: ${featuredPost.title}`}
+                      aria-label={`Read: ${featuredPost.title}`}
                     >
-                      {featuredPost.title}
+                      Read: {featuredPost.title}
                       <svg
                         className='ml-2 w-4 h-4'
                         fill='none'
@@ -161,9 +162,9 @@ export default async function BlogPage() {
                       <Link
                         href={`/blog/${post.slug}`}
                         className='inline-flex items-center text-brand-pink hover:text-brand-pink2 font-medium'
-                        aria-label={`Read the article: ${post.title}`}
+                        aria-label={`Read: ${post.title}`}
                       >
-                        {post.title}
+                        Read: {post.title}
                         <svg
                           className='ml-2 w-4 h-4'
                           fill='none'

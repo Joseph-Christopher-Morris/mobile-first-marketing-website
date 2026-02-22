@@ -5,7 +5,7 @@ import { buildMetadata } from "@/lib/seo";
 
 export const metadata: Metadata = buildMetadata({
   intent: "Privacy Policy",
-  description: "Our commitment to privacy, data collection practices, and how we protect your information.",
+  description: "How Vivid Media Cheshire collects, uses, and protects personal data.",
   canonicalPath: "/privacy-policy/",
 });
 

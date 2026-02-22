@@ -18,13 +18,9 @@ export const viewport: Viewport = {
 };
 
 export const metadata: Metadata = {
-  title: {
-    default:
-      'Vivid Media Cheshire - secure cloud infrastructure Hosting, Web Design & Google Ads | Nantwich & Cheshire',
-    template: '%s | Vivid Media Cheshire',
-  },
+  title: 'Websites, Ads, Analytics & Photography in Cheshire | Vivid Media Cheshire',
   description:
-    'Vivid Media Cheshire helps local businesses grow with cheaper, faster secure cloud infrastructure hosting and migration, mobile-first web design, and Google Ads campaigns that deliver measurable results.',
+    'Fast websites, Google Ads, and analytics for Cheshire businesses. Clear reporting and measurable results from Nantwich.',
   authors: [
     {
       name: 'Vivid Media Cheshire',
@@ -48,9 +44,9 @@ export const metadata: Metadata = {
     url: 'https://vividmediacheshire.com',
     siteName: 'Vivid Media Cheshire',
     title:
-      'Vivid Media Cheshire - secure cloud infrastructure Hosting, Web Design & Google Ads | Nantwich & Cheshire',
+      'Web Design, Hosting & Ads | Vivid Media Cheshire',
     description:
-      'Vivid Media Cheshire helps local businesses grow with cheaper, faster secure cloud infrastructure hosting and migration, mobile-first web design, and Google Ads campaigns that deliver measurable results.',
+      'Fast websites, Google Ads, and analytics for Cheshire businesses. Clear reporting and measurable results from Nantwich.',
     images: [
       {
         url: '/images/hero/aston-martin-db6-website.webp',
@@ -64,9 +60,9 @@ export const metadata: Metadata = {
   twitter: {
     card: 'summary_large_image',
     title:
-      'Vivid Media Cheshire - secure cloud infrastructure Hosting, Web Design & Google Ads | Nantwich & Cheshire',
+      'Web Design, Hosting & Ads | Vivid Media Cheshire',
     description:
-      'Vivid Media Cheshire helps local businesses grow with cheaper, faster secure cloud infrastructure hosting and migration, mobile-first web design, and Google Ads campaigns.',
+      'Fast websites, Google Ads, and analytics for Cheshire businesses. Clear reporting and measurable results from Nantwich.',
     images: ['/images/hero/aston-martin-db6-website.webp'],
   },
   robots: {

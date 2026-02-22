@@ -7,9 +7,9 @@ import { ServiceSchemas } from '@/components/seo/ServiceSchema';
 import { buildMetadata } from '@/lib/seo';
 
 export const metadata: Metadata = buildMetadata({
-  intent: "Analytics & Tracking Setup",
+  intent: "Data Analytics & Insights",
   qualifier: "for Cheshire Businesses",
-  description: "Professional data analytics services with GA4 and Adobe Analytics expertise. Transform your business data into actionable insights that drive growth in Nantwich & Cheshire.",
+  description: "Clarity, tracking, and reporting dashboards that turn marketing data into clear decisions.",
   canonicalPath: "/services/analytics/",
   ogImage: "/images/services/Google-analytics-dashboard.webp",
 });

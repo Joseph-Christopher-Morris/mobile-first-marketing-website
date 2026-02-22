@@ -11,9 +11,9 @@ import { FAQAccordion } from '@/components/FAQAccordion';
 import { buildMetadata } from '@/lib/seo';
 
 export const metadata: Metadata = buildMetadata({
-  intent: "Websites, Google Ads and Analytics",
-  qualifier: "for Cheshire Businesses",
-  description: "Fast websites, Google Ads, analytics and photography for Cheshire businesses. Clear reporting and measurable results.",
+  intent: "Websites, Ads, Analytics & Photography",
+  qualifier: "in Cheshire",
+  description: "Fast, conversion-focused websites, Google Ads that generate enquiries, clear analytics reporting, and professional photography for Cheshire small businesses.",
   canonicalPath: "/",
   ogImage: "/images/hero/230422_Chester_Stock_Photography-84.webp",
 });
@@ -235,9 +235,9 @@ export default async function HomePage() {
                       <Link
                         href={`/blog/${post.slug}`}
                         className='inline-flex items-center text-brand-pink hover:text-brand-pink2 font-medium'
-                        aria-label={`Read the article: ${post.title}`}
+                        aria-label={`Read: ${post.title}`}
                       >
-                        Read Article
+                        {post.title}
                         <svg
                           className='ml-2 w-4 h-4'
                           fill='none'

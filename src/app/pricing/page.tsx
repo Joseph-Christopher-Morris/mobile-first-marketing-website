@@ -5,7 +5,8 @@ import { buildMetadata } from '@/lib/seo';
 
 export const metadata: Metadata = buildMetadata({
   intent: "Pricing",
-  description: "Transparent pricing for websites, ads, analytics, and photography. Affordable packages for Cheshire small businesses.",
+  qualifier: "for Digital Marketing Services",
+  description: "Transparent pricing for websites, hosting, Google Ads management, analytics dashboards, and photography across Cheshire.",
   canonicalPath: "/pricing/",
 });
 

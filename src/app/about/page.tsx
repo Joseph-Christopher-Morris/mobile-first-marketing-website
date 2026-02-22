@@ -6,8 +6,9 @@ import { AboutServicesForm } from '@/components/AboutServicesForm';
 import { buildMetadata } from '@/lib/seo';
 
 export const metadata: Metadata = buildMetadata({
-  intent: "About Joe",
-  description: "Learn about my journey from professional photography to data-driven digital marketing, with expertise in Adobe Experience Cloud and Google Marketing Platform.",
+  intent: "About Joe Morris",
+  qualifier: "Digital Marketing & Photography",
+  description: "Cloud-based web developer and published editorial photographer helping Cheshire businesses grow through analytics-led marketing.",
   canonicalPath: "/about/",
 });
 

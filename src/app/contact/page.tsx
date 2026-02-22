@@ -8,7 +8,7 @@ import { buildMetadata } from '@/lib/seo';
 export const metadata: Metadata = buildMetadata({
   intent: "Contact",
   qualifier: "Vivid Media Cheshire",
-  description: "Get in touch about professional automotive photography, data analytics, or strategic advertising campaigns in Nantwich & Cheshire. Free consultation available. Response within one business day (UK time).",
+  description: "Tell me what you need and I'll reply personally the same day. Websites, hosting, ads, analytics, and photography in Cheshire.",
   canonicalPath: "/contact/",
   ogImage: "/images/hero/aston-martin-db6-website.webp",
 });
