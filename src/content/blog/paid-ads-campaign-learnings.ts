@@ -30,7 +30,7 @@ const post: BlogPost = {
 
     <h2>Results &amp; Insights</h2>
 
-    <img src="/images/blog/240708-Model_Car_Collection-69 (1).webp" alt="Product photography used in the Meta Ads campaign showing professional presentation" loading="lazy" />
+    <img src="/images/blog/240708-Model_Car_Collection-69 (1).jpg" alt="Product photography used in the Meta Ads campaign showing professional presentation" loading="lazy" />
     <p><em>The type of high-quality product shots I used in my Meta Ads campaign to attract the right audience.</em></p>
 
     <h3>Article Campaign (Meta Ads)</h3>
@@ -46,7 +46,7 @@ const post: BlogPost = {
 
     <h3>Leads Campaign (Google Ads)</h3>
 
-    <img src="/images/blog/screenshot-2025-08-11-143943.webp?v=20251217" alt="Google Ads results graph showing 121,242 impressions and 1,544 clicks" class="analytics-screenshot" loading="lazy" />
+    <img src="/images/blog/Screenshot 2025-08-11 143943.webp?v=20251217" alt="Google Ads results graph showing 121,242 impressions and 1,544 clicks" class="analytics-screenshot" loading="lazy" />
 
     <ul>
       <li><strong>Spend:</strong> £256.91</li>

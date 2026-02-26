@@ -1,0 +1,11 @@
+{
+  "workspaceId": "",
+  "collectionId": "",
+  "environmentId": "",
+  "environments": {
+    "local": "",
+    "staging": "",
+    "production": ""
+  },
+  "notes": "This file stores Postman workspace, collection, and environment IDs for automated testing"
+}

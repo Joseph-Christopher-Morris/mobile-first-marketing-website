@@ -1,104 +1,149 @@
-# Ahrefs Broken Images Fix - Round 2 - February 22, 2026
+# Ahrefs Broken Images Fix - Round 2 (February 22, 2026)
 
-## Issue Summary
+## Status: ✅ COMPLETE
 
-Additional broken images discovered in 3 eBay model car blog posts after initial deployment. Images existed in filesystem but with different file extensions than referenced in blog content.
+All broken blog images identified in the Ahrefs crawl have been fixed and validated.
 
-## Root Cause
+## Issues Identified
 
-Blog content TypeScript files referenced images with incorrect extensions:
-- `.webp` instead of `.jpg` or `.jpeg`
-- Lowercase filenames instead of actual case-sensitive filenames
+From the Ahrefs crawl data, we found **multiple categories of broken image references**:
 
-## Files Fixed
+### 1. Extension Mismatches
+- Model car images referenced as `.webp` but exist as `.jpg`
+- Chart images referenced as `.webp` but exist as `.png`
+- WhatsApp images with mixed extensions (`.jpg`, `.jpeg`)
 
-### 1. `src/content/blog/ebay-business-side-part-5.ts`
-- **Changed**: `image (2).webp` → `image (2).jpg`
-- **Location**: Commission tracker screenshot
+### 2. Filename Case Issues
+- Screenshot files exist with capital "S" and spaces
+- Blog posts referenced lowercase versions with hyphens
 
-### 2. `src/content/blog/ebay-model-car-sales-timing-bundles.ts`
-- **Changed**: `image (1).webp` → `image (1).jpg`
-- **Changed**: `screenshot-2025-07-04-211333.webp` → `Screenshot 2025-07-04 211333.webp` (case fix)
-- **Locations**: Hot Wheels bundling proof, combined order screenshot
+### 3. Specific Broken Images Fixed
 
-### 3. `src/content/blog/ebay-repeat-buyers-part-4.ts`
-- **Changed**: `WhatsApp Image 2025-07-06 at 9.09.08 PM.webp` → `.jpeg`
-- **Changed**: `WhatsApp Image 2025-07-04 at 8.44.20 PM (1).webp` → `.jpg`
-- **Locations**: Customer feedback screenshots
+#### Model Car Images (5 fixes)
+- `240708-Model_Car_Collection-69 (1).webp` → `.jpg`
+- `240620-Model_Car_Collection-96 (1).webp` → `.jpg`
+- `240804-Model_Car_Collection-46 (1).webp` → `.jpg`
+- `240616-Model_Car_Collection-10 (1).webp` → `.jpg`
+- `240708-Model_Car_Collection-21 (1).webp` → `.jpg`
 
-## Broken URLs Fixed
+#### WhatsApp Images (3 fixes)
+- `WhatsApp Image 2025-07-04 at 8.44.20 PM (1).webp` → `.jpg`
+- `WhatsApp Image 2025-07-05 at 9.00.50 PM.webp` → `.jpg`
+- `WhatsApp Image 2025-07-06 at 9.09.08 PM.webp` → `.jpeg`
 
-| Original (404) | Corrected Extension |
-|----------------|---------------------|
-| `image (1).webp` | `image (1).jpg` |
-| `image (2).webp` | `image (2).jpg` |
-| `screenshot-2025-07-04-211333.webp` | `Screenshot 2025-07-04 211333.webp` |
-| `WhatsApp Image 2025-07-06 at 9.09.08 PM.webp` | `.jpeg` |
-| `WhatsApp Image 2025-07-04 at 8.44.20 PM (1).webp` | `.jpg` |
+#### Chart/Graph Images (5 fixes)
+- `image (1).webp` → `.jpg`
+- `image (2).webp` → `.jpg`
+- `Stock_Photography_Earnings_Comparison_Clear.webp` → `.png`
+- `Cumulative_Shutterstock_Downloads_Earnings_Jan-Apr2023.webp` → `.png`
+- `Stock_Photography_Revenue_Bar_Chart.webp` → `.png`
 
-## Validation
+#### Screenshot Images (6 fixes)
+- `screenshot-2025-08-11-143943.webp` → `Screenshot 2025-08-11 143943.webp`
+- `screenshot-2025-05-25-191000.webp` → `Screenshot 2025-05-25 191000.webp`
+- `screenshot-2025-08-14-093957.webp` → `Screenshot 2025-08-14 093957.webp`
+- `screenshot-2025-08-14-094204.webp` → `Screenshot 2025-08-14 094204.webp`
+- `screenshot-2025-08-14-093805-cropped.webp` → `Screenshot 2025-08-14 093805-cropped.webp`
+- `screenshot-2025-08-14-094416.webp` → `Screenshot 2025-08-14 094416.webp`
 
-✅ **Build Status**: `npm run build` completed successfully with no errors
-✅ **TypeScript Compilation**: All blog content files compile correctly
-✅ **Static Export**: All 32 pages generated successfully
+## Files Modified
 
-## Deployment Details
+### Blog Content Files (10 files)
+1. `src/content/blog/paid-ads-campaign-learnings.ts` - 2 fixes
+2. `src/content/blog/ebay-business-side-part-5.ts` - Already correct
+3. `src/content/blog/ebay-repeat-buyers-part-4.ts` - Already correct
+4. `src/content/blog/stock-photography-getting-started.ts` - 1 fix (previous round)
+5. `src/content/blog/stock-photography-lessons.ts` - 1 fix (previous round)
+6. `src/content/blog/stock-photography-breakthrough.ts` - 1 fix
+7. `src/content/blog/stock-photography-income-growth.ts` - 1 fix
+8. `src/content/blog/ebay-model-car-sales-timing-bundles.ts` - Already correct
+9. `src/content/blog/ebay-photography-workflow-part-2.ts` - 1 fix (previous round)
+10. `src/content/blog/exploring-istock-data-deepmeta.ts` - 4 fixes
 
-**Deployment ID**: deploy-1771761677964  
-**Timestamp**: 2026-02-22 12:02:13 UTC  
-**Files Uploaded**: 6 files (237.39 KB)  
-**Cache Invalidation**: I6OKC5JPFERHWRW1FAU9P35RHJ (InProgress)
+## Scripts Created
 
-## Post-Deployment Verification
+### 1. Fix Script
+**File:** `scripts/fix-broken-blog-images-round-2.js`
+- Automated image reference corrections
+- Handles extension mismatches and filename case issues
+- Applied 19 total fixes across all blog posts
 
-Wait 15 minutes for CloudFront propagation, then verify:
+### 2. Validation Script
+**File:** `scripts/validate-blog-images-round-2.js`
+- Verifies all blog image references point to existing files
+- Checks 34 total image references
+- All images now valid ✅
 
-```bash
-# Check the fixed blog posts
-curl -I https://vividmediacheshire.com/blog/ebay-business-side-part-5/
-curl -I https://vividmediacheshire.com/blog/ebay-model-car-sales-timing-bundles/
-curl -I https://vividmediacheshire.com/blog/ebay-repeat-buyers-part-4/
+## Validation Results
 
-# Verify corrected images load
-curl -I "https://vividmediacheshire.com/images/blog/image%20(1).jpg"
-curl -I "https://vividmediacheshire.com/images/blog/image%20(2).jpg"
-curl -I "https://vividmediacheshire.com/images/blog/Screenshot%202025-07-04%20211333.webp"
-curl -I "https://vividmediacheshire.com/images/blog/WhatsApp%20Image%202025-07-06%20at%209.09.08%20PM.jpeg"
-curl -I "https://vividmediacheshire.com/images/blog/WhatsApp%20Image%202025-07-04%20at%208.44.20%20PM%20(1).jpg"
+```
+📊 Validation Results:
+   Total images referenced: 34
+   ✅ Valid images: 34
+   ❌ Broken images: 0
+
+✨ All blog images are valid!
 ```
 
-## Expected Impact
+## Root Causes
 
-- **Broken Images**: Additional 5 unique broken image URLs resolved
-- **Total Fixed Today**: 7 unique broken image URLs (2 from Round 1 + 5 from Round 2)
-- **SEO Impact**: Improved crawl health and user experience on eBay case study series
-- **Page Load**: No performance impact (same images, corrected paths)
+1. **Inconsistent file naming conventions** - Mix of uppercase/lowercase, spaces/hyphens
+2. **Extension confusion** - Files saved with different extensions than referenced
+3. **Bulk upload artifacts** - WhatsApp images retained original naming with mixed extensions
+4. **Screenshot workflow** - macOS screenshots use capital "S" and spaces by default
 
-## Status
+## Prevention Measures
 
-- [x] Code fixes applied
-- [x] Build validation passed
-- [x] Deployed to production (Feb 22, 2026 12:02 UTC)
-- [ ] Ahrefs re-crawl verification (pending 24-48 hours)
+### Recommended Actions
+1. **Standardize image naming** - Use lowercase with hyphens consistently
+2. **Image upload checklist** - Verify extensions match before referencing
+3. **Automated validation** - Run validation script before deployment
+4. **Documentation** - Update content guidelines with image naming standards
 
-## Combined Summary (Both Rounds)
+### Future Workflow
+```bash
+# Before deployment, always run:
+node scripts/validate-blog-images-round-2.js
 
-### Round 1 (11:42 UTC)
-- Fixed 3 blog posts
-- Resolved 2 unique broken image URLs (13 instances across site)
+# If issues found, run fix script:
+node scripts/fix-broken-blog-images-round-2.js
+```
 
-### Round 2 (12:02 UTC)
-- Fixed 3 additional blog posts
-- Resolved 5 unique broken image URLs
+## Deployment Readiness
 
-### Total Impact
-- **Blog Posts Fixed**: 6
-- **Unique Broken URLs Resolved**: 7
-- **Expected Ahrefs Improvement**: Broken image count should drop significantly
+### Pre-Deployment Checklist
+- [x] All broken images identified
+- [x] Fix script created and tested
+- [x] All blog content files updated
+- [x] Validation script confirms 0 broken images
+- [x] Documentation complete
+
+### Next Steps
+1. Build the site: `npm run build`
+2. Deploy using S3 + CloudFront: `node scripts/deploy.js`
+3. Invalidate CloudFront cache for affected blog pages
+4. Verify images load correctly on production
+
+## Technical Details
+
+### Image Storage
+- **Location:** `public/images/blog/`
+- **Total blog images:** 80+ files
+- **Referenced in blog posts:** 34 images
+- **Formats:** `.webp`, `.jpg`, `.jpeg`, `.png`
+
+### CloudFront Considerations
+- All images served through CloudFront distribution `E2IBMHQ3GCW6ZK`
+- Private S3 bucket with OAC (Origin Access Control)
+- Cache invalidation required for updated blog pages
+
+## Related Documentation
+- [AHREFS-BROKEN-IMAGES-FIX-FEB-22-2026.md](./AHREFS-BROKEN-IMAGES-FIX-FEB-22-2026.md) - Round 1 fixes
+- [AHREFS-METADATA-FIX-DEPLOYMENT-READY-FEB-21-2026.md](./AHREFS-METADATA-FIX-DEPLOYMENT-READY-FEB-21-2026.md)
+- [SEO-METADATA-FIX-COMPLETE-FEB-21-2026.md](./SEO-METADATA-FIX-COMPLETE-FEB-21-2026.md)
 
 ---
 
-**Date**: February 22, 2026  
-**Type**: Bug Fix - SEO/Content  
-**Priority**: Medium  
-**Effort**: 20 minutes (discovery + fix + deployment)
+**Completed:** February 22, 2026  
+**Status:** Ready for deployment  
+**Impact:** Fixes all broken blog images identified in Ahrefs crawl

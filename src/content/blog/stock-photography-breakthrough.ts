@@ -57,7 +57,7 @@ const post: BlogPost = {
 
     <h3>3. Patience Is a Superpower</h3>
 
-    <img src="/images/blog/screenshot-2025-05-25-191000.webp" alt="A Screenshot of a picture I took of the Nantwich farmers market on BBC News" loading="lazy" />
+    <img src="/images/blog/Screenshot 2025-05-25 191000.webp" alt="A Screenshot of a picture I took of the Nantwich farmers market on BBC News" loading="lazy" />
 
     <p>Growth wasn't linear.<br />
     Some months were slow. Others picked up when I uploaded niche or seasonal content.</p>
