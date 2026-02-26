@@ -318,7 +318,11 @@ async function runCleanup(options = {}) {
       'File Categorization',
       async () => {
         manifest = await categorizeFiles();
-        return manifest;
+        return {
+          success: true,
+          filesProcessed: manifest.totalFiles,
+          manifest
+        };
       },
       null, // No commit for categorization (planning phase)
       dryRun
