@@ -430,7 +430,11 @@
       "website-hosting-before-after-images-implementation-summary.md",
       "website-image-navigation-fixes-completion-summary.md"
     ],
-    "protected": []
+    "protected": [
+      "aws-security-standards.md",
+      "deployment-standards.md",
+      "project-deployment-config.md"
+    ]
   },
   "scripts": {
     "fixes": [
@@ -448,6 +452,6 @@
       "validate-blog-html.js"
     ]
   },
-  "timestamp": "2026-02-26T15:09:47.138Z",
-  "totalFiles": 428
+  "timestamp": "2026-02-26T18:09:02.515Z",
+  "totalFiles": 431
 }
