@@ -7,5 +7,10 @@
     "staging": "",
     "production": ""
   },
-  "notes": "This file stores Postman workspace, collection, and environment IDs for automated testing"
+  "notes": "This project is a Next.js static site with no HTTP API endpoints. The scripts/cleanup-orchestrator.js is a CLI tool tested via Vitest unit tests (tests/cleanup-orchestrator.test.ts). Postman collections are not applicable for this project architecture.",
+  "testingApproach": {
+    "cliScripts": "Tested via Vitest unit tests in tests/ directory",
+    "staticSite": "Tested via build validation and browser testing",
+    "deployment": "Tested via AWS S3 + CloudFront deployment scripts"
+  }
 }

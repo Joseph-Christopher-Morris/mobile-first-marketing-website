@@ -2,7 +2,10 @@
   "mcpServers": {
     "aws": {
       "command": "npx",
-      "args": ["-y", "@rafalwilinski/aws-mcp"],
+      "args": [
+        "-y",
+        "@rafalwilinski/aws-mcp"
+      ],
       "env": {
         "AWS_REGION": "us-east-1"
       },
@@ -11,7 +14,10 @@
     },
     "filesystem": {
       "command": "npx",
-      "args": ["-y", "@modelcontextprotocol/server-filesystem"],
+      "args": [
+        "-y",
+        "@modelcontextprotocol/server-filesystem"
+      ],
       "env": {
         "MCP_FILESYSTEM_ROOT": "."
       },
@@ -20,8 +26,11 @@
     },
     "lighthouse": {
       "command": "npx",
-      "args": ["-y", "@danielsogl/lighthouse-mcp"],
-      "disabled": false,
+      "args": [
+        "-y",
+        "@danielsogl/lighthouse-mcp"
+      ],
+      "disabled": true,
       "autoApprove": []
     },
     "postman": {
@@ -30,7 +39,7 @@
       "headers": {
         "Authorization": "Bearer REDACTED_POSTMAN_KEY"
       },
-      "disabled": false,
+      "disabled": true,
       "autoApprove": []
     }
   }
