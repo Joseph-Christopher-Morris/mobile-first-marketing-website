@@ -1,0 +1,39 @@
+{
+  "protectedFiles": [
+    "aws-security-standards.md",
+    "deployment-standards.md",
+    "project-deployment-config.md"
+  ],
+  "protectedDirectories": [
+    "node_modules",
+    "out",
+    "build-*",
+    "playwright-report",
+    "test-results",
+    "temp-build",
+    "temp-privacy",
+    "src",
+    "config",
+    "public"
+  ],
+  "archiveThresholdDays": 90,
+  "dateFormats": [
+    "MMM-DD-YYYY",
+    "YYYY-MM-DD",
+    "YYYYMMDD",
+    "timestamp"
+  ],
+  "categorization": {
+    "documentation": {
+      "summaries": ["*DEPLOYMENT*", "*SUMMARY*", "*STATUS*", "*COMPLETE*"],
+      "audits": ["*validation-report*", "*test-results*", "*audit*", "*verification*"],
+      "architecture": ["*GUIDE*", "*ARCHITECTURE*", "*INFRASTRUCTURE*", "AWS_*"],
+      "decisions": ["*QUICK-REFERENCE*", "*CHECKLIST*", "*INSTRUCTIONS*"]
+    },
+    "scripts": {
+      "fixes": ["fix-*.js", "*-fix.js", "repair-*.js"],
+      "migrations": ["deploy-*.js", "setup-*.js", "configure-*.js", "migrate-*.js"],
+      "utilities": ["validate-*.js", "test-*.js", "verify-*.js", "check-*.js", "monitor-*.js"]
+    }
+  }
+}
