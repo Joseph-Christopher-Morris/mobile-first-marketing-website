@@ -1,0 +1,579 @@
+{
+  "timestamp": "2026-02-26T18:51:43.710Z",
+  "documentation": {
+    "success": false,
+    "moved": [],
+    "failed": [
+      {
+        "source": "ANALYTICS-FIXES-VALIDATION-COMPLETE-DEC-22-2025.md",
+        "error": "Command failed: git mv \"ANALYTICS-FIXES-VALIDATION-COMPLETE-DEC-22-2025.md\" \"docs/summaries/ANALYTICS-FIXES-VALIDATION-COMPLETE-DEC-22-2025.md\"\nfatal: not under version control, source=ANALYTICS-FIXES-VALIDATION-COMPLETE-DEC-22-2025.md, destination=docs/summaries/ANALYTICS-FIXES-VALIDATION-COMPLETE-DEC-22-2025.md\n"
+      },
+      {
+        "source": "DEPLOYMENT-FIXES-COMPLETE-FEB-20-2026.md",
+        "error": "Command failed: git mv \"DEPLOYMENT-FIXES-COMPLETE-FEB-20-2026.md\" \"docs/summaries/DEPLOYMENT-FIXES-COMPLETE-FEB-20-2026.md\"\nfatal: not under version control, source=DEPLOYMENT-FIXES-COMPLETE-FEB-20-2026.md, destination=docs/summaries/DEPLOYMENT-FIXES-COMPLETE-FEB-20-2026.md\n"
+      },
+      {
+        "source": "DEPLOYMENT-SUMMARY-FEB-21-2026.md",
+        "error": "Command failed: git mv \"DEPLOYMENT-SUMMARY-FEB-21-2026.md\" \"docs/summaries/DEPLOYMENT-SUMMARY-FEB-21-2026.md\"\nfatal: not under version control, source=DEPLOYMENT-SUMMARY-FEB-21-2026.md, destination=docs/summaries/DEPLOYMENT-SUMMARY-FEB-21-2026.md\n"
+      },
+      {
+        "source": "FINAL-ANALYTICS-IMPLEMENTATION-SUMMARY-DEC-22-2025.md",
+        "error": "Command failed: git mv \"FINAL-ANALYTICS-IMPLEMENTATION-SUMMARY-DEC-22-2025.md\" \"docs/summaries/FINAL-ANALYTICS-IMPLEMENTATION-SUMMARY-DEC-22-2025.md\"\nfatal: not under version control, source=FINAL-ANALYTICS-IMPLEMENTATION-SUMMARY-DEC-22-2025.md, destination=docs/summaries/FINAL-ANALYTICS-IMPLEMENTATION-SUMMARY-DEC-22-2025.md\n"
+      },
+      {
+        "source": "FINAL-OPTIMIZATION-COMPLETION-SUMMARY-DEC-22-2025.md",
+        "error": "Command failed: git mv \"FINAL-OPTIMIZATION-COMPLETION-SUMMARY-DEC-22-2025.md\" \"docs/summaries/FINAL-OPTIMIZATION-COMPLETION-SUMMARY-DEC-22-2025.md\"\nfatal: not under version control, source=FINAL-OPTIMIZATION-COMPLETION-SUMMARY-DEC-22-2025.md, destination=docs/summaries/FINAL-OPTIMIZATION-COMPLETION-SUMMARY-DEC-22-2025.md\n"
+      },
+      {
+        "source": "KIRO-PATCH-V11-1-FINAL-DEPLOYMENT-SUMMARY-DEC-18-2025.md",
+        "error": "Command failed: git mv \"KIRO-PATCH-V11-1-FINAL-DEPLOYMENT-SUMMARY-DEC-18-2025.md\" \"docs/summaries/KIRO-PATCH-V11-1-FINAL-DEPLOYMENT-SUMMARY-DEC-18-2025.md\"\nfatal: not under version control, source=KIRO-PATCH-V11-1-FINAL-DEPLOYMENT-SUMMARY-DEC-18-2025.md, destination=docs/summaries/KIRO-PATCH-V11-1-FINAL-DEPLOYMENT-SUMMARY-DEC-18-2025.md\n"
+      },
+      {
+        "source": "OPTIMIZATION-SUITE-EXECUTION-SUMMARY-DEC-22-2025.md",
+        "error": "Command failed: git mv \"OPTIMIZATION-SUITE-EXECUTION-SUMMARY-DEC-22-2025.md\" \"docs/summaries/OPTIMIZATION-SUITE-EXECUTION-SUMMARY-DEC-22-2025.md\"\nfatal: not under version control, source=OPTIMIZATION-SUITE-EXECUTION-SUMMARY-DEC-22-2025.md, destination=docs/summaries/OPTIMIZATION-SUITE-EXECUTION-SUMMARY-DEC-22-2025.md\n"
+      },
+      {
+        "source": "POST-DEPLOYMENT-VALIDATION-FEB-21-2026.md",
+        "error": "Command failed: git mv \"POST-DEPLOYMENT-VALIDATION-FEB-21-2026.md\" \"docs/summaries/POST-DEPLOYMENT-VALIDATION-FEB-21-2026.md\"\nfatal: not under version control, source=POST-DEPLOYMENT-VALIDATION-FEB-21-2026.md, destination=docs/summaries/POST-DEPLOYMENT-VALIDATION-FEB-21-2026.md\n"
+      },
+      {
+        "source": "COMPREHENSIVE-OPTIMIZATION-GUIDE.md",
+        "error": "Command failed: git mv \"COMPREHENSIVE-OPTIMIZATION-GUIDE.md\" \"docs/architecture/COMPREHENSIVE-OPTIMIZATION-GUIDE.md\"\nfatal: not under version control, source=COMPREHENSIVE-OPTIMIZATION-GUIDE.md, destination=docs/architecture/COMPREHENSIVE-OPTIMIZATION-GUIDE.md\n"
+      },
+      {
+        "source": "CONTENT-AUDIT-RESULTS-NOV-23-2025.md",
+        "error": "Command failed: git mv \"CONTENT-AUDIT-RESULTS-NOV-23-2025.md\" \"docs/archive/CONTENT-AUDIT-RESULTS-NOV-23-2025.md\"\nfatal: not under version control, source=CONTENT-AUDIT-RESULTS-NOV-23-2025.md, destination=docs/archive/CONTENT-AUDIT-RESULTS-NOV-23-2025.md\n"
+      },
+      {
+        "source": "DEPLOYMENT-CHECKLIST.md",
+        "error": "Command failed: git mv \"DEPLOYMENT-CHECKLIST.md\" \"docs/archive/DEPLOYMENT-CHECKLIST.md\"\nfatal: not under version control, source=DEPLOYMENT-CHECKLIST.md, destination=docs/archive/DEPLOYMENT-CHECKLIST.md\n"
+      },
+      {
+        "source": "DEPLOYMENT-COMPLETE-NOV-10-2025.md",
+        "error": "Command failed: git mv \"DEPLOYMENT-COMPLETE-NOV-10-2025.md\" \"docs/archive/DEPLOYMENT-COMPLETE-NOV-10-2025.md\"\nfatal: not under version control, source=DEPLOYMENT-COMPLETE-NOV-10-2025.md, destination=docs/archive/DEPLOYMENT-COMPLETE-NOV-10-2025.md\n"
+      },
+      {
+        "source": "DEPLOYMENT-COMPLETE-NOV-11-2025-TEXT-PRESS-PRICING.md",
+        "error": "Command failed: git mv \"DEPLOYMENT-COMPLETE-NOV-11-2025-TEXT-PRESS-PRICING.md\" \"docs/archive/DEPLOYMENT-COMPLETE-NOV-11-2025-TEXT-PRESS-PRICING.md\"\nfatal: not under version control, source=DEPLOYMENT-COMPLETE-NOV-11-2025-TEXT-PRESS-PRICING.md, destination=docs/archive/DEPLOYMENT-COMPLETE-NOV-11-2025-TEXT-PRESS-PRICING.md\n"
+      },
+      {
+        "source": "DEPLOYMENT-COMPLETE-NOV-11-2025-VISUAL-POLISH.md",
+        "error": "Command failed: git mv \"DEPLOYMENT-COMPLETE-NOV-11-2025-VISUAL-POLISH.md\" \"docs/archive/DEPLOYMENT-COMPLETE-NOV-11-2025-VISUAL-POLISH.md\"\nfatal: not under version control, source=DEPLOYMENT-COMPLETE-NOV-11-2025-VISUAL-POLISH.md, destination=docs/archive/DEPLOYMENT-COMPLETE-NOV-11-2025-VISUAL-POLISH.md\n"
+      },
+      {
+        "source": "DEPLOYMENT-COMPLETE-NOV-11-2025.md",
+        "error": "Command failed: git mv \"DEPLOYMENT-COMPLETE-NOV-11-2025.md\" \"docs/archive/DEPLOYMENT-COMPLETE-NOV-11-2025.md\"\nfatal: not under version control, source=DEPLOYMENT-COMPLETE-NOV-11-2025.md, destination=docs/archive/DEPLOYMENT-COMPLETE-NOV-11-2025.md\n"
+      },
+      {
+        "source": "DEPLOYMENT-COMPLETE-NOV-11-CONVERSION-OPT.md",
+        "error": "Command failed: git mv \"DEPLOYMENT-COMPLETE-NOV-11-CONVERSION-OPT.md\" \"docs/archive/DEPLOYMENT-COMPLETE-NOV-11-CONVERSION-OPT.md\"\nfatal: not under version control, source=DEPLOYMENT-COMPLETE-NOV-11-CONVERSION-OPT.md, destination=docs/archive/DEPLOYMENT-COMPLETE-NOV-11-CONVERSION-OPT.md\n"
+      },
+      {
+        "source": "DEPLOYMENT-COMPLETE-NOV-11-STICKY-CTA-GA4.md",
+        "error": "Command failed: git mv \"DEPLOYMENT-COMPLETE-NOV-11-STICKY-CTA-GA4.md\" \"docs/archive/DEPLOYMENT-COMPLETE-NOV-11-STICKY-CTA-GA4.md\"\nfatal: not under version control, source=DEPLOYMENT-COMPLETE-NOV-11-STICKY-CTA-GA4.md, destination=docs/archive/DEPLOYMENT-COMPLETE-NOV-11-STICKY-CTA-GA4.md\n"
+      },
+      {
+        "source": "DEPLOYMENT-COMPLETE-NOV-12-2025.md",
+        "error": "Command failed: git mv \"DEPLOYMENT-COMPLETE-NOV-12-2025.md\" \"docs/archive/DEPLOYMENT-COMPLETE-NOV-12-2025.md\"\nfatal: not under version control, source=DEPLOYMENT-COMPLETE-NOV-12-2025.md, destination=docs/archive/DEPLOYMENT-COMPLETE-NOV-12-2025.md\n"
+      },
+      {
+        "source": "DEPLOYMENT-COMPLETE-NOV-15-2025-FINAL.md",
+        "error": "Command failed: git mv \"DEPLOYMENT-COMPLETE-NOV-15-2025-FINAL.md\" \"docs/archive/DEPLOYMENT-COMPLETE-NOV-15-2025-FINAL.md\"\nfatal: not under version control, source=DEPLOYMENT-COMPLETE-NOV-15-2025-FINAL.md, destination=docs/archive/DEPLOYMENT-COMPLETE-NOV-15-2025-FINAL.md\n"
+      },
+      {
+        "source": "DEPLOYMENT-COMPLETE-NOV-19-2025.md",
+        "error": "Command failed: git mv \"DEPLOYMENT-COMPLETE-NOV-19-2025.md\" \"docs/archive/DEPLOYMENT-COMPLETE-NOV-19-2025.md\"\nfatal: not under version control, source=DEPLOYMENT-COMPLETE-NOV-19-2025.md, destination=docs/archive/DEPLOYMENT-COMPLETE-NOV-19-2025.md\n"
+      },
+      {
+        "source": "DEPLOYMENT-COMPLETE-PHASE-2-NOV-23-2025.md",
+        "error": "Command failed: git mv \"DEPLOYMENT-COMPLETE-PHASE-2-NOV-23-2025.md\" \"docs/archive/DEPLOYMENT-COMPLETE-PHASE-2-NOV-23-2025.md\"\nfatal: not under version control, source=DEPLOYMENT-COMPLETE-PHASE-2-NOV-23-2025.md, destination=docs/archive/DEPLOYMENT-COMPLETE-PHASE-2-NOV-23-2025.md\n"
+      },
+      {
+        "source": "DEPLOYMENT-COMPLETE-UK-ENGLISH-NOV-23-2025.md",
+        "error": "Command failed: git mv \"DEPLOYMENT-COMPLETE-UK-ENGLISH-NOV-23-2025.md\" \"docs/archive/DEPLOYMENT-COMPLETE-UK-ENGLISH-NOV-23-2025.md\"\nfatal: not under version control, source=DEPLOYMENT-COMPLETE-UK-ENGLISH-NOV-23-2025.md, destination=docs/archive/DEPLOYMENT-COMPLETE-UK-ENGLISH-NOV-23-2025.md\n"
+      },
+      {
+        "source": "DEPLOYMENT-GUIDE-VISUAL-POLISH-NOV-11.md",
+        "error": "Command failed: git mv \"DEPLOYMENT-GUIDE-VISUAL-POLISH-NOV-11.md\" \"docs/archive/DEPLOYMENT-GUIDE-VISUAL-POLISH-NOV-11.md\"\nfatal: not under version control, source=DEPLOYMENT-GUIDE-VISUAL-POLISH-NOV-11.md, destination=docs/archive/DEPLOYMENT-GUIDE-VISUAL-POLISH-NOV-11.md\n"
+      },
+      {
+        "source": "DEPLOYMENT-NOV-16-2025-ALIGNMENT-VERIFICATION.md",
+        "error": "Command failed: git mv \"DEPLOYMENT-NOV-16-2025-ALIGNMENT-VERIFICATION.md\" \"docs/archive/DEPLOYMENT-NOV-16-2025-ALIGNMENT-VERIFICATION.md\"\nfatal: not under version control, source=DEPLOYMENT-NOV-16-2025-ALIGNMENT-VERIFICATION.md, destination=docs/archive/DEPLOYMENT-NOV-16-2025-ALIGNMENT-VERIFICATION.md\n"
+      },
+      {
+        "source": "DEPLOYMENT-READY-COPY-CTA-OPTIMIZATION.md",
+        "error": "Command failed: git mv \"DEPLOYMENT-READY-COPY-CTA-OPTIMIZATION.md\" \"docs/archive/DEPLOYMENT-READY-COPY-CTA-OPTIMIZATION.md\"\nfatal: not under version control, source=DEPLOYMENT-READY-COPY-CTA-OPTIMIZATION.md, destination=docs/archive/DEPLOYMENT-READY-COPY-CTA-OPTIMIZATION.md\n"
+      },
+      {
+        "source": "DEPLOYMENT-READY-STICKY-CTA-GA4.md",
+        "error": "Command failed: git mv \"DEPLOYMENT-READY-STICKY-CTA-GA4.md\" \"docs/archive/DEPLOYMENT-READY-STICKY-CTA-GA4.md\"\nfatal: not under version control, source=DEPLOYMENT-READY-STICKY-CTA-GA4.md, destination=docs/archive/DEPLOYMENT-READY-STICKY-CTA-GA4.md\n"
+      },
+      {
+        "source": "DEPLOYMENT-SCRIPT-FIXED.md",
+        "error": "Command failed: git mv \"DEPLOYMENT-SCRIPT-FIXED.md\" \"docs/archive/DEPLOYMENT-SCRIPT-FIXED.md\"\nfatal: not under version control, source=DEPLOYMENT-SCRIPT-FIXED.md, destination=docs/archive/DEPLOYMENT-SCRIPT-FIXED.md\n"
+      },
+      {
+        "source": "DEPLOYMENT-STATUS-NOV-15-2025.md",
+        "error": "Command failed: git mv \"DEPLOYMENT-STATUS-NOV-15-2025.md\" \"docs/archive/DEPLOYMENT-STATUS-NOV-15-2025.md\"\nfatal: not under version control, source=DEPLOYMENT-STATUS-NOV-15-2025.md, destination=docs/archive/DEPLOYMENT-STATUS-NOV-15-2025.md\n"
+      },
+      {
+        "source": "DEPLOYMENT-SUCCESS-NOV-13-2025.md",
+        "error": "Command failed: git mv \"DEPLOYMENT-SUCCESS-NOV-13-2025.md\" \"docs/archive/DEPLOYMENT-SUCCESS-NOV-13-2025.md\"\nfatal: not under version control, source=DEPLOYMENT-SUCCESS-NOV-13-2025.md, destination=docs/archive/DEPLOYMENT-SUCCESS-NOV-13-2025.md\n"
+      },
+      {
+        "source": "DEPLOYMENT-SUMMARY-NOV-11-2025.md",
+        "error": "Command failed: git mv \"DEPLOYMENT-SUMMARY-NOV-11-2025.md\" \"docs/archive/DEPLOYMENT-SUMMARY-NOV-11-2025.md\"\nfatal: not under version control, source=DEPLOYMENT-SUMMARY-NOV-11-2025.md, destination=docs/archive/DEPLOYMENT-SUMMARY-NOV-11-2025.md\n"
+      },
+      {
+        "source": "DEPLOYMENT-SUMMARY-NOV-11-FINAL.md",
+        "error": "Command failed: git mv \"DEPLOYMENT-SUMMARY-NOV-11-FINAL.md\" \"docs/archive/DEPLOYMENT-SUMMARY-NOV-11-FINAL.md\"\nfatal: not under version control, source=DEPLOYMENT-SUMMARY-NOV-11-FINAL.md, destination=docs/archive/DEPLOYMENT-SUMMARY-NOV-11-FINAL.md\n"
+      },
+      {
+        "source": "DEPLOYMENT_COMPLETION_CHECKLIST.md",
+        "error": "Command failed: git mv \"DEPLOYMENT_COMPLETION_CHECKLIST.md\" \"docs/archive/DEPLOYMENT_COMPLETION_CHECKLIST.md\"\nfatal: not under version control, source=DEPLOYMENT_COMPLETION_CHECKLIST.md, destination=docs/archive/DEPLOYMENT_COMPLETION_CHECKLIST.md\n"
+      },
+      {
+        "source": "DEPLOYMENT_FIX_SUMMARY.md",
+        "error": "Command failed: git mv \"DEPLOYMENT_FIX_SUMMARY.md\" \"docs/archive/DEPLOYMENT_FIX_SUMMARY.md\"\nfatal: not under version control, source=DEPLOYMENT_FIX_SUMMARY.md, destination=docs/archive/DEPLOYMENT_FIX_SUMMARY.md\n"
+      },
+      {
+        "source": "DEPLOYMENT_INSTRUCTIONS_SUMMARY.md",
+        "error": "Command failed: git mv \"DEPLOYMENT_INSTRUCTIONS_SUMMARY.md\" \"docs/archive/DEPLOYMENT_INSTRUCTIONS_SUMMARY.md\"\nfatal: not under version control, source=DEPLOYMENT_INSTRUCTIONS_SUMMARY.md, destination=docs/archive/DEPLOYMENT_INSTRUCTIONS_SUMMARY.md\n"
+      },
+      {
+        "source": "DEPLOYMENT_STATUS_SUMMARY.md",
+        "error": "Command failed: git mv \"DEPLOYMENT_STATUS_SUMMARY.md\" \"docs/archive/DEPLOYMENT_STATUS_SUMMARY.md\"\nfatal: not under version control, source=DEPLOYMENT_STATUS_SUMMARY.md, destination=docs/archive/DEPLOYMENT_STATUS_SUMMARY.md\n"
+      },
+      {
+        "source": "DEPLOYMENT_SUCCESS_SUMMARY.md",
+        "error": "Command failed: git mv \"DEPLOYMENT_SUCCESS_SUMMARY.md\" \"docs/archive/DEPLOYMENT_SUCCESS_SUMMARY.md\"\nfatal: not under version control, source=DEPLOYMENT_SUCCESS_SUMMARY.md, destination=docs/archive/DEPLOYMENT_SUCCESS_SUMMARY.md\n"
+      },
+      {
+        "source": "DEPLOYMENT_TEST_SUMMARY.md",
+        "error": "Command failed: git mv \"DEPLOYMENT_TEST_SUMMARY.md\" \"docs/archive/DEPLOYMENT_TEST_SUMMARY.md\"\nfatal: not under version control, source=DEPLOYMENT_TEST_SUMMARY.md, destination=docs/archive/DEPLOYMENT_TEST_SUMMARY.md\n"
+      },
+      {
+        "source": "FAVICON_FIX_DEPLOYMENT_COMPLETE.md",
+        "error": "Command failed: git mv \"FAVICON_FIX_DEPLOYMENT_COMPLETE.md\" \"docs/archive/FAVICON_FIX_DEPLOYMENT_COMPLETE.md\"\nfatal: not under version control, source=FAVICON_FIX_DEPLOYMENT_COMPLETE.md, destination=docs/archive/FAVICON_FIX_DEPLOYMENT_COMPLETE.md\n"
+      },
+      {
+        "source": "FINAL-DEPLOYMENT-SUMMARY-NOV-11-2025.md",
+        "error": "Command failed: git mv \"FINAL-DEPLOYMENT-SUMMARY-NOV-11-2025.md\" \"docs/archive/FINAL-DEPLOYMENT-SUMMARY-NOV-11-2025.md\"\nfatal: not under version control, source=FINAL-DEPLOYMENT-SUMMARY-NOV-11-2025.md, destination=docs/archive/FINAL-DEPLOYMENT-SUMMARY-NOV-11-2025.md\n"
+      },
+      {
+        "source": "FINAL-DEPLOYMENT-SUMMARY-NOV-9.md",
+        "error": "Command failed: git mv \"FINAL-DEPLOYMENT-SUMMARY-NOV-9.md\" \"docs/archive/FINAL-DEPLOYMENT-SUMMARY-NOV-9.md\"\nfatal: not under version control, source=FINAL-DEPLOYMENT-SUMMARY-NOV-9.md, destination=docs/archive/FINAL-DEPLOYMENT-SUMMARY-NOV-9.md\n"
+      },
+      {
+        "source": "HTML_NO_CACHE_CONFIGURATION_SUMMARY.md",
+        "error": "Command failed: git mv \"HTML_NO_CACHE_CONFIGURATION_SUMMARY.md\" \"docs/archive/HTML_NO_CACHE_CONFIGURATION_SUMMARY.md\"\nfatal: not under version control, source=HTML_NO_CACHE_CONFIGURATION_SUMMARY.md, destination=docs/archive/HTML_NO_CACHE_CONFIGURATION_SUMMARY.md\n"
+      },
+      {
+        "source": "IMAGE-OPTIMIZATION-DEPLOYMENT-NOV-13.md",
+        "error": "Command failed: git mv \"IMAGE-OPTIMIZATION-DEPLOYMENT-NOV-13.md\" \"docs/archive/IMAGE-OPTIMIZATION-DEPLOYMENT-NOV-13.md\"\nfatal: not under version control, source=IMAGE-OPTIMIZATION-DEPLOYMENT-NOV-13.md, destination=docs/archive/IMAGE-OPTIMIZATION-DEPLOYMENT-NOV-13.md\n"
+      },
+      {
+        "source": "IMPLEMENTATION-SUMMARY-HOSTING-PRICING.md",
+        "error": "Command failed: git mv \"IMPLEMENTATION-SUMMARY-HOSTING-PRICING.md\" \"docs/archive/IMPLEMENTATION-SUMMARY-HOSTING-PRICING.md\"\nfatal: not under version control, source=IMPLEMENTATION-SUMMARY-HOSTING-PRICING.md, destination=docs/archive/IMPLEMENTATION-SUMMARY-HOSTING-PRICING.md\n"
+      },
+      {
+        "source": "IMPLEMENTATION-SUMMARY-NOV-11-STICKY-CTA.md",
+        "error": "Command failed: git mv \"IMPLEMENTATION-SUMMARY-NOV-11-STICKY-CTA.md\" \"docs/archive/IMPLEMENTATION-SUMMARY-NOV-11-STICKY-CTA.md\"\nfatal: not under version control, source=IMPLEMENTATION-SUMMARY-NOV-11-STICKY-CTA.md, destination=docs/archive/IMPLEMENTATION-SUMMARY-NOV-11-STICKY-CTA.md\n"
+      },
+      {
+        "source": "IMPLEMENTATION-SUMMARY-PRESS-PRICING-SERVICES.md",
+        "error": "Command failed: git mv \"IMPLEMENTATION-SUMMARY-PRESS-PRICING-SERVICES.md\" \"docs/archive/IMPLEMENTATION-SUMMARY-PRESS-PRICING-SERVICES.md\"\nfatal: not under version control, source=IMPLEMENTATION-SUMMARY-PRESS-PRICING-SERVICES.md, destination=docs/archive/IMPLEMENTATION-SUMMARY-PRESS-PRICING-SERVICES.md\n"
+      },
+      {
+        "source": "MANUAL_DEPLOYMENT_GUIDE.md",
+        "error": "Command failed: git mv \"MANUAL_DEPLOYMENT_GUIDE.md\" \"docs/archive/MANUAL_DEPLOYMENT_GUIDE.md\"\nfatal: not under version control, source=MANUAL_DEPLOYMENT_GUIDE.md, destination=docs/archive/MANUAL_DEPLOYMENT_GUIDE.md\n"
+      },
+      {
+        "source": "MANUAL_DEPLOYMENT_GUIDE_CLOUDFRONT.md",
+        "error": "Command failed: git mv \"MANUAL_DEPLOYMENT_GUIDE_CLOUDFRONT.md\" \"docs/archive/MANUAL_DEPLOYMENT_GUIDE_CLOUDFRONT.md\"\nfatal: not under version control, source=MANUAL_DEPLOYMENT_GUIDE_CLOUDFRONT.md, destination=docs/archive/MANUAL_DEPLOYMENT_GUIDE_CLOUDFRONT.md\n"
+      },
+      {
+        "source": "MOBILE_PERFORMANCE_OPTIMIZATION_SUMMARY.md",
+        "error": "Command failed: git mv \"MOBILE_PERFORMANCE_OPTIMIZATION_SUMMARY.md\" \"docs/archive/MOBILE_PERFORMANCE_OPTIMIZATION_SUMMARY.md\"\nfatal: not under version control, source=MOBILE_PERFORMANCE_OPTIMIZATION_SUMMARY.md, destination=docs/archive/MOBILE_PERFORMANCE_OPTIMIZATION_SUMMARY.md\n"
+      },
+      {
+        "source": "PERFORMANCE_OPTIMIZATION_DEPLOYMENT_SUMMARY.md",
+        "error": "Command failed: git mv \"PERFORMANCE_OPTIMIZATION_DEPLOYMENT_SUMMARY.md\" \"docs/archive/PERFORMANCE_OPTIMIZATION_DEPLOYMENT_SUMMARY.md\"\nfatal: not under version control, source=PERFORMANCE_OPTIMIZATION_DEPLOYMENT_SUMMARY.md, destination=docs/archive/PERFORMANCE_OPTIMIZATION_DEPLOYMENT_SUMMARY.md\n"
+      },
+      {
+        "source": "PERFORMANCE_OPTIMIZATION_SUMMARY.md",
+        "error": "Command failed: git mv \"PERFORMANCE_OPTIMIZATION_SUMMARY.md\" \"docs/archive/PERFORMANCE_OPTIMIZATION_SUMMARY.md\"\nfatal: not under version control, source=PERFORMANCE_OPTIMIZATION_SUMMARY.md, destination=docs/archive/PERFORMANCE_OPTIMIZATION_SUMMARY.md\n"
+      },
+      {
+        "source": "PHOTOGRAPHY_PAGE_FIXES_COMPLETE.md",
+        "error": "Command failed: git mv \"PHOTOGRAPHY_PAGE_FIXES_COMPLETE.md\" \"docs/archive/PHOTOGRAPHY_PAGE_FIXES_COMPLETE.md\"\nfatal: not under version control, source=PHOTOGRAPHY_PAGE_FIXES_COMPLETE.md, destination=docs/archive/PHOTOGRAPHY_PAGE_FIXES_COMPLETE.md\n"
+      },
+      {
+        "source": "QUICK_CLOUDFRONT_EDITING_GUIDE.md",
+        "error": "Command failed: git mv \"QUICK_CLOUDFRONT_EDITING_GUIDE.md\" \"docs/archive/QUICK_CLOUDFRONT_EDITING_GUIDE.md\"\nfatal: not under version control, source=QUICK_CLOUDFRONT_EDITING_GUIDE.md, destination=docs/archive/QUICK_CLOUDFRONT_EDITING_GUIDE.md\n"
+      },
+      {
+        "source": "RSC_DEPLOYMENT_FIX_GUIDE.md",
+        "error": "Command failed: git mv \"RSC_DEPLOYMENT_FIX_GUIDE.md\" \"docs/archive/RSC_DEPLOYMENT_FIX_GUIDE.md\"\nfatal: not under version control, source=RSC_DEPLOYMENT_FIX_GUIDE.md, destination=docs/archive/RSC_DEPLOYMENT_FIX_GUIDE.md\n"
+      },
+      {
+        "source": "SCRAM-IMPLEMENTATION-SUMMARY-NOV-11.md",
+        "error": "Command failed: git mv \"SCRAM-IMPLEMENTATION-SUMMARY-NOV-11.md\" \"docs/archive/SCRAM-IMPLEMENTATION-SUMMARY-NOV-11.md\"\nfatal: not under version control, source=SCRAM-IMPLEMENTATION-SUMMARY-NOV-11.md, destination=docs/archive/SCRAM-IMPLEMENTATION-SUMMARY-NOV-11.md\n"
+      },
+      {
+        "source": "TESTIMONIALS-UPDATE-COMPLETE.md",
+        "error": "Command failed: git mv \"TESTIMONIALS-UPDATE-COMPLETE.md\" \"docs/archive/TESTIMONIALS-UPDATE-COMPLETE.md\"\nfatal: not under version control, source=TESTIMONIALS-UPDATE-COMPLETE.md, destination=docs/archive/TESTIMONIALS-UPDATE-COMPLETE.md\n"
+      },
+      {
+        "source": "TRUST_LOGO_SVG_FIX_SUMMARY.md",
+        "error": "Command failed: git mv \"TRUST_LOGO_SVG_FIX_SUMMARY.md\" \"docs/archive/TRUST_LOGO_SVG_FIX_SUMMARY.md\"\nfatal: not under version control, source=TRUST_LOGO_SVG_FIX_SUMMARY.md, destination=docs/archive/TRUST_LOGO_SVG_FIX_SUMMARY.md\n"
+      },
+      {
+        "source": "acceptance-validation-comprehensive-summary-1760532969284.md",
+        "error": "Command failed: git mv \"acceptance-validation-comprehensive-summary-1760532969284.md\" \"docs/archive/acceptance-validation-comprehensive-summary-1760532969284.md\"\nfatal: not under version control, source=acceptance-validation-comprehensive-summary-1760532969284.md, destination=docs/archive/acceptance-validation-comprehensive-summary-1760532969284.md\n"
+      },
+      {
+        "source": "acceptance-validation-comprehensive-summary-1761766468944.md",
+        "error": "Command failed: git mv \"acceptance-validation-comprehensive-summary-1761766468944.md\" \"docs/archive/acceptance-validation-comprehensive-summary-1761766468944.md\"\nfatal: not under version control, source=acceptance-validation-comprehensive-summary-1761766468944.md, destination=docs/archive/acceptance-validation-comprehensive-summary-1761766468944.md\n"
+      },
+      {
+        "source": "acceptance-validation-comprehensive-summary-1761766964750.md",
+        "error": "Command failed: git mv \"acceptance-validation-comprehensive-summary-1761766964750.md\" \"docs/archive/acceptance-validation-comprehensive-summary-1761766964750.md\"\nfatal: not under version control, source=acceptance-validation-comprehensive-summary-1761766964750.md, destination=docs/archive/acceptance-validation-comprehensive-summary-1761766964750.md\n"
+      },
+      {
+        "source": "accessibility-test-summary.md",
+        "error": "Command failed: git mv \"accessibility-test-summary.md\" \"docs/archive/accessibility-test-summary.md\"\nfatal: not under version control, source=accessibility-test-summary.md, destination=docs/archive/accessibility-test-summary.md\n"
+      },
+      {
+        "source": "accessibility-validation-summary-2025-10-15T15-55-04-583Z.md",
+        "error": "Command failed: git mv \"accessibility-validation-summary-2025-10-15T15-55-04-583Z.md\" \"docs/archive/accessibility-validation-summary-2025-10-15T15-55-04-583Z.md\"\nfatal: not under version control, source=accessibility-validation-summary-2025-10-15T15-55-04-583Z.md, destination=docs/archive/accessibility-validation-summary-2025-10-15T15-55-04-583Z.md\n"
+      },
+      {
+        "source": "aws-security-validation-summary-1760547956050.md",
+        "error": "Command failed: git mv \"aws-security-validation-summary-1760547956050.md\" \"docs/archive/aws-security-validation-summary-1760547956050.md\"\nfatal: not under version control, source=aws-security-validation-summary-1760547956050.md, destination=docs/archive/aws-security-validation-summary-1760547956050.md\n"
+      },
+      {
+        "source": "blog-content-validation-summary-1760544580999.md",
+        "error": "Command failed: git mv \"blog-content-validation-summary-1760544580999.md\" \"docs/archive/blog-content-validation-summary-1760544580999.md\"\nfatal: not under version control, source=blog-content-validation-summary-1760544580999.md, destination=docs/archive/blog-content-validation-summary-1760544580999.md\n"
+      },
+      {
+        "source": "blog-content-validation-summary-1760544652036.md",
+        "error": "Command failed: git mv \"blog-content-validation-summary-1760544652036.md\" \"docs/archive/blog-content-validation-summary-1760544652036.md\"\nfatal: not under version control, source=blog-content-validation-summary-1760544652036.md, destination=docs/archive/blog-content-validation-summary-1760544652036.md\n"
+      },
+      {
+        "source": "brand-ui-validation-summary-1760531974378.md",
+        "error": "Command failed: git mv \"brand-ui-validation-summary-1760531974378.md\" \"docs/archive/brand-ui-validation-summary-1760531974378.md\"\nfatal: not under version control, source=brand-ui-validation-summary-1760531974378.md, destination=docs/archive/brand-ui-validation-summary-1760531974378.md\n"
+      },
+      {
+        "source": "brand-ui-validation-summary-1760532085145.md",
+        "error": "Command failed: git mv \"brand-ui-validation-summary-1760532085145.md\" \"docs/archive/brand-ui-validation-summary-1760532085145.md\"\nfatal: not under version control, source=brand-ui-validation-summary-1760532085145.md, destination=docs/archive/brand-ui-validation-summary-1760532085145.md\n"
+      },
+      {
+        "source": "brand-ui-validation-summary-1760532968732.md",
+        "error": "Command failed: git mv \"brand-ui-validation-summary-1760532968732.md\" \"docs/archive/brand-ui-validation-summary-1760532968732.md\"\nfatal: not under version control, source=brand-ui-validation-summary-1760532968732.md, destination=docs/archive/brand-ui-validation-summary-1760532968732.md\n"
+      },
+      {
+        "source": "brand-ui-validation-summary-1761766467625.md",
+        "error": "Command failed: git mv \"brand-ui-validation-summary-1761766467625.md\" \"docs/archive/brand-ui-validation-summary-1761766467625.md\"\nfatal: not under version control, source=brand-ui-validation-summary-1761766467625.md, destination=docs/archive/brand-ui-validation-summary-1761766467625.md\n"
+      },
+      {
+        "source": "brand-ui-validation-summary-1761766964138.md",
+        "error": "Command failed: git mv \"brand-ui-validation-summary-1761766964138.md\" \"docs/archive/brand-ui-validation-summary-1761766964138.md\"\nfatal: not under version control, source=brand-ui-validation-summary-1761766964138.md, destination=docs/archive/brand-ui-validation-summary-1761766964138.md\n"
+      },
+      {
+        "source": "complete-pretty-urls-validation-report-20251014.md",
+        "error": "Command failed: git mv \"complete-pretty-urls-validation-report-20251014.md\" \"docs/archive/complete-pretty-urls-validation-report-20251014.md\"\nfatal: not under version control, source=complete-pretty-urls-validation-report-20251014.md, destination=docs/archive/complete-pretty-urls-validation-report-20251014.md\n"
+      },
+      {
+        "source": "content-functionality-validation-summary-1760532181679.md",
+        "error": "Command failed: git mv \"content-functionality-validation-summary-1760532181679.md\" \"docs/archive/content-functionality-validation-summary-1760532181679.md\"\nfatal: not under version control, source=content-functionality-validation-summary-1760532181679.md, destination=docs/archive/content-functionality-validation-summary-1760532181679.md\n"
+      },
+      {
+        "source": "content-functionality-validation-summary-1760532297169.md",
+        "error": "Command failed: git mv \"content-functionality-validation-summary-1760532297169.md\" \"docs/archive/content-functionality-validation-summary-1760532297169.md\"\nfatal: not under version control, source=content-functionality-validation-summary-1760532297169.md, destination=docs/archive/content-functionality-validation-summary-1760532297169.md\n"
+      },
+      {
+        "source": "content-functionality-validation-summary-1760532359684.md",
+        "error": "Command failed: git mv \"content-functionality-validation-summary-1760532359684.md\" \"docs/archive/content-functionality-validation-summary-1760532359684.md\"\nfatal: not under version control, source=content-functionality-validation-summary-1760532359684.md, destination=docs/archive/content-functionality-validation-summary-1760532359684.md\n"
+      },
+      {
+        "source": "content-functionality-validation-summary-1760532968874.md",
+        "error": "Command failed: git mv \"content-functionality-validation-summary-1760532968874.md\" \"docs/archive/content-functionality-validation-summary-1760532968874.md\"\nfatal: not under version control, source=content-functionality-validation-summary-1760532968874.md, destination=docs/archive/content-functionality-validation-summary-1760532968874.md\n"
+      },
+      {
+        "source": "content-functionality-validation-summary-1761766467957.md",
+        "error": "Command failed: git mv \"content-functionality-validation-summary-1761766467957.md\" \"docs/archive/content-functionality-validation-summary-1761766467957.md\"\nfatal: not under version control, source=content-functionality-validation-summary-1761766467957.md, destination=docs/archive/content-functionality-validation-summary-1761766467957.md\n"
+      },
+      {
+        "source": "content-functionality-validation-summary-1761766964287.md",
+        "error": "Command failed: git mv \"content-functionality-validation-summary-1761766964287.md\" \"docs/archive/content-functionality-validation-summary-1761766964287.md\"\nfatal: not under version control, source=content-functionality-validation-summary-1761766964287.md, destination=docs/archive/content-functionality-validation-summary-1761766964287.md\n"
+      },
+      {
+        "source": "conversion-improvements-summary-2025-11-23T19-43-55-432Z.md",
+        "error": "Command failed: git mv \"conversion-improvements-summary-2025-11-23T19-43-55-432Z.md\" \"docs/archive/conversion-improvements-summary-2025-11-23T19-43-55-432Z.md\"\nfatal: not under version control, source=conversion-improvements-summary-2025-11-23T19-43-55-432Z.md, destination=docs/archive/conversion-improvements-summary-2025-11-23T19-43-55-432Z.md\n"
+      },
+      {
+        "source": "cross-browser-device-summary-1761936580060.md",
+        "error": "Command failed: git mv \"cross-browser-device-summary-1761936580060.md\" \"docs/archive/cross-browser-device-summary-1761936580060.md\"\nfatal: not under version control, source=cross-browser-device-summary-1761936580060.md, destination=docs/archive/cross-browser-device-summary-1761936580060.md\n"
+      },
+      {
+        "source": "deployment-infrastructure-validation-summary-1760532752180.md",
+        "error": "Command failed: git mv \"deployment-infrastructure-validation-summary-1760532752180.md\" \"docs/archive/deployment-infrastructure-validation-summary-1760532752180.md\"\nfatal: not under version control, source=deployment-infrastructure-validation-summary-1760532752180.md, destination=docs/archive/deployment-infrastructure-validation-summary-1760532752180.md\n"
+      },
+      {
+        "source": "deployment-infrastructure-validation-summary-1760532823904.md",
+        "error": "Command failed: git mv \"deployment-infrastructure-validation-summary-1760532823904.md\" \"docs/archive/deployment-infrastructure-validation-summary-1760532823904.md\"\nfatal: not under version control, source=deployment-infrastructure-validation-summary-1760532823904.md, destination=docs/archive/deployment-infrastructure-validation-summary-1760532823904.md\n"
+      },
+      {
+        "source": "deployment-infrastructure-validation-summary-1760532874871.md",
+        "error": "Command failed: git mv \"deployment-infrastructure-validation-summary-1760532874871.md\" \"docs/archive/deployment-infrastructure-validation-summary-1760532874871.md\"\nfatal: not under version control, source=deployment-infrastructure-validation-summary-1760532874871.md, destination=docs/archive/deployment-infrastructure-validation-summary-1760532874871.md\n"
+      },
+      {
+        "source": "deployment-infrastructure-validation-summary-1760532969254.md",
+        "error": "Command failed: git mv \"deployment-infrastructure-validation-summary-1760532969254.md\" \"docs/archive/deployment-infrastructure-validation-summary-1760532969254.md\"\nfatal: not under version control, source=deployment-infrastructure-validation-summary-1760532969254.md, destination=docs/archive/deployment-infrastructure-validation-summary-1760532969254.md\n"
+      },
+      {
+        "source": "deployment-infrastructure-validation-summary-1761766468902.md",
+        "error": "Command failed: git mv \"deployment-infrastructure-validation-summary-1761766468902.md\" \"docs/archive/deployment-infrastructure-validation-summary-1761766468902.md\"\nfatal: not under version control, source=deployment-infrastructure-validation-summary-1761766468902.md, destination=docs/archive/deployment-infrastructure-validation-summary-1761766468902.md\n"
+      },
+      {
+        "source": "deployment-infrastructure-validation-summary-1761766964726.md",
+        "error": "Command failed: git mv \"deployment-infrastructure-validation-summary-1761766964726.md\" \"docs/archive/deployment-infrastructure-validation-summary-1761766964726.md\"\nfatal: not under version control, source=deployment-infrastructure-validation-summary-1761766964726.md, destination=docs/archive/deployment-infrastructure-validation-summary-1761766964726.md\n"
+      },
+      {
+        "source": "deployment-summary-complete-fixes.md",
+        "error": "Command failed: git mv \"deployment-summary-complete-fixes.md\" \"docs/archive/deployment-summary-complete-fixes.md\"\nfatal: not under version control, source=deployment-summary-complete-fixes.md, destination=docs/archive/deployment-summary-complete-fixes.md\n"
+      },
+      {
+        "source": "deployment-summary-social-media-update.md",
+        "error": "Command failed: git mv \"deployment-summary-social-media-update.md\" \"docs/archive/deployment-summary-social-media-update.md\"\nfatal: not under version control, source=deployment-summary-social-media-update.md, destination=docs/archive/deployment-summary-social-media-update.md\n"
+      },
+      {
+        "source": "desktop-layout-test-summary.md",
+        "error": "Command failed: git mv \"desktop-layout-test-summary.md\" \"docs/archive/desktop-layout-test-summary.md\"\nfatal: not under version control, source=desktop-layout-test-summary.md, destination=docs/archive/desktop-layout-test-summary.md\n"
+      },
+      {
+        "source": "image-validation-summary-2025-10-15T15-46-02-571Z.md",
+        "error": "Command failed: git mv \"image-validation-summary-2025-10-15T15-46-02-571Z.md\" \"docs/archive/image-validation-summary-2025-10-15T15-46-02-571Z.md\"\nfatal: not under version control, source=image-validation-summary-2025-10-15T15-46-02-571Z.md, destination=docs/archive/image-validation-summary-2025-10-15T15-46-02-571Z.md\n"
+      },
+      {
+        "source": "image-validation-summary-2025-10-15T15-48-52-350Z.md",
+        "error": "Command failed: git mv \"image-validation-summary-2025-10-15T15-48-52-350Z.md\" \"docs/archive/image-validation-summary-2025-10-15T15-48-52-350Z.md\"\nfatal: not under version control, source=image-validation-summary-2025-10-15T15-48-52-350Z.md, destination=docs/archive/image-validation-summary-2025-10-15T15-48-52-350Z.md\n"
+      },
+      {
+        "source": "image-validation-summary-2025-10-15T15-49-35-739Z.md",
+        "error": "Command failed: git mv \"image-validation-summary-2025-10-15T15-49-35-739Z.md\" \"docs/archive/image-validation-summary-2025-10-15T15-49-35-739Z.md\"\nfatal: not under version control, source=image-validation-summary-2025-10-15T15-49-35-739Z.md, destination=docs/archive/image-validation-summary-2025-10-15T15-49-35-739Z.md\n"
+      },
+      {
+        "source": "image-validation-summary-2025-10-15T15-50-22-002Z.md",
+        "error": "Command failed: git mv \"image-validation-summary-2025-10-15T15-50-22-002Z.md\" \"docs/archive/image-validation-summary-2025-10-15T15-50-22-002Z.md\"\nfatal: not under version control, source=image-validation-summary-2025-10-15T15-50-22-002Z.md, destination=docs/archive/image-validation-summary-2025-10-15T15-50-22-002Z.md\n"
+      },
+      {
+        "source": "local-ci-consistency-summary-1760294185846.md",
+        "error": "Command failed: git mv \"local-ci-consistency-summary-1760294185846.md\" \"docs/archive/local-ci-consistency-summary-1760294185846.md\"\nfatal: not under version control, source=local-ci-consistency-summary-1760294185846.md, destination=docs/archive/local-ci-consistency-summary-1760294185846.md\n"
+      },
+      {
+        "source": "performance-accessibility-summary-1761936347728.md",
+        "error": "Command failed: git mv \"performance-accessibility-summary-1761936347728.md\" \"docs/archive/performance-accessibility-summary-1761936347728.md\"\nfatal: not under version control, source=performance-accessibility-summary-1761936347728.md, destination=docs/archive/performance-accessibility-summary-1761936347728.md\n"
+      },
+      {
+        "source": "performance-accessibility-summary-1761936378433.md",
+        "error": "Command failed: git mv \"performance-accessibility-summary-1761936378433.md\" \"docs/archive/performance-accessibility-summary-1761936378433.md\"\nfatal: not under version control, source=performance-accessibility-summary-1761936378433.md, destination=docs/archive/performance-accessibility-summary-1761936378433.md\n"
+      },
+      {
+        "source": "performance-seo-validation-summary-1760532468998.md",
+        "error": "Command failed: git mv \"performance-seo-validation-summary-1760532468998.md\" \"docs/archive/performance-seo-validation-summary-1760532468998.md\"\nfatal: not under version control, source=performance-seo-validation-summary-1760532468998.md, destination=docs/archive/performance-seo-validation-summary-1760532468998.md\n"
+      },
+      {
+        "source": "performance-seo-validation-summary-1760532510670.md",
+        "error": "Command failed: git mv \"performance-seo-validation-summary-1760532510670.md\" \"docs/archive/performance-seo-validation-summary-1760532510670.md\"\nfatal: not under version control, source=performance-seo-validation-summary-1760532510670.md, destination=docs/archive/performance-seo-validation-summary-1760532510670.md\n"
+      },
+      {
+        "source": "performance-seo-validation-summary-1760532544349.md",
+        "error": "Command failed: git mv \"performance-seo-validation-summary-1760532544349.md\" \"docs/archive/performance-seo-validation-summary-1760532544349.md\"\nfatal: not under version control, source=performance-seo-validation-summary-1760532544349.md, destination=docs/archive/performance-seo-validation-summary-1760532544349.md\n"
+      },
+      {
+        "source": "performance-seo-validation-summary-1760532567762.md",
+        "error": "Command failed: git mv \"performance-seo-validation-summary-1760532567762.md\" \"docs/archive/performance-seo-validation-summary-1760532567762.md\"\nfatal: not under version control, source=performance-seo-validation-summary-1760532567762.md, destination=docs/archive/performance-seo-validation-summary-1760532567762.md\n"
+      },
+      {
+        "source": "performance-seo-validation-summary-1760532642791.md",
+        "error": "Command failed: git mv \"performance-seo-validation-summary-1760532642791.md\" \"docs/archive/performance-seo-validation-summary-1760532642791.md\"\nfatal: not under version control, source=performance-seo-validation-summary-1760532642791.md, destination=docs/archive/performance-seo-validation-summary-1760532642791.md\n"
+      },
+      {
+        "source": "performance-seo-validation-summary-1760532969107.md",
+        "error": "Command failed: git mv \"performance-seo-validation-summary-1760532969107.md\" \"docs/archive/performance-seo-validation-summary-1760532969107.md\"\nfatal: not under version control, source=performance-seo-validation-summary-1760532969107.md, destination=docs/archive/performance-seo-validation-summary-1760532969107.md\n"
+      },
+      {
+        "source": "performance-seo-validation-summary-1761766468583.md",
+        "error": "Command failed: git mv \"performance-seo-validation-summary-1761766468583.md\" \"docs/archive/performance-seo-validation-summary-1761766468583.md\"\nfatal: not under version control, source=performance-seo-validation-summary-1761766468583.md, destination=docs/archive/performance-seo-validation-summary-1761766468583.md\n"
+      },
+      {
+        "source": "performance-seo-validation-summary-1761766964551.md",
+        "error": "Command failed: git mv \"performance-seo-validation-summary-1761766964551.md\" \"docs/archive/performance-seo-validation-summary-1761766964551.md\"\nfatal: not under version control, source=performance-seo-validation-summary-1761766964551.md, destination=docs/archive/performance-seo-validation-summary-1761766964551.md\n"
+      },
+      {
+        "source": "press-logos-accessibility-validation-summary.md",
+        "error": "Command failed: git mv \"press-logos-accessibility-validation-summary.md\" \"docs/archive/press-logos-accessibility-validation-summary.md\"\nfatal: not under version control, source=press-logos-accessibility-validation-summary.md, destination=docs/archive/press-logos-accessibility-validation-summary.md\n"
+      },
+      {
+        "source": "press-logos-lighthouse-summary-1762791789759.md",
+        "error": "Command failed: git mv \"press-logos-lighthouse-summary-1762791789759.md\" \"docs/archive/press-logos-lighthouse-summary-1762791789759.md\"\nfatal: not under version control, source=press-logos-lighthouse-summary-1762791789759.md, destination=docs/archive/press-logos-lighthouse-summary-1762791789759.md\n"
+      },
+      {
+        "source": "press-logos-lighthouse-summary-1762791852440.md",
+        "error": "Command failed: git mv \"press-logos-lighthouse-summary-1762791852440.md\" \"docs/archive/press-logos-lighthouse-summary-1762791852440.md\"\nfatal: not under version control, source=press-logos-lighthouse-summary-1762791852440.md, destination=docs/archive/press-logos-lighthouse-summary-1762791852440.md\n"
+      },
+      {
+        "source": "press-logos-responsive-validation-report.md",
+        "error": "Command failed: git mv \"press-logos-responsive-validation-report.md\" \"docs/archive/press-logos-responsive-validation-report.md\"\nfatal: not under version control, source=press-logos-responsive-validation-report.md, destination=docs/archive/press-logos-responsive-validation-report.md\n"
+      },
+      {
+        "source": "pretty-urls-validation-report-detailed.md",
+        "error": "Command failed: git mv \"pretty-urls-validation-report-detailed.md\" \"docs/archive/pretty-urls-validation-report-detailed.md\"\nfatal: not under version control, source=pretty-urls-validation-report-detailed.md, destination=docs/archive/pretty-urls-validation-report-detailed.md\n"
+      },
+      {
+        "source": "privacy-policy-validation-summary-1760544820775.md",
+        "error": "Command failed: git mv \"privacy-policy-validation-summary-1760544820775.md\" \"docs/archive/privacy-policy-validation-summary-1760544820775.md\"\nfatal: not under version control, source=privacy-policy-validation-summary-1760544820775.md, destination=docs/archive/privacy-policy-validation-summary-1760544820775.md\n"
+      },
+      {
+        "source": "privacy-policy-validation-summary-1760544875048.md",
+        "error": "Command failed: git mv \"privacy-policy-validation-summary-1760544875048.md\" \"docs/archive/privacy-policy-validation-summary-1760544875048.md\"\nfatal: not under version control, source=privacy-policy-validation-summary-1760544875048.md, destination=docs/archive/privacy-policy-validation-summary-1760544875048.md\n"
+      },
+      {
+        "source": "responsive-design-test-summary.md",
+        "error": "Command failed: git mv \"responsive-design-test-summary.md\" \"docs/archive/responsive-design-test-summary.md\"\nfatal: not under version control, source=responsive-design-test-summary.md, destination=docs/archive/responsive-design-test-summary.md\n"
+      },
+      {
+        "source": "scram-deployment-report-1761778466997.md",
+        "error": "Command failed: git mv \"scram-deployment-report-1761778466997.md\" \"docs/archive/scram-deployment-report-1761778466997.md\"\nfatal: not under version control, source=scram-deployment-report-1761778466997.md, destination=docs/archive/scram-deployment-report-1761778466997.md\n"
+      },
+      {
+        "source": "scram-deployment-report-1761779000034.md",
+        "error": "Command failed: git mv \"scram-deployment-report-1761779000034.md\" \"docs/archive/scram-deployment-report-1761779000034.md\"\nfatal: not under version control, source=scram-deployment-report-1761779000034.md, destination=docs/archive/scram-deployment-report-1761779000034.md\n"
+      },
+      {
+        "source": "scram-deployment-report-1761779464841.md",
+        "error": "Command failed: git mv \"scram-deployment-report-1761779464841.md\" \"docs/archive/scram-deployment-report-1761779464841.md\"\nfatal: not under version control, source=scram-deployment-report-1761779464841.md, destination=docs/archive/scram-deployment-report-1761779464841.md\n"
+      },
+      {
+        "source": "scram-deployment-report-1761779882602.md",
+        "error": "Command failed: git mv \"scram-deployment-report-1761779882602.md\" \"docs/archive/scram-deployment-report-1761779882602.md\"\nfatal: not under version control, source=scram-deployment-report-1761779882602.md, destination=docs/archive/scram-deployment-report-1761779882602.md\n"
+      },
+      {
+        "source": "scram-validation-summary-1761777048239.md",
+        "error": "Command failed: git mv \"scram-validation-summary-1761777048239.md\" \"docs/archive/scram-validation-summary-1761777048239.md\"\nfatal: not under version control, source=scram-validation-summary-1761777048239.md, destination=docs/archive/scram-validation-summary-1761777048239.md\n"
+      },
+      {
+        "source": "scram-validation-summary-1761777072520.md",
+        "error": "Command failed: git mv \"scram-validation-summary-1761777072520.md\" \"docs/archive/scram-validation-summary-1761777072520.md\"\nfatal: not under version control, source=scram-validation-summary-1761777072520.md, destination=docs/archive/scram-validation-summary-1761777072520.md\n"
+      },
+      {
+        "source": "scram-validation-summary-1761777287740.md",
+        "error": "Command failed: git mv \"scram-validation-summary-1761777287740.md\" \"docs/archive/scram-validation-summary-1761777287740.md\"\nfatal: not under version control, source=scram-validation-summary-1761777287740.md, destination=docs/archive/scram-validation-summary-1761777287740.md\n"
+      },
+      {
+        "source": "scram-validation-summary-1761777595486.md",
+        "error": "Command failed: git mv \"scram-validation-summary-1761777595486.md\" \"docs/archive/scram-validation-summary-1761777595486.md\"\nfatal: not under version control, source=scram-validation-summary-1761777595486.md, destination=docs/archive/scram-validation-summary-1761777595486.md\n"
+      },
+      {
+        "source": "scram-validation-summary-1761777897728.md",
+        "error": "Command failed: git mv \"scram-validation-summary-1761777897728.md\" \"docs/archive/scram-validation-summary-1761777897728.md\"\nfatal: not under version control, source=scram-validation-summary-1761777897728.md, destination=docs/archive/scram-validation-summary-1761777897728.md\n"
+      },
+      {
+        "source": "scram-validation-summary-1761778148789.md",
+        "error": "Command failed: git mv \"scram-validation-summary-1761778148789.md\" \"docs/archive/scram-validation-summary-1761778148789.md\"\nfatal: not under version control, source=scram-validation-summary-1761778148789.md, destination=docs/archive/scram-validation-summary-1761778148789.md\n"
+      },
+      {
+        "source": "scram-validation-summary-1761778362915.md",
+        "error": "Command failed: git mv \"scram-validation-summary-1761778362915.md\" \"docs/archive/scram-validation-summary-1761778362915.md\"\nfatal: not under version control, source=scram-validation-summary-1761778362915.md, destination=docs/archive/scram-validation-summary-1761778362915.md\n"
+      },
+      {
+        "source": "scram-validation-summary-1761778919074.md",
+        "error": "Command failed: git mv \"scram-validation-summary-1761778919074.md\" \"docs/archive/scram-validation-summary-1761778919074.md\"\nfatal: not under version control, source=scram-validation-summary-1761778919074.md, destination=docs/archive/scram-validation-summary-1761778919074.md\n"
+      },
+      {
+        "source": "scram-validation-summary-1761779312005.md",
+        "error": "Command failed: git mv \"scram-validation-summary-1761779312005.md\" \"docs/archive/scram-validation-summary-1761779312005.md\"\nfatal: not under version control, source=scram-validation-summary-1761779312005.md, destination=docs/archive/scram-validation-summary-1761779312005.md\n"
+      },
+      {
+        "source": "scram-validation-summary-1761779471496.md",
+        "error": "Command failed: git mv \"scram-validation-summary-1761779471496.md\" \"docs/archive/scram-validation-summary-1761779471496.md\"\nfatal: not under version control, source=scram-validation-summary-1761779471496.md, destination=docs/archive/scram-validation-summary-1761779471496.md\n"
+      },
+      {
+        "source": "scram-validation-summary-1761779737518.md",
+        "error": "Command failed: git mv \"scram-validation-summary-1761779737518.md\" \"docs/archive/scram-validation-summary-1761779737518.md\"\nfatal: not under version control, source=scram-validation-summary-1761779737518.md, destination=docs/archive/scram-validation-summary-1761779737518.md\n"
+      },
+      {
+        "source": "services-about-validation-summary-1761929645768.md",
+        "error": "Command failed: git mv \"services-about-validation-summary-1761929645768.md\" \"docs/archive/services-about-validation-summary-1761929645768.md\"\nfatal: not under version control, source=services-about-validation-summary-1761929645768.md, destination=docs/archive/services-about-validation-summary-1761929645768.md\n"
+      },
+      {
+        "source": "services-about-validation-summary-1761929690755.md",
+        "error": "Command failed: git mv \"services-about-validation-summary-1761929690755.md\" \"docs/archive/services-about-validation-summary-1761929690755.md\"\nfatal: not under version control, source=services-about-validation-summary-1761929690755.md, destination=docs/archive/services-about-validation-summary-1761929690755.md\n"
+      },
+      {
+        "source": "services-about-validation-summary-1761936242372.md",
+        "error": "Command failed: git mv \"services-about-validation-summary-1761936242372.md\" \"docs/archive/services-about-validation-summary-1761936242372.md\"\nfatal: not under version control, source=services-about-validation-summary-1761936242372.md, destination=docs/archive/services-about-validation-summary-1761936242372.md\n"
+      },
+      {
+        "source": "site-revert-summary-2025-11-04.md",
+        "error": "Command failed: git mv \"site-revert-summary-2025-11-04.md\" \"docs/archive/site-revert-summary-2025-11-04.md\"\nfatal: not under version control, source=site-revert-summary-2025-11-04.md, destination=docs/archive/site-revert-summary-2025-11-04.md\n"
+      },
+      {
+        "source": "tablet-layout-test-summary.md",
+        "error": "Command failed: git mv \"tablet-layout-test-summary.md\" \"docs/archive/tablet-layout-test-summary.md\"\nfatal: not under version control, source=tablet-layout-test-summary.md, destination=docs/archive/tablet-layout-test-summary.md\n"
+      },
+      {
+        "source": "task-10-post-deployment-validation-summary.md",
+        "error": "Command failed: git mv \"task-10-post-deployment-validation-summary.md\" \"docs/archive/task-10-post-deployment-validation-summary.md\"\nfatal: not under version control, source=task-10-post-deployment-validation-summary.md, destination=docs/archive/task-10-post-deployment-validation-summary.md\n"
+      },
+      {
+        "source": "task-10-security-infrastructure-validation-summary.md",
+        "error": "Command failed: git mv \"task-10-security-infrastructure-validation-summary.md\" \"docs/archive/task-10-security-infrastructure-validation-summary.md\"\nfatal: not under version control, source=task-10-security-infrastructure-validation-summary.md, destination=docs/archive/task-10-security-infrastructure-validation-summary.md\n"
+      },
+      {
+        "source": "task-6-error-handling-rollback-implementation-summary.md",
+        "error": "Command failed: git mv \"task-6-error-handling-rollback-implementation-summary.md\" \"docs/archive/task-6-error-handling-rollback-implementation-summary.md\"\nfatal: not under version control, source=task-6-error-handling-rollback-implementation-summary.md, destination=docs/archive/task-6-error-handling-rollback-implementation-summary.md\n"
+      },
+      {
+        "source": "task-7-2-3-sns-integration-implementation-summary.md",
+        "error": "Command failed: git mv \"task-7-2-3-sns-integration-implementation-summary.md\" \"docs/archive/task-7-2-3-sns-integration-implementation-summary.md\"\nfatal: not under version control, source=task-7-2-3-sns-integration-implementation-summary.md, destination=docs/archive/task-7-2-3-sns-integration-implementation-summary.md\n"
+      },
+      {
+        "source": "task-7-2-4-monitoring-integration-implementation-summary.md",
+        "error": "Command failed: git mv \"task-7-2-4-monitoring-integration-implementation-summary.md\" \"docs/archive/task-7-2-4-monitoring-integration-implementation-summary.md\"\nfatal: not under version control, source=task-7-2-4-monitoring-integration-implementation-summary.md, destination=docs/archive/task-7-2-4-monitoring-integration-implementation-summary.md\n"
+      },
+      {
+        "source": "task-7-3-lighthouse-validation-implementation-summary.md",
+        "error": "Command failed: git mv \"task-7-3-lighthouse-validation-implementation-summary.md\" \"docs/archive/task-7-3-lighthouse-validation-implementation-summary.md\"\nfatal: not under version control, source=task-7-3-lighthouse-validation-implementation-summary.md, destination=docs/archive/task-7-3-lighthouse-validation-implementation-summary.md\n"
+      },
+      {
+        "source": "task-8-2-3-cache-invalidation-implementation-summary.md",
+        "error": "Command failed: git mv \"task-8-2-3-cache-invalidation-implementation-summary.md\" \"docs/archive/task-8-2-3-cache-invalidation-implementation-summary.md\"\nfatal: not under version control, source=task-8-2-3-cache-invalidation-implementation-summary.md, destination=docs/archive/task-8-2-3-cache-invalidation-implementation-summary.md\n"
+      },
+      {
+        "source": "task-8-content-validation-testing-summary.md",
+        "error": "Command failed: git mv \"task-8-content-validation-testing-summary.md\" \"docs/archive/task-8-content-validation-testing-summary.md\"\nfatal: not under version control, source=task-8-content-validation-testing-summary.md, destination=docs/archive/task-8-content-validation-testing-summary.md\n"
+      },
+      {
+        "source": "task-9-deployment-commands-implementation-summary.md",
+        "error": "Command failed: git mv \"task-9-deployment-commands-implementation-summary.md\" \"docs/archive/task-9-deployment-commands-implementation-summary.md\"\nfatal: not under version control, source=task-9-deployment-commands-implementation-summary.md, destination=docs/archive/task-9-deployment-commands-implementation-summary.md\n"
+      },
+      {
+        "source": "task-9-deployment-validation-monitoring-implementation-summary.md",
+        "error": "Command failed: git mv \"task-9-deployment-validation-monitoring-implementation-summary.md\" \"docs/archive/task-9-deployment-validation-monitoring-implementation-summary.md\"\nfatal: not under version control, source=task-9-deployment-validation-monitoring-implementation-summary.md, destination=docs/archive/task-9-deployment-validation-monitoring-implementation-summary.md\n"
+      }
+    ],
+    "totalMoved": 0,
+    "totalFailed": 140
+  },
+  "scripts": {
+    "success": true,
+    "moved": [],
+    "failed": [],
+    "totalMoved": 0,
+    "totalFailed": 0
+  },
+  "overallSuccess": false
+}
