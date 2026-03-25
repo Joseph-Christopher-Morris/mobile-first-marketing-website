@@ -14,6 +14,13 @@ export interface BlogPost {
   cardImage?: string;
   coverImage?: string;
   heroImage?: string;
+  // SCRAM meta description — outcome-led, 140–160 chars, [Outcome] + [Mechanism] + [Who it is for]
+  metaDescription?: string;
+  // Optional CTA override fields — posts can customise text but cannot remove the CTA block
+  ctaProblem?: string;
+  ctaSolution?: string;
+  ctaLabel?: string;
+  ctaHref?: string;
 }
 
 export interface BlogCategory {
@@ -27,4 +34,12 @@ export interface BlogTag {
   name: string;
   slug: string;
   count: number;
+}
+
+/**
+ * SCRAM: Returns metaDescription if present, falls back to excerpt.
+ * All blog posts should have an outcome-led metaDescription (140–160 chars).
+ */
+export function generateMetaDescription(post: BlogPost): string {
+  return post.metaDescription || post.excerpt;
 }

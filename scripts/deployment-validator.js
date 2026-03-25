@@ -15,6 +15,8 @@
 const https = require('https');
 const http = require('http');
 const { execSync } = require('child_process');
+const fs = require('fs');
+const path = require('path');
 
 class DeploymentValidator {
   constructor(options = {}) {
@@ -31,6 +33,7 @@ class DeploymentValidator {
       securityHeaders: null,
       performance: null,
       functionality: null,
+      imagePaths: null,
       overall: 'pending',
     };
 
@@ -449,6 +452,62 @@ class DeploymentValidator {
   /**
    * Run complete validation suite
    */
+  /**
+   * Validate that image paths referenced in build output HTML files exist.
+   * Scans HTML files in the out/ directory for img src attributes and
+   * verifies the referenced files are present in the build output.
+   */
+  async validateImagePaths() {
+    this.log('Validating image paths in build output...', 'info');
+
+    const outDir = path.resolve(process.cwd(), 'out');
+    if (!fs.existsSync(outDir)) {
+      this.log('Build output directory (out/) not found — skipping image path validation', 'warning');
+      this.validationResults.imagePaths = 'skipped';
+      return true;
+    }
+
+    const htmlFiles = [];
+    const collectHtml = (dir) => {
+      for (const entry of fs.readdirSync(dir, { withFileTypes: true })) {
+        const full = path.join(dir, entry.name);
+        if (entry.isDirectory()) collectHtml(full);
+        else if (entry.name.endsWith('.html')) htmlFiles.push(full);
+      }
+    };
+    collectHtml(outDir);
+
+    // Match src attributes that point to local image paths (starting with /)
+    const srcPattern = /src=["'](\/images\/[^"']+)["']/g;
+    const missing = [];
+
+    for (const file of htmlFiles) {
+      const content = fs.readFileSync(file, 'utf-8');
+      let match;
+      while ((match = srcPattern.exec(content)) !== null) {
+        const imgPath = match[1];
+        const fullPath = path.join(outDir, imgPath);
+        if (!fs.existsSync(fullPath)) {
+          const relHtml = path.relative(outDir, file);
+          missing.push({ html: relHtml, image: imgPath });
+        }
+      }
+    }
+
+    if (missing.length > 0) {
+      this.log(`Found ${missing.length} missing image(s) in build output:`, 'warning');
+      for (const m of missing) {
+        this.log(`  ${m.image} (referenced in ${m.html})`, 'warning');
+      }
+      this.validationResults.imagePaths = 'failed';
+      return false;
+    }
+
+    this.log(`All image paths verified across ${htmlFiles.length} HTML file(s)`, 'success');
+    this.validationResults.imagePaths = 'passed';
+    return true;
+  }
+
   async run() {
     this.log(
       `Starting post-deployment validation for ${this.environment}...`,
@@ -462,6 +521,7 @@ class DeploymentValidator {
       { name: 'Security Headers', fn: () => this.validateSecurityHeaders() },
       { name: 'Performance', fn: () => this.validatePerformance() },
       { name: 'Functionality', fn: () => this.validateFunctionality() },
+      { name: 'Image Paths', fn: () => this.validateImagePaths() },
     ];
 
     let overallSuccess = true;

@@ -4,6 +4,8 @@ const post: BlogPost = {
   slug: 'flyer-marketing-case-study-part-1',
   title: 'Flyer Marketing Case Study #1: How I Made £13.5K with a 2,380% ROI',
   excerpt: 'Discover how a single flyer and a camera turned into high-paying freelance gigs, even in the age of Google Ads. Real results from £546 in print costs.',
+  metaDescription:
+    '£546 in flyers generated £13.5K in client work. See how offline marketing landed real jobs without relying on ads.',
   content: `
     <p>While everyone's shouting on Instagram and dumping budgets into Meta Ads, I tried something wildly simple: <strong>printing flyers</strong>.</p>
 
@@ -11,7 +13,7 @@ const post: BlogPost = {
     <p><em>I used this picture of the Aston Martin on the back of my business card because it's a memorable image.</em></p>
 
     <p><strong>£546 later</strong>, those flyers helped me earn <strong>over £13,500</strong>, landing paid jobs with <strong>race teams, sponsors, and car auctions</strong>.<br />
-    Here's how one bold <strong>offline flyer marketing strategy</strong> outperformed digital tactics—and how you can replicate it.</p>
+    Here's how one bold <strong>offline flyer marketing strategy</strong> outperformed digital tactics and how you can replicate it.</p>
 
     <h2>🎯 Background: Building from Zero</h2>
 
@@ -38,10 +40,10 @@ const post: BlogPost = {
     <h3>Key Image Choices</h3>
 
     <ul>
-      <li><strong>Hyundai i30N</strong> — for cover drama and composition</li>
-      <li><strong>Audi TTS</strong> — lit to show paint texture</li>
-      <li><strong>Dalmatian + Porsche 911</strong> — for engagement</li>
-      <li><strong>Chevy 3500</strong> — standout custom truck build</li>
+      <li><strong>Hyundai i30N</strong>: cover drama and composition</li>
+      <li><strong>Audi TTS</strong>: lit to show paint texture</li>
+      <li><strong>Dalmatian + Porsche 911</strong>: for engagement</li>
+      <li><strong>Chevy 3500</strong>: standout custom truck build</li>
     </ul>
 
     <p>These weren't just flyers. They were <strong>mini‑portfolios with a purpose</strong>.</p>
@@ -58,7 +60,7 @@ const post: BlogPost = {
       <li>A surprise second client, <strong>Bathgate Silica Sand</strong>, after a chance encounter</li>
     </ul>
 
-    <p>A single flyer turned into multiple contracts and referrals—all because I showed up prepared.</p>
+    <p>A single flyer turned into multiple contracts and referrals. All because I showed up prepared.</p>
 
     <h2>📬 Why Physical Marketing Still Wins</h2>
 
@@ -79,14 +81,14 @@ const post: BlogPost = {
     <p><strong>Subscribe now</strong> to get <em>real freelance‑tested marketing tips</em> before they hit the blog.<br />
     No fluff, just what's worked.</p>
 
-    <p>I kept costs low (<strong>£546 total</strong>) and returns high. That's a <strong>2,380% ROI</strong> without social ads or influencers.</p>
+    <p>I kept costs low (<strong>£546 total</strong>) and returns high. A <strong>2,380% ROI</strong> without social ads or influencers.</p>
 
     <hr />
     <h2>🔗 Related Case Studies</h2>
     <ul>
-      <li><a href="/blog/flyer-marketing-case-study-part-1">Flyer Marketing (Part 1) — The flyer that started it all</a></li>
-      <li><a href="/blog/flyer-marketing-case-study-part-2">Flyer Marketing (Part 2) — The refined flyer that scaled</a></li>
-      <li><a href="/blog/flyers-roi-breakdown">Flyer Marketing (Part 3) — Year-by-year ROI breakdown</a></li>
+      <li><a href="/blog/flyer-marketing-case-study-part-1">Flyer Marketing (Part 1): The flyer that started it all</a></li>
+      <li><a href="/blog/flyer-marketing-case-study-part-2">Flyer Marketing (Part 2): The refined flyer that scaled</a></li>
+      <li><a href="/blog/flyers-roi-breakdown">Flyer Marketing (Part 3): Year-by-year ROI breakdown</a></li>
     </ul>
 
     <hr />
@@ -95,7 +97,7 @@ const post: BlogPost = {
     <p><a href="/blog">Explore related case studies</a> or <a href="/contact">get in touch</a>.</p>
   `,
   date: '2025-07-12',
-  author: 'Joe — Digital Marketing & Analytics',
+  author: 'Joe Morris',
   category: 'Case Studies',
   tags: ['offline-marketing', 'case-study'],
   image: '/images/hero/aston-martin-db6-website.webp',

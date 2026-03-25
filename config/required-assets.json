@@ -1,0 +1,37 @@
+{
+  "_comment": "Shared manifest of critical visual assets. Deploy must fail if any are missing from build output.",
+  "photography": {
+    "hero": "images/services/photography/photography-hero.webp",
+    "authorityProof": [
+      "images/services/photography/editorial-proof-bbc-forbes-times.webp",
+      "images/services/photography/5eb6fc44-e1a5-460d-8dea-923fd303f59d.webp",
+      "images/services/photography/photography-sample-3.webp",
+      "images/services/photography/photography-sample-4.webp"
+    ],
+    "stockProof": [
+      "images/services/photography/photography-sample-4.webp",
+      "images/services/photography/photography-sample-1.webp"
+    ],
+    "gallery": [
+      "images/services/photography/5eb6fc44-e1a5-460d-8dea-923fd303f59d.webp",
+      "images/services/photography/240427-_Nantwich_Stock_Photography-19.webp",
+      "images/services/photography/240427-_Nantwich_Stock_Photography-23.webp",
+      "images/services/photography/240421-Nantwich_Stock_Photography-49.webp",
+      "images/services/photography/WhatsApp Image 2025-11-01 at 11.58.16 AM.webp",
+      "images/services/photography/photography-sample-2.webp",
+      "images/services/photography/photography-sample-1.webp",
+      "images/services/photography/photography-sample-3.webp",
+      "images/services/photography/photography-sample-4.webp"
+    ]
+  },
+  "homepage": {
+    "stockProof": [
+      "images/services/photography/photography-sample-4.webp"
+    ]
+  },
+  "protectedPrefixes": [
+    "images/services/photography/",
+    "images/hero/",
+    "images/brand/"
+  ]
+}

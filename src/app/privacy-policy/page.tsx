@@ -2,6 +2,9 @@ import type { Metadata } from "next";
 import { Header } from "@/components/layout/Header";
 import { Footer } from "@/components/layout/Footer";
 import { buildSEO } from "@/lib/seo";
+import { JsonLd } from "@/components/JsonLd";
+import { CANONICAL } from "@/config/canonical";
+import { buildWebPage, buildBreadcrumbList } from "@/lib/schema-generator";
 
 export const metadata: Metadata = buildSEO({
   intent: "Privacy Policy",
@@ -9,10 +12,34 @@ export const metadata: Metadata = buildSEO({
   canonicalPath: "/privacy-policy/",
 });
 
+const siteUrl = (path: string) => `${CANONICAL.urls.site}${path}`;
+
+const privacySchemas = [
+  {
+    ...buildWebPage({
+      name: 'Privacy Policy - Vivid Media Cheshire',
+      description:
+        'How Vivid Media Cheshire collects, uses, and protects your personal data. GDPR-compliant privacy notice for website visitors and clients.',
+      url: siteUrl(CANONICAL.routes.privacyPolicy),
+    }),
+    additionalType: 'https://schema.org/WebPage',
+    about: {
+      '@type': 'Thing',
+      name: 'Privacy Policy',
+    },
+    lastReviewed: new Date().toISOString().slice(0, 10),
+  },
+  buildBreadcrumbList([
+    { name: 'Home', url: siteUrl(CANONICAL.routes.home) },
+    { name: 'Privacy Policy', url: siteUrl(CANONICAL.routes.privacyPolicy) },
+  ]),
+];
+
 export default function PrivacyPolicyPage() {
   return (
     <>
       <Header pageTitle="Privacy Policy" />
+      <JsonLd schemas={privacySchemas} />
       <main className="mx-auto max-w-3xl px-6 py-12 text-slate-700">
         <h1 className="text-3xl font-extrabold tracking-tight mb-6">
           Vivid Media Cheshire Privacy Notice

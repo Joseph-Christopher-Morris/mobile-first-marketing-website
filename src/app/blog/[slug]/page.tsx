@@ -7,6 +7,16 @@ import { processContentForHeroEnforcement } from '@/lib/content-processor';
 import { buildSEO } from '@/lib/seo';
 import { generateMetadata as generateSocialMetadata } from '@/lib/metadata-generator';
 import BlogHeroImage from '@/components/blog/BlogHeroImage';
+import BlogPostCTA from '@/components/scram/BlogPostCTA';
+import { JsonLd } from '@/components/JsonLd';
+import { CANONICAL } from '@/config/canonical';
+import {
+  buildBlogPosting,
+  buildBreadcrumbList,
+  buildHowTo,
+  buildFAQPage,
+  buildSpeakableSpecification,
+} from '@/lib/schema-generator';
 
 interface BlogPostPageProps {
   params: {
@@ -29,18 +39,21 @@ export async function generateMetadata({
   if (!post) {
     return buildSEO({
       intent: "Post Not Found",
-      description: "The blog post you are looking for could not be found. Browse our digital marketing case studies and insights.",
+      description: "This blog post could not be found. Browse my case studies for real project results.",
       canonicalPath: `/blog/${params.slug}/`,
       skipTitleValidation: true,
     });
   }
+
+  // SCRAM: prefer metaDescription (outcome-led) over excerpt
+  const description = post.metaDescription || post.excerpt;
 
   // Use the new social sharing metadata generator
   return generateSocialMetadata({
     pageType: 'blog',
     content: {
       title: post.title,
-      description: post.excerpt,
+      description,
       image: post.image,
       type: 'article',
       publishedDate: post.date,
@@ -58,8 +71,86 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
     notFound();
   }
 
+  const siteUrl = CANONICAL.urls.site;
+  const postUrl = `${siteUrl}/blog/${post.slug}/`;
+
+  // Build base schemas (always present)
+  const schemas: Record<string, unknown>[] = [
+    buildBlogPosting({
+      title: post.title,
+      description: post.excerpt,
+      url: postUrl,
+      datePublished: post.date,
+      image: post.image ? `${siteUrl}${post.image}` : undefined,
+    }),
+    buildBreadcrumbList([
+      { name: 'Home', url: `${siteUrl}${CANONICAL.routes.home}` },
+      { name: 'Blog', url: `${siteUrl}${CANONICAL.routes.blog}` },
+      { name: post.title, url: postUrl },
+    ]),
+  ];
+
+  // Conditional: HowTo — only if step-by-step content is present
+  // Detect ordered lists or headings containing "step" / "how to"
+  const hasHowToContent =
+    /<ol[\s>]/i.test(post.content) &&
+    /step\s*\d|how\s*to/i.test(post.content);
+
+  if (hasHowToContent) {
+    // Extract steps from ordered list items
+    const stepMatches = post.content.match(/<li[^>]*>([\s\S]*?)<\/li>/gi);
+    if (stepMatches && stepMatches.length >= 2) {
+      const steps = stepMatches.slice(0, 10).map((li, i) => {
+        const text = li.replace(/<[^>]+>/g, '').trim();
+        return { name: `Step ${i + 1}`, text };
+      });
+      schemas.push(
+        buildHowTo(post.title, post.excerpt, steps)
+      );
+    }
+  }
+
+  // Conditional: FAQPage — only if FAQ content is visible
+  // Detect FAQ section headings or dl/dt patterns
+  const hasFAQContent =
+    /faq|frequently\s+asked/i.test(post.content) &&
+    (/<h[23][^>]*>.*\?/i.test(post.content) || /<dt/i.test(post.content));
+
+  if (hasFAQContent) {
+    // Extract question/answer pairs from headings followed by paragraphs
+    const faqPattern = /<h[23][^>]*>(.*?\?)<\/h[23]>\s*<p[^>]*>([\s\S]*?)<\/p>/gi;
+    const faqs: { question: string; answer: string }[] = [];
+    let match;
+    while ((match = faqPattern.exec(post.content)) !== null) {
+      const question = match[1].replace(/<[^>]+>/g, '').trim();
+      const answer = match[2].replace(/<[^>]+>/g, '').trim();
+      if (question && answer) {
+        faqs.push({ question, answer });
+      }
+    }
+    if (faqs.length > 0) {
+      schemas.push(buildFAQPage(faqs));
+    }
+  }
+
+  // Conditional: SpeakableSpecification — only if concise summary blocks visible
+  // Detect data-speakable attributes in the content
+  const hasSpeakableContent = /data-speakable/i.test(post.content);
+
+  if (hasSpeakableContent) {
+    const speakableMatches = post.content.match(/data-speakable="([^"]+)"/gi);
+    if (speakableMatches) {
+      const selectors = speakableMatches.map((m) => {
+        const id = m.replace(/data-speakable="([^"]+)"/i, '$1');
+        return `[data-speakable="${id}"]`;
+      });
+      schemas.push(buildSpeakableSpecification(selectors));
+    }
+  }
+
   return (
     <Layout>
+      <JsonLd schemas={schemas} />
       <article className='min-h-screen bg-white'>
         {/* Hero Section */}
         <header className='bg-gray-50 border-b border-gray-200'>
@@ -185,6 +276,14 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
                 }}
               />
             </article>
+
+            {/* Mandatory Blog Post CTA — always rendered, posts can override text but not remove */}
+            <BlogPostCTA
+              {...(post.ctaProblem ? { problemReminder: post.ctaProblem } : {})}
+              {...(post.ctaSolution ? { solutionStatement: post.ctaSolution } : {})}
+              {...(post.ctaLabel ? { ctaLabel: post.ctaLabel } : {})}
+              {...(post.ctaHref ? { ctaHref: post.ctaHref } : {})}
+            />
           </div>
         </div>
 

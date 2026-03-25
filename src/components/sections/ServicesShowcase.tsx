@@ -15,10 +15,10 @@ export function ServicesShowcase({ services }: ServicesShowcaseProps) {
       <div className='max-w-6xl mx-auto px-4 sm:px-6 lg:px-8'>
         <div className='text-center mb-10'>
           <h2 className='text-3xl md:text-4xl font-bold text-slate-900 mb-4'>
-            My Services
+            Pick the problem that sounds like yours
           </h2>
           <p className='text-base md:text-lg text-slate-700 max-w-3xl mx-auto'>
-            Vivid Media Cheshire helps local businesses grow with fast, secure websites, smart advertising, and visuals that tell your story. Each project combines enterprise-level hosting, data-driven design, and photography that delivers real results.
+            Each service starts with a real problem and ends with a fix.
           </p>
         </div>
 

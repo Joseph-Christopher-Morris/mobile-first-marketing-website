@@ -91,7 +91,7 @@ export default function HeroWithCharts({
       <div className="relative h-[75vh] md:h-[60vh] min-h-[480px] w-full overflow-hidden rounded-b-3xl pb-24 md:pb-24">
         <Image
           src={heroSrc}
-          alt="Vivid Media Cheshire — premium creative craftsmanship with cloud performance results"
+          alt="Vivid Media Cheshire. Premium creative craftsmanship with cloud performance results"
           fill
           priority
           fetchPriority="high"
@@ -152,25 +152,20 @@ export default function HeroWithCharts({
               Call for a Free Ad Plan
             </a>
             <a
-              href="#contact"
+              href="/contact/"
               className="inline-flex items-center justify-center px-8 py-3 rounded-full text-base md:text-lg font-semibold bg-white text-slate-900 hover:bg-gray-100 transition shadow-md hover:shadow-lg min-h-[48px]"
-              onClick={(e) => {
-                e.preventDefault();
-                const contactForm = document.querySelector('#contact');
-                if (contactForm) {
-                  contactForm.scrollIntoView({ behaviour: 'smooth' });
-                }
+              onClick={() => {
                 if (typeof window !== 'undefined' && window.gtag) {
                   window.gtag('event', 'cta_form_click', {
                     page_path: window.location.pathname,
                     service_name: 'home',
-                    cta_text: 'Book Your Consultation'
+                    cta_text: 'Send me your website'
                   });
                 }
               }}
-              aria-label="Book your consultation - scroll to contact form"
+              aria-label="Send me your website"
             >
-              Book Your Consultation
+              Send me your website
             </a>
           </div>
 
@@ -183,7 +178,7 @@ export default function HeroWithCharts({
         <div className="rounded-2xl bg-white p-6 shadow-xl flex flex-col justify-center">
           <h3 className="mb-3 text-xl font-bold text-[#0b0b0b]">Based in Cheshire</h3>
           <p className="text-base text-neutral-700 leading-relaxed mb-3">
-            I help small businesses improve their online presence through measurable marketing and design.
+            I help small businesses in Cheshire get more enquiries through clear websites and honest marketing.
           </p>
           <div className="mt-2 flex items-center gap-2 text-sm text-neutral-600">
             <svg className="w-5 h-5 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">

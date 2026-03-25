@@ -58,7 +58,7 @@ export function ContactPageClient() {
                   </div>
                   <div>
                     <h4 className='font-semibold text-gray-900'>Email</h4>
-                    <p className='text-gray-600'>hello@vividautophoto.com</p>
+                    <p className='text-gray-600'>joe@vividmediacheshire.com</p>
                   </div>
                 </div>
 

@@ -4,32 +4,34 @@ const post: BlogPost = {
   slug: 'stock-photography-lessons',
   title: 'Stock Photography Lessons and Applications',
   excerpt:
-    'How selling stock photos taught me long-term content ROI — and how I applied these lessons to real campaigns for Hampson Auctions and NYCC.',
+    'How selling stock photos taught me long-term content ROI and how I applied these lessons to real campaigns for Hampson Auctions and NYCC.',
+  metaDescription:
+    'Evergreen photos generated consistent income over time. See how stock photography principles improved real campaigns and content ROI.',
   content: `
     <p>Stock photography reshaped how I think about <strong>content success</strong>.</p>
 
     <p>It's not about chasing trends or hoping for viral hits.<br />
-    It's about producing <strong>images with steady demand</strong> — the kind buyers search for month after month.</p>
+    It's about producing <strong>images with steady demand</strong>. The kind buyers search for month after month.</p>
 
     <img src="/images/blog/240217-Australia_Trip-226.webp" alt="A neon art installation in Sydney Chinatown at night, with people walking in the background" loading="lazy" />
 
     <h2>💡 Key Lessons I Took Away</h2>
     <ul>
-      <li><strong>Evergreen beats trendy</strong> — Simple subjects like property signs or dealership shots continued to sell long after upload.</li>
-      <li><strong>One upload, many returns</strong> — The right photo can keep earning for years after approval.</li>
-      <li><strong>Volume matters, but relevance is key</strong> — An extensive portfolio helped, but <strong>smart keywording and subject relevance</strong> drove consistent downloads.</li>
+      <li><strong>Evergreen beats trendy.</strong> Simple subjects like property signs or dealership shots continued to sell long after upload.</li>
+      <li><strong>One upload, many returns.</strong> The right photo can keep earning for years after approval.</li>
+      <li><strong>Volume matters, but relevance is key.</strong> An extensive portfolio helped, but <strong>smart keywording and subject relevance</strong> drove consistent downloads.</li>
     </ul>
 
-    <p>This changed how I view all content — whether a stock image, client project, or marketing campaign.<br />
+    <p>This changed how I view all content. Whether a stock image, client project, or marketing campaign.<br />
     If content doesn't meet a need or spark genuine interest, it won't deliver results.</p>
 
     <h2>How This Shaped My Approach to Other Content Strategies</h2>
 
     <img src="/images/blog/Stock_Photography_Earnings_Comparison_Clear.png" alt="Clear earnings comparison showing the long-term value of evergreen content" loading="lazy" />
-    <p><em>The data that changed my content strategy — proof that evergreen subjects deliver consistent returns over time.</em></p>
+    <p><em>The data that changed my content strategy. Proof that evergreen subjects deliver consistent returns over time.</em></p>
 
     <h3>Hampson Auctions</h3>
-    <p>I leveraged my experience from photographing car meets, showrooms, and auctions to understand <strong>what visuals perform exceptionally well</strong>.</p>
+    <p>I used my experience from photographing car meets, showrooms, and auctions to understand <strong>what visuals perform well</strong>.</p>
 
     <img src="/images/blog/240728-Hampson_Auctions _Oulton_Park_GC_Sun-7.webp" alt="General view of Hampson Auctions Oulton Park Gold Cup Sale 2024 with people packed in a busy venue" loading="lazy" />
 
@@ -68,7 +70,7 @@ const post: BlogPost = {
     <p>This helped NYCC present events <strong>professionally</strong> while staying true to the community spirit.</p>
 
     <h2>Why This Matters in Marketing Roles</h2>
-    <p>Great content marketing isn't built on luck — it's built on strategy:</p>
+    <p>Great content marketing is not built on luck. It is built on strategy:</p>
 
     <p>✔️ Know your audience<br />
     ✔️ Create evergreen, reusable content<br />
@@ -79,10 +81,10 @@ const post: BlogPost = {
     <hr />
     <h2>🔗 Related Case Studies</h2>
     <ul>
-      <li><a href="/blog/stock-photography-getting-started">Stock Photography — Getting Started</a></li>
-      <li><a href="/blog/stock-photography-income-growth">Stock Photography — Income Growth</a></li>
-      <li><a href="/blog/stock-photography-breakthrough">Stock Photography — Breakthrough</a></li>
-      <li><a href="/blog/stock-photography-lessons">Stock Photography — Lessons Learned</a></li>
+      <li><a href="/blog/stock-photography-getting-started">Stock Photography: Getting Started</a></li>
+      <li><a href="/blog/stock-photography-income-growth">Stock Photography: Income Growth</a></li>
+      <li><a href="/blog/stock-photography-breakthrough">Stock Photography: Breakthrough</a></li>
+      <li><a href="/blog/stock-photography-lessons">Stock Photography: Lessons Learned</a></li>
     </ul>
 
     <p>📩 <strong>Want to see how I apply stock photography principles to real-world campaigns?</strong><br />
@@ -94,7 +96,7 @@ const post: BlogPost = {
     <p><a href="/blog">Explore more work like this</a> or <a href="/contact">get in touch</a>.</p>
   `,
   date: '2025-07-18',
-  author: 'Joe — Digital Marketing & Analytics',
+  author: 'Joe Morris',
   category: 'Case Studies',
   tags: ['content-strategy', 'conversion-optimisation'],
   image: '/images/blog/Stock_Photography_Earnings_Comparison_Clear.png',

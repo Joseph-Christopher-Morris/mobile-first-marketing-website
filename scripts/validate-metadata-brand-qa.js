@@ -135,7 +135,7 @@ function validatePages() {
     'src/app/services/website-design/page.tsx',
     'src/app/services/website-hosting/page.tsx',
     'src/app/services/page.tsx',
-    'src/config/site.ts'
+    'src/config/canonical.ts'
   ];
   
   pagePaths.forEach(relativePath => {

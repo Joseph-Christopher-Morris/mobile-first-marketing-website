@@ -10,7 +10,6 @@ import {
   ROIOutcomeCard
 } from '@/components/services/OutcomeCard';
 import { ServiceInquiryForm } from '@/components/ServiceInquiryForm';
-import { ServiceSchemas } from '@/components/seo/ServiceSchema';
 
 export default function AdCampaignsClient() {
   const portfolioImages = [
@@ -33,8 +32,6 @@ export default function AdCampaignsClient() {
 
   return (
     <Layout pageTitle='Strategic Ad Campaigns'>
-      {/* Service Schema - Spec requirement: Structured Data */}
-      {ServiceSchemas.GoogleAds()}
       <div className='min-h-screen bg-white'>
         {/* Hero Section */}
         <section className='relative bg-brand-black text-white py-20 lg:py-32'>

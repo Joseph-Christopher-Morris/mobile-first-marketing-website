@@ -5,6 +5,8 @@ const post: BlogPost = {
   title: 'From $2.36 to $1,166: My Real Stock Photography Income Growth Story',
   excerpt:
     'How I scaled my stock photography earnings to over $1,100 in less than three years and turned it into a steady side income stream.',
+  metaDescription:
+    'From $2 to $1,166 in stock photography income. See how consistent uploads and evergreen content built a recurring revenue stream.',
   content: `
     <h2>Scaling My Stock Photography Portfolio: How I Built a Semi-Passive Income Stream</h2>
 
@@ -29,7 +31,7 @@ const post: BlogPost = {
       <li><strong>2025 (to date):</strong> $465.33</li>
     </ul>
 
-    <p>That's <strong>$1,166.07 in total</strong>, with 2025 shaping up to be my best year yet.</p>
+    <p>The total is <strong>$1,166.07</strong>, with 2025 shaping up to be my best year yet.</p>
 
     <h2>📸 Top-Selling Photos (And Why I Think They Worked)</h2>
 
@@ -59,7 +61,7 @@ const post: BlogPost = {
       <li>Car dealership rows serve automotive blogs, dealership ads, and car industry features.</li>
     </ul>
 
-    <p>Simple subjects, clean composition, and strong keywords paired with topics that always need fresh visuals. That's why they sold steadily.</p>
+    <p>Simple subjects, clean composition, and strong keywords paired with topics that always need fresh visuals. They sold steadily because they filled a real need.</p>
 
     <h2>📈 My Portfolio Size by Platform (as of July 17th 2025)</h2>
 
@@ -92,7 +94,7 @@ const post: BlogPost = {
 
     <ul>
       <li><strong>Research Trends:</strong> Stay updated on market trends. Identify what types of images are in demand and create content accordingly.</li>
-      <li><strong>optimise Keywords:</strong> Use relevant keywords to improve searchability. Think like a buyer when selecting keywords.</li>
+      <li><strong>Improve Keywords:</strong> Use relevant keywords to improve searchability. Think like a buyer when selecting keywords.</li>
       <li><strong>Engage with the Community:</strong> Join stock photography forums and social media groups. Networking can provide insights and support.</li>
       <li><strong>Diversify Your Portfolio:</strong> Offer a range of subjects. This increases your chances of sales across different markets.</li>
       <li><strong>Regularly Update Your Portfolio:</strong> Keep your portfolio fresh by adding new images regularly. This signals to platforms that you are an active contributor.</li>
@@ -105,14 +107,14 @@ const post: BlogPost = {
     <hr />
     <h2>🔗 Related Case Studies</h2>
     <ul>
-      <li><a href="/blog/stock-photography-getting-started">Stock Photography — Getting Started</a></li>
-      <li><a href="/blog/stock-photography-income-growth">Stock Photography — Income Growth</a></li>
-      <li><a href="/blog/stock-photography-breakthrough">Stock Photography — Breakthrough</a></li>
-      <li><a href="/blog/stock-photography-lessons">Stock Photography — Lessons Learned</a></li>
+      <li><a href="/blog/stock-photography-getting-started">Stock Photography: Getting Started</a></li>
+      <li><a href="/blog/stock-photography-income-growth">Stock Photography: Income Growth</a></li>
+      <li><a href="/blog/stock-photography-breakthrough">Stock Photography: Breakthrough</a></li>
+      <li><a href="/blog/stock-photography-lessons">Stock Photography: Lessons Learned</a></li>
     </ul>
 
     <p>📩 <strong>Want to Know What's Working Right Now?</strong><br />
-    Join my newsletter for tested tactics, real numbers, and the hands-on lessons I use every week — both in stock photography and freelance work.</p>
+    Join my newsletter for tested tactics, real numbers, and the hands-on lessons I use every week. Both in stock photography and freelance work.</p>
 
     <hr />
     <h2>What to Do Next</h2>
@@ -120,7 +122,7 @@ const post: BlogPost = {
     <p><a href="/blog">Explore more work like this</a> or <a href="/contact">get in touch</a>.</p>
   `,
   date: '2025-07-18',
-  author: 'Joe — Digital Marketing & Analytics',
+  author: 'Joe Morris',
   category: 'Case Studies',
   tags: ['content-strategy', 'conversion-optimisation', 'small-business'],
   image: '/images/blog/Stock_Photography_Revenue_Bar_Chart.png',

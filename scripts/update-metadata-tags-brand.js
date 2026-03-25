@@ -280,7 +280,7 @@ function processOtherPages() {
 function updateSiteConfig() {
   console.log('\n⚙️  Updating site config...\n');
   
-  const configPath = path.join(process.cwd(), 'src/config/site.ts');
+  const configPath = path.join(process.cwd(), 'src/config/canonical.ts');
   if (!fs.existsSync(configPath)) return;
   
   let content = fs.readFileSync(configPath, 'utf8');
@@ -290,8 +290,8 @@ function updateSiteConfig() {
   
   if (content !== original) {
     fs.writeFileSync(configPath, content, 'utf8');
-    results.filesUpdated.push('src/config/site.ts');
-    console.log(`✅ Updated: site.ts`);
+    results.filesUpdated.push('src/config/canonical.ts');
+    console.log(`✅ Updated: canonical.ts`);
   }
 }
 

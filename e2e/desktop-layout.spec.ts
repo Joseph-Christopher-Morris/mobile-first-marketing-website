@@ -102,7 +102,7 @@ test.describe('Desktop Layout Tests (1024px+)', () => {
 
   test.describe('Service Pages - Pricing Blocks', () => {
     const servicePages = [
-      { url: '/services/hosting', name: 'Hosting' },
+      { url: '/services/website-hosting', name: 'Hosting' },
       { url: '/services/photography', name: 'Photography' },
       { url: '/services/ad-campaigns', name: 'Ads/Campaigns' },
       { url: '/services/analytics', name: 'Analytics' },
@@ -149,7 +149,7 @@ test.describe('Desktop Layout Tests (1024px+)', () => {
     test('all pages maintain consistent max-width containers', async ({ page }) => {
       const pages = [
         '/',
-        '/services/hosting',
+        '/services/website-hosting',
         '/services/photography',
         '/services/ad-campaigns',
         '/services/analytics',

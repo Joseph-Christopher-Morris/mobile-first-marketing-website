@@ -170,7 +170,7 @@ test.describe('Service Pages Pricing Blocks', () => {
   test.use({ viewport: { width: 1440, height: 900 } });
 
   const servicePages = [
-    { name: 'Hosting', url: '/services/hosting' },
+    { name: 'Hosting', url: '/services/website-hosting' },
     { name: 'Photography', url: '/services/photography' },
     { name: 'Ad Campaigns', url: '/services/ad-campaigns' },
     { name: 'Analytics', url: '/services/analytics' }

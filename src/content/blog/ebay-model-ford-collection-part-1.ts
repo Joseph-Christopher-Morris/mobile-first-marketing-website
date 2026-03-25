@@ -3,11 +3,13 @@ import { BlogPost } from '../../lib/blog-types';
 const post: BlogPost = {
   slug: 'ebay-model-ford-collection-part-1',
   title: 'Selling and Photographing a Model Ford Car Collection on eBay: How I Made a Profit (Part 1)',
-  excerpt: "What started as a personal project to downsize my Hot Wheels collection turned into photographing and selling my neighbour's prized Ford model car collection on eBay.",
+  excerpt: "A personal project to downsize my Hot Wheels collection turned into photographing and selling my neighbour's Ford model car collection on eBay.",
+  metaDescription:
+    '137,000+ impressions with no ads. See how product photography, listings, and timing turned a model car collection into consistent sales.',
   content: `
-    <p>What started as a personal project to downsize my own Hot Wheels collection turned into something much bigger: photographing and selling my neighbour's prized Ford model car collection on eBay.</p>
+    <p>What started as a personal project to downsize my Hot Wheels collection turned into something bigger. I ended up photographing and selling my neighbour's Ford model car collection on eBay.</p>
 
-    <p>This article is the first part of a five-part series where I'll walk through how I photographed, listed, packaged, and shipped dozens of model cars — while refining my digital skills and navigating real customer expectations.</p>
+    <p>This is part one of a five-part series. I cover how I photographed, listed, packaged, and shipped dozens of model cars. Along the way, I refined my digital skills and navigated real customer expectations.</p>
 
     <h2>Prologue: Starting Small, Thinking Big</h2>
 
@@ -25,9 +27,9 @@ const post: BlogPost = {
 
     <p>In June 2024, my neighbour approached me. A long-time Ford UK employee with a background in testing and stunt driving, he had a personal collection of Ford die-cast models. He offered me a commission to photograph and sell them on eBay.</p>
 
-    <p>We agreed on a <strong>flat 25% commission</strong> on the final sale price, excluding postage costs. This ensured fairness while covering the time I spent on photography, listings, packaging, and customer service.</p>
+    <p>I agreed with him on a <strong>flat 25% commission</strong> on the final sale price, excluding postage costs. This ensured fairness while covering the time I spent on photography, listings, packaging, and customer service.</p>
 
-    <p>This was a step up in terms of item value, condition expectations, and the need for a professional, scalable system.</p>
+    <p>This was a step up in terms of item value, condition expectations, and the need for a repeatable system.</p>
 
     <h2>Photographing the First Model</h2>
 
@@ -44,14 +46,16 @@ const post: BlogPost = {
     <p><em>eBay Performance &amp; Traffic dashboard (June 14–21, 2024). I used this to monitor impressions and CTR and refine titles and timing.</em></p>
 
     <blockquote>
-      <p>137,917 impressions in one week — 100% organic.<br />
+      <p>137,917 impressions in one week. 100% organic.<br />
       No ads. Just timing, SEO, and product knowledge.</p>
     </blockquote>
 
-    <p>These weren't random models. Each represented my neighbour's personal automotive journey. That gave me extra motivation to present the collection with care. I repurposed packaging materials and cardboard to safely ship each model while minimising waste.</p>
+    <p>These weren't random models. Each one represented my neighbour's personal automotive journey. That gave me extra motivation to present the collection with care.</p>
 
-    <p>In just one week (June 14–21, 2024), the model Ford listings earned over <strong>137,000 impressions organically on eBay</strong>, with a <strong>1.1% CTR</strong>.<br />
-    I tracked these metrics to refine timing and optimise titles for better visibility.</p>
+    <p>I repurposed packaging materials and cardboard to ship each model safely.</p>
+
+    <p>In one week (June 14–21, 2024), the listings earned over <strong>137,000 impressions on eBay</strong>. The <strong>CTR was 1.1%</strong>. All organic, no promoted listings.<br />
+    I tracked these metrics to refine timing and titles.</p>
 
     <h2>Why This Model Ford Car Collection on eBay Mattered</h2>
 
@@ -72,7 +76,7 @@ const post: BlogPost = {
       <li><strong>Part 2: Building an eBay Photography Workflow That Scales</strong><br />
       Explore my full photo setup, editing workflow, and how I handled early buyer issues.</li>
 
-      <li><strong>Part 3: eBay Model Car Sales — How Timing and Bundles Made a Big Difference</strong><br />
+      <li><strong>Part 3: eBay Model Car Sales: How Timing and Bundles Made a Big Difference</strong><br />
       👉 <a href="/blog/ebay-model-car-sales-timing-bundles">See how I used smart timing and product bundling to boost conversions</a></li>
 
       <li><strong>Part 4: How to Handle Repeat Orders, Combined Shipping, and Loyal Buyers</strong><br />
@@ -85,11 +89,11 @@ const post: BlogPost = {
     <hr />
     <h2>🔗 Related Case Studies</h2>
     <ul>
-      <li><a href="/blog/ebay-model-ford-collection-part-1">Model Car Collection (Part 1) — Model Ford Collection</a></li>
-      <li><a href="/blog/ebay-photography-workflow-part-2">Model Car Collection (Part 2) — Photography Workflow</a></li>
-      <li><a href="/blog/ebay-model-car-sales-timing-bundles">Model Car Collection (Part 3) — Sales Timing &amp; Bundles</a></li>
-      <li><a href="/blog/ebay-repeat-buyers-part-4">Model Car Collection (Part 4) — Repeat Buyers</a></li>
-      <li><a href="/blog/ebay-business-side-part-5">Model Car Collection (Part 5) — Business Side</a></li>
+      <li><a href="/blog/ebay-model-ford-collection-part-1">Model Car Collection (Part 1): Model Ford Collection</a></li>
+      <li><a href="/blog/ebay-photography-workflow-part-2">Model Car Collection (Part 2): Photography Workflow</a></li>
+      <li><a href="/blog/ebay-model-car-sales-timing-bundles">Model Car Collection (Part 3): Sales Timing &amp; Bundles</a></li>
+      <li><a href="/blog/ebay-repeat-buyers-part-4">Model Car Collection (Part 4): Repeat Buyers</a></li>
+      <li><a href="/blog/ebay-business-side-part-5">Model Car Collection (Part 5): Business Side</a></li>
     </ul>
 
     <p>📬 <strong>Want More Real Wins Like This?</strong></p>
@@ -97,7 +101,7 @@ const post: BlogPost = {
     <p>If this article lit a fire under you, wait until you see what's next.<br />
     I unpack how I sold over <strong>950 models</strong>, handled wildcard buyers, and turned a flyer into <strong>£13.5K+ freelance gigs</strong>.</p>
 
-    <p><strong>Subscribe</strong> for raw, tested strategies that get results — not recycled fluff.</p>
+    <p><strong>Subscribe</strong> for raw, tested strategies that get results. Not recycled fluff.</p>
 
     <hr />
     <h2>What to Do Next</h2>
@@ -105,7 +109,7 @@ const post: BlogPost = {
     <p><a href="/blog">Explore related case studies</a> or <a href="/contact">get in touch</a>.</p>
   `,
   date: '2025-07-06',
-  author: 'Joe — Digital Marketing & Analytics',
+  author: 'Joe Morris',
   category: 'Case Studies',
   tags: ['ecommerce'],
   image: '/images/blog/240616-Model_Car_Collection-3.webp',

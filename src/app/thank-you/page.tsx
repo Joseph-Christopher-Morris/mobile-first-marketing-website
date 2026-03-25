@@ -3,7 +3,7 @@ import Conversion from "./Conversion";
 
 export const metadata = buildSEO({
   intent: "Thank You",
-  description: "Thanks for your message — I'll get back to you shortly.",
+  description: "Thanks for your message. I will get back to you shortly.",
   canonicalPath: "/thank-you/",
   noindex: true,
 });

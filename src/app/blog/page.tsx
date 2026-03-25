@@ -8,10 +8,18 @@ import { NewsletterSignup } from '@/components/sections/NewsletterSignup';
 import { ServicesShowcase } from '@/components/sections/ServicesShowcase';
 import { resolveBlogCardImageWithLegacy } from '@/lib/blog-thumbnail-resolver';
 import { buildSEO } from '@/lib/seo';
+import { JsonLd } from '@/components/JsonLd';
+import { CANONICAL } from '@/config/canonical';
+import {
+  buildBlog,
+  buildCollectionPage,
+  buildBreadcrumbList,
+  buildItemList,
+} from '@/lib/schema-generator';
 
 export const metadata: Metadata = buildSEO({
-  intent: "Digital Marketing Case Studies",
-  description: "Real case studies on SEO, Google Ads, analytics, and website performance. Learn what works from actual Cheshire business projects with proven ROI results.",
+  intent: "What Actually Works in Marketing",
+  description: "Not sure what works for your website or ads? Real case studies from Nantwich and Crewe business projects. Tested strategies with honest results. Based in Nantwich.",
   canonicalPath: "/blog/",
 });
 
@@ -44,8 +52,34 @@ export default async function BlogPage() {
     return new Date(b.date).getTime() - new Date(a.date).getTime();
   });
 
+  const siteUrl = CANONICAL.urls.site;
+
+  const blogIndexSchemas = [
+    buildBlog(
+      'Real case studies from Nantwich and Crewe business projects. What I tested, what worked, and what I learned about getting more enquiries from websites, ads, and marketing.'
+    ),
+    buildCollectionPage({
+      name: 'Case Studies and Marketing Lessons',
+      description: 'Not sure what works for your website or ads? These are real projects with honest results. No theory. Just what I tried and what actually brought in enquiries.',
+      url: `${siteUrl}${CANONICAL.routes.blog}`,
+    }),
+    buildBreadcrumbList([
+      { name: 'Home', url: `${siteUrl}${CANONICAL.routes.home}` },
+      { name: 'Blog', url: `${siteUrl}${CANONICAL.routes.blog}` },
+    ]),
+    buildItemList(
+      allPosts.map((post, i) => ({
+        name: post.title,
+        url: `${siteUrl}/blog/${post.slug}/`,
+        description: post.excerpt,
+        position: i + 1,
+      }))
+    ),
+  ];
+
   return (
     <Layout>
+      <JsonLd schemas={blogIndexSchemas} />
       <div className='min-h-screen bg-gray-50'>
         {/* Hero Section */}
         <section className='bg-white border-b border-gray-200 py-16 md:py-20'>

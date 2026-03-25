@@ -3,6 +3,14 @@ import Image from 'next/image';
 import EnhancedCTA from '@/components/services/EnhancedCTA';
 import { Layout } from '@/components/layout';
 import { buildSEO } from '@/lib/seo';
+import { JsonLd } from '@/components/JsonLd';
+import { CANONICAL } from '@/config/canonical';
+import {
+  buildService,
+  buildBreadcrumbList,
+  buildFAQPage,
+} from '@/lib/schema-generator';
+import { SPEED_PROOF } from '@/lib/proof-data';
 
 export const metadata: Metadata = buildSEO({
   intent: "Cloud Website Hosting",
@@ -10,9 +18,55 @@ export const metadata: Metadata = buildSEO({
   canonicalPath: "/services/website-hosting/",
 });
 
+const siteUrl = (path: string) => `${CANONICAL.urls.site}${path}`;
+
+const hostingSchemas = [
+  buildService({
+    name: 'Website Speed Improvement and Hosting Migration',
+    description:
+      'Your website is slow. Visitors leave before they see what you offer. I move your site to faster hosting, cut your costs, and get your pages loading in under two seconds.',
+    serviceType: 'Website Speed Improvement and Hosting Migration',
+    url: siteUrl(CANONICAL.routes.websiteHosting),
+    audience: 'Small businesses with slow or expensive websites in Nantwich and Crewe',
+  }),
+  buildBreadcrumbList([
+    { name: 'Home', url: siteUrl(CANONICAL.routes.home) },
+    { name: 'Services', url: siteUrl(CANONICAL.routes.services) },
+    { name: 'Website Hosting', url: siteUrl(CANONICAL.routes.websiteHosting) },
+  ]),
+  buildFAQPage([
+    {
+      question: 'How much does hosting cost?',
+      answer:
+        'Website hosting is £15 per month or £120 per year when paid annually. This includes secure hosting, monitoring, backups and personal support.',
+    },
+    {
+      question: 'Will this help my Google Ads or SEO?',
+      answer:
+        'Yes. Faster load times and a clean setup normally improve quality scores for Google Ads and help your site perform better in organic search.',
+    },
+    {
+      question: 'Do I need to understand hosting or servers?',
+      answer:
+        'No. I handle the technical setup, monitoring and ongoing care. You never need to deal with hosting dashboards or server settings.',
+    },
+    {
+      question: 'What happens if something goes wrong with my site?',
+      answer:
+        'You contact me directly. I investigate the issue, restore from a backup if required and get you back online quickly.',
+    },
+    {
+      question: 'Can you host a site that is already built?',
+      answer:
+        'Yes. I review your existing website and check how it is built. If a direct migration is possible, I move it safely. If a rebuild is better, I explain why first.',
+    },
+  ]),
+];
+
 export default function WebsiteHostingPage() {
   return (
     <Layout>
+      <JsonLd schemas={hostingSchemas} />
       <div className="min-h-screen bg-white">
         {/* Hero Section */}
         <section className="relative bg-gradient-to-br from-pink-50 to-purple-50 py-16 lg:py-24">
@@ -160,13 +214,13 @@ export default function WebsiteHostingPage() {
                   <tbody>
                     <tr className="border-b border-gray-100">
                       <td className="py-3 px-4 text-gray-700">Performance Score (Mobile)</td>
-                      <td className="py-3 px-4 text-centre text-red-600 font-semibold">56/100</td>
-                      <td className="py-3 px-4 text-centre text-green-600 font-semibold">99/100</td>
+                      <td className="py-3 px-4 text-centre text-red-600 font-semibold">{SPEED_PROOF.before.performanceScore}/100</td>
+                      <td className="py-3 px-4 text-centre text-green-600 font-semibold">{SPEED_PROOF.after.performanceScore}/100</td>
                     </tr>
                     <tr>
                       <td className="py-3 px-4 text-gray-700">Load Time</td>
-                      <td className="py-3 px-4 text-centre text-red-600 font-semibold">14+ seconds</td>
-                      <td className="py-3 px-4 text-centre text-green-600 font-semibold">Under 2 seconds</td>
+                      <td className="py-3 px-4 text-centre text-red-600 font-semibold">{SPEED_PROOF.before.loadTime} {SPEED_PROOF.unit}</td>
+                      <td className="py-3 px-4 text-centre text-green-600 font-semibold">Under {SPEED_PROOF.after.loadTime.replace('<', '')} {SPEED_PROOF.unit}</td>
                     </tr>
                   </tbody>
                 </table>
@@ -176,37 +230,35 @@ export default function WebsiteHostingPage() {
         </section>
 
         {/* How It Works */}
-        <section className="py-16 bg-gray-50">
-          <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div className="text-centre mb-12">
-              <h2 className="text-3xl font-bold text-gray-900 mb-4">How It Works</h2>
-            </div>
-            <div className="grid md:grid-cols-3 gap-8">
-              <div className="text-centre">
-                <div className="bg-pink-100 w-16 h-16 rounded-full flex items-centre justify-centre mx-auto mb-4">
-                  <span className="text-2xl font-bold text-pink-600">1</span>
+        <section className="py-16 md:py-20 bg-gray-50">
+          <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+            <h2 className="text-3xl md:text-4xl font-bold text-slate-900 text-center mb-12">How It Works</h2>
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-10">
+              <div>
+                <div className="inline-flex h-10 w-10 items-center justify-center rounded-lg bg-pink-100 text-pink-600 font-bold mb-4">
+                  01
                 </div>
-                <h3 className="text-xl font-semibold text-gray-900 mb-3">Discovery & Planning</h3>
-                <p className="text-gray-600">
-                  I review your current setup and goals, then recommend the right hosting approach.
+                <h3 className="text-2xl font-semibold text-slate-900 mb-3">Discovery and Planning</h3>
+                <p className="text-lg text-slate-700 leading-relaxed">
+                  I review your current setup and your goals. Then I recommend the right hosting approach.
                 </p>
               </div>
-              <div className="text-centre">
-                <div className="bg-pink-100 w-16 h-16 rounded-full flex items-centre justify-centre mx-auto mb-4">
-                  <span className="text-2xl font-bold text-pink-600">2</span>
+              <div>
+                <div className="inline-flex h-10 w-10 items-center justify-center rounded-lg bg-pink-100 text-pink-600 font-bold mb-4">
+                  02
                 </div>
-                <h3 className="text-xl font-semibold text-gray-900 mb-3">Migration or Setup</h3>
-                <p className="text-gray-600">
-                  Your website is configured on secure cloud with minimal downtime.
+                <h3 className="text-2xl font-semibold text-slate-900 mb-3">Migration or Setup</h3>
+                <p className="text-lg text-slate-700 leading-relaxed">
+                  I move your site to faster hosting. There is minimal downtime.
                 </p>
               </div>
-              <div className="text-centre">
-                <div className="bg-pink-100 w-16 h-16 rounded-full flex items-centre justify-centre mx-auto mb-4">
-                  <span className="text-2xl font-bold text-pink-600">3</span>
+              <div>
+                <div className="inline-flex h-10 w-10 items-center justify-center rounded-lg bg-pink-100 text-pink-600 font-bold mb-4">
+                  03
                 </div>
-                <h3 className="text-xl font-semibold text-gray-900 mb-3">optimisation & Support</h3>
-                <p className="text-gray-600">
-                  I monitor performance and help with updates, SEO tweaks, or design improvements.
+                <h3 className="text-2xl font-semibold text-slate-900 mb-3">Optimisation and Support</h3>
+                <p className="text-lg text-slate-700 leading-relaxed">
+                  I monitor performance. I fix issues and improve speed over time.
                 </p>
               </div>
             </div>

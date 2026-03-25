@@ -290,7 +290,7 @@ photography work was exceptional and really captured our brand essence.
 
 ### Main Site Config
 
-Edit `src/config/site.ts` to update global site settings:
+Edit `src/config/canonical.ts` to update global site settings. This is the single source of truth for all business identity, contact details, routes, and social profiles:
 
 ```typescript
 export const siteConfig: SiteConfig = {

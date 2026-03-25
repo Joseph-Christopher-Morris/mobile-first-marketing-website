@@ -14,7 +14,7 @@ export function ExitIntentPopup({ show, onClose }: ExitIntentPopupProps) {
   const handleCTAClick = () => {
     if (typeof window !== 'undefined' && window.gtag) {
       window.gtag('event', 'exit_intent_cta_click', {
-        cta_text: 'Get Free Website Audit',
+        cta_text: 'Send me your website',
         page_path: window.location.pathname
       });
     }
@@ -37,16 +37,16 @@ export function ExitIntentPopup({ show, onClose }: ExitIntentPopupProps) {
           </h2>
           
           <p className="mb-6 text-gray-600">
-            Get a <strong>free 10-point website audit</strong> and discover how your site performs against Cheshire competitors.
+            Not getting enquiries from your website? Send me the URL and I will tell you what to fix.
           </p>
           
           <div className="space-y-3">
             <Link
-              href="/free-audit"
+              href="/contact/"
               onClick={handleCTAClick}
               className="block w-full rounded-lg bg-pink-600 px-6 py-3 text-center font-semibold text-white hover:bg-pink-700 transition-colors shadow-md hover:shadow-lg"
             >
-              Get Your Free Audit
+              Send me your website
             </Link>
             
             <button

@@ -4,13 +4,15 @@
  */
 
 import { ImageRequirements } from '@/types/metadata';
+import { CANONICAL } from './canonical';
 
 /**
- * Site-wide constants
+ * Site-wide constants — derived from canonical.ts.
+ * No independent business identity values.
  */
 export const SITE_CONFIG = {
-  name: 'Vivid Media Cheshire',
-  url: 'https://vividmediacheshire.com',
+  name: CANONICAL.business.name,
+  url: CANONICAL.urls.site,
   locale: 'en_GB',
   twitter: '@vividmediacheshire',
 } as const;

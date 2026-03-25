@@ -5,12 +5,13 @@ const post: BlogPost = {
   title: 'eBay Model Car Sales: How Timing and Bundles Made a Big Difference (Part 3)',
   excerpt:
     'Listing strategy and conversion lessons from selling a model Ford collection. Learn how timing, bundling, and combined postage improved conversion rates.',
+  metaDescription:
+    'Bundling and timing increased order value and conversions. See how combined postage and listing strategy drove more eBay sales.',
   content: `
     <p><em>Listing Strategy and Conversion Lessons</em></p>
 
-
-
-    <p>In this third part of the series, I'll walk you through the tactics I used to improve the conversion rate when selling my neighbour's model Ford collection. From timing listings to writing efficient descriptions and encouraging multi-item purchases, this phase of the project brought out the eCommerce strategist in me.</p>
+    <p>This is part three of the series. I used specific tactics to improve conversion rates on my neighbour's model Ford collection.</p>
+    <p>Timing, efficient descriptions, and multi-item incentives made the difference. This phase brought out the eCommerce strategist in me.</p>
 
     <h2>Prologue: Why Combined Postage Matters</h2>
 
@@ -22,12 +23,12 @@ const post: BlogPost = {
     <p>Combined postage benefits both sides: the buyer saves on shipping, and the seller can increase the <strong>average order value</strong> while using fewer packaging materials.<br />
     It also creates an opportunity to upsell items that might not have sold as quickly on their own.</p>
 
-    <p>For collectors, combined postage is especially valuable. Whether someone is reliving childhood memories or shopping for a birthday gift, they appreciate the chance to buy multiple items from the same seller without paying a separate shipping fee for each one.</p>
+    <p>For collectors, combined postage is especially valuable. Buyers reliving childhood memories or shopping for gifts want multiple items from one seller. Paying one shipping fee instead of several makes that easier.</p>
 
     <h2>Optimising eBay Model Car Sales with Smart Bundling</h2>
 
-    <img src="/images/blog/Screenshot 2025-07-04 211333.webp" alt="Combined Model Ford order showing multiple items purchased together — demonstrating the success of the combined postage strategy" loading="lazy" />
-    <p><em>Combined order proof showing multiple Ford models purchased together — demonstrating the success of the bundling and combined postage strategy.</em></p>
+    <img src="/images/blog/Screenshot 2025-07-04 211333.webp" alt="Combined Model Ford order showing multiple items purchased together, demonstrating the success of the combined postage strategy" loading="lazy" />
+    <p><em>Combined order proof showing multiple Ford models purchased together. This demonstrates the success of the bundling and combined postage strategy.</em></p>
 
     <p>Before I began listing each item, I grouped cars that complemented each other in case buyers were interested in purchasing more than one. This <strong>bundling technique</strong> became a core part of my eBay model car sales strategy.<br />
     For example, I paired a <strong>brown Ford B-Max</strong> with a <strong>gold Ford Edge</strong>. These visual or thematic pairings made browsing more appealing and encouraged buyers to explore my other listings.</p>
@@ -59,7 +60,7 @@ const post: BlogPost = {
 
     <p>Once I had about <strong>100 listings</strong> ready, I waited for the right moment to publish them. I aimed to post them around <strong>5 PM British Summer Time</strong>, particularly during weekends when eBay offered reduced seller fees.</p>
 
-    <p>Publishing during this window meant more eyes on my listings and more potential conversions. It also benefited John and me financially, as we paid less in platform fees.</p>
+    <p>Publishing during this window meant more eyes on my listings and more potential conversions. It also reduced platform fees for both of us.</p>
 
     <p>During the sale period, I closely tracked which cars had bids and which buyers were bidding on multiple items. This helped me prepare the right boxes for packaging, especially when orders included several models.</p>
 
@@ -67,9 +68,9 @@ const post: BlogPost = {
 
     <p>Single-item orders were easier to package. There was a reduced risk of models rubbing against each other and fewer concerns about display cases being damaged during shipping.</p>
 
-    <p>Multi-item orders required more effort. Buyers often messaged me in advance asking, <em>"How much will postage be if I buy six 1:43 scale Fords?"</em> The answer was usually <strong>£3.19</strong> for a Royal Mail small parcel, based on 2024–2025 rates. However, heavier parcels would require a slightly higher fee.</p>
+    <p>Buyers often messaged me in advance asking, <em>"How much will postage be if I buy six 1:43 scale Fords?"</em> The answer was usually <strong>£3.19</strong> for a Royal Mail small parcel. Heavier parcels cost slightly more.</p>
 
-    <p>There was also additional administrative work involved in updating the total cost and postage on invoices. I had to <strong>weigh the items</strong>, <strong>recalculate shipping</strong>, and <strong>select suitable boxes</strong> with extra packing materials to protect the models in transit.</p>
+    <p>There was also extra admin: updating totals and postage on invoices. I had to <strong>weigh the items</strong>, <strong>recalculate shipping</strong>, and <strong>pick suitable boxes</strong> with padding to protect the models.</p>
 
     <p>While more time-consuming, multi-item orders were <strong>well worth the effort</strong>. They reflected buyer trust and helped reduce overall packaging costs.</p>
 
@@ -77,18 +78,18 @@ const post: BlogPost = {
 
     <p>I relied on <strong>intuition</strong>, <strong>experience from selling Hot Wheels</strong>, and a <strong>transparent workflow</strong> to make the most of each listing. Timing was another key factor. Posting listings on <strong>Sunday afternoons</strong> proved far more effective than uploading them during quiet times, such as early mornings on weekdays.</p>
 
-    <p><strong>Combined postage</strong>, <strong>thoughtful bundling</strong>, and <strong>high-quality photos</strong> all played a role in increasing conversion rates and helping more of John's collection find the right buyers.</p>
+    <p><strong>Combined postage</strong>, <strong>thoughtful bundling</strong>, and <strong>sharp photos</strong> increased conversion rates. More of John's collection found the right buyers.</p>
 
-    <p>In the next part of the series, I'll talk about what happened when buyers returned for more, how I packaged multi-item orders, and what it was like to manage inventory at scale.</p>
+    <p>Next up: what happened when buyers returned for more. I cover multi-item packaging and inventory management at scale.</p>
 
     <hr />
     <h2>🔗 Related Case Studies</h2>
     <ul>
-      <li><a href="/blog/ebay-model-ford-collection-part-1">Model Car Collection (Part 1) — Model Ford Collection</a></li>
-      <li><a href="/blog/ebay-photography-workflow-part-2">Model Car Collection (Part 2) — Photography Workflow</a></li>
-      <li><a href="/blog/ebay-model-car-sales-timing-bundles">Model Car Collection (Part 3) — Sales Timing &amp; Bundles</a></li>
-      <li><a href="/blog/ebay-repeat-buyers-part-4">Model Car Collection (Part 4) — Repeat Buyers</a></li>
-      <li><a href="/blog/ebay-business-side-part-5">Model Car Collection (Part 5) — Business Side</a></li>
+      <li><a href="/blog/ebay-model-ford-collection-part-1">Model Car Collection (Part 1): Model Ford Collection</a></li>
+      <li><a href="/blog/ebay-photography-workflow-part-2">Model Car Collection (Part 2): Photography Workflow</a></li>
+      <li><a href="/blog/ebay-model-car-sales-timing-bundles">Model Car Collection (Part 3): Sales Timing &amp; Bundles</a></li>
+      <li><a href="/blog/ebay-repeat-buyers-part-4">Model Car Collection (Part 4): Repeat Buyers</a></li>
+      <li><a href="/blog/ebay-business-side-part-5">Model Car Collection (Part 5): Business Side</a></li>
     </ul>
 
     <p><em>Have you ever tried combining postage or bundling items on eBay? I'd love to hear your experience in the comments below.</em></p>
@@ -105,7 +106,7 @@ const post: BlogPost = {
     <p><a href="/blog">Explore related case studies</a> or <a href="/contact">get in touch</a>.</p>
   `,
   date: '2025-07-06',
-  author: 'Joe — Digital Marketing & Analytics',
+  author: 'Joe Morris',
   category: 'Case Studies',
   tags: ['conversion-optimisation'],
   image: '/images/blog/240708-Model_Car_Collection-21 (1).jpg',

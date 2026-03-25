@@ -18,7 +18,7 @@ Successfully completed a comprehensive metadata, tags, and brand alignment updat
 ### Files Updated: 17
 
 **Site Configuration:**
-- `src/config/site.ts` — Brand name updated
+- `src/config/canonical.ts` — Brand config (single source of truth, formerly site.ts)
 
 **Blog Posts (14):**
 - All 14 blog posts updated with correct metadata, author, categories, and tags

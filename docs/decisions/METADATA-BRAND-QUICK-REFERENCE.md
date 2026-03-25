@@ -86,7 +86,7 @@ node scripts/fix-invalid-tags.js
 
 ## 📁 Key Files
 
-- `src/config/site.ts` — Site-wide brand config
+- `src/config/canonical.ts` — Site-wide brand config (single source of truth)
 - `src/content/blog/*.ts` — Blog post metadata
 - `scripts/validate-metadata-brand-qa.js` — QA validation
 - `scripts/update-metadata-tags-brand.js` — Bulk updates

@@ -5,6 +5,8 @@ const post: BlogPost = {
   title: 'My Stock Photography Breakthrough (2023–2024)',
   excerpt:
     'How steady uploads turned into $148.90 in under 18 months and the key lessons that made it happen. Discover my stock photography breakthrough story.',
+  metaDescription:
+    'From 5 downloads to steady monthly income. See how consistent uploads and platform strategy built a growing stock photography portfolio.',
   content: `
     <p>I didn't jump into stock photography expecting overnight success.<br />
     I got in for one reason: to build a recurring income stream from my creative work.</p>
@@ -15,26 +17,26 @@ const post: BlogPost = {
 
     <p>Now, I'll break down how steady uploads turned into <strong>$148.90</strong> in under 18 months and the key lessons that made it happen. Keep reading to discover my stock photography breakthrough.</p>
 
-    <h2>📈 The Growth That Took Time — And Paid Off</h2>
+    <h2>📈 The Growth That Took Time and Paid Off</h2>
 
     <p>By January 2023, I had nearly <strong>1,000 assets</strong> on Shutterstock. It wasn't an explosive start, but it was consistent.</p>
 
     <img src="/images/blog/Shutterstock_Downloads_Earnings_Jan_Apr_2023.webp" alt="Shutterstock earnings and revenue line chart (January to April 2023)" loading="lazy" />
 
     <ul>
-      <li>🔹 <strong>January 2023:</strong> 5 downloads — $1.93</li>
-      <li>🔹 <strong>February 2023:</strong> 7 downloads — $2.08</li>
-      <li>🔹 <strong>March 2023:</strong> 10 downloads — $7.11</li>
-      <li>🔹 <strong>April 2023:</strong> 13 downloads — $5.36</li>
+      <li>🔹 <strong>January 2023:</strong> 5 downloads, $1.93</li>
+      <li>🔹 <strong>February 2023:</strong> 7 downloads, $2.08</li>
+      <li>🔹 <strong>March 2023:</strong> 10 downloads, $7.11</li>
+      <li>🔹 <strong>April 2023:</strong> 13 downloads, $5.36</li>
     </ul>
 
     <p>My Shutterstock revenue started to compound. Small amounts, but noticeable.<br />
-    My breakthrough wasn't viral — it was <strong>volume</strong>.</p>
+    My breakthrough was not viral. It was <strong>volume</strong>.</p>
 
     <h2>🚀 Diversifying to Adobe Stock &amp; iStock</h2>
 
     <img src="/images/blog/Stock_Photography_Earnings_Comparison.webp" alt="Bar chart comparing earnings across Shutterstock, Adobe Stock, and iStock platforms" loading="lazy" />
-    <p><em>Platform diversification in action — spreading uploads across multiple agencies reduced risk and maximized reach.</em></p>
+    <p><em>Platform diversification in action. Spreading uploads across multiple agencies reduced risk and maximized reach.</em></p>
 
     <p>In 2023, <strong>Adobe Stock</strong> and <strong>iStock</strong> combined accounted for approximately <strong>22%</strong> of my total stock photography income. Not massive individually, but they played a key role in building a broader, more resilient revenue stream.</p>
 
@@ -99,18 +101,18 @@ const post: BlogPost = {
 
     <p>Then it becomes a real, semi-passive income stream over time.</p>
 
-    <p>For me, stock photography wasn't just a side hustle — it became a creative testing ground.<br />
+    <p>For me, stock photography was not just a side hustle. It became a creative testing ground.<br />
     Sharpening my strategy, building resilience, and proving how consistent effort turns into long-term value.</p>
 
-    <p>That mindset helped me land larger clients, grow my freelance work, and establish a brand with published work featured in <strong>BBC</strong>, <strong>Financial Times</strong>, and <strong>Forbes</strong>.</p>
+    <p>That mindset helped me land larger clients and grow my freelance work. My published work has been featured in <strong>BBC</strong>, <strong>Financial Times</strong>, and <strong>Forbes</strong>.</p>
 
     <hr />
     <h2>🔗 Related Case Studies</h2>
     <ul>
-      <li><a href="/blog/stock-photography-getting-started">Stock Photography — Getting Started</a></li>
-      <li><a href="/blog/stock-photography-income-growth">Stock Photography — Income Growth</a></li>
-      <li><a href="/blog/stock-photography-breakthrough">Stock Photography — Breakthrough</a></li>
-      <li><a href="/blog/stock-photography-lessons">Stock Photography — Lessons Learned</a></li>
+      <li><a href="/blog/stock-photography-getting-started">Stock Photography: Getting Started</a></li>
+      <li><a href="/blog/stock-photography-income-growth">Stock Photography: Income Growth</a></li>
+      <li><a href="/blog/stock-photography-breakthrough">Stock Photography: Breakthrough</a></li>
+      <li><a href="/blog/stock-photography-lessons">Stock Photography: Lessons Learned</a></li>
     </ul>
 
     <p>📩 <strong>Ready to see how I turned slow trickles into recurring income?</strong><br />
@@ -122,7 +124,7 @@ const post: BlogPost = {
     <p><a href="/blog">Explore more work like this</a> or <a href="/contact">get in touch</a>.</p>
   `,
   date: '2025-07-18',
-  author: 'Joe — Digital Marketing & Analytics',
+  author: 'Joe Morris',
   category: 'Case Studies',
   tags: ['content-strategy', 'case-study', 'conversion-optimisation', 'small-business'],
   image: '/images/blog/Cumulative_Shutterstock_Downloads_Earnings_Jan-Apr2023.png',

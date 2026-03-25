@@ -5,6 +5,8 @@ const post: BlogPost = {
   title: 'eBay Photography Workflow: How I Sold Model Ford Cars and Handled Buyer Issues (Part 2)',
   excerpt:
     'Studio workflow and customer experience lessons. Learn how to adapt early, improve quality, and handle customer issues professionally.',
+  metaDescription:
+    'Better photos and clearer listings improved buyer trust and sales. See the workflow that scaled eBay listings without losing quality.',
   content: `
     <p><em>Studio Workflow and Customer Experience</em></p>
 
@@ -31,7 +33,7 @@ const post: BlogPost = {
     <img src="/images/blog/WhatsApp Image 2025-07-05 at 9.00.50 PM.jpg" alt="Hot Wheels listing description showing the detailed, accurate copy that built buyer confidence and encouraged purchases" loading="lazy" />
     <p><em>Listing description proof showing the detailed, accurate copy that built buyer confidence and encouraged purchases.</em></p>
 
-    <p>To maintain listing quality, I built a reliable eBay photography workflow that allowed me to scale production without losing consistency:</p>
+    <p>I built a reliable eBay photography workflow to scale production without losing consistency:</p>
 
     <ul>
       <li>Set up a <strong>mini studio</strong> with consistent lighting and angles.</li>
@@ -59,11 +61,11 @@ const post: BlogPost = {
     <hr />
     <h2>🔗 Related Case Studies</h2>
     <ul>
-      <li><a href="/blog/ebay-model-ford-collection-part-1">Model Car Collection (Part 1) — Model Ford Collection</a></li>
-      <li><a href="/blog/ebay-photography-workflow-part-2">Model Car Collection (Part 2) — Photography Workflow</a></li>
-      <li><a href="/blog/ebay-model-car-sales-timing-bundles">Model Car Collection (Part 3) — Sales Timing &amp; Bundles</a></li>
-      <li><a href="/blog/ebay-repeat-buyers-part-4">Model Car Collection (Part 4) — Repeat Buyers</a></li>
-      <li><a href="/blog/ebay-business-side-part-5">Model Car Collection (Part 5) — Business Side</a></li>
+      <li><a href="/blog/ebay-model-ford-collection-part-1">Model Car Collection (Part 1): Model Ford Collection</a></li>
+      <li><a href="/blog/ebay-photography-workflow-part-2">Model Car Collection (Part 2): Photography Workflow</a></li>
+      <li><a href="/blog/ebay-model-car-sales-timing-bundles">Model Car Collection (Part 3): Sales Timing &amp; Bundles</a></li>
+      <li><a href="/blog/ebay-repeat-buyers-part-4">Model Car Collection (Part 4): Repeat Buyers</a></li>
+      <li><a href="/blog/ebay-business-side-part-5">Model Car Collection (Part 5): Business Side</a></li>
     </ul>
 
     <p>📬 <strong>Stay in the Loop</strong></p>
@@ -78,7 +80,7 @@ const post: BlogPost = {
     <p><a href="/blog">Explore related case studies</a> or <a href="/contact">get in touch</a>.</p>
   `,
   date: '2025-07-06',
-  author: 'Joe — Digital Marketing & Analytics',
+  author: 'Joe Morris',
   category: 'Case Studies',
   tags: ['ecommerce'],
   image: '/images/blog/240616-Model_Car_Collection-10 (1).jpg',

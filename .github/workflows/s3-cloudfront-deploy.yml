@@ -40,6 +40,30 @@ jobs:
             echo "::error::Prohibited gradient/color classes found"; exit 1; fi
       - name: Build (Next export → /out)
         run: npm run build
+      - name: Validate required assets in build output
+        run: |
+          node -e "
+          const fs = require('fs');
+          const manifest = JSON.parse(fs.readFileSync('config/required-assets.json','utf-8'));
+          const assets = new Set();
+          function walk(v) {
+            if (typeof v === 'string') { assets.add(v); return; }
+            if (Array.isArray(v)) { v.forEach(walk); return; }
+            if (v && typeof v === 'object') {
+              for (const [k,val] of Object.entries(v)) {
+                if (k === '_comment' || k === 'protectedPrefixes') continue;
+                walk(val);
+              }
+            }
+          }
+          walk(manifest);
+          let missing = 0;
+          for (const a of assets) {
+            if (!fs.existsSync('out/' + a)) { console.error('MISSING: ' + a); missing++; }
+          }
+          if (missing > 0) { console.error(missing + ' required assets missing from out/'); process.exit(1); }
+          console.log('✅ All ' + assets.size + ' required assets present in build output');
+          "
       - name: Patch sitemap to include Privacy Policy if missing
         run: |
           PRIV="https://d15sc9fc739ev2.cloudfront.net/privacy-policy/"
@@ -137,3 +161,12 @@ jobs:
         run: |
           node scripts/deployment-audit-logger.js complete
           node scripts/deployment-monitoring-integration.js
+
+      - name: Verify production assets
+        run: |
+          echo "⏳ Waiting 30s for CloudFront propagation..."
+          sleep 30
+          node scripts/verify-production-assets.js
+        env:
+          SITE_ORIGIN: https://d15sc9fc739ev2.cloudfront.net
+        continue-on-error: true

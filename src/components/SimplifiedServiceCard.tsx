@@ -14,7 +14,7 @@ export function SimplifiedServiceCard({
   annualPrice,
   includes,
   tagline,
-  ctaText = "Get Started",
+  ctaText = "Send me your website",
   ctaLink = "#contact"
 }: SimplifiedServiceCardProps) {
   return (
@@ -87,7 +87,7 @@ export function HostingServiceCard() {
       <p className="text-sm text-gray-600 italic mb-4">One annual cost that keeps your website online, fast and supported.</p>
 
       <a
-        href="/services/hosting#contact"
+        href="/services/website-hosting#contact"
         className="block w-full text-center bg-brand-pink text-white px-6 py-3 rounded-lg font-semibold hover:bg-brand-pink2 transition-colors"
       >
         Get Hosting Quote

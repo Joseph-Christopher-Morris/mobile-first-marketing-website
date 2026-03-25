@@ -17,7 +17,7 @@ const BUILD_DIR = 'out';
 const SOURCE_IMAGES_DIR = 'public/images';
 const BUILD_IMAGES_DIR = path.join(BUILD_DIR, 'images');
 
-// Required images based on requirements document
+// Required images based on requirements document + photography page assets
 const REQUIRED_IMAGES = {
   // Homepage service cards
   homepage: {
@@ -31,14 +31,22 @@ const REQUIRED_IMAGES = {
   // Services pages hero images (Requirement 2)
   services: {
     photography: {
-      hero: 'services/250928-hampson-auctions-sunday-11.webp',
-      portfolio: [
-        'services/240217-australia-trip-232-1.webp',
-        'services/240219-australia-trip-148.webp',
-        'services/240619-london-19.webp',
-        'services/240619-london-26-1.webp',
-        'services/240619-london-64.webp',
-        'services/250125-liverpool-40.webp',
+      hero: 'services/photography/photography-hero.webp',
+      authorityProof: [
+        'services/photography/editorial-proof-bbc-forbes-times.webp',
+        'services/photography/5eb6fc44-e1a5-460d-8dea-923fd303f59d.webp',
+        'services/photography/photography-sample-3.webp',
+        'services/photography/photography-sample-4.webp',
+      ],
+      stockProof: [
+        'services/photography/photography-sample-4.webp',
+        'services/photography/photography-sample-1.webp',
+      ],
+      gallery: [
+        'services/photography/240427-_Nantwich_Stock_Photography-19.webp',
+        'services/photography/240427-_Nantwich_Stock_Photography-23.webp',
+        'services/photography/240421-Nantwich_Stock_Photography-49.webp',
+        'services/photography/photography-sample-2.webp',
       ],
     },
     analytics: {
@@ -151,11 +159,26 @@ function flattenRequiredImages() {
   // Homepage services
   images.push(...REQUIRED_IMAGES.homepage.services);
 
-  // Services pages
+  // Photography page — all sections
   images.push(REQUIRED_IMAGES.services.photography.hero);
-  images.push(...REQUIRED_IMAGES.services.photography.portfolio);
+  if (REQUIRED_IMAGES.services.photography.authorityProof) {
+    images.push(...REQUIRED_IMAGES.services.photography.authorityProof);
+  }
+  if (REQUIRED_IMAGES.services.photography.stockProof) {
+    images.push(...REQUIRED_IMAGES.services.photography.stockProof);
+  }
+  if (REQUIRED_IMAGES.services.photography.gallery) {
+    images.push(...REQUIRED_IMAGES.services.photography.gallery);
+  }
+  if (REQUIRED_IMAGES.services.photography.portfolio) {
+    images.push(...REQUIRED_IMAGES.services.photography.portfolio);
+  }
+
+  // Analytics
   images.push(REQUIRED_IMAGES.services.analytics.hero);
   images.push(...REQUIRED_IMAGES.services.analytics.portfolio);
+
+  // Ad campaigns
   images.push(REQUIRED_IMAGES.services.adCampaigns.hero);
   images.push(...REQUIRED_IMAGES.services.adCampaigns.portfolio);
 
