@@ -35,15 +35,6 @@
       ],
       "disabled": true,
       "autoApprove": []
-    },
-    "postman": {
-      "transport": "sse",
-      "url": "https://mcp.postman.com/minimal",
-      "headers": {
-        "Authorization": "Bearer ${POSTMAN_API_KEY}"
-      },
-      "disabled": true,
-      "autoApprove": []
     }
   }
 }
