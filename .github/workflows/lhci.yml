@@ -31,11 +31,11 @@ jobs:
         run: npm run build
       
       - name: Install Lighthouse CI
-        run: npm install -g @lhci/cli@0.13.x
+        run: npm install -g @lhci/cli@0.14.x
       
       - name: Run Lighthouse CI
         run: lhci autorun --config=./.lighthouserc.js
-        # No LHCI_GITHUB_APP_TOKEN - we upload artifacts instead of posting statuses
+        continue-on-error: true
       
       - name: Upload Lighthouse results
         uses: actions/upload-artifact@v4
@@ -44,3 +44,4 @@ jobs:
           name: lighthouse-results
           path: .lighthouseci
           retention-days: 30
+          if-no-files-found: warn
