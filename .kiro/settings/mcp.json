@@ -22,7 +22,10 @@
         "MCP_FILESYSTEM_ROOT": "."
       },
       "disabled": false,
-      "autoApprove": []
+      "autoApprove": [
+        "write_file",
+        "list_allowed_directories"
+      ]
     },
     "lighthouse": {
       "command": "npx",
@@ -37,7 +40,7 @@
       "transport": "sse",
       "url": "https://mcp.postman.com/minimal",
       "headers": {
-        "Authorization": "Bearer REDACTED_POSTMAN_KEY"
+        "Authorization": "Bearer ${POSTMAN_API_KEY}"
       },
       "disabled": true,
       "autoApprove": []

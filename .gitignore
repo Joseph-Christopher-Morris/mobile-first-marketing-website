@@ -121,6 +121,7 @@ validation-reports/
 lighthouse-reports/
 playwright-report/
 reports/
+local-artefacts/
 
 # IndexNow submission logs (keep directory structure)
 logs/*.json

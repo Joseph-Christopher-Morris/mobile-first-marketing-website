@@ -16,7 +16,7 @@ export const metadata: Metadata = generateSocialMetadata({
     description: 'BBC-licensed editorial photography and commercial campaigns for Cheshire businesses. Professional imagery supporting digital marketing and content strategy',
     image: '/images/services/photography/photography-hero.webp',
   },
-  canonicalPath: '/services/photography',
+  canonicalPath: '/services/photography/',
 });
 
 export default function PhotographyServicesPage() {

@@ -530,6 +530,60 @@ class Deployment {
   }
 
   /**
+   * Purge Cloudflare cache for critical files
+   */
+  async purgeCloudflareCache() {
+    const zoneId = process.env.CLOUDFLARE_ZONE_ID;
+    const apiToken = process.env.CLOUDFLARE_API_TOKEN;
+
+    if (!zoneId || !apiToken) {
+      console.log('⚠️  Cloudflare credentials not set, skipping cache purge');
+      console.log('   Set CLOUDFLARE_ZONE_ID and CLOUDFLARE_API_TOKEN to enable');
+      return;
+    }
+
+    console.log('🔄 Purging Cloudflare cache...');
+
+    try {
+      const filesToPurge = [
+        'https://vividmediacheshire.com/sitemap.xml',
+        'https://vividmediacheshire.com/robots.txt',
+        'https://vividmediacheshire.com/',
+      ];
+
+      console.log(`   Purging ${filesToPurge.length} files from Cloudflare`);
+
+      const response = await fetch(
+        `https://api.cloudflare.com/client/v4/zones/${zoneId}/purge_cache`,
+        {
+          method: 'POST',
+          headers: {
+            'Authorization': `Bearer ${apiToken}`,
+            'Content-Type': 'application/json',
+          },
+          body: JSON.stringify({
+            files: filesToPurge,
+          }),
+        }
+      );
+
+      const result = await response.json();
+
+      if (result.success) {
+        console.log('✅ Cloudflare cache purged successfully');
+        console.log(`   Purged: ${filesToPurge.join(', ')}`);
+      } else {
+        console.error('❌ Cloudflare cache purge failed');
+        console.error(`   Errors: ${JSON.stringify(result.errors)}`);
+      }
+      console.log('');
+    } catch (error) {
+      console.error('❌ Cloudflare cache purge error:', error.message);
+      console.error('   Deployment succeeded but Cloudflare cache may not be updated');
+    }
+  }
+
+  /**
    * Generate deployment summary
    */
   generateSummary(buildStats, startTime) {
@@ -588,7 +642,10 @@ class Deployment {
       // Step 4: Invalidate CloudFront cache
       await this.invalidateCache();
 
-      // Step 5: Generate summary
+      // Step 5: Purge Cloudflare cache
+      await this.purgeCloudflareCache();
+
+      // Step 6: Generate summary
       this.generateSummary(buildStats, startTime);
 
       console.log('\n🎉 Deployment completed successfully!');

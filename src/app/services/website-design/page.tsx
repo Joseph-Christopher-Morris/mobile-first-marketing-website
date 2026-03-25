@@ -12,7 +12,7 @@ export const metadata = generateSocialMetadata({
     description: 'Fast, SEO-ready websites on secure cloud for Cheshire businesses. Mobile-first design, 82% faster load times, conversion-focused layouts from £300.',
     image: '/images/services/Website Design/PXL_20240222_004124044~2.webp',
   },
-  canonicalPath: '/services/website-design',
+  canonicalPath: '/services/website-design/',
 });
 
 export default function WebsiteDesignPage() {

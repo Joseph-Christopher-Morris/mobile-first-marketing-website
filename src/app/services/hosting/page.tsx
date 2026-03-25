@@ -11,7 +11,7 @@ import { buildSEO } from "@/lib/seo";
 export const metadata: Metadata = buildSEO({
   intent: "Website Hosting & Migration",
   description: "Secure cloud hosting with 82% faster load times, zero downtime migration, transparent pricing. £15/month for Cheshire small businesses with support",
-  canonicalPath: "/services/hosting/",
+  canonicalPath: "/services/website-hosting/",
 });
 
 export default function HostingPage() {

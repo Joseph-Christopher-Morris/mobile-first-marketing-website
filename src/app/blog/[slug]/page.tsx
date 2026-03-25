@@ -47,7 +47,7 @@ export async function generateMetadata({
       author: post.author,
       tags: post.tags,
     },
-    canonicalPath: `/blog/${params.slug}`,
+    canonicalPath: `/blog/${params.slug}/`,
   });
 }
 

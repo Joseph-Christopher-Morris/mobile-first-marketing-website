@@ -602,7 +602,12 @@ class InfrastructureSetup {
       );
       console.log('2. Test the CloudFront domain name');
       console.log('3. Run the deployment script to upload your site');
-      console.log('4. Configure custom domain if needed');
+      console.log('4. Deploy CloudFront redirect function: node scripts/deploy-cloudfront-function.js');
+      console.log('5. Configure custom domain if needed');
+      console.log('\n📚 Documentation:');
+      console.log('   • CloudFront Functions: cloudfront-functions/README.md');
+      console.log('   • Redirect Setup: docs/cloudfront-redirect-setup.md');
+      console.log('   • Deployment Guide: docs/deployment-quick-reference.md');
 
       console.log('\n🔧 Environment variables for deployment:');
       console.log(`export S3_BUCKET_NAME="${this.bucketName}"`);

@@ -1,0 +1,139 @@
+# Implementation Plan
+
+- [x] 1. Write bug condition exploration test
+  - **Property 1: Fault Condition** - Sitemap Missing Blog Articles and Contains Artifact URL
+  - **CRITICAL**: This test MUST FAIL on unfixed code - failure confirms the bug exists
+  - **DO NOT attempt to fix the test or the code when it fails**
+  - **NOTE**: This test encodes the expected behavior - it will validate the fix when it passes after implementation
+  - **GOAL**: Surface counterexamples that demonstrate the bug exists
+  - **Scoped PBT Approach**: Scope the property to the concrete failing cases: (1) sitemap contains 0 blog URLs when 14 blog files exist, (2) sitemap contains artifact URL /services/hosting/
+  - Test implementation details from Fault Condition in design:
+    - Parse current public/sitemap.xml file
+    - Count URLs matching /blog/* pattern (expect 14, will find 0 on unfixed code)
+    - Check for presence of /services/hosting/ URL (expect absent, will find present on unfixed code)
+    - Check for presence of /services/website-hosting/ URL (expect present, will find present)
+  - The test assertions should match the Expected Behavior Properties from design:
+    - Assert blogUrls.length === 14 (will fail on unfixed code)
+    - Assert artifactUrl === null (will fail on unfixed code)
+    - Assert canonicalUrl !== null (will pass on unfixed code)
+  - Run test on UNFIXED code
+  - **EXPECTED OUTCOME**: Test FAILS (this is correct - it proves the bug exists)
+  - Document counterexamples found:
+    - Sitemap contains 0 blog article URLs when 14 blog files exist in src/content/blog/
+    - Sitemap contains both /services/hosting/ and /services/website-hosting/ URLs
+  - Mark task complete when test is written, run, and failure is documented
+  - _Requirements: 1.1, 1.2, 1.3, 2.1, 2.2, 2.3, 2.4, 2.5_
+
+- [x] 2. Write preservation property tests (BEFORE implementing fix)
+  - **Property 2: Preservation** - Existing Static and Service Page URLs
+  - **IMPORTANT**: Follow observation-first methodology
+  - Observe behavior on UNFIXED code for non-buggy inputs:
+    - Parse current public/sitemap.xml file
+    - Extract all top-level page URLs (/, /services/, /about/, /contact/, /pricing/, /blog/, /free-audit/, /privacy-policy/)
+    - Extract all service page URLs (/services/website-design/, /services/website-hosting/, /services/ad-campaigns/, /services/analytics/, /services/photography/)
+    - Record priority and changefreq values for each URL
+  - Write property-based tests capturing observed behavior patterns from Preservation Requirements:
+    - Property: All 14 top-level page URLs remain in sitemap with same priority/changefreq values
+    - Property: All 5 service page URLs remain in sitemap with same priority/changefreq values
+    - Property: Sitemap maintains valid XML structure with proper namespace and encoding
+    - Property: Sitemap file is generated in public/ directory and copied to out/ during build
+  - Property-based testing generates many test cases for stronger guarantees
+  - Run tests on UNFIXED code
+  - **EXPECTED OUTCOME**: Tests PASS (this confirms baseline behavior to preserve)
+  - Mark task complete when tests are written, run, and passing on unfixed code
+  - _Requirements: 3.1, 3.2, 3.3, 3.4, 3.5, 3.6, 3.7_
+
+- [x] 3. Fix for sitemap missing blog articles and containing artifact URL
+
+  - [x] 3.1 Create dynamic sitemap generation script
+    - Create scripts/generate-sitemap.js file
+    - Implement generateSitemap() function that:
+      - Defines static URLs with priority and changefreq (top-level and service pages)
+      - Reads src/content/blog/ directory to discover all .ts files
+      - Extracts blog slugs from filenames (remove .ts extension)
+      - Generates blog URLs with /blog/{slug}/ pattern, priority 0.7, changefreq monthly
+      - Filters out artifact URL /services/hosting/ from final URL list
+      - Generates valid XML with proper namespace and encoding
+      - Writes sitemap.xml to public/ directory
+    - Handle edge cases:
+      - Empty blog directory (0 files) generates valid sitemap with only static URLs
+      - Blog files with special characters in filename generate valid URLs
+      - Non-.ts files in blog directory are ignored
+    - _Bug_Condition: isBugCondition(sitemapGeneration) where sitemapGeneration.method == "static-file" AND blogArticlesIncluded == 0 AND urlList contains "/services/hosting/"_
+    - _Expected_Behavior: expectedBehavior(sitemap) where blogUrls.length == 14 AND artifactUrl == null AND canonicalUrl != null_
+    - _Preservation: All existing top-level and service page URLs continue to appear with current priority/changefreq values_
+    - _Requirements: 2.1, 2.2, 2.3, 2.4, 2.5_
+
+  - [x] 3.2 Integrate sitemap generation with build process
+    - Modify package.json to add "prebuild" script: "node scripts/generate-sitemap.js"
+    - Ensure prebuild runs before "next build" command
+    - Verify sitemap.xml is generated in public/ directory before Next.js export
+    - Verify sitemap.xml is copied to out/ directory after Next.js export completes
+    - Test full build process: npm run build
+    - _Requirements: 2.6, 2.7_
+
+  - [x] 3.3 Implement 301 redirect for artifact URL
+    - Choose redirect implementation approach:
+      - Option A (Recommended): CloudFront Functions for edge redirect
+      - Option B: Document manual CloudFront redirect configuration
+      - Option C: HTML meta refresh (fallback if CloudFront not viable)
+    - If using CloudFront Functions:
+      - Create function code for /services/hosting/ → /services/website-hosting/ redirect
+      - Document CloudFront Function configuration in scripts/setup-infrastructure.js or deployment docs
+      - Test redirect returns HTTP 301 status
+    - If using manual configuration:
+      - Document CloudFront redirect rule in deployment documentation
+      - Provide step-by-step instructions for CloudFront console configuration
+    - _Requirements: 2.2, 2.5_
+
+  - [x] 3.4 Validate canonical tags
+    - Review src/lib/seo.ts buildSEO function for canonical URL generation
+    - Verify blog article pages use canonicalPath: `/blog/${slug}/` parameter
+    - Check that /services/hosting/ page (if exists as route) has canonical tag pointing to /services/website-hosting/
+    - Verify all service pages use correct canonical URLs matching sitemap entries
+    - Consider adding automated test to validate canonical tags match sitemap URLs
+    - _Requirements: 2.5_
+
+  - [x] 3.5 Update deployment pipeline for sitemap
+    - Verify scripts/deploy.js uploads sitemap.xml with Cache-Control: public, max-age=3600 headers
+    - Confirm CloudFront invalidation includes /sitemap.xml path
+    - Test sitemap.xml is accessible at https://vividmediacheshire.com/sitemap.xml after deployment
+    - Verify robots.txt continues to reference correct sitemap URL
+    - _Requirements: 2.8, 3.3, 3.4, 3.5, 3.6, 3.7_
+
+  - [x] 3.6 Verify bug condition exploration test now passes
+    - **Property 1: Expected Behavior** - All Blog Articles Included and Artifact URL Excluded
+    - **IMPORTANT**: Re-run the SAME test from task 1 - do NOT write a new test
+    - The test from task 1 encodes the expected behavior
+    - When this test passes, it confirms the expected behavior is satisfied
+    - Run bug condition exploration test from step 1
+    - **EXPECTED OUTCOME**: Test PASSES (confirms bug is fixed)
+    - Verify:
+      - Sitemap contains 14 blog article URLs matching /blog/* pattern
+      - Sitemap does NOT contain /services/hosting/ URL
+      - Sitemap contains /services/website-hosting/ URL
+    - _Requirements: 2.1, 2.2, 2.3, 2.4, 2.5_
+
+  - [x] 3.7 Verify preservation tests still pass
+    - **Property 2: Preservation** - Existing Static and Service Page URLs Unchanged
+    - **IMPORTANT**: Re-run the SAME tests from task 2 - do NOT write new tests
+    - Run preservation property tests from step 2
+    - **EXPECTED OUTCOME**: Tests PASS (confirms no regressions)
+    - Confirm all tests still pass after fix:
+      - All 14 top-level page URLs remain with same priority/changefreq
+      - All 5 service page URLs remain with same priority/changefreq
+      - XML structure remains valid
+      - Sitemap file is still generated in correct locations
+    - _Requirements: 3.1, 3.2, 3.3, 3.4, 3.5, 3.6, 3.7_
+
+- [x] 4. Checkpoint - Ensure all tests pass
+  - Run full test suite: npm test
+  - Verify bug condition exploration test passes (task 3.6)
+  - Verify preservation property tests pass (task 3.7)
+  - Run full build process: npm run build
+  - Verify sitemap.xml in out/ directory contains all expected URLs
+  - Test deployment to staging/production environment
+  - Verify sitemap.xml is accessible at production URL
+  - Test 301 redirect for /services/hosting/ → /services/website-hosting/
+  - Submit sitemap to Google Search Console and verify no errors
+  - Ask the user if questions arise

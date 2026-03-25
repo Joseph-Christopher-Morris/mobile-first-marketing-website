@@ -23,15 +23,25 @@ echo "✅ Build completed successfully"
 echo ""
 
 # Step 2: Set environment variables
-echo "Step 2: Setting AWS environment variables..."
+echo "Step 2: Setting AWS and Cloudflare environment variables..."
 export S3_BUCKET_NAME="mobile-marketing-site-prod-1759705011281-tyzuo9"
 export CLOUDFRONT_DISTRIBUTION_ID="E2IBMHQ3GCW6ZK"
 export AWS_REGION="us-east-1"
+
+# Optional: Set Cloudflare credentials for cache purging
+# export CLOUDFLARE_ZONE_ID="your-zone-id"
+# export CLOUDFLARE_API_TOKEN="your-api-token"
 
 echo "✅ Environment variables set:"
 echo "   S3_BUCKET_NAME: $S3_BUCKET_NAME"
 echo "   CLOUDFRONT_DISTRIBUTION_ID: $CLOUDFRONT_DISTRIBUTION_ID"
 echo "   AWS_REGION: $AWS_REGION"
+if [ -n "$CLOUDFLARE_ZONE_ID" ]; then
+  echo "   CLOUDFLARE_ZONE_ID: configured"
+  echo "   CLOUDFLARE_API_TOKEN: configured"
+else
+  echo "   ⚠️  Cloudflare credentials not set (cache purge will be skipped)"
+fi
 echo ""
 
 # Step 3: Deploy to S3 and invalidate CloudFront
@@ -49,11 +59,15 @@ echo "✅ DEPLOYMENT COMPLETE"
 echo "=========================================="
 echo ""
 echo "Post-deployment checklist:"
-echo "1. Visit https://d15sc9fc739ev2.cloudfront.net/"
-echo "2. Check page titles (should be ≤60 chars, brand once only)"
-echo "3. Verify /services/ structured data URL"
-echo "4. Check /thank-you/ has noindex"
-echo "5. Verify blog cards show post titles (not 'Read Article')"
-echo "6. Confirm GTM, Clarity, Ahrefs load once only"
+echo "1. Visit https://vividmediacheshire.com/ (canonical domain)"
+echo "2. Visit https://d15sc9fc739ev2.cloudfront.net/ (CloudFront)"
+echo "3. Check sitemap: curl https://vividmediacheshire.com/sitemap.xml"
+echo "4. Verify blog articles in sitemap"
+echo "5. Confirm /services/hosting/ NOT in sitemap"
+echo "6. Check page titles (should be ≤60 chars, brand once only)"
+echo "7. Verify blog cards show post titles (not 'Read Article')"
 echo ""
-echo "Documentation: SEO-METADATA-IMPLEMENTATION-COMPLETE.md"
+echo "Documentation:"
+echo "- docs/deployment-checklist.md"
+echo "- docs/cloudflare-cache-automation-setup.md"
+echo "- docs/sitemap-cloudflare-cache-fix.md"

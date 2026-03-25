@@ -109,6 +109,22 @@ jobs:
           aws cloudfront create-invalidation --distribution-id "$CF_DISTRIBUTION_ID" \
             --paths "/" "/index.html" "/services/*" "/blog*" "/images/*" "/_next/*" "/sitemap.xml"
 
+      - name: Purge Cloudflare Cache
+        run: |
+          if [ -n "$CLOUDFLARE_ZONE_ID" ] && [ -n "$CLOUDFLARE_API_TOKEN" ]; then
+            curl -X POST "https://api.cloudflare.com/client/v4/zones/$CLOUDFLARE_ZONE_ID/purge_cache" \
+              -H "Authorization: Bearer $CLOUDFLARE_API_TOKEN" \
+              -H "Content-Type: application/json" \
+              --data '{"files":["https://vividmediacheshire.com/sitemap.xml","https://vividmediacheshire.com/robots.txt","https://vividmediacheshire.com/"]}'
+            echo "✅ Cloudflare cache purged"
+          else
+            echo "⚠️  Cloudflare credentials not set, skipping cache purge"
+          fi
+        env:
+          CLOUDFLARE_ZONE_ID: ${{ secrets.CLOUDFLARE_ZONE_ID }}
+          CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+        continue-on-error: true
+
       - name: Submit to IndexNow
         run: node scripts/submit-indexnow.js --all
         env:
