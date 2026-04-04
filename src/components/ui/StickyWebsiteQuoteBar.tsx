@@ -13,7 +13,7 @@ export function StickyWebsiteQuoteBar() {
 
   const scrollToForm = () => {
     const target = document.getElementById("website-quote");
-    target?.scrollIntoView({ behaviour: "smooth", block: "start" });
+    target?.scrollIntoView({ behavior: "smooth", block: "start" });
   };
 
   if (!isVisible) return null;

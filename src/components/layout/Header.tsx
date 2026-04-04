@@ -54,7 +54,7 @@ export function Header({ pageTitle: _pageTitle }: HeaderProps) {
                 alt='Vivid Media Cheshire (VMC)'
                 width={116}
                 height={44}
-                className='site-logo object-contain'
+                className='site-logo object-contain h-auto'
                 priority
                 sizes='116px'
               />
@@ -75,7 +75,7 @@ export function Header({ pageTitle: _pageTitle }: HeaderProps) {
                   style={
                     pathname === item.href
                       ? {
-                          colour: '#F5276F',
+                          color: '#F5276F',
                           borderBottomColor: '#F5276F',
                         }
                       : {}

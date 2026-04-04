@@ -82,7 +82,7 @@ export const metadata: Metadata = {
     },
   },
   verification: {
-    google: 'google-site-verification-placeholder',
+    google: 'google78b99cbb6a5b4d4e',
   },
   manifest: '/manifest.json',
 };
@@ -95,9 +95,6 @@ export default function RootLayout({
   return (
     <html lang='en'>
       <head>
-        {/* Google Search Console Verification */}
-        <meta name="google-site-verification" content="google78b99cbb6a5b4d4e" />
-        
         {/* Critical resource preload for LCP optimisation */}
         <link
           rel="preload"

@@ -3,9 +3,9 @@ import Link from 'next/link';
 import { notFound } from 'next/navigation';
 import { Layout } from '@/components/layout';
 import { getBlogPost, getAllBlogPosts } from '@/lib/blog-api';
-import { processContentForHeroEnforcement } from '@/lib/content-processor';
 import { buildSEO } from '@/lib/seo';
 import { generateMetadata as generateSocialMetadata } from '@/lib/metadata-generator';
+import { normaliseBlogImagePath } from '@/lib/blog-images';
 import BlogHeroImage from '@/components/blog/BlogHeroImage';
 import BlogPostCTA from '@/components/scram/BlogPostCTA';
 import { JsonLd } from '@/components/JsonLd';
@@ -19,58 +19,72 @@ import {
 } from '@/lib/schema-generator';
 
 interface BlogPostPageProps {
-  params: {
+  params: Promise<{
     slug: string;
-  };
+  }>;
 }
 
 export async function generateStaticParams() {
   const posts = await getAllBlogPosts();
-  return posts.map(post => ({
-    slug: post.slug,
-  }));
+  return posts.map((post) => ({ slug: post.slug }));
 }
+
+export const dynamicParams = false;
 
 export async function generateMetadata({
   params,
 }: BlogPostPageProps): Promise<Metadata> {
-  const post = await getBlogPost(params.slug);
+  const { slug } = await params;
+  try {
+    const post = await getBlogPost(slug);
 
-  if (!post) {
-    return buildSEO({
-      intent: "Post Not Found",
-      description: "This blog post could not be found. Browse my case studies for real project results.",
-      canonicalPath: `/blog/${params.slug}/`,
-      skipTitleValidation: true,
+    if (!post) {
+      return buildSEO({
+        intent: "Post Not Found",
+        description: "This blog post could not be found. Browse my case studies for real project results.",
+        canonicalPath: `/blog/${slug}/`,
+        skipTitleValidation: true,
+      });
+    }
+
+    // SCRAM: prefer metaDescription (outcome-led) over excerpt
+    const description = post.metaDescription || post.excerpt;
+
+    // Use the new social sharing metadata generator
+    // SCRAM: normalise image path for consistent OG/Twitter cards
+    const image = normaliseBlogImagePath(post.image);
+
+    return generateSocialMetadata({
+      pageType: 'blog',
+      content: {
+        title: post.title,
+        description,
+        image: image || undefined,
+        type: 'article',
+        publishedDate: post.date,
+        author: post.author,
+        tags: post.tags,
+      },
+      canonicalPath: `/blog/${slug}/`,
     });
+  } catch {
+    return {
+      title: 'Blog | Vivid Media Cheshire',
+      description: 'Blog post',
+    };
   }
-
-  // SCRAM: prefer metaDescription (outcome-led) over excerpt
-  const description = post.metaDescription || post.excerpt;
-
-  // Use the new social sharing metadata generator
-  return generateSocialMetadata({
-    pageType: 'blog',
-    content: {
-      title: post.title,
-      description,
-      image: post.image,
-      type: 'article',
-      publishedDate: post.date,
-      author: post.author,
-      tags: post.tags,
-    },
-    canonicalPath: `/blog/${params.slug}/`,
-  });
 }
 
 export default async function BlogPostPage({ params }: BlogPostPageProps) {
-  const post = await getBlogPost(params.slug);
+  const { slug } = await params;
+  const post = await getBlogPost(slug);
 
   if (!post) {
     notFound();
   }
 
+  const image = normaliseBlogImagePath(post.image);
+  const content = post.content || '';
   const siteUrl = CANONICAL.urls.site;
   const postUrl = `${siteUrl}/blog/${post.slug}/`;
 
@@ -81,7 +95,7 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
       description: post.excerpt,
       url: postUrl,
       datePublished: post.date,
-      image: post.image ? `${siteUrl}${post.image}` : undefined,
+      image: image ? `${siteUrl}${image}` : undefined,
     }),
     buildBreadcrumbList([
       { name: 'Home', url: `${siteUrl}${CANONICAL.routes.home}` },
@@ -93,12 +107,12 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
   // Conditional: HowTo — only if step-by-step content is present
   // Detect ordered lists or headings containing "step" / "how to"
   const hasHowToContent =
-    /<ol[\s>]/i.test(post.content) &&
-    /step\s*\d|how\s*to/i.test(post.content);
+    /<ol[\s>]/i.test(content) &&
+    /step\s*\d|how\s*to/i.test(content);
 
   if (hasHowToContent) {
     // Extract steps from ordered list items
-    const stepMatches = post.content.match(/<li[^>]*>([\s\S]*?)<\/li>/gi);
+    const stepMatches = content.match(/<li[^>]*>([\s\S]*?)<\/li>/gi);
     if (stepMatches && stepMatches.length >= 2) {
       const steps = stepMatches.slice(0, 10).map((li, i) => {
         const text = li.replace(/<[^>]+>/g, '').trim();
@@ -113,15 +127,15 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
   // Conditional: FAQPage — only if FAQ content is visible
   // Detect FAQ section headings or dl/dt patterns
   const hasFAQContent =
-    /faq|frequently\s+asked/i.test(post.content) &&
-    (/<h[23][^>]*>.*\?/i.test(post.content) || /<dt/i.test(post.content));
+    /faq|frequently\s+asked/i.test(content) &&
+    (/<h[23][^>]*>.*\?/i.test(content) || /<dt/i.test(content));
 
   if (hasFAQContent) {
     // Extract question/answer pairs from headings followed by paragraphs
     const faqPattern = /<h[23][^>]*>(.*?\?)<\/h[23]>\s*<p[^>]*>([\s\S]*?)<\/p>/gi;
     const faqs: { question: string; answer: string }[] = [];
     let match;
-    while ((match = faqPattern.exec(post.content)) !== null) {
+    while ((match = faqPattern.exec(content)) !== null) {
       const question = match[1].replace(/<[^>]+>/g, '').trim();
       const answer = match[2].replace(/<[^>]+>/g, '').trim();
       if (question && answer) {
@@ -135,10 +149,10 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
 
   // Conditional: SpeakableSpecification — only if concise summary blocks visible
   // Detect data-speakable attributes in the content
-  const hasSpeakableContent = /data-speakable/i.test(post.content);
+  const hasSpeakableContent = /data-speakable/i.test(content);
 
   if (hasSpeakableContent) {
-    const speakableMatches = post.content.match(/data-speakable="([^"]+)"/gi);
+    const speakableMatches = content.match(/data-speakable="([^"]+)"/gi);
     if (speakableMatches) {
       const selectors = speakableMatches.map((m) => {
         const id = m.replace(/data-speakable="([^"]+)"/i, '$1');
@@ -250,12 +264,12 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
           </div>
         </header>
 
-        {/* HERO SECTION - SINGLE SOURCE OF TRUTH - DETERMINISTIC RENDERING */}
-        {post.image && (
+        {/* HERO SECTION */}
+        {image ? (
           <div className='blog-hero max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 -mt-8 mb-12'>
             <div className='relative w-full h-64 md:h-96 rounded-lg overflow-hidden shadow-lg'>
               <BlogHeroImage
-                src={post.image}
+                src={image}
                 alt={`Hero image for ${post.title}`}
                 priority={true}
                 sizes="(max-width: 768px) 100vw, (max-width: 1200px) 80vw, 1200px"
@@ -264,7 +278,7 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
               />
             </div>
           </div>
-        )}
+        ) : null}
 
         {/* Post Content - Content images load AFTER hero */}
         <div className='pb-16'>
@@ -272,7 +286,7 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
             <article className='prose prose-lg max-w-none blog-content'>
               <div
                 dangerouslySetInnerHTML={{
-                  __html: processContentForHeroEnforcement(post.content),
+                  __html: content,
                 }}
               />
             </article>

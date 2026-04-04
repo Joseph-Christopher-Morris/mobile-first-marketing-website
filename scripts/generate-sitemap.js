@@ -32,6 +32,7 @@ const STATIC_URLS = [
   { loc: '/contact/', priority: '0.7', changefreq: 'monthly' },
   { loc: '/pricing/', priority: '0.7', changefreq: 'monthly' },
   { loc: '/blog/', priority: '0.8', changefreq: 'weekly' },
+  { loc: '/faq/', priority: '0.7', changefreq: 'monthly' },
   { loc: '/free-audit/', priority: '0.6', changefreq: 'monthly' },
   { loc: '/privacy-policy/', priority: '0.3', changefreq: 'yearly' },
 ];

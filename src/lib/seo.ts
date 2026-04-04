@@ -111,7 +111,7 @@ function buildCleanTitle(intent: string, qualifier?: string, skipValidation: boo
  */
 function cleanDescription(text: string): string {
   const MIN_LENGTH = 140;
-  const MAX_LENGTH = 155;
+  const MAX_LENGTH = 160;
   
   // Clean whitespace and trim
   const cleaned = text.replace(/\s+/g, ' ').trim();

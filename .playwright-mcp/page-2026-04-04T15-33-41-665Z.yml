@@ -1,0 +1,324 @@
+- generic [active] [ref=e1]:
+  - generic [ref=e2]:
+    - banner [ref=e3]:
+      - generic [ref=e5]:
+        - link "Go to homepage" [ref=e6] [cursor=pointer]:
+          - /url: /
+          - img "Vivid Media Cheshire (VMC)" [ref=e7]
+        - navigation [ref=e8]:
+          - link "Home" [ref=e9] [cursor=pointer]:
+            - /url: /
+          - link "Services" [ref=e10] [cursor=pointer]:
+            - /url: /services/
+          - link "Pricing" [ref=e11] [cursor=pointer]:
+            - /url: /pricing/
+          - link "Blog" [ref=e12] [cursor=pointer]:
+            - /url: /blog/
+          - link "About" [ref=e13] [cursor=pointer]:
+            - /url: /about/
+          - link "FAQ" [ref=e14] [cursor=pointer]:
+            - /url: /faq/
+          - link "Contact" [ref=e15] [cursor=pointer]:
+            - /url: /contact/
+        - link "Get Started" [ref=e17] [cursor=pointer]:
+          - /url: /contact/
+    - main [ref=e18]:
+      - article [ref=e19]:
+        - generic [ref=e21]:
+          - navigation [ref=e22]:
+            - list [ref=e23]:
+              - listitem [ref=e24]:
+                - link "Home" [ref=e25] [cursor=pointer]:
+                  - /url: /
+              - listitem [ref=e26]:
+                - img [ref=e27]
+              - listitem [ref=e29]:
+                - link "Blog" [ref=e30] [cursor=pointer]:
+                  - /url: /blog/
+              - listitem [ref=e31]:
+                - img [ref=e32]
+              - listitem [ref=e34]: "From $2.36 to $1,166: My Real Stock Photography Income Growth Story"
+          - generic [ref=e35]:
+            - generic [ref=e36]:
+              - generic [ref=e37]: Case Studies
+              - generic [ref=e38]: •
+              - time [ref=e39]: July 18, 2025
+              - generic [ref=e40]: •
+              - generic [ref=e41]: 8 min read
+            - 'heading "From $2.36 to $1,166: My Real Stock Photography Income Growth Story" [level=1] [ref=e42]'
+            - paragraph [ref=e43]: How I scaled my stock photography earnings to over $1,100 in less than three years and turned it into a steady side income stream.
+            - generic [ref=e44]:
+              - generic [ref=e45]: By Joe Morris
+              - generic [ref=e46]:
+                - generic [ref=e47]: •
+                - generic [ref=e48]:
+                  - generic [ref=e49]: "#content-strategy"
+                  - generic [ref=e50]: "#conversion-optimisation"
+                  - generic [ref=e51]: "#small-business"
+        - 'img "Hero image for From $2.36 to $1,166: My Real Stock Photography Income Growth Story" [ref=e54]'
+        - generic [ref=e56]:
+          - article [ref=e57]:
+            - generic [ref=e58]:
+              - 'heading "Scaling My Stock Photography Portfolio: How I Built a Semi-Passive Income Stream" [level=2] [ref=e59]'
+              - paragraph [ref=e60]: A skyscraper would be a great analogy for my stock photography journey. You have to build the foundations and get your materials to the building site to watch the project unfold over the years.
+              - paragraph [ref=e61]:
+                - text: "I didn't expect stock photography to be easy money. I wanted one thing:"
+                - strong [ref=e62]: a recurring income stream from my creative work
+                - text: .
+              - paragraph [ref=e63]: In Part 1, I explained why I eliminated middlemen like Wirestock. I began licensing directly with Shutterstock, Adobe Stock, and iStock.
+              - paragraph [ref=e64]:
+                - text: In Part 2, I broke down how consistency grew my earnings from
+                - strong [ref=e65]: $2.36 in 2022
+                - text: to
+                - strong [ref=e66]: $146.54 in 2023
+                - text: .
+              - paragraph [ref=e67]:
+                - text: Now, in Part 3, I'll show you how I scaled my stock photography earnings to over
+                - strong [ref=e68]: $1,100
+                - text: in less than three years. I turned it into a steady side income.
+              - heading "📊 My Stock Photography Revenue (2022–2025)" [level=2] [ref=e69]
+              - img "Vivid Media Cheshire Cumulative Stock Photography Revenue Line Chart (2022 - 2025)" [ref=e248]
+              - list [ref=e70]:
+                - listitem [ref=e71]:
+                  - strong [ref=e72]: "2022:"
+                  - text: $2.36
+                - listitem [ref=e73]:
+                  - strong [ref=e74]: "2023:"
+                  - text: $146.54
+                - listitem [ref=e75]:
+                  - strong [ref=e76]: "2024:"
+                  - text: $552.84
+                - listitem [ref=e77]:
+                  - strong [ref=e78]: "2025 (to date):"
+                  - text: $465.33
+              - paragraph [ref=e79]:
+                - text: The total is
+                - strong [ref=e80]: $1,166.07
+                - text: ", with 2025 shaping up to be my best year yet."
+              - heading "📸 Top-Selling Photos (And Why I Think They Worked)" [level=2] [ref=e81]
+              - paragraph [ref=e82]: "These images showed up in my download reports repeatedly:"
+              - img "Revenue breakdown showing which photo categories performed best" [ref=e83]
+              - paragraph [ref=e84]:
+                - emphasis [ref=e85]: Real performance data showing which types of images generated the most revenue across platforms.
+              - heading "For Sale Sign in Residential Area" [level=3] [ref=e86]
+              - paragraph [ref=e87]:
+                - text: Practical for property listings, blogs, and local news stories.
+                - strong [ref=e88]: Adobe Stock | 16 downloads | Royalty $11.22.
+              - heading "London Stock Exchange Group Crest" [level=3] [ref=e89]
+              - paragraph [ref=e90]:
+                - text: Corporate, financial, and business articles love this kind of image.
+                - strong [ref=e91]: Shutterstock | 32 Downloads | Royalty $9.46.
+              - heading "Row of Audi Cars at Dealership" [level=3] [ref=e92]
+              - paragraph [ref=e93]:
+                - text: Car culture and dealership-related content made this a recurring seller.
+                - strong [ref=e94]: iStock | 252 Downloads | Royalty $113.60.
+              - paragraph [ref=e95]:
+                - strong [ref=e96]: "Why they sold:"
+                - text: These images weren't viral hits; they filled ongoing, evergreen content needs.
+              - list [ref=e97]:
+                - listitem [ref=e98]: Real estate shots, such as those featuring for-sale signs, work year-round for property listings, blogs, and housing market reports.
+                - listitem [ref=e99]: Corporate signage like the London Stock Exchange image fits financial news, business articles, and investment content.
+                - listitem [ref=e100]: Car dealership rows serve automotive blogs, dealership ads, and car industry features.
+              - paragraph [ref=e101]: Simple subjects, clean composition, and strong keywords paired with topics that always need fresh visuals. They sold steadily because they filled a real need.
+              - heading "📈 My Portfolio Size by Platform (as of July 17th 2025)" [level=2] [ref=e102]
+              - paragraph [ref=e103]:
+                - strong [ref=e104]: "My major stock photography portfolios:"
+              - list [ref=e105]:
+                - listitem [ref=e106]:
+                  - strong [ref=e107]: "Shutterstock:"
+                  - text: 7,100 assets
+                - listitem [ref=e108]:
+                  - strong [ref=e109]: "Adobe Stock:"
+                  - text: 132 assets
+                - listitem [ref=e110]:
+                  - strong [ref=e111]: "iStock:"
+                  - text: 2,837 assets
+              - paragraph [ref=e112]: Uploads slowed in early 2025 as I shifted focus to freelance work. However, even older uploads continued to generate downloads.
+              - heading "🧩 Key Takeaways" [level=2] [ref=e113]
+              - list [ref=e114]:
+                - listitem [ref=e115]:
+                  - strong [ref=e116]: "Patience pays off:"
+                  - text: My revenue didn't explode overnight. It built steadily with uploads and smart keywording.
+                - listitem [ref=e117]:
+                  - strong [ref=e118]: "Boring sells:"
+                  - text: Simple, high-utility images often outperformed "creative" shots.
+                - listitem [ref=e119]:
+                  - strong [ref=e120]: "Platforms reward volume:"
+                  - text: Shutterstock drove the most downloads; Adobe Stock generated the best royalties.
+                - listitem [ref=e121]:
+                  - strong [ref=e122]: "Consistency compounds:"
+                  - text: My income grew because I treated stock like a marathon, not a sprint.
+              - heading "The Importance of Quality and Consistency" [level=2] [ref=e123]
+              - paragraph [ref=e124]: When building a stock photography portfolio, quality is crucial. Each image should be sharp, well-composed, and relevant. Consistency in style and subject matter helps establish a brand. This brand recognition can lead to repeat customers and increased sales.
+              - heading "Strategies for Success" [level=2] [ref=e125]
+              - paragraph [ref=e126]: "To succeed in stock photography, consider these strategies:"
+              - list [ref=e127]:
+                - listitem [ref=e128]:
+                  - strong [ref=e129]: "Research Trends:"
+                  - text: Stay updated on market trends. Identify what types of images are in demand and create content accordingly.
+                - listitem [ref=e130]:
+                  - strong [ref=e131]: "Improve Keywords:"
+                  - text: Use relevant keywords to improve searchability. Think like a buyer when selecting keywords.
+                - listitem [ref=e132]:
+                  - strong [ref=e133]: "Engage with the Community:"
+                  - text: Join stock photography forums and social media groups. Networking can provide insights and support.
+                - listitem [ref=e134]:
+                  - strong [ref=e135]: "Diversify Your Portfolio:"
+                  - text: Offer a range of subjects. This increases your chances of sales across different markets.
+                - listitem [ref=e136]:
+                  - strong [ref=e137]: "Regularly Update Your Portfolio:"
+                  - text: Keep your portfolio fresh by adding new images regularly. This signals to platforms that you are an active contributor.
+              - heading "Conclusion" [level=2] [ref=e138]
+              - paragraph [ref=e139]: Building a successful stock photography portfolio takes time and effort. By focusing on quality, consistency, and strategic marketing, you can create a semi-passive income stream.
+              - separator [ref=e140]
+              - heading "🔗 Related Case Studies" [level=2] [ref=e141]
+              - list [ref=e142]:
+                - listitem [ref=e143]:
+                  - 'link "Stock Photography: Getting Started" [ref=e144] [cursor=pointer]':
+                    - /url: /blog/stock-photography-getting-started
+                - listitem [ref=e145]:
+                  - 'link "Stock Photography: Income Growth" [ref=e146] [cursor=pointer]':
+                    - /url: /blog/stock-photography-income-growth
+                - listitem [ref=e147]:
+                  - 'link "Stock Photography: Breakthrough" [ref=e148] [cursor=pointer]':
+                    - /url: /blog/stock-photography-breakthrough
+                - listitem [ref=e149]:
+                  - 'link "Stock Photography: Lessons Learned" [ref=e150] [cursor=pointer]':
+                    - /url: /blog/stock-photography-lessons
+              - paragraph [ref=e151]:
+                - text: 📩
+                - strong [ref=e152]: Want to Know What's Working Right Now?
+                - text: Join my newsletter for tested tactics, real numbers, and the hands-on lessons I use every week. Both in stock photography and freelance work.
+              - separator [ref=e153]
+              - heading "What to Do Next" [level=2] [ref=e154]
+              - paragraph [ref=e155]: This article is one example of how I approach real-world problems through structured thinking and practical execution.
+              - paragraph [ref=e156]:
+                - link "Explore more work like this" [ref=e157] [cursor=pointer]:
+                  - /url: /blog
+                - text: or
+                - link "get in touch" [ref=e158] [cursor=pointer]:
+                  - /url: /contact
+                - text: .
+          - complementary [ref=e159]:
+            - paragraph [ref=e160]: Your website is not getting enquiries.
+            - paragraph [ref=e161]: Send me your website. I will tell you what is not working.
+            - link "Send me your website" [ref=e162] [cursor=pointer]:
+              - /url: /contact/
+        - generic [ref=e164]:
+          - generic [ref=e165]:
+            - heading "Tags" [level=3] [ref=e166]
+            - generic [ref=e167]:
+              - generic [ref=e168]: "#content-strategy"
+              - generic [ref=e169]: "#conversion-optimisation"
+              - generic [ref=e170]: "#small-business"
+          - generic [ref=e171]:
+            - link "Back to Blog" [ref=e172] [cursor=pointer]:
+              - /url: /blog/
+              - img [ref=e173]
+              - text: Back to Blog
+            - generic [ref=e175]:
+              - generic [ref=e176]: "Share this post:"
+              - generic [ref=e177]:
+                - button [ref=e178] [cursor=pointer]:
+                  - img [ref=e179]
+                - button [ref=e181] [cursor=pointer]:
+                  - img [ref=e182]
+                - button [ref=e184] [cursor=pointer]:
+                  - img [ref=e185]
+    - contentinfo [ref=e187]:
+      - generic [ref=e188]:
+        - generic [ref=e189]:
+          - generic [ref=e190]:
+            - heading "Vivid Media Cheshire" [level=3] [ref=e191]
+            - paragraph [ref=e192]: Websites, ads, analytics, and photography for small businesses across Cheshire. Built for performance, clarity, and measurable results.
+            - generic [ref=e193]:
+              - paragraph [ref=e194]: Business Hours (UK)
+              - paragraph [ref=e195]: "Monday to Friday: 09:00 to 18:00"
+              - paragraph [ref=e196]: "Saturday: 10:00 to 14:00"
+              - paragraph [ref=e197]: "Sunday: 10:00 to 16:00"
+            - generic [ref=e198]:
+              - paragraph [ref=e199]: Contact
+              - paragraph [ref=e200]: "Email: joe@vividmediacheshire.com"
+              - paragraph [ref=e201]: "Phone: +44 7586 378502"
+            - generic [ref=e202]:
+              - link "Facebook - Vivid Media Cheshire" [ref=e203] [cursor=pointer]:
+                - /url: https://www.facebook.com/VividAutoPhotography
+                - img [ref=e204]
+              - link "Instagram - Vivid Media Cheshire" [ref=e206] [cursor=pointer]:
+                - /url: https://instagram.com/vividautophotography
+                - img [ref=e207]
+              - link "LinkedIn - Joe Morris" [ref=e209] [cursor=pointer]:
+                - /url: https://www.linkedin.com/in/joe-morris-07921a1a0/
+                - img [ref=e210]
+              - link "GitHub - Joseph Christopher Morris" [ref=e212] [cursor=pointer]:
+                - /url: https://github.com/Joseph-Christopher-Morris
+                - img [ref=e213]
+          - generic [ref=e215]:
+            - heading "Quick Links" [level=4] [ref=e216]
+            - list [ref=e217]:
+              - listitem [ref=e218]:
+                - link "Home" [ref=e219] [cursor=pointer]:
+                  - /url: /
+              - listitem [ref=e220]:
+                - link "Services" [ref=e221] [cursor=pointer]:
+                  - /url: /services/
+              - listitem [ref=e222]:
+                - link "Pricing" [ref=e223] [cursor=pointer]:
+                  - /url: /pricing/
+              - listitem [ref=e224]:
+                - link "Blog" [ref=e225] [cursor=pointer]:
+                  - /url: /blog/
+              - listitem [ref=e226]:
+                - link "About" [ref=e227] [cursor=pointer]:
+                  - /url: /about/
+              - listitem [ref=e228]:
+                - link "Contact" [ref=e229] [cursor=pointer]:
+                  - /url: /contact/
+              - listitem [ref=e230]:
+                - link "Read Vivid Media Cheshire Privacy Policy" [ref=e231] [cursor=pointer]:
+                  - /url: /privacy-policy/
+                  - text: Privacy Policy
+          - generic [ref=e232]:
+            - heading "Services" [level=4] [ref=e233]
+            - list [ref=e234]:
+              - listitem [ref=e235]:
+                - link "Website Hosting & Migration" [ref=e236] [cursor=pointer]:
+                  - /url: /services/website-hosting/
+              - listitem [ref=e237]:
+                - link "Website Design & Development" [ref=e238] [cursor=pointer]:
+                  - /url: /services/website-design/
+              - listitem [ref=e239]:
+                - link "Photography Services" [ref=e240] [cursor=pointer]:
+                  - /url: /services/photography/
+              - listitem [ref=e241]:
+                - link "Data Analytics & Insights" [ref=e242] [cursor=pointer]:
+                  - /url: /services/analytics/
+              - listitem [ref=e243]:
+                - link "Strategic Ad Campaigns" [ref=e244] [cursor=pointer]:
+                  - /url: /services/ad-campaigns/
+        - generic [ref=e245]:
+          - paragraph [ref=e246]: © 2025 Vivid Media Cheshire. All rights reserved.
+          - button "Manage cookie consent preferences" [ref=e247] [cursor=pointer]: Manage Cookies
+  - generic [ref=e253] [cursor=pointer]:
+    - button "Open Next.js Dev Tools" [ref=e254]:
+      - img [ref=e255]
+    - generic [ref=e258]:
+      - button "Open issues overlay" [ref=e259]:
+        - generic [ref=e260]:
+          - generic [ref=e261]: "0"
+          - generic [ref=e262]: "1"
+        - generic [ref=e263]: Issue
+      - button "Collapse issues badge" [ref=e264]:
+        - img [ref=e265]
+  - alert [ref=e267]
+  - dialog "Cookie consent banner" [ref=e268]:
+    - generic [ref=e269]:
+      - paragraph [ref=e271]:
+        - text: We use essential cookies to make our site work and analytics cookies to improve your experience.
+        - link "Read the Vivid Media Cheshire privacy policy about cookie usage" [ref=e272] [cursor=pointer]:
+          - /url: /privacy-policy
+          - text: Read our Privacy Policy
+        - text: .
+      - generic [ref=e273]:
+        - button "Reject non-essential cookies" [ref=e274] [cursor=pointer]: Reject Non-Essential
+        - button "Accept all cookies including analytics" [ref=e275] [cursor=pointer]: Accept All

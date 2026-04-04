@@ -23,6 +23,8 @@ export default function BlogHeroImage({
   const [imageSrc, setImageSrc] = useState(src);
   const [hasError, setHasError] = useState(false);
 
+  if (!src) return null;
+
   const handleError = () => {
     // Only set fallback once to prevent infinite loop
     if (!hasError) {
@@ -36,6 +38,7 @@ export default function BlogHeroImage({
       src={imageSrc}
       alt={alt}
       fill
+      unoptimized
       className='object-cover'
       priority={priority}
       sizes={sizes}

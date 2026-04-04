@@ -196,6 +196,8 @@ export const LEGACY_CARD_COVERS: Record<string, string> = {
   'stock-photography-getting-started': '/images/blog/230226_Swadlincote_Stock_Photography-23.webp',
   'stock-photography-breakthrough': '/images/blog/Cumulative_Shutterstock_Downloads_Earnings_Jan-Apr2023.png',
   'stock-photography-income-growth': '/images/blog/Stock_Photography_Revenue_Bar_Chart.png',
+  // Local SEO article
+  'why-your-business-doesnt-show-up-on-google': '/images/blog/Google_Local_SEO/why-your-business-doesnt-show-up-on-google-nantwich-crewe-1.webp',
   // DeepMeta analytics article - LOCKED thumbnail (analytics dashboard)
   'exploring-istock-data-deepmeta': '/images/blog/screenshot-2025-09-23-analytics-dashboard.webp',
   // Model Car Collection series covers - CORRECTED EXTENSIONS

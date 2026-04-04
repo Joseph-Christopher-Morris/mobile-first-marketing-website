@@ -107,6 +107,7 @@ export default async function BlogPage() {
                       src={resolveBlogCardImageWithLegacy(featuredPost)}
                       alt={featuredPost.title}
                       fill
+                      unoptimized
                       className='object-cover'
                       priority
                     />
@@ -169,6 +170,7 @@ export default async function BlogPage() {
                       src={resolveBlogCardImageWithLegacy(post)}
                       alt={post.title}
                       fill
+                      unoptimized
                       className='object-cover'
                       priority={index < 6}
                     />

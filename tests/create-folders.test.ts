@@ -139,8 +139,8 @@ describe('Folder Structure Creator', () => {
       // All expected folders should be validated
       const structure = getFolderStructure();
       const expectedFolders = [
-        ...structure.docs.map(d => path.join('docs', d)),
-        ...structure.scripts.map(s => path.join('scripts', s))
+        ...structure.docs.map((d: string) => path.join('docs', d)),
+        ...structure.scripts.map((s: string) => path.join('scripts', s))
       ];
       
       for (const folder of expectedFolders) {
@@ -195,7 +195,7 @@ describe('Folder Structure Creator', () => {
       const result = await createFolderStructure();
       
       expect(result.success).toBe(false);
-      expect(result.errors.some(e => e.includes('not a directory'))).toBe(true);
+      expect(result.errors.some((e: string) => e.includes('not a directory'))).toBe(true);
     });
 
     test('validates all expected folders exist', async () => {
@@ -209,8 +209,8 @@ describe('Folder Structure Creator', () => {
       
       // All folders should exist
       const allFolders = [
-        ...structure.docs.map(d => path.join('docs', d)),
-        ...structure.scripts.map(s => path.join('scripts', s))
+        ...structure.docs.map((d: string) => path.join('docs', d)),
+        ...structure.scripts.map((s: string) => path.join('scripts', s))
       ];
       
       for (const folder of allFolders) {

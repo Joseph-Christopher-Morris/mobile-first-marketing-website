@@ -1,0 +1,352 @@
+- generic [ref=e2]:
+  - banner [ref=e3]:
+    - generic [ref=e5]:
+      - link "Go to homepage" [ref=e6] [cursor=pointer]:
+        - /url: /
+        - img "Vivid Media Cheshire (VMC)" [ref=e7]
+      - navigation [ref=e8]:
+        - link "Home" [ref=e9] [cursor=pointer]:
+          - /url: /
+        - link "Services" [ref=e10] [cursor=pointer]:
+          - /url: /services/
+        - link "Pricing" [ref=e11] [cursor=pointer]:
+          - /url: /pricing/
+        - link "Blog" [ref=e12] [cursor=pointer]:
+          - /url: /blog/
+        - link "About" [ref=e13] [cursor=pointer]:
+          - /url: /about/
+        - link "FAQ" [ref=e14] [cursor=pointer]:
+          - /url: /faq/
+        - link "Contact" [ref=e15] [cursor=pointer]:
+          - /url: /contact/
+      - link "Get Started" [ref=e17] [cursor=pointer]:
+        - /url: /contact/
+  - main [ref=e18]:
+    - generic [ref=e19]:
+      - generic [ref=e23]:
+        - heading "Your website looks fine. But visitors leave without getting in touch." [level=1] [ref=e24]
+        - paragraph [ref=e25]: When a site is slow, unclear, or hard to use, people give up. I fix the problems so more of them get in touch.
+        - paragraph [ref=e26]: I fix websites for Nantwich and Crewe businesses so the next step is obvious.
+        - link "Show me what's not working" [ref=e28] [cursor=pointer]:
+          - /url: /contact/
+      - generic [ref=e30]:
+        - heading "Why most websites do not bring in enquiries" [level=2] [ref=e31]
+        - generic [ref=e32]:
+          - generic [ref=e33]:
+            - heading "Your site is too slow" [level=3] [ref=e34]
+            - paragraph [ref=e35]: Visitors leave before they see what you offer. A few seconds of delay costs you enquiries.
+          - generic [ref=e36]:
+            - heading "The structure makes no sense" [level=3] [ref=e37]
+            - paragraph [ref=e38]: People land on your site and cannot find what they need. There is no clear next step. They leave and try someone else.
+          - generic [ref=e39]:
+            - heading "The message is not clear" [level=3] [ref=e40]
+            - paragraph [ref=e41]: Your site talks about what you do. It does not explain why it matters to the person reading it. If visitors do not see their problem, they leave.
+      - paragraph [ref=e44]: If your website gets visitors but no enquiries, this is why.
+      - paragraph [ref=e47]: This is fixable. It just needs the right changes.
+      - generic [ref=e49]:
+        - heading "My website took 14 seconds to load. Now it loads in under 2." [level=2] [ref=e50]
+        - paragraph [ref=e51]: People stopped leaving early. Enquiries followed.
+        - paragraph [ref=e52]: People stayed longer. They didn't drop off straight away.
+        - generic [ref=e53]:
+          - generic [ref=e54]:
+            - paragraph [ref=e55]: Load time (seconds)
+            - generic [ref=e56]:
+              - generic [ref=e57]:
+                - generic [ref=e58]:
+                  - generic [ref=e59]: Before
+                  - generic [ref=e60]: 14+s
+                - 'img "Before: 14+ seconds load time" [ref=e62]'
+              - generic [ref=e63]:
+                - generic [ref=e64]:
+                  - generic [ref=e65]: After
+                  - generic [ref=e66]: <2s
+                - 'img "After: <2 seconds load time" [ref=e68]'
+          - generic [ref=e69]:
+            - paragraph [ref=e70]: Performance score
+            - generic [ref=e71]:
+              - generic [ref=e72]:
+                - generic [ref=e73]:
+                  - generic [ref=e74]: Before
+                  - generic [ref=e75]: "56"
+                - 'img "Before: performance score 56" [ref=e77]'
+              - generic [ref=e78]:
+                - generic [ref=e79]:
+                  - generic [ref=e80]: After
+                  - generic [ref=e81]: "99"
+                - 'img "After: performance score 99" [ref=e83]'
+        - paragraph [ref=e85]: When a page loads in under two seconds, people stay. They see the offer. They read the next line. That is when enquiries happen.
+        - paragraph [ref=e86]: Data from my own website rebuild and hosting migration
+      - generic [ref=e88]:
+        - heading "The ads worked. The page didn't." [level=2] [ref=e89]
+        - paragraph [ref=e90]: The ads worked. The page didn't. That is why enquiries did not happen.
+        - generic [ref=e91]:
+          - generic [ref=e92]:
+            - paragraph [ref=e93]: "40"
+            - paragraph [ref=e94]: clicks
+          - generic [ref=e95]:
+            - paragraph [ref=e96]: 1.25K
+            - paragraph [ref=e97]: impressions
+          - generic [ref=e98]:
+            - paragraph [ref=e99]: ~3.14%
+            - paragraph [ref=e100]: CTR
+          - generic [ref=e101]:
+            - paragraph [ref=e102]: ~£3.58
+            - paragraph [ref=e103]: average CPC
+        - paragraph [ref=e105]: The page has to match what people search for. Sending traffic to a page that does not answer the right question wastes every click.
+        - paragraph [ref=e106]: So the problem wasn't traffic. It was what people saw next.
+        - paragraph [ref=e107]: This is a common pattern I see.
+        - paragraph [ref=e108]: Data from the THEFEEDGROUP Google Ads campaign
+      - generic [ref=e110]:
+        - heading "Real results from a real project" [level=2] [ref=e111]
+        - paragraph [ref=e112]: What changed, by how much, and why it matters.
+        - generic [ref=e113]:
+          - generic [ref=e114]:
+            - paragraph [ref=e115]: Admin time saved
+            - paragraph [ref=e116]: 8 hours per year
+            - paragraph [ref=e117]: Repetitive booking questions stopped. The website now answers them before anyone picks up the phone.
+          - generic [ref=e118]:
+            - paragraph [ref=e119]: Booking clarity
+            - list [ref=e120]:
+              - listitem [ref=e121]:
+                - generic [ref=e122]: ✓
+                - text: Clearer booking and information structure
+              - listitem [ref=e123]:
+                - generic [ref=e124]: ✓
+                - text: Fewer confused enquiries
+            - paragraph [ref=e125]: People find what they need without calling to ask. That means fewer wasted conversations and more genuine bookings.
+          - generic [ref=e126]:
+            - paragraph [ref=e127]: Social growth in 90 days
+            - generic [ref=e128]:
+              - generic [ref=e129]:
+                - paragraph [ref=e130]: "270"
+                - paragraph [ref=e131]: followers
+              - generic [ref=e132]:
+                - paragraph [ref=e133]: "66"
+                - paragraph [ref=e134]: posts
+              - generic [ref=e135]:
+                - paragraph [ref=e136]: "475"
+                - paragraph [ref=e137]: reactions
+            - paragraph [ref=e138]: Consistent content built a real audience. The numbers grew because the structure made posting sustainable.
+        - paragraph [ref=e139]: “It has completely changed how I manage bookings and communicate with customers.”
+        - paragraph [ref=e140]: Data from the NYCC project
+      - generic [ref=e142]:
+        - heading "Pick the problem that sounds like yours" [level=2] [ref=e143]
+        - generic [ref=e144]:
+          - generic [ref=e145]:
+            - img "Website design and development workspace" [ref=e147]
+            - heading "Your website feels like hard work" [level=3] [ref=e148]
+            - paragraph [ref=e149]: Visitors land on your site and leave. I rebuild the structure and messaging so the next step is obvious and enquiries follow.
+            - link "Learn more about website design and development services" [ref=e150] [cursor=pointer]:
+              - /url: /services/website-design/
+              - text: Learn more →
+          - generic [ref=e151]:
+            - img "Website hosting and migration performance dashboard" [ref=e153]
+            - heading "Slow site costing you customers?" [level=3] [ref=e154]
+            - paragraph [ref=e155]: Your site takes too long to load. Visitors leave before they see what you offer. I fix the speed so people stay and enquire.
+            - link "Learn more about secure cloud website hosting and migration services" [ref=e156] [cursor=pointer]:
+              - /url: /services/website-hosting/
+              - text: Learn more →
+        - link "View all services →" [ref=e158] [cursor=pointer]:
+          - /url: /services/
+      - generic [ref=e160]:
+        - heading "What people repeatedly pay for" [level=3] [ref=e161]
+        - generic [ref=e162]:
+          - generic [ref=e163]:
+            - paragraph [ref=e164]: Stock photography revenue
+            - generic [ref=e165]:
+              - paragraph [ref=e166]: From £1.88
+              - paragraph [ref=e167]: To £928.07
+            - img "Revenue growth line chart from £1.88 to £928.07 over six years" [ref=e168]:
+              - img [ref=e169]:
+                - generic [ref=e178]: "2020"
+                - generic [ref=e179]: "2021"
+                - generic [ref=e180]: "2022"
+                - generic [ref=e181]: "2023"
+                - generic [ref=e182]: "2024"
+                - generic [ref=e183]: "2025"
+          - generic [ref=e184]:
+            - paragraph [ref=e185]: Top-selling image
+            - img "Best-selling stock photograph showing consistent buyer demand" [ref=e187]
+            - paragraph [ref=e188]: Best-selling image. Repeatedly licensed across multiple markets
+        - paragraph [ref=e189]: Every sale is a data point. Over time, the pattern shows what people actually need. I follow that pattern instead of guessing.
+      - paragraph [ref=e191]: Ahrefs Health Score improved from 71 to 91 after technical SEO and crawl fixes.
+      - generic [ref=e193]:
+        - generic [ref=e194]:
+          - heading "What I tested and what actually worked" [level=2] [ref=e195]
+          - paragraph [ref=e196]: Real projects. Honest results. I share what I tried, what worked, and what I learned.
+        - generic [ref=e197]:
+          - article [ref=e198]:
+            - generic [ref=e199]:
+              - img "Why Your Business Doesn't Show Up on Google (Nantwich & Crewe) - Blog post cover image" [ref=e200]
+              - generic [ref=e201]: 6 min read
+            - generic [ref=e202]:
+              - generic [ref=e203]:
+                - time [ref=e204]: April 4, 2026
+                - generic [ref=e205]: •
+                - generic [ref=e206]: Local SEO
+              - heading "Why Your Business Doesn't Show Up on Google (Nantwich & Crewe)" [level=3] [ref=e207]
+              - paragraph [ref=e208]: Not showing up on Google or Maps? Here's why local businesses in Nantwich and Crewe are missing from search results and how to fix it.
+              - generic [ref=e209]:
+                - 'link "Read: Why Your Business Doesn''t Show Up on Google (Nantwich & Crewe)" [ref=e210] [cursor=pointer]':
+                  - /url: /blog/why-your-business-doesnt-show-up-on-google/
+                  - text: Why Your Business Doesn't Show Up on Google (Nantwich & Crewe)
+                  - img [ref=e211]
+                - generic [ref=e213]: 6 min read
+          - article [ref=e214]:
+            - generic [ref=e215]:
+              - 'img "How I Turned £546 into £13.5K With Flyers: Year-by-Year ROI Breakdown (2021–2025) - Blog post cover image" [ref=e216]'
+              - generic [ref=e217]: 8 min read
+            - generic [ref=e218]:
+              - generic [ref=e219]:
+                - time [ref=e220]: November 4, 2025
+                - generic [ref=e221]: •
+                - generic [ref=e222]: Case Studies
+              - 'heading "How I Turned £546 into £13.5K With Flyers: Year-by-Year ROI Breakdown (2021–2025)" [level=3] [ref=e223]'
+              - paragraph [ref=e224]: How one offline flyer campaign grew from a single print run into £13.5K in client revenue. Real data, key lessons, and why print marketing still works in 2025.
+              - generic [ref=e225]:
+                - 'link "Read: How I Turned £546 into £13.5K With Flyers: Year-by-Year ROI Breakdown (2021–2025)" [ref=e226] [cursor=pointer]':
+                  - /url: /blog/flyers-roi-breakdown/
+                  - text: "How I Turned £546 into £13.5K With Flyers: Year-by-Year ROI Breakdown (2021–2025)"
+                  - img [ref=e227]
+                - generic [ref=e229]: 8 min read
+          - article [ref=e230]:
+            - generic [ref=e231]:
+              - img "Exploring My iStock Data Through DeepMeta 4 - Blog post cover image" [ref=e232]
+              - generic [ref=e233]: 6 min read
+            - generic [ref=e234]:
+              - generic [ref=e235]:
+                - time [ref=e236]: August 14, 2025
+                - generic [ref=e237]: •
+                - generic [ref=e238]: Case Studies
+              - heading "Exploring My iStock Data Through DeepMeta 4" [level=3] [ref=e239]
+              - paragraph [ref=e240]: Over 1,100 downloads across 24 months have earned me $484.05 in royalties on iStock. Explore my journey and what the data reveals in DeepMeta 4.
+              - generic [ref=e241]:
+                - 'link "Read: Exploring My iStock Data Through DeepMeta 4" [ref=e242] [cursor=pointer]':
+                  - /url: /blog/exploring-istock-data-deepmeta/
+                  - text: Exploring My iStock Data Through DeepMeta 4
+                  - img [ref=e243]
+                - generic [ref=e245]: 6 min read
+        - link "View All Posts" [ref=e247] [cursor=pointer]:
+          - /url: /blog/
+          - text: View All Posts
+          - img [ref=e248]
+      - generic [ref=e251]:
+        - heading "Frequently Asked Questions" [level=2] [ref=e252]
+        - generic [ref=e253]:
+          - generic [ref=e254]:
+            - button "How does your hosting compare to Wix or other website builders?" [ref=e255] [cursor=pointer]:
+              - generic [ref=e256]: How does your hosting compare to Wix or other website builders?
+              - img [ref=e257]
+            - region "How does your hosting compare to Wix or other website builders?":
+              - generic [ref=e259]: Wix costs around £9 per month. It works for small personal sites. I use faster cloud hosting with better caching and security. Your site loads quicker, ranks better in Google, and you talk directly to me instead of waiting in a support queue.
+          - generic [ref=e260]:
+            - button "Will my website load faster on your hosting?" [ref=e261] [cursor=pointer]:
+              - generic [ref=e262]: Will my website load faster on your hosting?
+              - img [ref=e263]
+            - region "Will my website load faster on your hosting?":
+              - generic [ref=e265]: I have taken sites from 14 seconds down to under 2 seconds. Faster sites rank better in Google and keep visitors on the page longer. That means more enquiries.
+          - generic [ref=e266]:
+            - button "Do you design websites for Nantwich and Crewe businesses?" [ref=e267] [cursor=pointer]:
+              - generic [ref=e268]: Do you design websites for Nantwich and Crewe businesses?
+              - img [ref=e269]
+            - region "Do you design websites for Nantwich and Crewe businesses?":
+              - generic [ref=e271]: I build mobile-first websites from £300 for businesses across Nantwich and Crewe. Every site is built on fast cloud hosting and structured so visitors know what to do next.
+          - generic [ref=e272]:
+            - button "How do I know if my website is losing me enquiries?" [ref=e273] [cursor=pointer]:
+              - generic [ref=e274]: How do I know if my website is losing me enquiries?
+              - img [ref=e275]
+            - region "How do I know if my website is losing me enquiries?":
+              - generic [ref=e277]: If visitors land on your site and leave without getting in touch, the problem is usually speed, structure, or unclear messaging. Send me your URL and I will tell you what is not working.
+      - paragraph [ref=e280]: Most websites don't fail because they look bad. They fail because no one made the next step obvious.
+      - generic [ref=e282]:
+        - paragraph [ref=e283]: Your website stops being a brochure.
+        - paragraph [ref=e284]: It starts bringing in enquiries.
+      - generic [ref=e286]:
+        - heading "Send me your website. I will tell you what is not working." [level=2] [ref=e287]
+        - paragraph [ref=e288]: You send the URL. I look at speed, structure, and messaging. I reply with what I would fix and a clear next step.
+        - generic [ref=e289]:
+          - link "Send me your website" [ref=e290] [cursor=pointer]:
+            - /url: /contact/
+          - paragraph [ref=e291]: I'll tell you what's stopping people getting in touch. This is a quick website audit.
+          - paragraph [ref=e292]: Most people miss this on their own.
+          - paragraph [ref=e293]: No pressure. I'll just show you what I see.
+          - paragraph [ref=e294]:
+            - text: Or
+            - link "Email me directly" [ref=e295] [cursor=pointer]:
+              - /url: mailto:joe@vividmediacheshire.com
+              - text: email me
+            - text: if that's easier
+  - contentinfo [ref=e296]:
+    - generic [ref=e297]:
+      - generic [ref=e298]:
+        - generic [ref=e299]:
+          - heading "Vivid Media Cheshire" [level=3] [ref=e300]
+          - paragraph [ref=e301]: Websites, ads, analytics, and photography for small businesses across Cheshire. Built for performance, clarity, and measurable results.
+          - generic [ref=e302]:
+            - paragraph [ref=e303]: Business Hours (UK)
+            - paragraph [ref=e304]: "Monday to Friday: 09:00 to 18:00"
+            - paragraph [ref=e305]: "Saturday: 10:00 to 14:00"
+            - paragraph [ref=e306]: "Sunday: 10:00 to 16:00"
+          - generic [ref=e307]:
+            - paragraph [ref=e308]: Contact
+            - paragraph [ref=e309]: "Email: joe@vividmediacheshire.com"
+            - paragraph [ref=e310]: "Phone: +44 7586 378502"
+          - generic [ref=e311]:
+            - link "Facebook - Vivid Media Cheshire" [ref=e312] [cursor=pointer]:
+              - /url: https://www.facebook.com/VividAutoPhotography
+              - img [ref=e313]
+            - link "Instagram - Vivid Media Cheshire" [ref=e315] [cursor=pointer]:
+              - /url: https://instagram.com/vividautophotography
+              - img [ref=e316]
+            - link "LinkedIn - Joe Morris" [ref=e318] [cursor=pointer]:
+              - /url: https://www.linkedin.com/in/joe-morris-07921a1a0/
+              - img [ref=e319]
+            - link "GitHub - Joseph Christopher Morris" [ref=e321] [cursor=pointer]:
+              - /url: https://github.com/Joseph-Christopher-Morris
+              - img [ref=e322]
+        - generic [ref=e324]:
+          - heading "Quick Links" [level=4] [ref=e325]
+          - list [ref=e326]:
+            - listitem [ref=e327]:
+              - link "Home" [ref=e328] [cursor=pointer]:
+                - /url: /
+            - listitem [ref=e329]:
+              - link "Services" [ref=e330] [cursor=pointer]:
+                - /url: /services/
+            - listitem [ref=e331]:
+              - link "Pricing" [ref=e332] [cursor=pointer]:
+                - /url: /pricing/
+            - listitem [ref=e333]:
+              - link "Blog" [ref=e334] [cursor=pointer]:
+                - /url: /blog/
+            - listitem [ref=e335]:
+              - link "About" [ref=e336] [cursor=pointer]:
+                - /url: /about/
+            - listitem [ref=e337]:
+              - link "Contact" [ref=e338] [cursor=pointer]:
+                - /url: /contact/
+            - listitem [ref=e339]:
+              - link "Read Vivid Media Cheshire Privacy Policy" [ref=e340] [cursor=pointer]:
+                - /url: /privacy-policy/
+                - text: Privacy Policy
+        - generic [ref=e341]:
+          - heading "Services" [level=4] [ref=e342]
+          - list [ref=e343]:
+            - listitem [ref=e344]:
+              - link "Website Hosting & Migration" [ref=e345] [cursor=pointer]:
+                - /url: /services/website-hosting/
+            - listitem [ref=e346]:
+              - link "Website Design & Development" [ref=e347] [cursor=pointer]:
+                - /url: /services/website-design/
+            - listitem [ref=e348]:
+              - link "Photography Services" [ref=e349] [cursor=pointer]:
+                - /url: /services/photography/
+            - listitem [ref=e350]:
+              - link "Data Analytics & Insights" [ref=e351] [cursor=pointer]:
+                - /url: /services/analytics/
+            - listitem [ref=e352]:
+              - link "Strategic Ad Campaigns" [ref=e353] [cursor=pointer]:
+                - /url: /services/ad-campaigns/
+      - generic [ref=e354]:
+        - paragraph [ref=e355]: © 2025 Vivid Media Cheshire. All rights reserved.
+        - button "Manage cookie consent preferences" [ref=e356] [cursor=pointer]: Manage Cookies

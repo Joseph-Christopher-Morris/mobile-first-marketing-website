@@ -1,0 +1,256 @@
+- generic [ref=e2]:
+  - banner [ref=e3]:
+    - generic [ref=e5]:
+      - link "Go to homepage" [ref=e6] [cursor=pointer]:
+        - /url: /
+        - img "Vivid Media Cheshire (VMC)" [ref=e7]
+      - navigation [ref=e8]:
+        - link "Home" [ref=e9] [cursor=pointer]:
+          - /url: /
+        - link "Services" [ref=e10] [cursor=pointer]:
+          - /url: /services/
+        - link "Pricing" [ref=e11] [cursor=pointer]:
+          - /url: /pricing/
+        - link "Blog" [ref=e12] [cursor=pointer]:
+          - /url: /blog/
+        - link "About" [ref=e13] [cursor=pointer]:
+          - /url: /about/
+        - link "FAQ" [ref=e14] [cursor=pointer]:
+          - /url: /faq/
+        - link "Contact" [ref=e15] [cursor=pointer]:
+          - /url: /contact/
+      - link "Get Started" [ref=e17] [cursor=pointer]:
+        - /url: /contact/
+  - main [ref=e18]:
+    - article [ref=e19]:
+      - generic [ref=e21]:
+        - navigation [ref=e22]:
+          - list [ref=e23]:
+            - listitem [ref=e24]:
+              - link "Home" [ref=e25] [cursor=pointer]:
+                - /url: /
+            - listitem [ref=e26]:
+              - img [ref=e27]
+            - listitem [ref=e29]:
+              - link "Blog" [ref=e30] [cursor=pointer]:
+                - /url: /blog/
+            - listitem [ref=e31]:
+              - img [ref=e32]
+            - listitem [ref=e34]: Why Your Business Doesn't Show Up on Google | Nantwich & Crewe
+        - generic [ref=e35]:
+          - generic [ref=e36]:
+            - generic [ref=e37]: Local SEO
+            - generic [ref=e38]: •
+            - time [ref=e39]: April 4, 2026
+            - generic [ref=e40]: •
+            - generic [ref=e41]: 6 min read
+          - heading "Why Your Business Doesn't Show Up on Google | Nantwich & Crewe" [level=1] [ref=e42]
+          - paragraph [ref=e43]: Not showing up on Google or Maps? Here's why local businesses in Nantwich and Crewe are missing from search results and how to fix it.
+          - generic [ref=e44]:
+            - generic [ref=e45]: By Joe Morris
+            - generic [ref=e46]:
+              - generic [ref=e47]: •
+              - generic [ref=e48]:
+                - generic [ref=e49]: "#local-seo"
+                - generic [ref=e50]: "#google-business-profile"
+                - generic [ref=e51]: "#nantwich"
+                - generic [ref=e52]: "#crewe"
+                - generic [ref=e53]: "#small-business"
+      - img "Hero image for Why Your Business Doesn't Show Up on Google | Nantwich & Crewe" [ref=e56]
+      - generic [ref=e58]:
+        - article [ref=e59]:
+          - generic [ref=e60]:
+            - heading "If you are not on Google, you are invisible" [level=2] [ref=e61]
+            - paragraph [ref=e62]: Most local businesses in Nantwich and Crewe do not have a traffic problem. They have a visibility problem.
+            - paragraph [ref=e63]: You might have a great service. You might have happy customers. But if someone searches for what you do in your area and you are not showing up, none of that matters.
+            - paragraph [ref=e64]: This is something I see regularly with businesses around Nantwich and Crewe. They assume they are visible because they have a website or a Google listing. But when you actually search for their services, they are nowhere to be found.
+            - paragraph [ref=e65]: Here is why that happens and what you can do about it.
+            - heading "1. Your Google Business Profile is incomplete or inactive" [level=2] [ref=e66]
+            - paragraph [ref=e67]: This is the most common issue. A Google Business Profile that was set up once and never touched again will not perform well.
+            - paragraph [ref=e68]: "Google wants to see that your business is active. That means:"
+            - list [ref=e69]:
+              - listitem [ref=e70]: Your opening hours are correct
+              - listitem [ref=e71]: Your services are listed clearly
+              - listitem [ref=e72]: You have recent photos
+              - listitem [ref=e73]: You are responding to reviews
+              - listitem [ref=e74]: Your contact details match your website
+            - paragraph [ref=e75]: If your profile is half-filled or outdated, Google has no reason to show you above a competitor who keeps theirs updated.
+            - heading "2. Your website does not tell Google what you do" [level=2] [ref=e76]
+            - paragraph [ref=e77]: A website that looks nice but says very little is a common problem. If your homepage just says "Welcome to [business name]" without clearly stating what you do and where you do it, Google cannot connect you to relevant searches.
+            - paragraph [ref=e78]: "Your website needs to be clear about:"
+            - list [ref=e79]:
+              - listitem [ref=e80]: What services you offer
+              - listitem [ref=e81]: Where you are based
+              - listitem [ref=e82]: Who your services are for
+            - paragraph [ref=e83]: This is not about stuffing keywords everywhere. It is about being specific and useful.
+            - heading "3. Your website is not converting visitors into enquiries" [level=2] [ref=e84]
+            - paragraph [ref=e85]: Even if people do find you, a confusing or slow website will lose them. If your site takes too long to load, does not work well on mobile, or makes it hard to get in touch, visitors will leave.
+            - paragraph [ref=e86]: This is a separate problem from visibility, but it compounds it. Google tracks how people interact with your site. If visitors leave quickly, that signals to Google that your page was not useful.
+            - paragraph [ref=e87]:
+              - text: "👉 If your website is getting visitors but no enquiries, I break this down here:"
+              - link "Frequently Asked Questions" [ref=e88] [cursor=pointer]:
+                - /url: https://vividmediacheshire.com/faq/
+            - heading "4. You have no reviews or very few reviews" [level=2] [ref=e89]
+            - paragraph [ref=e90]: Reviews are one of the strongest local ranking signals. A business with 40 recent reviews will almost always outrank a business with 2 reviews from three years ago.
+            - paragraph [ref=e91]: "It is not just about the number either. Google looks at:"
+            - list [ref=e92]:
+              - listitem [ref=e93]: How recent the reviews are
+              - listitem [ref=e94]: Whether you respond to them
+              - listitem [ref=e95]: The keywords people use in their reviews
+            - paragraph [ref=e96]: If you are not actively asking for reviews, you are falling behind.
+            - heading "5. Your competitors are doing more" [level=2] [ref=e97]
+            - paragraph [ref=e98]: Sometimes the issue is not that you are doing something wrong. It is that your competitors are doing more. They might be posting regularly, collecting reviews, updating their website, and building links.
+            - paragraph [ref=e99]: Google does not rank businesses in isolation. It compares you to everyone else offering the same thing in the same area. If someone else is more active and more visible, they will appear above you.
+            - heading "A real example from my own website" [level=2] [ref=e100]
+            - paragraph [ref=e101]: "I recently rebuilt my own website with a focus on:"
+            - list [ref=e102]:
+              - listitem [ref=e103]: Clear structure
+              - listitem [ref=e104]: Faster load times
+              - listitem [ref=e105]: Making it obvious what each page is about
+            - paragraph [ref=e106]: "The goal was simple: make it easier for Google to understand the site, and easier for people to act when they land on it."
+            - paragraph [ref=e107]: "After the changes:"
+            - list [ref=e108]:
+              - listitem [ref=e109]: Pages load faster on mobile
+              - listitem [ref=e110]: Content is clearer and more focused
+              - listitem [ref=e111]: Internal linking between pages is stronger
+            - paragraph [ref=e112]: This is the same approach I apply to client websites. Not tricks. Just clarity and structure.
+            - heading "What you can do right now" [level=2] [ref=e113]
+            - paragraph [ref=e114]: "If you are a local business in Nantwich or Crewe and you are not showing up on Google, start with these steps:"
+            - list [ref=e115]:
+              - listitem [ref=e116]:
+                - strong [ref=e117]: Check your Google Business Profile.
+                - text: Make sure every section is filled in and up to date.
+              - listitem [ref=e118]:
+                - strong [ref=e119]: Look at your website objectively.
+                - text: Does it clearly say what you do, where you are, and how to get in touch?
+              - listitem [ref=e120]:
+                - strong [ref=e121]: Ask for reviews.
+                - text: Make it easy for happy customers to leave a review on Google.
+              - listitem [ref=e122]:
+                - strong [ref=e123]: Search for your own services.
+                - text: See who is showing up instead of you and look at what they are doing differently.
+            - paragraph [ref=e124]: These are not complicated steps, but most businesses skip them.
+            - heading "Need help with this?" [level=2] [ref=e125]
+            - paragraph [ref=e126]: If you want someone to look at your Google visibility and tell you exactly what needs fixing, get in touch.
+            - paragraph [ref=e127]:
+              - text: 👉
+              - link "Get in touch here" [ref=e128] [cursor=pointer]:
+                - /url: https://vividmediacheshire.com/contact/
+            - paragraph [ref=e129]: "Or if you want to understand the common problems first:"
+            - paragraph [ref=e130]:
+              - text: 👉
+              - link "Read the FAQ" [ref=e131] [cursor=pointer]:
+                - /url: https://vividmediacheshire.com/faq/
+            - 'heading "FAQ: Common questions about not showing on Google" [level=2] [ref=e132]'
+            - heading "Why is my business not showing on Google Maps?" [level=3] [ref=e133]
+            - paragraph [ref=e134]: Usually because your Google Business Profile is incomplete, inactive, or has fewer reviews than competitors. Google prioritises businesses that are active and trusted.
+            - heading "Do I need a website to show up on Google?" [level=3] [ref=e135]
+            - paragraph [ref=e136]: You can appear on Google Maps without a website, but a clear, well-structured website helps improve your visibility and gives Google more context about your services.
+            - heading "How long does it take to improve Google visibility?" [level=3] [ref=e137]
+            - paragraph [ref=e138]: It depends on your starting point. Basic improvements like fixing your profile and adding information can have an effect quickly. Building stronger visibility with reviews and content takes longer.
+            - heading "Why do my competitors show up above me?" [level=3] [ref=e139]
+            - paragraph [ref=e140]: They are likely more active, have more reviews, and clearer information. Google prioritises businesses that are easier to trust and understand.
+            - heading "Can I fix this without running ads?" [level=3] [ref=e141]
+            - paragraph [ref=e142]: Yes. This is about organic visibility. Ads can bring traffic, but if your business is not visible in local search, the underlying issue still needs fixing.
+        - complementary [ref=e143]:
+          - paragraph [ref=e144]: Not showing up on Google when people search for your services?
+          - paragraph [ref=e145]: I help local businesses in Nantwich and Crewe fix their Google visibility with clear structure, not tricks.
+          - link "Get in touch" [ref=e146] [cursor=pointer]:
+            - /url: /contact/
+      - generic [ref=e148]:
+        - generic [ref=e149]:
+          - heading "Tags" [level=3] [ref=e150]
+          - generic [ref=e151]:
+            - generic [ref=e152]: "#local-seo"
+            - generic [ref=e153]: "#google-business-profile"
+            - generic [ref=e154]: "#nantwich"
+            - generic [ref=e155]: "#crewe"
+            - generic [ref=e156]: "#small-business"
+        - generic [ref=e157]:
+          - link "Back to Blog" [ref=e158] [cursor=pointer]:
+            - /url: /blog/
+            - img [ref=e159]
+            - text: Back to Blog
+          - generic [ref=e161]:
+            - generic [ref=e162]: "Share this post:"
+            - generic [ref=e163]:
+              - button [ref=e164] [cursor=pointer]:
+                - img [ref=e165]
+              - button [ref=e167] [cursor=pointer]:
+                - img [ref=e168]
+              - button [ref=e170] [cursor=pointer]:
+                - img [ref=e171]
+  - contentinfo [ref=e173]:
+    - generic [ref=e174]:
+      - generic [ref=e175]:
+        - generic [ref=e176]:
+          - heading "Vivid Media Cheshire" [level=3] [ref=e177]
+          - paragraph [ref=e178]: Websites, ads, analytics, and photography for small businesses across Cheshire. Built for performance, clarity, and measurable results.
+          - generic [ref=e179]:
+            - paragraph [ref=e180]: Business Hours (UK)
+            - paragraph [ref=e181]: "Monday to Friday: 09:00 to 18:00"
+            - paragraph [ref=e182]: "Saturday: 10:00 to 14:00"
+            - paragraph [ref=e183]: "Sunday: 10:00 to 16:00"
+          - generic [ref=e184]:
+            - paragraph [ref=e185]: Contact
+            - paragraph [ref=e186]: "Email: joe@vividmediacheshire.com"
+            - paragraph [ref=e187]: "Phone: +44 7586 378502"
+          - generic [ref=e188]:
+            - link "Facebook - Vivid Media Cheshire" [ref=e189] [cursor=pointer]:
+              - /url: https://www.facebook.com/VividAutoPhotography
+              - img [ref=e190]
+            - link "Instagram - Vivid Media Cheshire" [ref=e192] [cursor=pointer]:
+              - /url: https://instagram.com/vividautophotography
+              - img [ref=e193]
+            - link "LinkedIn - Joe Morris" [ref=e195] [cursor=pointer]:
+              - /url: https://www.linkedin.com/in/joe-morris-07921a1a0/
+              - img [ref=e196]
+            - link "GitHub - Joseph Christopher Morris" [ref=e198] [cursor=pointer]:
+              - /url: https://github.com/Joseph-Christopher-Morris
+              - img [ref=e199]
+        - generic [ref=e201]:
+          - heading "Quick Links" [level=4] [ref=e202]
+          - list [ref=e203]:
+            - listitem [ref=e204]:
+              - link "Home" [ref=e205] [cursor=pointer]:
+                - /url: /
+            - listitem [ref=e206]:
+              - link "Services" [ref=e207] [cursor=pointer]:
+                - /url: /services/
+            - listitem [ref=e208]:
+              - link "Pricing" [ref=e209] [cursor=pointer]:
+                - /url: /pricing/
+            - listitem [ref=e210]:
+              - link "Blog" [ref=e211] [cursor=pointer]:
+                - /url: /blog/
+            - listitem [ref=e212]:
+              - link "About" [ref=e213] [cursor=pointer]:
+                - /url: /about/
+            - listitem [ref=e214]:
+              - link "Contact" [ref=e215] [cursor=pointer]:
+                - /url: /contact/
+            - listitem [ref=e216]:
+              - link "Read Vivid Media Cheshire Privacy Policy" [ref=e217] [cursor=pointer]:
+                - /url: /privacy-policy/
+                - text: Privacy Policy
+        - generic [ref=e218]:
+          - heading "Services" [level=4] [ref=e219]
+          - list [ref=e220]:
+            - listitem [ref=e221]:
+              - link "Website Hosting & Migration" [ref=e222] [cursor=pointer]:
+                - /url: /services/website-hosting/
+            - listitem [ref=e223]:
+              - link "Website Design & Development" [ref=e224] [cursor=pointer]:
+                - /url: /services/website-design/
+            - listitem [ref=e225]:
+              - link "Photography Services" [ref=e226] [cursor=pointer]:
+                - /url: /services/photography/
+            - listitem [ref=e227]:
+              - link "Data Analytics & Insights" [ref=e228] [cursor=pointer]:
+                - /url: /services/analytics/
+            - listitem [ref=e229]:
+              - link "Strategic Ad Campaigns" [ref=e230] [cursor=pointer]:
+                - /url: /services/ad-campaigns/
+      - generic [ref=e231]:
+        - paragraph [ref=e232]: © 2025 Vivid Media Cheshire. All rights reserved.
+        - button "Manage cookie consent preferences" [ref=e233] [cursor=pointer]: Manage Cookies

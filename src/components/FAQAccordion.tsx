@@ -10,14 +10,21 @@ interface FAQItem {
 interface FAQAccordionProps {
   faqs: FAQItem[];
   title?: string;
+  /** Optional section slug for globally unique IDs, e.g. "website-conversion" */
+  sectionSlug?: string;
 }
 
-export function FAQAccordion({ faqs, title = 'Frequently Asked Questions' }: FAQAccordionProps) {
+export function FAQAccordion({ faqs, title = 'Frequently Asked Questions', sectionSlug }: FAQAccordionProps) {
   const [openIndex, setOpenIndex] = useState<number | null>(null);
 
   const toggleFAQ = (index: number) => {
     setOpenIndex(openIndex === index ? null : index);
   };
+
+  const questionId = (index: number) =>
+    sectionSlug ? `faq-${sectionSlug}-${index}-question` : `faq-question-${index}`;
+  const answerId = (index: number) =>
+    sectionSlug ? `faq-${sectionSlug}-${index}-answer` : `faq-answer-${index}`;
 
   return (
     <section className="bg-white py-16 md:py-20">
@@ -36,8 +43,8 @@ export function FAQAccordion({ faqs, title = 'Frequently Asked Questions' }: FAQ
                 onClick={() => toggleFAQ(index)}
                 className="w-full flex items-center justify-between p-6 text-left bg-white hover:bg-gray-50 transition-colors"
                 aria-expanded={openIndex === index}
-                aria-controls={`faq-answer-${index}`}
-                id={`faq-question-${index}`}
+                aria-controls={answerId(index)}
+                id={questionId(index)}
               >
                 <span className="text-lg font-semibold text-slate-900 pr-4">
                   {faq.question}
@@ -61,9 +68,9 @@ export function FAQAccordion({ faqs, title = 'Frequently Asked Questions' }: FAQ
               </button>
               
               <div
-                id={`faq-answer-${index}`}
+                id={answerId(index)}
                 role="region"
-                aria-labelledby={`faq-question-${index}`}
+                aria-labelledby={questionId(index)}
                 className={`overflow-hidden transition-all duration-300 ${
                   openIndex === index ? 'max-h-96' : 'max-h-0'
                 }`}

@@ -1,0 +1,104 @@
+- generic [ref=e2]:
+  - banner [ref=e3]:
+    - generic [ref=e5]:
+      - link "Go to homepage" [ref=e6] [cursor=pointer]:
+        - /url: /
+        - img "Vivid Media Cheshire (VMC)" [ref=e7]
+      - navigation [ref=e8]:
+        - link "Home" [ref=e9] [cursor=pointer]:
+          - /url: /
+        - link "Services" [ref=e10] [cursor=pointer]:
+          - /url: /services/
+        - link "Pricing" [ref=e11] [cursor=pointer]:
+          - /url: /pricing/
+        - link "Blog" [ref=e12] [cursor=pointer]:
+          - /url: /blog/
+        - link "About" [ref=e13] [cursor=pointer]:
+          - /url: /about/
+        - link "FAQ" [ref=e14] [cursor=pointer]:
+          - /url: /faq/
+        - link "Contact" [ref=e15] [cursor=pointer]:
+          - /url: /contact/
+      - link "Get Started" [ref=e17] [cursor=pointer]:
+        - /url: /contact/
+  - main [ref=e18]:
+    - generic [ref=e20]:
+      - heading "404" [level=1] [ref=e21]
+      - heading "Page Not Found" [level=2] [ref=e22]
+      - paragraph [ref=e23]: The page you're looking for doesn't exist.
+      - link "Go Home" [ref=e24] [cursor=pointer]:
+        - /url: /
+  - contentinfo [ref=e25]:
+    - generic [ref=e26]:
+      - generic [ref=e27]:
+        - generic [ref=e28]:
+          - heading "Vivid Media Cheshire" [level=3] [ref=e29]
+          - paragraph [ref=e30]: Websites, ads, analytics, and photography for small businesses across Cheshire. Built for performance, clarity, and measurable results.
+          - generic [ref=e31]:
+            - paragraph [ref=e32]: Business Hours (UK)
+            - paragraph [ref=e33]: "Monday to Friday: 09:00 to 18:00"
+            - paragraph [ref=e34]: "Saturday: 10:00 to 14:00"
+            - paragraph [ref=e35]: "Sunday: 10:00 to 16:00"
+          - generic [ref=e36]:
+            - paragraph [ref=e37]: Contact
+            - paragraph [ref=e38]: "Email: joe@vividmediacheshire.com"
+            - paragraph [ref=e39]: "Phone: +44 7586 378502"
+          - generic [ref=e40]:
+            - link "Facebook - Vivid Media Cheshire" [ref=e41] [cursor=pointer]:
+              - /url: https://www.facebook.com/VividAutoPhotography
+              - img [ref=e42]
+            - link "Instagram - Vivid Media Cheshire" [ref=e44] [cursor=pointer]:
+              - /url: https://instagram.com/vividautophotography
+              - img [ref=e45]
+            - link "LinkedIn - Joe Morris" [ref=e47] [cursor=pointer]:
+              - /url: https://www.linkedin.com/in/joe-morris-07921a1a0/
+              - img [ref=e48]
+            - link "GitHub - Joseph Christopher Morris" [ref=e50] [cursor=pointer]:
+              - /url: https://github.com/Joseph-Christopher-Morris
+              - img [ref=e51]
+        - generic [ref=e53]:
+          - heading "Quick Links" [level=4] [ref=e54]
+          - list [ref=e55]:
+            - listitem [ref=e56]:
+              - link "Home" [ref=e57] [cursor=pointer]:
+                - /url: /
+            - listitem [ref=e58]:
+              - link "Services" [ref=e59] [cursor=pointer]:
+                - /url: /services/
+            - listitem [ref=e60]:
+              - link "Pricing" [ref=e61] [cursor=pointer]:
+                - /url: /pricing/
+            - listitem [ref=e62]:
+              - link "Blog" [ref=e63] [cursor=pointer]:
+                - /url: /blog/
+            - listitem [ref=e64]:
+              - link "About" [ref=e65] [cursor=pointer]:
+                - /url: /about/
+            - listitem [ref=e66]:
+              - link "Contact" [ref=e67] [cursor=pointer]:
+                - /url: /contact/
+            - listitem [ref=e68]:
+              - link "Read Vivid Media Cheshire Privacy Policy" [ref=e69] [cursor=pointer]:
+                - /url: /privacy-policy/
+                - text: Privacy Policy
+        - generic [ref=e70]:
+          - heading "Services" [level=4] [ref=e71]
+          - list [ref=e72]:
+            - listitem [ref=e73]:
+              - link "Website Hosting & Migration" [ref=e74] [cursor=pointer]:
+                - /url: /services/website-hosting/
+            - listitem [ref=e75]:
+              - link "Website Design & Development" [ref=e76] [cursor=pointer]:
+                - /url: /services/website-design/
+            - listitem [ref=e77]:
+              - link "Photography Services" [ref=e78] [cursor=pointer]:
+                - /url: /services/photography/
+            - listitem [ref=e79]:
+              - link "Data Analytics & Insights" [ref=e80] [cursor=pointer]:
+                - /url: /services/analytics/
+            - listitem [ref=e81]:
+              - link "Strategic Ad Campaigns" [ref=e82] [cursor=pointer]:
+                - /url: /services/ad-campaigns/
+      - generic [ref=e83]:
+        - paragraph [ref=e84]: © 2025 Vivid Media Cheshire. All rights reserved.
+        - button "Manage cookie consent preferences" [ref=e85] [cursor=pointer]: Manage Cookies

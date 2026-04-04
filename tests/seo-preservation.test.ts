@@ -283,8 +283,8 @@ describe('SEO Preservation Property Tests', () => {
             // Verify description is cleaned (no multiple spaces)
             expect(metadata.description).not.toMatch(/\s{2,}/);
             
-            // Verify description is truncated to 155 characters
-            expect(metadata.description!.length).toBeLessThanOrEqual(155);
+            // Verify description is truncated to 160 characters
+            expect(metadata.description!.length).toBeLessThanOrEqual(160);
             
             // Verify description is trimmed
             expect(metadata.description).toBe(metadata.description!.trim());

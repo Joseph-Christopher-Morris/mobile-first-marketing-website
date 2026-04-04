@@ -17,6 +17,9 @@ export async function getAllBlogPosts(): Promise<BlogPost[]> {
     import('../content/blog/stock-photography-getting-started'),
     import('../content/blog/stock-photography-breakthrough'),
 
+    // Local SEO (1 post)
+    import('../content/blog/why-your-business-doesnt-show-up-on-google'),
+
     // Data Analysis (1 post)
     import('../content/blog/exploring-istock-data-deepmeta'),
 

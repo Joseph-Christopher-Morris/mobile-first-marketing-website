@@ -16,6 +16,11 @@ export interface BlogPost {
   heroImage?: string;
   // SCRAM meta description — outcome-led, 140–160 chars, [Outcome] + [Mechanism] + [Who it is for]
   metaDescription?: string;
+  // Proof image mode — for screenshots, dashboards, comparisons that must not be cropped
+  proofImage?: boolean;
+  imageWidth?: number;
+  imageHeight?: number;
+  imageCaption?: string;
   // Optional CTA override fields — posts can customise text but cannot remove the CTA block
   ctaProblem?: string;
   ctaSolution?: string;

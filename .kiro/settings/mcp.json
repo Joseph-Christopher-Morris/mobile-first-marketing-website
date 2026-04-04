@@ -24,7 +24,9 @@
       "disabled": false,
       "autoApprove": [
         "write_file",
-        "list_allowed_directories"
+        "list_allowed_directories",
+        "get_file_info",
+        "search_files"
       ]
     },
     "lighthouse": {
